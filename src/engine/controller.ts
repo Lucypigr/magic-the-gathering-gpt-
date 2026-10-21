@@ -1,0 +1,251 @@
+import { AIPlayer, type Style } from '../ai/ai';
+import type { Level } from '../ai/combatAI';
+import { performAction, playOptions } from './actions';
+import { runGame } from './flow';
+import { cloneGame, createGame, type PlayerSetup } from './state';
+import type { Decision, Flow, GameState, PID, PriorityAction, Response } from './types';
+
+export interface MatchOptions {
+  human: PlayerSetup;
+  ai: PlayerSetup;
+  level: Level;
+  aiStyle?: Style;
+  seed?: number;
+  /** 0 = 立即；數值越大 AI 動作越慢（毫秒） */
+  aiDelay?: number;
+  firstPlayer?: PID;
+}
+
+/** 主要階段的決策比較花時間 */
+function g1Main(g: GameState): boolean {
+  return g.phase === 'main1' || g.phase === 'main2';
+}
+
+export type StopMode = 'smart' | 'all';
+
+/**
+ * 對戰控制器：驅動規則引擎的產生器，並在 AI 與人類玩家之間分派決策。
+ * 人類玩家永遠是 0 號玩家。
+ */
+export class MatchController {
+  g: GameState;
+  decision: Decision | null = null;
+  finished = false;
+  ai: AIPlayer;
+  aiThinking = false;
+  stopMode: StopMode = 'smart';
+  /** 略過到下一回合（人類按下「結束回合」） */
+  skipUntilTurn: number | null = null;
+  private gen: Flow;
+  private listeners = new Set<() => void>();
+  private timer: ReturnType<typeof setTimeout> | null = null;
+  aiDelay: number;
+  /** 讓 AI 的思考時間有快有慢，更像真人 */
+  humanize = false;
+  error: string | null = null;
+
+  constructor(opts: MatchOptions) {
+    this.g = createGame(opts.human, opts.ai, opts.seed ?? Date.now());
+    this.ai = new AIPlayer(1, opts.level, opts.aiStyle);
+    this.aiDelay = opts.aiDelay ?? 600;
+    this.gen = runGame(this.g, opts.firstPlayer);
+  }
+
+  /** 真人般的思考時間：主要階段比較久，偶爾會想很久 */
+  private humanDelay(d: Decision): number {
+    const main = d.type === 'priority' && g1Main(this.g);
+    let t = this.aiDelay * (0.55 + Math.random() * (main ? 1.4 : 0.8));
+    if (main && Math.random() < 0.05) {
+      t += 2500 + Math.random() * 3500;
+      this.onLongThink?.();
+    }
+    return t;
+  }
+
+  /** AI 準備想很久時通知畫面（可用來顯示「讓我想想…」） */
+  onLongThink: (() => void) | null = null;
+
+  subscribe(fn: () => void): () => void {
+    this.listeners.add(fn);
+    return () => this.listeners.delete(fn);
+  }
+
+  private notify(): void {
+    this.g.version++;
+    for (const fn of this.listeners) fn();
+  }
+
+  start(): void {
+    this.advance(undefined);
+  }
+
+  dispose(): void {
+    if (this.timer) clearTimeout(this.timer);
+    this.listeners.clear();
+    this.finished = true;
+  }
+
+  concede(pid: PID = 0): void {
+    if (this.finished) return;
+    this.g.winner = pid === 0 ? 1 : 0;
+    this.g.log.push({ turn: this.g.turn, text: pid === 0 ? '你投降了' : `${this.g.players[pid].name} 投降了`, kind: 'result' });
+    this.finished = true;
+    this.decision = null;
+    if (this.timer) clearTimeout(this.timer);
+    this.notify();
+  }
+
+  /** 先在複本上試做，回傳錯誤訊息（若可以執行則回傳 null） */
+  validate(a: PriorityAction): string | null {
+    return performAction(cloneGame(this.g), 0, a);
+  }
+
+  /** 人類玩家送出決策 */
+  submit(resp: Response): void {
+    if (!this.decision || this.finished) return;
+    this.decision = null;
+    this.advance(resp);
+  }
+
+  endTurn(): void {
+    this.skipUntilTurn = this.g.turn + 1;
+    if (this.decision?.type === 'priority') this.submit({ type: 'pass' });
+    else if (this.decision?.type === 'attackers') this.submit({ type: 'attackers', ids: [] });
+  }
+
+  /** 施放、攻擊等畫面事件之後暫停的毫秒數（0 = 不暫停，測試用） */
+  presentDelay = 0;
+  private shownSeq = 0;
+
+  /** 有新的畫面事件時，回傳要暫停多久讓玩家看清楚 */
+  private presentPause(): number {
+    const shows = this.g.shows;
+    if (!this.presentDelay || !shows.length) return 0;
+    const fresh = shows.filter((s) => s.seq > this.shownSeq);
+    this.shownSeq = this.g.showSeq;
+    let t = 0;
+    for (const s of fresh) {
+      const mine = s.player === 0;
+      const base = s.kind === 'trigger' ? 0.55 : s.kind === 'attack' || s.kind === 'block' ? 0.9 : 1;
+      t = Math.max(t, this.presentDelay * base * (mine ? 0.45 : 1));
+    }
+    return t;
+  }
+
+  private advance(resp: Response | undefined): void {
+    try {
+      this.run(this.gen.next(resp as Response));
+    } catch (e) {
+      this.fail(e);
+    }
+  }
+
+  private fail(e: unknown): void {
+    console.error(e);
+    this.error = e instanceof Error ? e.message : String(e);
+    this.finished = true;
+    this.decision = null;
+    this.notify();
+  }
+
+  private run(start: IteratorResult<Decision, void>): void {
+    let r = start;
+    try {
+      for (let guard = 0; guard < 100000; guard++) {
+        if (r.done) {
+          this.finished = true;
+          this.decision = null;
+          this.notify();
+          return;
+        }
+        const pause = this.presentPause();
+        if (pause > 0) {
+          const held = r;
+          this.decision = null;
+          this.notify();
+          this.timer = setTimeout(() => {
+            this.timer = null;
+            this.run(held);
+          }, pause);
+          return;
+        }
+        const d = r.value;
+        if (d.player === this.ai.pid) {
+          const a = this.ai.decide(this.g, d);
+          const meaningful =
+            (d.type === 'priority' && a.type !== 'pass') ||
+            (d.type === 'attackers' && a.type === 'attackers' && a.ids.length > 0) ||
+            (d.type === 'blockers' && a.type === 'blockers' && a.blocks.length > 0) ||
+            d.type === 'targets';
+          if (this.aiDelay > 0 && meaningful) {
+            this.aiThinking = true;
+            this.decision = null;
+            this.notify();
+            this.timer = setTimeout(() => {
+              this.timer = null;
+              this.aiThinking = false;
+              this.advance(a);
+            }, this.humanize ? this.humanDelay(d) : this.aiDelay);
+            return;
+          }
+          r = this.gen.next(a);
+          continue;
+        }
+        const auto = this.autoResponse(d);
+        if (auto) {
+          r = this.gen.next(auto);
+          continue;
+        }
+        this.decision = d;
+        this.notify();
+        return;
+      }
+    } catch (e) {
+      this.fail(e);
+    }
+  }
+
+  /** 自動替人類玩家略過不需要操作的時機 */
+  private autoResponse(d: Decision): Response | null {
+    const g = this.g;
+    const me: PID = 0;
+    const skipping = this.skipUntilTurn !== null && g.turn < this.skipUntilTurn;
+    if (this.skipUntilTurn !== null && g.turn >= this.skipUntilTurn) this.skipUntilTurn = null;
+    if (d.type === 'attackers' && skipping) return { type: 'attackers', ids: [] };
+    if (d.type !== 'priority') return null;
+    const top = g.stack[g.stack.length - 1];
+    if (top && top.controller === me) return { type: 'pass' };
+    const hasActions = playOptions(g, me).length > 0;
+    if (!hasActions) return { type: 'pass' };
+    if (skipping && !(top && top.controller !== me)) return { type: 'pass' };
+    if (this.stopMode === 'all') return null;
+    if (top) return null; // 對手的咒語或異能在堆疊上：可以回應
+    if (g.active === me) {
+      if (g.phase === 'main1' || g.phase === 'main2' || g.phase === 'combat_blockers') return null;
+      return { type: 'pass' };
+    }
+    if (g.phase === 'combat_attackers' || g.phase === 'combat_blockers' || g.phase === 'end') return null;
+    return { type: 'pass' };
+  }
+}
+
+/** 無介面的同步對戰（測試用） */
+export function runHeadless(
+  p0: PlayerSetup,
+  p1: PlayerSetup,
+  levels: [Level, Level],
+  seed: number,
+  styles: [Style, Style] = ['midrange', 'midrange'],
+): GameState {
+  const g = createGame(p0, p1, seed);
+  g.maxTurns = 60;
+  const ais = [new AIPlayer(0, levels[0], styles[0]), new AIPlayer(1, levels[1], styles[1])];
+  const gen = runGame(g);
+  let r = gen.next(undefined as unknown as Response);
+  let steps = 0;
+  while (!r.done) {
+    if (++steps > 200000) throw new Error('對戰步數過多');
+    r = gen.next(ais[r.value.player].decide(g, r.value));
+  }
+  return g;
+}

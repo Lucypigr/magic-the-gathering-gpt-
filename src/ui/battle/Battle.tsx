@@ -1,0 +1,941 @@
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import type { Level } from '../../ai/combatAI';
+import { expandDeck, type DeckList } from '../../data';
+import {
+  abilitiesFor,
+  castOptionsFor,
+  playOptions,
+  sacChoices,
+  spellCost,
+  type PlayOption,
+} from '../../engine/actions';
+import { attackablePlaneswalkers, attackCandidates, blockCandidates, canBlock } from '../../engine/combat';
+import { MatchController } from '../../engine/controller';
+import { costToString, manaValue } from '../../engine/mana';
+import { cardName, isCreature, stats } from '../../engine/state';
+import { legalTargets, sameTarget } from '../../engine/targets';
+import type { CardDef, CastAlt, Filter, PID, PriorityAction, TargetRef, TargetSpec } from '../../engine/types';
+import type { SavedDeck, Settings } from '../../meta/profile';
+import { EMOTES, type Emote, type Opponent } from '../../meta/ladder';
+import { getDef, hasDef } from '../../engine/registry';
+import { RankBadge } from '../Ladder';
+import { CardDetail, CardFace, CardZoom } from '../CardView';
+import { Modal } from '../common';
+import { LEVEL_ZH } from '../i18n';
+import { ManaCost } from '../Mana';
+import { Avatar, CreatureZone, LandZone, OppHand, OtherZone, PhaseTrack, Piles, StackView, type Marks } from './Board';
+import { ArrowLayer, Spotlight } from './Fx';
+import { ChooseModal, GameOverModal, ModeModal, MulliganModal, PileModal, YesNoModal } from './Modals';
+
+export interface BattleResult {
+  won: boolean;
+  draw: boolean;
+  conceded: boolean;
+}
+
+interface Props {
+  playerDeck: SavedDeck;
+  aiDeck: DeckList;
+  level: Level;
+  settings: Settings;
+  reward: number | null;
+  onEnd: (r: BattleResult) => void;
+  onExit: () => void;
+  onRematch: () => void;
+  onSettings: (s: Settings) => void;
+  /** 天梯配對的對手（由 AI 扮演） */
+  opponent?: Opponent;
+  /** 結算畫面的額外內容（例如段位變化） */
+  resultExtra?: ReactNode;
+  rematchLabel?: string;
+}
+
+interface Draft {
+  kind: 'cast' | 'activate' | 'trigger';
+  source: number;
+  ability?: number;
+  mode?: number;
+  specs: TargetSpec[];
+  targets: (TargetRef | null)[];
+  sacFilter?: Filter;
+  sac?: number;
+  stage: 'targets' | 'sac';
+  label: string;
+  alt?: CastAlt;
+  /** X 咒語選定的 X */
+  x?: number;
+}
+
+const SPEED_MS = { slow: 1100, normal: 650, fast: 250 } as const;
+/** 施放、攻擊之後停下來讓玩家看清楚的時間 */
+const PRESENT_MS = { slow: 1500, normal: 1050, fast: 550 } as const;
+
+function specPrompt(spec: TargetSpec): string {
+  if (spec.prompt) return spec.prompt;
+  switch (spec.kind) {
+    case 'any':
+      return '選擇任意一個目標（生物或玩家）';
+    case 'creature':
+      return spec.filter?.ctrl === 'you' ? '選擇你的生物' : spec.filter?.ctrl === 'opp' ? '選擇對手的生物' : '選擇一個生物';
+    case 'player':
+      return '選擇一位玩家';
+    case 'opponent':
+      return '選擇對手';
+    case 'permanent':
+      return '選擇一個永久物';
+    case 'spell':
+      return '選擇堆疊上的咒語';
+    case 'gyCard':
+      return '選擇墳墓場中的牌';
+    case 'spellOrCreature':
+      return '選擇一個咒語或生物';
+  }
+}
+
+export function Battle(props: Props) {
+  const { playerDeck, aiDeck, level, settings, opponent } = props;
+  const [ctl, setCtl] = useState<MatchController | null>(null);
+  const [, force] = useReducer((x: number) => x + 1, 0);
+  const [draft, setDraft] = useState<Draft | null>(null);
+  const [attackSel, setAttackSel] = useState<Set<number>>(new Set());
+  /** 攻擊者 → 改攻擊的對手鵬洛客 */
+  const [attackTo, setAttackTo] = useState<Map<number, number>>(new Map());
+  const [lastAtk, setLastAtk] = useState<number | null>(null);
+  const [blocks, setBlocks] = useState<Map<number, number>>(new Map());
+  const [blockSel, setBlockSel] = useState<number | null>(null);
+  const [focus, setFocus] = useState<number | null>(null);
+  const [hover, setHover] = useState<number | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
+  const [pile, setPile] = useState<PID | null>(null);
+  const [showLog, setShowLog] = useState(false);
+  const [confirmConcede, setConfirmConcede] = useState(false);
+  const [menu, setMenu] = useState(false);
+  /** X 咒語：選擇 X 的對話框 */
+  const [xPick, setXPick] = useState<{ draft: Draft; max: number; value: number } | null>(null);
+  const [detail, setDetail] = useState<number | null>(null);
+  const [seq, setSeq] = useState(0);
+  const ended = useRef(false);
+  const logRef = useRef<HTMLDivElement>(null);
+  const arenaRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const c = new MatchController({
+      human: { name: '你', deckName: playerDeck.name, deck: expandDeck(playerDeck), isAI: false },
+      ai: { name: opponent?.name ?? '對手', deckName: aiDeck.name, deck: expandDeck(aiDeck), isAI: true },
+      level,
+      aiStyle: aiDeck.style,
+      aiDelay: SPEED_MS[settings.aiSpeed] * (opponent?.think ?? 1),
+    });
+    c.stopMode = settings.stopMode;
+    c.humanize = !!opponent;
+    c.presentDelay = PRESENT_MS[settings.aiSpeed];
+    const un = c.subscribe(force);
+    setCtl(c);
+    c.start();
+    return () => {
+      un();
+      c.dispose();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!ctl) return;
+    ctl.aiDelay = SPEED_MS[settings.aiSpeed] * (opponent?.think ?? 1);
+    ctl.stopMode = settings.stopMode;
+    ctl.presentDelay = PRESENT_MS[settings.aiSpeed];
+  }, [ctl, settings.aiSpeed, settings.stopMode]);
+
+  const g = ctl?.g ?? null;
+  const d = ctl?.decision ?? null;
+  // 頭像：以套牌中最具代表性的生物當作肖像（傳奇優先，其次總費用最高）
+  const faces = useMemo(() => {
+    const pick = (pid: PID): CardDef | null => {
+      if (!ctl) return null;
+      const defs = Object.values(ctl.g.cards)
+        .filter((c) => c.owner === pid && !c.token && c.def.types.includes('Creature'))
+        .map((c) => c.def);
+      defs.sort((x, y) => Number(!!y.supertypes?.includes('Legendary')) - Number(!!x.supertypes?.includes('Legendary')) || manaValue(y) - manaValue(x));
+      return defs[0] ?? null;
+    };
+    const oppFace = opponent?.face && hasDef(opponent.face) ? getDef(opponent.face) : null;
+    return [pick(0), oppFace ?? pick(1)] as const;
+  }, [ctl, opponent]);
+
+  // ---------- 表情與對手的「真人」反應（只在天梯） ----------
+  const [bubbles, setBubbles] = useState<[string | null, string | null]>([null, null]);
+  const [emoteMenu, setEmoteMenu] = useState(false);
+  const [muted, setMuted] = useState(false);
+  const bubbleTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const lastEmote = useRef(0);
+  const later = useCallback((ms: number, fn: () => void) => {
+    bubbleTimers.current.push(setTimeout(fn, ms));
+  }, []);
+  useEffect(() => () => bubbleTimers.current.forEach(clearTimeout), []);
+  const say = useCallback(
+    (pid: PID, text: string) => {
+      setBubbles((b) => (pid === 0 ? [text, b[1]] : [b[0], text]));
+      later(2600, () => setBubbles((b) => (pid === 0 ? (b[0] === text ? [null, b[1]] : b) : b[1] === text ? [b[0], null] : b)));
+    },
+    [later],
+  );
+  const oppSay = useCallback(
+    (text: string, delay = 900) => {
+      if (!opponent) return;
+      later(delay + Math.random() * 900, () => {
+        if (!mutedRef.current) say(1, text);
+      });
+    },
+    [opponent, later, say],
+  );
+  const mutedRef = useRef(muted);
+  mutedRef.current = muted;
+  const myEmote = (e: Emote) => {
+    setEmoteMenu(false);
+    if (Date.now() - lastEmote.current < 1500) return;
+    lastEmote.current = Date.now();
+    say(0, e);
+    if (!opponent || ctl?.finished) return;
+    const r = Math.random();
+    if (e === '你好！' && r < (opponent.polite ? 0.7 : 0.15)) oppSay('你好！', 1200);
+    else if (e === '打得好！' && r < (opponent.polite ? 0.6 : 0.2)) oppSay('謝謝', 1200);
+    else if (e === '謝謝' && r < 0.2) oppSay('打得好！', 1400);
+  };
+  useEffect(() => {
+    if (!ctl || !opponent) return;
+    ctl.onLongThink = () => {
+      if (opponent.chatty > 0.4 && Math.random() < 0.5) oppSay('讓我想想…', 300);
+    };
+    return () => {
+      ctl.onLongThink = null;
+    };
+  }, [ctl, opponent, oppSay]);
+  const greeted = useRef(false);
+  const oppLife = useRef<number | null>(null);
+  const concedeCheckedTurn = useRef(0);
+  const endReacted = useRef(false);
+  useEffect(() => {
+    if (!opponent || !ctl) return;
+    const gs = ctl.g;
+    // 開場打招呼
+    if (!greeted.current && gs.turn >= 1) {
+      greeted.current = true;
+      if (opponent.polite && Math.random() < 0.35 + opponent.chatty * 0.5) oppSay('你好！', 1500);
+    }
+    // 一次掉很多血
+    const life = gs.players[1].life;
+    if (oppLife.current != null && oppLife.current - life >= 5 && opponent.chatty > 0.55 && Math.random() < 0.45) oppSay('哎呀！', 500);
+    oppLife.current = life;
+    // 結束時的禮貌
+    if (ctl.finished && !endReacted.current) {
+      endReacted.current = true;
+      if (!ctl.error && gs.winner === 0 && opponent.polite && Math.random() < 0.6) oppSay(Math.random() < 0.5 ? 'GG' : '打得好！', 300);
+      else if (!ctl.error && gs.winner === 1 && opponent.polite && Math.random() < 0.4) oppSay('GG', 300);
+    }
+    // 局勢無望時投降：輪到你的回合開始時判斷
+    if (!ctl.finished && gs.active === 0 && gs.turn !== concedeCheckedTurn.current && gs.turn > 4) {
+      concedeCheckedTurn.current = gs.turn;
+      const mine = gs.battlefield.map((id) => gs.cards[id]).filter((c) => isCreature(c));
+      const myPower = mine.filter((c) => c.controller === 0).reduce((n, c) => n + Math.max(0, stats(gs, c).p), 0);
+      const theirs = mine.filter((c) => c.controller === 1).length;
+      const hopeless = (life <= myPower && theirs === 0) || (life <= 3 && myPower >= life * 2 && theirs <= 1);
+      if (hopeless && Math.random() < opponent.quitter) {
+        if (opponent.polite) oppSay('GG', 200);
+        later(2400, () => {
+          if (!ctl.finished) ctl.concede(1);
+        });
+      }
+    }
+  });
+
+  // 決策改變時重設選擇狀態
+  const lastDecision = useRef<unknown>(null);
+  useEffect(() => {
+    if (d === lastDecision.current) return;
+    lastDecision.current = d;
+    setAttackSel(new Set());
+    setAttackTo(new Map());
+    setLastAtk(null);
+    setBlocks(new Map());
+    setBlockSel(null);
+    setSeq((n) => n + 1);
+    if (d?.type === 'targets') {
+      const dr: Draft = { kind: 'trigger', source: d.source, specs: d.specs, targets: [], stage: 'targets', label: '觸發式能力' };
+      const filled = autoFill(dr);
+      if (isComplete(filled)) {
+        setDraft(null);
+        ctl?.submit({ type: 'targets', targets: filled.targets });
+      } else setDraft(filled);
+    } else setDraft(null);
+  });
+
+  useEffect(() => {
+    if (!ctl || !ctl.finished || ended.current) return;
+    ended.current = true;
+    props.onEnd({ won: ctl.g.winner === 0, draw: ctl.g.winner === 'draw', conceded: false });
+  });
+
+  useEffect(() => {
+    const el = logRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [g?.log.length, showLog]);
+
+  useEffect(() => {
+    if (!toast) return;
+    const t = setTimeout(() => setToast(null), 2600);
+    return () => clearTimeout(t);
+  }, [toast]);
+
+  const myPriority = d?.type === 'priority' && d.player === 0;
+
+  const options = useMemo(() => (g && myPriority ? playOptions(g, 0) : []), [g, myPriority, g?.version]);
+  const playable = useMemo(() => new Set(options.map((o) => o.card)), [options]);
+
+  // ---------- 目標選擇 ----------
+  function legalNow(dr: Draft | null): TargetRef[] {
+    if (!g || !dr || dr.stage !== 'targets') return [];
+    const spec = dr.specs[dr.targets.length];
+    if (!spec) return [];
+    return legalTargets(g, spec, 0, dr.source).filter((t) => !dr.targets.some((x) => sameTarget(x, t)));
+  }
+
+  function sacNow(dr: Draft | null): number[] {
+    if (!g || !dr || dr.stage !== 'sac' || !dr.sacFilter) return [];
+    return sacChoices(g, 0, dr.sacFilter, dr.kind === 'activate' ? dr.source : undefined);
+  }
+
+  function autoFill(dr: Draft): Draft {
+    let cur = dr;
+    while (cur.stage === 'targets' && cur.targets.length < cur.specs.length) {
+      const spec = cur.specs[cur.targets.length];
+      const legal = g ? legalTargets(g, spec, 0, cur.source).filter((t) => !cur.targets.some((x) => sameTarget(x, t))) : [];
+      if (spec.kind === 'opponent' && legal.length === 1) cur = { ...cur, targets: [...cur.targets, legal[0]] };
+      else if (spec.optional && legal.length === 0) cur = { ...cur, targets: [...cur.targets, null] };
+      else break;
+    }
+    if (cur.stage === 'targets' && cur.targets.length >= cur.specs.length && cur.sacFilter && cur.sac == null) cur = { ...cur, stage: 'sac' };
+    return cur;
+  }
+
+  function isComplete(dr: Draft): boolean {
+    return dr.targets.length >= dr.specs.length && (!dr.sacFilter || dr.sac != null);
+  }
+
+  function proceed(dr: Draft) {
+    const next = autoFill(dr);
+    if (isComplete(next)) finish(next);
+    else setDraft(next);
+  }
+
+  function finish(dr: Draft) {
+    if (!ctl) return;
+    if (dr.kind === 'trigger') {
+      ctl.submit({ type: 'targets', targets: dr.targets });
+      setDraft(null);
+      return;
+    }
+    const a: PriorityAction =
+      dr.kind === 'cast'
+        ? { type: 'cast', card: dr.source, targets: dr.targets, mode: dr.mode, sac: dr.sac, alt: dr.alt, x: dr.x }
+        : { type: 'activate', card: dr.source, ability: dr.ability!, targets: dr.targets, sac: dr.sac, x: dr.x };
+    submitAction(a);
+  }
+
+  function submitAction(a: PriorityAction) {
+    if (!ctl) return;
+    const err = ctl.validate(a);
+    setDraft(null);
+    if (err) {
+      setToast(err);
+      return;
+    }
+    setFocus(null);
+    ctl.submit(a);
+  }
+
+  function startOption(o: PlayOption) {
+    if (o.kind === 'play') {
+      submitAction({ type: 'play', card: o.card });
+      return;
+    }
+    setFocus(null);
+    const dr: Draft = {
+      kind: o.kind,
+      source: o.card,
+      ability: o.ability,
+      mode: o.mode,
+      alt: o.alt,
+      specs: o.specs,
+      targets: [],
+      sacFilter: o.sacFilter,
+      stage: 'targets',
+      label: o.label,
+    };
+    // X 咒語：先決定 X
+    if ((o.kind === 'cast' || o.kind === 'activate') && o.maxX !== undefined) {
+      setXPick({ draft: dr, max: o.maxX, value: o.maxX });
+      return;
+    }
+    proceed(dr);
+  }
+
+  function chooseTarget(t: TargetRef | null) {
+    if (!draft) return;
+    proceed({ ...draft, targets: [...draft.targets, t] });
+  }
+
+  // ---------- 點擊 ----------
+  const legal = legalNow(draft);
+  const legalCards = new Set(legal.filter((t): t is { c: number } => 'c' in t).map((t) => t.c));
+  const legalPlayers = new Set(legal.filter((t): t is { p: PID } => 'p' in t).map((t) => t.p));
+  const sacs = new Set(sacNow(draft));
+  const oppPws = new Set(g && d?.type === 'attackers' ? attackablePlaneswalkers(g, 0).map((c) => c.id) : []);
+  const attackable = useMemo(() => new Set(g && d?.type === 'attackers' ? attackCandidates(g, 0).map((c) => c.id) : []), [g, d]);
+  const myBlockers = useMemo(() => new Set(g && d?.type === 'blockers' ? blockCandidates(g, 0).map((c) => c.id) : []), [g, d]);
+
+  function onCard(id: number) {
+    if (!g) return;
+    if (draft?.stage === 'targets' && legalCards.has(id)) {
+      chooseTarget({ c: id });
+      return;
+    }
+    if (draft?.stage === 'sac' && sacs.has(id)) {
+      finish({ ...draft, sac: id });
+      return;
+    }
+    if (!draft && d?.type === 'attackers' && attackable.has(id)) {
+      const on = !attackSel.has(id);
+      setAttackSel((s) => {
+        const n = new Set(s);
+        if (on) n.add(id);
+        else n.delete(id);
+        return n;
+      });
+      setLastAtk(on ? id : null);
+      if (!on) {
+        const m = new Map(attackTo);
+        m.delete(id);
+        setAttackTo(m);
+      }
+      return;
+    }
+    // 宣告攻擊時點對手的鵬洛客：讓最後選的攻擊者改攻擊它（再點一次改回攻擊玩家）
+    if (!draft && d?.type === 'attackers' && oppPws.has(id) && lastAtk != null && attackSel.has(lastAtk)) {
+      const m = new Map(attackTo);
+      if (m.get(lastAtk) === id) m.delete(lastAtk);
+      else m.set(lastAtk, id);
+      setAttackTo(m);
+      return;
+    }
+    if (!draft && d?.type === 'blockers') {
+      const c = g.cards[id];
+      if (myBlockers.has(id)) {
+        if (blocks.has(id)) {
+          const n = new Map(blocks);
+          n.delete(id);
+          setBlocks(n);
+          setBlockSel(null);
+        } else setBlockSel(blockSel === id ? null : id);
+        return;
+      }
+      if (c.attacking && blockSel != null) {
+        if (canBlock(g, g.cards[blockSel], c)) {
+          const n = new Map(blocks);
+          n.set(blockSel, id);
+          setBlocks(n);
+          setBlockSel(null);
+        } else setToast(`${cardName(g.cards[blockSel])} 不能阻擋 ${cardName(c)}`);
+        return;
+      }
+    }
+    setFocus((f) => (f === id ? null : id));
+  }
+
+  function onPlayer(pid: PID) {
+    if (draft?.stage === 'targets' && legalPlayers.has(pid)) chooseTarget({ p: pid });
+  }
+
+  function quickCast(id: number) {
+    if (!g || !myPriority || draft) return;
+    const c = g.cards[id];
+    const opts = castOptionsFor(g, 0, c);
+    if (opts.length) startOption(opts[0]);
+  }
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      setFocus(null);
+      setMenu(false);
+      setShowLog(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  if (!ctl || !g) return <div className="battle loading">準備對戰中…</div>;
+
+  // ---------- 標記 ----------
+  const marks: Marks = {
+    selectable: new Set<number>(),
+    selected: new Set<number>(),
+    labels: new Map(),
+    focus,
+    playable: myPriority && !draft ? playable : new Set(),
+  };
+  if (draft?.stage === 'targets') legalCards.forEach((id) => marks.selectable.add(id));
+  if (draft?.stage === 'sac') sacs.forEach((id) => marks.selectable.add(id));
+  if (draft) draft.targets.forEach((t) => t && 'c' in t && marks.selected.add(t.c));
+  if (!draft && d?.type === 'attackers') {
+    attackable.forEach((id) => marks.selectable.add(id));
+    attackSel.forEach((id) => marks.selected.add(id));
+    if (lastAtk != null && attackSel.has(lastAtk)) oppPws.forEach((id) => marks.selectable.add(id));
+    attackTo.forEach((pw, a) => attackSel.has(a) && g.cards[pw] && marks.labels.set(a, `→ ${cardName(g.cards[pw])}`));
+  }
+  if (!draft && d?.type === 'blockers') {
+    myBlockers.forEach((id) => marks.selectable.add(id));
+    if (blockSel != null) {
+      marks.selected.add(blockSel);
+      for (const id of g.battlefield) {
+        const c = g.cards[id];
+        if (c.attacking && canBlock(g, g.cards[blockSel], c)) marks.selectable.add(id);
+      }
+    }
+    blocks.forEach((a, b) => {
+      marks.selected.add(b);
+      marks.labels.set(b, `擋 ${cardName(g.cards[a])}`);
+    });
+  }
+
+  // ---------- 狀態與按鈕（只顯示必要的短字） ----------
+  const top = g.stack[g.stack.length - 1];
+  let status = '';
+  /** 主要按鈕（右下角的大按鈕） */
+  let main: { label: string; onClick: () => void; tone?: 'go' | 'ok' | 'calm' } | null = null;
+  const minor: { label: string; onClick: () => void; title?: string }[] = [];
+  if (ctl.finished) status = '';
+  else if (draft?.stage === 'targets') {
+    const spec = draft.specs[draft.targets.length];
+    status = `${specPrompt(spec)}${draft.specs.length > 1 ? `（${draft.targets.length + 1}/${draft.specs.length}）` : ''}`;
+    if (spec.optional) minor.push({ label: '不選', onClick: () => chooseTarget(null) });
+    if (draft.kind !== 'trigger') minor.push({ label: '取消', onClick: () => setDraft(null) });
+    else if (legal.length === 0) main = { label: '繼續', onClick: () => chooseTarget(null) };
+  } else if (draft?.stage === 'sac') {
+    status = '選擇要犧牲的永久物';
+    minor.push({ label: '取消', onClick: () => setDraft(null) });
+  } else if (!d) {
+    status = ctl.aiThinking ? '對手思考中…' : '';
+  } else if (d.type === 'priority') {
+    const pass = () => ctl.submit({ type: 'pass' });
+    if (top && top.controller === 1) {
+      status = '要回應嗎？';
+      main = { label: '不回應', onClick: pass, tone: 'ok' };
+    } else if (g.active === 0 && g.phase === 'main1') {
+      const canAtk = attackCandidates(g, 0).length > 0;
+      main = { label: canAtk ? '戰鬥' : '下一步', onClick: pass, tone: 'go' };
+      minor.push({ label: '結束回合', onClick: () => ctl.endTurn(), title: '略過到對手的回合' });
+    } else if (g.active === 0 && g.phase === 'main2') {
+      main = { label: '結束回合', onClick: pass, tone: 'go' };
+    } else {
+      main = { label: '繼續', onClick: pass, tone: 'calm' };
+    }
+  } else if (d.type === 'attackers') {
+    status = oppPws.size && attackSel.size ? '選擇攻擊者 · 點對手的鵬洛客可以改攻擊它' : '選擇攻擊者';
+    main =
+      attackSel.size > 0
+        ? {
+            label: `攻擊 ×${attackSel.size}`,
+            onClick: () => ctl.submit({ type: 'attackers', ids: [...attackSel], targets: Object.fromEntries([...attackTo].filter(([a]) => attackSel.has(a))) }),
+            tone: 'go',
+          }
+        : { label: '不攻擊', onClick: () => ctl.submit({ type: 'attackers', ids: [] }), tone: 'calm' };
+    if (attackSel.size < attackable.size) minor.push({ label: '全部攻擊', onClick: () => setAttackSel(new Set(attackable)) });
+    else if (attackSel.size > 0) minor.push({ label: '清除', onClick: () => setAttackSel(new Set()) });
+  } else if (d.type === 'blockers') {
+    const incoming = g.battlefield.map((id) => g.cards[id]).filter((c) => c.attacking);
+    const dmg = incoming.filter((a) => ![...blocks.values()].includes(a.id)).reduce((s, a) => s + Math.max(0, stats(g, a).p), 0);
+    status = blockSel != null ? `${cardName(g.cards[blockSel])} 要擋誰？` : myBlockers.size ? `選擇阻擋者 · 將受 ${dmg} 傷害` : `將受 ${dmg} 傷害`;
+    main =
+      blocks.size > 0
+        ? { label: `阻擋 ×${blocks.size}`, onClick: () => ctl.submit({ type: 'blockers', blocks: [...blocks.entries()] }), tone: 'go' }
+        : { label: '不阻擋', onClick: () => ctl.submit({ type: 'blockers', blocks: [] }), tone: 'calm' };
+  }
+  const myMove = !!(d && d.player === 0) || !!draft;
+
+  // ---------- 卡牌預覽 ----------
+  const inspectId = draft ? focus : (focus ?? hover);
+  const inspected = inspectId != null ? g.cards[inspectId] : null;
+  let actions: PlayOption[] = [];
+  if (inspected && myPriority && !draft && focus === inspectId) {
+    if (inspected.zone === 'hand' || inspected.zone === 'exile' || inspected.zone === 'graveyard') actions = castOptionsFor(g, 0, inspected);
+    else if (inspected.zone === 'battlefield') actions = options.filter((o) => o.card === inspected.id && (o.kind === 'activate' || o.alt === 'prepared'));
+  }
+  const liveStats = inspected && inspected.zone === 'battlefield' && isCreature(inspected) ? stats(g, inspected) : null;
+
+  const hand = g.players[0].hand.map((id) => g.cards[id]);
+  const exiled = [
+    ...g.players[0].exile.map((id) => g.cards[id]).filter((c) => (c.playableTurn === g.turn && c.playableBy === 0) || c.onAdventure || c.plottedTurn !== undefined || (c.warpExiled !== undefined && c.warpExiled < g.turn)),
+    // 有返照或墳墓場異能的牌在墳墓場也能使用
+    ...g.players[0].graveyard.map((id) => g.cards[id]).filter((c) => c.def.flashback || c.def.harmonize || (c.def.mayhem && c.discardedTurn === g.turn) || c.def.abilities?.some((a) => a.kind === 'activated' && a.fromGraveyard)),
+  ];
+  const gySpec = draft?.stage === 'targets' && draft.specs[draft.targets.length]?.kind === 'gyCard';
+
+  return (
+    <div className="battle">
+      <div className="battle-body">
+        <main
+          className="arena"
+          ref={arenaRef}
+          onClick={(e) => {
+            // 點桌面空白處關閉預覽
+            if (focus != null && !(e.target as HTMLElement).closest('.perm, .land-pile, .card, .hero-portrait, .stack-item, .pile, button, .peek')) setFocus(null);
+          }}
+        >
+          <ArrowLayer g={g} rootRef={arenaRef} />
+          <section className="half half-opp">
+            <div className="strip">
+              <div className="strip-l">
+                <LandZone g={g} pid={1} marks={marks} onCard={onCard} onHover={setHover} />
+              </div>
+              <Avatar
+                g={g}
+                pid={1}
+                face={faces[1]}
+                selectable={legalPlayers.has(1)}
+                onPlayer={() => onPlayer(1)}
+                bubble={bubbles[1] ?? (ctl.aiThinking && !ctl.finished ? '…' : null)}
+                sub={opponent && <RankBadge points={opponent.points} size="sm" />}
+              />
+              <div className="strip-r">
+                <OppHand g={g} />
+                <Piles g={g} pid={1} onGraveyard={() => setPile(1)} onHover={setHover} />
+              </div>
+            </div>
+            <div className="battle-row">
+              <CreatureZone g={g} pid={1} marks={marks} onCard={onCard} onHover={setHover} />
+              <OtherZone g={g} pid={1} marks={marks} onCard={onCard} onHover={setHover} />
+            </div>
+          </section>
+          <div className="midline">
+            <PhaseTrack g={g} />
+            <StackView g={g} marks={marks} onCard={onCard} onHover={setHover} />
+            <div className={`action-dock ${myMove ? 'your-move' : ''}`}>
+              {status && <div className="dock-status">{status}</div>}
+              <div className="dock-buttons">
+                {minor.map((b) => (
+                  <button key={b.label} className="btn btn-minor" onClick={b.onClick} title={b.title}>
+                    {b.label}
+                  </button>
+                ))}
+                {main && (
+                  <button className={`btn btn-main tone-${main.tone ?? 'go'}`} onClick={main.onClick}>
+                    {main.label}
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+          <section className="half half-me">
+            <div className="battle-row">
+              <CreatureZone g={g} pid={0} marks={marks} onCard={onCard} onHover={setHover} />
+              <OtherZone g={g} pid={0} marks={marks} onCard={onCard} onHover={setHover} />
+            </div>
+            <div className="strip">
+              <div className="strip-l">
+                <LandZone g={g} pid={0} marks={marks} onCard={onCard} onHover={setHover} />
+              </div>
+              <Avatar g={g} pid={0} face={faces[0]} selectable={legalPlayers.has(0)} onPlayer={() => onPlayer(0)} bubble={bubbles[0]}>
+                {opponent && (
+                  <div className="emote-wrap">
+                    <button className="emote-btn" onClick={() => setEmoteMenu((m) => !m)} aria-label="表情" title="表情">
+                      💬
+                    </button>
+                    {emoteMenu && (
+                      <div className="emote-menu" role="menu">
+                        {EMOTES.map((e) => (
+                          <button key={e} role="menuitem" onClick={() => myEmote(e)}>
+                            {e}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </Avatar>
+              <div className="strip-r">
+                <Piles g={g} pid={0} onGraveyard={() => setPile(0)} onHover={setHover} />
+              </div>
+            </div>
+          </section>
+          <div className="hand" aria-label="你的手牌" onMouseLeave={() => setHover(null)}>
+            {[...hand, ...exiled].map((c, i, all) => {
+              const off = i - (all.length - 1) / 2;
+              const ex = c.zone !== 'hand';
+              return (
+                <CardFace
+                  key={c.id}
+                  def={c.def}
+                  size="md"
+                  className={`hand-card ${ex ? 'exiled' : ''} ${marks.playable.has(c.id) ? 'playable' : ''} ${focus === c.id ? 'focused' : ''} ${marks.selectable.has(c.id) ? 'selectable' : ''}`}
+                  style={{ '--rot': `${off * 2.2}deg`, '--dy': `${Math.abs(off) * Math.abs(off) * 1.2}px`, zIndex: i + 1 } as CSSProperties}
+                  onClick={() => onCard(c.id)}
+                  onDoubleClick={() => quickCast(c.id)}
+                  onMouseEnter={() => setHover(c.id)}
+                  title={
+                    c.onAdventure
+                      ? '冒險中：可以施放生物本體'
+                      : c.plottedTurn !== undefined
+                        ? c.plottedTurn < g.turn
+                          ? '預謀中：可以於法術時機免費施放'
+                          : '預謀中：下個回合起可以免費施放'
+                        : c.warpExiled !== undefined
+                          ? '折躍後被放逐：可以從放逐區施放'
+                        : c.zone === 'graveyard'
+                          ? c.def.flashback
+                            ? `在墳墓場，可用返照 ${c.def.flashback} 施放`
+                            : c.def.harmonize
+                              ? `在墳墓場，可用和聲 ${c.def.harmonize} 施放`
+                              : c.def.mayhem && c.discardedTurn === g.turn
+                                ? `本回合棄掉，可用騷亂 ${c.def.mayhem} 施放`
+                                : '在墳墓場，可以起動墳墓場異能'
+                          : ex
+                            ? '在放逐區，本回合可以使用'
+                            : undefined
+                  }
+                >
+                  {ex && (
+                    <span className={`exile-tag ${c.onAdventure ? 'adv' : c.zone === 'graveyard' ? 'fb' : ''}`}>
+                      {c.onAdventure
+                        ? '冒險'
+                        : c.plottedTurn !== undefined
+                          ? '預謀'
+                          : c.warpExiled !== undefined
+                            ? '折躍'
+                            : c.zone === 'graveyard'
+                              ? c.def.flashback
+                                ? '返照'
+                                : c.def.harmonize
+                                  ? '和聲'
+                                  : c.def.mayhem && c.discardedTurn === g.turn
+                                    ? '騷亂'
+                                    : '墳墓場'
+                              : '放逐'}
+                    </span>
+                  )}
+                </CardFace>
+              );
+            })}
+          </div>
+        </main>
+
+        {/* 左上角：設定、紀錄、投降 */}
+        <div className="hud">
+          <button className={`hud-btn ${menu ? 'on' : ''}`} onClick={() => setMenu((m) => !m)} aria-label="設定" title="設定">
+            ⚙
+          </button>
+          <button className={`hud-btn ${showLog ? 'on' : ''}`} onClick={() => setShowLog((s) => !s)} aria-label="對戰紀錄" title="對戰紀錄">
+            📜
+          </button>
+          {!ctl.finished &&
+            (confirmConcede ? (
+              <button
+                className="hud-btn hud-danger"
+                onClick={() => {
+                  ctl.concede();
+                  if (!ended.current) {
+                    ended.current = true;
+                    props.onEnd({ won: false, draw: false, conceded: true });
+                  }
+                }}
+                onBlur={() => setConfirmConcede(false)}
+                autoFocus
+              >
+                確定投降？
+              </button>
+            ) : (
+              <button className="hud-btn" onClick={() => setConfirmConcede(true)} aria-label="投降" title="投降">
+                🏳
+              </button>
+            ))}
+          {menu && (
+            <div className="hud-menu" role="dialog" aria-label="設定">
+              <div className="hm-info">
+                {opponent ? (
+                  <>
+                    天梯 · {opponent.name}（{opponent.rank}）
+                  </>
+                ) : (
+                  <>
+                    {LEVEL_ZH[level]} AI · {aiDeck.name}
+                  </>
+                )}
+              </div>
+              <label className="mini-select">
+                AI 速度
+                <select
+                  id="ai-speed"
+                  value={settings.aiSpeed}
+                  onChange={(e) => props.onSettings({ ...settings, aiSpeed: e.target.value as Settings['aiSpeed'] })}
+                >
+                  <option value="slow">慢</option>
+                  <option value="normal">中</option>
+                  <option value="fast">快</option>
+                </select>
+              </label>
+              <label className="mini-select" title="智慧：只在可能需要你操作時停下；全部：每次有可用動作都停下">
+                停頓
+                <select
+                  id="stop-mode"
+                  value={settings.stopMode}
+                  onChange={(e) => props.onSettings({ ...settings, stopMode: e.target.value as Settings['stopMode'] })}
+                >
+                  <option value="smart">智慧</option>
+                  <option value="all">全部</option>
+                </select>
+              </label>
+              {opponent && (
+                <label className="mini-select">
+                  對手表情
+                  <input type="checkbox" checked={!muted} onChange={() => setMuted((m) => !m)} />
+                </label>
+              )}
+              <p className="hm-tip">點手牌看動作、雙擊直接施放；點空白處關閉預覽。</p>
+            </div>
+          )}
+        </div>
+
+        {inspected && (
+          <div className={`peek ${focus === inspectId ? 'pinned' : 'hover'}`} onMouseEnter={() => focus == null && setHover(null)}>
+            {focus === inspectId && (
+              <button className="icon-btn peek-close" onClick={() => setFocus(null)} aria-label="關閉">
+                ✕
+              </button>
+            )}
+            <CardZoom def={inspected.hidden && inspected.controller === 0 ? inspected.hidden : inspected.def} />
+            {inspected.hidden && inspected.controller === 0 && <div className="peek-chips"><span className="chip">面朝下（只有你看得到）</span></div>}
+            {(liveStats || inspected.tapped || inspected.controller === 1 || inspected.loyalty != null) && inspected.zone === 'battlefield' && (
+              <div className="peek-chips">
+                {inspected.loyalty != null && <span className="chip chip-loyal">忠誠 {inspected.loyalty}</span>}
+                {inspected.saddledTurn === g.turn && <span className="chip">已騎乘</span>}
+                {liveStats && (
+                  <span className="chip">
+                    {liveStats.p}/{liveStats.t}
+                  </span>
+                )}
+                {inspected.damage > 0 && <span className="chip chip-bad">受傷 {inspected.damage}</span>}
+                {inspected.tapped && <span className="chip">已橫置</span>}
+                {inspected.controller === 1 && <span className="chip chip-opp">對手</span>}
+              </div>
+            )}
+            {actions.length > 0 && (
+              <div className="actions">
+                {actions.map((o, i) => (
+                  <button key={i} className="btn btn-primary btn-block" onClick={() => startOption(o)}>
+                    {o.kind === 'play' ? '打出' : o.kind === 'activate' ? (/^[+−0]/.test(o.label ?? '') ? o.label : `起動：${o.label}`) : o.alt || inspected.def.spell?.modes ? o.label : inspected.def.adventure ? `施放本體` : '施放'}
+                    {o.kind === 'cast' && <ManaCost cost={costToString(spellCost(g, inspected, 0, o.mode, undefined, o.alt))} size={15} />}
+                    {o.kind === 'activate' && abilitiesFor(g, inspected)[o.ability!].cost.mana && (
+                      <ManaCost cost={abilitiesFor(g, inspected)[o.ability!].cost.mana} size={15} />
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+            {focus === inspectId && myPriority && !draft && actions.length === 0 && inspected.zone === 'hand' && <div className="peek-note">現在不能使用</div>}
+            {focus === inspectId && (
+              <button className="btn btn-small peek-more" onClick={() => setDetail(inspected.id)}>
+                ⓘ 效果解說
+              </button>
+            )}
+          </div>
+        )}
+
+        <div className={`log ${showLog ? 'open' : ''}`} ref={logRef} aria-hidden={!showLog}>
+          {g.log.slice(-120).map((l, i) => (
+            <div key={i} className={`log-line k-${l.kind ?? 'info'} ${l.player === 0 ? 'p-me' : l.player === 1 ? 'p-opp' : ''}`}>
+              {l.text}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <Spotlight g={g} />
+      {toast && <div className="toast" role="status">{toast}</div>}
+
+      {d?.type === 'mulligan' && d.player === 0 && (
+        <MulliganModal g={g} mulligans={d.mulligans} onKeep={() => ctl.submit({ type: 'keep', keep: true })} onMull={() => ctl.submit({ type: 'keep', keep: false })} />
+      )}
+      {d?.type === 'choose' && d.player === 0 && <ChooseModal key={seq} g={g} d={d} onSubmit={(ids) => ctl.submit({ type: 'choose', ids })} />}
+      {d?.type === 'mode' && d.player === 0 && <ModeModal key={seq} g={g} d={d} onSubmit={(picks) => ctl.submit({ type: 'modes', picks })} />}
+      {d?.type === 'yesno' && d.player === 0 && <YesNoModal g={g} d={d} onAnswer={(yes) => ctl.submit({ type: 'yesno', yes })} />}
+      {gySpec && draft && (
+        <PileModal
+          g={g}
+          title={specPrompt(draft.specs[draft.targets.length])}
+          ids={[...g.players[0].graveyard, ...g.players[1].graveyard]}
+          selectable={legalCards}
+          onPick={(id) => chooseTarget({ c: id })}
+          footer={
+            <>
+              {draft.specs[draft.targets.length].optional && (
+                <button className="btn" onClick={() => chooseTarget(null)}>
+                  不選
+                </button>
+              )}
+              {draft.kind !== 'trigger' && (
+                <button className="btn" onClick={() => setDraft(null)}>
+                  取消
+                </button>
+              )}
+            </>
+          }
+        />
+      )}
+      {pile != null && !gySpec && (
+        <PileModal g={g} title={`${g.players[pile].name}的墳墓場`} ids={[...g.players[pile].graveyard].reverse()} onClose={() => setPile(null)} />
+      )}
+      {xPick && (
+        <Modal title={`決定 X 的值`} onClose={() => setXPick(null)}>
+          <div className="x-pick">
+            <p className="muted small">{xPick.draft.label}：{xPick.draft.kind === 'activate' ? 'X 越大效果越強，但要多移除 X 個忠誠指示物。你現在最多能選 X' : 'X 越大效果越強，但要多付 X 點法術力。你現在最多能付 X'} = {xPick.max}。</p>
+            <div className="x-row">
+              <button className="btn" disabled={xPick.value <= 0} onClick={() => setXPick({ ...xPick, value: xPick.value - 1 })} aria-label="減少">
+                −
+              </button>
+              <span className="x-val">X = {xPick.value}</span>
+              <button className="btn" disabled={xPick.value >= xPick.max} onClick={() => setXPick({ ...xPick, value: xPick.value + 1 })} aria-label="增加">
+                ＋
+              </button>
+            </div>
+            <button
+              className="btn btn-primary btn-block"
+              onClick={() => {
+                const dr = { ...xPick.draft, x: xPick.value };
+                setXPick(null);
+                proceed(dr);
+              }}
+            >
+              確定
+            </button>
+          </div>
+        </Modal>
+      )}
+      {detail != null && (
+        <Modal title="卡牌詳細資訊" onClose={() => setDetail(null)} wide>
+          <CardDetail def={g.cards[detail].def} />
+        </Modal>
+      )}
+      {ctl.finished && (
+        <GameOverModal
+          g={g}
+          reward={props.reward}
+          aiDeck={aiDeck.name}
+          onRematch={props.onRematch}
+          onExit={props.onExit}
+          error={ctl.error}
+          extra={props.resultExtra}
+          rematchLabel={props.rematchLabel}
+        />
+      )}
+    </div>
+  );
+}

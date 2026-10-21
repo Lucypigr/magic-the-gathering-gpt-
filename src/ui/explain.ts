@@ -1,0 +1,294 @@
+// ============================================================
+// 卡牌效果的白話解說：符號、每一行異能的種類、遊戲術語
+// ============================================================
+import type { CardDef } from '../engine/types';
+
+export interface Term {
+  term: string;
+  /** 規則敘述中出現其中任何一個字串就顯示 */
+  match: string[];
+  desc: string;
+}
+
+/** 機制與術語（說明頁也使用這份清單） */
+export const MECHANICS: Term[] = [
+  {
+    term: '準備',
+    match: ['準備'],
+    desc: '有「準備」咒語的生物：當它「已準備」時，你可以支付咒語的費用，施放那個咒語的複製（生物本身留在戰場上），施放後它就不再是已準備。有些生物以已準備的狀態進戰場，有些要滿足條件才會變成已準備。',
+  },
+  { term: '駕駛 N', match: ['駕駛'], desc: '橫置你的其他生物，力量加起來至少 N，載具就會變成生物直到回合結束。本遊戲會自動挑選最划算的生物來駕駛（優先用剛進場、本來就不能攻擊的生物）。' },
+  { term: 'X', match: ['X'], desc: '費用中有 {X} 的咒語：施放時由你決定 X 是多少，要多付 X 點法術力，X 越大效果越強。' },
+  { term: '探險', match: ['探險'], desc: '展示你牌庫頂的牌：是地就放到手上；不是地的話，在探險的生物上放一個 +1/+1 指示物，你可以選擇把那張牌置入墳墓場或留在牌庫頂。' },
+  { term: '動員 N', match: ['動員'], desc: '這個生物攻擊時，派出 N 個橫置且已經在攻擊的 1/1 紅色戰士。它們只存在到這回合的結束步驟就會被犧牲。' },
+  { term: '地圖', match: ['地圖衍生物'], desc: '一種神器衍生物：支付 {1} 並橫置、犧牲它，讓你的一個生物探險。只能在你的主要階段使用。' },
+  { term: '傳奇（Saga）', match: ['傳奇：', '傳奇指示物'], desc: '分章節的結界。進場時觸發第一章，之後每個你的回合抓牌後前進一章；最後一章結束後犧牲。' },
+  { term: '忠誠', match: ['忠誠'], desc: '鵬洛客的「血量」。起動 +N 異能會增加、−N 異能會減少，受到傷害也會減少；歸零時鵬洛客被置入墳墓場。' },
+  {
+    term: '強化傑斯 N',
+    match: ['強化傑斯'],
+    desc: '在你的傑斯衍生物上放 N 個忠誠指示物。如果你還沒有傑斯衍生物，就先派出一個藍色的傑斯鵬洛客衍生物（−1：刺探1；−3：抓一張牌），再放上指示物。',
+  },
+  { term: '地落', match: ['地落'], desc: '每當一個地在你的操控下進戰場時觸發。' },
+  { term: '英勇', match: ['英勇'], desc: '每回合此生物第一次成為你的咒語或異能的目標時觸發。' },
+  { term: '占卜 N', match: ['占卜'], desc: '檢視牌庫頂 N 張牌，把任意數量放到牌庫底，其餘放回牌庫頂。用來過濾接下來要抓的牌。' },
+  { term: '刺探 N', match: ['刺探'], desc: '檢視牌庫頂 N 張牌，把任意數量置入墳墓場，其餘放回牌庫頂。' },
+  { term: '守護 N', match: ['守護'], desc: '對手的咒語或異能以它為目標時，需要額外支付 {N}，否則那個咒語或異能被反擊。' },
+  { term: '大地彎折 N', match: ['大地彎折'], desc: '（簡化）派出一個 0/0 具敏捷的大地元素，並放上 N 個 +1/+1 指示物。' },
+  { term: '枯萎 N', match: ['枯萎'], desc: '在一個由你操控的生物上放置 N 個 -1/-1 指示物（通常是當作代價）。' },
+  { term: '繽紛', match: ['繽紛'], desc: 'X 等於由你操控的永久物中的顏色數量。' },
+  { term: '集結鬼怪 N', match: ['集結鬼怪'], desc: '在你的軍隊上放置 N 個 +1/+1 指示物；沒有軍隊就先派出 0/0 鬼怪軍隊。' },
+  { term: '招募', match: ['招募'], desc: '抓一張牌再棄一張牌；棄掉的不是地時，派出 1/1 人類士兵。' },
+  { term: '密謀', match: ['密謀'], desc: '抓一張牌再棄一張牌；棄掉的不是地時，該生物得到一個 +1/+1 指示物。' },
+  { term: '樂章', match: ['樂章'], desc: '每當你施放瞬間或法術咒語時觸發；法術力值 5 以上的咒語效果更強。' },
+  { term: '疾風', match: ['疾風'], desc: '每當你施放本回合的第二個咒語時觸發。' },
+  { term: '灌注', match: ['灌注'], desc: '若你本回合獲得過生命，效果會增強或改變。' },
+  { term: '詭異', match: ['詭異'], desc: '每當一個結界在你的操控下進戰場時觸發。' },
+  { term: '生存', match: ['生存'], desc: '（簡化）在你的結束步驟開始時，若此生物已橫置則觸發。' },
+  { term: '門檻', match: ['門檻'], desc: '你的墳墓場中有七張或更多牌時生效。' },
+  { term: '傳說故事', match: ['傳說故事'], desc: '你操控三個或更多神器及／或傳奇永久物時生效。' },
+  { term: '兇猛', match: ['兇猛'], desc: '你操控力量 4 以上的生物時生效。' },
+  { term: '強化', match: ['強化'], desc: '一種每回合只能起動一次的起動式異能。' },
+  { term: '結盟', match: ['結盟'], desc: '每當另一個生物在你的操控下進戰場時觸發。' },
+  { term: '增幅', match: ['增幅'], desc: '施放時可以多付一筆額外費用，付了的話效果會變強（不付也能正常施放）。' },
+  {
+    term: '冒險',
+    match: ['冒險'],
+    desc: '一張牌上印了兩種用法：本體（通常是生物）和一個小咒語（冒險）。你可以先施放冒險咒語，效果結算後這張牌不會進墳墓場，而是「踏上冒險」放到放逐區；之後你可以像從手上一樣，從放逐區施放本體。等於一張牌用兩次！也可以直接施放本體，那就沒有冒險可用了。',
+  },
+  {
+    term: '返照',
+    match: ['返照'],
+    desc: '這張牌進了墳墓場之後，還能再用一次：支付「返照」後面寫的費用，就能從墳墓場施放它（時機規則和平常一樣）。用完之後它會被放逐，不會再回到墳墓場，所以返照只能用一次。',
+  },
+  {
+    term: '雙面牌與轉化',
+    match: ['轉化', '雙面牌'],
+    desc: '雙面牌的兩面都印了內容，平常用正面。「轉化」就是把戰場上的這張牌翻到背面，變成另一張牌（例如神器變成生物、生物變成地）。它還是同一張牌：身上的指示物和裝備會留著，也不會重新進場（除非寫著「放回戰場」）。這張牌離開戰場後會翻回正面。',
+  },
+  {
+    term: '工藝',
+    match: ['工藝'],
+    desc: '支付費用，並把這張牌和指定的素材（你戰場上的永久物，或你墳墓場中的牌）一起放逐，然後這張牌會轉化成背面回到戰場。只能在你的主要階段、堆疊是空的時候使用。素材由系統自動挑選：優先用墳墓場的牌，其次是價值最低的永久物。',
+  },
+  {
+    term: '模式雙面牌',
+    match: ['模式雙面牌'],
+    desc: '施放時可以選擇要施放哪一面：點手上的牌會出現「施放正面」與「施放背面」兩個按鈕，背面通常比較貴但比較強。用正面上場後，有些牌也能再付費轉化成背面。',
+  },
+  { term: '角色衍生物', match: ['角色衍生物'], desc: '一種貼在生物上的靈氣衍生物，給予那個生物加成。生物離開戰場時，角色也會消失。' },
+  { term: '暈眩指示物', match: ['暈眩'], desc: '有暈眩指示物的永久物在重置步驟不會重置，而是移除一個暈眩指示物。' },
+];
+
+/** 一般的遊戲術語 */
+const TERMS: Term[] = [
+  { term: '橫置／重置', match: ['橫置', '重置'], desc: '把牌轉 90 度叫做「橫置」，代表這回合已經用過（攻擊、產生法術力或付了 ↷ 費用）。你的回合開始時，你的所有牌都會「重置」轉回直的。' },
+  { term: '此地橫置進戰場', match: ['橫置進戰場'], desc: '這張牌放出來時是橫的，要等你下個回合才能用它產生法術力。' },
+  { term: '犧牲', match: ['犧牲'], desc: '把你自己操控的一個永久物置入墳墓場，通常是當作代價。犧牲不是「消滅」，不滅也擋不住。' },
+  { term: '消滅', match: ['消滅'], desc: '把目標永久物置入它擁有者的墳墓場。具有不滅的永久物不會被消滅。' },
+  { term: '放逐', match: ['放逐'], desc: '把牌移出遊戲，放到放逐區。和墳墓場不同，大多數效果都拿不回來。' },
+  { term: '反擊', match: ['反擊'], desc: '讓堆疊上的咒語失效，直接置入墳墓場，它的效果不會發生。只能在對手施放咒語、咒語還在堆疊上時使用。' },
+  { term: '移回手上', match: ['手上'], desc: '把戰場上的牌拿回手上（俗稱彈回）。之後可以再施放，但牌上的指示物、結附的靈氣都會消失。' },
+  { term: '墳墓場', match: ['墳墓場'], desc: '棄掉的牌、結算完的瞬間與法術、死去的生物都會放到擁有者的墳墓場（棄牌堆）。' },
+  { term: '搜尋牌庫', match: ['搜尋'], desc: '翻看你的牌庫找出符合條件的牌，然後把牌庫洗勻。' },
+  { term: '抓牌／棄牌', match: ['抓', '棄'], desc: '「抓」是從牌庫頂拿牌到手上；「棄」是把手上的牌置入墳墓場。' },
+  { term: '衍生物', match: ['衍生'], desc: '由效果產生的替身牌（例如 1/1 士兵），在戰場上和一般的牌一樣。離開戰場就直接消失。' },
+  { term: '+1/+1 指示物', match: ['+1/+1指示物', '+1/+1 指示物'], desc: '放在生物上的標記，每個讓力量與防禦力各 +1，會一直留著。' },
+  { term: '-1/-1 指示物', match: ['-1/-1指示物', '-1/-1 指示物'], desc: '每個讓力量與防禦力各 -1，會一直留著。防禦力變成 0 的生物會死去。+1/+1 與 -1/-1 指示物會互相抵銷。' },
+  { term: '進戰場', match: ['進戰場'], desc: '牌放到戰場上的時候（施放生物、打出地、派出衍生物等）。「當此生物進戰場時」的效果會在這時觸發一次。' },
+  { term: '死去', match: ['死去'], desc: '生物從戰場置入墳墓場，例如受到致命傷害、被消滅或被犧牲。' },
+  { term: '目標', match: ['目標'], desc: '寫著「目標」的效果，施放或起動時就要指定對象。對象若在結算前消失或變得不合法，效果不會發生。辟邪的生物不能被對手指定。' },
+  { term: '任意一個目標', match: ['任意一個目標'], desc: '可以指定生物、玩家（包括你自己）當目標。' },
+  { term: '直到回合結束', match: ['直到回合結束'], desc: '效果只持續到這個回合的結束步驟，下回合就恢復原狀。' },
+  { term: '法術力值', match: ['法術力值'], desc: '牌左上角費用的總數。例如 {2}{R} 的法術力值是 3。' },
+  { term: '裝備', match: ['裝備'], desc: '武具的起動式異能：支付裝備費用，把武具貼到你的一個生物上，讓它獲得加成。只能在你的主要階段、堆疊是空的時候使用。生物離開後，武具會留在戰場上。' },
+  { term: '結附', match: ['結附'], desc: '靈氣貼在某個永久物上，給予它效果。被貼的永久物離開戰場時，靈氣會被置入墳墓場。' },
+  { term: '只能於法術時機起動', match: ['法術時機'], desc: '只能在你自己的主要階段、而且堆疊上沒有東西時使用（和施放法術的時機一樣）。' },
+  { term: '展示', match: ['展示'], desc: '把牌翻開給所有玩家看，看完放回原本的地方（除非效果另有說明）。' },
+  { term: '額外費用', match: ['額外費用'], desc: '施放時除了原本的費用之外還要再付的東西。' },
+];
+
+export interface SymbolNote {
+  sym: string;
+  desc: string;
+}
+
+/** 規則敘述中出現的符號 */
+export function symbolNotes(def: CardDef): SymbolNote[] {
+  const text = def.text;
+  const out: SymbolNote[] = [];
+  if (text.includes('{T}'))
+    out.push({
+      sym: 'T',
+      desc: '「橫置」符號：把這張牌轉橫，當作使用異能的代價。已經橫置的牌不能再用，所以通常每回合只能用一次，要等你的下個回合重置。生物剛進場的那個回合（召喚失調）不能用含 ↷ 的異能，除非它有敏捷。',
+    });
+  if (/\{[WUBRG]\}/.test(text)) out.push({ sym: 'R', desc: '有顏色的法術力符號（白、藍、黑、紅、綠），要用那個顏色的法術力支付，或表示「加」出那個顏色的法術力。' });
+  if (/\{\d+\}/.test(text)) out.push({ sym: '2', desc: '數字表示要支付的法術力數量，任何顏色都可以。' });
+  if (text.includes('{X}')) out.push({ sym: 'X', desc: 'X 由你在施放或起動時決定，付多少 X 效果就多大。' });
+  if (/\{[WUBRG]\/[WUBRG]\}/.test(text)) out.push({ sym: 'W/U', desc: '混色符號：兩種顏色擇一支付即可。' });
+  return out;
+}
+
+export type LineKind = 'keyword' | 'mana' | 'activated' | 'triggered' | 'static' | 'spell' | 'modes' | 'mode' | 'adventure' | 'flashback';
+
+export const LINE_KIND_ZH: Record<LineKind, string> = {
+  keyword: '關鍵字異能',
+  mana: '法術力異能',
+  activated: '起動式異能',
+  triggered: '觸發式異能',
+  static: '靜止式異能',
+  spell: '咒語效果',
+  modes: '模式咒語',
+  mode: '選項',
+  adventure: '冒險',
+  flashback: '返照',
+};
+
+export interface LineNote {
+  kind: LineKind;
+  text: string;
+  cost?: string;
+  effect?: string;
+  desc: string;
+}
+
+const KEYWORD_WORDS = ['飛行', '延勢', '先攻', '連擊', '死觸', '踐踏', '繫命', '警戒', '敏捷', '威懾', '守軍', '不滅', '辟邪', '閃現', '勇行', '不能被阻擋'];
+
+function isKeywordLine(line: string): boolean {
+  const parts = line.split(/[，、,]/).map((x) => x.trim().replace(/[。.]$/, ''));
+  return parts.length > 0 && parts.every((p) => KEYWORD_WORDS.some((k) => p === k || p.startsWith(`${k} `) || /^守護\s*\{?\d/.test(p)));
+}
+
+/** 把每一行規則敘述分類並用白話說明 */
+export function lineNotes(def: CardDef): LineNote[] {
+  const permanent = !def.types.includes('Instant') && !def.types.includes('Sorcery');
+  const out: LineNote[] = [];
+  for (const raw of def.text.split('\n')) {
+    const line = raw.trim();
+    if (!line) continue;
+    // 括號裡的提示文字由下面的解說取代
+    if (line.startsWith('（') && line.endsWith('）')) continue;
+    const adv = line.match(/^冒險—《(.+?)》((?:\{[^}]+\})+)（(.+?)）：(.+)$/);
+    if (adv) {
+      out.push({
+        kind: 'adventure',
+        text: line,
+        cost: adv[2],
+        effect: adv[4],
+        desc: `你可以把這張牌當成${adv[3]}「${adv[1]}」施放（時機和一般${adv[3]}相同）。結算後此牌放逐，之後可以從放逐區施放本體。`,
+      });
+      continue;
+    }
+    const prep = line.match(/^準備—《(.+?)》((?:\{[^}]+\})+)（(.+?)）：(.+)$/);
+    if (prep) {
+      out.push({
+        kind: 'adventure',
+        text: line,
+        cost: prep[2],
+        effect: prep[4],
+        desc: `這個生物「已準備」時，你可以支付費用施放這個${prep[3]}「${prep[1]}」的複製，生物本身留在戰場上。施放後它就不再是已準備，要等它再次變成已準備才能再用。`,
+      });
+      continue;
+    }
+    const fb = line.match(/^返照((?:\{[^}]+\})+)/);
+    if (fb) {
+      out.push({ kind: 'flashback', text: line, cost: fb[1], effect: '從墳墓場再施放一次此牌', desc: '這張牌在你的墳墓場時，支付這個費用就能再施放一次，之後它會被放逐。' });
+      continue;
+    }
+    if (line.startsWith('•')) {
+      out.push({ kind: 'mode', text: line, desc: '可以選擇的其中一個效果。' });
+      continue;
+    }
+    // 傳奇的章節：「第一章—…」「第二章、第三章—…」
+    const chap = line.match(/^((?:第[一二三四五六]章、?)+)—(.+)$/);
+    if (chap) {
+      out.push({ kind: 'triggered', text: line, effect: chap[2], desc: `${chap[1]}：傳奇翻到這一章時，自動發生後面的效果。` });
+      continue;
+    }
+    // 鵬洛客的忠誠異能：「+1：…」「−2：…」「0：…」
+    const loy = line.match(/^([+−-]\d+|0)：(.+)$/);
+    if (loy && def.types.includes('Planeswalker')) {
+      const n = loy[1];
+      const how = n.startsWith('+') ? `放上 ${n.slice(1)} 個忠誠指示物（忠誠會增加）` : n === '0' ? '忠誠不變' : `移除 ${n.slice(1)} 個忠誠指示物（忠誠要夠才能用）`;
+      out.push({
+        kind: 'activated',
+        text: line,
+        cost: n,
+        effect: loy[2],
+        desc: `忠誠異能：${how}，然後得到效果。每個鵬洛客每回合只能用一個忠誠異能，而且只能在你的主要階段使用。`,
+      });
+      continue;
+    }
+    if (/^選擇(一|二|兩)項/.test(line)) {
+      out.push({ kind: 'modes', text: line, desc: '施放時從下面的選項中挑選要發生的效果。' });
+      continue;
+    }
+    if (isKeywordLine(line)) {
+      out.push({ kind: 'keyword', text: line, desc: '一直有效的能力，說明請看下方的關鍵字解說。' });
+      continue;
+    }
+    const eq = line.match(/^裝備\s*((?:\{[^}]+\})+)/);
+    if (eq) {
+      out.push({
+        kind: 'activated',
+        text: line,
+        cost: eq[1],
+        effect: '把這個武具貼到你的一個生物上',
+        desc: '你可以主動使用：支付裝備費用，把武具移到你的一個生物上，讓它獲得武具的加成。只能在你的主要階段使用，可以重複移到別的生物上。',
+      });
+      continue;
+    }
+    // 「費用：效果」＝起動式異能（能力詞「英勇—每當…」不算）
+    const m = line.match(/^([^：「」]+?)：(.+)$/);
+    if (m && permanent && /\{|犧牲|棄|支付|移除|枯萎|橫置/.test(m[1]) && !/^(當|每當|在)/.test(m[1])) {
+      const [, cost, effect] = m;
+      if (/^加\{/.test(effect) || /^加一點/.test(effect) || /^加.*法術力/.test(effect)) {
+        out.push({ kind: 'mana', text: line, cost, effect, desc: '付出冒號前的代價（通常是橫置這張牌），就能產生法術力，用來支付咒語的費用。隨時都能用。' });
+      } else {
+        const extra = /轉化/.test(effect)
+          ? '使用後這張牌會翻到另一面，所以通常只會用一次。'
+          : cost.includes('{T}')
+            ? '因為需要橫置，所以每回合只能用一次，生物剛進場的回合不能用（除非有敏捷）。'
+            : '只要付得起，一回合可以用很多次。';
+        const timing = effect.includes('法術時機') ? '只能在你的主要階段使用。' : '在你有優先權時都能使用，包括對手的回合。';
+        out.push({ kind: 'activated', text: line, cost, effect, desc: `你可以主動使用：付出冒號前面的代價，得到冒號後面的效果。${timing}${extra}` });
+      }
+      continue;
+    }
+    const body = line.replace(/^[^—]{1,6}—/, '');
+    if (/^(當|每當|在|於)/.test(body)) {
+      out.push({ kind: 'triggered', text: line, desc: '條件達成時自動發生，不用你操作（有「可以」字樣時會問你要不要）。' });
+      continue;
+    }
+    if (!permanent) {
+      out.push({ kind: 'spell', text: line, desc: '施放並結算這張牌時發生的效果，結算完這張牌會進入墳墓場。' });
+      continue;
+    }
+    out.push({ kind: 'static', text: line, desc: '只要這張牌在戰場上就一直有效，不需要任何操作。' });
+  }
+  return out;
+}
+
+/** 規則敘述中出現的術語與機制 */
+export function termNotes(def: CardDef): Term[] {
+  const text = def.text;
+  return [...MECHANICS, ...TERMS].filter((t) => t.match.some((m) => text.includes(m)));
+}
+
+/** 卡牌類別的簡短說明 */
+export function typeNote(def: CardDef): string {
+  const t = def.types;
+  if (t.includes('Land')) return '地：每回合可以打出一張（不算施放），主要用來產生法術力。';
+  if (def.saga)
+    return `傳奇（Saga）：像一本分章節的故事書。進場時觸發第一章，之後每到你的抓牌步驟結束就翻到下一章並觸發效果；共 ${def.saga.chapters.length} 章，最後一章結束後就會被犧牲。${t.includes('Creature') ? '這張同時也是生物，可以攻擊和阻擋。' : ''}`;
+  if (t.includes('Planeswalker'))
+    return '鵬洛客：你的強力盟友。進場時帶著右下角數字的忠誠，每回合可以用一個忠誠異能（+N 增加忠誠、−N 消耗忠誠）。對手可以用生物攻擊它，或用傷害咒語打它，受到的傷害會扣忠誠，歸零就被置入墳墓場。';
+  if (t.includes('Creature')) return '生物：施放後留在戰場上，可以攻擊與阻擋。剛進場的回合不能攻擊（召喚失調），除非有敏捷。';
+  if (t.includes('Instant')) return '瞬間：任何時候都能施放，包括對手的回合和戰鬥中，用完進入墳墓場。';
+  if (t.includes('Sorcery')) return '法術：只能在你的主要階段、堆疊是空的時候施放，用完進入墳墓場。';
+  if (t.includes('Enchantment')) return def.aura ? '靈氣（結界）：施放時貼在一個目標上，給它效果。' : '結界：施放後留在戰場上，持續提供效果。';
+  if (def.subtypes?.includes('Vehicle'))
+    return '載具（神器）：平常只是神器，不能攻擊或阻擋。使用「駕駛 N」橫置你其他總力量至少 N 的生物，它就會變成生物直到回合結束，可以攻擊或阻擋。剛進場的回合不能攻擊。';
+  if (t.includes('Artifact')) return def.equip ? '武具（神器）：留在戰場上，支付裝備費用把它貼到你的生物上。' : '神器：施放後留在戰場上，持續提供效果或異能。';
+  return '';
+}
