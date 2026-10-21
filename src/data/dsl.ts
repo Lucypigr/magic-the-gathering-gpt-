@@ -71,7 +71,7 @@ export function land(set: SetCode, r: Rarity, name: string, produces: Mana[], te
 
 export const trig = (on: TriggerOn, effects: Effect[], x: Partial<TriggeredAbility> = {}): Ability => ({ kind: 'trigger', on, effects, ...x });
 export const etb = (effects: Effect[], x: Partial<TriggeredAbility> = {}) => trig('etb', effects, x);
-export const act = (cost: ActivatedAbility['cost'], effects: Effect[], label: string, x: Partial<ActivatedAbility> = {}): Ability => ({
+export const act = (cost: ActivatedAbility['cost'], effects: Effect[], label: string, x: Partial<ActivatedAbility> = {}): ActivatedAbility => ({
   kind: 'activated',
   cost,
   effects,

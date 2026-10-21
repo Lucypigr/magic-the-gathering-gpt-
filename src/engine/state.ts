@@ -149,7 +149,7 @@ export function cloneGame(g: GameState): GameState {
   const cards: Record<number, Card> = {};
   for (const k in g.cards) {
     const c = g.cards[k];
-    cards[k] = { ...c, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice() };
+    cards[k] = { ...c, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
   }
   const cp = (p: Player): Player => ({
     ...p,
@@ -157,6 +157,7 @@ export function cloneGame(g: GameState): GameState {
     hand: p.hand.slice(),
     graveyard: p.graveyard.slice(),
     exile: p.exile.slice(),
+    pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
     ...g,
@@ -166,6 +167,7 @@ export function cloneGame(g: GameState): GameState {
     stack: g.stack.map((s) => ({ ...s, targets: s.targets.slice() })),
     eot: g.eot.map((e) => ({ ...e })),
     pending: g.pending.slice(),
+    extraTurns:g.extraTurns?.slice(),playerControl:g.playerControl?{...g.playerControl}:undefined,extraCombat:g.extraCombat?{...g.extraCombat}:undefined,delayed:g.delayed?.map(d=>({...d})),
     log: [],
     shows: [],
     sim: true,
@@ -196,6 +198,11 @@ export function cardName(c: Card | undefined): string {
 // ------------------------------------------------------------
 // 基本查詢
 // ------------------------------------------------------------
+export function decisionController(g:GameState,player:PID):PID {
+  const c=g.playerControl;
+  return c && c.player===player && g.turn>=c.starts && g.turn<=c.ends && (c.whole || g.phase.startsWith('combat')) ? c.controller : player;
+}
+
 export const isType = (def: CardDef, t: CardType) => def.types.includes(t);
 export const isCreature = (c: Card) => c.def.types.includes('Creature');
 export const isLand = (c: Card) => c.def.types.includes('Land');
@@ -233,6 +240,7 @@ export interface Stats {
   damageByToughness?: boolean;
   noUntap?: boolean;
   damageAbs?: boolean;
+  onlyOneBlocker?: boolean;
 }
 
 /** 這張永久物是否因為光環而失去所有異能 */
@@ -247,7 +255,7 @@ export function abilitiesSuppressed(g: GameState, c: Card): boolean {
 
 /** 永久物目前實際擁有的異能（失去所有異能時為空） */
 export function abilitiesOf(g: GameState, c: Card): Ability[] {
-  return abilitiesSuppressed(g, c) ? [] : c.def.abilities ?? [];
+  return abilitiesSuppressed(g, c) ? [] : [...(c.def.abilities ?? []), ...(c.copiedAbilities ?? [])];
 }
 
 export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
@@ -261,6 +269,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     cantBlock: false,
   };
   if (c.zone !== 'battlefield') return st;
+  if(c.noUntapBy!==undefined && g.cards[c.noUntapBy]?.zone==='battlefield' && g.cards[c.noUntapBy].controller===c.noUntapController) st.noUntap=true;
   if (c.suspected) {
     st.kw.add('menace');
     st.cantBlock = true;
@@ -286,13 +295,19 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     if (gr.damageByToughness) st.damageByToughness = true;
     if (gr.noUntap) st.noUntap = true;
     if (gr.damageAbs) st.damageAbs = true;
+    if (gr.onlyOneBlocker) st.onlyOneBlocker = true;
+    for (const kw of gr.removeKw ?? []) st.kw.delete(kw);
   };
+  for (const grant of c.permanentGrants ?? []) apply(grant);
   for (const sid of g.battlefield) {
     const s = g.cards[sid];
     const abs = abilitiesOf(g, s);
     if (abs.length) {
       for (const ab of abs) {
         if (ab.kind !== 'static') continue;
+        if (s.id === c.id && ab.selfPowerCount) st.p += countMatching(g, ab.selfPowerCount, s.controller, s.id);
+        if (s.id === c.id && ab.selfLandCounters) st.p += g.battlefield.reduce((n,id) => n + (g.cards[id].controller === s.controller && (isLand(g.cards[id])||g.cards[id].def.id==='tok-earth') ? g.cards[id].counters : 0), 0);
+        if (ab.zookeeper && s.controller === c.controller && isCreature(c) && !c.def.subtypes?.includes('Human')) { const n = Math.min(10, c.def.subtypes?.length ?? 0); st.p += n; st.t += n; }
         if (ab.anthem && matches(g, ab.anthem.filter, c, s.controller, s.id)) apply(ab.anthem.grant);
         if (ab.self && s.id === c.id && (!ab.self.cond || checkCond(g, ab.self.cond, s.controller, s.id, []))) apply(ab.self.grant);
         if (ab.selfPumpGraveyardTypes && s.id === c.id) {
@@ -327,11 +342,12 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   if (!ignoreEot) {
     for (const e of g.eot) {
       if (e.card !== c.id) continue;
-      st.p += e.p;
-      st.t += e.t;
-      for (const k of e.kw) st.kw.add(k);
+      apply(e);
     }
   }
+  if(!lost && d.id==='earthen-ally') {const colors=new Set<string>();for(const id of g.battlefield){const a=g.cards[id];if(a.controller===c.controller&&a.def.subtypes?.includes('Ally'))for(const col of colorsOf(a.def))colors.add(col);}st.p+=colors.size;}
+  if(c.attachedTo==null) for(const id of g.battlefield){const a=g.cards[id];if(a.def.id==='avatar-destiny'&&a.attachedTo===c.id){const n=g.players[a.controller].graveyard.filter(id=>isCreature(g.cards[id])).length;st.p+=n;st.t+=n;}}
+  if(st.p>=4 && g.battlefield.some(id=>g.cards[id].controller===c.controller&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.oneBlockerPower4)))st.onlyOneBlocker=true;
   return st;
 }
 
@@ -441,6 +457,10 @@ export function checkCond(
       return me.instSorcThisTurn >= cond.n;
     case 'oppLostLife':
       return opp.lifeLostThisTurn > 0;
+    case 'charge': return (g.cards[sourceId ?? -1]?.charge ?? 0) >= cond.n;
+    case 'selfAttacking': return !!g.cards[sourceId ?? -1]?.attacking;
+    case 'sacrificed': return !!me.sacrificedThisTurn;
+    case 'poolGte': return (me.pool?.length ?? 0) + (me.firePool?.length ?? 0) >= cond.n;
     case 'yourTurn':
       return g.active === controller;
     case 'notYourTurn':

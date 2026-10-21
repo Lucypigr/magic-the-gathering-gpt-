@@ -6,6 +6,7 @@
 import type { CardDef, Mana } from '../engine/types';
 import { ANY, CR, MY_CR, OPP, OPP_CR, OUTLAWS, PLAYER, act, arti, cr, defs, destroyT0, dmg, ench, etb, inst, land, sorc, trig } from './dsl';
 import './sets';
+import { completeTla } from './sets/tla-extra';
 
 export { slug } from './dsl';
 
@@ -693,6 +694,8 @@ land('FDN', 'C', 'Evolving Wilds', [], '{T}，犧牲此地：從你的牌庫中�
 land('META', 'R', 'Fabled Passage', [], '{T}，犧牲此地：從你的牌庫中搜尋一張基本地牌，將它橫置放進戰場，然後將你的牌庫洗牌。然後若你操控四個或更多地，重置該地。', {
   abilities: [act({ tap: true, sacSelf: true }, [{ e: 'searchLand', to: 'battlefield', tapped: true, untapIfLands: 4 }], '搜尋基本地')],
 });
+
+completeTla();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

@@ -210,6 +210,12 @@ function* flushTriggers(g: GameState): SubFlow {
       ev: t.ev,
       lkiPower: t.lkiPower,
     });
+    if(t.ev.type==='attacks' && t.ev.card===t.source) {
+      for(const id of g.battlefield){const asc=g.cards[id];if(asc.controller!==t.controller||asc.def.id!=='firebender-ascension')continue;asc.charge=(asc.charge??0)+1;if(asc.charge<4)continue;
+        const r:Response=yield {type:'yesno',player:t.controller,prompt:'複製攻擊觸發異能？'};
+        if(r.type==='yesno'&&r.yes){let copied=targets.slice();if(specs.length){const choice:Response=yield {type:'targets',player:t.controller,source:t.source,specs,text:src.def.text,effects:ab.effects};if(choice.type==='targets'&&!validateTargets(g,specs,choice.targets,t.controller,t.source))copied=choice.targets;}g.stack.push({...g.stack[g.stack.length-1],sid:g.nextSid++,targets:copied});}
+      }
+    }
     show(g, { kind: 'trigger', player: t.controller, card: t.source, targets });
     for (const tg of targets) {
       if (tg && 'c' in tg && g.cards[tg.c]?.zone === 'battlefield') emit(g, { type: 'targeted', card: tg.c, by: t.controller, spell: false });
@@ -341,8 +347,11 @@ export function* priorityStep(g: GameState): SubFlow {
           g.priority = null;
           // 步驟結束：法術力池清空
           for (const pl of g.players) {
-            pl.pool = [];
+            const ozai=g.battlefield.some(id=>g.cards[id].controller===pl.id&&g.cards[id].def.id==='ozai-the-phoenix-king');
+            pl.pool=ozai ? [...(pl.pool??[]),...(pl.firePool??[])].map(()=> 'R' as const) : pl.keepRedTurn===g.turn ? (pl.pool??[]).filter(m=>m==='R') : [];
+            if(ozai) pl.firePool=[];
             pl.poolNoncreature = [];
+            pl.poolLesson=[];
           }
           return;
         }
@@ -465,9 +474,14 @@ function* combatPhase(g: GameState): SubFlow {
 
 function* turn(g: GameState): SubFlow {
   g.turn++;
-  g.active = g.turn === 1 ? g.firstPlayer : other(g.active);
+  const extra=g.extraTurns?.shift();
+  if(extra!==undefined)g.active=extra;
+  else if(g.normalTurnAfterExtra!==undefined){g.active=g.normalTurnAfterExtra;g.normalTurnAfterExtra=undefined;}
+  else g.active=g.turn===1?g.firstPlayer:other(g.active);
   const a = g.active;
+  if(g.playerControl && a===g.playerControl.player && g.turn>=g.playerControl.starts)g.playerControl.ends=g.turn;
   const pl = g.players[a];
+  for(const p of g.players)if(p.noExileCastBy===a){p.noExileCastBy=undefined;p.noExileCastUntil=undefined;}
   for (const p of g.players) {
     p.landsPlayed = 0;
     p.spellsThisTurn = 0;
@@ -488,6 +502,10 @@ function* turn(g: GameState): SubFlow {
     p.mountainBonus = false;
     p.pool = [];
     p.poolNoncreature = [];
+    p.poolLesson=[];
+    p.firePool = [];
+    p.bends = [];
+    p.sacrificedThisTurn = false;
     p.lifeLostThisTurn = 0;
   }
   g.attackedThisTurn = false;
@@ -495,7 +513,7 @@ function* turn(g: GameState): SubFlow {
   g.creaturesDiedCount = 0;
   g.voidThisTurn = false;
   // 「直到你的下一個回合」的延遲觸發與效果持續到該玩家的回合開始
-  g.delayed = (g.delayed ?? []).filter((d) => d.until !== undefined && d.until !== a);
+  g.delayed = (g.delayed ?? []).filter((d) => d.persistent || (d.until !== undefined && d.until !== a));
   g.eot = g.eot.filter((e) => e.until === undefined || e.until !== a);
   for (const id of g.battlefield) g.cards[id].usedThisTurn = [];
   log(g, `—— 第 ${g.turn} 回合：${pl.name} ——`, a, 'turn');
@@ -508,6 +526,7 @@ function* turn(g: GameState): SubFlow {
   g.phase = 'untap';
   for (const id of g.battlefield) {
     const c = g.cards[id];
+    if(c.def.id==="benders-waterskin") c.tapped=false;
     if (c.controller !== a) continue;
     c.sick = false;
     if (c.tapped && !stats(g, c).noUntap) {
@@ -535,7 +554,9 @@ function* turn(g: GameState): SubFlow {
   yield* priorityStep(g);
   // 戰鬥
   yield* combatPhase(g);
+  if(g.extraCombat?.player===a){g.extraCombat=undefined;g.landCombatOnly=true;yield* combatPhase(g);g.landCombatOnly=false;}
   // 主要階段二
+  for(const p of g.players) p.firePool=[];
   g.phase = 'main2';
   yield* priorityStep(g);
   // 結束：動員之類的暫時衍生物在結束步驟開始時犧牲
@@ -557,7 +578,7 @@ function* turn(g: GameState): SubFlow {
   yield* priorityStep(g);
   // 清除
   g.phase = 'cleanup';
-  const over = pl.hand.length - 7;
+  const over = pl.noHandLimit ? 0 : pl.hand.length - 7;
   if (over > 0) {
     const r: Response = yield {
       type: 'choose',
@@ -577,6 +598,7 @@ function* turn(g: GameState): SubFlow {
     const c = g.cards[id];
     c.damage = 0;
     c.dtDamage = false;
+    if(c.returnControl?.turn===g.turn){c.controller=c.returnControl.player;c.returnControl=undefined;}
     // 暫時成為生物的地恢復原狀
     if (c.baseDef) {
       c.def = c.baseDef;

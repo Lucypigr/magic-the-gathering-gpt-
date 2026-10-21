@@ -177,6 +177,8 @@ export type Amt =
 export interface Grant {
   /** 成為生物（光環使永久物變成生物） */
   animate?: { p: number; t: number; subtype?: string };
+  onlyOneBlocker?: boolean;
+  removeKw?: Keyword[];
   p?: number;
   t?: number;
   kw?: Keyword[];
@@ -276,6 +278,11 @@ export type Cond =
   | { c: 'maxSpeed' }
   /** 永遠成立 */
   | { c: 'always' }
+  | { c: 'charge'; n: number }
+  | { c: 'selfAttacking' }
+  | { c: 'sacrificed' }
+  | { c: 'poolGte'; n: number }
+
   /** 此永久物上有 n 個或更多 +1/+1 指示物 */
   | { c: 'selfCounters'; n: number }
   /** 任一條件成立 */
@@ -299,6 +306,13 @@ export interface ExtraCost {
 }
 
 export type Effect =
+  | { e: 'airbend'; what: Ref }
+  | { e: 'firebend'; n: Amt }
+  | { e: 'tla'; action: string; n?: Amt; what?: Ref }
+  | { e: 'grant'; what: Ref; grant: Grant; permanent?: boolean }
+  | { e: 'waterbend'; n: number; then: Effect[]; else?: Effect[] }
+  | { e: 'copyCreature'; what: Ref; p?: number; t?: number; sub?: string; temp?: boolean; nonLegendary?: boolean }
+
   | { e: 'damage'; n: Amt; to: Ref; noLifeGain?: boolean; from?: Ref }
   | { e: 'draw'; n: Amt; who?: Ref }
   | { e: 'discard'; n: Amt; who: Ref; random?: boolean }
@@ -474,6 +488,8 @@ export type Effect =
   | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
+  | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies'
+
   | 'etb'
   | 'dies'
   | 'attacks'
@@ -594,10 +610,14 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+  waterbend?: number;
+  costLessPer?: Filter;
+  duringYourTurn?: boolean;
+
   kind: 'activated';
   /** loyalty：忠誠異能（+N 放置、-N 移除忠誠指示物；每個鵬洛客每回合只能起動一次，只能於法術時機） */
   /** crew：駕駛 N（橫置總力量 N 或更多的其他未橫置生物） */
-  cost: { mana?: string; tap?: boolean; tapN?: { filter: Filter; n: number }; discardSelf?: boolean; exileSelf?: boolean; sacSelf?: boolean; sacOther?: Filter; life?: number; craft?: Filter; craftCount?: number; loyalty?: number; crew?: number };
+  cost: { mana?: string; discard?: number; tap?: boolean; tapN?: { filter: Filter; n: number }; discardSelf?: boolean; exileSelf?: boolean; sacSelf?: boolean; sacOther?: Filter; life?: number; craft?: Filter; craftCount?: number; loyalty?: number; crew?: number };
   targets?: TargetSpec[];
   effects: Effect[];
   sorcery?: boolean;
@@ -624,6 +644,20 @@ export interface ActivatedAbility {
 }
 
 export interface StaticAbility {
+  oneBlockerPower4?: boolean;
+
+  condition?: Cond;
+
+  topCast?: Filter;
+  allyTriggerDouble?: boolean;
+  manaGrant?: { filter: Filter; colors: Mana[] };
+  allNonbasicTapped?: boolean;
+  zookeeper?: boolean;
+  selfPowerCount?: Filter;
+  selfLandCounters?: boolean;
+  spellCostColorsLess?: string;
+  flashbackAll?: boolean;
+
   kind: 'static';
   anthem?: { filter: Filter; grant: Grant };
   self?: { cond?: Cond; grant: Grant };
@@ -668,6 +702,9 @@ export interface StaticAbility {
 export type Ability = TriggeredAbility | ActivatedAbility | StaticAbility;
 
 export interface Mode {
+  waterbend?: number;
+  life?: number;
+
   text: string;
   /** 取代原本費用（用於增幅等） */
   cost?: string;
@@ -684,6 +721,11 @@ export interface SpellSpec {
 }
 
 export interface CardDef {
+  waterbend?: number;
+  firebending?: Amt;
+  flashCond?: Cond;
+  foretell?: string;
+
   id: string;
   name: string;
   set: SetCode;
@@ -772,7 +814,7 @@ export interface CardDef {
   evadePowLte?: number;
   spell?: SpellSpec;
   aura?: { target?: TargetSpec; grant: Grant };
-  equip?: { cost: string; costLessPerCounter?: boolean; grant: Grant; /** 被裝備的生物獲得的觸發式異能 */ trigger?: TriggeredAbility };
+  equip?: { cost: string; costLessPerCounter?: boolean; grant: Grant; /** 被裝備的生物獲得的觸發式異能 */ trigger?: TriggeredAbility; abilities?: ActivatedAbility[] };
   abilities?: Ability[];
   /** 額外費用（例如：犧牲一個生物、支付生命） */
   addCost?: ExtraCost;
@@ -803,6 +845,27 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack';
 
 export interface Card {
+  lastAttachedTo?: number | null;
+  tlaLandOriginal?: CardDef;
+
+  tlaExiledBy?: number;
+  tlaOriginalDef?: CardDef;
+  noUntapBy?: number;
+  noUntapController?: PID;
+  enteredFrom?: Zone;
+  returnControl?: { player: PID; turn: number };
+  waterCastBy?: number;
+  playableUntil?: number;
+
+  airbent?: boolean;
+  permanentGrants?: Grant[];
+  charge?: number;
+  castOrigin?: Zone;
+  foretellTurn?: number;
+  grantedFirebend?: { n: number; turn: number };
+  chosenModes?: number[];
+  copiedAbilities?: Ability[];
+
   id: number;
   def: CardDef;
   /** 暫時變成生物前的原始定義（回合結束時還原） */
@@ -893,6 +956,15 @@ export interface Card {
 }
 
 export interface Player {
+  firePool?: Mana[];
+  bends?: string[];
+  noHandLimit?: boolean;
+  keepRedTurn?: number;
+  sacrificedThisTurn?: boolean;
+  noExileCastUntil?: number;
+  noExileCastBy?: PID;
+  poolLesson?: Mana[];
+
   id: PID;
   name: string;
   deckName: string;
@@ -978,7 +1050,7 @@ export interface StackItem {
   uncounterable?: boolean;
 }
 
-export interface EotEffect {
+export interface EotEffect extends Grant {
   card: number;
   p: number;
   t: number;
@@ -991,6 +1063,9 @@ export interface EotEffect {
 
 /** 延遲觸發：本回合內，事件發生時觸發 */
 export interface DelayedTrigger {
+  persistent?: boolean;
+  filter?: Filter;
+
   /** 持續到該玩家的下一個回合開始（預設到回合結束） */
   until?: PID;
   controller: PID;
@@ -1017,6 +1092,12 @@ export type Phase =
   | 'cleanup';
 
 export type GameEvent =
+  | { type: 'tapped'; card: number; controller: PID }
+  | { type: 'leaves'; card: number; controller: PID }
+  | { type: 'bend'; player: PID; element: 'air' | 'water' | 'earth' | 'fire' }
+  | { type: 'search'; player: PID }
+  | { type: 'permanentDies'; card:number; controller:PID }
+
   | { type: 'etb'; card: number; controller: PID }
   | { type: 'dies'; card: number; controller: PID; power: number }
   | { type: 'attacks'; card: number }
@@ -1069,6 +1150,13 @@ export interface Show {
 }
 
 export interface GameState {
+  normalTurnAfterExtra?: PID;
+
+  playerControl?: { controller: PID; player: PID; whole: boolean; starts: number; ends: number };
+  extraTurns?: PID[];
+  extraCombat?: { player: PID; landOnly: boolean };
+  landCombatOnly?: boolean;
+
   cards: Record<number, Card>;
   nextId: number;
   nextSid: number;

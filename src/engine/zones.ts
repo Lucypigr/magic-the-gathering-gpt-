@@ -1,6 +1,7 @@
 import { getDef } from './registry';
 import {
   abilitiesOf,
+  abilitiesSuppressed,
   cardName,
   checkCond,
   etbTriggersSuppressed,
@@ -23,6 +24,13 @@ import type { Card, GameEvent, GameState, PID, TargetRef, TriggeredAbility, Zone
 function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEvent): boolean {
   const pov = c.controller;
   switch (ab.on) {
+    case 'allyPermanentDies': return ev.type==='permanentDies'&&ev.controller===pov&&ev.card!==c.id&&matches(g,ab.filter,g.cards[ev.card],pov,c.id);
+    case 'becomesTapped': return ev.type === 'tapped' && ev.card === c.id;
+    case 'leaves': return ev.type === 'leaves' && ev.card === c.id;
+    case 'allyLeaves': return ev.type === 'leaves' && ev.controller === pov && ev.card !== c.id && matches(g, ab.filter, g.cards[ev.card], pov, c.id);
+    case 'bend': return ev.type === 'bend' && ev.player === pov;
+    case 'oppDrawSecond': return ev.type === 'drawSecond' && ev.player !== pov;
+    case 'oppSearch': return ev.type === 'search' && ev.player !== pov;
     case 'etb':
       return ev.type === 'etb' && ev.card === c.id;
     case 'dies':
@@ -100,7 +108,7 @@ function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEve
     case 'oppLifeLoss':
       return ev.type === 'lifeloss' && ev.player !== pov;
     case 'sacrifice':
-      return ev.type === 'sacrifice' && matches(g, ab.filter, g.cards[ev.card], pov, c.id);
+      return ev.type === 'sacrifice' && ev.player === pov && matches(g, ab.filter, g.cards[ev.card], pov, c.id);
     case 'otherDies':
       return ev.type === 'dies' && ev.card !== c.id && (ab.includePw || isCreature(g.cards[ev.card])) && matches(g, ab.filter, g.cards[ev.card], pov, c.id);
     case 'allyPermEtb':
@@ -163,7 +171,21 @@ function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEve
 /** 勇行：每當你施放非生物咒語時，此生物得+1/+1直到回合結束 */
 const PROWESS: TriggeredAbility = { kind: 'trigger', on: 'castNoncreature', effects: [{ e: 'pump', what: 'self', p: 1, t: 1 }] };
 
+export function tapCard(g: GameState, c: Card): void {
+  if (c.tapped) return;
+  c.tapped = true;
+  emit(g, { type: 'tapped', card: c.id, controller: c.controller });
+  g.version++;
+}
+
+export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'earth' | 'fire'): void {
+  const p = g.players[player];
+  p.bends = [...new Set([...(p.bends ?? []), element])];
+  emit(g, { type: 'bend', player, element });
+}
+
 export function emit(g: GameState, ev: GameEvent): void {
+  if (ev.type === 'sacrifice') g.players[ev.player].sacrificedThisTurn = true;
   if (ev.type === 'etb') {
     const e = g.cards[ev.card];
     if (e && (isCreature(e) || e.def.types.includes('Artifact')) && etbTriggersSuppressed(g)) return;
@@ -181,9 +203,12 @@ export function emit(g: GameState, ev: GameEvent): void {
   }
   for (const id of g.battlefield) {
     const c = g.cards[id];
+    const doubleAlly=c.def.subtypes?.includes('Ally')&&g.battlefield.some(id=>g.cards[id].controller===c.controller&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.allyTriggerDouble));
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
-      g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
+      for(let i=0;i<(doubleAlly?2:1);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
+    const fire = c.grantedFirebend?.turn === g.turn ? c.grantedFirebend.n : c.def.firebending;
+    if (fire !== undefined && ev.type === 'attacks' && ev.card === c.id && !abilitiesSuppressed(g,c)) for(let i=0;i<(doubleAlly?2:1);i++) g.pending.push({ source:c.id, controller:c.controller, abilityIndex:-2, ev, ability:{kind:'trigger',on:'attacks',effects:[{e:'firebend',n:fire}]} });
     const abs = abilitiesOf(g, c);
     // 裝備授予被裝備生物的觸發式異能
     for (const sid of g.battlefield) {
@@ -200,7 +225,8 @@ export function emit(g: GameState, ev: GameEvent): void {
       if (ab.cond && !checkCond(g, ab.cond, c.controller, c.id, [])) continue;
       if (ab.when && !checkCond(g, ab.when, c.controller, c.id, [])) continue;
       if (ab.oncePerTurn) c.usedThisTurn.push(i);
-      g.pending.push({
+      const copies = g.battlefield.some(id => { const s = g.cards[id]; return s.controller === c.controller && s.def.abilities?.some(a => a.kind === 'static' && a.allyTriggerDouble); }) && c.def.subtypes?.includes('Ally') ? 2 : 1;
+      for (let copy = 0; copy < copies; copy++) g.pending.push({
         source: c.id,
         controller: c.controller,
         ability: ab,
@@ -229,7 +255,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     for (const d of [...g.delayed]) {
       const src = g.cards[d.source];
       if (!src) continue;
-      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects };
+      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, filter:d.filter };
       // 延遲觸發的控制者是建立它的玩家，不一定是來源目前的控制者
       const probe = src.controller === d.controller ? src : { ...src, controller: d.controller };
       if (!triggerMatches(g, probe, ab, ev)) continue;
@@ -258,6 +284,15 @@ export function removeFromZone(g: GameState, c: Card): void {
 
 function resetPermanentState(c: Card): void {
   c.tapped = false;
+  if(c.tlaLandOriginal){c.def=c.tlaLandOriginal;c.tlaLandOriginal=undefined;}
+  if(c.tlaOriginalDef){c.def=c.tlaOriginalDef;c.tlaOriginalDef=undefined;}
+  c.noUntapBy = undefined;
+  c.returnControl = undefined;
+  c.permanentGrants = undefined;
+  c.charge = undefined;
+  c.copiedAbilities = undefined;
+  c.grantedFirebend = undefined;
+  c.chosenModes = undefined;
   c.damage = 0;
   c.dtDamage = false;
   c.counters = 0;
@@ -267,6 +302,7 @@ function resetPermanentState(c: Card): void {
   c.blockedBy = [];
   c.wasBlocked = false;
   c.sick = false;
+  c.lastAttachedTo=c.attachedTo;
   c.attachedTo = null;
   c.usedThisTurn = [];
   c.exhausted = undefined;
@@ -289,18 +325,31 @@ function resetPermanentState(c: Card): void {
   }
 }
 
+export function refreshTlaPermanents(g: GameState): void {
+  const zhao=g.battlefield.map(id=>g.cards[id]).find(c=>c.def.id==='zhao-the-moon-slayer'&&(c.charge??0)>0&&!abilitiesSuppressed(g,c));
+  const toph=g.battlefield.map(id=>g.cards[id]).filter(c=>c.def.id==='toph-the-first-metalbender'&&!abilitiesSuppressed(g,c));
+  for(const id of g.battlefield){const c=g.cards[id];const base=c.tlaLandOriginal??c.def;const metal=!c.token&&base.types.includes('Artifact')&&toph.some(t=>t.controller===c.controller);const mountain=!!zhao && (base.types.includes('Land')||metal)&&!base.supertypes?.includes('Basic');
+    if(metal||mountain){c.tlaLandOriginal??=base;c.def={...base,types:metal?[...new Set([...base.types,'Land' as const])]:base.types,...(mountain?{subtypes:['Mountain'],produces:['R' as const],abilities:undefined,keywords:undefined}: {})};}
+    else if(c.tlaLandOriginal){c.def=c.tlaLandOriginal;c.tlaLandOriginal=undefined;}
+  }
+}
+
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
   const wasOnBf = c.zone === 'battlefield';
   const from = c.zone;
   // 使永久物變成生物的光環離開時，恢復原本的樣子
-  if (wasOnBf && c.def.aura?.grant?.animate && c.attachedTo != null) {
+  if (wasOnBf && c.def.aura && c.attachedTo != null) {
     const host = g.cards[c.attachedTo];
     if (host?.auraBaseDef) {
       host.def = host.auraBaseDef;
       host.auraBaseDef = undefined;
     }
   }
-  if (wasOnBf) c.lastCounters = c.counters;
+  if (wasOnBf) { c.lastCounters = c.counters; c.lastPower = stats(g,c).p; emit(g, { type: 'leaves', card: c.id, controller: c.controller }); }
+  c.airbent = undefined;
+  c.linkedCast = undefined;
+  c.tlaExiledBy = undefined;
+  c.waterCastBy = undefined;
   // 直到回合結束，將要死去時改為放逐
   if (wasOnBf && to === 'graveyard' && c.exileOnDeathTurn === g.turn) {
     log(g, `${cardName(c)} 改為放逐`, c.owner);
@@ -333,6 +382,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   c.zone = to;
   c.controller = c.owner;
   c.playableTurn = undefined;
+  c.playableUntil=undefined;
   c.onAdventure = false;
   // 面朝下的牌離開戰場後亮出真正的牌
   if (c.hidden) {
@@ -361,6 +411,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   }
   g.version++;
   if (wasOnBf) returnLinked(g, c.id);
+  refreshTlaPermanents(g);
 }
 
 function returnLinked(g: GameState, sourceId: number): void {
@@ -377,7 +428,9 @@ function returnLinked(g: GameState, sourceId: number): void {
 }
 
 export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped = false): void {
+  const origin=c.zone;
   let t = tapped || !!c.def.etbTapped;
+  if (isLand(c) && !c.def.supertypes?.includes('Basic') && g.battlefield.some(id => abilitiesOf(g,g.cards[id]).some(a => a.kind === 'static' && a.allNonbasicTapped))) t = true;
   if (c.def.etbTappedUnless && !checkCond(g, c.def.etbTappedUnless, controller, c.id, [])) t = true;
   if (c.def.shock && !t) {
     if (g.players[controller].life > 10) {
@@ -393,6 +446,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   c.tapped = t;
   c.sick = true;
   c.enteredTurn = g.turn;
+  c.enteredFrom = origin;
   c.counters = c.def.etbCounters ?? 0;
   if (c.counters > 0 && isCreature(c)) {
     // 帶著指示物進場：同樣套用「多放 n 個」
@@ -412,6 +466,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
     log(g, '發動引擎！速度變為 1', controller);
   }
   if (!c.def.types.includes('Land')) g.players[controller].nonlandEtbThisTurn = (g.players[controller].nonlandEtbThisTurn ?? 0) + 1;
+  refreshTlaPermanents(g);
   emit(g, { type: 'etb', card: c.id, controller });
   if (c.def.saga) addLore(g, c, 1);
 }
@@ -493,6 +548,7 @@ function deathReplacedByExile(g: GameState, c: Card): boolean {
 export function putIntoGraveyard(g: GameState, cards: Card[]): void {
   const list = cards.filter((c) => c.zone === 'battlefield');
   for (const c of list) {
+    if(!deathReplacedByExile(g,c))emit(g,{type:'permanentDies',card:c.id,controller:c.controller});
     if (isCreature(c)) {
       // 將要死去時改為放逐的取代效果：它並沒有死去
       if (deathReplacedByExile(g, c)) continue;
@@ -603,7 +659,10 @@ export function dealDamage(
       }
     }
   }
+  const victim='p' in target?target.p:g.cards[target.c]?.controller;
+  if(victim!==undefined && victim!==srcController)for(const id of g.battlefield){const s=g.cards[id];if(s.controller===srcController&&s.def.id==='fated-firepower'&&!abilitiesSuppressed(g,s))n+=s.charge??0;}
   const kws = src ? (src.zone === 'battlefield' ? stats(g, src).kw : new Set(src.def.keywords ?? [])) : new Set();
+  if(src?.def.subtypes?.some(s=>s==='Noble'||s==='Lesson')&&g.battlefield.some(id=>g.cards[id].controller===srcController&&g.cards[id].def.id==='lo-and-li-twin-tutors'&&!abilitiesSuppressed(g,g.cards[id])))kws.add('lifelink');
   const srcName = src ? cardName(src) : '';
   if ('p' in target) {
     const p = g.players[target.p];

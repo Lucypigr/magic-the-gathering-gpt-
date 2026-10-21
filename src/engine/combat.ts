@@ -1,10 +1,12 @@
 import { cardName, creaturesOf, hasStaticFlag, isCreature, log, other, show, stats } from './state';
 import type { Card, GameState, PID } from './types';
+import { tapCard } from './zones';
 import { dealDamage, emit } from './zones';
 
 export function canAttack(g: GameState, c: Card): boolean {
   if (!isCreature(c) || c.zone !== 'battlefield' || c.tapped) return false;
   if (c.controller !== g.active) return false;
+  if(g.landCombatOnly&&!c.def.types.includes('Land')&&c.def.id!=='tok-earth')return false;
   const st = stats(g, c);
   if (st.cantAttack || (st.kw.has('defender') && !st.ignoreDefender)) return false;
   if (c.sick && !st.kw.has('haste')) return false;
@@ -24,6 +26,7 @@ export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
   if (bs.cantBlock) return false;
   const as = stats(g, attacker);
   if (as.kw.has('unblockable')) return false;
+  if((blocker.def.id==='tok-tla-spirit'&&!attacker.def.subtypes?.includes('Spirit'))||(attacker.def.id==='tok-tla-spirit'&&!blocker.def.subtypes?.includes('Spirit')))return false;
   if (as.kw.has('flying') && !bs.kw.has('flying') && !bs.kw.has('reach')) return false;
   if (attacker.def.evadePowLte !== undefined && bs.p <= attacker.def.evadePowLte) return false;
   return true;
@@ -59,7 +62,7 @@ export function declareAttackers(g: GameState, pid: PID, ids: number[], targets?
       if (hasStaticFlag(g, pw.controller, 'pwOneAttacker') && attackedPw.has(pw.id)) c.attackTarget = null;
       else attackedPw.add(pw.id);
     }
-    if (!stats(g, c).kw.has('vigilance')) c.tapped = true;
+    if (!stats(g, c).kw.has('vigilance')) tapCard(g,c);
   }
   if (list.length) {
     g.attackedThisTurn = true;
@@ -88,6 +91,7 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
   // 威懾：只被一個生物阻擋的攻擊無效
   const countFor = (a: number) => valid.filter(([, x]) => x === a).length;
   valid = valid.filter(([, a]) => !(stats(g, g.cards[a]).kw.has('menace') && countFor(a) < 2));
+  valid = valid.filter(([,a],i) => !stats(g,g.cards[a]).onlyOneBlocker || valid.findIndex(([,id])=>id===a)===i);
   for (const [b, a] of valid) {
     const bc = g.cards[b];
     const ac = g.cards[a];
@@ -209,6 +213,11 @@ export function combatDamage(g: GameState, step: DamageStep): void {
 }
 
 export function endCombat(g: GameState): void {
+  for(const p of g.players){
+    const ozai=g.battlefield.some(id=>g.cards[id].controller===p.id&&g.cards[id].def.id==='ozai-the-phoenix-king');
+    if(ozai)(p.pool??=[]).push(...(p.firePool??[]));
+    p.firePool=[];
+  }
   for (const id of g.battlefield) {
     const c = g.cards[id];
     c.attacking = false;

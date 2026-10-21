@@ -2,7 +2,7 @@ import { AIPlayer, type Style } from '../ai/ai';
 import type { Level } from '../ai/combatAI';
 import { performAction, playOptions } from './actions';
 import { runGame } from './flow';
-import { cloneGame, createGame, type PlayerSetup } from './state';
+import { decisionController, cloneGame, createGame, type PlayerSetup } from './state';
 import type { Decision, Flow, GameState, PID, PriorityAction, Response } from './types';
 
 export interface MatchOptions {
@@ -97,7 +97,7 @@ export class MatchController {
 
   /** 先在複本上試做，回傳錯誤訊息（若可以執行則回傳 null） */
   validate(a: PriorityAction): string | null {
-    return performAction(cloneGame(this.g), 0, a);
+    return performAction(cloneGame(this.g), this.decision?.player??0, a);
   }
 
   /** 人類玩家送出決策 */
@@ -170,8 +170,9 @@ export class MatchController {
           return;
         }
         const d = r.value;
-        if (d.player === this.ai.pid) {
-          const a = this.ai.decide(this.g, d);
+        const decider=decisionController(this.g,d.player);
+        if (decider === this.ai.pid) {
+          const a = d.player===this.ai.pid ? this.ai.decide(this.g,d) : new AIPlayer(d.player,'hard').decide(this.g,d);
           const meaningful =
             (d.type === 'priority' && a.type !== 'pass') ||
             (d.type === 'attackers' && a.type === 'attackers' && a.ids.length > 0) ||
@@ -191,7 +192,7 @@ export class MatchController {
           r = this.gen.next(a);
           continue;
         }
-        const auto = this.autoResponse(d);
+        const auto = d.player===0 ? this.autoResponse(d) : null;
         if (auto) {
           r = this.gen.next(auto);
           continue;
@@ -245,7 +246,8 @@ export function runHeadless(
   let steps = 0;
   while (!r.done) {
     if (++steps > 200000) throw new Error('對戰步數過多');
-    r = gen.next(ais[r.value.player].decide(g, r.value));
+    const d=r.value;const controller=decisionController(g,d.player);
+    r = gen.next(controller===d.player ? ais[d.player].decide(g,d) : new AIPlayer(d.player,levels[controller],styles[controller]).decide(g,d));
   }
   return g;
 }

@@ -5,6 +5,11 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+  T({id:'tok-fire-soldier',name:'Firebending Soldier',zh:'御火士兵',types:['Creature'],subtypes:['Soldier'],colors:['R'],power:2,toughness:2,firebending:1,text:'御火1'}),
+  T({id:'tok-ballistic-boulder',name:'Ballistic Boulder',zh:'投射巨石',types:['Artifact','Creature'],subtypes:['Construct'],colors:[],power:2,toughness:1,keywords:['flying'],text:'飛行'}),
+  T({id:'tok-tla-monk',name:'Monk',zh:'修行僧',types:['Creature'],subtypes:['Monk'],colors:['R'],power:1,toughness:1,keywords:['prowess'],text:'勇行'}),
+  T({id:'tok-tla-spirit',name:'Spirit',zh:'精靈',types:['Creature'],subtypes:['Spirit'],colors:[],power:1,toughness:1,text:'只能阻擋精靈，也只能被精靈阻擋。'}),
+  T({id:'tok-tla-dragon',name:'Firebending Dragon',zh:'御火飛龍',types:['Creature'],subtypes:['Dragon'],colors:['R'],power:4,toughness:4,keywords:['flying'],firebending:4,text:'飛行，御火4'}),
   T({ id: 'tok-skeleton-pirate', name: 'Skeleton Pirate', zh: '骷髏海盜', colors: ['B'], types: ['Creature'], subtypes: ['Skeleton', 'Pirate'], power: 2, toughness: 2, text: '' }),
   T({
     id: 'tok-map',

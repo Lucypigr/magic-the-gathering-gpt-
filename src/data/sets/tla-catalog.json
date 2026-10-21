@@ -1,0 +1,4998 @@
+[
+  {
+    "name": "Aang's Journey",
+    "cost": "{2}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Kicker {2} (You may pay an additional {2} as you cast this spell.)\nSearch your library for a basic land card. If this spell was kicked, instead search your library for a basic land card and a Shrine card. Reveal those cards, put them into your hand, then shuffle.\nYou gain 2 life.",
+    "number": 1,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Energybending",
+    "cost": "{2}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Lands you control gain all basic land types until end of turn.\nDraw a card.",
+    "number": 2,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Zuko's Exile",
+    "cost": "{5}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Exile target artifact, creature, or enchantment. Its controller creates a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "number": 3,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Aang, the Last Airbender",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Avatar",
+      "Ally"
+    ],
+    "text": "Flying\nWhen Aang enters, airbend up to one other target nonland permanent. (Exile it. While it's exiled, its owner may cast it for {2} rather than its mana cost.)\nWhenever you cast a Lesson spell, Aang gains lifelink until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 4,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Aang's Iceberg",
+    "cost": "{2}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Flash\nWhen this enchantment enters, exile up to one other target nonland permanent until this enchantment leaves the battlefield.\nWaterbend {3}: Sacrifice this enchantment. If you do, scry 2. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "keywords": [
+      "flash"
+    ],
+    "number": 5,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Airbender Ascension",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, airbend up to one target creature.\nWhenever a creature you control enters, put a quest counter on this enchantment.\nAt the beginning of your end step, if this enchantment has four or more quest counters on it, exile up to one target creature you control, then return it to the battlefield under its owner's control.",
+    "number": 6,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Airbender's Reversal",
+    "cost": "{1}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Choose one —\n• Destroy target attacking creature.\n• Airbend target creature you control. (Exile it. While it's exiled, its owner may cast it for {2} rather than its mana cost.)",
+    "number": 7,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Airbending Lesson",
+    "cost": "{2}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Airbend target nonland permanent. (Exile it. While it's exiled, its owner may cast it for {2} rather than its mana cost.)\nDraw a card.",
+    "number": 8,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Appa, Loyal Sky Bison",
+    "cost": "{4}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bison",
+      "Ally"
+    ],
+    "text": "Flying\nWhenever Appa enters or attacks, choose one —\n• Target creature you control gains flying until end of turn.\n• Airbend another target nonland permanent you control. (Exile it. While it's exiled, its owner may cast it for {2} rather than its mana cost.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 9,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Appa, Steadfast Guardian",
+    "cost": "{2}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bison",
+      "Ally"
+    ],
+    "text": "Flash\nFlying\nWhen Appa enters, airbend any number of other target nonland permanents you control. (Exile them. While each one is exiled, its owner may cast it for {2} rather than its mana cost.)\nWhenever you cast a spell from exile, create a 1/1 white Ally creature token.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flash",
+      "flying"
+    ],
+    "number": 10,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Avatar Enthusiasts",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Peasant",
+      "Ally"
+    ],
+    "text": "Whenever another Ally you control enters, put a +1/+1 counter on this creature.",
+    "power": 2,
+    "toughness": 2,
+    "number": 11,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Avatar's Wrath",
+    "cost": "{2}{W}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose up to one target creature, then airbend all other creatures. (Exile them. While each one is exiled, its owner may cast it for {2} rather than its mana cost.)\nUntil your next turn, your opponents can't cast spells from anywhere other than their hands.\nExile Avatar's Wrath.",
+    "number": 12,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Compassionate Healer",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric",
+      "Ally"
+    ],
+    "text": "Whenever this creature becomes tapped, you gain 1 life and scry 1. (Look at the top card of your library. You may put it on the bottom.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 13,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Curious Farm Animals",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Boar",
+      "Elk",
+      "Bird",
+      "Ox"
+    ],
+    "text": "When this creature dies, you gain 3 life.\n{2}, Sacrifice this creature: Destroy up to one target artifact or enchantment.",
+    "power": 1,
+    "toughness": 1,
+    "number": 14,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Destined Confrontation",
+    "cost": "{2}{W}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Each player chooses any number of creatures they control with total power 4 or less, then sacrifices all other creatures they control.",
+    "number": 15,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Earth Kingdom Jailer",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "When this creature enters, exile up to one target artifact, creature, or enchantment an opponent controls with mana value 3 or greater until this creature leaves the battlefield.",
+    "power": 3,
+    "toughness": 3,
+    "number": 16,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Earth Kingdom Protectors",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "Vigilance\nSacrifice this creature: Another target Ally you control gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 17,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Enter the Avatar State",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Until end of turn, target creature you control becomes an Avatar in addition to its other types and gains flying, first strike, lifelink, and hexproof. (A creature with hexproof can't be the target of spells or abilities your opponents control.)",
+    "number": 18,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Fancy Footwork",
+    "cost": "{2}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Untap one or two target creatures. They each get +2/+2 until end of turn.",
+    "number": 19,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Gather the White Lotus",
+    "cost": "{4}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create a 1/1 white Ally creature token for each Plains you control. Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+    "number": 20,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Glider Kids",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot",
+      "Ally"
+    ],
+    "text": "Flying\nWhen this creature enters, scry 1. (Look at the top card of your library. You may put it on the bottom.)",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 21,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Glider Staff",
+    "cost": "{2}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When this Equipment enters, airbend up to one target creature. (Exile it. While it's exiled, its owner may cast it for {2} rather than its mana cost.)\nEquipped creature gets +1/+1 and has flying.\nEquip {2}",
+    "number": 22,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Hakoda, Selfless Commander",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Vigilance\nYou may look at the top of your library any time.\nYou may cast Ally spells from the top of your library.\nSacrifice Hakoda: Creatures you control get +0/+5 and gain indestructible until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 23,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Invasion Reinforcements",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Flash\nWhen this creature enters, create a 1/1 white Ally creature token.",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flash"
+    ],
+    "number": 24,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Jeong Jeong's Deserters",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Ally"
+    ],
+    "text": "When this creature enters, put a +1/+1 counter on target creature.",
+    "power": 1,
+    "toughness": 2,
+    "number": 25,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Kyoshi Warriors",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "When this creature enters, create a 1/1 white Ally creature token.",
+    "power": 3,
+    "toughness": 3,
+    "number": 26,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "The Legend of Yangchen",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI — Starting with you, each player chooses up to one permanent with mana value 3 or greater from among permanents your opponents control. Exile those permanents.\nII — You may have target opponent draw three cards. If you do, draw three cards.\nIII — Exile this Saga, then return it to the battlefield transformed under your control.",
+    "number": 27,
+    "rarity": "M",
+    "set": "TLA",
+    "back": {
+      "name": "Avatar Yangchen",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar"
+      ],
+      "text": "Flying\nWhenever you cast your second spell each turn, airbend up to one other target nonland permanent. (Exile it. While it's exiled, its owner may cast it for {2} rather than its mana cost.)",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 5,
+      "keywords": [
+        "flying"
+      ],
+      "set": "TLA",
+      "rarity": "M"
+    }
+  },
+  {
+    "name": "Master Piandao",
+    "cost": "{4}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "First strike\nWhenever Master Piandao attacks, look at the top four cards of your library. You may reveal an Ally, Equipment, or Lesson card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "first_strike"
+    ],
+    "number": 28,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Momo, Friendly Flier",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lemur",
+      "Bat",
+      "Ally"
+    ],
+    "text": "Flying\nThe first non-Lemur creature spell with flying you cast during each of your turns costs {1} less to cast.\nWhenever another creature you control with flying enters, Momo gets +1/+1 until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "number": 29,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Momo, Playful Pet",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lemur",
+      "Bat",
+      "Ally"
+    ],
+    "text": "Flying, vigilance\nWhen Momo leaves the battlefield, choose one —\n• Create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\n• Put a +1/+1 counter on target creature you control.\n• Scry 2.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "number": 30,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Path to Redemption",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nEnchanted creature can't attack or block.\n{5}, Sacrifice this Aura: Exile enchanted creature. Create a 1/1 white Ally creature token. Activate only during your turn.",
+    "number": 31,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Rabaroo Troop",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rabbit",
+      "Kangaroo"
+    ],
+    "text": "Landfall — Whenever a land you control enters, this creature gains flying until end of turn and you gain 1 life.\nPlainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",
+    "power": 3,
+    "toughness": 5,
+    "number": 32,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Razor Rings",
+    "cost": "{1}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Razor Rings deals 4 damage to target attacking or blocking creature. You gain life equal to the excess damage dealt this way.",
+    "number": 33,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Sandbenders' Storm",
+    "cost": "{3}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Destroy target creature with power 4 or greater.\n• Earthbend 3. (Target land you control becomes a 0/0 creature with haste that's still a land. Put three +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "number": 34,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "South Pole Voyager",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout",
+      "Ally"
+    ],
+    "text": "Whenever this creature or another Ally you control enters, you gain 1 life. If this is the second time this ability has resolved this turn, you draw a card.",
+    "power": 2,
+    "toughness": 2,
+    "number": 35,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Southern Air Temple",
+    "cost": "{3}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Shrine"
+    ],
+    "text": "When Southern Air Temple enters, put X +1/+1 counters on each creature you control, where X is the number of Shrines you control.\nWhenever another Shrine you control enters, put a +1/+1 counter on each creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 36,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Suki, Courageous Rescuer",
+    "cost": "{1}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Other creatures you control get +1/+0.\nWhenever another permanent you control leaves the battlefield during your turn, create a 1/1 white Ally creature token. This ability triggers only once each turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "number": 37,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Team Avatar",
+    "cost": "{2}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Whenever a creature you control attacks alone, it gets +X/+X until end of turn, where X is the number of creatures you control.\n{2}{W}, Discard this card: It deals damage equal to the number of creatures you control to target creature.",
+    "number": 38,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "United Front",
+    "cost": "{X}{W}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create X 1/1 white Ally creature tokens, then put a +1/+1 counter on each creature you control.",
+    "number": 39,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Vengeful Villagers",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "Whenever this creature attacks, choose target creature an opponent controls. Tap it, then you may sacrifice an artifact or creature. If you do, put a stun counter on the chosen creature. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "power": 3,
+    "toughness": 3,
+    "number": 40,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Water Tribe Captain",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "{5}: Creatures you control get +1/+1 until end of turn.",
+    "power": 3,
+    "toughness": 3,
+    "number": 41,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Water Tribe Rallier",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "Waterbend {5}: Look at the top four cards of your library. You may reveal a creature card with power 3 or less from among them and put it into your hand. Put the rest on the bottom of your library in a random order. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 42,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Yip Yip!",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Target creature you control gets +2/+2 until end of turn. If that creature is an Ally, it also gains flying until end of turn.",
+    "number": 43,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Accumulate Wisdom",
+    "cost": "{1}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Look at the top three cards of your library. Put one of those cards into your hand and the rest on the bottom of your library in any order. Put each of those cards into your hand instead if there are three or more Lesson cards in your graveyard.",
+    "number": 44,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Benevolent River Spirit",
+    "cost": "{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "As an additional cost to cast this spell, waterbend {5}. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)\nFlying, ward {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nWhen this creature enters, scry 2.",
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "ward": 2,
+    "number": 45,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Boomerang Basics",
+    "cost": "{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Return target nonland permanent to its owner's hand. If you controlled that permanent, draw a card.",
+    "number": 46,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Crashing Wave",
+    "cost": "{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, waterbend {X}. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)\nTap up to X target creatures, then distribute three stun counters among tapped creatures your opponents control. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "number": 47,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Ember Island Production",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Create a token that's a copy of target creature you control, except it's not legendary and it's a 4/4 Hero in addition to its other types.\n• Create a token that's a copy of target creature an opponent controls, except it's not legendary and it's a 2/2 Coward in addition to its other types.",
+    "number": 48,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "First-Time Flyer",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot",
+      "Ally"
+    ],
+    "text": "Flying\nThis creature gets +1/+1 as long as there's a Lesson card in your graveyard.",
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 49,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Flexible Waterbender",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Vigilance\nWaterbend {3}: This creature has base power and toughness 5/2 until end of turn. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 50,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Forecasting Fortune Teller",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor",
+      "Ally"
+    ],
+    "text": "When this creature enters, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "power": 1,
+    "toughness": 3,
+    "number": 51,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Geyser Leaper",
+    "cost": "{4}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Flying\nWaterbend {4}: Draw a card, then discard a card.",
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 52,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Giant Koi",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish"
+    ],
+    "text": "Waterbend {3}: This creature can't be blocked this turn. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)\nIslandcycling {2} ({2}, Discard this card: Search your library for an Island card, reveal it, put it into your hand, then shuffle.)",
+    "power": 5,
+    "toughness": 7,
+    "number": 53,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Gran-Gran",
+    "cost": "{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Peasant",
+      "Ally"
+    ],
+    "text": "Whenever Gran-Gran becomes tapped, draw a card, then discard a card.\nNoncreature spells you cast cost {1} less to cast as long as there are three or more Lesson cards in your graveyard.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 2,
+    "number": 54,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Honest Work",
+    "cost": "{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature an opponent controls\nWhen this Aura enters, tap enchanted creature and remove all counters from it.\nEnchanted creature loses all abilities and is a Citizen with base power and toughness 1/1 and \"{T}: Add {C}\" named Humble Merchant. (It loses all other creature types and names.)",
+    "number": 55,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Iguana Parrot",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Bird",
+      "Pirate"
+    ],
+    "text": "Flying, vigilance\nProwess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "vigilance",
+      "prowess"
+    ],
+    "number": 56,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Invasion Submersible",
+    "cost": "{2}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "When this Vehicle enters, return up to one other target nonland permanent to its owner's hand.\nExhaust — Waterbend {3}: This Vehicle becomes an artifact creature. Put three +1/+1 counters on it. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}. Activate each exhaust ability only once.)",
+    "power": 0,
+    "toughness": 0,
+    "number": 57,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "It'll Quench Ya!",
+    "cost": "{1}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Counter target spell unless its controller pays {2}.",
+    "number": 58,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Katara, Bending Prodigy",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "At the beginning of your end step, if Katara is tapped, put a +1/+1 counter on her.\nWaterbend {6}: Draw a card. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 59,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Knowledge Seeker",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fox",
+      "Spirit"
+    ],
+    "text": "Vigilance\nWhenever you draw your second card each turn, put a +1/+1 counter on this creature.\nWhen this creature dies, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 60,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "The Legend of Kuruk",
+    "cost": "{2}{U}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II — Scry 2, then draw a card.\nIII — Exile this Saga, then return it to the battlefield transformed under your control.",
+    "number": 61,
+    "rarity": "M",
+    "set": "TLA",
+    "back": {
+      "name": "Avatar Kuruk",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar"
+      ],
+      "text": "Whenever you cast a spell, create a 1/1 colorless Spirit creature token with \"This token can't block or be blocked by non-Spirit creatures.\"\nExhaust — Waterbend {20}: Take an extra turn after this one. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}. Activate each exhaust ability only once.)",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 3,
+      "set": "TLA",
+      "rarity": "M"
+    }
+  },
+  {
+    "name": "Lost Days",
+    "cost": "{4}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "The owner of target creature or enchantment puts it into their library second from the top or on the bottom. You create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "number": 62,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Master Pakku",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor",
+      "Ally"
+    ],
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever Master Pakku becomes tapped, target player mills X cards, where X is the number of Lesson cards in your graveyard. (They put the top X cards of their library into their graveyard.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "prowess"
+    ],
+    "number": 63,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "The Mechanist, Aerial Artisan",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer",
+      "Ally"
+    ],
+    "text": "Whenever you cast a noncreature spell, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\n{T}: Until end of turn, target artifact token you control becomes a 3/1 Construct artifact creature with flying.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "number": 64,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "North Pole Patrol",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "{T}: Untap another target permanent you control.\nWaterbend {3}, {T}: Tap target creature an opponent controls. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "power": 2,
+    "toughness": 3,
+    "number": 65,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Octopus Form",
+    "cost": "{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Target creature you control gets +1/+1 and gains hexproof until end of turn. Untap it. (It can't be the target of spells or abilities your opponents control.)",
+    "number": 66,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Otter-Penguin",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Otter",
+      "Bird"
+    ],
+    "text": "Whenever you draw your second card each turn, this creature gets +1/+2 until end of turn and can't be blocked this turn.",
+    "power": 2,
+    "toughness": 1,
+    "number": 67,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Rowdy Snowballers",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Peasant",
+      "Ally"
+    ],
+    "text": "When this creature enters, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 68,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Secret of Bloodbending",
+    "cost": "{U}{U}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "As an additional cost to cast this spell, you may waterbend {10}.\nYou control target opponent during their next combat phase. If this spell's additional cost was paid, you control that player during their next turn instead. (You see all cards that player could see and make all decisions for them.)\nExile Secret of Bloodbending.",
+    "number": 69,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Serpent of the Pass",
+    "cost": "{5}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Serpent"
+    ],
+    "text": "If there are three or more Lesson cards in your graveyard, you may cast this spell as though it had flash.\nThis spell costs {1} less to cast for each noncreature, nonland card in your graveyard.",
+    "power": 6,
+    "toughness": 5,
+    "number": 70,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Sokka's Haiku",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Counter target spell.\nDraw a card, then mill three cards.\nUntap target land.",
+    "number": 71,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "The Spirit Oasis",
+    "cost": "{2}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Shrine"
+    ],
+    "text": "When The Spirit Oasis enters, draw a card for each Shrine you control.\nWhenever another Shrine you control enters, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 72,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Spirit Water Revival",
+    "cost": "{1}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, you may waterbend {6}. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)\nDraw two cards. If this spell's additional cost was paid, instead shuffle your graveyard into your library, draw seven cards, and you have no maximum hand size for the rest of the game.\nExile Spirit Water Revival.",
+    "number": 73,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Teo, Spirited Glider",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot",
+      "Ally"
+    ],
+    "text": "Flying\nWhenever one or more creatures you control with flying attack, draw a card, then discard a card. When you discard a nonland card this way, put a +1/+1 counter on target creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 74,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Tiger-Seal",
+    "cost": "{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Seal"
+    ],
+    "text": "Vigilance\nAt the beginning of your upkeep, tap this creature.\nWhenever you draw your second card each turn, untap this creature.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 75,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Ty Lee, Chi Blocker",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Performer",
+      "Ally"
+    ],
+    "text": "Flash\nProwess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen Ty Lee enters, tap up to one target creature. It doesn't untap during its controller's untap step for as long as you control Ty Lee.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flash",
+      "prowess"
+    ],
+    "number": 76,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "The Unagi of Kyoshi Island",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Serpent"
+    ],
+    "text": "Flash\nWard—Waterbend {4} (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)\nWhenever an opponent draws their second card each turn, draw two cards.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flash"
+    ],
+    "number": 77,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Wan Shi Tong, Librarian",
+    "cost": "{X}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Spirit"
+    ],
+    "text": "Flash\nFlying, vigilance\nWhen Wan Shi Tong enters, put X +1/+1 counters on him. Then draw half X cards, rounded down.\nWhenever an opponent searches their library, put a +1/+1 counter on Wan Shi Tong and draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flash",
+      "flying",
+      "vigilance"
+    ],
+    "number": 78,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Waterbender Ascension",
+    "cost": "{1}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Whenever a creature you control deals combat damage to a player, put a quest counter on this enchantment. Then if it has four or more quest counters on it, draw a card.\nWaterbend {4}: Target creature can't be blocked this turn. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "number": 79,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Waterbending Lesson",
+    "cost": "{3}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Draw three cards. Then discard a card unless you waterbend {2}. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "number": 80,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Waterbending Scroll",
+    "cost": "{1}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{6}, {T}: Draw a card. This ability costs {1} less to activate for each Island you control.",
+    "number": 81,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Watery Grasp",
+    "cost": "{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nEnchanted creature doesn't untap during its controller's untap step.\nWaterbend {5}: Enchanted creature's owner shuffles it into their library. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "number": 82,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Yue, the Moon Spirit",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Ally"
+    ],
+    "text": "Flying, vigilance\nWaterbend {5}, {T}: You may cast a noncreature spell from your hand without paying its mana cost.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "number": 83,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Azula Always Lies",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Choose one or both —\n• Target creature gets -1/-1 until end of turn.\n• Put a +1/+1 counter on target creature.",
+    "number": 84,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Azula, On the Hunt",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "Firebending 2 (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.)\nWhenever Azula attacks, you lose 1 life and create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "firebending": 2,
+    "number": 85,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Beetle-Headed Merchants",
+    "cost": "{4}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "Whenever this creature attacks, you may sacrifice another creature or artifact. If you do, draw a card and put a +1/+1 counter on this creature.",
+    "power": 5,
+    "toughness": 4,
+    "number": 86,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Boiling Rock Rioter",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Ally"
+    ],
+    "text": "Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)\nTap an untapped Ally you control: Exile target card from a graveyard.\nWhenever this creature attacks, you may cast an Ally spell from among cards you own exiled with this creature.",
+    "power": 3,
+    "toughness": 3,
+    "firebending": 1,
+    "number": 87,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Buzzard-Wasp Colony",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Insect"
+    ],
+    "text": "Flying\nWhen this creature enters, you may sacrifice an artifact or creature. If you do, draw a card.\nWhenever another creature you control dies, if it had counters on it, put its counters on this creature.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 88,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Callous Inspector",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature dies, it deals 1 damage to you. Create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ],
+    "number": 89,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Canyon Crawler",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Beast"
+    ],
+    "text": "Deathtouch\nWhen this creature enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nSwampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)",
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 90,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Cat-Gator",
+    "cost": "{6}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish",
+      "Crocodile"
+    ],
+    "text": "Lifelink\nWhen this creature enters, it deals damage equal to the number of Swamps you control to any target.",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 91,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Corrupt Court Official",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "text": "When Corrupt Court Official enters, target opponent discards a card.",
+    "power": 1,
+    "toughness": 1,
+    "number": 92,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Dai Li Indoctrination",
+    "cost": "{1}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Choose one —\n• Target opponent reveals their hand. You choose a nonland permanent card from it. That player discards that card.\n• Earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "number": 93,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Day of Black Sun",
+    "cost": "{X}{B}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Each creature with mana value X or less loses all abilities until end of turn. Destroy those creatures.",
+    "number": 94,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Deadly Precision",
+    "cost": "{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, pay {4} or sacrifice an artifact or creature.\nDestroy target creature.",
+    "number": 95,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Epic Downfall",
+    "cost": "{1}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Exile target creature with mana value 3 or greater.",
+    "number": 96,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Fatal Fissure",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose target creature. When that creature dies this turn, you earthbend 4. (Target land you control becomes a 0/0 creature with haste that's still a land. Put four +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "number": 97,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "The Fire Nation Drill",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Trample\nWhen The Fire Nation Drill enters, you may tap it. When you do, destroy target creature with power 4 or less.\n{1}: Permanents your opponents control lose hexproof and indestructible until end of turn.\nCrew 2",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ],
+    "number": 98,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Nation Engineer",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "text": "Raid — At the beginning of your end step, if you attacked this turn, put a +1/+1 counter on another target creature or Vehicle you control.",
+    "power": 2,
+    "toughness": 3,
+    "number": 99,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Navy Trebuchet",
+    "cost": "{2}{B}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Wall"
+    ],
+    "text": "Defender, reach\nWhenever you attack, create a 2/1 colorless Construct artifact creature token with flying named Ballistic Boulder that's tapped and attacking. Sacrifice that token at the beginning of the next end step.",
+    "power": 0,
+    "toughness": 4,
+    "keywords": [
+      "defender",
+      "reach"
+    ],
+    "number": 100,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Foggy Swamp Hunters",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ranger",
+      "Ally"
+    ],
+    "text": "As long as you've drawn two or more cards this turn, this creature has lifelink and menace. (It can't be blocked except by two or more creatures.)",
+    "power": 3,
+    "toughness": 4,
+    "number": 101,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Foggy Swamp Visions",
+    "cost": "{1}{B}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, waterbend {X}. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)\nExile X target creature cards from graveyards. For each creature card exiled this way, create a token that's a copy of it. At the beginning of your next end step, sacrifice those tokens.",
+    "number": 102,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Heartless Act",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Destroy target creature with no counters on it.\n• Remove up to three counters from target creature.",
+    "number": 103,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Hog-Monkey",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Boar",
+      "Monkey"
+    ],
+    "text": "At the beginning of combat on your turn, target creature you control with a +1/+1 counter on it gains menace until end of turn. (It can't be blocked except by two or more creatures.)\nExhaust — {5}: Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+    "power": 3,
+    "toughness": 2,
+    "number": 104,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Joo Dee, One of Many",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "text": "{B}, {T}: Surveil 1. Create a token that's a copy of this creature, then sacrifice an artifact or creature. Activate only as a sorcery.",
+    "power": 2,
+    "toughness": 2,
+    "number": 105,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "June, Bounty Hunter",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "June can't be blocked as long as you've drawn two or more cards this turn.\n{1}, Sacrifice another creature: Create a Clue token. Activate only during your turn. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 106,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Koh, the Face Stealer",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shapeshifter",
+      "Spirit"
+    ],
+    "text": "When Koh enters, exile up to one other target creature.\nWhenever another nontoken creature dies, you may exile it.\nPay 1 life: Choose a creature card exiled with Koh.\nKoh has all activated and triggered abilities of the last chosen card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 6,
+    "number": 107,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Lo and Li, Twin Tutors",
+    "cost": "{4}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "text": "When Lo and Li enter, search your library for a Lesson or Noble card, reveal it, put it into your hand, then shuffle.\nNoble creatures you control and Lesson spells you control have lifelink.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 108,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Mai, Scornful Striker",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Ally"
+    ],
+    "text": "First strike\nWhenever a player casts a noncreature spell, they lose 2 life.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "first_strike"
+    ],
+    "number": 109,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Merchant of Many Hats",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Peasant",
+      "Ally"
+    ],
+    "text": "{2}{B}: Return this card from your graveyard to your hand.",
+    "power": 2,
+    "toughness": 2,
+    "number": 110,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Northern Air Temple",
+    "cost": "{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Shrine"
+    ],
+    "text": "When Northern Air Temple enters, each opponent loses X life and you gain X life, where X is the number of Shrines you control.\nWhenever another Shrine you control enters, each opponent loses 1 life and you gain 1 life.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 111,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Obsessive Pursuit",
+    "cost": "{1}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters and at the beginning of your upkeep, you lose 1 life and create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhenever you attack, put X +1/+1 counters on target attacking creature, where X is the number of permanents you've sacrificed this turn. If X is three or greater, that creature gains lifelink until end of turn.",
+    "number": 112,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Ozai's Cruelty",
+    "cost": "{2}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Ozai's Cruelty deals 2 damage to target player. That player discards two cards.",
+    "number": 113,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Phoenix Fleet Airship",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Flying\nAt the beginning of your end step, if you sacrificed a permanent this turn, create a token that's a copy of this Vehicle.\nAs long as you control eight or more permanents named Phoenix Fleet Airship, this Vehicle is an artifact creature.\nCrew 1",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 114,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Pirate Peddlers",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pirate"
+    ],
+    "text": "Deathtouch\nWhenever you sacrifice another permanent, put a +1/+1 counter on this creature.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 115,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Raven Eagle",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Assassin"
+    ],
+    "text": "Flying\nWhenever this creature enters or attacks, exile up to one target card from a graveyard. If a creature card is exiled this way, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhenever you draw your second card each turn, each opponent loses 1 life and you gain 1 life.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 116,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "The Rise of Sozin",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI — Destroy all creatures.\nII — Choose a card name. Search target opponent's graveyard, hand, and library for up to four cards with that name and exile them. Then that player shuffles.\nIII — Exile this Saga, then return it to the battlefield transformed under your control.",
+    "number": 117,
+    "rarity": "M",
+    "set": "TLA",
+    "back": {
+      "name": "Fire Lord Sozin",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Human",
+        "Noble"
+      ],
+      "text": "Menace, firebending 3 (Whenever this creature attacks, add {R}{R}{R}. This mana lasts until end of combat.)\nWhenever Fire Lord Sozin deals combat damage to a player, you may pay {X}. When you do, put any number of target creature cards with total mana value X or less from that player's graveyard onto the battlefield under your control.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "menace"
+      ],
+      "firebending": 3,
+      "set": "TLA",
+      "rarity": "M"
+    }
+  },
+  {
+    "name": "Ruinous Waterbending",
+    "cost": "{1}{B}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "As an additional cost to cast this spell, you may waterbend {4}. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)\nAll creatures get -2/-2 until end of turn. If this spell's additional cost was paid, whenever a creature dies this turn, you gain 1 life.",
+    "number": 118,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Sold Out",
+    "cost": "{3}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Exile target creature. If it was dealt damage this turn, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "number": 119,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Swampsnare Trap",
+    "cost": "{2}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "This spell costs {1} less to cast if it targets a creature with flying.\nEnchant creature\nEnchanted creature gets -5/-3.",
+    "number": 120,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Tundra Tank",
+    "cost": "{2}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)\nWhen this Vehicle enters, target creature you control gains indestructible until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 4,
+    "toughness": 4,
+    "firebending": 1,
+    "number": 121,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Wolfbat",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf",
+      "Bat"
+    ],
+    "text": "Flying\nWhenever you draw your second card each turn, you may pay {B}. If you do, return this card from your graveyard to the battlefield with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 122,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Zuko's Conviction",
+    "cost": "{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Kicker {4} (You may pay an additional {4} as you cast this spell.)\nReturn target creature card from your graveyard to your hand. If this spell was kicked, instead put that card onto the battlefield tapped.",
+    "number": 123,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Boar-q-pine",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Boar",
+      "Porcupine"
+    ],
+    "text": "Whenever you cast a noncreature spell, put a +1/+1 counter on this creature.",
+    "power": 2,
+    "toughness": 2,
+    "number": 124,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Bumi Bash",
+    "cost": "{3}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Bumi Bash deals damage equal to the number of lands you control to target creature.\n• Destroy target land creature or nonbasic land.",
+    "number": 125,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "The Cave of Two Lovers",
+    "cost": "{3}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Create two 1/1 white Ally creature tokens.\nII — Search your library for a Mountain or Cave card, reveal it, put it into your hand, then shuffle.\nIII — Earthbend 3. (Target land you control becomes a 0/0 creature with haste that's still a land. Put three +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "number": 126,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Combustion Man",
+    "cost": "{3}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Assassin"
+    ],
+    "text": "Whenever Combustion Man attacks, destroy target permanent unless its controller has Combustion Man deal damage to them equal to his power.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 6,
+    "number": 127,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Combustion Technique",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Combustion Technique deals damage equal to 2 plus the number of Lesson cards in your graveyard to target creature. If that creature would die this turn, exile it instead.",
+    "number": 128,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Crescent Island Temple",
+    "cost": "{3}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Shrine"
+    ],
+    "text": "When Crescent Island Temple enters, for each Shrine you control, create a 1/1 red Monk creature token with prowess. (Whenever you cast a noncreature spell, it gets +1/+1 until end of turn.)\nWhenever another Shrine you control enters, create a 1/1 red Monk creature token with prowess.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 129,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Cunning Maneuver",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +3/+1 until end of turn.\nCreate a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "number": 130,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Deserter's Disciple",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Ally"
+    ],
+    "text": "{T}: Another target creature you control with power 2 or less can't be blocked this turn.",
+    "power": 2,
+    "toughness": 2,
+    "number": 131,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Fated Firepower",
+    "cost": "{X}{R}{R}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Flash\nThis enchantment enters with X fire counters on it.\nIf a source you control would deal damage to an opponent or a permanent an opponent controls, it deals that much damage plus an amount of damage equal to the number of fire counters on this enchantment instead.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 132,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Nation Attacks",
+    "cost": "{4}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Create two 2/2 red Soldier creature tokens with firebending 1. (Whenever a creature with firebending 1 attacks, add {R}. This mana lasts until end of combat.)\nFlashback {8}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{8}{R}",
+    "number": 133,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Nation Cadets",
+    "cost": "{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "This creature has firebending 2 as long as there's a Lesson card in your graveyard. (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.)\n{2}: This creature gets +1/+0 until end of turn.",
+    "power": 1,
+    "toughness": 2,
+    "number": 134,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Nation Raider",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Raid — When this creature enters, if you attacked this turn, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "power": 4,
+    "toughness": 2,
+    "number": 135,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Sages",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "text": "Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)\n{1}{R}{R}: Put a +1/+1 counter on this creature.",
+    "power": 2,
+    "toughness": 2,
+    "firebending": 1,
+    "number": 136,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Firebender Ascension",
+    "cost": "{1}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, create a 2/2 red Soldier creature token with firebending 1.\nWhenever a creature you control attacking causes a triggered ability of that creature to trigger, put a quest counter on this enchantment. Then if it has four or more quest counters on it, you may copy that ability. You may choose new targets for the copy.",
+    "number": 137,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Firebending Lesson",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Kicker {4} (You may pay an additional {4} as you cast this spell.)\nFirebending Lesson deals 2 damage to target creature. If this spell was kicked, it deals 5 damage to that creature instead.",
+    "number": 138,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Firebending Student",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nFirebending X, where X is this creature's power. (Whenever this creature attacks, add X {R}. This mana lasts until end of combat.)",
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "prowess"
+    ],
+    "firebending": {
+      "power": "self"
+    },
+    "number": 139,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "How to Start a Riot",
+    "cost": "{2}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Target creature gains menace until end of turn. (It can't be blocked except by two or more creatures.)\nCreatures target player controls get +2/+0 until end of turn.",
+    "number": 140,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Iroh's Demonstration",
+    "cost": "{1}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Choose one —\n• Iroh's Demonstration deals 1 damage to each creature your opponents control.\n• Iroh's Demonstration deals 4 damage to target creature.",
+    "number": 141,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Jeong Jeong, the Deserter",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Ally"
+    ],
+    "text": "Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)\nExhaust — {3}: Put a +1/+1 counter on Jeong Jeong. When you next cast a Lesson spell this turn, copy it and you may choose new targets for the copy. (Activate each exhaust ability only once.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "firebending": 1,
+    "number": 142,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Jet's Brainwashing",
+    "cost": "{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)\nTarget creature can't block this turn. If this spell was kicked, gain control of that creature until end of turn, untap it, and it gains haste until end of turn.\nCreate a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "number": 143,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "The Last Agni Kai",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control fights target creature an opponent controls. If the creature the opponent controls is dealt excess damage this way, add that much {R}.\nUntil end of turn, you don't lose unspent red mana as steps and phases end.",
+    "number": 144,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "The Legend of Roku",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI — Exile the top three cards of your library. Until the end of your next turn, you may play those cards.\nII — Add one mana of any color.\nIII — Exile this Saga, then return it to the battlefield transformed under your control.",
+    "number": 145,
+    "rarity": "M",
+    "set": "TLA",
+    "back": {
+      "name": "Avatar Roku",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar"
+      ],
+      "text": "Firebending 4 (Whenever this creature attacks, add {R}{R}{R}{R}. This mana lasts until end of combat.)\n{8}: Create a 4/4 red Dragon creature token with flying and firebending 4.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 4,
+      "firebending": 4,
+      "set": "TLA",
+      "rarity": "M"
+    }
+  },
+  {
+    "name": "Lightning Strike",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Lightning Strike deals 3 damage to any target.",
+    "number": 146,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Mai, Jaded Edge",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nExhaust — {3}: Put a double strike counter on Mai. (Activate each exhaust ability only once.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "prowess"
+    ],
+    "number": 147,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Mongoose Lizard",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mongoose",
+      "Lizard"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature enters, it deals 1 damage to any target.\nMountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)",
+    "power": 5,
+    "toughness": 6,
+    "keywords": [
+      "menace"
+    ],
+    "number": 148,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Price of Freedom",
+    "cost": "{1}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Destroy target artifact or land an opponent controls. Its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle.\nDraw a card.",
+    "number": 149,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Ran and Shaw",
+    "cost": "{3}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "text": "Flying, firebending 2\nWhen Ran and Shaw enter, if you cast them and there are three or more Dragon and/or Lesson cards in your graveyard, create a token that's a copy of Ran and Shaw, except it's not legendary.\n{3}{R}: Dragons you control get +2/+0 until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "firebending": 2,
+    "number": 150,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Redirect Lightning",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "As an additional cost to cast this spell, pay 5 life or pay {2}.\nChange the target of target spell or ability with a single target.",
+    "number": 151,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Rough Rhino Cavalry",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "Firebending 2 (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.)\nExhaust — {8}: Put two +1/+1 counters on this creature. It gains trample until end of turn. (Activate each exhaust ability only once.)",
+    "power": 5,
+    "toughness": 5,
+    "firebending": 2,
+    "number": 152,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Solstice Revelations",
+    "cost": "{2}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Exile cards from the top of your library until you exile a nonland card. You may cast that card without paying its mana cost if the spell's mana value is less than the number of Mountains you control. If you don't cast that card this way, put it into your hand.\nFlashback {6}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{6}{R}",
+    "number": 153,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Sozin's Comet",
+    "cost": "{3}{R}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Each creature you control gains firebending 5 until end of turn. (Whenever it attacks, add {R}{R}{R}{R}{R}. This mana lasts until end of combat.)\nForetell {2}{R} (During your turn, you may pay {2} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)",
+    "number": 154,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Tiger-Dillo",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Armadillo"
+    ],
+    "text": "This creature can't attack or block unless you control another creature with power 4 or greater.",
+    "power": 4,
+    "toughness": 3,
+    "number": 155,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Treetop Freedom Fighters",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Ally"
+    ],
+    "text": "Haste\nWhen this creature enters, create a 1/1 white Ally creature token.",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "haste"
+    ],
+    "number": 156,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Twin Blades",
+    "cost": "{2}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Flash\nWhen this Equipment enters, attach it to target creature you control. That creature gains double strike until end of turn.\nEquipped creature gets +1/+1.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "keywords": [
+      "flash"
+    ],
+    "number": 157,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Ty Lee, Artful Acrobat",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Performer"
+    ],
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever Ty Lee attacks, you may pay {1}. When you do, target creature can't block this turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "prowess"
+    ],
+    "number": 158,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "War Balloon",
+    "cost": "{2}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Flying\n{1}: Put a fire counter on this Vehicle.\nAs long as this Vehicle has three or more fire counters on it, it's an artifact creature.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 159,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Wartime Protestors",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Ally"
+    ],
+    "text": "Haste\nWhenever another Ally you control enters, put a +1/+1 counter on that creature and it gains haste until end of turn.",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ],
+    "number": 160,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Yuyan Archers",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Archer"
+    ],
+    "text": "Reach\nWhen this creature enters, you may discard a card. If you do, draw a card.",
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "reach"
+    ],
+    "number": 161,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Zhao, the Moon Slayer",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Menace\nNonbasic lands enter tapped.\n{7}: Put a conqueror counter on Zhao.\nAs long as Zhao has a conqueror counter on him, nonbasic lands are Mountains. (They lose all other land types and abilities and have \"{T}: Add {R}.\")",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ],
+    "number": 162,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Zuko, Exiled Prince",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "Firebending 3 (Whenever this creature attacks, add {R}{R}{R}. This mana lasts until end of combat.)\n{3}: Exile the top card of your library. You may play that card this turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "firebending": 3,
+    "number": 163,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Allies at Last",
+    "cost": "{2}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Affinity for Allies (This spell costs {1} less to cast for each Ally you control.)\nUp to two target creatures you control each deal damage equal to their power to target creature an opponent controls.",
+    "number": 164,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Avatar Destiny",
+    "cost": "{2}{G}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature you control\nEnchanted creature gets +1/+1 for each creature card in your graveyard and is an Avatar in addition to its other types.\nWhen enchanted creature dies, mill cards equal to its power. Return this card to its owner's hand and up to one creature card milled this way to the battlefield under your control.",
+    "number": 165,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Badgermole",
+    "cost": "{4}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Badger",
+      "Mole"
+    ],
+    "text": "When this creature enters, earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)\nCreatures you control with +1/+1 counters on them have trample.",
+    "power": 4,
+    "toughness": 4,
+    "number": 166,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Badgermole Cub",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Badger",
+      "Mole"
+    ],
+    "text": "When this creature enters, earthbend 1. (Target land you control becomes a 0/0 creature with haste that's still a land. Put a +1/+1 counter on it. When it dies or is exiled, return it to the battlefield tapped.)\nWhenever you tap a creature for mana, add an additional {G}.",
+    "power": 2,
+    "toughness": 2,
+    "number": 167,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "The Boulder, Ready to Rumble",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Performer"
+    ],
+    "text": "Whenever The Boulder attacks, earthbend X, where X is the number of creatures you control with power 4 or greater. (Target land you control becomes a 0/0 creature with haste that's still a land. Put X +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 168,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Bumi, King of Three Trials",
+    "cost": "{5}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Ally"
+    ],
+    "text": "When Bumi enters, choose up to X, where X is the number of Lesson cards in your graveyard —\n• Put three +1/+1 counters on Bumi.\n• Target player scries 3.\n• Earthbend 3. (Target land you control becomes a 0/0 creature with haste that's still a land. Put three +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 169,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Cycle of Renewal",
+    "cost": "{2}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Sacrifice a land. Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+    "number": 170,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Diligent Zookeeper",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen",
+      "Ally"
+    ],
+    "text": "Each non-Human creature you control gets +1/+1 for each of its creature types, to a maximum of 10.",
+    "power": 4,
+    "toughness": 4,
+    "number": 171,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "The Earth King",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Ally"
+    ],
+    "text": "When The Earth King enters, create a 4/4 green Bear creature token.\nWhenever one or more creatures you control with power 4 or greater attack, search your library for up to that many basic land cards, put them onto the battlefield tapped, then shuffle.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 172,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Earth Kingdom General",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "When this creature enters, earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)\nWhenever you put one or more +1/+1 counters on a creature, you may gain that much life. Do this only once each turn.",
+    "power": 2,
+    "toughness": 2,
+    "number": 173,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Earth Rumble",
+    "cost": "{3}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Earthbend 2. When you do, up to one target creature you control fights target creature an opponent controls. (To earthbend 2, target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped. Creatures that fight each deal damage equal to their power to the other.)",
+    "number": 174,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Earthbender Ascension",
+    "cost": "{2}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, earthbend 2. Then search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nLandfall — Whenever a land you control enters, put a quest counter on this enchantment. When you do, if it has four or more quest counters on it, put a +1/+1 counter on target creature you control. It gains trample until end of turn.",
+    "number": 175,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Earthbending Lesson",
+    "cost": "{3}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Earthbend 4. (Target land you control becomes a 0/0 creature with haste that's still a land. Put four +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "number": 176,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Earthen Ally",
+    "cost": "{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "This creature gets +1/+0 for each color among Allies you control.\n{2}{W}{U}{B}{R}{G}: Earthbend 5. (Target land you control becomes a 0/0 creature with haste that's still a land. Put five +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "power": 0,
+    "toughness": 2,
+    "number": 177,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Elemental Teachings",
+    "cost": "{4}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Search your library for up to four land cards with different names and reveal them. An opponent chooses two of those cards. Put the chosen cards into your graveyard and the rest onto the battlefield tapped, then shuffle.",
+    "number": 178,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Flopsie, Bumi's Buddy",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ape",
+      "Goat"
+    ],
+    "text": "When Flopsie enters, put a +1/+1 counter on each creature you control.\nEach creature you control with power 4 or greater can't be blocked by more than one creature.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 179,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Foggy Swamp Vinebender",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Plant",
+      "Ally"
+    ],
+    "text": "This creature can't be blocked by creatures with power 2 or less.\nWaterbend {5}: Put a +1/+1 counter on this creature. Activate only during your turn. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "power": 4,
+    "toughness": 3,
+    "number": 180,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Great Divide Guide",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout",
+      "Ally"
+    ],
+    "text": "Each land and Ally you control has \"{T}: Add one mana of any color.\"",
+    "power": 2,
+    "toughness": 3,
+    "number": 181,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Haru, Hidden Talent",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Peasant",
+      "Ally"
+    ],
+    "text": "Whenever another Ally you control enters, earthbend 1. (Target land you control becomes a 0/0 creature with haste that's still a land. Put a +1/+1 counter on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "number": 182,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Invasion Tactics",
+    "cost": "{4}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, creatures you control get +2/+2 until end of turn.\nWhenever one or more Allies you control deal combat damage to a player, draw a card.",
+    "number": 183,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Kyoshi Island Plaza",
+    "cost": "{3}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Shrine"
+    ],
+    "text": "When Kyoshi Island Plaza enters, search your library for up to X basic land cards, where X is the number of Shrines you control. Put those cards onto the battlefield tapped, then shuffle.\nWhenever another Shrine you control enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 184,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Leaves from the Vine",
+    "cost": "{1}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Mill three cards, then create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nII — Put a +1/+1 counter on each of up to two target creatures you control.\nIII — Draw a card if there's a creature or Lesson card in your graveyard.",
+    "number": 185,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "The Legend of Kyoshi",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI — Draw cards equal to the greatest power among creatures you control.\nII — Earthbend X, where X is the number of cards in your hand. That land becomes an Island in addition to its other types.\nIII — Exile this Saga, then return it to the battlefield transformed under your control.",
+    "number": 186,
+    "rarity": "M",
+    "set": "TLA",
+    "back": {
+      "name": "Avatar Kyoshi",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar"
+      ],
+      "text": "Lands you control have trample and hexproof.\n{T}: Add X mana of any one color, where X is the greatest power among creatures you control.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 4,
+      "set": "TLA",
+      "rarity": "M"
+    }
+  },
+  {
+    "name": "Origin of Metalbending",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Choose one —\n• Destroy target artifact or enchantment.\n• Put a +1/+1 counter on target creature you control. It gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "number": 187,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Ostrich-Horse",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Horse"
+    ],
+    "text": "When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature. (To mill three cards, put the top three cards of your library into your graveyard.)",
+    "power": 3,
+    "toughness": 1,
+    "number": 188,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Pillar Launch",
+    "cost": "{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +2/+2 and gains reach until end of turn. Untap it.",
+    "number": 189,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Raucous Audience",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "{T}: Add {G}. If you control a creature with power 4 or greater, add {G}{G} instead.",
+    "power": 2,
+    "toughness": 1,
+    "number": 190,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Rebellious Captives",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Peasant",
+      "Ally"
+    ],
+    "text": "Exhaust — {6}: Put two +1/+1 counters on this creature, then earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped. Activate each exhaust ability only once.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 191,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Rockalanche",
+    "cost": "{2}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Earthbend X, where X is the number of Forests you control. (Target land you control becomes a 0/0 creature with haste that's still a land. Put X +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)\nFlashback {5}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{5}{G}",
+    "number": 192,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Rocky Rebuke",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control deals damage equal to its power to target creature an opponent controls.",
+    "number": 193,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Saber-Tooth Moose-Lion",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elk",
+      "Cat"
+    ],
+    "text": "Reach\nForestcycling {2} ({2}, Discard this card: Search your library for a Forest card, reveal it, put it into your hand, then shuffle.)",
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "reach"
+    ],
+    "number": 194,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Seismic Sense",
+    "cost": "{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Look at the top X cards of your library, where X is the number of lands you control. You may reveal a creature or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "number": 195,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Shared Roots",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "number": 196,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Sparring Dummy",
+    "cost": "{1}{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "text": "Defender\n{T}: Mill a card. You may put a land card milled this way into your hand. You gain 2 life if a Lesson card is milled this way. (To mill a card, put the top card of your library into your graveyard.)",
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "defender"
+    ],
+    "number": 197,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Toph, the Blind Bandit",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "When Toph enters, earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)\nToph's power is equal to the number of +1/+1 counters on lands you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 3,
+    "number": 198,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "True Ancestry",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "Return up to one target permanent card from your graveyard to your hand.\nCreate a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "number": 199,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Turtle-Duck",
+    "cost": "{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Turtle",
+      "Bird"
+    ],
+    "text": "{3}: Until end of turn, this creature has base power 4 and gains trample.",
+    "power": 0,
+    "toughness": 4,
+    "number": 200,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Unlucky Cabbage Merchant",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "When this creature enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nWhenever you sacrifice a Food, you may search your library for a basic land card and put it onto the battlefield tapped. If you search your library this way, put this creature on the bottom of its owner's library, then shuffle.",
+    "power": 2,
+    "toughness": 2,
+    "number": 201,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Walltop Sentries",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "Reach, deathtouch\nWhen this creature dies, if there's a Lesson card in your graveyard, you gain 2 life.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "reach",
+      "deathtouch"
+    ],
+    "number": 202,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Aang, at the Crossroads",
+    "cost": "{2}{G}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Avatar",
+      "Ally"
+    ],
+    "text": "Flying\nWhen Aang enters, look at the top five cards of your library. You may put a creature card with mana value 4 or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.\nWhen another creature you control leaves the battlefield, transform Aang at the beginning of the next upkeep.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 203,
+    "rarity": "R",
+    "set": "TLA",
+    "back": {
+      "name": "Aang, Destined Savior",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar",
+        "Ally"
+      ],
+      "text": "Flying\nLand creatures you control have vigilance.\nAt the beginning of combat on your turn, earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "flying"
+      ],
+      "set": "TLA",
+      "rarity": "R"
+    }
+  },
+  {
+    "name": "Aang, Swift Savior",
+    "cost": "{1}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Avatar",
+      "Ally"
+    ],
+    "text": "Flash\nFlying\nWhen Aang enters, airbend up to one other target creature or spell. (Exile it. While it's exiled, its owner may cast it for {2} rather than its mana cost.)\nWaterbend {8}: Transform Aang.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flash",
+      "flying"
+    ],
+    "number": 204,
+    "rarity": "R",
+    "set": "TLA",
+    "back": {
+      "name": "Aang and La, Ocean's Fury",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar",
+        "Spirit",
+        "Ally"
+      ],
+      "text": "Reach, trample\nWhenever Aang and La attack, put a +1/+1 counter on each tapped creature you control.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "reach",
+        "trample"
+      ],
+      "set": "TLA",
+      "rarity": "R"
+    }
+  },
+  {
+    "name": "Abandon Attachments",
+    "cost": "{1}{U/R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "text": "You may discard a card. If you do, draw two cards.",
+    "number": 205,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Air Nomad Legacy",
+    "cost": "{W}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nCreatures you control with flying get +1/+1.",
+    "number": 206,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Avatar Aang",
+    "cost": "{R}{G}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Avatar",
+      "Ally"
+    ],
+    "text": "Flying, firebending 2\nWhenever you waterbend, earthbend, firebend, or airbend, draw a card. Then if you've done all four this turn, transform Avatar Aang.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "firebending": 2,
+    "number": 207,
+    "rarity": "M",
+    "set": "TLA",
+    "back": {
+      "name": "Aang, Master of Elements",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar",
+        "Ally"
+      ],
+      "text": "Flying\nSpells you cast cost {W}{U}{B}{R}{G} less to cast. (This can reduce generic costs.)\nAt the beginning of each upkeep, you may transform Aang, Master of Elements. If you do, you gain 4 life, draw four cards, put four +1/+1 counters on him, and he deals 4 damage to each opponent.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 6,
+      "toughness": 6,
+      "keywords": [
+        "flying"
+      ],
+      "set": "TLA",
+      "rarity": "M"
+    }
+  },
+  {
+    "name": "Azula, Cunning Usurper",
+    "cost": "{2}{U}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Rogue"
+    ],
+    "text": "Firebending 2 (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.)\nWhen Azula enters, target opponent exiles a nontoken creature they control, then they exile a nonland card from their graveyard.\nDuring your turn, you may cast cards exiled with Azula and you may cast them as though they had flash. Mana of any type can be spent to cast those spells.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "firebending": 2,
+    "number": 208,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Beifong's Bounty Hunters",
+    "cost": "{2}{B}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "Whenever a nonland creature you control dies, earthbend X, where X is that creature's power. (Target land you control becomes a 0/0 creature with haste that's still a land. Put X +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "power": 4,
+    "toughness": 4,
+    "number": 209,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Bitter Work",
+    "cost": "{1}{R}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Whenever you attack a player with one or more creatures with power 4 or greater, draw a card.\nExhaust — {4}: Earthbend 4. Activate only during your turn. (Target land you control becomes a 0/0 creature with haste that's still a land. Put four +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped. Activate each exhaust ability only once.)",
+    "number": 210,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Bumi, Unleashed",
+    "cost": "{3}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Ally"
+    ],
+    "text": "Trample\nWhen Bumi enters, earthbend 4.\nWhenever Bumi deals combat damage to a player, untap all lands you control. After this phase, there is an additional combat phase. Only land creatures can attack during that combat phase.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "number": 211,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Cat-Owl",
+    "cost": "{3}{W/U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Bird"
+    ],
+    "text": "Flying\nWhenever this creature attacks, untap target artifact or creature.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 212,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Cruel Administrator",
+    "cost": "{3}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Raid — This creature enters with a +1/+1 counter on it if you attacked this turn.\nWhenever this creature attacks, create a 2/2 red Soldier creature token with firebending 1. (Whenever it attacks, add {R}. This mana lasts until end of combat.)",
+    "power": 5,
+    "toughness": 4,
+    "number": 213,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Dai Li Agents",
+    "cost": "{3}{B}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "When this creature enters, earthbend 1, then earthbend 1. (To earthbend 1, target land you control becomes a 0/0 creature with haste that's still a land. Put a +1/+1 counter on it. When it dies or is exiled, return it to the battlefield tapped.)\nWhenever this creature attacks, each opponent loses X life and you gain X life, where X is the number of creatures you control with +1/+1 counters on them.",
+    "power": 3,
+    "toughness": 4,
+    "number": 214,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Dragonfly Swarm",
+    "cost": "{1}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon",
+      "Insect"
+    ],
+    "text": "Flying, ward {1} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)\nThis creature's power is equal to the number of noncreature, nonland cards in your graveyard.\nWhen this creature dies, if there's a Lesson card in your graveyard, draw a card.",
+    "power": 0,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "ward": 1,
+    "number": 215,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Earth Kingdom Soldier",
+    "cost": "{4}{G/W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Vigilance\nWhen this creature enters, put a +1/+1 counter on each of up to two target creatures you control.",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 216,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Earth King's Lieutenant",
+    "cost": "{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "Trample\nWhen this creature enters, put a +1/+1 counter on each other Ally creature you control.\nWhenever another Ally you control enters, put a +1/+1 counter on this creature.",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "trample"
+    ],
+    "number": 217,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Earth Rumble Wrestlers",
+    "cost": "{3}{R/G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Performer"
+    ],
+    "text": "Reach\nThis creature gets +1/+0 and has trample as long as you control a land creature or a land entered the battlefield under your control this turn.",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ],
+    "number": 218,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Earth Village Ruffians",
+    "cost": "{2}{B/G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Rogue"
+    ],
+    "text": "When this creature dies, earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "power": 3,
+    "toughness": 1,
+    "number": 219,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Lord Azula",
+    "cost": "{1}{U}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "Firebending 2 (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.)\nWhenever you cast a spell while Fire Lord Azula is attacking, copy that spell. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "firebending": 2,
+    "number": 220,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Lord Zuko",
+    "cost": "{R}{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Ally"
+    ],
+    "text": "Firebending X, where X is Fire Lord Zuko's power. (Whenever this creature attacks, add X {R}. This mana lasts until end of combat.)\nWhenever you cast a spell from exile and whenever a permanent you control enters from exile, put a +1/+1 counter on each creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "firebending": {
+      "power": "self"
+    },
+    "number": 221,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Foggy Swamp Spirit Keeper",
+    "cost": "{1}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid",
+      "Ally"
+    ],
+    "text": "Lifelink\nWhenever you draw your second card each turn, create a 1/1 colorless Spirit creature token with \"This token can't block or be blocked by non-Spirit creatures.\"",
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 222,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Guru Pathik",
+    "cost": "{2}{G/U}{G/U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk",
+      "Ally"
+    ],
+    "text": "When Guru Pathik enters, look at the top five cards of your library. You may reveal a Lesson, Saga, or Shrine card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.\nWhenever you cast a Lesson, Saga, or Shrine spell, put a +1/+1 counter on another target creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "number": 223,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Hama, the Bloodbender",
+    "cost": "{2}{U/B}{U/B}{U/B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "When Hama enters, target opponent mills three cards. Exile up to one noncreature, nonland card from that player's graveyard. For as long as you control Hama, you may cast the exiled card during your turn by waterbending {X} rather than paying its mana cost, where X is its mana value. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 224,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Hei Bai, Spirit of Balance",
+    "cost": "{2}{W/B}{W/B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear",
+      "Spirit"
+    ],
+    "text": "Whenever Hei Bai enters or attacks, you may sacrifice another creature or artifact. If you do, put two +1/+1 counters on Hei Bai.\nWhen Hei Bai leaves the battlefield, put its counters on target creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 225,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Hermitic Herbalist",
+    "cost": "{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid",
+      "Ally"
+    ],
+    "text": "{T}: Add one mana of any color.\n{T}: Add two mana in any combination of colors. Spend this mana only to cast Lesson spells.",
+    "power": 2,
+    "toughness": 3,
+    "number": 226,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Iroh, Grand Lotus",
+    "cost": "{3}{G}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Ally"
+    ],
+    "text": "Firebending 2\nDuring your turn, each non-Lesson instant and sorcery card in your graveyard has flashback. The flashback cost is equal to that card's mana cost. (You may cast a card from your graveyard for its flashback cost. Then exile it.)\nDuring your turn, each Lesson card in your graveyard has flashback {1}.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "firebending": 2,
+    "number": 227,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Iroh, Tea Master",
+    "cost": "{1}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen",
+      "Ally"
+    ],
+    "text": "When Iroh enters, create a Food token.\nAt the beginning of combat on your turn, you may have target opponent gain control of target permanent you control. When you do, create a 1/1 white Ally creature token. Put a +1/+1 counter on that token for each permanent you own that your opponents control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 228,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Jet, Freedom Fighter",
+    "cost": "{2}{R/W}{R/W}{R/W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Ally"
+    ],
+    "text": "When Jet enters, he deals damage equal to the number of creatures you control to target creature an opponent controls.\nWhen Jet dies, put a +1/+1 counter on each of up to two target creatures.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 1,
+    "number": 229,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Katara, the Fearless",
+    "cost": "{G}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "If a triggered ability of an Ally you control triggers, that ability triggers an additional time.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 230,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Katara, Water Tribe's Hope",
+    "cost": "{2}{W}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Vigilance\nWhen Katara enters, create a 1/1 white Ally creature token.\nWaterbend {X}: Creatures you control have base power and toughness X/X until end of turn. X can't be 0. Activate only during your turn. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 231,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "The Lion-Turtle",
+    "cost": "{1}{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Cat",
+      "Turtle"
+    ],
+    "text": "Vigilance, reach\nWhen The Lion-Turtle enters, you gain 3 life.\nThe Lion-Turtle can't attack or block unless there are three or more Lesson cards in your graveyard.\n{T}: Add one mana of any color.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 6,
+    "keywords": [
+      "vigilance",
+      "reach"
+    ],
+    "number": 232,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Long Feng, Grand Secretariat",
+    "cost": "{1}{B/G}{B/G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "text": "Whenever another creature you control or a land you control is put into a graveyard from the battlefield, put a +1/+1 counter on target creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 233,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Messenger Hawk",
+    "cost": "{2}{U/B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Scout"
+    ],
+    "text": "Flying\nWhen this creature enters, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nThis creature gets +2/+0 as long as you've drawn two or more cards this turn.",
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 234,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Ozai, the Phoenix King",
+    "cost": "{2}{B}{B}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "Trample, firebending 4, haste\nIf you would lose unspent mana, that mana becomes red instead.\nOzai has flying and indestructible as long as you have six or more unspent mana.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "trample",
+      "haste"
+    ],
+    "firebending": 4,
+    "number": 235,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Platypus-Bear",
+    "cost": "{1}{G/U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Platypus",
+      "Bear"
+    ],
+    "text": "Defender\nWhen this creature enters, mill two cards. (Put the top two cards of your library into your graveyard.)\nAs long as there is a Lesson card in your graveyard, this creature can attack as though it didn't have defender.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "defender"
+    ],
+    "number": 236,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Pretending Poxbearers",
+    "cost": "{1}{W/B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen",
+      "Ally"
+    ],
+    "text": "When this creature dies, create a 1/1 white Ally creature token.",
+    "power": 2,
+    "toughness": 1,
+    "number": 237,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Professor Zei, Anthropologist",
+    "cost": "{U/R}{U/R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor",
+      "Ally"
+    ],
+    "text": "{T}, Discard a card: Draw a card.\n{1}, {T}, Sacrifice Professor Zei: Return target instant or sorcery card from your graveyard to your hand. Activate only during your turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 3,
+    "number": 238,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Sandbender Scavengers",
+    "cost": "{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Whenever you sacrifice another permanent, put a +1/+1 counter on this creature.\nWhen this creature dies, you may exile it. When you do, return target creature card with mana value less than or equal to this creature's power from your graveyard to the battlefield.",
+    "power": 1,
+    "toughness": 1,
+    "number": 239,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Sokka, Bold Boomeranger",
+    "cost": "{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "When Sokka enters, discard up to two cards, then draw that many cards.\nWhenever you cast an artifact or Lesson spell, put a +1/+1 counter on Sokka.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "number": 240,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Sokka, Lateral Strategist",
+    "cost": "{1}{W/U}{W/U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Vigilance\nWhenever Sokka and at least one other creature attack, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 241,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Sokka, Tenacious Tactician",
+    "cost": "{1}{U}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Menace, prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nOther Allies you control have menace and prowess.\nWhenever you cast a noncreature spell, create a 1/1 white Ally creature token.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "menace",
+      "prowess"
+    ],
+    "number": 242,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Suki, Kyoshi Warrior",
+    "cost": "{2}{G/W}{G/W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Suki's power is equal to the number of creatures you control.\nWhenever Suki attacks, create a 1/1 white Ally creature token that's tapped and attacking.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 4,
+    "number": 243,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Sun Warriors",
+    "cost": "{2}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Firebending X, where X is the number of creatures you control. (Whenever this creature attacks, add X {R}. This mana lasts until end of combat.)\n{5}: Create a 1/1 white Ally creature token.",
+    "power": 3,
+    "toughness": 5,
+    "firebending": {
+      "power": "self"
+    },
+    "number": 244,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Tolls of War",
+    "cost": "{W}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhenever you sacrifice a permanent during your turn, create a 1/1 white Ally creature token. This ability triggers only once each turn.",
+    "number": 245,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Toph, Hardheaded Teacher",
+    "cost": "{2}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "When Toph enters, you may discard a card. If you do, return target instant or sorcery card from your graveyard to your hand.\nWhenever you cast a spell, earthbend 1. If that spell is a Lesson, put an additional +1/+1 counter on that land. (Target land you control becomes a 0/0 creature with haste that's still a land. Put a +1/+1 counter on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "number": 246,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Toph, the First Metalbender",
+    "cost": "{1}{R}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Ally"
+    ],
+    "text": "Nontoken artifacts you control are lands in addition to their other types. (They don't gain the ability to {T} for mana.)\nAt the beginning of your end step, earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 247,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Uncle Iroh",
+    "cost": "{1}{R/G}{R/G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Ally"
+    ],
+    "text": "Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)\nLesson spells you cast cost {1} less to cast.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 2,
+    "firebending": 1,
+    "number": 248,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Vindictive Warden",
+    "cost": "{2}{B/R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nFirebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)\n{3}: This creature deals 1 damage to each opponent.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "firebending": 1,
+    "number": 249,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Wandering Musicians",
+    "cost": "{3}{R/W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Bard",
+      "Ally"
+    ],
+    "text": "Whenever this creature attacks, creatures you control get +1/+0 until end of turn.",
+    "power": 2,
+    "toughness": 5,
+    "number": 250,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "White Lotus Reinforcements",
+    "cost": "{1}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "Vigilance\nOther Allies you control get +1/+1.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 251,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Zhao, Ruthless Admiral",
+    "cost": "{2}{B/R}{B/R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Firebending 2 (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.)\nWhenever you sacrifice another permanent, creatures you control get +1/+0 until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "firebending": 2,
+    "number": 252,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Zuko, Conflicted",
+    "cost": "{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "At the beginning of your first main phase, choose one that hasn't been chosen and you lose 2 life —\n• Draw a card.\n• Put a +1/+1 counter on Zuko.\n• Add {R}.\n• Exile Zuko, then return him to the battlefield under an opponent's control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 253,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Barrels of Blasting Jelly",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{1}: Add one mana of any color. Activate only once each turn.\n{5}, {T}, Sacrifice this artifact: It deals 5 damage to target creature.",
+    "number": 254,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Bender's Waterskin",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Untap this artifact during each other player's untap step.\n{T}: Add one mana of any color.",
+    "number": 255,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Nation Warship",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Reach\nWhen this Vehicle dies, create a Clue token. (It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ],
+    "number": 256,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Kyoshi Battle Fan",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When this Equipment enters, create a 1/1 white Ally creature token, then attach this Equipment to it.\nEquipped creature gets +1/+0.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 257,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Meteor Sword",
+    "cost": "{7}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When this Equipment enters, destroy target permanent.\nEquipped creature gets +3/+3.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 258,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "Planetarium of Wan Shi Tong",
+    "cost": "{6}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{1}, {T}: Scry 2.\nWhenever you scry or surveil, look at the top card of your library. You may cast that card without paying its mana cost. Do this only once each turn. (Look at the card after you scry or surveil.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 259,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Trusty Boomerang",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature has \"{1}, {T}: Tap target creature. Return Trusty Boomerang to its owner's hand.\"\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 260,
+    "rarity": "U",
+    "set": "TLA"
+  },
+  {
+    "name": "The Walls of Ba Sing Se",
+    "cost": "{8}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Wall"
+    ],
+    "text": "Defender\nOther permanents you control have indestructible.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 30,
+    "keywords": [
+      "defender"
+    ],
+    "number": 261,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "White Lotus Tile",
+    "cost": "{4}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "This artifact enters tapped.\n{T}: Add X mana of any one color, where X is the greatest number of creatures you control that have a creature type in common.",
+    "number": 262,
+    "rarity": "M",
+    "set": "TLA"
+  },
+  {
+    "name": "Abandoned Air Temple",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped unless you control a basic land.\n{T}: Add {W}.\n{3}{W}, {T}: Put a +1/+1 counter on each creature you control.",
+    "number": 263,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Agna Qel'a",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped unless you control a basic land.\n{T}: Add {U}.\n{2}{U}, {T}: Draw a card, then discard a card.",
+    "number": 264,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Airship Engine Room",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {U} or {R}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 265,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Ba Sing Se",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped unless you control a basic land.\n{T}: Add {G}.\n{2}{G}, {T}: Earthbend 2. Activate only as a sorcery. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+    "number": 266,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Boiling Rock Prison",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {B} or {R}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 267,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Fire Nation Palace",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped unless you control a basic land.\n{T}: Add {R}.\n{1}{R}, {T}: Target creature you control gains firebending 4 until end of turn. (Whenever it attacks, add {R}{R}{R}{R}. This mana lasts until end of combat.)",
+    "number": 268,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Foggy Bottom Swamp",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {B} or {G}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 269,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Jasmine Dragon Tea Shop",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast an Ally spell or activate an ability of an Ally source.\n{5}, {T}: Create a 1/1 white Ally creature token.",
+    "number": 270,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Kyoshi Village",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {G} or {W}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 271,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Meditation Pools",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {G} or {U}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 272,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Misty Palms Oasis",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {W} or {B}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 273,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "North Pole Gates",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {W} or {U}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 274,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Omashu City",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {R} or {G}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 275,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Realm of Koh",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped unless you control a basic land.\n{T}: Add {B}.\n{3}{B}, {T}: Create a 1/1 colorless Spirit creature token with \"This token can't block or be blocked by non-Spirit creatures.\"",
+    "number": 276,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Rumble Arena",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Vigilance\nWhen this land enters, scry 1. (Look at the top card of your library. You may put it on the bottom.)\n{T}: Add {C}.\n{1}, {T}: Add one mana of any color.",
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 277,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Secret Tunnel",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "text": "This land can't be blocked.\n{T}: Add {C}.\n{4}, {T}: Two target creatures you control that share a creature type can't be blocked this turn.",
+    "number": 278,
+    "rarity": "R",
+    "set": "TLA"
+  },
+  {
+    "name": "Serpent's Pass",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {U} or {B}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 279,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "Sun-Blessed Peak",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\n{T}: Add {R} or {W}.\n{4}, {T}, Sacrifice this land: Draw a card.",
+    "number": 280,
+    "rarity": "C",
+    "set": "TLA"
+  },
+  {
+    "name": "White Lotus Hideout",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a Lesson or Shrine spell.\n{1}, {T}: Add one mana of any color.",
+    "number": 281,
+    "rarity": "U",
+    "set": "TLA"
+  }
+]

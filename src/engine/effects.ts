@@ -18,6 +18,9 @@ import {
 import { legalTargets, validateTargets } from './targets';
 import type { Amt, Card, Effect, GameEvent, GameState, PID, Ref, Response, SubFlow, TargetRef, TriggeredAbility } from './types';
 import {
+  refreshTlaPermanents,
+  bend,
+  tapCard,
   createToken,
   dealDamage,
   destroyCards,
@@ -34,6 +37,7 @@ import {
   enterBattlefieldBack,
   transformCard,
 } from './zones';
+import { tlaEffect } from './tla';
 import { putFaceDown } from './facedown';
 
 /** 「複製」生物的衍生物所帶的異能：在結束步驟開始時，若你沒有操控鵬洛客，犧牲它 */
@@ -397,8 +401,23 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       }
       break;
     }
+    case 'airbend': {
+      let bent=false; for(const c of resolveRef(g,ctx,ef.what).cards) {if(c.zone!=='battlefield'&&c.zone!=='stack') continue; moveCard(g,c,'exile'); if(!c.token)c.airbent=true; bent=true;}
+      if(bent) bend(g,ctx.controller,'air'); return;
+    }
+    case 'firebend': { const n=Math.max(0,amount(g,ctx,ef.n)); const p=g.players[ctx.controller]; p.firePool=[...(p.firePool??[]),...Array(n).fill('R')]; bend(g,ctx.controller,'fire'); return; }
+    case 'waterbend': {
+      const r:Response=yield {type:'yesno',player:ctx.controller,prompt:`御水${ef.n}？`};
+      if(r.type==='yesno'&&r.yes&&payCost(g,ctx.controller,parseCost(''),undefined,false,undefined,false,ef.n)) yield* runEffects(g,ctx,ef.then);
+      else if(ef.else) yield* runEffects(g,ctx,ef.else); return;
+    }
+    case 'grant': { for(const c of resolveRef(g,ctx,ef.what).cards) {if(ef.permanent)(c.permanentGrants??=[]).push(ef.grant);else g.eot.push({card:c.id,p:0,t:0,kw:[],...ef.grant});} return; }
+    case 'copyCreature': {
+      for(const c of resolveRef(g,ctx,ef.what).cards) {const def={...c.def,id:`${c.def.id}-copy`,supertypes:ef.nonLegendary || ef.p!==undefined ? c.def.supertypes?.filter(s=>s!=='Legendary') : c.def.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(c.def.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const t=newCard(g,def,ctx.controller,true);t.zone='exile';enterBattlefield(g,t,ctx.controller);if(ef.temp)t.sacAtEnd=true;ctx.created=t.id;} return;
+    }
+    case 'tla': yield* tlaEffect(g,ctx,ef); return;
     case 'tap':
-      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') c.tapped = true;
+      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') tapCard(g,c);
       g.version++;
       break;
     case 'untap':
@@ -409,7 +428,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
         c.stun += ef.n === undefined ? 1 : amount(g, ctx, ef.n);
-        c.tapped = true;
+        tapCard(g,c);
       }
       g.version++;
       break;
@@ -521,6 +540,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     }
     case 'tutor': {
+      emit(g,{type:'search',player:me});
       const lib = g.players[me].library;
       const opts = lib.filter((id) => matches(g, ef.filter, g.cards[id], me));
       const picked = yield* choose(g, me, '從牌庫中搜尋一張牌', opts, 0, 1, 'tutor', true);
@@ -565,6 +585,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       g.version++;
       break;
     case 'earthbend': {
+      bend(g,ctx.controller,'earth');
       const n = amount(g, ctx, ef.n);
       const t = createToken(g, 'tok-earth', me);
       t.counters = n;
@@ -916,6 +937,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     }
     case 'searchLand': {
+      for(const player of resolveRef(g,ctx,ef.who??'you').players)emit(g,{type:'search',player});
       const who = ef.who ? resolveRef(g, ctx, ef.who).players[0] : me;
       if (who == null) break;
       const lib = g.players[who].library;
@@ -1059,8 +1081,10 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'chargeCounter':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
-        c.counters += amount(g, ctx, ef.n);
-        log(g, `${cardName(c)} 上放置了充能指示物（${c.counters}）`, c.controller);
+        if(c.def.set==='TLA') c.charge=(c.charge??0)+amount(g,ctx,ef.n);
+        else c.counters += amount(g, ctx, ef.n);
+        log(g, `${cardName(c)} 上放置了充能指示物（${c.charge??c.counters}）`, c.controller);
+        if(c.def.id==='zhao-the-moon-slayer')refreshTlaPermanents(g);
       }
       g.version++;
       break;
@@ -1098,6 +1122,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     }
     case 'tutorMany': {
+      emit(g,{type:'search',player:me});
       const lib = g.players[me].library;
       const n = amount(g, ctx, ef.n);
       let opts = lib.filter((id) => matches(g, ef.filter, g.cards[id], me));

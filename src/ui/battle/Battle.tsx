@@ -3,6 +3,7 @@ import type { Level } from '../../ai/combatAI';
 import { expandDeck, type DeckList } from '../../data';
 import {
   abilitiesFor,
+  castableCards,
   castOptionsFor,
   playOptions,
   sacChoices,
@@ -148,6 +149,7 @@ export function Battle(props: Props) {
 
   const g = ctl?.g ?? null;
   const d = ctl?.decision ?? null;
+  const actingPid: PID = d?.player ?? 0;
   // 頭像：以套牌中最具代表性的生物當作肖像（傳奇優先，其次總費用最高）
   const faces = useMemo(() => {
     const pick = (pid: PID): CardDef | null => {
@@ -286,9 +288,9 @@ export function Battle(props: Props) {
     return () => clearTimeout(t);
   }, [toast]);
 
-  const myPriority = d?.type === 'priority' && d.player === 0;
+  const myPriority = d?.type === 'priority';
 
-  const options = useMemo(() => (g && myPriority ? playOptions(g, 0) : []), [g, myPriority, g?.version]);
+  const options = useMemo(() => (g && myPriority ? playOptions(g, actingPid) : []), [g, myPriority, g?.version]);
   const playable = useMemo(() => new Set(options.map((o) => o.card)), [options]);
 
   // ---------- 目標選擇 ----------
@@ -296,19 +298,19 @@ export function Battle(props: Props) {
     if (!g || !dr || dr.stage !== 'targets') return [];
     const spec = dr.specs[dr.targets.length];
     if (!spec) return [];
-    return legalTargets(g, spec, 0, dr.source).filter((t) => !dr.targets.some((x) => sameTarget(x, t)));
+    return legalTargets(g, spec, actingPid, dr.source).filter((t) => !dr.targets.some((x) => sameTarget(x, t)));
   }
 
   function sacNow(dr: Draft | null): number[] {
     if (!g || !dr || dr.stage !== 'sac' || !dr.sacFilter) return [];
-    return sacChoices(g, 0, dr.sacFilter, dr.kind === 'activate' ? dr.source : undefined);
+    return sacChoices(g, actingPid, dr.sacFilter, dr.kind === 'activate' ? dr.source : undefined);
   }
 
   function autoFill(dr: Draft): Draft {
     let cur = dr;
     while (cur.stage === 'targets' && cur.targets.length < cur.specs.length) {
       const spec = cur.specs[cur.targets.length];
-      const legal = g ? legalTargets(g, spec, 0, cur.source).filter((t) => !cur.targets.some((x) => sameTarget(x, t))) : [];
+      const legal = g ? legalTargets(g, spec, actingPid, cur.source).filter((t) => !cur.targets.some((x) => sameTarget(x, t))) : [];
       if (spec.kind === 'opponent' && legal.length === 1) cur = { ...cur, targets: [...cur.targets, legal[0]] };
       else if (spec.optional && legal.length === 0) cur = { ...cur, targets: [...cur.targets, null] };
       else break;
@@ -389,9 +391,9 @@ export function Battle(props: Props) {
   const legalCards = new Set(legal.filter((t): t is { c: number } => 'c' in t).map((t) => t.c));
   const legalPlayers = new Set(legal.filter((t): t is { p: PID } => 'p' in t).map((t) => t.p));
   const sacs = new Set(sacNow(draft));
-  const oppPws = new Set(g && d?.type === 'attackers' ? attackablePlaneswalkers(g, 0).map((c) => c.id) : []);
-  const attackable = useMemo(() => new Set(g && d?.type === 'attackers' ? attackCandidates(g, 0).map((c) => c.id) : []), [g, d]);
-  const myBlockers = useMemo(() => new Set(g && d?.type === 'blockers' ? blockCandidates(g, 0).map((c) => c.id) : []), [g, d]);
+  const oppPws = new Set(g && d?.type === 'attackers' ? attackablePlaneswalkers(g, actingPid).map((c) => c.id) : []);
+  const attackable = useMemo(() => new Set(g && d?.type === 'attackers' ? attackCandidates(g, actingPid).map((c) => c.id) : []), [g, d]);
+  const myBlockers = useMemo(() => new Set(g && d?.type === 'blockers' ? blockCandidates(g, actingPid).map((c) => c.id) : []), [g, d]);
 
   function onCard(id: number) {
     if (!g) return;
@@ -458,7 +460,7 @@ export function Battle(props: Props) {
   function quickCast(id: number) {
     if (!g || !myPriority || draft) return;
     const c = g.cards[id];
-    const opts = castOptionsFor(g, 0, c);
+    const opts = castOptionsFor(g, actingPid, c);
     if (opts.length) startOption(opts[0]);
   }
 
@@ -531,7 +533,7 @@ export function Battle(props: Props) {
       status = '要回應嗎？';
       main = { label: '不回應', onClick: pass, tone: 'ok' };
     } else if (g.active === 0 && g.phase === 'main1') {
-      const canAtk = attackCandidates(g, 0).length > 0;
+      const canAtk = attackCandidates(g, actingPid).length > 0;
       main = { label: canAtk ? '戰鬥' : '下一步', onClick: pass, tone: 'go' };
       minor.push({ label: '結束回合', onClick: () => ctl.endTurn(), title: '略過到對手的回合' });
     } else if (g.active === 0 && g.phase === 'main2') {
@@ -567,22 +569,22 @@ export function Battle(props: Props) {
   const inspected = inspectId != null ? g.cards[inspectId] : null;
   let actions: PlayOption[] = [];
   if (inspected && myPriority && !draft && focus === inspectId) {
-    if (inspected.zone === 'hand' || inspected.zone === 'exile' || inspected.zone === 'graveyard') actions = castOptionsFor(g, 0, inspected);
+    if (inspected.zone === 'hand' || inspected.zone === 'exile' || inspected.zone === 'graveyard' || inspected.zone === 'library') actions = castOptionsFor(g, actingPid, inspected);
     else if (inspected.zone === 'battlefield') actions = options.filter((o) => o.card === inspected.id && (o.kind === 'activate' || o.alt === 'prepared'));
   }
   const liveStats = inspected && inspected.zone === 'battlefield' && isCreature(inspected) ? stats(g, inspected) : null;
 
-  const hand = g.players[0].hand.map((id) => g.cards[id]);
-  const exiled = [
-    ...g.players[0].exile.map((id) => g.cards[id]).filter((c) => (c.playableTurn === g.turn && c.playableBy === 0) || c.onAdventure || c.plottedTurn !== undefined || (c.warpExiled !== undefined && c.warpExiled < g.turn)),
-    // 有返照或墳墓場異能的牌在墳墓場也能使用
-    ...g.players[0].graveyard.map((id) => g.cards[id]).filter((c) => c.def.flashback || c.def.harmonize || (c.def.mayhem && c.discardedTurn === g.turn) || c.def.abilities?.some((a) => a.kind === 'activated' && a.fromGraveyard)),
-  ];
+  const hand = g.players[actingPid].hand.map((id) => g.cards[id]);
+  const exiled = [...new Set([
+    ...castableCards(g,actingPid).filter(c=>c.zone!=='hand'),
+    ...g.players[actingPid].graveyard.map(id=>g.cards[id]).filter(c=>c.def.abilities?.some(a=>a.kind==='activated'&&a.fromGraveyard)),
+  ])];
   const gySpec = draft?.stage === 'targets' && draft.specs[draft.targets.length]?.kind === 'gyCard';
 
   return (
     <div className="battle">
       <div className="battle-body">
+      {actingPid===1 && <div className="dock-status">你正在操控對手的決策</div>}
         <main
           className="arena"
           ref={arenaRef}
