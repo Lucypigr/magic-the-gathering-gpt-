@@ -131,6 +131,7 @@ export function newCard(g: GameState, def: CardDef, owner: PID, token = false): 
   const c: Card = {
     id: g.nextId++,
     def,
+    ...(token&&def.copyFront?{front:def.copyFront}:{}),
     owner,
     controller: owner,
     zone: 'library',
@@ -198,6 +199,12 @@ export function log(g: GameState, text: string, player?: PID, kind: LogEntry['ki
   if (g.sim) return;
   g.log.push({ turn: g.turn, player, text, kind });
   if (g.log.length > 400) g.log.splice(0, g.log.length - 400);
+}
+
+/** Copy effects copy earlier copy effects, while ignoring counters and later power/type changes. */
+export function copiableDefinition(c:Card):CardDef {
+  const base=c.copyLayer??c.baseDef??c.tlaOriginalDef??c.auraBaseDef??c.def;
+  return {...base,...(!c.copyLayer&&c.front?{copyFront:c.front}:{})};
 }
 
 export function cardName(c: Card | undefined): string {

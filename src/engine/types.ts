@@ -770,6 +770,8 @@ export interface SpellSpec {
 }
 
 export interface CardDef {
+  /** Carries the other copiable face when constructing a transforming token. */
+  copyFront?:CardDef;
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
@@ -903,6 +905,9 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  /** Copiable values installed by a persistent copy effect. */
+  copyLayer?:CardDef;
+  tokenDeparted?:boolean;
   finMarks?:Record<string,number>;finLinked?:number[];finPartner?:number;finExileOnResolve?:boolean;finCopyEquipDiscount?:boolean;
   manaPaid?:Mana[];
   eclType?:string;
@@ -1052,6 +1057,7 @@ export interface Card {
 }
 
 export interface Player {
+  tokensCreatedTurn?:number;
   finFlags?:Record<string,number>;
   eclEntries?:number[];
   eclTurnCount?:number;

@@ -1,3 +1,4 @@
+import { copiableDefinition } from './state';
 import { canPayCost, castDuringResolution, castTargetSpecs, payCost, spellEffects } from './actions';
 import { choose, freeCast } from './tla';
 import { makeEclTokenBatch } from './ecl';
@@ -33,7 +34,7 @@ function change(c: Card, patch: Partial<CardDef>, temporary = false) {
   else c.tlaOriginalDef ??= c.def;
   c.def = { ...c.def, ...patch };
 }
-const copiable = (c: Card) => c.baseDef ?? c.tlaOriginalDef ?? c.auraBaseDef ?? c.def;
+const copiable = copiableDefinition;
 function* yes(g: GameState, pid: PID, prompt: string): SubFlow<boolean> {
   const r: Response = yield { type: 'yesno', player: pid, prompt };
   return r.type === 'yesno' && r.yes;

@@ -243,7 +243,7 @@ export function* settle(g: GameState): SubFlow {
     for(const pid of [0,1] as PID[]){
       if(g.legendExempt?.pid===pid&&g.legendExempt.turn===g.turn)continue;
       const groups=new Map<string,number[]>();
-      for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&(c.def.set==='TMT'||c.def.set==='ECL')&&c.def.supertypes?.includes('Legendary'))groups.set(c.def.name,[...(groups.get(c.def.name)??[]),id]);}
+      for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&(c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN')&&c.def.supertypes?.includes('Legendary'))groups.set(c.def.name,[...(groups.get(c.def.name)??[]),id]);}
       for(const ids of groups.values())if(ids.length>1){
         const r:Response=yield {type:'choose',player:pid,prompt:'傳奇規則：選擇保留的一個永久物',options:ids,min:1,max:1,purpose:'sacrifice'};
         const keep=r.type==='choose'&&ids.includes(r.ids[0])?r.ids[0]:ids[ids.length-1];

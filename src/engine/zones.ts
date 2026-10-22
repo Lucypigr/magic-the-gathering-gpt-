@@ -333,6 +333,7 @@ export function removeFromZone(g: GameState, c: Card): void {
 }
 
 function resetPermanentState(c: Card): void {
+  c.copyLayer=undefined;
   c.tapped = false;
   if(c.tlaLandOriginal){c.def=c.tlaLandOriginal;c.tlaLandOriginal=undefined;}
   if(c.tlaOriginalDef){c.def=c.tlaOriginalDef;c.tlaOriginalDef=undefined;}
@@ -394,6 +395,7 @@ export function refreshTlaPermanents(g: GameState): void {
 }
 
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
+  if(c.tokenDeparted)return;
   if(to==='graveyard'&&c.zone==='stack'&&c.finExileOnResolve)to='exile';
   if(to==='graveyard'&&(c.finMarks?.deathHades||finStatic(g,c.owner,'hadesExile').length))to='exile';
   if(to==='graveyard'&&c.zone==='battlefield'&&isCreature(c)&&!c.token){const crystal=c.finMarks?.deathCrystal?g.cards[c.finMarks.deathCrystal]:finStatic(g,other(c.controller),'darkness')[0];if(crystal){to='exile';(crystal.finLinked??=[]).push(c.id);gainLife(g,crystal.controller,2);}}
@@ -448,6 +450,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   }
   removeFromZone(g, c);
   if (wasOnBf){resetPermanentState(c);c.finMarks=undefined;c.finLinked=undefined;}
+  if(c.token&&wasOnBf&&to!=='battlefield')c.tokenDeparted=true;
   c.zone = to;
   c.controller = c.owner;
   c.playableTurn = undefined;
@@ -500,6 +503,7 @@ function returnLinked(g: GameState, sourceId: number): void {
 }
 
 export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped = false, enterAs?: CardDef): void {
+  if(c.tokenDeparted)return;
   if(c.def.ecl?.asEnters&&!c.eclPrepared && !(c.def.ecl.asEnters==='shock'&&g.players[controller].isAI)){
     if(!g.eclEntryQueue?.some(e=>e.card===c.id))(g.eclEntryQueue??=[]).push({card:c.id,controller,tapped,enterAs});
     return;
@@ -521,7 +525,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   const eclAttachment=c.eclPrepared?c.attachedTo:null;
   resetPermanentState(c);
   if(eclAttachment!==null)c.attachedTo=eclAttachment;
-  if(enterAs){c.tlaOriginalDef=c.def;c.def=enterAs;}
+  if(enterAs){c.tlaOriginalDef=c.def;c.def=enterAs;c.copyLayer=enterAs;}
   c.zone = 'battlefield';
   g.battlefield.push(c.id);
   c.controller = controller;
@@ -597,6 +601,7 @@ export const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 
 /** 以背面進戰場（模式雙面牌施放背面、轉化後放回戰場） */
 export function enterBattlefieldBack(g: GameState, c: Card, controller: PID, tapped = false): void {
+  if(c.tokenDeparted)return;
   const front = c.front ?? c.def;
   if (!front.back) {
     enterBattlefield(g, c, controller, tapped);
@@ -763,8 +768,14 @@ export function dealDamage(
   opts: { combat?: boolean; noLifeGain?: boolean; batchCombat?: boolean } = {},
 ): number {
   if (n <= 0) return 0;
+  const redirects=new Set<number>();
+  for(;;){const pid='p'in target?target.p:g.cards[target.c]?.controller;if(pid===undefined)break;
+    if('p'in target&&finStatic(g,pid,'playerProtection').length&&srcController!==pid)return 0;
+    const turtle=finStatic(g,pid,'adamantoise').find(c=>!redirects.has(c.id)&&('p'in target||c.id!==target.c));if(!turtle)break;
+    redirects.add(turtle.id);target={c:turtle.id};
+  }
   const finVictim='p'in target?target.p:g.cards[target.c]?.controller;
-  if(finVictim!==undefined){if('p'in target&&finStatic(g,finVictim,'playerProtection').length&&srcController!==finVictim)return 0;const turtle=finStatic(g,finVictim,'adamantoise')[0];if(turtle&&('p'in target||target.c!==turtle.id))return dealDamage(g,src,srcController,{c:turtle.id},n,opts);if(g.players[finVictim].finFlags?.lightningUntil)n*=2;}
+  if(finVictim!==undefined&&g.players[finVictim].finFlags?.lightningUntil)n*=2;
   if(src&&matches(g,{sub:'Wizard'},src,srcController))n*=2**finStatic(g,srcController,'doubleWizardDamage').length;
   if('c'in target){const c=g.cards[target.c];if(c&&isCreature(c)&&(g.players[c.controller].finFlags?.creatureFog===g.turn||opts.combat&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.fin==='preventCombat')))return 0;}
   if('p'in target&&g.players[target.p].eclPreventDamageUntil!==undefined)return 0;
@@ -832,6 +843,7 @@ export function createToken(
   controller: PID,
   opts: { tapped?: boolean; attacking?: boolean; attachTo?: number } = {},
 ): Card {
+  g.players[controller].tokensCreatedTurn=g.turn;
   // 取代效果：神器衍生物改為 5/5 的龍衍生物
   if (getDef(tokenId).types.includes('Artifact') && !tokenId.startsWith('tok-fra-dragon')) {
     for (const id of g.battlefield) {

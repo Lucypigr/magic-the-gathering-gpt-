@@ -1,9 +1,9 @@
 import {finEffect} from './fin';
 import {finAmount,finStatic} from './fin-support';
 import {canReceiveCounters} from './ecl-support';
-import {abilitiesSuppressed,uncounterableSpells} from './state';
+import {copiableDefinition,abilitiesSuppressed,uncounterableSpells} from './state';
 import {eclEffect,makeEclTokenBatch} from './ecl';
-import { canPayCost, castDuringResolution, castTargetSpecs, manaSources, payCost, spellEffects } from './actions';
+import { canPayCost,castDef, castDuringResolution, castTargetSpecs, manaSources, payCost, spellEffects } from './actions';
 import { colorsOf, findPayment, manaValue, parseCost } from './mana';
 import {
   cardName,
@@ -426,7 +426,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'grant': { for(const c of resolveRef(g,ctx,ef.what).cards) {if(ef.permanent)(c.permanentGrants??=[]).push(ef.grant);else g.eot.push({card:c.id,p:0,t:0,kw:[],...ef.grant});} return; }
     case 'copyCreature': {
-      for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=c.baseDef??c.tlaOriginalDef??c.auraBaseDef??c.def;const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const [t]=yield* makeEclTokenBatch(g,ctx.controller,def,1);if(!t)continue;if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
+      for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=copiableDefinition(c);const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const [t]=yield* makeEclTokenBatch(g,ctx.controller,def,1);if(!t)continue;if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
     }
     case 'fin':yield* finEffect(g,ctx,ef);return;
     case 'ecl':yield* eclEffect(g,ctx,ef);return;
@@ -699,7 +699,9 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const item = ev && ev.type === 'cast' ? g.stack.find((it) => it.kind === 'spell' && it.cardId === ev.card) : undefined;
       if (!item) break;
       const orig = g.cards[item.cardId];
-      const cp = newCard(g, orig.def, me, true);
+      const copiedDef=item.alt==='adventure'||item.alt==='back'?castDef(orig.def,item.alt):orig.def;
+      const cp = newCard(g, copiedDef, me, true);
+      cp.evokePaid=orig.evokePaid;
       cp.zone = 'stack';
       cp.spellWitherTurn=orig.spellWitherTurn;
       let targets = item.targets.slice();

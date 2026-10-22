@@ -1,14 +1,24 @@
-import {finStatic} from './fin-support';
+import { finStatic } from './fin-support';
 import { validateTargets } from './targets';
 import { canPayCost, payCost } from './actions';
-import { allDefs } from './registry';
+import { allDefs, getDef } from './registry';
 import { choose, freeCast } from './tla';
 import { resolveRef, runEffects, type Ctx } from './effects';
 import { colorsOf, manaValue, parseCost } from './mana';
-import { uncounterableSpells, abilitiesOf, isCreature, isLand, matches, newCard, other, shuffleArr, stats } from './state';
+import {
+  uncounterableSpells,
+  copiableDefinition,
+  abilitiesOf,
+  isCreature,
+  isLand,
+  matches,
+  newCard,
+  other,
+  shuffleArr,
+  stats,
+} from './state';
 import { counterKinds, ECL_TRIBES, removeCounterKind, vividColors } from './ecl-support';
 import {
-  createToken,
   dealDamage,
   discard,
   drawCards,
@@ -53,7 +63,7 @@ function changeDef(c: Card, patch: Partial<CardDef>, temporary = false) {
   c.def = { ...c.def, ...patch };
 }
 function copiable(c: Card) {
-  return c.baseDef ?? c.tlaOriginalDef ?? c.auraBaseDef ?? c.def;
+  return copiableDefinition(c);
 }
 function schedule(g: GameState, c: Card, controller: PID, effects: Effect[], on: 'eachEndStep' | 'dies' = 'eachEndStep') {
   (g.delayed ??= []).push({ source: c.id, controller, on, effects, once: true, persistent: on === 'eachEndStep' });
@@ -117,35 +127,72 @@ export function* makeEclTokenBatch(
   n: number,
   opts: { tapped?: boolean; attacking?: boolean; attachTo?: number } = {},
 ): SubFlow<Card[]> {
-  let replacement: CardDef | undefined;
   if (n <= 0) return [];
-  for (const id of g.battlefield) {
-    const c = g.cards[id],
-      host = g.cards[c.attachedTo ?? -1];
-    if (c.controller !== pid || c.def.id !== 'mirrormind-crown' || !host || c.eclUsage?.turn === g.turn || !abilitiesOf(g, c).length)
-      continue;
-    c.eclUsage = { turn: g.turn, n: 1 };
-    if (yield* yes(g, pid, '以佩帶生物的複製取代本次衍生物？')) {
-      replacement = copiable(host);
-      break;
+  type Group = { def: CardDef; n: number; primary: boolean };
+  const groups: Group[] = [{ def: typeof token === 'string' ? getDef(token) : token, n, primary: true }];
+  const first = g.players[pid].tokensCreatedTurn !== g.turn;
+  const crowns = first
+    ? g.battlefield
+        .map((id) => g.cards[id])
+        .filter(
+          (c) =>
+            c.controller === pid &&
+            c.def.id === 'mirrormind-crown' &&
+            c.attachedTo != null &&
+            g.cards[c.attachedTo]?.zone === 'battlefield' &&
+            isCreature(g.cards[c.attachedTo]) &&
+            abilitiesOf(g, c).length,
+        )
+    : [];
+  // Every Crown observes the same first creation event, including those not selected first.
+  for (const c of crowns) c.eclUsage = { turn: g.turn, n: 1 };
+  const pending = [
+    ...crowns.map((c) => ({ card: c, kind: 'crown' as const })),
+    ...finStatic(g, pid, 'extraFrog').map((c) => ({ card: c, kind: 'frog' as const })),
+    ...g.battlefield
+      .map((id) => g.cards[id])
+      .filter((c) => c.controller === pid && abilitiesOf(g, c).some((a) => a.kind === 'static' && a.artifactTokenDragon))
+      .map((c) => ({ card: c, kind: 'dragon' as const })),
+  ];
+  while (pending.length) {
+    const applicable = pending.filter((r) => r.kind !== 'dragon' || groups.some((group) => group.def.types.includes('Artifact')));
+    if (!applicable.length) break;
+    let pick = 0;
+    if (applicable.length > 1) {
+      const r: Response = yield {
+        type: 'mode',
+        player: pid,
+        prompt: '選擇先套用的衍生物取代效果',
+        options: applicable.map((x) => `${x.card.def.name} #${x.card.id}`),
+        count: 1,
+        purpose: 'trigger',
+      };
+      pick = r.type === 'modes' ? (r.picks[0] ?? 0) : 0;
+    }
+    const selected = applicable[pick] ?? applicable[0];
+    pending.splice(pending.indexOf(selected), 1);
+    if (selected.kind === 'frog') groups.push({ def: getDef('tok-fin-frog'), n: 1, primary: false });
+    else if (selected.kind === 'dragon') {
+      for (const group of groups) if (group.def.types.includes('Artifact')) group.def = getDef('tok-fra-dragon');
+    } else if (yield* yes(g, pid, '以佩帶生物的複製取代本次衍生物？')) {
+      const host = g.cards[selected.card.attachedTo ?? -1];
+      if (host) for (const group of groups) group.def = copiable(host);
     }
   }
+  g.players[pid].tokensCreatedTurn = g.turn;
   const out: Card[] = [];
-  for (let i = 0; i < n; i++) {
-    let c: Card;
-    if (!replacement && typeof token === 'string') c = createToken(g, token, pid, opts);
-    else {
-      c = newCard(g, replacement ?? (token as CardDef), pid, true);
+  for (const group of groups)
+    for (let i = 0; i < group.n; i++) {
+      const c = newCard(g, group.def, pid, true);
       c.zone = 'exile';
       enterBattlefield(g, c, pid, !!opts.tapped);
-      if (opts.attacking) c.attacking = true;
+      if (opts.attacking && isCreature(c)) c.attacking = true;
       if (opts.attachTo !== undefined) c.attachedTo = opts.attachTo;
+      if (group.primary) out.push(c);
     }
-    out.push(c);
-  }
-  const frogs=finStatic(g,pid,'extraFrog').length;for(let i=0;i<frogs;i++)createToken(g,'tok-fin-frog',pid,opts);
   return out;
 }
+
 export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl' }>): SubFlow {
   const me = ctx.controller,
     opp = other(me),
@@ -421,6 +468,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
         for (const id of eligible(g, me, { nonType: 'Land' })) {
           const x = g.cards[id];
           changeDef(x, def);
+          x.copyLayer = def;
         }
       }
       break;
