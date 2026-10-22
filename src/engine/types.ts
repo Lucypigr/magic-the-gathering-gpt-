@@ -54,6 +54,7 @@ export type Keyword =
 
 /** 篩選條件：用來描述「哪些物件」符合。ctrl 以能力控制者的視角判斷。 */
 export interface Filter {
+  name?:string; nonNames?:string[];
   type?: CardType | CardType[];
   nonType?: CardType | CardType[];
   ctrl?: 'you' | 'opp';
@@ -104,6 +105,7 @@ export interface Filter {
 export type TargetKind = 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
 
 export interface TargetSpec {
+  sameGraveyardAs?:number;totalMvMax?:number;
   sharesTypeWith?:number;
   allowRepeat?: boolean;
   differentControllerFrom?: number;
@@ -144,6 +146,7 @@ export type Ref =
   | { all: Filter };
 
 export type Amt =
+  | { fin:string }
   | number
   | { count: Filter }
   | { gy: Filter }
@@ -209,6 +212,7 @@ export interface Grant {
 }
 
 export type Cond =
+  | {c:'fin';action:string;n?:number}
   | {c:'and';conds:Cond[]}
   | { c: 'ecl'; action:string; n?:number; filter?:Filter }
   | { c: 'controls'; filter: Filter; n?: number }
@@ -326,6 +330,7 @@ export interface ExtraCost {
 }
 
 export type Effect =
+  | {e:'fin';action:string;n?:number;what?:Ref;filter?:Filter;value?:number}
   | { e:'ecl';action:string;n?:number;value?:number;what?:Ref;filter?:Filter }
   | { e: 'tmt'; action: string; n?: number; amount?:number; what?: Ref }
 
@@ -511,6 +516,7 @@ export type Effect =
   | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
+  | 'finEvent'
   | 'combatDamagePlayerOrWalker' | 'allyCombatDamagePlayerOrWalker' | 'eachDrawStep' | 'firstMain' | 'transformed' | 'allyBlocks' | 'permanentToGy' | 'classLevel' | 'otherLeaves' | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies' | 'otherPermanentDies' | 'combatDamageAny'
 
   | 'etb'
@@ -591,6 +597,8 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+  finDynamic?:boolean;
+  finEvent?:string;
   variableVividTargets?:boolean;
   modesOncePerTurn?: boolean;
   ownDiscard?: boolean;
@@ -638,6 +646,7 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+  xMana?:number; xMin?:number; finStack?:'ownAbility';
   levelUp?: {from:number;to:number};
   removeCounter?: {n:number;fromCreature?:boolean;any?:boolean};
   sacN?: {n:number;filter:Filter};
@@ -676,6 +685,7 @@ export interface ActivatedAbility {
 }
 
 export interface StaticAbility {
+  fin?:string;
   ecl?:string;
   triggerDouble?: Filter;
   graveCast?: Filter;
@@ -760,6 +770,7 @@ export interface SpellSpec {
 }
 
 export interface CardDef {
+  fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
   ecl?: {variableTargets?:'creature';asEnters?:'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
@@ -878,7 +889,7 @@ export interface CardDef {
   /** 鵬洛客的起始忠誠 */
   loyalty?: number;
   /** 傳奇（Saga）：每一章的效果；進場時與你的抓牌步驟後各放一個傳奇指示物並觸發對應的章節 */
-  saga?: { chapters: { effects: Effect[]; targets?: TargetSpec[] }[] };
+  saga?: { chapters: { effects: Effect[]; targets?: TargetSpec[];finDynamic?:boolean }[] };
   /** 中文規則敘述 */
   text: string;
   /** 衍生物不會出現在補充包 */
@@ -892,6 +903,7 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  finMarks?:Record<string,number>;finLinked?:number[];finPartner?:number;finExileOnResolve?:boolean;finCopyEquipDiscount?:boolean;
   manaPaid?:Mana[];
   eclType?:string;
   eclBeholdType?:string;
@@ -1040,6 +1052,7 @@ export interface Card {
 }
 
 export interface Player {
+  finFlags?:Record<string,number>;
   eclEntries?:number[];
   eclTurnCount?:number;
   eclCounterPlaced?:boolean;
@@ -1166,6 +1179,7 @@ export interface EotEffect extends Grant {
 
 /** 延遲觸發：本回合內，事件發生時觸發 */
 export interface DelayedTrigger {
+  finEvent?:string;
   alone?: boolean;
   persistent?: boolean;
   filter?: Filter;
@@ -1223,6 +1237,7 @@ export type GameEvent =
   | { type: 'drawSecond'; player: PID }
   | { type: 'turnedFaceUp'; card: number }
   | { type: 'scry'; player: PID }
+  | { type:'fin';action:string;card:number;player:PID;amount:number;from?:Zone;to?:Zone }
   | { type: 'combatBatch'; attacker: PID; damaged: PID }
   | { type: 'loyaltyPlaced'; card: number; controller: PID; amount: number }
   | { type: 'loyaltyActivated'; card: number; controller: PID; removed: number }
@@ -1262,6 +1277,7 @@ export interface Show {
 }
 
 export interface GameState {
+  finEndTurn?:boolean;finExtraEnd?:boolean;finCombatNumber?:number;finEndNumber?:number;
   eclEventGroup?:number;
   eclEntryQueue?:{card:number;controller:PID;tapped:boolean;enterAs?:CardDef}[];
   lastManaPayment?:Mana[];
@@ -1372,7 +1388,7 @@ export type ChoosePurpose =
 export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
-  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];conspireTapped?:number[][] }
+  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
   | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];stackTargetSid?:number;tapCards?:number[] };
 
 export type Response =

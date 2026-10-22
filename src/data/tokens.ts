@@ -5,6 +5,17 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+  T({"id": "tok-fin-hero", "name": "Hero", "cost": "", "types": ["Creature"], "subtypes": ["Hero"], "colors": [], "power": 1, "toughness": 1, "text": "", "keywords": []}),
+  T({"id": "tok-fin-knight", "name": "Knight", "cost": "", "types": ["Creature"], "subtypes": ["Knight"], "colors": ["W"], "power": 2, "toughness": 2, "text": "", "keywords": []}),
+  T({"id": "tok-fin-moogle", "name": "Moogle", "cost": "", "types": ["Creature"], "subtypes": ["Moogle"], "colors": ["W"], "power": 1, "toughness": 2, "text": "", "keywords": ["lifelink"]}),
+  T({"id": "tok-fin-robot", "name": "Robot Warrior", "cost": "", "types": ["Artifact", "Creature"], "subtypes": ["Robot", "Warrior"], "colors": ["U"], "power": 3, "toughness": 3, "text": "", "keywords": []}),
+  T({"id": "tok-fin-horror", "name": "Horror", "cost": "", "types": ["Creature"], "subtypes": ["Horror"], "colors": ["B"], "power": 2, "toughness": 2, "text": "", "keywords": []}),
+  T({"id": "tok-fin-wizard", "name": "Wizard", "cost": "", "types": ["Creature"], "subtypes": ["Wizard"], "colors": ["B"], "power": 0, "toughness": 1, "text": "", "keywords": [], "abilities": [{"kind": "trigger", "on": "castNoncreature", "effects": [{"e": "damage", "n": 1, "to": "opp"}]}]}),
+  T({"id": "tok-fin-bird", "name": "Bird", "cost": "", "types": ["Creature"], "subtypes": ["Bird"], "colors": ["G"], "power": 2, "toughness": 2, "text": "", "keywords": [], "abilities": [{"kind": "trigger", "on": "landfall", "effects": [{"e": "pump", "what": "self", "p": 1, "t": 0}]}]}),
+  T({"id": "tok-fin-frog", "name": "Frog", "cost": "", "types": ["Creature"], "subtypes": ["Frog"], "colors": ["G"], "power": 1, "toughness": 1, "text": "", "keywords": []}),
+  T({"id": "tok-fin-angelo", "name": "Angelo", "cost": "", "types": ["Creature"], "subtypes": ["Dog"], "colors": ["G", "W"], "power": 1, "toughness": 1, "text": "", "keywords": [], "supertypes": ["Legendary"]}),
+  T({"id": "tok-fin-darkstar", "name": "Darkstar", "cost": "", "types": ["Creature"], "subtypes": ["Dog"], "colors": ["W", "B"], "power": 2, "toughness": 2, "text": "", "keywords": [], "supertypes": ["Legendary"]}),
+  T({"id": "tok-fin-elemental", "name": "Elemental", "cost": "", "types": ["Creature"], "subtypes": ["Elemental"], "colors": ["W", "U", "B", "R", "G"], "power": 2, "toughness": 2, "text": "", "keywords": []}),
   T({"id": "tok-ecl-kithkin", "name": "Kithkin", "zh": "奇斯金", "types": ["Creature"], "subtypes": ["Kithkin"], "colors": ["W", "G"], "power": 1, "toughness": 1, "text": ""}),
   T({"id": "tok-ecl-merfolk", "name": "Merfolk", "zh": "人魚", "types": ["Creature"], "subtypes": ["Merfolk"], "colors": ["W", "U"], "power": 1, "toughness": 1, "text": ""}),
   T({"id": "tok-ecl-faerie", "name": "Faerie", "zh": "妖精", "types": ["Creature"], "subtypes": ["Faerie"], "colors": ["U", "B"], "power": 1, "toughness": 1, "text": "", "keywords": ["flying"]}),

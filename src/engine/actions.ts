@@ -1,3 +1,4 @@
+import {finStatic} from './fin-support';
 import {beholdOptions,canReceiveCounters,canBehold,counterKinds,counterTotal,eclStatic,hasBlightBody,removeCounterKind,validBehold,vividColors} from './ecl-support';
 import { displayName } from '../data/names';
 import { addCosts, colorsOf, costToString, findPayment, manaValue, parseCost, reduceCost, type ManaCost, type ManaSource } from './mana';
@@ -45,7 +46,8 @@ export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = 
       const c = g.cards[id];
       if (c.controller !== pid || c.tapped || !isCreature(c) || id === exclude || c.def.produces) continue;
       const cols = colorsOf(c.def);
-      out.push({ id, produces: cols.length ? cols : ['C'], isCreature: true, sac: false, convoke: true });
+      if(c.def.id==='freya-crescent'&&(!forDef||!(forDef.eclAbilityPayment?forDef.fin?.equipment==='equipPayment':forDef.subtypes?.includes('Equipment'))))continue;
+    out.push({ id, produces: cols.length ? cols : ['C'], isCreature: true, sac: false, convoke: true });
     }
   }
   for (const id of g.battlefield) {
@@ -54,11 +56,12 @@ export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = 
     // 限定用途的法術力（例如只能用來施放鵬洛客咒語）
     if (c.def.manaOnly === 'planeswalker' && !forDef?.types.includes('Planeswalker')) continue;
     if (c.def.manaOnly === 'notFromHand' && fromHand) continue;
-    if(c.def.manaOnly==='artifactOrAbility'&&forDef&&!forDef.types.includes('Artifact'))continue;
+    if(c.def.manaOnly==='artifactOrAbility'&&(!forDef||!forDef.types.includes('Artifact')))continue;
     if (abilitiesSuppressed(g, c) && c.def.name!=='Humble Merchant') continue;
     const cr = isCreature(c);
     if (cr && c.sick && !hasKw(g, c, 'haste')) continue;
     if (c.def.chosenColorMana && !c.chosenColor) continue;
+    if(c.def.id==='freya-crescent'&&(!forDef||!(forDef.eclAbilityPayment?forDef.fin?.equipment==='equipPayment':forDef.subtypes?.includes('Equipment'))))continue;
     out.push({ id, produces: (c.def.id==='jasmine-dragon-tea-shop' && forDef?.subtypes?.includes('Ally')) || (c.def.id==='white-lotus-hideout' && forDef?.subtypes?.some(s=>s==='Lesson'||s==='Shrine')) || (c.def.id==='turtle-lair'&&forDef?.subtypes?.some(s=>s==='Ninja'||s==='Turtle')) ? ['C','W','U','B','R','G'] : c.def.id==='eclipsed-realms'&&forDef&&!forDef.eclAbilityPayment&&c.eclType&&matchesDefSubtype(forDef,c.eclType)?['C','W','U','B','R','G']:c.def.chosenColorMana && c.chosenColor ? [c.chosenColor] : c.def.produces, isCreature: cr, sac: c.def.sacOnMana, filter: c.def.filterMana, pain: c.def.painMana });
     // 「{T}：加{C}{C}」（艾姆庫的放逐能力）
     if (c.bonusMana !== undefined && g.cards[c.bonusMana]?.zone === 'exile') out.push({ id: -100000 - id, produces: ['C'], isCreature: false, extra: true });
@@ -71,9 +74,10 @@ export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = 
       for(const a of abilitiesOf(g,s)) if(a.kind==='static' && a.manaGrant && matches(g,a.manaGrant.filter,c,pid,s.id)) {out.push({id,produces:a.manaGrant.colors,isCreature:isCreature(c)});break;}
     }
   }
+  for(const c of g.battlefield.map(id=>g.cards[id]).filter(c=>c.controller===pid&&!c.tapped&&(!isCreature(c)||!c.sick||hasKw(g,c,'haste'))&&c.id!==exclude)){if(c.def.id==='freya-crescent'&&!out.some(s=>s.id===c.id)&&forDef&&(forDef.eclAbilityPayment?forDef.fin?.equipment==='equipPayment':forDef.subtypes?.includes('Equipment')))out.push({id:c.id,produces:['R'],isCreature:isCreature(c)});if(c.def.id==='the-emperor-of-palamecia'&&!forDef?.eclAbilityPayment&&forDef&&!forDef.types.includes('Creature'))out.push({id:c.id,produces:['U','R'],isCreature:true});}
   (g.players[pid].retainedRed ?? []).forEach((m,i)=>out.push({id:-25000-i,produces:[m],isCreature:false,pool:true}));
   (g.players[pid].firePool ?? []).forEach((m,i)=>out.push({id:-30000-i,produces:[m],isCreature:false,pool:true}));
-  for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&!c.tapped&&isLand(c)&&c.def.produces&&id!==exclude&&out.some(s=>s.id===id))landManaExtras(g,c).forEach((produces,k)=>out.push({id:-400000-id*1000-k,produces,isCreature:false,extra:true}));}
+  for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&!c.tapped&&isLand(c)&&c.def.produces&&id!==exclude&&out.some(s=>s.id===id))landManaExtras(g,c).forEach((produces,k)=>out.push({id:-400000-id*1000-k,produces,isCreature:false,extra:true,...(produces.requires?{extraRequires:{id,mana:produces.requires}}:{})}));}
   (g.players[pid].eclRestrictedMana??[]).forEach((m,i)=>{const ok=forDef&&!forDef.eclAbilityPayment&&(m.rule==='elemental'?matchesDefSubtype(forDef,'Elemental'):m.rule==='mv4'?!forDef.eclAbilityPayment&&manaValue(forDef)>=4:m.rule==='tribe'?!!g.cards[m.source??-1]?.eclType&&matchesDefSubtype(forDef,g.cards[m.source??-1].eclType!):false);if(ok)out.push({id:-70000-i,produces:[m.mana],isCreature:false,pool:true});});
   // 法術力池
   (g.players[pid].pool ?? []).forEach((m, i) => out.push({ id: -1000 - i, produces: [m], isCreature: false, pool: true }));
@@ -124,7 +128,7 @@ export function payCost(g: GameState, pid: PID, cost: ManaCost, exclude?: number
   const bonusLandIds=new Set(pay.filter(p=>p.id<=-400000).map(p=>Math.floor((-400000-p.id)/1000)));
   for(const id of bonusLandIds)tapCard(g,g.cards[id]);
   const paidLands=new Set([...pay.filter(p=>p.id>=0&&isLand(g.cards[p.id])).map(p=>p.id),...bonusLandIds]);
-  for(const id of paidLands){const extras=landManaExtras(g,g.cards[id]);for(let k=0;k<extras.length;k++)if(!pay.some(p=>p.id===-400000-id*1000-k))(g.players[pid].pool??=[]).push(extras[k][0]);if(extras.length&&!pay.some(p=>p.id===id))(g.players[pid].pool??=[]).push(g.cards[id].def.produces![0]);}
+  for(const id of paidLands){const extras=landManaExtras(g,g.cards[id]);for(let k=0;k<extras.length;k++)if((!extras[k].requires||pay.find(p=>p.id===id)?.mana===extras[k].requires||pay.some(p=>p.id<=-400000&&Math.floor((-400000-p.id)/1000)===id))&&!pay.some(p=>p.id===-400000-id*1000-k))(g.players[pid].pool??=[]).push(extras[k][0]);if(extras.length&&!pay.some(p=>p.id===id))(g.players[pid].pool??=[]).push(g.cards[id].def.produces![0]);}
   for (const p of pay) if (p.id >= 0 && g.cards[p.id].def.painMana && p.mana !== 'C') loseLife(g, pid, 1);
   for (const p of pay) if (p.id >= 0 && g.cards[p.id].def.sacOnMana) sacrifice(g, g.cards[p.id]);
   // 用掉的法術力池
@@ -251,6 +255,8 @@ function graveCastAllowed(g:GameState,pid:PID,c:Card):boolean{return g.active===
 
 export function castAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] {
   const def = c.def;
+  if(c.zone==='library'&&c.owner===pid&&g.players[pid].library[0]===c.id&&((finStatic(g,pid,'travelingTop').length&&(isLand(c)||matches(g,{sub:'Bird'},c,pid)))||finStatic(g,pid,'whaleTop').some(s=>s.attackedTurn===g.turn)))return [undefined];
+  if(c.zone==='graveyard'&&c.owner===pid&&finGraveCast(g,pid,c))return [undefined,...(def.adventure?['adventure' as const]:[])];
   if(c.zone!=='hand' && (g.players[pid].noExileCastUntil??-1)>=g.turn) return [];
   if (c.zone === 'hand' && c.owner === pid) {
     const base: (CastAlt | undefined)[] = def.adventure ? [undefined, 'adventure'] : def.mdfc && def.back ? [undefined, 'back'] : [undefined];
@@ -271,7 +277,7 @@ export function castAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)
   if (c.zone === 'library' && c.owner === pid && g.players[pid].library[0] === c.id && g.battlefield.some(id=>g.cards[id].controller===pid && abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.topCast&&matches(g,a.topCast,c,pid)))) return [undefined];
   if(c.zone==='exile' && c.playableBy===pid && c.playableUntil!==undefined && c.playableUntil>=g.turn) return [undefined];
   if (c.zone === 'exile' && c.owner === pid && c.onAdventure) return [undefined];
-  if (c.zone === 'exile' && ((c.playableTurn === g.turn && c.playableBy === pid)||eclPermission(g,pid,c))) return def.adventure ? [undefined, 'adventure'] : [undefined];
+  if (c.zone === 'exile' && (c.onAdventure&&c.owner===pid||(c.playableTurn === g.turn && c.playableBy === pid)||eclPermission(g,pid,c))) return def.adventure ? [undefined, 'adventure'] : [undefined];
   if (c.zone === 'exile' && c.owner === pid && c.warpExiled !== undefined && c.warpExiled < g.turn) return [undefined];
   if (c.zone === 'exile' && c.waterCastBy !== undefined && g.cards[c.waterCastBy]?.zone !== 'battlefield') return [];
   if (c.zone === 'exile' && c.linkedCast && c.linkedCast.by === pid && checkCond(g, c.linkedCast.cond, pid, undefined, [])) return [undefined];
@@ -360,7 +366,9 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
   }
   if(g.players[pid].nextAffinity&&!def.types.includes('Creature'))cost.generic=Math.max(0,cost.generic-(g.players[pid].nextAffinity??0)*countMatching(g,{type:'Artifact',ctrl:'you'},pid));
   // 「可以用任何類型的法術力支付」：有色需求都改成一般費用
-  if (c.linkedCast || c.eclCast?.mode==='taster'&&eclPermission(g,pid,c)) {
+  if(def.id==='fate-of-the-sun-cryst'&&targets?.some(t=>t&&'c'in t&&isCreature(g.cards[t.c])&&g.cards[t.c].tapped))cost.generic=Math.max(0,cost.generic-2);
+  if(def.types.includes('Creature')&&def.supertypes?.includes('Legendary')&&!g.players[pid].finFlags?.legendCast)cost.generic=Math.max(0,cost.generic-2*finStatic(g,pid,'firstLegendDiscount').length);
+  if (c.linkedCast || c.finMarks?.anyMana===1||c.eclCast?.mode==='finAnyMana'||c.eclCast?.mode==='taster'&&eclPermission(g,pid,c)) {
     const total = cost.generic + cost.W + cost.U + cost.B + cost.R + cost.G + cost.C + (cost.hyb?.length ?? 0);
     cost = { ...parseCost(''), generic: total };
   }
@@ -399,7 +407,7 @@ export function wardLifeTax(g: GameState, pid: PID, targets: (TargetRef | null)[
   for (const t of targets) {
     if (!t || !('c' in t)) continue;
     const tc = g.cards[t.c];
-    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.wardLife && tc.def.set!=='ECL' && !abilitiesSuppressed(g, tc)) n += tc.def.wardLife;
+    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.wardLife && tc.def.set!=='ECL'&&tc.def.set!=='FIN' && !abilitiesSuppressed(g, tc)) n += tc.def.wardLife;
   }
   return n;
 }
@@ -454,7 +462,7 @@ export function wardTax(g: GameState, pid: PID, targets: (TargetRef | null)[]): 
   for (const t of targets) {
     if (!t || !('c' in t)) continue;
     const tc = g.cards[t.c];
-    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.ward && tc.def.set!=='TMT'&&tc.def.set!=='ECL' && !abilitiesSuppressed(g, tc)) n += tc.def.ward;
+    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.ward && tc.def.set!=='TMT'&&tc.def.set!=='ECL'&&tc.def.set!=='FIN' && !abilitiesSuppressed(g, tc)) n += tc.def.ward;
   }
   return n;
 }
@@ -575,10 +583,12 @@ export function tapNChoices(g: GameState, pid: PID, f: Filter, n: number, source
 function tokenAbilityReduction(g:GameState,c:Card):number{return c.token&&c.def.types.includes('Artifact')?g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).reduce((a,b)=>a+(b.kind==='static'?b.artifactTokenCostLess??0:0),0):0);},0):0;}
 
 export function canActivate(g: GameState, pid: PID, c: Card, idx: number): boolean {
+  if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.fin==='disableAttached')))return false;
   const ab = abilitiesFor(g, c)[idx];
   if (!ab) return false;
   if (ab.fromGraveyard ? c.zone !== 'graveyard' || c.owner !== pid : ab.fromHand ? c.zone !== 'hand' || c.owner !== pid : c.zone !== 'battlefield' || c.controller !== pid) return false;
   if (ab.sorcery && !sorceryTiming(g, pid)) return false;
+  if(ab.finStack&&!g.stack.some(s=>s.controller===pid&&(s.kind==='trigger'||s.kind==='activated')&&!s.effects.some(e=>e.e==='fin'&&e.action==='copyAbility')))return false;
   if(ab.levelUp&&(c.classLevel??1)!==ab.levelUp.from)return false;
   if(ab.cost.blight&&!hasBlightBody(g,pid))return false;
   if(ab.effects.some(e=>e.e==='ecl'&&e.action==='kirol')&&!g.stack.some(s=>s.kind==='trigger'&&s.controller===pid))return false;
@@ -611,6 +621,7 @@ export function canActivate(g: GameState, pid: PID, c: Card, idx: number): boole
   if (ab.cost.craft && craftMaterials(g, pid, ab.cost.craft, c.id, ab.cost.craftCount) == null) return false;
   if (ab.cost.mana) {
     const cost = parseCost(ab.cost.mana);
+    if(ab.xMana)cost.generic+=ab.xMana*(ab.xMin??0);
     if (ab.isEquip) {
       let best = 0;
       for (const id of g.battlefield) {
@@ -623,18 +634,18 @@ export function canActivate(g: GameState, pid: PID, c: Card, idx: number): boole
           if (t.controller === pid && isCreature(t)) best = Math.max(best, t.counters);
         }
       }
-      cost.generic = Math.max(0, cost.generic - best);
+      cost.generic = Math.max(0, cost.generic - best-(c.finCopyEquipDiscount?2:0));
     }
     if (ab.powerUp && c.enteredTurn === g.turn) Object.assign(cost, reduceCost(cost, parseCost(c.def.cost)));
     cost.generic=Math.max(0,cost.generic-tokenAbilityReduction(g,c));
     if(ab.costLessPer) cost.generic=Math.max(0,cost.generic-countMatching(g,ab.costLessPer,pid));
     const reserved=ab.cost.tapN?(tapNChoices(g,pid,{...ab.cost.tapN.filter,...(ab.cost.tap?{other:true}:{})},ab.cost.tapN.n,c.id)??[]):[];
     for(const id of reserved)g.cards[id].tapped=true;
-    const canPay=canPayCost(g, pid, cost, ab.cost.tap ? c.id : undefined,false,{...c.def,eclAbilityPayment:true},false,ab.waterbend);
+    const canPay=canPayCost(g, pid, cost, ab.cost.tap ? c.id : undefined,false,{...c.def,eclAbilityPayment:true,fin:ab.isEquip?{...c.def.fin,equipment:'equipPayment'}:c.def.fin},false,ab.waterbend);
     for(const id of reserved)g.cards[id].tapped=false;
     if(!canPay)return false;
   }
-  if (ab.waterbend && !ab.cost.mana && !canPayCost(g,pid,parseCost(''),ab.cost.tap?c.id:undefined,false,{...c.def,eclAbilityPayment:true},false,ab.waterbend)) return false;
+  if (ab.waterbend && !ab.cost.mana && !canPayCost(g,pid,parseCost(''),ab.cost.tap?c.id:undefined,false,{...c.def,eclAbilityPayment:true,fin:ab.isEquip?{...c.def.fin,equipment:'equipPayment'}:c.def.fin},false,ab.waterbend)) return false;
   if (!hasTargetsAvailable(g, ab.targets ?? [], pid, c.id)) return false;
   return true;
 }
@@ -678,7 +689,7 @@ export function castableCards(g: GameState, pid: PID): Card[] {
   }
   for (const id of p.graveyard) {
     const c = g.cards[id];
-    if (graveCastAllowed(g,pid,c) || (isCreature(c)&&ninjaGraveSneak(g,pid)) || castAlts(g,pid,c).includes('flashback') || c.def.harmonize || (c.def.mayhem && c.discardedTurn === g.turn)) out.push(c);
+    if (finGraveCast(g,pid,c)||graveCastAllowed(g,pid,c) || (isCreature(c)&&ninjaGraveSneak(g,pid)) || castAlts(g,pid,c).includes('flashback') || c.def.harmonize || (c.def.mayhem && c.discardedTurn === g.turn)) out.push(c);
   }
   for (const id of p.exile) {
     const c = g.cards[id];
@@ -702,7 +713,8 @@ export function canPlayLand(g: GameState, pid: PID): boolean {
 export function castOptionsFor(g: GameState, pid: PID, c: Card): PlayOption[] {
   const out: PlayOption[] = [];
   if (isLand(c)) {
-    if (c.zone !== 'graveyard' && canPlayLand(g, pid)) out.push({ kind: 'play', card: c.id, specs: [], label: `打出 ${displayName(c.def)}` });
+    if(c.def.adventure)out.push(...castOptionsAs(g,pid,c,'adventure'));
+    if ((c.zone !== 'graveyard'||finGraveCast(g,pid,c)) && canPlayLand(g, pid)) out.push({ kind: 'play', card: c.id, specs: [], label: `打出 ${displayName(c.def)}` });
     if (c.def.cycling && c.zone === 'hand' && c.owner === pid) out.push(...castOptionsAs(g, pid, c, 'cycle'));
     if (c.def.plot && c.zone === 'hand' && c.owner === pid) out.push(...castOptionsAs(g, pid, c, 'plot'));
     return out;
@@ -726,6 +738,7 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
   if (alt === 'plotted' && !sorceryTiming(g, pid)) return out;
   if (alt!=='sneak'&&alt!=='sneakGranted' && !instantSpeed(def) && !(def.flashCond && checkCond(g,def.flashCond,pid,c.id,[])) && !sorceryTiming(g, pid)) return out;
   if (c.def.castCond && !checkCond(g, c.def.castCond, pid, c.id, [])) return out;
+  if(def.fin?.stackTarget&&!finStackChoices(g,pid,false).length)return out;
   if(c.def.ecl?.behold&&!c.def.ecl.behold.tax&&!c.def.ecl.behold.optional&&!canBehold(g,pid,c,alt))return out;
   if (def.addCost?.life && g.players[pid].life < def.addCost.life) return out;
   if (def.addCost?.sac && sacCandidates(g, pid, def.addCost.sac).length === 0) return out;
@@ -733,12 +746,13 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
   const n = def.ecl?.variableTargets?g.battlefield.filter(id=>isCreature(g.cards[id])).length+1:modeCount(def);
   for (let m = 0; m < n; m++) {
     const mode = def.spell?.modes||def.ecl?.variableTargets ? m : undefined;
+    if(def.fin?.returnLandCost&&mode===1&&!g.battlefield.some(id=>g.cards[id].controller===pid&&isLand(g.cards[id])))continue;
     if((def.spell?.modes?.[mode??0]?.blight||def.addCost?.blight||def.ecl?.blightX)&&!hasBlightBody(g,pid))continue;
     const specs = castTargetSpecs(def, mode);
     if (!hasTargetsAvailable(g, specs, pid, c.id)) continue;
     const msac = def.spell?.modes?.[m]?.sac;
     if (msac && sacCandidates(g, pid, msac).length === 0) continue;
-    const cost = spellCost(g, c, pid, mode, undefined, alt);
+    const cost = spellCost(g, c, pid, mode, def.id==='fate-of-the-sun-cryst'?g.battlefield.filter(id=>isCreature(g.cards[id])&&g.cards[id].tapped).slice(0,1).map(c=>({c})):undefined, alt);
   const tapper = alt === 'harmonize' ? harmonizeTapper(g, pid)?.id : undefined;
     if (!canPayCost(g, pid, cost, tapper, !!def.convoke, def, c.zone === 'hand' && !c.token, c.waterCastBy!==undefined ? manaValue(def) : def.spell?.modes?.[mode??0]?.waterbend ?? def.waterbend)) continue;
     const name = alt === 'adventure' ? (def.zh ?? def.name) : displayName(def);
@@ -824,7 +838,7 @@ export function playOptions(g: GameState, pid: PID): PlayOption[] {
         specs: abs[i].targets ?? [],
         sacFilter: abs[i].cost.sacOther,
         label: abs[i].label,
-        ...(abs[i].xLoyalty ? { maxX: c.loyalty ?? 0 } : {}),
+        ...(abs[i].xLoyalty ? { maxX: c.loyalty ?? 0 } : abs[i].xMana?{maxX:finAbilityMaxX(g,pid,c,i)}:{}),
       });
     }
   }
@@ -848,7 +862,7 @@ export function performAction(g: GameState, pid: PID, a: PriorityAction): string
 }
 
 function inCastableZone(g: GameState, pid: PID, c: Card, alt?: CastAlt): boolean {
-  if (isLand(c)) return (c.zone==='library'&&castAlts(g,pid,c).length>0) || (c.zone === 'hand' && c.owner === pid) || (c.zone === 'exile' && ((c.playableTurn === g.turn && c.playableBy === pid)||eclPermission(g,pid,c)));
+  if (isLand(c)) return (alt==='adventure'&&castAlts(g,pid,c).includes(alt))||(c.zone==='graveyard'&&finGraveCast(g,pid,c))||(c.zone==='library'&&castAlts(g,pid,c).length>0) || (c.zone === 'hand' && c.owner === pid) || (c.zone === 'exile' && (c.onAdventure&&c.owner===pid||(c.playableTurn === g.turn && c.playableBy === pid)||eclPermission(g,pid,c)));
   return castAlts(g, pid, c).includes(alt);
 }
 
@@ -931,7 +945,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if (c && alt === 'cycle') return doCycle(g, pid, c);
   if (c && alt === 'plot') return doPlot(g, pid, c);
   if (c && alt === 'prepared') return doCastPrepared(g, pid, c, a);
-  if (!c || isLand(c) || (!duringResolution && !inCastableZone(g, pid, c, alt))) return '無法施放這張牌';
+  if (!c || (isLand(c)&&alt!=='adventure') || (!duringResolution && !inCastableZone(g, pid, c, alt))) return '無法施放這張牌';
   const def = castDef(c.def, alt);
   if ((alt === 'plotted' || (alt!=='sneak'&&alt!=='sneakGranted' && !instantSpeed(def) && !(def.flashCond && checkCond(g,def.flashCond,pid,c.id,[])))) && !sorceryTiming(g, pid) && !a.ignoreTiming) return '只能在你的主要階段且堆疊為空時施放';
   if (c.def.castCond && !checkCond(g, c.def.castCond, pid, c.id, [])) return '不滿足施放此咒語的條件';
@@ -983,6 +997,12 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if(permission?.mode==='dissident'&&eligibleCounterTotal(g,pid)<3)return '需要從你的生物移除三個指示物';
   const dissidentCosts=a.eclCounterSources??(permission?.mode==='dissident'?defaultCounterSources(g,pid,3):[]);
   if(permission?.mode==='dissident'&&!validCounterSources(g,pid,dissidentCosts,3))return '移除指示物費用不合法';
+  const finStack=def.fin?.stackTarget?finStackChoices(g,pid,false).find(s=>s.sid===a.stackTargetSid):undefined;
+  if(def.fin?.stackTarget&&!finStack)return '請選擇合法的非生物咒語或異能';
+  const returnLand=def.fin?.returnLandCost&&mode===1?(a.returnLand!==undefined?g.cards[a.returnLand]:g.battlefield.map(id=>g.cards[id]).find(c=>c.controller===pid&&isLand(c))):undefined;
+  if(def.fin?.returnLandCost&&mode===1&&(!returnLand||returnLand.zone!=='battlefield'||returnLand.controller!==pid||!isLand(returnLand)))return '請選擇收回的地';
+  const noctisCost=c.zone==='graveyard'&&alt===undefined&&c.def.types.includes('Artifact')&&!!finStatic(g,pid,'noctisCast').length;
+  if(noctisCost&&p.life<3)return '生命不足以支付Noctis費用';
   const cost = free ? parseCost('') : spellCost(g, c, pid, mode, targets, alt, x ?? 0);
   if((free||permission?.free)&&def.spell?.modes?.[mode??0]?.cost)Object.assign(cost,reduceCost(parseCost(def.spell.modes[mode??0].cost),parseCost(def.cost)));
   if(needsBehold&&req.tax&&!beheld.length&&(free||permission?.free||canBehold(g,pid,c,alt)))cost.generic+=req.tax;
@@ -1000,6 +1020,8 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
     log(g, `和聲：橫置 ${cardName(g.cards[tapper.id])}，費用減少 {${tapper.p}}`, pid);
   }
   c.manaPaid=g.lastManaPayment?.slice();
+  if(returnLand)moveCard(g,returnLand,'hand');
+  if(noctisCost){loseLife(g,pid,3);(c.finMarks??={}).enterFinality=1;}
   c.eclBlightPaid=blightN>0;if(body)putMinusCounters(g,body,blightN);
   if(permission?.mode==='dissident')for(const payment of dissidentCosts)removeCounterKind(g.cards[payment.card],payment.kind);
   c.eclBeheld=beheld.slice();c.eclBeholdType=beholdType;if(needsBehold&&req.exile)for(const id of beheld)moveCard(g,g.cards[id],'exile');
@@ -1025,7 +1047,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if(modeLife) loseLife(g,pid,modeLife);
   if(sneakReturn){moveCard(g,sneakReturn,'hand');c.sneakTurn=g.turn;}
   else c.sneakTurn=undefined;
-  c.sneakFromGy=c.zone==='graveyard'&&graveCastAllowed(g,pid,c)&&alt!=='sneak'&&alt!=='sneakGranted';
+  c.sneakFromGy=c.zone==='graveyard'&&!finGraveCast(g,pid,c)&&graveCastAllowed(g,pid,c)&&alt!=='sneak'&&alt!=='sneakGranted';
   if (discardCard) discard(g, discardCard);
   removeFromZone(g, c);
   c.castOrigin = c.zone;
@@ -1049,7 +1071,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
     targets,
     targetSpecs: specs,
     targetVersions,
-    effects: spellEffects(def, mode),
+    effects: finStack?spellEffects(def,mode).map(e=>e.e==='fin'&&e.action==='counterStack'?{...e,n:finStack.sid}:e):spellEffects(def, mode),
     text: def.text,
     modeIndex: mode,
     alt,
@@ -1110,19 +1132,25 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   if(kirol&&!kirolTarget)return '請選擇你的觸發異能';
   let xLoy = 0;
   const cost = parseCost(ab.cost.mana);
+  const finX=ab.xMana?Math.max(0,Math.floor(a.x??ab.xMin??0)):undefined;
+  if(ab.xMana&&(finX??0)<(ab.xMin??0))return 'X不合法';
+  if(ab.xMana)cost.generic+=ab.xMana*(finX??0);
+  const abilityTarget=ab.finStack?finStackChoices(g,pid,true).find(s=>s.sid===a.stackTargetSid):undefined;
+  if(ab.finStack&&!abilityTarget)return '請選擇你的起動或觸發異能';
+  if(ab.effects.some(e=>e.e==='fin'&&e.action==='rydiaReturn')&&targets[0]&&'c'in targets[0]&&manaValue(g.cards[targets[0].c].def)!==finX)return 'X必須等於傳紀的法力值';
   if (ab.isEquip) {
     const t = targets[0];
     const d = t && 'c' in t ? g.cards[t.c]?.def.equipDiscount ?? 0 : 0;
     const tc = t && 'c' in t ? g.cards[t.c] : undefined;
     const perCounter = c.def.equip?.costLessPerCounter && tc ? tc.counters : 0;
-    cost.generic = Math.max(0, cost.generic - d - perCounter);
+    cost.generic = Math.max(0, cost.generic - d - perCounter-(c.finCopyEquipDiscount?2:0));
   }
   if (ab.powerUp && c.enteredTurn === g.turn) Object.assign(cost, reduceCost(cost, parseCost(c.def.cost)));
   cost.generic += wardTax(g, pid, targets);
   cost.generic=Math.max(0,cost.generic-tokenAbilityReduction(g,c));
     if(ab.costLessPer) cost.generic=Math.max(0,cost.generic-countMatching(g,ab.costLessPer,pid));
   for(const id of tapIds)g.cards[id].tapped=true;
-  const paid=payCost(g, pid, cost, ab.cost.tap ? c.id : undefined,false,{...c.def,eclAbilityPayment:true},false,ab.waterbend);
+  const paid=payCost(g, pid, cost, ab.cost.tap ? c.id : undefined,false,{...c.def,eclAbilityPayment:true,fin:ab.isEquip?{...c.def.fin,equipment:'equipPayment'}:c.def.fin},false,ab.waterbend);
   for(const id of tapIds)g.cards[id].tapped=false;
   if(!paid)return '法術力不足';
   if (ab.special) {
@@ -1181,13 +1209,13 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
     targets,
     targetSpecs: specs,
     targetVersions,
-    effects: kirol?ab.effects.map(e=>e.e==='ecl'&&e.action==='kirol'?{...e,n:kirolTarget!.sid}:e):ab.effects,
+    effects: abilityTarget?ab.effects.map(e=>e.e==='fin'&&e.action==='copyAbility'?{...e,n:abilityTarget.sid}:e):kirol?ab.effects.map(e=>e.e==='ecl'&&e.action==='kirol'?{...e,n:kirolTarget!.sid}:e):ab.effects,
     text: ab.label,
     sourceType:c.eclType,
     sourceLinkKey:c.tmtLinkKey,
-    manaAbility: !ab.targets?.length && ab.cost.loyalty===undefined && ab.effects.every(e=>e.e==='addMana'||e.e==='addManaOfChoice'||(e.e==='ecl'&&['bloomMana','brigidMana','wickermawMana','flamebraiderMana'].includes(e.action))),
+    manaAbility: !ab.targets?.length && ab.cost.loyalty===undefined && ab.effects.every(e=>e.e==='addMana'||e.e==='addManaOfChoice'||(e.e==='fin'&&e.action==='viviMana')||(e.e==='ecl'&&['bloomMana','brigidMana','wickermawMana','flamebraiderMana'].includes(e.action))),
     lkiPower: lki,
-    ...(ab.xLoyalty ? { x: xLoy } : {}),
+    ...(ab.xLoyalty ? { x: xLoy } : ab.xMana?{x:finX}:{}),
   });
   show(g, { kind: 'activated', player: pid, card: c.id, targets, text: ab.label });
   log(g, `起動 ${cardName(c)}：${ab.label}${describeTargets(g, targets)}`, pid, 'cast');
@@ -1221,7 +1249,7 @@ export function hasAnyAction(g: GameState, pid: PID): boolean {
 }
 
 function matchesDefSubtype(d:CardDef,sub:string){return !!d.changeling||!!d.subtypes?.includes(sub);}
-function eclPermission(g:GameState,pid:PID,c:Card){const p=c.eclCast;if(!p||p.by!==pid||(p.until!==undefined&&p.until<g.turn)||(p.nextTurn!==undefined&&(g.players[pid].eclTurnCount??0)>p.nextTurn))return false;if(p.source!==undefined&&!g.battlefield.some(id=>g.cards[id].tmtLinkKey===p.source&&g.cards[id].controller===pid))return false;if(p.mode==='dissident')return g.active===pid&&eligibleCounterTotal(g,pid)>=3;
+function eclPermission(g:GameState,pid:PID,c:Card){const p=c.eclCast;if(!p||p.by!==pid||(p.until!==undefined&&p.until<g.turn)||(p.nextTurn!==undefined&&(g.players[pid].eclTurnCount??0)>p.nextTurn))return false;if(p.mode==='brynhildr')return c.finMarks?.brynhildrTurn===g.turn;if(p.source!==undefined&&!g.battlefield.some(id=>g.cards[id].tmtLinkKey===p.source&&g.cards[id].controller===pid))return false;if(p.mode==='dissident')return g.active===pid&&eligibleCounterTotal(g,pid)>=3;
 if(p.mode==='maralen')return !(g.players[pid].eclMaralenUsed??[]).includes(p.source!)&&c.eclExiledTurn===g.turn&&manaValue(c.def)<=g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])&&(matches(g,{sub:'Elf'},g.cards[id],pid)||matches(g,{sub:'Faerie'},g.cards[id],pid))).length;return true;}
 
 function eligibleCounterTotal(g:GameState,pid:PID){return g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])).reduce((n,id)=>n+counterTotal(g.cards[id]),0);}
@@ -1229,11 +1257,16 @@ function defaultCounterSources(g:GameState,pid:PID,n:number){const out:{card:num
 function validCounterSources(g:GameState,pid:PID,list:{card:number;kind:string}[],n:number){if(list.length!==n)return false;const used:Record<string,number>={};for(const x of list){const c=g.cards[x.card];if(!c||c.zone!=='battlefield'||c.controller!==pid||!isCreature(c))return false;const key=x.card+':'+x.kind;used[key]=(used[key]??0)+1;if((counterKinds(c)[x.kind]??0)<used[key])return false;}return true;}
 
 /** Extra mana abilities resolve together with the land's mana ability. */
-function landManaExtras(g:GameState,land:Card):import('./types').Mana[][] {
- const out:import('./types').Mana[][]=[];
+function landManaExtras(g:GameState,land:Card):(import('./types').Mana[]&{requires?:import('./types').Mana})[] {
+ const out:(import('./types').Mana[]&{requires?:import('./types').Mana})[]=[];
  for(const id of g.battlefield){const source=g.cards[id];for(const a of abilitiesOf(g,source))if(a.kind==='static'){
+  if(a.fin==='colorlessManaBonus'&&source.controller===land.controller&&land.def.produces?.includes('C'))out.push(Object.assign(['C' as const],{requires:'C' as const}));
   if(a.landManaBonus==='G'&&source.controller===land.controller)out.push(['G']);
   if(a.ecl==='basicManaBonus'&&land.def.supertypes?.includes('Basic'))out.push(land.def.produces??['C']);
   if(a.ecl==='landAuraMana'&&source.attachedTo===land.id&&source.chosenColor)out.push([source.chosenColor]);
  }}return out;
 }
+
+function finGraveCast(g:GameState,pid:PID,c:Card){return c.owner===pid&&(g.active===pid&&finStatic(g,pid,'hadesCast').length>0||c.def.types.includes('Artifact')&&finStatic(g,pid,'noctisCast').length>0&&g.players[pid].life>=3);}
+export function finStackChoices(g:GameState,pid:PID,ownAbility:boolean){return g.stack.filter(s=>ownAbility?s.controller===pid&&(s.kind==='trigger'||s.kind==='activated')&&!s.effects.some(e=>e.e==='fin'&&e.action==='copyAbility'):s.kind!=='spell'||!isCreature(g.cards[s.cardId]));}
+function finAbilityMaxX(g:GameState,pid:PID,c:Card,index:number){const ab=abilitiesFor(g,c)[index];let n=0;while(n<100&&canPayCost(g,pid,{...parseCost(ab.cost.mana),generic:parseCost(ab.cost.mana).generic+(n+1)*(ab.xMana??1)},ab.cost.tap?c.id:undefined,false,{...c.def,eclAbilityPayment:true}))n++;return n;}

@@ -1,0 +1,6068 @@
+[
+  {
+    "name": "Summon: Bahamut",
+    "cost": "{9}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Dragon"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II — Destroy up to one target nonland permanent.\nIII — Draw two cards.\nIV — Mega Flare — This creature deals damage equal to the total mana value of other permanents you control to each opponent.\nFlying",
+    "power": 9,
+    "toughness": 9,
+    "keywords": [
+      "flying"
+    ],
+    "number": 1,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Ultima, Origin of Oblivion",
+    "cost": "{5}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "text": "Flying\nWhenever Ultima attacks, put a blight counter on target land. For as long as that land has a blight counter on it, it loses all land types and abilities and has \"{T}: Add {C}.\"\nWhenever you tap a land for {C}, add an additional {C}.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 2,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Adelbert Steiner",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "text": "Lifelink\nAdelbert Steiner gets +1/+1 for each Equipment you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 3,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Aerith Gainsborough",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "text": "Lifelink\nWhenever you gain life, put a +1/+1 counter on Aerith Gainsborough.\nWhen Aerith Gainsborough dies, put X +1/+1 counters on each legendary creature you control, where X is the number of +1/+1 counters on Aerith Gainsborough.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 4,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Aerith Rescue Mission",
+    "cost": "{3}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Take the Elevator — Create three 1/1 colorless Hero creature tokens.\n• Take 59 Flights of Stairs — Tap up to three target creatures. Put a stun counter on one of them. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "number": 5,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Ambrosia Whiteheart",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "text": "Flash\nWhen Ambrosia Whiteheart enters, you may return another permanent you control to its owner's hand.\nLandfall — Whenever a land you control enters, Ambrosia Whiteheart gets +1/+0 until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ],
+    "number": 6,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Ashe, Princess of Dalmasca",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Noble"
+    ],
+    "text": "Whenever Ashe attacks, look at the top five cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "number": 7,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Auron's Inspiration",
+    "cost": "{2}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Attacking creatures get +2/+0 until end of turn.\nFlashback {2}{W}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{2}{W}{W}",
+    "number": 8,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Battle Menu",
+    "cost": "{1}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Attack — Create a 2/2 white Knight creature token.\n• Ability — Target creature gets +0/+4 until end of turn.\n• Magic — Destroy target creature with power 4 or greater.\n• Item — You gain 4 life.",
+    "number": 9,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Cloud, Midgar Mercenary",
+    "cost": "{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Mercenary"
+    ],
+    "text": "When Cloud enters, search your library for an Equipment card, reveal it, put it into your hand, then shuffle.\nAs long as Cloud is equipped, if an ability of Cloud or an Equipment attached to it triggers, that ability triggers an additional time.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "number": 10,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Cloudbound Moogle",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Moogle"
+    ],
+    "text": "Flying\nWhen this creature enters, put a +1/+1 counter on target creature.\nPlainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 11,
+    "set": "FIN",
+    "rarity": "C",
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Plains"
+      }
+    }
+  },
+  {
+    "name": "Coeurl",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Beast"
+    ],
+    "text": "{1}{W}, {T}: Tap target nonenchantment creature.",
+    "power": 2,
+    "toughness": 2,
+    "number": 12,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Crystal Fragments",
+    "cost": "{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature gets +1/+1.\n{5}{W}{W}: Exile this Equipment, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.\nEquip {1}",
+    "number": 13,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Summon: Alexander",
+      "cost": "",
+      "types": [
+        "Enchantment",
+        "Creature"
+      ],
+      "subtypes": [
+        "Saga",
+        "Construct"
+      ],
+      "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II — Prevent all damage that would be dealt to creatures you control this turn.\nIII — Tap all creatures your opponents control.\nFlying",
+      "power": 4,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ],
+      "colors": [
+        "W"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "crystal-fragments-back"
+    }
+  },
+  {
+    "name": "The Crystal's Chosen",
+    "cost": "{5}{W}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create four 1/1 colorless Hero creature tokens. Then put a +1/+1 counter on each creature you control.",
+    "number": 14,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Delivery Moogle",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Moogle"
+    ],
+    "text": "Flying\nWhen this creature enters, search your library and/or graveyard for an artifact card with mana value 2 or less, reveal it, and put it into your hand. If you search your library this way, shuffle it.",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 15,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Dion, Bahamut's Dominant",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Knight"
+    ],
+    "text": "Dragonfire Dive — During your turn, Dion and other Knights you control have flying.\nWhen Dion enters, create a 2/2 white Knight creature token.\n{4}{W}{W}, {T}: Exile Dion, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 16,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Bahamut, Warden of Light",
+      "cost": "",
+      "types": [
+        "Enchantment",
+        "Creature"
+      ],
+      "subtypes": [
+        "Saga",
+        "Dragon"
+      ],
+      "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II — Wings of Light — Put a +1/+1 counter on each other creature you control. Those creatures gain flying until end of turn.\nIII — Gigaflare — Destroy target permanent. Exile Bahamut, then return it to the battlefield (front face up).\nFlying",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "flying"
+      ],
+      "colors": [
+        "W"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "dion-bahamut-s-dominant-back"
+    }
+  },
+  {
+    "name": "Dragoon's Lance",
+    "cost": "{1}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +1/+0 and is a Knight in addition to its other types.\nDuring your turn, equipped creature has flying.\nGae Bolg — Equip {4}",
+    "number": 17,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Dwarven Castle Guard",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Soldier"
+    ],
+    "text": "When this creature dies, create a 1/1 colorless Hero creature token.",
+    "power": 2,
+    "toughness": 1,
+    "number": 18,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Fate of the Sun-Cryst",
+    "cost": "{4}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "This spell costs {2} less to cast if it targets a tapped creature.\nDestroy target nonland permanent.",
+    "number": 19,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "From Father to Son",
+    "cost": "{1}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Search your library for a Vehicle card, reveal it, and put it into your hand. If this spell was cast from a graveyard, put that card onto the battlefield instead. Then shuffle.\nFlashback {4}{W}{W}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{4}{W}{W}{W}",
+    "number": 20,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "G'raha Tia",
+    "cost": "{4}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Archer"
+    ],
+    "text": "Reach\nThe Allagan Eye — Whenever one or more other creatures and/or artifacts you control die, draw a card. This ability triggers only once each turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ],
+    "number": 21,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Gaelicat",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat"
+    ],
+    "text": "Flying, vigilance\nAs long as you control two or more artifacts, this creature gets +2/+0.",
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "number": 22,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Machinist's Arsenal",
+    "cost": "{4}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +2/+2 for each artifact you control and is an Artificer in addition to its other types.\nMachina — Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 23,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Magitek Armor",
+    "cost": "{3}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "When this Vehicle enters, create a 1/1 colorless Hero creature token.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 4,
+    "toughness": 4,
+    "number": 24,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Magitek Infantry",
+    "cost": "{W}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Soldier"
+    ],
+    "text": "This creature gets +1/+0 as long as you control another artifact.\n{2}{W}: Search your library for a card named Magitek Infantry, put it onto the battlefield tapped, then shuffle.",
+    "power": 1,
+    "toughness": 1,
+    "number": 25,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Minwu, White Mage",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "text": "Vigilance, lifelink\nWhenever you gain life, put a +1/+1 counter on each Cleric you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "vigilance",
+      "lifelink"
+    ],
+    "number": 26,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Moogles' Valor",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "For each creature you control, create a 1/2 white Moogle creature token with lifelink. Then creatures you control gain indestructible until end of turn.",
+    "number": 27,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Paladin's Arms",
+    "cost": "{2}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +2/+1, has ward {1}, and is a Knight in addition to its other types.\nLightbringer and Hero's Shield — Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 28,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Phoenix Down",
+    "cost": "{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{1}{W},{T}, Exile this artifact: Choose one —\n• Return target creature card with mana value 4 or less from your graveyard to the battlefield tapped.\n• Exile target Skeleton, Spirit, or Zombie.",
+    "number": 29,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Restoration Magic",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Tiered (Choose one additional cost.)\n• Cure — {0} — Target permanent gains hexproof and indestructible until end of turn.\n• Cura — {1} — Target permanent gains hexproof and indestructible until end of turn. You gain 3 life.\n• Curaga — {3}{W} — Permanents you control gain hexproof and indestructible until end of turn. You gain 6 life.",
+    "number": 30,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Sidequest: Catch a Fish",
+    "cost": "{2}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "At the beginning of your upkeep, look at the top card of your library. If it's an artifact or creature card, you may reveal it and put it into your hand. If you put a card into your hand this way, create a Food token and transform this enchantment.",
+    "number": 31,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Cooking Campsite",
+      "cost": "",
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "text": "{T}: Add {W}.\n{3}, {T}, Sacrifice an artifact: Put a +1/+1 counter on each creature you control. Activate only as a sorcery.",
+      "produces": [
+        "W"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "sidequest-catch-a-fish-back"
+    }
+  },
+  {
+    "name": "Slash of Light",
+    "cost": "{1}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Slash of Light deals damage equal to the number of creatures you control plus the number of Equipment you control to target creature.",
+    "number": 32,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Snow Villiers",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Monk"
+    ],
+    "text": "Vigilance\nSnow Villier's power is equal to the number of creatures you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 33,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Stiltzkin, Moogle Merchant",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Moogle"
+    ],
+    "text": "Lifelink\n{2}, {T}: Target opponent gains control of another target permanent you control. If they do, you draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 34,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Summon: Choco/Mog",
+    "cost": "{2}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Bird",
+      "Moogle"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II, III, IV — Stampede! — Other creatures you control get +1/+0 until end of turn.",
+    "power": 3,
+    "toughness": 3,
+    "number": 35,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Summon: Knights of Round",
+    "cost": "{6}{W}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Knight"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after V.)\nI, II, III, IV — Create three 2/2 white Knight creature tokens.\nV — Ultimate End — Other creatures you control get +2/+2 until end of turn. Put an indestructible counter on each of them.\nIndestructible",
+    "power": 3,
+    "toughness": 3,
+    "number": 36,
+    "set": "FIN",
+    "rarity": "M",
+    "keywords": [
+      "indestructible"
+    ]
+  },
+  {
+    "name": "Summon: Primal Garuda",
+    "cost": "{3}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Harpy"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Aerial Blast — This creature deals 4 damage to target tapped creature an opponent controls.\nII, III — Slipstream — Another target creature you control gets +1/+0 and gains flying until end of turn.\nFlying",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 37,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Ultima",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Destroy all artifacts and creatures. End the turn.",
+    "number": 38,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Venat, Heart of Hydaelyn",
+    "cost": "{1}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Wizard"
+    ],
+    "text": "Whenever you cast a legendary spell, draw a card. This ability triggers only once each turn.\nHero's Sundering — {7}, {T}: Exile target nonland permanent. Transform Venat. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 39,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Hydaelyn, the Mothercrystal",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "God"
+      ],
+      "text": "Indestructible\nBlessing of Light — At the beginning of combat on your turn, put a +1/+1 counter on another target creature you control. Until your next turn, it gains indestructible. If that creature is legendary, draw a card.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 4,
+      "colors": [
+        "W"
+      ],
+      "keywords": [
+        "indestructible"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "venat-heart-of-hydaelyn-back"
+    }
+  },
+  {
+    "name": "Weapons Vendor",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "text": "When this creature enters, draw a card.\nAt the beginning of combat on your turn, if you control an Equipment, you may pay {1}. When you do, attach target Equipment you control to target creature you control.",
+    "power": 2,
+    "toughness": 2,
+    "number": 40,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "White Auracite",
+    "cost": "{2}{W}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "When this artifact enters, exile target nonland permanent an opponent controls until this artifact leaves the battlefield.\n{T}: Add {W}.",
+    "number": 41,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "White Mage's Staff",
+    "cost": "{1}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +1/+1, has \"Whenever this creature attacks, you gain 1 life,\" and is a Cleric in addition to its other types.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 42,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "The Wind Crystal",
+    "cost": "{2}{W}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "White spells you cast cost {1} less to cast.\nIf you would gain life, you gain twice that much life instead.\n{4}{W}{W}, {T}: Creatures you control gain flying and lifelink until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 43,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "You're Not Alone",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +2/+2 until end of turn. If you control three or more creatures, it gets +4/+4 until end of turn instead.",
+    "number": 44,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Zack Fair",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Zack Fair enters with a +1/+1 counter on it.\n{1}, Sacrifice Zack Fair: Target creature you control gains indestructible until end of turn. Put Zack Fair's counters on that creature and attach an Equipment that was attached to Zack Fair to that creature.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 1,
+    "number": 45,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Astrologian's Planisphere",
+    "cost": "{1}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature is a Wizard in addition to its other types and has \"Whenever you cast a noncreature spell and whenever you draw your third card each turn, put a +1/+1 counter on this creature.\"\nDiana — Equip {2}",
+    "number": 46,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Cargo Ship",
+    "cost": "{1}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Flying, vigilance\n{T}: Add {C}. Spend this mana only to cast an artifact spell or activate an ability of an artifact source.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "number": 47,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Combat Tutorial",
+    "cost": "{2}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Target player draws two cards. Put a +1/+1 counter on up to one target creature you control.",
+    "number": 48,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Dragoon's Wyvern",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Drake"
+    ],
+    "text": "Flying\nWhen this creature enters, create a 1/1 colorless Hero creature token.",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "number": 49,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Dreams of Laguna",
+    "cost": "{1}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Surveil 1, then draw a card. (To surveil 1, look at the top card of your library. You may put it into your graveyard.)\nFlashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{3}{U}",
+    "number": 50,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Edgar, King of Figaro",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer",
+      "Noble"
+    ],
+    "text": "When Edgar enters, draw a card for each artifact you control.\nTwo-Headed Coin — The first time you flip one or more coins each turn, those coins come up heads and you win those flips.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 5,
+    "number": 51,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Eject",
+    "cost": "{3}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "This spell can't be countered.\nReturn target nonland permanent to its owner's hand.\nDraw a card.",
+    "number": 52,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Ether",
+    "cost": "{3}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{T}, Exile this artifact: Add {U}. When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+    "number": 53,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Gogo, Master of Mimicry",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wizard"
+    ],
+    "text": "{X}{X}, {T}: Copy target activated or triggered ability you control X times. You may choose new targets for the copies. This ability can't be copied and X can't be 0. (Mana abilities can't be targeted.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "number": 54,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Ice Flan",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Ooze"
+    ],
+    "text": "When this creature enters, tap target artifact or creature an opponent controls. Put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nIslandcycling {2} ({2}, Discard this card: Search your library for an Island card, reveal it, put it into your hand, then shuffle.)",
+    "power": 5,
+    "toughness": 4,
+    "number": 55,
+    "set": "FIN",
+    "rarity": "C",
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Island"
+      }
+    }
+  },
+  {
+    "name": "Ice Magic",
+    "cost": "{1}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Tiered (Choose one additional cost.)\n• Blizzard — {0} — Return target creature to its owner's hand.\n• Blizzara — {2} — Target creature's owner puts it on their choice of the top or bottom of their library.\n• Blizzaga — {5}{U} — Target creature's owner shuffles it into their library.",
+    "number": 56,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Il Mheg Pixie",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Faerie"
+    ],
+    "text": "Flying\nWhenever this creature attacks, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "number": 57,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Jill, Shiva's Dominant",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Warrior"
+    ],
+    "text": "When Jill enters, return up to one other target nonland permanent to its owner's hand.\n{3}{U}{U}, {T}: Exile Jill, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 58,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Shiva, Warden of Ice",
+      "cost": "",
+      "types": [
+        "Enchantment",
+        "Creature"
+      ],
+      "subtypes": [
+        "Saga",
+        "Elemental"
+      ],
+      "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II — Mesmerize — Target creature can't be blocked this turn.\nIII — Cold Snap — Tap all lands your opponents control. Exile Shiva, then return it to the battlefield (front face up).",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 5,
+      "colors": [
+        "U"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "jill-shiva-s-dominant-back"
+    }
+  },
+  {
+    "name": "Louisoix's Sacrifice",
+    "cost": "{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, sacrifice a legendary creature or pay {2}.\nCounter target activated ability, triggered ability, or noncreature spell.",
+    "number": 59,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "The Lunar Whale",
+    "cost": "{3}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Flying\nYou may look at the top card of your library any time.\nAs long as The Lunar Whale attacked this turn, you may play the top card of your library.\nCrew 1",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "number": 60,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Magic Damper",
+    "cost": "{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control gets +1/+1 and gains hexproof until end of turn. Untap it.",
+    "number": 61,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Matoya, Archon Elder",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Whenever you scry or surveil, draw a card. (Draw after you scry or surveil.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 4,
+    "number": 62,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Memories Returning",
+    "cost": "{2}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Reveal the top five cards of your library. Put one of them into your hand. Then choose an opponent. They put one on the bottom of your library. Then you put one into your hand. Then they put one on the bottom of your library. Put the other into your hand.\nFlashback {7}{U}{U}",
+    "flashback": "{7}{U}{U}",
+    "number": 63,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "The Prima Vista",
+    "cost": "{4}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Flying\nWhenever you cast a noncreature spell, if at least four mana was spent to cast it, The Prima Vista becomes an artifact creature until end of turn.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 64,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Qiqirn Merchant",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast",
+      "Citizen"
+    ],
+    "text": "{1}, {T}: Draw a card, then discard a card.\n{7}, {T}, Sacrifice this creature: Draw three cards. This ability costs {1} less to activate for each Town you control.",
+    "power": 1,
+    "toughness": 4,
+    "number": 65,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Quistis Trepe",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Blue Magic — When Quistis Trepe enters, you may cast target instant or sorcery card from a graveyard, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 66,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Relm's Sketching",
+    "cost": "{2}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create a token that's a copy of target artifact, creature, or land.",
+    "number": 67,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Retrieve the Esper",
+    "cost": "{3}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create a 3/3 blue Robot Warrior artifact creature token. Then if this spell was cast from a graveyard, put two +1/+1 counters on that token.\nFlashback {5}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{5}{U}",
+    "number": 68,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Rook Turret",
+    "cost": "{3}{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "text": "Flying\nWhenever another artifact you control enters, you may draw a card. If you do, discard a card.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 69,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Sage's Nouliths",
+    "cost": "{1}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +1/+0, has \"Whenever this creature attacks, untap target attacking creature,\" and is a Cleric in addition to its other types.\nHagneia — Equip {3}",
+    "number": 70,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Sahagin",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Warrior"
+    ],
+    "text": "Whenever you cast a noncreature spell, if at least four mana was spent to cast it, put a +1/+1 counter on this creature and it can't be blocked this turn.",
+    "power": 1,
+    "toughness": 3,
+    "number": 71,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Scorpion Sentinel",
+    "cost": "{1}{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Scorpion"
+    ],
+    "text": "As long as you control seven or more lands, this creature gets +3/+0.",
+    "power": 1,
+    "toughness": 4,
+    "number": 72,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Sidequest: Card Collection",
+    "cost": "{3}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, draw three cards, then discard two cards.\nAt the beginning of your end step, if eight or more cards are in your graveyard, transform this enchantment.",
+    "number": 73,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Magicked Card",
+      "cost": "",
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [
+        "Vehicle"
+      ],
+      "text": "Flying\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "flying"
+      ],
+      "colors": [
+        "U"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "sidequest-card-collection-back"
+    }
+  },
+  {
+    "name": "Sleep Magic",
+    "cost": "{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nWhen enchanted creature is dealt damage, sacrifice this Aura.",
+    "number": 74,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Stolen Uniform",
+    "cost": "{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose target creature you control and target Equipment. Gain control of that Equipment until end of turn. Attach it to the chosen creature. When you lose control of that Equipment this turn, if it's attached to a creature you control, unattach it.",
+    "number": 75,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Stuck in Summoner's Sanctum",
+    "cost": "{2}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Flash\nEnchant artifact or creature\nWhen this Aura enters, tap enchanted permanent.\nEnchanted permanent doesn't untap during its controller's untap step and its activated abilities can't be activated.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 76,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Summon: Leviathan",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Leviathan"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Return each creature that isn't a Kraken, Leviathan, Merfolk, Octopus, or Serpent to its owner's hand.\nII, III — Until end of turn, whenever a Kraken, Leviathan, Merfolk, Octopus, or Serpent attacks, draw a card.\nWard {2}",
+    "power": 6,
+    "toughness": 6,
+    "ward": 2,
+    "number": 77,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Summon: Shiva",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Elemental"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II — Heavenly Strike — Tap target creature an opponent controls. Put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nIII — Diamond Dust — Draw a card for each tapped creature your opponents control.",
+    "power": 4,
+    "toughness": 5,
+    "number": 78,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Swallowed by Leviathan",
+    "cost": "{2}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose target spell. Surveil 2, then counter the chosen spell unless its controller pays {1} for each card in your graveyard. (To surveil 2, look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "number": 79,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Syncopate",
+    "cost": "{X}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Counter target spell unless its controller pays {X}. If that spell is countered this way, exile it instead of putting it into its owner's graveyard.",
+    "number": 80,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Thief's Knife",
+    "cost": "{2}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +1/+1, has \"Whenever this creature deals combat damage to a player, draw a card,\" and is a Rogue in addition to its other types.\nEquip {4}",
+    "number": 81,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Travel the Overworld",
+    "cost": "{5}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Affinity for Towns (This spell costs {1} less to cast for each Town you control.)\nDraw four cards.",
+    "number": 82,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Ultros, Obnoxious Octopus",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Octopus"
+    ],
+    "text": "Whenever you cast a noncreature spell, if at least four mana was spent to cast it, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nWhenever you cast a noncreature spell, if at least eight mana was spent to cast it, put eight +1/+1 counters on Ultros.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "number": 83,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Valkyrie Aerial Unit",
+    "cost": "{5}{U}{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nFlying\nWhen this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 84,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "The Water Crystal",
+    "cost": "{2}{U}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Blue spells you cast cost {1} less to cast.\nIf an opponent would mill one or more cards, they mill that many cards plus four instead.\n{4}{U}{U}, {T}: Each opponent mills cards equal to the number of cards in your hand.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 85,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Y'shtola Rhul",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Druid"
+    ],
+    "text": "At the beginning of your end step, exile target creature you control, then return it to the battlefield under its owner's control. Then if it's the first end step of the turn, there is an additional end step after this step.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 5,
+    "number": 86,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Ahriman",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Eye",
+      "Horror"
+    ],
+    "text": "Flying, deathtouch\n{3}, Sacrifice another creature or artifact: Draw a card.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "deathtouch"
+    ],
+    "number": 87,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Al Bhed Salvagers",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer",
+      "Warrior"
+    ],
+    "text": "Whenever this creature or another creature or artifact you control dies, target opponent loses 1 life and you gain 1 life.",
+    "power": 2,
+    "toughness": 3,
+    "number": 88,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Ardyn, the Usurper",
+    "cost": "{5}{B}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Human",
+      "Noble"
+    ],
+    "text": "Demons you control have menace, lifelink, and haste.\nStarscourge — At the beginning of combat on your turn, exile up to one target creature card from a graveyard. If you exiled a card this way, create a token that's a copy of that card, except it's a 5/5 black Demon.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 89,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Black Mage's Rod",
+    "cost": "{1}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +1/+0, has \"Whenever you cast a noncreature spell, this creature deals 1 damage to each opponent,\" and is a Wizard in addition to its other types.\nEquip {3}",
+    "number": 90,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Cecil, Dark Knight",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "text": "Deathtouch\nDarkness — Whenever Cecil deals damage, you lose that much life. Then if your life total is less than or equal to half your starting life total, untap Cecil and transform it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 91,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Cecil, Redeemed Paladin",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Human",
+        "Knight"
+      ],
+      "text": "Lifelink\nProtect — Whenever Cecil attacks, other attacking creatures gain indestructible until end of turn.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "lifelink"
+      ],
+      "colors": [
+        "W"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "cecil-dark-knight-back"
+    }
+  },
+  {
+    "name": "Circle of Power",
+    "cost": "{3}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "You draw two cards and you lose 2 life. Create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"\nWizards you control get +1/+0 and gain lifelink until end of turn.",
+    "number": 92,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Cornered by Black Mages",
+    "cost": "{1}{B}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Target opponent sacrifices a creature of their choice.\nCreate a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"",
+    "number": 93,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Dark Confidant",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "At the beginning of your upkeep, reveal the top card of your library and put that card into your hand. You lose life equal to its mana value.",
+    "power": 2,
+    "toughness": 1,
+    "number": 94,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Dark Knight's Greatsword",
+    "cost": "{2}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +3/+0 and is a Knight in addition to its other types.\nChaosbringer — Equip—Pay 3 life. Activate only once each turn.",
+    "number": 95,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "The Darkness Crystal",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Black spells you cast cost {1} less to cast.\nIf a nontoken creature an opponent controls would die, instead exile it and you gain 2 life.\n{4}{B}{B}, {T}: Put target creature card exiled with The Darkness Crystal onto the battlefield tapped under your control with two additional +1/+1 counters on it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 96,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Demon Wall",
+    "cost": "{1}{B}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon",
+      "Wall"
+    ],
+    "text": "Defender\nMenace (This creature can't be blocked except by two or more creatures.)\nAs long as this creature has a counter on it, it can attack as though it didn't have defender.\n{5}{B}: Put two +1/+1 counters on this creature.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "defender",
+      "menace"
+    ],
+    "number": 97,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Evil Reawakened",
+    "cost": "{4}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Return target creature card from your graveyard to the battlefield with two additional +1/+1 counters on it.",
+    "number": 98,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Fang, Fearless l'Cie",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "text": "Whenever one or more cards leave your graveyard, you draw a card and you lose 1 life. This ability triggers only once each turn.\n(Melds with Vanille, Cheerful l'Cie.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 99,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Fight On!",
+    "cost": "{2}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Return up to two target creature cards from your graveyard to your hand.",
+    "number": 100,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "The Final Days",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create two tapped 2/2 black Horror creature tokens. If this spell was cast from a graveyard, instead create X of those tokens, where X is the number of creature cards in your graveyard.\nFlashback {4}{B}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{4}{B}{B}",
+    "number": 101,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Gaius van Baelsar",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "When Gaius van Baelsar enters, choose one —\n• Each player sacrifices a creature token of their choice.\n• Each player sacrifices a nontoken creature of their choice.\n• Each player sacrifices an enchantment of their choice.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "number": 102,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Hecteyes",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ooze",
+      "Horror"
+    ],
+    "text": "When this creature enters, each opponent discards a card.",
+    "power": 1,
+    "toughness": 1,
+    "number": 103,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Jecht, Reluctant Guardian",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "text": "Menace\nWhenever Jecht deals combat damage to a player, you may exile it, then return it to the battlefield transformed under its owner's control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "number": 104,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Braska's Final Aeon",
+      "cost": "",
+      "types": [
+        "Enchantment",
+        "Creature"
+      ],
+      "subtypes": [
+        "Saga",
+        "Nightmare"
+      ],
+      "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II — Jecht Beam — Each opponent discards a card and you draw a card.\nIII — Ultimate Jecht Shot — Each opponent sacrifices two creatures of their choice.\nMenace",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 7,
+      "toughness": 7,
+      "keywords": [
+        "menace"
+      ],
+      "colors": [
+        "B"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "jecht-reluctant-guardian-back"
+    }
+  },
+  {
+    "name": "Kain, Traitorous Dragoon",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "text": "Jump — During your turn, Kain has flying.\nWhenever Kain deals combat damage to a player, that player gains control of Kain. If they do, you draw that many cards, create that many tapped Treasure tokens, then lose that much life.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "number": 105,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Malboro",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Horror"
+    ],
+    "text": "Bad Breath — When this creature enters, each opponent discards a card, loses 2 life, and exiles the top three cards of their library.\nSwampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)",
+    "power": 4,
+    "toughness": 4,
+    "number": 106,
+    "set": "FIN",
+    "rarity": "C",
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Swamp"
+      }
+    }
+  },
+  {
+    "name": "Namazu Trader",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish",
+      "Citizen"
+    ],
+    "text": "When this creature enters, you lose 1 life and create a Treasure token.\nWhenever this creature attacks, you may sacrifice another creature or artifact. If you do, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "power": 3,
+    "toughness": 4,
+    "number": 107,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Ninja's Blades",
+    "cost": "{2}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select\nEquipped creature gets +1/+1, is a Ninja in addition to its other types, and has \"Whenever this creature deals combat damage to a player, draw a card, then discard a card. That player loses life equal to the discarded card's mana value.\"\nMutsunokami — Equip {2}",
+    "number": 108,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Overkill",
+    "cost": "{2}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets -0/-9999 until end of turn.",
+    "number": 109,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Phantom Train",
+    "cost": "{3}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Trample\nSacrifice another artifact or creature: Put a +1/+1 counter on this Vehicle. It becomes a Spirit artifact creature in addition to its other types until end of turn.",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "number": 110,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Poison the Waters",
+    "cost": "{1}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• All creatures get -1/-1 until end of turn.\n• Target player reveals their hand. You choose an artifact or creature card from it. That player discards that card.",
+    "number": 111,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Qutrub Forayer",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Horror"
+    ],
+    "text": "When this creature enters, choose one —\n• Destroy target creature that was dealt damage this turn.\n• Exile up to two target cards from a single graveyard.",
+    "power": 3,
+    "toughness": 2,
+    "number": 112,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Reno and Rude",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Assassin"
+    ],
+    "text": "Menace\nWhenever Reno and Rude deals combat damage to a player, exile the top card of that player's library. Then you may sacrifice another creature or artifact. If you do, you may play the exiled card this turn, and mana of any type can be spent to cast it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ],
+    "number": 113,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Resentful Revelation",
+    "cost": "{1}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.\nFlashback {6}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{6}{B}",
+    "number": 114,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Sephiroth, Fabled SOLDIER",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Avatar",
+      "Soldier"
+    ],
+    "text": "Whenever Sephiroth enters or attacks, you may sacrifice another creature. If you do, draw a card.\nWhenever another creature dies, target opponent loses 1 life and you gain 1 life. If this is the fourth time this ability has resolved this turn, transform Sephiroth.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 115,
+    "set": "FIN",
+    "rarity": "M",
+    "back": {
+      "name": "Sephiroth, One-Winged Angel",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Angel",
+        "Nightmare",
+        "Avatar"
+      ],
+      "text": "Flying\nSuper Nova — As this creature transforms into Sephiroth, One-Winged Angel, you get an emblem with \"Whenever a creature dies, target opponent loses 1 life and you gain 1 life.\"\nWhenever Sephiroth attacks, you may sacrifice any number of other creatures. If you do, draw that many cards.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "flying"
+      ],
+      "colors": [
+        "B"
+      ],
+      "set": "FIN",
+      "rarity": "M",
+      "id": "sephiroth-fabled-soldier-back"
+    }
+  },
+  {
+    "name": "Sephiroth's Intervention",
+    "cost": "{3}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target creature. You gain 2 life.",
+    "number": 116,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Shambling Cie'th",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Horror"
+    ],
+    "text": "This creature enters tapped.\nWhenever you cast a noncreature spell, you may pay {B}. If you do, return this card from your graveyard to your hand.",
+    "power": 3,
+    "toughness": 3,
+    "number": 117,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Shinra Reinforcements",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "When this creature enters, mill three cards and you gain 3 life. (To mill three cards, put the top three cards of your library into your graveyard.)",
+    "power": 2,
+    "toughness": 3,
+    "number": 118,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Sidequest: Hunt the Mark",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, destroy up to one target creature.\nAt the beginning of your end step, if a creature died under an opponent's control this turn, create a Treasure token. Then if you control three or more Treasures, transform this enchantment.",
+    "number": 119,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Yiazmat, Ultimate Mark",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Dragon"
+      ],
+      "text": "{1}{B}, Sacrifice another creature or artifact: Yiazmat gains indestructible until end of turn. Tap it.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 6,
+      "colors": [
+        "B"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "sidequest-hunt-the-mark-back"
+    }
+  },
+  {
+    "name": "Summon: Anima",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Horror"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II, III — Pain — You draw a card and you lose 1 life.\nIV — Oblivion — Each opponent sacrifices a creature of their choice and loses 3 life.\nMenace",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "menace"
+    ],
+    "number": 120,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Summon: Primal Odin",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Knight"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Gungnir — Destroy target creature an opponent controls.\nII — Zantetsuken — This creature gains \"Whenever this creature deals combat damage to a player, that player loses the game.\"\nIII — Hall of Sorrow — Draw two cards. Each player loses 2 life.",
+    "power": 5,
+    "toughness": 3,
+    "number": 121,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Tonberry",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Salamander",
+      "Horror"
+    ],
+    "text": "This creature enters tapped with a stun counter on it. (If it would become untapped, remove a stun counter from it instead.)\nChef's Knife — During your turn, this creature has first strike and deathtouch.",
+    "power": 2,
+    "toughness": 1,
+    "number": 122,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Undercity Dire Rat",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat"
+    ],
+    "text": "Rat Tail — When this creature dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "power": 2,
+    "toughness": 2,
+    "number": 123,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Vayne's Treachery",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Kicker—Sacrifice an artifact or creature. (You may sacrifice an artifact or creature in addition to any other costs as you cast this spell.)\nTarget creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets -6/-6 until end of turn instead.",
+    "number": 124,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Vincent Valentine",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Assassin"
+    ],
+    "text": "Whenever a creature an opponent controls dies, put a number of +1/+1 counters on Vincent Valentine equal to that creature's power.\nWhenever Vincent Valentine attacks, you may transform it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 125,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Galian Beast",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Werewolf",
+        "Beast"
+      ],
+      "text": "Trample, lifelink\nWhen Galian Beast dies, return it to the battlefield tapped (front face up).",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 3,
+      "toughness": 2,
+      "keywords": [
+        "trample",
+        "lifelink"
+      ],
+      "colors": [
+        "B"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "vincent-valentine-back"
+    }
+  },
+  {
+    "name": "Vincent's Limit Break",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Tiered (Choose one additional cost.)\nUntil end of turn, target creature you control gains \"When this creature dies, return it to the battlefield tapped under its owner's control\" and has the chosen base power and toughness.\n• Galian Beast — {0} — 3/2.\n• Death Gigas — {1} — 5/2.\n• Hellmasker — {3} — 7/2.",
+    "number": 126,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Zenos yae Galvus",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Warrior"
+    ],
+    "text": "My First Friend — When Zenos yae Galvus enters, choose a creature an opponent controls. Until end of turn, creatures other than Zenos yae Galvus and the chosen creature get -2/-2.\nWhen the chosen creature leaves the battlefield, transform Zenos yae Galvus.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 127,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Shinryu, Transcendent Rival",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Dragon"
+      ],
+      "text": "Flying\nAs this creature transforms into Shinryu, choose an opponent.\nBurning Chains — When the chosen player loses the game, you win the game.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 8,
+      "toughness": 8,
+      "keywords": [
+        "flying"
+      ],
+      "colors": [
+        "B"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "zenos-yae-galvus-back"
+    }
+  },
+  {
+    "name": "Zodiark, Umbral God",
+    "cost": "{B}{B}{B}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "text": "Indestructible\nWhen Zodiark enters, each player sacrifices half the non-God creatures they control of their choice, rounded down.\nWhenever a player sacrifices another creature, put a +1/+1 counter on Zodiark.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "number": 128,
+    "set": "FIN",
+    "rarity": "R",
+    "keywords": [
+      "indestructible"
+    ]
+  },
+  {
+    "name": "Barret Wallace",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel"
+    ],
+    "text": "Reach\nWhenever Barret Wallace attacks, it deals damage equal to the number of equipped creatures you control to defending player.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ],
+    "number": 129,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Blazing Bomb",
+    "cost": "{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "text": "Whenever you cast a noncreature spell, if at least four mana was spent to cast it, put a +1/+1 counter on this creature.\nBlow Up — {T}, Sacrifice this creature: It deals damage equal to its power to target creature. Activate only as a sorcery.",
+    "power": 1,
+    "toughness": 1,
+    "number": 130,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Call the Mountain Chocobo",
+    "cost": "{3}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Search your library for a Mountain card, reveal it, put it into your hand, then shuffle. Create a 2/2 green Bird creature token with \"Whenever a land you control enters, this token gets +1/+0 until end of turn.\"\nFlashback {5}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{5}{R}",
+    "number": 131,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Choco-Comet",
+    "cost": "{X}{R}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choco-Comet deals X damage to any target.\nCreate a 2/2 green Bird creature token with \"Whenever a land you control enters, this token gets +1/+0 until end of turn.\"",
+    "number": 132,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Clive, Ifrit's Dominant",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Warrior"
+    ],
+    "text": "When Clive enters, you may discard your hand, then draw cards equal to your devotion to red. (Each {R} in the mana costs of permanents you control counts toward your devotion to red.)\n{4}{R}{R}, {T}: Exile Clive, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "number": 133,
+    "set": "FIN",
+    "rarity": "M",
+    "back": {
+      "name": "Ifrit, Warden of Inferno",
+      "cost": "",
+      "types": [
+        "Enchantment",
+        "Creature"
+      ],
+      "subtypes": [
+        "Saga",
+        "Demon"
+      ],
+      "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI — Lunge — Ifrit fights up to one other target creature.\nII, III — Brimstone — Add {R}{R}{R}{R}. If Ifrit has three or more lore counters on it, exile it, then return it to the battlefield (front face up).",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 9,
+      "toughness": 9,
+      "colors": [
+        "R"
+      ],
+      "set": "FIN",
+      "rarity": "M",
+      "id": "clive-ifrit-s-dominant-back"
+    }
+  },
+  {
+    "name": "Coral Sword",
+    "cost": "{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Flash\nWhen this Equipment enters, attach it to target creature you control. That creature gains first strike until end of turn.\nEquipped creature gets +1/+0.\nEquip {1}",
+    "keywords": [
+      "flash"
+    ],
+    "number": 134,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "The Fire Crystal",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Red spells you cast cost {1} less to cast.\nCreatures you control have haste.\n{4}{R}{R}, {T}: Create a token that's a copy of target creature you control. Sacrifice it at the beginning of the next end step.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 135,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Fire Magic",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Tiered (Choose one additional cost.)\n• Fire — {0} — Fire Magic deals 1 damage to each creature.\n• Fira — {2} — Fire Magic deals 2 damage to each creature.\n• Firaga — {5} — Fire Magic deals 3 damage to each creature.",
+    "number": 136,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Firion, Wild Rose Warrior",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Warrior"
+    ],
+    "text": "Equipped creatures you control have haste.\nWhenever a nontoken Equipment you control enters, create a token that's a copy of it, except it has \"This Equipment's equip abilities cost {2} less to activate.\" Sacrifice that token at the beginning of the next upkeep.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 137,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Freya Crescent",
+    "cost": "{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat",
+      "Knight"
+    ],
+    "text": "Jump — During your turn, Freya Crescent has flying.\n{T}: Add {R}. Spend this mana only to cast an Equipment spell or activate an equip ability.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "number": 138,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Gilgamesh, Master-at-Arms",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Samurai"
+    ],
+    "text": "Whenever Gilgamesh enters or attacks, look at the top six cards of your library. You may put any number of Equipment cards from among them onto the battlefield. Put the rest on the bottom of your library in a random order. When you put one or more Equipment onto the battlefield this way, you may attach one of them to a Samurai you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 6,
+    "number": 139,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Haste Magic",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +3/+1 and gains haste until end of turn. Exile the top card of your library. You may play it until your next end step.",
+    "number": 140,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Hill Gigas",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Giant"
+    ],
+    "text": "Trample, haste\nMountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "trample",
+      "haste"
+    ],
+    "number": 141,
+    "set": "FIN",
+    "rarity": "C",
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Mountain"
+      }
+    }
+  },
+  {
+    "name": "Item Shopkeep",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "Whenever you attack, target attacking equipped creature gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 142,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Laughing Mad",
+    "cost": "{2}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, discard a card.\nDraw two cards.\nFlashback {3}{R} (You may cast this card from your graveyard for its flashback cost and any additional costs. Then exile it.)",
+    "flashback": "{3}{R}",
+    "number": 143,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Light of Judgment",
+    "cost": "{4}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Light of Judgment deals 6 damage to target creature. Destroy up to one Equipment attached to that creature.",
+    "number": 144,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Mysidian Elder",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "When this creature enters, create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"",
+    "power": 1,
+    "toughness": 3,
+    "number": 145,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Nibelheim Aflame",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose target creature you control. It deals damage equal to its power to each other creature. If this spell was cast from a graveyard, discard your hand and draw four cards.\nFlashback {5}{R}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{5}{R}{R}",
+    "number": 146,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Opera Love Song",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Exile the top two cards of your library. You may play those cards until your next end step.\n• One or two target creatures each get +2/+0 until end of turn.",
+    "number": 147,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Prompto Argentum",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "Haste\nSelfie Shot — Whenever you cast a noncreature spell, if at least four mana was spent to cast it, create a Treasure token.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "haste"
+    ],
+    "number": 148,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Queen Brahne",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever Queen Brahne attacks, create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "prowess"
+    ],
+    "number": 149,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Random Encounter",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Shuffle your library, then mill four cards. Put each creature card milled this way onto the battlefield. They gain haste. At the beginning of the next end step, return those creatures to their owner's hand.\nFlashback {6}{R}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{6}{R}{R}",
+    "number": 150,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Raubahn, Bull of Ala Mhigo",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "text": "Ward—Pay life equal to Raubahn's power.\nWhenever Raubahn attacks, attach up to one target Equipment you control to target attacking creature.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 151,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Red Mage's Rapier",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature has \"Whenever you cast a noncreature spell, this creature gets +2/+0 until end of turn.\" and is a Wizard in addition to its other types.\nEquip {3}",
+    "number": 152,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Sabotender",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant"
+    ],
+    "text": "Reach\nLandfall — Whenever a land you control enters, this creature deals 1 damage to each opponent.",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "reach"
+    ],
+    "number": 153,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Samurai's Katana",
+    "cost": "{2}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +2/+2, has trample and haste, and is a Samurai in addition to its other types.\nMurasame — Equip {5}",
+    "number": 154,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Sandworm",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Worm"
+    ],
+    "text": "Haste\nWhen this creature enters, destroy target land. Its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ],
+    "number": 155,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Seifer Almasy",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "text": "Whenever a creature you control attacks alone, it gains double strike until end of turn.\nFire Cross — Whenever Seifer Almasy deals combat damage to a player, you may cast target instant or sorcery card with mana value 3 or less from your graveyard without paying its mana cost. If that spell would be put into your graveyard, exile it instead.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "number": 156,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Self-Destruct",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control deals X damage to any other target and X damage to itself, where X is its power.",
+    "number": 157,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Sidequest: Play Blitzball",
+    "cost": "{2}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "At the beginning of combat on your turn, target creature you control gets +2/+0 until end of turn.\nAt the end of combat on your turn, if a player was dealt 6 or more combat damage this turn, transform this enchantment, then attach it to a creature you control.",
+    "number": 158,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "World Champion, Celestial Weapon",
+      "cost": "",
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [
+        "Equipment"
+      ],
+      "text": "Double Overdrive — Equipped creature gets +2/+0 and has double strike.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "R"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "sidequest-play-blitzball-back"
+    }
+  },
+  {
+    "name": "Sorceress's Schemes",
+    "cost": "{3}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Return target instant or sorcery card from your graveyard or exiled card with flashback you own to your hand. Add {R}.\nFlashback {4}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{4}{R}",
+    "number": 159,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Summon: Brynhildr",
+    "cost": "{1}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Knight"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Chain — Exile the top card of your library. During any turn you put a lore counter on this Saga, you may play that card.\nII, III — Gestalt Mode — When you next cast a creature spell this turn, it gains haste until end of turn.",
+    "power": 2,
+    "toughness": 1,
+    "number": 160,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Summon: Esper Ramuh",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Wizard"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Judgment Bolt — This creature deals damage equal to the number of noncreature, nonland cards in your graveyard to target creature an opponent controls.\nII, III — Wizards you control get +1/+0 until end of turn.",
+    "power": 3,
+    "toughness": 3,
+    "number": 161,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Summon: G.F. Cerberus",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Dog"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\nII — Double — When you next cast an instant or sorcery spell this turn, copy it. You may choose new targets for the copy.\nIII — Triple — When you next cast an instant or sorcery spell this turn, copy it twice. You may choose new targets for the copies.",
+    "power": 3,
+    "toughness": 3,
+    "number": 162,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Summon: G.F. Ifrit",
+    "cost": "{2}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Demon"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II — You may discard a card. If you do, draw a card.\nIII, IV — Add {R}.",
+    "power": 3,
+    "toughness": 2,
+    "number": 163,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Suplex",
+    "cost": "{1}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Suplex deals 3 damage to target creature. If that creature would die this turn, exile it instead.\n• Exile target artifact.",
+    "number": 164,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Thunder Magic",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Tiered (Choose one additional cost.)\n• Thunder — {0} — Thunder Magic deals 2 damage to target creature.\n• Thundara — {3} — Thunder Magic deals 4 damage to target creature.\n• Thundaga — {5}{R} — Thunder Magic deals 8 damage to target creature.",
+    "number": 165,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Triple Triad",
+    "cost": "{3}{R}{R}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "At the beginning of your upkeep, each player exiles the top card of their library. Until end of turn, you may play the card you own exiled this way and each other card exiled this way with lesser mana value than it without paying their mana costs.",
+    "number": 166,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Unexpected Request",
+    "cost": "{2}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. You may attach an Equipment you control to that creature. If you do, unattach it at the beginning of the next end step.",
+    "number": 167,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Vaan, Street Thief",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "Whenever one or more Scouts, Pirates, and/or Rogues you control deal combat damage to a player, exile the top card of that player's library. You may cast it. If you don't, create a Treasure token.\nWhenever you cast a spell you don't own, put a +1/+1 counter on each Scout, Pirate, and Rogue you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 168,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Warrior's Sword",
+    "cost": "{3}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +3/+2 and is a Warrior in addition to its other types.\nEquip {5}",
+    "number": 169,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Zell Dincht",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "text": "You may play an additional land on each of your turns.\nZell Dincht gets +1/+0 for each land you control.\nAt the beginning of your end step, return a land you control to its owner's hand.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 3,
+    "number": 170,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Airship Crash",
+    "cost": "{2}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target artifact, enchantment, or creature with flying.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 171,
+    "set": "FIN",
+    "rarity": "C",
+    "cycling": {
+      "cost": "{2}"
+    }
+  },
+  {
+    "name": "Ancient Adamantoise",
+    "cost": "{5}{G}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Turtle"
+    ],
+    "text": "Vigilance, ward {3}\nDamage isn't removed from this creature during cleanup steps.\nAll damage that would be dealt to you and other permanents you control is dealt to this creature instead.\nWhen this creature dies, exile it and create ten tapped Treasure tokens.",
+    "power": 8,
+    "toughness": 20,
+    "keywords": [
+      "vigilance"
+    ],
+    "ward": 3,
+    "number": 172,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Balamb T-Rexaur",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "text": "Trample\nWhen this creature enters, you gain 3 life.\nForestcycling {2} ({2}, Discard this card: Search your library for a Forest card, reveal it, put it into your hand, then shuffle.)",
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ],
+    "number": 173,
+    "set": "FIN",
+    "rarity": "C",
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Forest"
+      }
+    }
+  },
+  {
+    "name": "Bard's Bow",
+    "cost": "{2}{G}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +2/+2, has reach, and is a Bard in addition to its other types.\nPerseus's Bow — Equip {6} ({6}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 174,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Bartz and Boko",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Bird"
+    ],
+    "text": "Affinity for Birds (This spell costs {1} less to cast for each Bird you control.)\nWhen Bartz and Boko enters, each other Bird you control deals damage equal to its power to target creature an opponent controls.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "number": 175,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Blitzball Shot",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +3/+3 and gains trample until end of turn.",
+    "number": 176,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Cactuar",
+    "cost": "{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant"
+    ],
+    "text": "Trample\nAt the beginning of your end step, if this creature didn't enter the battlefield this turn, return it to its owner's hand.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ],
+    "number": 177,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Chocobo Kick",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Kicker—Return a land you control to its owner's hand. (You may return a land you control to its owner's hand in addition to any other costs as you cast this spell.)\nTarget creature you control deals damage equal to its power to target creature an opponent control. If this spell was kicked, the creature you control deals twice that much damage instead.",
+    "number": 178,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Chocobo Racetrack",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Landfall — Whenever a land you control enters, create a 2/2 green Bird creature token with \"Whenever a land you control enters, this token gets +1/+0 until end of turn.\"",
+    "number": 179,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Clash of the Eikons",
+    "cost": "{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one or more —\n• Target creature you control fights target creature an opponent controls.\n• Remove a lore counter from target Saga you control. (Removing lore counters doesn't cause chapter abilities to trigger.)\n• Put a lore counter on target Saga you control.",
+    "number": 180,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Coliseum Behemoth",
+    "cost": "{5}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "text": "Trample\nWhen this creature enters, choose one —\n• Destroy target artifact or enchantment.\n• Draw a card.",
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "trample"
+    ],
+    "number": 181,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Commune with Beavers",
+    "cost": "{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Look at the top three cards of your library. You may reveal an artifact, creature, or land card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+    "number": 182,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Diamond Weapon",
+    "cost": "{7}{G}{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "text": "This spell costs {1} less to cast for each permanent card in your graveyard.\nReach\nImmune — Prevent all combat damage that would be dealt to Diamond Weapon.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 8,
+    "toughness": 8,
+    "keywords": [
+      "reach"
+    ],
+    "number": 183,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "The Earth Crystal",
+    "cost": "{2}{G}{G}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Green spells you cast cost {1} less to cast.\nIf one or more +1/+1 counters would be put on a creature you control, twice that many +1/+1 counters are put on that creature instead.\n{4}{G}{G}, {T}: Distribute two +1/+1 counters among one or two target creatures you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 184,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Esper Origins",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Surveil 2. You gain 2 life. If this spell was cast from a graveyard, exile it, then put it onto the battlefield transformed under its owner's control with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)\nFlashback {3}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{3}{G}",
+    "number": 185,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Summon: Esper Maduin",
+      "cost": "",
+      "types": [
+        "Enchantment",
+        "Creature"
+      ],
+      "subtypes": [
+        "Saga",
+        "Elemental"
+      ],
+      "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Reveal the top card of your library. If it's a permanent card, put it into your hand.\nII — Add {G}{G}.\nIII — Other creatures you control get +2/+2 and gain trample until end of turn.",
+      "power": 4,
+      "toughness": 4,
+      "colors": [
+        "G"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "esper-origins-back"
+    }
+  },
+  {
+    "name": "Galuf's Final Act",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Until end of turn, target creature gets +1/+0 and gains \"When this creature dies, put a number of +1/+1 counters equal to its power on up to one target creature.\"",
+    "number": 186,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Gigantoad",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog"
+    ],
+    "text": "As long as you control seven or more lands, this creature gets +2/+2.",
+    "power": 4,
+    "toughness": 4,
+    "number": 187,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Goobbue Gardener",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Beast"
+    ],
+    "text": "{T}: Add {G}.",
+    "power": 1,
+    "toughness": 3,
+    "number": 188,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Gran Pulse Ochu",
+    "cost": "{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Beast"
+    ],
+    "text": "Deathtouch\n{8}: Until end of turn, this creature gets +1/+1 for each permanent card in your graveyard.",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 189,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Gysahl Greens",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create a 2/2 green Bird creature token with \"Whenever a land you control enters, this token gets +1/+0 until end of turn.\"\nFlashback {6}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{6}{G}",
+    "number": 190,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Jumbo Cactuar",
+    "cost": "{5}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant"
+    ],
+    "text": "10,000 Needles — Whenever this creature attacks, it gets +9999/+0 until end of turn.",
+    "power": 1,
+    "toughness": 7,
+    "number": 191,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Loporrit Scout",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rabbit",
+      "Scout"
+    ],
+    "text": "Whenever another creature you control enters, this creature gets +1/+1 until end of turn.",
+    "power": 3,
+    "toughness": 2,
+    "number": 192,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Prishe's Wanderings",
+    "cost": "{2}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Search your library for a basic land card or Town card, put it onto the battlefield tapped, then shuffle. When you search your library this way, put a +1/+1 counter on target creature you control.",
+    "number": 193,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Quina, Qu Gourmet",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Qu"
+    ],
+    "text": "If one or more tokens would be created under your control, those tokens plus a 1/1 green Frog creature token are created instead.\n{2}, Sacrifice a Frog: Put a +1/+1 counter on Quina.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 194,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Reach the Horizon",
+    "cost": "{3}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Search your library for up to two basic land cards and/or Town cards with different names, put them onto the battlefield tapped, then shuffle.",
+    "number": 195,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "A Realm Reborn",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Other permanents you control have \"{T}: Add one mana of any color.\"",
+    "number": 196,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Ride the Shoopuf",
+    "cost": "{1}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Landfall — Whenever a land you control enters, put a +1/+1 counter on target creature you control.\n{5}{G}{G}: This enchantment becomes a 7/7 Beast creature in addition to its other types.",
+    "number": 197,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Rydia's Return",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Creatures you control get +3/+3 until end of turn.\n• Return up to two target permanent cards from your graveyard to your hand.",
+    "number": 198,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Sazh Katzroy",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "text": "When Sazh Katzroy enters, you may search your library for a Bird or basic land card, reveal it, put it into your hand, then shuffle.\nWhenever Sazh Katzroy attacks, put a +1/+1 counter on target creature, then double the number of +1/+1 counters on that creature.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 199,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Sazh's Chocobo",
+    "cost": "{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "text": "Landfall — Whenever a land you control enters, put a +1/+1 counter on this creature.",
+    "power": 0,
+    "toughness": 1,
+    "number": 200,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Sidequest: Raise a Chocobo",
+    "cost": "{1}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When this enchantment enters, create a 2/2 green Bird creature token with \"Whenever a land you control enters, this token gets +1/+0 until end of turn.\"\nAt the beginning of your first main phase, if you control four or more Birds, transform this enchantment.",
+    "number": 201,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Black Chocobo",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Bird"
+      ],
+      "text": "When this permanent transforms into Black Chocobo, search your library for a land card, put it onto the battlefield tapped, then shuffle.\nLandfall — Whenever a land you control enters, Birds you control get +1/+0 until end of turn.",
+      "power": 2,
+      "toughness": 2,
+      "colors": [
+        "G"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "sidequest-raise-a-chocobo-back"
+    }
+  },
+  {
+    "name": "Summon: Fat Chocobo",
+    "cost": "{4}{G}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Bird"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI — Wark — Create a 2/2 green Bird creature token with \"Whenever a land you control enters, this token gets +1/+0 until end of turn.\"\nII, III, IV — Kerplunk — Creatures you control gain trample until end of turn.",
+    "power": 4,
+    "toughness": 4,
+    "number": 202,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Summon: Fenrir",
+    "cost": "{2}{G}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Wolf"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Crescent Fang — Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nII — Heavenward Howl — When you next cast a creature spell this turn, that creature enters with an additional +1/+1 counter on it.\nIII — Ecliptic Growl — Draw a card if you control the creature with the greatest power or tied for the greatest power.",
+    "power": 3,
+    "toughness": 2,
+    "number": 203,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Summon: Titan",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Saga",
+      "Giant"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Mill five cards.\nII — Return all land cards from your graveyard to the battlefield tapped.\nIII — Until end of turn, another target creature you control gains trample and gets +X/+X, where X is the number of lands you control.\nReach, trample",
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "reach",
+      "trample"
+    ],
+    "number": 204,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Summoner's Grimoire",
+    "cost": "{3}{G}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Book",
+      "Equipment"
+    ],
+    "text": "Job select\nEquipped creature is a Shaman in addition to its other types and has \"Whenever this creature attacks, you may put a creature card from your hand onto the battlefield. If that card is an enchantment card, it enters tapped and attacking.\"\nAbraxas — Equip {3}",
+    "number": 205,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Tifa Lockhart",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "text": "Trample\nLandfall — Whenever a land you control enters, double Tifa Lockhart's power until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ],
+    "number": 206,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Tifa's Limit Break",
+    "cost": "{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Tiered (Choose one additional cost.)\n• Somersault — {0} — Target creature gets +2/+2 until end of turn.\n• Meteor Strikes — {2} — Double target creature's power and toughness until end of turn.\n• Final Heaven — {6}{G} — Triple target creature's power and toughness until end of turn.",
+    "number": 207,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Torgal, A Fine Hound",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "text": "Whenever you cast your first Human creature spell each turn, that creature enters with an additional +1/+1 counter on it for each Dog and/or Wolf you control.\n{T}: Add one mana of any color.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 208,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Town Greeter",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "When this creature enters, mill four cards. You may put a land card from among them into your hand. If you put a Town card into your hand this way, you gain 2 life. (To mill four cards, a player puts the top four cards of their library into their graveyard.)",
+    "power": 1,
+    "toughness": 1,
+    "number": 209,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Traveling Chocobo",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "text": "You may look at the top card of your library any time.\nYou may play lands and cast Bird spells from the top of your library.\nIf a land or Bird you control entering the battlefield causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time.",
+    "power": 3,
+    "toughness": 2,
+    "number": 210,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Vanille, Cheerful l'Cie",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "text": "When Vanille enters, mill two cards, then return a permanent card from your graveyard to your hand.\nAt the beginning of your first main phase, if you both own and control Vanille and a creature named Fang, Fearless l'Cie, you may pay {3}{B}{G}. If you do, exile them, then meld them into Ragnarok, Divine Deliverance.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "number": 211,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Ragnarok, Divine Deliverance",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Beast",
+        "Avatar"
+      ],
+      "text": "Vigilance, menace, trample, reach, haste\nWhen Ragnarok dies, destroy target permanent and return target nonlegendary permanent card from your graveyard to the battlefield.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 7,
+      "toughness": 6,
+      "keywords": [
+        "vigilance",
+        "menace",
+        "trample",
+        "reach",
+        "haste"
+      ],
+      "colors": [
+        "B",
+        "G"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "vanille-cheerful-l-cie-back"
+    }
+  },
+  {
+    "name": "Absolute Virtue",
+    "cost": "{6}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Warrior"
+    ],
+    "text": "This spell can't be countered.\nFlying\nYou have protection from each of your opponents. (You can't be dealt damage, enchanted, or targeted by anything controlled by your opponents.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 8,
+    "toughness": 8,
+    "keywords": [
+      "flying"
+    ],
+    "number": 212,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Balthier and Fran",
+    "cost": "{1}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rabbit"
+    ],
+    "text": "Reach\nVehicles you control get +1/+1 and have vigilance and reach.\nWhenever a Vehicle crewed by Balthier and Fran this turn attacks, if it's the first combat phase of the turn, you may pay {1}{R}{G}. If you do, after this phase, there is an additional combat phase.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "number": 213,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Black Waltz No. 3",
+    "cost": "{2}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wizard"
+    ],
+    "text": "Flying, deathtouch\nWhenever you cast a noncreature spell, Black Waltz No. 3 deals 2 damage to each opponent.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "deathtouch"
+    ],
+    "number": 214,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Choco, Seeker of Paradise",
+    "cost": "{1}{G}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "text": "Whenever one or more Birds you control attack, look at that many cards from the top of your library. You may put one of them into your hand. Then put any number of land cards from among them onto the battlefield tapped and the rest into your graveyard.\nLandfall — Whenever a land you control enters, Choco gets +1/+0 until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 5,
+    "number": 215,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Cid, Timeless Artificer",
+    "cost": "{2}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "text": "Artifact creatures and Heroes you control get +1/+1 for each Artificer you control and each Artificer card in your graveyard.\nA deck can have any number of cards named Cid, Timeless Artificer.\nCycling {W}{U} ({W}{U}, Discard this card: Draw a card.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 216,
+    "set": "FIN",
+    "rarity": "U",
+    "cycling": {
+      "cost": "{W}{U}"
+    }
+  },
+  {
+    "name": "Cloud of Darkness",
+    "cost": "{2}{B}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar"
+    ],
+    "text": "Flying\nParticle Beam — When Cloud of Darkness enters, target creature an opponent controls gets -X/-X until end of turn, where X is the number of permanent cards in your graveyard.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 217,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Emet-Selch, Unsundered",
+    "cost": "{1}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Wizard"
+    ],
+    "text": "Vigilance\nWhenever Emet-Selch enters or attacks, draw a card, then discard a card.\nAt the beginning of your upkeep, if there are fourteen or more cards in your graveyard, you may transform Emet-Selch.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 218,
+    "set": "FIN",
+    "rarity": "M",
+    "back": {
+      "name": "Hades, Sorcerer of Eld",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar"
+      ],
+      "text": "Vigilance\nEcho of the Lost — During your turn, you may play cards from your graveyard.\nIf a card or token would be put into your graveyard from anywhere, exile it instead.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 6,
+      "toughness": 6,
+      "keywords": [
+        "vigilance"
+      ],
+      "colors": [
+        "U",
+        "B"
+      ],
+      "set": "FIN",
+      "rarity": "M",
+      "id": "emet-selch-unsundered-back"
+    }
+  },
+  {
+    "name": "The Emperor of Palamecia",
+    "cost": "{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Wizard"
+    ],
+    "text": "{T}: Add {U} or {R}. Spend this mana only to cast a noncreature spell.\nWhenever you cast a noncreature spell, if at least four mana was spent to cast it, put a +1/+1 counter on The Emperor of Palamecia. Then if it has three or more +1/+1 counters on it, transform it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 219,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "The Lord Master of Hell",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Demon",
+        "Noble",
+        "Wizard"
+      ],
+      "text": "Starfall — Whenever The Lord Master of Hell attacks, it deals X damage to each opponent, where X is the number of noncreature, nonland cards in your graveyard.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 3,
+      "toughness": 3,
+      "colors": [
+        "U",
+        "R"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "the-emperor-of-palamecia-back"
+    }
+  },
+  {
+    "name": "Exdeath, Void Warlock",
+    "cost": "{1}{B}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Warlock"
+    ],
+    "text": "When Exdeath enters, you gain 3 life.\nAt the beginning of your end step, if there are six or more permanent cards in your graveyard, transform Exdeath.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 220,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Neo Exdeath, Dimension's End",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Spirit",
+        "Avatar"
+      ],
+      "text": "Trample\nNeo Exdeath's power is equal to the number of permanent cards in your graveyard.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 0,
+      "toughness": 3,
+      "keywords": [
+        "trample"
+      ],
+      "colors": [
+        "B",
+        "G"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "exdeath-void-warlock-back"
+    }
+  },
+  {
+    "name": "Garland, Knight of Cornelia",
+    "cost": "{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "text": "Whenever you cast a noncreature spell, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{3}{B}{B}{R}{R}: Return this card from your graveyard to the battlefield transformed. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "number": 221,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Chaos, the Endless",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Demon"
+      ],
+      "text": "Flying\nWhen Chaos dies, put it on the bottom of its owner's library.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "flying"
+      ],
+      "colors": [
+        "B",
+        "R"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "garland-knight-of-cornelia-back"
+    }
+  },
+  {
+    "name": "Garnet, Princess of Alexandria",
+    "cost": "{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Cleric"
+    ],
+    "text": "Lifelink\nWhenever Garnet attacks, you may remove a lore counter from each of any number of Sagas you control. Put a +1/+1 counter on Garnet for each lore counter removed this way.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 222,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Giott, King of the Dwarves",
+    "cost": "{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Noble"
+    ],
+    "text": "Double strike\nWhenever Giott or another Dwarf you control enters and whenever an Equipment you control enters, you may discard a card. If you do, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "double_strike"
+    ],
+    "number": 223,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Gladiolus Amicitia",
+    "cost": "{4}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "text": "When Gladiolus Amicitia enters, search your library for a land card, put it onto the battlefield tapped, then shuffle.\nLandfall — Whenever a land you control enters, another target creature you control gets +2/+2 and gains trample until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 6,
+    "number": 224,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Golbez, Crystal Collector",
+    "cost": "{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Whenever an artifact you control enters, surveil 1.\nAt the beginning of your end step, if you control four or more artifacts, return target creature card from your graveyard to your hand. Then if you control eight or more artifacts, each opponent loses life equal to that card's power.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 4,
+    "number": 225,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Hope Estheim",
+    "cost": "{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Lifelink\nAt the beginning of your end step, each opponent mills X cards, where X is the amount of life you gained this turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 226,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Ignis Scientia",
+    "cost": "{1}{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "text": "When Ignis Scientia enters, look at the top six cards of your library. You may put a land card from among them onto the battlefield tapped. Put the rest on the bottom of your library in a random order.\nI've Come Up with a New Recipe! — {1}{G}{U}, {T}: Exile target card from a graveyard. If a creature card was exiled this way, create a Food token.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 227,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Jenova, Ancient Calamity",
+    "cost": "{2}{B}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Alien"
+    ],
+    "text": "At the beginning of combat on your turn, put a number of +1/+1 counters equal to Jenova's power on up to one other target creature. That creature becomes a Mutant in addition to its other types.\nWhenever a Mutant you control dies during your turn, you draw cards equal to its power.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 5,
+    "number": 228,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Joshua, Phoenix's Dominant",
+    "cost": "{1}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Wizard"
+    ],
+    "text": "When Joshua enters, discard up to two cards, then draw that many cards.\n{3}{R}{W}, {T}: Exile Joshua, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "number": 229,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Phoenix, Warden of Fire",
+      "cost": "",
+      "types": [
+        "Enchantment",
+        "Creature"
+      ],
+      "subtypes": [
+        "Saga",
+        "Phoenix"
+      ],
+      "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II — Rising Flames — Phoenix deals 2 damage to each opponent.\nIII — Flames of Rebirth — Return any number of target creature cards with total mana value 6 or less from your graveyard to the battlefield. Exile Phoenix, then return it to the battlefield (front face up).\nFlying, lifelink",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "flying",
+        "lifelink"
+      ],
+      "colors": [
+        "R",
+        "W"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "joshua-phoenix-s-dominant-back"
+    }
+  },
+  {
+    "name": "Judge Magister Gabranth",
+    "cost": "{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor",
+      "Knight"
+    ],
+    "text": "Menace\nWhenever another creature or artifact you control dies, put a +1/+1 counter on Judge Magister Gabranth.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ],
+    "number": 230,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Kefka, Court Mage",
+    "cost": "{2}{U}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Whenever Kefka enters or attacks, each player discards a card. Then you draw a card for each card type among cards discarded this way.\n{8}: Each opponent sacrifices a permanent of their choice. Transform Kefka. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 5,
+    "number": 231,
+    "set": "FIN",
+    "rarity": "M",
+    "back": {
+      "name": "Kefka, Ruler of Ruin",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar",
+        "Wizard"
+      ],
+      "text": "Flying\nWhenever an opponent loses life during your turn, you draw that many cards.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 7,
+      "keywords": [
+        "flying"
+      ],
+      "colors": [
+        "U",
+        "B",
+        "R"
+      ],
+      "set": "FIN",
+      "rarity": "M",
+      "id": "kefka-court-mage-back"
+    }
+  },
+  {
+    "name": "Kuja, Genome Sorcerer",
+    "cost": "{2}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mutant",
+      "Wizard"
+    ],
+    "text": "At the beginning of your end step, create a tapped 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\" Then if you control four or more Wizards, transform Kuja.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "number": 232,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Trance Kuja, Fate Defied",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Avatar",
+        "Wizard"
+      ],
+      "text": "Flare Star — If a Wizard you control would deal damage to a permanent or player, it deals double that damage instead.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 4,
+      "toughness": 6,
+      "colors": [
+        "B",
+        "R"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "kuja-genome-sorcerer-back"
+    }
+  },
+  {
+    "name": "Lightning, Army of One",
+    "cost": "{1}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "First strike, trample, lifelink\nStagger — Whenever Lightning deals combat damage to a player, until your next turn, if a source would deal damage to that player or a permanent that player controls, it deals double that damage instead.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "first_strike",
+      "trample",
+      "lifelink"
+    ],
+    "number": 233,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Locke Cole",
+    "cost": "{1}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Deathtouch, lifelink\nWhenever Locke Cole deals combat damage to a player, draw a card, then discard a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch",
+      "lifelink"
+    ],
+    "number": 234,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Noctis, Prince of Lucis",
+    "cost": "{1}{W}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "Lifelink\nYou may cast artifact spells from your graveyard by paying 3 life in addition to paying their other costs. If you cast a spell this way, that artifact enters with a finality counter on it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 235,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Omega, Heartless Evolution",
+    "cost": "{5}{G}{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "text": "Wave Cannon — When Omega enters, for each opponent, tap up to one target nonland permanent that opponent controls. Put X stun counters on each of those permanents and you gain X life, where X is the number of nonbasic lands you control. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 8,
+    "toughness": 8,
+    "number": 236,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Rinoa Heartilly",
+    "cost": "{3}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rebel",
+      "Warlock"
+    ],
+    "text": "When Rinoa Heartilly enters, create Angelo, a legendary 1/1 green and white Dog creature token.\nAngelo Cannon — Whenever Rinoa Heartilly attacks, another target creature you control gets +1/+1 until end of turn for each creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 237,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Rufus Shinra",
+    "cost": "{1}{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "Whenever Rufus Shinra attacks, if you don't control a creature named Darkstar, create Darkstar, a legendary 2/2 white and black Dog creature token.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "number": 238,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Rydia, Summoner of Mist",
+    "cost": "{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Shaman"
+    ],
+    "text": "Landfall — Whenever a land you control enters, you may discard a card. If you do, draw a card.\nSummon — {X}, {T}: Return target Saga card with mana value X from your graveyard to the battlefield with a finality counter on it. It gains haste until end of turn. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 2,
+    "number": 239,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Serah Farron",
+    "cost": "{1}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "The first legendary creature spell you cast each turn costs {2} less to cast.\nAt the beginning of combat on your turn, if you control two or more other legendary creatures, you may transform Serah Farron.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 240,
+    "set": "FIN",
+    "rarity": "R",
+    "back": {
+      "name": "Crystallized Serah",
+      "cost": "",
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [],
+      "text": "The first legendary creature spell you cast each turn costs {2} less to cast.\nLegendary creatures you control get +2/+2.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "G",
+        "W"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "serah-farron-back"
+    }
+  },
+  {
+    "name": "Shantotto, Tactician Magician",
+    "cost": "{1}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Wizard"
+    ],
+    "text": "Whenever you cast a noncreature spell, Shantotto gets +X/+0 until end of turn, where X is the amount of mana spent to cast that spell. If X is 4 or more, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 4,
+    "number": 241,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Sin, Spira's Punishment",
+    "cost": "{4}{B}{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Leviathan",
+      "Avatar"
+    ],
+    "text": "Flying\nWhenever Sin enters or attacks, exile a permanent card from your graveyard at random, then create a tapped token that's a copy of that card. If the exiled card is a land card, repeat this process.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "flying"
+    ],
+    "number": 242,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Squall, SeeD Mercenary",
+    "cost": "{2}{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight",
+      "Mercenary"
+    ],
+    "text": "Rough Divide — Whenever a creature you control attacks alone, it gains double strike until end of turn.\nWhenever Squall deals combat damage to a player, return target permanent card with mana value 3 or less from your graveyard to the battlefield.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "number": 243,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Tellah, Great Sage",
+    "cost": "{3}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Whenever you cast a noncreature spell, create a 1/1 colorless Hero creature token. If four or more mana was spent to cast that spell, draw two cards. If eight or more mana was spent to cast that spell, sacrifice Tellah and it deals that much damage to each opponent.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 244,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Terra, Magical Adept",
+    "cost": "{1}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard",
+      "Warrior"
+    ],
+    "text": "When Terra enters, mill five cards. Put up to one enchantment milled this way into your hand.\nTrance — {4}{R}{G}, {T}: Exile Terra, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 2,
+    "number": 245,
+    "set": "FIN",
+    "rarity": "M",
+    "back": {
+      "name": "Esper Terra",
+      "cost": "",
+      "types": [
+        "Enchantment",
+        "Creature"
+      ],
+      "subtypes": [
+        "Saga",
+        "Wizard"
+      ],
+      "text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II, III — Create a token that's a copy of target nonlegendary enchantment you control. It gains haste. If it's a Saga, put up to three lore counters on it. Sacrifice it at the beginning of your next end step.\nIV — Add {W}{W}, {U}{U}, {B}{B}, {R}{R}, and {G}{G}. Exile Esper Terra, then return it to the battlefield (front face up).\nFlying",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 6,
+      "toughness": 6,
+      "keywords": [
+        "flying"
+      ],
+      "colors": [
+        "R",
+        "G"
+      ],
+      "set": "FIN",
+      "rarity": "M",
+      "id": "terra-magical-adept-back"
+    }
+  },
+  {
+    "name": "Tidus, Blitzball Star",
+    "cost": "{1}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "text": "Whenever an artifact you control enters, put a +1/+1 counter on Tidus.\nWhenever Tidus attacks, tap target creature an opponent controls.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "number": 246,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Ultimecia, Time Sorceress",
+    "cost": "{3}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Whenever Ultimecia enters or attacks, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\nAt the beginning of your end step, you may pay {4}{U}{U}{B}{B} and exile eight cards from your graveyard. If you do, transform Ultimecia.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 5,
+    "number": 247,
+    "set": "FIN",
+    "rarity": "U",
+    "back": {
+      "name": "Ultimecia, Omnipotent",
+      "cost": "",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Nightmare",
+        "Warlock"
+      ],
+      "text": "Menace (This creature can't be blocked except by two or more creatures.)\nTime Compression — When this creature transforms into Ultimecia, Omnipotent, take an extra turn after this one.",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 7,
+      "toughness": 7,
+      "keywords": [
+        "menace"
+      ],
+      "colors": [
+        "U",
+        "B"
+      ],
+      "set": "FIN",
+      "rarity": "U",
+      "id": "ultimecia-time-sorceress-back"
+    }
+  },
+  {
+    "name": "Vivi Ornitier",
+    "cost": "{1}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wizard"
+    ],
+    "text": "{0}: Add X mana in any combination of {U} and/or {R}, where X is Vivi Ornitier's power. Activate only during your turn and only once each turn.\nWhenever you cast a noncreature spell, put a +1/+1 counter on Vivi Ornitier and it deals 1 damage to each opponent.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 0,
+    "toughness": 3,
+    "number": 248,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "The Wandering Minstrel",
+    "cost": "{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Bard"
+    ],
+    "text": "Lands you control enter untapped.\nThe Minstrel's Ballad — At the beginning of combat on your turn, if you control five or more Towns, create a 2/2 Elemental creature token that's all colors.\n{3}{W}{U}{B}{R}{G}: Other creatures you control get +X/+X until end of turn, where X is the number of Towns you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "number": 249,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Yuna, Hope of Spira",
+    "cost": "{3}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "text": "During your turn, Yuna and enchantment creatures you control have trample, lifelink, and ward {2}.\nAt the beginning of your end step, return up to one target enchantment card from your graveyard to the battlefield with a finality counter on it. (If a permanent with a finality counter on it would be put into a graveyard from the battlefield, exile it instead.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 5,
+    "number": 250,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Zidane, Tantalus Thief",
+    "cost": "{3}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mutant",
+      "Scout"
+    ],
+    "text": "When Zidane enters, gain control of target creature an opponent controls until end of turn. Untap that creature. It gains lifelink and haste until end of turn.\nWhenever an opponent gains control of a permanent from you, you create a Treasure token.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 251,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Adventurer's Airship",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Flying\nWhenever this Vehicle attacks, draw a card, then discard a card.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 252,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Aettir and Priwen",
+    "cost": "{6}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature has base power and toughness X/X, where X is your life total.\nEquip {5}",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 253,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Blitzball",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add one mana of any color.\nGOOOOAAAALLL! — {T}, Sacrifice this artifact: Draw two cards. Activate only if an opponent was dealt combat damage by a legendary creature this turn.",
+    "number": 254,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Buster Sword",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature gets +3/+2.\nWhenever equipped creature deals combat damage to a player, draw a card, then you may cast a spell from your hand with mana value less than or equal to that damage without paying its mana cost.",
+    "number": 255,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Elixir",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "This artifact enters tapped.\n{5}, {T}, Exile this artifact: Shuffle all nonland cards from your graveyard into your library. You gain life equal to the number of cards shuffled into your library this way.",
+    "number": 256,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Excalibur II",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Whenever you gain life, put a charge counter on Excalibur II.\nEquipped creature gets +1/+1 for each charge counter on Excalibur II.\nEquip {3}",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 257,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Genji Glove",
+    "cost": "{5}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature has double strike.\nWhenever equipped creature attacks, if it's the first combat phase of the turn, untap it. After this phase, there is an additional combat phase.\nEquip {3}",
+    "number": 258,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Instant Ramen",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "text": "Flash\nWhen this artifact enters, draw a card.\n{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 259,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Iron Giant",
+    "cost": "{7}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "text": "Vigilance, reach, trample",
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "vigilance",
+      "reach",
+      "trample"
+    ],
+    "number": 260,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Lion Heart",
+    "cost": "{4}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When this Equipment enters, it deals 2 damage to any target.\nEquipped creature gets +2/+1.\nEquip {2}",
+    "number": 261,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Lunatic Pandora",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{2}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{6}, {T}, Sacrifice Lunatic Pandora: Destroy target nonland permanent.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 262,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Magic Pot",
+    "cost": "{3}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Construct"
+    ],
+    "text": "When this creature dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\n{2}, {T}: Exile target card from a graveyard.",
+    "power": 1,
+    "toughness": 4,
+    "number": 263,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "The Masamune",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "As long as equipped creature is attacking, it has first strike and must be blocked if able.\nEquipped creature has \"If a creature dying causes a triggered ability of this creature or an emblem you own to trigger, that ability triggers an additional time.\"\nEquip {2}",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 264,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Monk's Fist",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Job select (When this Equipment enters, create a 1/1 colorless Hero creature token, then attach this to it.)\nEquipped creature gets +1/+0 and is a Monk in addition to its other types.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 265,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "PuPu UFO",
+    "cost": "{2}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct",
+      "Alien"
+    ],
+    "text": "Flying\n{T}: You may put a land card from your hand onto the battlefield.\n{3}: Until end of turn, this creature's base power becomes equal to the number of Towns you control.",
+    "power": 0,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 266,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "The Regalia",
+    "cost": "{4}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Haste\nWhenever The Regalia attacks, reveal cards from the top of your library until you reveal a land card. Put that card onto the battlefield tapped and the rest on the bottom of your library in a random order.\nCrew 1",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ],
+    "number": 267,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Relentless X-ATM092",
+    "cost": "{6}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Spider"
+    ],
+    "text": "This creature can't be blocked except by three or more creatures.\n{8}: Return this card from your graveyard to the battlefield tapped with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+    "power": 6,
+    "toughness": 5,
+    "number": 268,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "Ring of the Lucii",
+    "cost": "{4}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {C}{C}.\n{2}, {T}, Pay 1 life: Tap target nonland permanent.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 269,
+    "set": "FIN",
+    "rarity": "U"
+  },
+  {
+    "name": "World Map",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{1}, {T}, Sacrifice this artifact: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{3}, {T}, Sacrifice this artifact: Search your library for a land card, reveal it, put it into your hand, then shuffle.",
+    "number": 270,
+    "set": "FIN",
+    "rarity": "C"
+  },
+  {
+    "name": "Adventurer's Inn",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "When this land enters, you gain 2 life.\n{T}: Add {C}.",
+    "number": 271,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Balamb Garden, SeeD Academy",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {G} or {U}.\n{5}{G}{U}, {T}: Transform this land. This ability costs {1} less to activate for each other Town you control.",
+    "number": 272,
+    "set": "FIN",
+    "rarity": "R",
+    "produces": [
+      "C"
+    ],
+    "back": {
+      "name": "Balamb Garden, Airborne",
+      "cost": "",
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [
+        "Vehicle"
+      ],
+      "text": "Flying\nWhenever Balamb Garden attacks, draw a card.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "supertypes": [
+        "Legendary"
+      ],
+      "power": 5,
+      "toughness": 4,
+      "keywords": [
+        "flying"
+      ],
+      "set": "FIN",
+      "rarity": "R",
+      "id": "balamb-garden-seed-academy-back"
+    }
+  },
+  {
+    "name": "Baron, Airship Kingdom",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {U} or {R}.",
+    "number": 273,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Capital City",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 274,
+    "set": "FIN",
+    "rarity": "U",
+    "produces": [
+      "C"
+    ],
+    "cycling": {
+      "cost": "{2}"
+    }
+  },
+  {
+    "name": "Clive's Hideaway",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "Hideaway 4 (When this land enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)\n{T}: Add {C}.\n{2}, {T}: You may play the exiled card without paying its mana cost if you control four or more legendary creatures.",
+    "number": 275,
+    "set": "FIN",
+    "rarity": "R",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Crossroads Village",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped. As it enters, choose a color.\n{T}: Add one mana of the chosen color.",
+    "number": 276,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Eden, Seat of the Sanctum",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "{T}: Add {C}.\n{5}, {T}: Mill two cards. Then you may sacrifice this land. When you do, return another target permanent card from your graveyard to your hand.",
+    "number": 277,
+    "set": "FIN",
+    "rarity": "U",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Gohn, Town of Ruin",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {B} or {G}.",
+    "number": 278,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "The Gold Saucer",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "{T}: Add {C}.\n{2}, {T}: Flip a coin. If you win the flip, create a Treasure token.\n{3}, {T}, Sacrifice two artifacts: Draw a card.",
+    "number": 279,
+    "set": "FIN",
+    "rarity": "U",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Gongaga, Reactor Town",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {R} or {G}.",
+    "number": 280,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Guadosalam, Farplane Gateway",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {G} or {U}.",
+    "number": 281,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Insomnia, Crown City",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {W} or {B}.",
+    "number": 282,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Ishgard, the Holy See",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {W}.",
+    "number": 283,
+    "set": "FIN",
+    "rarity": "R",
+    "produces": [
+      "W"
+    ],
+    "back": {
+      "name": "Faith & Grief",
+      "cost": "{3}{W}{W}",
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "text": "Return up to two target artifact and/or enchantment cards from your graveyard to your hand. (Then exile this card. You may play the land later from exile.)",
+      "set": "FIN",
+      "rarity": "R",
+      "id": "ishgard-the-holy-see-back"
+    }
+  },
+  {
+    "name": "Jidoor, Aristocratic Capital",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {U}.",
+    "number": 284,
+    "set": "FIN",
+    "rarity": "R",
+    "produces": [
+      "U"
+    ],
+    "back": {
+      "name": "Overture",
+      "cost": "{4}{U}{U}",
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "text": "Target opponent mills half their library, rounded down.",
+      "set": "FIN",
+      "rarity": "R",
+      "id": "jidoor-aristocratic-capital-back"
+    }
+  },
+  {
+    "name": "Lindblum, Industrial Regency",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {R}.",
+    "number": 285,
+    "set": "FIN",
+    "rarity": "R",
+    "produces": [
+      "R"
+    ],
+    "back": {
+      "name": "Mage Siege",
+      "cost": "{2}{R}",
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "text": "Create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"",
+      "set": "FIN",
+      "rarity": "R",
+      "id": "lindblum-industrial-regency-back"
+    }
+  },
+  {
+    "name": "Midgar, City of Mako",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {B}.",
+    "number": 286,
+    "set": "FIN",
+    "rarity": "R",
+    "produces": [
+      "B"
+    ],
+    "back": {
+      "name": "Reactor Raid",
+      "cost": "{2}{B}",
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "text": "You may sacrifice an artifact or creature. If you do, draw two cards.",
+      "set": "FIN",
+      "rarity": "R",
+      "id": "midgar-city-of-mako-back"
+    }
+  },
+  {
+    "name": "Rabanastre, Royal City",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {R} or {W}.",
+    "number": 287,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Sharlayan, Nation of Scholars",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {W} or {U}.",
+    "number": 288,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Starting Town",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped unless it's your first, second, or third turn of the game.\n{T}: Add {C}.\n{T}, Pay 1 life: Add one mana of any color.",
+    "number": 289,
+    "set": "FIN",
+    "rarity": "R",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Treno, Dark City",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {U} or {B}.",
+    "number": 290,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Vector, Imperial Capital",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {B} or {R}.",
+    "number": 291,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Windurst, Federation Center",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {G} or {W}.",
+    "number": 292,
+    "set": "FIN",
+    "rarity": "C",
+    "produces": [
+      "C"
+    ]
+  },
+  {
+    "name": "Zanarkand, Ancient Metropolis",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Town"
+    ],
+    "text": "This land enters tapped.\n{T}: Add {G}.",
+    "number": 293,
+    "set": "FIN",
+    "rarity": "R",
+    "produces": [
+      "G"
+    ],
+    "back": {
+      "name": "Lasting Fayth",
+      "cost": "{4}{G}{G}",
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "text": "Create a 1/1 colorless Hero creature token. Put a +1/+1 counter on it for each land you control. (Then exile this card. You may play the land later from exile.)",
+      "set": "FIN",
+      "rarity": "R",
+      "id": "zanarkand-ancient-metropolis-back"
+    }
+  },
+  {
+    "name": "Beatrix, Loyal General",
+    "cost": "{4}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Vigilance (Attacking doesn't cause this creature to tap.)\nAt the beginning of combat on your turn, you may attach any number of Equipment you control to target creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 426,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Rosa, Resolute White Mage",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Cleric"
+    ],
+    "text": "Reach (This creature can block creatures with flying.)\nAt the beginning of combat on your turn, put a +1/+1 counter on target creature you control. It gains lifelink until end of turn. (Damage dealt by the creature also causes you to gain that much life.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "number": 431,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Ultimecia, Temporal Threat",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "When Ultimecia enters, tap all creatures your opponents control.\nWhenever a creature you control deals combat damage to a player, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 441,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Seymour Flux",
+    "cost": "{4}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Avatar"
+    ],
+    "text": "At the beginning of your upkeep, you may pay 1 life. If you do, draw a card and put a +1/+1 counter on Seymour Flux.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "number": 452,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Lightning, Security Sergeant",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever Lightning deals combat damage to a player, exile the top card of your library. You may play that card for as long as you control Lightning.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "number": 462,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Cloud, Planet's Champion",
+    "cost": "{3}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Mercenary"
+    ],
+    "text": "During your turn, as long as Cloud is equipped, it has double strike and indestructible. (This creature deals both first-strike and regular combat damage. Damage and effects that say \"destroy\" don't destroy this creature.)\nEquip abilities you activate that target Cloud cost {2} less to activate.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 482,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Sephiroth, Planet's Heir",
+    "cost": "{4}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Avatar",
+      "Soldier"
+    ],
+    "text": "Vigilance (Attacking doesn't cause this creature to tap.)\nWhen Sephiroth enters, creatures your opponents control get -2/-2 until end of turn.\nWhenever a creature an opponent controls dies, put a +1/+1 counter on Sephiroth.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 505,
+    "set": "FIN",
+    "rarity": "M"
+  },
+  {
+    "name": "Xande, Dark Mage",
+    "cost": "{2}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nXande gets +1/+1 for each noncreature, nonland card in your graveyard.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "number": 516,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Deadly Embrace",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Destroy target creature an opponent controls. Then draw a card for each creature that died this turn.",
+    "number": 557,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Judgment Bolt",
+    "cost": "{3}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Judgment Bolt deals 5 damage to target creature and X damage to that creature's controller, where X is the number of Equipment you control.",
+    "number": 559,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Magitek Scythe",
+    "cost": "{4}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "A Test of Your Reflexes! — When this Equipment enters, you may attach it to target creature you control. If you do, that creature gains first strike until end of turn and must be blocked this turn if able.\nEquipped creature gets +2/+1.\nEquip {2}",
+    "number": 562,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Ultima Weapon",
+    "cost": "{7}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Whenever equipped creature attacks, destroy target creature an opponent controls.\nEquipped creature gets +7/+7.\nEquip {7}",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 563,
+    "set": "FIN",
+    "rarity": "R"
+  },
+  {
+    "name": "Wastes",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {C}.",
+    "number": 309,
+    "set": "FIN",
+    "rarity": "L",
+    "supertypes": [
+      "Basic"
+    ],
+    "produces": [
+      "C"
+    ]
+  }
+]

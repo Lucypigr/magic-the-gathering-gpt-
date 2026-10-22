@@ -1,3 +1,5 @@
+import {manaValue} from './mana';
+import {finStatic} from './fin-support';
 import {eclStatic} from './ecl-support';
 import { colorsOf } from './mana';
 import { hasKw, isCreature, matches, other } from './state';
@@ -24,6 +26,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       if (onlyOpp && pid === controller) continue;
       if (f?.ctrl === 'opp' && pid === controller) continue;
       if (f?.ctrl === 'you' && pid !== controller) continue;
+      if(pid!==controller&&finStatic(g,pid,'playerProtection').length)continue;
       out.push({ p: pid });
     }
   };
@@ -42,7 +45,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       addPlayers(false);
       break;
     case 'opponent':
-      out.push({ p: other(controller) });
+      if(!finStatic(g,other(controller),'playerProtection').length)out.push({ p: other(controller) });
       break;
     case 'creatureOrPlaneswalker':addPerms(true,true);break;
     case 'creature':
@@ -54,7 +57,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
     case 'any': {
       // 任意一個目標：生物、鵬洛客或玩家
       addPerms(true, true);
-      for (const pid of [0, 1] as PID[]) out.push({ p: pid });
+      for (const pid of [0, 1] as PID[])if(pid===controller||!finStatic(g,pid,'playerProtection').length)out.push({ p: pid });
       break;
     }
     case 'spellOrCreature':
@@ -126,6 +129,8 @@ export function validateTargets(
       continue;
     }
     if (!isLegalTarget(g, specs[i], t, controller, sourceId)) return '目標不合法';
+    const graveIndex=specs[i].sameGraveyardAs,graveTarget=graveIndex!==undefined?ts[graveIndex]:null;if(graveTarget&&'c'in graveTarget&&'c'in t&&g.cards[graveTarget.c].owner!==g.cards[t.c].owner)return '必須選同一墳墓場的牌';
+    const totalMax=specs[i].totalMvMax;if(totalMax!==undefined&&ts.reduce((n,t)=>n+(t&&'c'in t?manaValue(g.cards[t.c].def):0),0)>totalMax)return '目標總法力值超過限制';
     const sharedIndex=specs[i].sharesTypeWith;const shared=sharedIndex!==undefined?ts[sharedIndex]:null;
     if(shared&&'c'in shared&&'c'in t){const a=g.cards[shared.c],b=g.cards[t.c];if(!a.def.changeling&&!b.def.changeling&&!a.def.subtypes?.some(sub=>b.def.subtypes?.includes(sub)))return '目標必須共用生物類別';}
     const otherIndex = specs[i].differentControllerFrom;

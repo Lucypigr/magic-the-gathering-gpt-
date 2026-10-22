@@ -1,3 +1,4 @@
+import {finTriggerMatches,finStatic} from './fin-support';
 import { colorsOf } from './mana';
 import { getDef } from './registry';
 import {
@@ -25,6 +26,7 @@ import type { Card, CardDef, GameEvent, GameState, PID, TargetRef, TriggeredAbil
 function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEvent): boolean {
   const pov = c.controller;
   switch (ab.on) {
+    case 'finEvent':return finTriggerMatches(g,c,ab,ev);
     case 'combatDamagePlayerOrWalker':return ev.type==='combatPlayerOrWalker'&&ev.source===c.id;
     case 'allyCombatDamagePlayerOrWalker':return ev.type==='combatPlayerOrWalker'&&ev.controller===pov;
     case 'firstMain':return ev.type==='step'&&ev.step==='main1'&&ev.player===pov;
@@ -198,6 +200,10 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 }
 
 export function emit(g: GameState, ev: GameEvent): void {
+  if(ev.type==='dies'){for(const pl of g.players)(pl.finFlags??={}).creaturesDied=(pl.finFlags?.creaturesDied??0)+1;(g.players[other(ev.controller)].finFlags??={}).opponentCreatureDied=1;}
+  if(ev.type==='combatDamage'){const source=g.cards[ev.source],pid=source.controller;(g.players[ev.player].finFlags??={}).combatTaken=(g.players[ev.player].finFlags?.combatTaken??0)+ev.amount;if(source.def.supertypes?.includes('Legendary'))(g.players[pid].finFlags??={}).legendCombat=1;if(matches(g,{sub:['Scout','Pirate','Rogue']},source,pid))for(const c of g.battlefield.map(id=>g.cards[id]).filter(c=>c.controller===pid&&c.def.id==='vaan-street-thief'))(c.finMarks??={}).vaanHit=1;}
+  if(ev.type==='cast'){const c=g.cards[ev.card],p=g.players[ev.player];if(isCreature(c)&&matches(g,{sub:'Human'},c,ev.player)){const before=p.finFlags?.humanCast??0;(p.finFlags??={}).humanCast=before+1;;}if(isCreature(c)&&c.def.supertypes?.includes('Legendary'))(p.finFlags??={}).legendCast=(p.finFlags?.legendCast??0)+1;}
+
   if(ev.type==='step'&&ev.step==='endStep')for(const c of Object.values(g.cards))if(c.eclCast?.mode==='nextEnd')c.eclCast=undefined;
   if(ev.type==='targeted'&&ev.stackSid!==undefined){const c=g.cards[ev.card];if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
     const costs:number[]=[];if(c.def.set==='ECL'&&c.def.wardLife)costs.push(c.def.wardLife);
@@ -213,7 +219,14 @@ export function emit(g: GameState, ev: GameEvent): void {
 
   if(ev.type==='targeted'&&ev.stackSid!==undefined){
     const c=g.cards[ev.card];
-    if((c?.def.set==='TMT'||c?.def.set==='ECL')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
+    if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
+      let mana=0;for(const source of finStatic(g,c.controller,'yunaKeywords'))if(g.active===c.controller&&(source.id===c.id||isCreature(c)&&c.def.types.includes('Enchantment')))mana+=2;
+      for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===c.id&&abilitiesOf(g,eq).some(a=>a.kind==='static'&&a.fin==='paladinWard'))mana++;}
+      if(mana)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-45,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:mana}]}});
+      if(c.def.fin?.wardPower)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-46,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'ecl',action:'wardLife',n:ev.stackSid,value:Math.max(0,stats(g,c).p)}]}});
+    }
+
+    if((c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
       const extra=g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)).length:0);},0);
       for(let i=0;i<(1+extra);i++)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-3,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:c.def.ward}]}});
     }
@@ -237,7 +250,8 @@ export function emit(g: GameState, ev: GameEvent): void {
   }
   for (const id of g.battlefield) {
     const c = g.cards[id];
-    const extraTriggers=g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
+    const finExtra=g.battlefield.reduce((n,sid)=>{const source=g.cards[sid];if(source.controller!==c.controller)return n;for(const a of abilitiesOf(g,source))if(a.kind==='static'){if(a.fin==='masamune'&&ev.type==='dies'){const host=g.cards[source.attachedTo??-1];if(host&&host.controller===c.controller&&(host.id===c.id||c.def.types.includes('Emblem')&&c.owner===host.controller))n++;}if(a.fin==='cloudDouble'&&g.battlefield.some(id=>g.cards[id].attachedTo===source.id&&g.cards[id].def.equip)&&(c.id===source.id||c.attachedTo===source.id))n++;if(a.fin==='travelingDouble'&&ev.type==='etb'&&g.cards[ev.card].controller===source.controller&&(isLand(g.cards[ev.card])||matches(g,{sub:'Bird'},g.cards[ev.card],source.controller)))n++;}return n;},0);
+    const extraTriggers=finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
       for(let i=0;i<(1+extraTriggers);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
@@ -289,7 +303,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     for (const d of [...g.delayed]) {
       const src = g.cards[d.source];
       if (!src) continue;
-      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, filter:d.filter, alone:d.alone };
+      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, filter:d.filter, alone:d.alone,finEvent:d.finEvent };
       // 延遲觸發的控制者是建立它的玩家，不一定是來源目前的控制者
       const probe = src.controller === d.controller ? src : { ...src, controller: d.controller };
       if (!triggerMatches(g, probe, ab, ev)) continue;
@@ -380,6 +394,10 @@ export function refreshTlaPermanents(g: GameState): void {
 }
 
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
+  if(to==='graveyard'&&c.zone==='stack'&&c.finExileOnResolve)to='exile';
+  if(to==='graveyard'&&(c.finMarks?.deathHades||finStatic(g,c.owner,'hadesExile').length))to='exile';
+  if(to==='graveyard'&&c.zone==='battlefield'&&isCreature(c)&&!c.token){const crystal=c.finMarks?.deathCrystal?g.cards[c.finMarks.deathCrystal]:finStatic(g,other(c.controller),'darkness')[0];if(crystal){to='exile';(crystal.finLinked??=[]).push(c.id);gainLife(g,crystal.controller,2);}}
+  if(c.zone==='stack'&&to!=='stack')c.finExileOnResolve=undefined;
   const wasOnBf = c.zone === 'battlefield';
   const from = c.zone;
   if(wasOnBf)c.eclType=undefined;
@@ -429,7 +447,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
     }
   }
   removeFromZone(g, c);
-  if (wasOnBf) resetPermanentState(c);
+  if (wasOnBf){resetPermanentState(c);c.finMarks=undefined;c.finLinked=undefined;}
   c.zone = to;
   c.controller = c.owner;
   c.playableTurn = undefined;
@@ -463,6 +481,8 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   g.version++;
   if(to==='graveyard'&&!c.token&&c.def.types.some(t=>['Creature','Artifact','Enchantment','Planeswalker','Land'].includes(t)))emit(g,{type:'permanentToGy',card:c.id,player:c.owner});
   if (wasOnBf) returnLinked(g, c.id);
+  emit(g,{type:'fin',action:'zoneMove',card:c.id,player:c.owner,amount:0,from,to});
+  if(wasOnBf&&c.finPartner!==undefined){const partner=g.cards[c.finPartner];c.finPartner=undefined;if(partner?.zone==='exile'){partner.finPartner=undefined;moveCard(g,partner,to,bottom);}}
   refreshTlaPermanents(g);
 }
 
@@ -497,6 +517,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
     } else t = true;
   }
   if (c.zone !== 'battlefield') removeFromZone(g, c);
+  const finCounters=c.finMarks?.enterCounters??0,finFinality=c.finMarks?.enterFinality;
   const eclAttachment=c.eclPrepared?c.attachedTo:null;
   resetPermanentState(c);
   if(eclAttachment!==null)c.attachedTo=eclAttachment;
@@ -511,7 +532,10 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   c.tmtLinkKey=g.nextSid++;
   c.wasCast=origin==='stack'&&c.castOrigin!==undefined;
   if(origin!=='stack'){c.sneakTurn=undefined;c.sneakFromGy=undefined;}
-  c.counters = (c.def.etbCounters ?? 0)-(c.eclEnterMinus??0);c.eclEnterMinus=undefined;
+  c.counters = finCounters+(c.def.etbCounters ?? 0)-(c.eclEnterMinus??0);c.eclEnterMinus=undefined;
+  if(c.finMarks){delete c.finMarks.enterCounters;delete c.finMarks.enterFinality;}
+  if(finFinality)c.finality=true;
+  if(finStatic(g,controller,'landsUntapped').length&&isLand(c))c.tapped=false;
   if (c.def.id === 'putrid-pals' && g.players[controller].permanentLeftThisTurn) c.counters += 2;
   if (c.def.id === 'leatherhead-swamp-stalker') c.hexproofCounters = 1;
   if(c.def.subtypes?.includes('Class'))c.classLevel=1;
@@ -522,6 +546,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   }
   if(c.def.id==='weather-maker')c.charge=0;
   if(c.def.types.includes('Artifact'))g.players[controller].artifactEnteredThisTurn=true;
+  if(c.counters>0&&isCreature(c))c.counters*=2**finStatic(g,c.controller,'doubleCounters').length;
   if (c.counters > 0 && isCreature(c)) {
     // 帶著指示物進場：同樣套用「多放 n 個」
     for (const id of g.battlefield) {
@@ -552,6 +577,7 @@ export function addLore(g: GameState, c: Card, n: number): void {
   const chapters = c.def.saga?.chapters;
   if (!chapters || c.zone !== 'battlefield') return;
   for (let i = 0; i < n; i++) {
+    (c.finMarks??={}).loreTurn=g.turn;for(const id of c.finLinked??[]){const exiled=g.cards[id];if(exiled?.zone==='exile'&&exiled.eclCast?.mode==='brynhildr')(exiled.finMarks??={}).brynhildrTurn=g.turn;}
     c.lore = (c.lore ?? 0) + 1;
     emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:1});
     const ch = chapters[c.lore - 1];
@@ -560,7 +586,7 @@ export function addLore(g: GameState, c: Card, n: number): void {
     g.pending.push({
       source: c.id,
       controller: c.controller,
-      ability: { kind: 'trigger', on: 'etb', effects: ch.effects, targets: ch.targets },
+      ability: { kind: 'trigger', on: 'etb', effects: ch.effects, targets: ch.targets,finDynamic:ch.finDynamic },
       abilityIndex: 3000 + c.lore,
       ev: { type: 'etb', card: c.id, controller: c.controller },
     });
@@ -612,6 +638,7 @@ export function putCounters(g: GameState, c: Card, n: number): number {
       for (const ab of abilitiesOf(g, s)) if (ab.kind === 'static' && ab.counterPlus) n += ab.counterPlus;
     }
   }
+  n*=2**finStatic(g,c.controller,'doubleCounters').length;
   c.counters += n;
   emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: n });
   return n;
@@ -619,7 +646,7 @@ export function putCounters(g: GameState, c: Card, n: number): number {
 
 /** 生物將要死去時是否改為放逐 */
 function deathReplacedByExile(g: GameState, c: Card): boolean {
-  if (c.exileOnDeathTurn === g.turn || c.finality) return true;
+  if (c.exileOnDeathTurn === g.turn || c.finality||c.finMarks?.deathHades||finStatic(g,c.owner,'hadesExile').length||isCreature(c)&&!c.token&&(c.finMarks?.deathCrystal||finStatic(g,other(c.controller),'darkness').length)) return true;
   return isCreature(c) && hasStaticFlag(g, other(c.controller), 'exileOppDying');
 }
 
@@ -627,6 +654,7 @@ function deathReplacedByExile(g: GameState, c: Card): boolean {
 export function putIntoGraveyard(g: GameState, cards: Card[]): void {
   g.eclEventGroup=g.nextSid++;
   const list = cards.filter((c) => c.zone === 'battlefield');
+  for(const c of list){const crystal=isCreature(c)&&!c.token?finStatic(g,other(c.controller),'darkness')[0]:undefined;if(crystal)(c.finMarks??={}).deathCrystal=crystal.id;if(finStatic(g,c.owner,'hadesExile').length)(c.finMarks??={}).deathHades=1;}
   for (const c of list) {
     c.lastToughness = stats(g,c).t;
     c.lastCounterKinds={plus:c.counters,charge:c.charge??0,stun:c.stun,hexproof:c.hexproofCounters??0,finality:!!c.finality,lore:c.lore??0};
@@ -673,6 +701,7 @@ export function drawCards(g: GameState, pid: PID, n: number): number {
     c.zone = 'hand';
     p.hand.push(id);
     p.drawsThisTurn++;
+    if(p.drawsThisTurn===3)emit(g,{type:'fin',action:'thirdDraw',card:c.id,player:pid,amount:1});
     if (p.drawsThisTurn === 2) emit(g, { type: 'drawSecond', player: pid });
   }
   g.version++;
@@ -701,6 +730,7 @@ export function gainLife(g: GameState, pid: PID, n: number): void {
   if(g.battlefield.some(id=>g.cards[id].def.id==='mornsong-aria'&&!abilitiesSuppressed(g,g.cards[id])))return;
   if (p.cantGainLife) return;
   n += lifegainBonus(g, pid);
+  n*=2**finStatic(g,pid,'doubleLife').length;
   p.life += n;
   p.lifeGainedThisTurn += n;
   log(g, `獲得 ${n} 點生命（${p.life}）`, pid, 'life');
@@ -733,6 +763,10 @@ export function dealDamage(
   opts: { combat?: boolean; noLifeGain?: boolean; batchCombat?: boolean } = {},
 ): number {
   if (n <= 0) return 0;
+  const finVictim='p'in target?target.p:g.cards[target.c]?.controller;
+  if(finVictim!==undefined){if('p'in target&&finStatic(g,finVictim,'playerProtection').length&&srcController!==finVictim)return 0;const turtle=finStatic(g,finVictim,'adamantoise')[0];if(turtle&&('p'in target||target.c!==turtle.id))return dealDamage(g,src,srcController,{c:turtle.id},n,opts);if(g.players[finVictim].finFlags?.lightningUntil)n*=2;}
+  if(src&&matches(g,{sub:'Wizard'},src,srcController))n*=2**finStatic(g,srcController,'doubleWizardDamage').length;
+  if('c'in target){const c=g.cards[target.c];if(c&&isCreature(c)&&(g.players[c.controller].finFlags?.creatureFog===g.turn||opts.combat&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.fin==='preventCombat')))return 0;}
   if('p'in target&&g.players[target.p].eclPreventDamageUntil!==undefined)return 0;
   if('c'in target){const c=g.cards[target.c];if(c){const ks=stats(g,c).kw;if(ks.has('protection_opponent')&&c.controller!==srcController)return 0;if(ks.has('protection_colors')&&src&&colorsOf(src.def).length)return 0;}}
   for(const id of g.battlefield){const s=g.cards[id];if(s.controller===srcController&&s.def.id==='collective-inferno'&&s.eclType&&src&&matches(g,{sub:s.eclType},src,srcController)&&!abilitiesSuppressed(g,s))n*=2;}
@@ -788,6 +822,7 @@ export function dealDamage(
     emit(g, { type: 'damaged', card: c.id, amount: n });
   }
   if (kws.has('lifelink')) gainLife(g, srcController, n);
+  if(src)emit(g,{type:'fin',action:'sourceDamage',card:src.id,player:srcController,amount:n});
   return n;
 }
 

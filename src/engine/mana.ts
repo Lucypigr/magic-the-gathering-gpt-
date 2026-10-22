@@ -119,6 +119,7 @@ export interface ManaSource {
   pool?: boolean;
   /** 額外的一點法術力（來自某個永久物的加成，不會橫置任何東西；排在最後才用） */
   extra?: boolean;
+  extraRequires?:{id:number;mana:Mana};
 }
 
 /**
@@ -169,17 +170,20 @@ function findPaymentBase(cost: ManaCost, sources: ManaSource[]): { id: number; m
   const used = new Set<number>();
   const assign: { id: number; mana: Mana }[] = [];
 
+  const compatible=(s:ManaSource,m:Mana)=>{const parent=s.extraRequires,chosen=parent?assign.find(p=>p.id===parent.id):undefined;if(chosen&&chosen.mana!==parent!.mana)return false;return !assign.some(p=>{const req=sources.find(x=>x.id===p.id)?.extraRequires;return req?.id===s.id&&req.mana!==m;});};
+
   // 過濾地變出顏色時，要多用一個來源支付 {1}
   let extra = 0;
   const dfs = (i: number): boolean => {
-    if (i === need.length) return sources.length - used.size >= cost.generic + extra;
+    if(i===need.length){const count=cost.generic+extra,start=assign.length;if(count===0)return true;if(sources.length-used.size<count)return false;for(const s of ordered){if(used.has(s.id))continue;const m=s.produces.find(m=>compatible(s,m));if(m===undefined)continue;assign.push({id:s.id,mana:m});if(assign.length-start===count)return true;}assign.splice(start);return count===0;}
+
     const opts = need[i];
     for (const s of ordered) {
       if (used.has(s.id)) continue;
-      let m = opts.find((x) => s.produces.includes(x));
+      let m = opts.find((x) => s.produces.includes(x)&&compatible(s,x));
       let filtered = false;
       if (!m && s.filter) {
-        m = opts.find((x) => x !== 'C');
+        m = opts.find((x) => x !== 'C'&&compatible(s,x));
         filtered = !!m;
       }
       if (!m) continue;
@@ -195,9 +199,5 @@ function findPaymentBase(cost: ManaCost, sources: ManaSource[]): { id: number; m
   };
   if (!dfs(0)) return null;
 
-  // 通用費用（含過濾地的額外 {1}）：挑剩下的來源，保留顏色最多的來源到最後
-  const rest = ordered.filter((s) => !used.has(s.id));
-  if (rest.length < cost.generic + extra) return null;
-  for (let i = 0; i < cost.generic + extra; i++) assign.push({ id: rest[i].id, mana: rest[i].produces[0] });
   return assign;
 }

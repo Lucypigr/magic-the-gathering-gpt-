@@ -93,8 +93,8 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
     used.add(b);
     valid.push([b, a]);
   }
-  for(const a of attackers(g).filter(c=>['raphael-ninja-destroyer','vinebred-brawler'].includes(c.def.id)&&!abilitiesSuppressed(g,c))){
-    const st=stats(g,a),minimum=st.kw.has('menace')?2:1;
+  for(const a of attackers(g).filter(c=>(['raphael-ninja-destroyer','vinebred-brawler'].includes(c.def.id)||c.finMarks?.mustBlock===g.turn||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='the-masamune'))&&!abilitiesSuppressed(g,c))){
+    const st=stats(g,a),minimum=a.def.id==='relentless-x-atm092'?3:st.kw.has('menace')?2:1;
     if(st.onlyOneBlocker&&minimum>1)continue;
     const assigned=valid.filter(([,id])=>id===a.id);
     if(assigned.length>=minimum)continue;
@@ -105,7 +105,7 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
   }
   // 威懾：只被一個生物阻擋的攻擊無效
   const countFor = (a: number) => valid.filter(([, x]) => x === a).length;
-  valid = valid.filter(([, a]) => !(stats(g, g.cards[a]).kw.has('menace') && countFor(a) < 2));
+  valid = valid.filter(([, a]) => !(g.cards[a].def.id==='relentless-x-atm092'?countFor(a)<3:stats(g,g.cards[a]).kw.has('menace')&&countFor(a)<2));
   valid = valid.filter(([,a],i) => !stats(g,g.cards[a]).onlyOneBlocker || valid.findIndex(([,id])=>id===a)===i);
   for (const [b, a] of valid) {
     const bc = g.cards[b];

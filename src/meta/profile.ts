@@ -67,7 +67,7 @@ export const SELL_PRICE: Record<Rarity, number> = { C: 5, U: 12, R: 35, M: 70, L
 export const DUPLICATE_GOLD: Record<Rarity, number> = { C: 5, U: 10, R: 25, M: 50, L: 0, T: 0 };
 
 export function isBasic(id: string): boolean {
-  return BASIC_LANDS.includes(id);
+  return BASIC_LANDS.includes(id)||id==='wastes';
 }
 
 export function newProfile(): Profile {

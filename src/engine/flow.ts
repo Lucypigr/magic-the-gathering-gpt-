@@ -1,7 +1,8 @@
+import {refreshFinLands} from './fin-support';
 import {colorsOf} from './mana';
 import {resolveEclEntries} from './ecl';
 import {beholdOptions,canReceiveCounters,counterKinds,vividColors} from './ecl-support';
-import { abilitiesFor, canActivate, crewChoice, performAction, sacChoices } from './actions';
+import { abilitiesFor, canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
 import {
   attackCandidates,
   blockCandidates,
@@ -74,7 +75,7 @@ export function checkSBA(g: GameState): void {
         }
       } else if (c.def.equip && c.attachedTo != null) {
         const t = g.cards[c.attachedTo];
-        if (!t || t.zone !== 'battlefield' || !isCreature(t) || t.controller !== c.controller) {
+        if (!t || t.zone !== 'battlefield' || !isCreature(t)) {
           c.attachedTo = null;
           changed = true;
         }
@@ -174,6 +175,7 @@ function* flushTriggers(g: GameState): SubFlow {
       ab = { ...ab, modes: undefined, effects: eff, targets: sp.length ? sp : undefined };
       log(g, `${cardName(src)}：選擇了「${picks.map((i) => t.ability.modes![i].text).join('」「')}」`, t.controller);
     }
+    if(ab.finDynamic){const options=g.players[t.controller].graveyard.filter(id=>isCreature(g.cards[id]));const max=options.length;const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇返回生物目標數量（總法力值至多6）',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};const n=r.type==='modes'?Math.min(max,r.picks[0]??0):0;ab={...ab,targets:Array.from({length:n},()=>({kind:'gyCard' as const,filter:{ctrl:'you' as const,type:'Creature' as const},totalMvMax:6}))};}
     if(ab.variableVividTargets){const n=vividColors(g,t.controller).length;const r:Response=yield {type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:n+1},(_,i)=>String(i)),count:1,purpose:'count'};const k=r.type==='modes'?r.picks[0]??0:0;ab={...ab,targets:Array.from({length:Math.min(k,n)},()=>({kind:'creature' as const,filter:{ctrl:'you' as const}}))};}
     const specs = (ab.targets ?? []).map(s=>s.filter?.chosenTribe?{...s,filter:{...s.filter,chosenTribe:false,sub:t.sourceType??src.eclType??''}}:s).map(s=>s.filter?.crewedSourceThisTurn?{...s,filter:{...s.filter,crewedSourceThisTurn:false,ids:(src.crewedBy??[]).slice()}}:s);
     let targets: (TargetRef | null)[] = [];
@@ -237,6 +239,7 @@ function* flushTriggers(g: GameState): SubFlow {
 export function* settle(g: GameState): SubFlow {
   for (let i = 0; i < 100; i++) {
     yield* resolveEclEntries(g);
+    refreshFinLands(g);
     for(const pid of [0,1] as PID[]){
       if(g.legendExempt?.pid===pid&&g.legendExempt.turn===g.turn)continue;
       const groups=new Map<string,number[]>();
@@ -343,7 +346,7 @@ export function* resolveTop(g: GameState): SubFlow {
       }
     } else {
       yield* runEffects(g, ctx, item.effects);
-      if(src.zone==='stack'){const dream=src.castOrigin==='hand'&&g.battlefield.some(id=>g.cards[id].controller===item.controller&&g.cards[id].def.id==='goliath-daydreamer'&&abilitiesOf(g,g.cards[id]).length);moveCard(g,src,dream?'exile':'graveyard');if(dream)src.eclDream=true;}
+      if(src.zone==='stack'){const dream=src.castOrigin==='hand'&&g.battlefield.some(id=>g.cards[id].controller===item.controller&&g.cards[id].def.id==='goliath-daydreamer'&&abilitiesOf(g,g.cards[id]).length);moveCard(g,src,dream||src.finExileOnResolve?'exile':'graveyard');src.finExileOnResolve=undefined;if(dream)src.eclDream=true;}
     }
   } else {
     if (item.cond && !checkCond(g, item.cond, item.controller, item.cardId, legal, item.ev)) return;
@@ -381,6 +384,7 @@ export function* priorityStep(g: GameState): SubFlow {
           return;
         }
         yield* resolveTop(g);
+        if(g.finEndTurn)return;
         passes = 0;
         p = g.active;
         continue;
@@ -388,6 +392,9 @@ export function* priorityStep(g: GameState): SubFlow {
       p = other(p);
     } else {
       if(r.type==='cast'){
+        const card=g.cards[r.card];
+        if(card?.def.fin?.stackTarget&&r.stackTargetSid===undefined){const items=finStackChoices(g,p,false);const rr:Response=yield{type:'mode',player:p,prompt:'選擇要反擊的咒語或異能',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSid=items[rr.type==='modes'?rr.picks[0]??0:0]?.sid;}
+        if(card?.def.fin?.returnLandCost&&r.mode===1&&r.returnLand===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&g.cards[id].def.types.includes('Land'));const rr:Response=yield{type:'choose',player:p,prompt:'收回一個地作額外費用',options,min:1,max:1,purpose:'dig'};r.returnLand=rr.type==='choose'?rr.ids[0]:undefined;}
         const c=g.cards[r.card],req=c?.def.ecl?.behold;
         if(c&&req&&(!req.flashbackOnly||r.alt==='flashback')&&r.beheld===undefined){
           let pick=true;if(req.tax||req.optional){const answer:Response=yield {type:'yesno',player:p,prompt:req.tax?`Behold而不另付{${req.tax}}？`:'支付Behold額外費用？'};pick=answer.type==='yesno'&&answer.yes;}
@@ -405,6 +412,7 @@ export function* priorityStep(g: GameState): SubFlow {
           return answer.type==='choose'?answer.ids:[];
         };
         if(c&&ab&&canActivate(g,p,c,r.ability)){
+          if(ab.finStack&&r.stackTargetSid===undefined){const items=finStackChoices(g,p,true);const rr:Response=yield{type:'mode',player:p,prompt:'選擇你的起動或觸發異能',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSid=items[rr.type==='modes'?rr.picks[0]??0:0]?.sid;}
           if(ab.cost.tapN&&r.tapCards===undefined)r.tapCards=yield* chooseCost('選擇橫置作費用的永久物',g.battlefield.filter(id=>{const x=g.cards[id];return x.controller===p&&!x.tapped&&(!ab.cost.tap||id!==c.id)&&matches(g,ab.cost.tapN!.filter,x,p,c.id);}),ab.cost.tapN.n,ab.cost.tapN.n);
           if(ab.effects.some(e=>e.e==='ecl'&&e.action==='kirol')&&r.stackTargetSid===undefined){const items=g.stack.filter(s=>s.kind==='trigger'&&s.controller===p);const answer:Response=yield {type:'mode',player:p,prompt:'選擇目標觸發異能',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSid=items[answer.type==='modes'?answer.picks[0]??0:0]?.sid;}
           if(ab.cost.blight&&r.blightCard===undefined)r.blightCard=(yield* chooseCost('選擇枯萎生物',g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&canReceiveCounters(g,g.cards[id])),1,1))[0];
@@ -492,7 +500,7 @@ function* mulligans(g: GameState): SubFlow {
 function* combatPhase(g: GameState): SubFlow {
   const a = g.active;
   g.blockersDeclared=false;
-  g.combatCount=(g.combatCount??0)+1;
+  g.combatCount=(g.combatCount??0)+1;g.finCombatNumber=g.combatCount;
   g.phase = 'combat_begin';
   emit(g, { type: 'step', step: 'combatStart', player: a });
   yield* priorityStep(g);
@@ -532,6 +540,8 @@ function* combatPhase(g: GameState): SubFlow {
   }
   yield* priorityStep(g);
   g.phase = 'combat_end';
+  emit(g,{type:'fin',action:'endCombat',card:-1,player:a,amount:0});
+  yield* priorityStep(g);
   endCombat(g);
 }
 
@@ -565,6 +575,8 @@ function* turn(g: GameState): SubFlow {
     p.loyaltyActivatedThisTurn = false;
     p.mountainBonus = false;
     p.pool = [];
+    const lightning=p.finFlags?.lightningUntil;
+    p.finFlags=lightning&&lightning!==a+1?{lightningUntil:lightning}:{};
     p.retainedRed=[];p.eclRestrictedMana=[];p.eclEntries=[];p.eclCounterPlaced=false;p.eclAttackedMerfolk=0;p.eclMaralenUsed=[];if(p.eclPreventDamageUntil===a)p.eclPreventDamageUntil=undefined;
     p.poolNoncreature = [];
     p.poolLesson=[];
@@ -577,7 +589,7 @@ function* turn(g: GameState): SubFlow {
     p.nextAffinity=0;
     p.lifeLostThisTurn = 0;
   }
-  g.combatCount=0;
+  g.combatCount=0;g.finCombatNumber=0;g.finEndNumber=1;g.finExtraEnd=false;g.finEndTurn=false;
   g.blockersDeclared=false;
   g.attackedThisTurn = false;
   g.creatureDiedThisTurn = false;
@@ -607,14 +619,15 @@ function* turn(g: GameState): SubFlow {
   }
   g.version++;
   // 維持
+  phases:{
   g.phase = 'upkeep';
   emit(g, { type: 'step', step: 'upkeep', player: a });
-  yield* priorityStep(g);
+  yield* priorityStep(g);if(g.finEndTurn)break phases;
   // 抓牌
   g.phase = 'draw';
   emit(g, { type: 'step', step: 'draw', player: a });
   if (g.turn > 1) drawCards(g, a, 1);
-  yield* priorityStep(g);
+  yield* priorityStep(g);if(g.finEndTurn)break phases;
   // 主要階段一：傳奇在抓牌步驟後前進一章
   g.phase = 'main1';
   emit(g, { type: 'step', step: 'main1', player: a });
@@ -622,14 +635,14 @@ function* turn(g: GameState): SubFlow {
     const c = g.cards[id];
     if (c.controller === a && c.def.saga) addLore(g, c, 1);
   }
-  yield* priorityStep(g);
+  yield* priorityStep(g);if(g.finEndTurn)break phases;
   // 戰鬥
-  yield* combatPhase(g);
-  while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield* combatPhase(g);g.landCombatOnly=false;}
+  yield* combatPhase(g);if(g.finEndTurn)break phases;
+  while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield* combatPhase(g);if(g.finEndTurn)break phases;g.landCombatOnly=false;}
   // 主要階段二
   for(const p of g.players) p.firePool=[];
   g.phase = 'main2';
-  yield* priorityStep(g);
+  yield* priorityStep(g);if(g.finEndTurn)break phases;
   // 結束：動員之類的暫時衍生物在結束步驟開始時犧牲
   g.phase = 'end';
   for (const id of [...g.battlefield]) {
@@ -646,7 +659,9 @@ function* turn(g: GameState): SubFlow {
     }
   }
   emit(g, { type: 'step', step: 'endStep', player: a });
-  yield* priorityStep(g);
+  yield* priorityStep(g);if(g.finEndTurn)break phases;
+  if(g.finExtraEnd){g.finExtraEnd=false;g.finEndNumber=2;emit(g,{type:'step',step:'endStep',player:a});yield* priorityStep(g);}
+  }
   // 清除
   g.phase = 'cleanup';
   const over = pl.noHandLimit ? 0 : pl.hand.length - 7;
@@ -667,9 +682,9 @@ function* turn(g: GameState): SubFlow {
   }
   for (const id of g.battlefield) {
     const c = g.cards[id];
-    c.damage = 0;
+    if(!abilitiesOf(g,c).some(ab=>ab.kind==='static'&&ab.fin==='adamantoise'))c.damage = 0;
     c.dtDamage = false;
-    if(c.returnControl?.turn===g.turn){c.controller=c.returnControl.player;c.returnControl=undefined;}
+    if(c.returnControl?.turn===g.turn){const old=c.controller;c.controller=c.returnControl.player;c.returnControl=undefined;if(c.finMarks?.uniformTurn===g.turn&&c.attachedTo!==null&&g.cards[c.attachedTo]?.controller===old)c.attachedTo=null;emit(g,{type:'fin',action:'controlChange',card:c.id,player:c.controller,amount:old});}
     // 暫時成為生物的地恢復原狀
     if (c.baseDef) {
       c.def = c.baseDef;

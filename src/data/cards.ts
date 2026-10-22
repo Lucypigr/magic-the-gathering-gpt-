@@ -1,3 +1,4 @@
+import {completeFin} from './sets/fin-extra';
 // ============================================================
 // 卡牌資料庫：經典卡牌
 // 系列：FDN = 基本系列（Foundations）、CORE = 經典核心系列、META = 競技環境精選
@@ -700,6 +701,7 @@ land('META', 'R', 'Fabled Passage', [], '{T}，犧牲此地：從你的牌庫中
 completeTla();
 completeTmt();
 completeEcl();
+completeFin();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

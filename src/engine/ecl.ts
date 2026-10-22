@@ -1,3 +1,4 @@
+import {finStatic} from './fin-support';
 import { validateTargets } from './targets';
 import { canPayCost, payCost } from './actions';
 import { allDefs } from './registry';
@@ -142,6 +143,7 @@ export function* makeEclTokenBatch(
     }
     out.push(c);
   }
+  const frogs=finStatic(g,pid,'extraFrog').length;for(let i=0;i<frogs;i++)createToken(g,'tok-fin-frog',pid,opts);
   return out;
 }
 export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl' }>): SubFlow {

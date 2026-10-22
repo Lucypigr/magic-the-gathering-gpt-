@@ -1,3 +1,4 @@
+import {finApplyStats,finBaseStats,finCondition} from './fin-support';
 import { displayName } from '../data/names';
 import { colorsOf, manaValue } from './mana';
 import { getDef } from './registry';
@@ -156,10 +157,10 @@ export function cloneGame(g: GameState): GameState {
   const cards: Record<number, Card> = {};
   for (const k in g.cards) {
     const c = g.cards[k];
-    cards[k] = { ...c, manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
+    cards[k] = { ...c,finMarks:c.finMarks?{...c.finMarks}:undefined,finLinked:c.finLinked?.slice(), manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
   }
   const cp = (p: Player): Player => ({
-    ...p,eclEntries:p.eclEntries?.slice(),eclMaralenUsed:p.eclMaralenUsed?.slice(),eclRestrictedMana:p.eclRestrictedMana?.map(m=>({...m})),
+    ...p,finFlags:p.finFlags?{...p.finFlags}:undefined,eclEntries:p.eclEntries?.slice(),eclMaralenUsed:p.eclMaralenUsed?.slice(),eclRestrictedMana:p.eclRestrictedMana?.map(m=>({...m})),
     outside: p.outside.slice(),
     library: p.library.slice(),
     hand: p.hand.slice(),
@@ -283,6 +284,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     st.kw.add('menace');
     st.cantBlock = true;
   }
+  finBaseStats(g,c,st);
   // 直到回合結束的基礎力量與防禦力（在指示物與加成之前套用）
   if (!ignoreEot) {
     for (const e of g.eot) {
@@ -370,6 +372,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   if(st.p>=4 && g.battlefield.some(id=>g.cards[id].controller===c.controller&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.oneBlockerPower4)))st.onlyOneBlocker=true;
   if(!lost&&d.combatPowerMin!==undefined&&st.p<d.combatPowerMin){st.cantAttack=true;st.cantBlock=true;}
   for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===c.id&&eq.def.equip?.powerPerArtifact)st.p+=g.battlefield.filter(id=>g.cards[id].controller===eq.controller&&g.cards[id].def.types.includes('Artifact')).length;}
+  finApplyStats(g,c,st);
   return st;
 }
 
@@ -401,9 +404,12 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   if(f.chosenTribe){const source=g.cards[sourceId??-1];if(!source?.eclType||!(d.changeling||d.subtypes?.includes(source.eclType)))return false;}
   if(f.minusCounters!==undefined&&(c.counters<0)!==f.minusCounters)return false;
   const attachedChangeling=g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='stalactite-dagger');
-  if (f.sub && !attachedChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
-  if (f.nonSub && (d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
+  const jobTypes=c.zone==='battlefield'?g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&!abilitiesSuppressed(g,g.cards[id])).flatMap(id=>g.cards[id].def.fin?.job?[g.cards[id].def.fin!.job!]:[]):[];
+  if (f.sub && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
+  if (f.nonSub && (asArr(f.nonSub).some(s=>jobTypes.includes(s))||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
   if (f.attackedThisTurn !== undefined && (c.attackedTurn === g.turn) !== f.attackedThisTurn) return false;
+  if(f.name&&d.name!==f.name)return false;
+  if(f.nonNames?.includes(d.name))return false;
   if (f.legendary !== undefined && !!d.supertypes?.includes('Legendary') !== f.legendary) return false;
   if (f.basic !== undefined && !!d.supertypes?.includes('Basic') !== f.basic) return false;
   const actualManaValue=manaValue(d)+(c.zone==='stack'?(g.stack.find(s=>s.kind==='spell'&&s.cardId===c.id)?.x??0)*(d.cost?.match(/\{X\}/g)?.length??0):0);
@@ -470,6 +476,7 @@ export function checkCond(
   const opp = g.players[other(controller)];
   switch (cond.c) {
     case 'and':return cond.conds.every(c=>checkCond(g,c,controller,sourceId,targets,ev));
+    case 'fin':return finCondition(g,cond,controller,sourceId??-1,ev);
     case 'ecl':{
       const src=g.cards[sourceId??-1], n=cond.n??1;
       if(cond.action.startsWith('paid'))return (src?.manaPaid??[]).filter(m=>m===cond.action.slice(4)).length>=n;

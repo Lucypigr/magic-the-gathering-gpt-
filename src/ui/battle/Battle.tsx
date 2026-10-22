@@ -899,7 +899,7 @@ export function Battle(props: Props) {
       {xPick && (
         <Modal title={`決定 X 的值`} onClose={() => setXPick(null)}>
           <div className="x-pick">
-            <p className="muted small">{xPick.draft.label}：{xPick.draft.kind === 'activate' ? 'X 越大效果越強，但要多移除 X 個忠誠指示物。你現在最多能選 X' : 'X 越大效果越強，但要多付 X 點法術力。你現在最多能付 X'} = {xPick.max}。</p>
+            <p className="muted small">{xPick.draft.label}：依牌面支付 X 的費用。你現在最多能選 X = {xPick.max}。</p>
             <div className="x-row">
               <button className="btn" disabled={xPick.value <= 0} onClick={() => setXPick({ ...xPick, value: xPick.value - 1 })} aria-label="減少">
                 −
