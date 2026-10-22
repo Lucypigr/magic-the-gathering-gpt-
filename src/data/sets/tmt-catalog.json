@@ -1,0 +1,3452 @@
+[
+  {
+    "name": "Action News Crew",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "Vigilance\nChannel — {6}, Discard this card: Put a +1/+1 counter on each creature you control. Draw a card.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 1
+  },
+  {
+    "name": "Agent Bishop, Man in Black",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "At the beginning of combat on your turn, put a +1/+1 counter on each of up to two target creatures.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 2
+  },
+  {
+    "name": "April O'Neil, Kunoichi Trainee",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ninja"
+    ],
+    "text": "When April O'Neil enters, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)\nApril O'Neil can't be blocked by creatures with power 3 or greater.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 3
+  },
+  {
+    "name": "Dimensional Exile",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant basic land you control\nWhen this Aura enters, exile target creature an opponent controls until this Aura leaves the battlefield.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 4
+  },
+  {
+    "name": "East Wind Avatar",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Spirit",
+      "Avatar"
+    ],
+    "text": "Flying, vigilance\nAlliance — Whenever another creature you control enters, this creature gets +1/+0 until end of turn.",
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 5
+  },
+  {
+    "name": "Featherbrained Filcher",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Mutant"
+    ],
+    "text": "Flying\nWhen this creature leaves the battlefield, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+    "power": 0,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 6
+  },
+  {
+    "name": "Grounded for Life",
+    "cost": "{4}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "This spell costs {3} less to cast if it targets a tapped creature.\nDestroy target creature.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 7
+  },
+  {
+    "name": "Hamato Guardian Stance",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +1/+3 and gains flying until end of turn. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 8
+  },
+  {
+    "name": "High-Flying Ace",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Mutant"
+    ],
+    "text": "Flying\n{3}{W}: Target creature without flying gains flying until end of turn. Activate only as a sorcery.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 9
+  },
+  {
+    "name": "Jennika, Bad Apple Big Sister",
+    "cost": "{4}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "When Jennika enters, create a 2/2 red Mutant creature token.\nPlainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Plains"
+      }
+    },
+    "set": "TMT",
+    "rarity": "C",
+    "number": 10
+  },
+  {
+    "name": "Koya, Death from Above",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Bird"
+    ],
+    "text": "Flying\nWhen Koya enters, exile up to one other target creature. At the beginning of the next end step, you may pay {3}{B}. If you don't, return that card to the battlefield under its owner's control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 11
+  },
+  {
+    "name": "The Last Ronin's Technique",
+    "cost": "{3}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Sneak {1}{W} (You may cast this spell for {1}{W} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nCreate three 1/1 white Ninja Turtle Spirit creature tokens. If this spell's sneak cost was paid, they enter tapped and attacking.",
+    "sneak": "{1}{W}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 12
+  },
+  {
+    "name": "Leader's Talent",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Class"
+    ],
+    "text": "(Gain the next level as a sorcery to add its ability.)\nWhenever you attack, put a +1/+1 counter on target attacking creature.\n{2}{W}: Level 2\nWhenever a creature you control leaves the battlefield, if it had a counter on it, you gain 2 life.\n{3}{W}: Level 3\nWhenever you cast a spell, put a +1/+1 counter on each creature you control.",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 13
+  },
+  {
+    "name": "Leonardo, Big Brother",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Sneak {W} (You may cast this spell for {W} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nLeonardo gets +1/+0 for each other creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "sneak": "{W}",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 14
+  },
+  {
+    "name": "Leonardo, Cutting Edge",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Sneak {W} (You may cast this spell for {W} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nLifelink\nWhenever you gain life, put a +1/+1 counter on Leonardo.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ],
+    "sneak": "{W}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 15
+  },
+  {
+    "name": "Leonardo, Leader in Blue",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Sneak {3}{W}{W} (You may cast this spell for {3}{W}{W} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nWhen Leonardo enters, if his sneak cost was paid, creatures you control get +2/+0 until end of turn.\n{1}{W}: Leonardo gains first strike until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "sneak": "{3}{W}{W}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 16
+  },
+  {
+    "name": "Leonardo, Sewer Samurai",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle",
+      "Samurai"
+    ],
+    "text": "Sneak {2}{W}{W}\nDouble strike\nDuring your turn, you may cast creature spells with power or toughness 1 or less from your graveyard. If you cast a spell this way, that creature enters with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "double_strike"
+    ],
+    "sneak": "{2}{W}{W}",
+    "set": "TMT",
+    "rarity": "M",
+    "number": 17
+  },
+  {
+    "name": "Leonardo's Technique",
+    "cost": "{3}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Sneak {1}{W} (You may cast this spell for {1}{W} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nReturn one or two target creature cards each with mana value 3 or less from your graveyard to the battlefield.",
+    "sneak": "{1}{W}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 18
+  },
+  {
+    "name": "Lita, Little Orphan Amphibian",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Alliance — Whenever another creature you control enters, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Lita.\n• Create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\n• Scry 1.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 19
+  },
+  {
+    "name": "Make Your Move",
+    "cost": "{2}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target artifact, enchantment, or creature with power 4 or greater.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 20
+  },
+  {
+    "name": "Mighty Mutanimals",
+    "cost": "{2}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Rebel"
+    ],
+    "text": "When this creature enters, create a 2/2 red Mutant creature token.\nAlliance — Whenever another creature you control enters, put a +1/+1 counter on target creature you control.",
+    "power": 2,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 21
+  },
+  {
+    "name": "Prehistoric Pet",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Ninja"
+    ],
+    "text": "This creature can't be blocked by creatures with greater power.\n{1}{W}, {T}: Return another target creature you control to its owner's hand. Activate only during your turn.",
+    "power": 1,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 22
+  },
+  {
+    "name": "Quintessential Katana",
+    "cost": "{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature gets +1/+1 and has \"Whenever this creature deals combat damage, untap it and you gain 2 life.\"\nWhenever a Ninja you control enters, you may attach this Equipment to it.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 23
+  },
+  {
+    "name": "Sally Pride, Lioness Leader",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Mutant",
+      "Rebel"
+    ],
+    "text": "When Sally Pride enters, create X 2/2 red Mutant creature tokens, where X is the number of nontoken creatures you control.\nWhenever Sally Pride attacks, put a +1/+1 counter on each creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 24
+  },
+  {
+    "name": "Triceraton Commander",
+    "cost": "{X}{X}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Soldier"
+    ],
+    "text": "Flying\nWhenever this creature attacks, Dinosaurs you control other than this creature get +1/+1 and gain flying until end of turn.\nWhen this creature enters, create X 2/2 white Dinosaur Soldier creature tokens.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "M",
+    "number": 25
+  },
+  {
+    "name": "Turncoat Kunoichi",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Fox"
+    ],
+    "text": "Sneak {2}{W}{B} (You may cast this spell for {2}{W}{B} if you also return an unblocked attacker you control to hand during the declare blockers step. It enters tapped and attacking.)\nWhen this creature enters, choose target creature an opponent controls. Exile that creature until this creature leaves the battlefield. If this creature's sneak cost was paid, instead exile the chosen creature.",
+    "power": 3,
+    "toughness": 2,
+    "sneak": "{2}{W}{B}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 26
+  },
+  {
+    "name": "Turtles Forever",
+    "cost": "{3}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Search your library and/or outside the game for exactly four legendary creature cards you own with different names, then reveal those cards. An opponent chooses two of them. Put the chosen cards into your hand and shuffle the rest into your library.",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 27
+  },
+  {
+    "name": "Uneasy Alliance",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nEnchanted creature can't attack or block.\n{5}, Sacrifice this Aura: Exile enchanted creature. You create a 1/1 black Ninja creature token. Activate only as a sorcery.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 28
+  },
+  {
+    "name": "April O'Neil, Hacktivist",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist"
+    ],
+    "text": "At the beginning of your end step, draw a card for each card type among spells you've cast this turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 5,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 29
+  },
+  {
+    "name": "April, Reporter of the Weird",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Detective"
+    ],
+    "text": "Whenever April deals combat damage to a player, draw that many cards, then discard a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 30
+  },
+  {
+    "name": "Bespoke Bō",
+    "cost": "{2}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When this Equipment enters, return up to one other target nonland permanent to its owner's hand.\nEquipped creature gets +2/+1 and has vigilance.\nEquip {3}",
+    "source": "magefree/mage: Mage.Sets/src/mage/cards/b/BespokeBo.java",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 31
+  },
+  {
+    "name": "Buzz Bots",
+    "cost": "{1}{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Insect"
+    ],
+    "text": "Flying, vigilance\nWhen this creature dies, draw a card.",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 32
+  },
+  {
+    "name": "Crustacean Commando",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Crab",
+      "Mutant",
+      "Soldier"
+    ],
+    "text": "When this creature enters, create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "power": 0,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 33
+  },
+  {
+    "name": "Does Machines",
+    "cost": "{1}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Class"
+    ],
+    "text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, mill two cards, draw two cards, then discard two cards.\n{1}{U}: Level 2\nWhen this Class becomes level 2, return up to two target artifact cards from your graveyard to your hand.\n{4}{U}: Level 3\nAt the beginning of combat on your turn, put three +1/+1 counters on target artifact you control. If it isn't a creature, it becomes a 0/0 Robot creature in addition to its other types.",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 34
+  },
+  {
+    "name": "Donatello, Gadget Master",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Sneak {1}{U} (You may cast this spell for {1}{U} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nWhenever Donatello deals combat damage to a player, create a token that's a copy of target artifact you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "sneak": "{1}{U}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 35
+  },
+  {
+    "name": "Donatello, Mutant Mechanic",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "{T}: Put three +1/+1 counters on target artifact you control. If it isn't a creature, it becomes a 0/0 Robot creature in addition to its other types. Activate only as a sorcery.\nWhenever an artifact you control is put into a graveyard from the battlefield, if it had counters on it, put those counters on up to one target artifact or creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 5,
+    "set": "TMT",
+    "rarity": "M",
+    "number": 36
+  },
+  {
+    "name": "Donatello, Turtle Techie",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "When Donatello enters, if you control an artifact, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 37
+  },
+  {
+    "name": "Donatello, Way with Machines",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Flying\nWhenever an artifact you control enters, put a +1/+1 counter on Donatello.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 38
+  },
+  {
+    "name": "Donatello's Technique",
+    "cost": "{2}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Sneak {U} (You may cast this spell for {U} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nDraw two cards.",
+    "sneak": "{U}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 39
+  },
+  {
+    "name": "Fugitive Droid",
+    "cost": "{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Scientist"
+    ],
+    "text": "This creature can't be blocked if an artifact entered the battlefield under your control this turn.\n{U}, Sacrifice this creature: Counter target spell that targets an artifact or creature you control.",
+    "power": 1,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 40
+  },
+  {
+    "name": "Kitsune, Dragon's Daughter",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fox",
+      "Warlock",
+      "Avatar"
+    ],
+    "text": "Vigilance\nWhenever Kitsune enters or deals combat damage to a player, you may exchange control of two other target creatures controlled by different players.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "vigilance"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 41
+  },
+  {
+    "name": "Kitsune's Technique",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Sneak {1}{U} (You may cast this spell for {1}{U} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nTarget opponent mills half their library, rounded up.",
+    "sneak": "{1}{U}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 42
+  },
+  {
+    "name": "Krang, Master Mind",
+    "cost": "{6}{U}{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Utrom",
+      "Warrior"
+    ],
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nWhen Krang enters, if you have fewer than four cards in hand, draw cards equal to the difference.\nKrang gets +1/+0 for each other artifact you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 4,
+    "costReduce": {
+      "perCount": {
+        "type": "Artifact"
+      }
+    },
+    "set": "TMT",
+    "rarity": "R",
+    "number": 43
+  },
+  {
+    "name": "Metalhead",
+    "cost": "{4}{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Turtle"
+    ],
+    "text": "When Metalhead enters, return up to one other target artifact or creature to its owner's hand.\n{R}, Sacrifice another artifact: Put a +1/+1 counter on Metalhead. He gains menace and haste until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 44
+  },
+  {
+    "name": "Mind Transfer Protocol",
+    "cost": "{2}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Until end of turn, target artifact or creature becomes an artifact creature with base power and toughness 4/5.\nDraw a card.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 45
+  },
+  {
+    "name": "Mondo Gecko",
+    "cost": "{1}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Mutant"
+    ],
+    "text": "{1}, Discard a card: Until end of turn, Mondo Gecko becomes the color of your choice and gains hexproof from that color.\nWhenever Mondo Gecko deals combat damage to a player, draw a card for each color among permanents you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "M",
+    "number": 46
+  },
+  {
+    "name": "Negate",
+    "cost": "{1}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Counter target noncreature spell.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 47
+  },
+  {
+    "name": "Ooze Spill",
+    "cost": "{1}{U}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Counter target spell. Create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 48
+  },
+  {
+    "name": "Ray Fillet, Man Ray",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish",
+      "Mutant"
+    ],
+    "text": "Flying\nWhen Ray Fillet enters, create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")\n{2}, Remove a +1/+1 counter from a creature you control: Draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 49
+  },
+  {
+    "name": "Renet, Temporal Apprentice",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Flash\nWhen Renet enters, return each other nonland permanent that entered this turn to its owner's hand.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flash"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 50
+  },
+  {
+    "name": "Retro-Mutation",
+    "cost": "{2}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Flash\nEnchant creature\nEnchanted creature is a Turtle with base power and toughness 0/1. It can't attack and loses all abilities. (It also loses all other creature types.)",
+    "keywords": [
+      "flash"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 51
+  },
+  {
+    "name": "Return to the Sewers",
+    "cost": "{3}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature's owner puts it on their choice of the top or bottom of their library. You create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 52
+  },
+  {
+    "name": "Sewer-veillance Cam",
+    "cost": "{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Flash\nWhen this artifact enters or leaves the battlefield, you may tap or untap target creature.\n{3}{U}, Sacrifice this artifact: Draw two cards.",
+    "keywords": [
+      "flash"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 53
+  },
+  {
+    "name": "Stockman, Mad Fly-entist",
+    "cost": "{4}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Mutant",
+      "Scientist"
+    ],
+    "text": "Flying\nWhen Stockman enters, draw a card, then discard a card.\nIslandcycling {2} ({2}, Discard this card: Search your library for an Island card, reveal it, put it into your hand, then shuffle.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Island"
+      }
+    },
+    "set": "TMT",
+    "rarity": "C",
+    "number": 54
+  },
+  {
+    "name": "Turtles in Time",
+    "cost": "{5}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Return all creatures to their owners' hands. Each player may shuffle their hand and graveyard into their library, then each player who does draws seven cards.\nExile Turtles in Time.",
+    "set": "TMT",
+    "rarity": "M",
+    "number": 55
+  },
+  {
+    "name": "Utrom Scientists",
+    "cost": "{2}{U}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Utrom",
+      "Robot",
+      "Scientist"
+    ],
+    "text": "When this creature enters, tap up to one target creature and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "power": 2,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 56
+  },
+  {
+    "name": "Anchovy & Banana Pizza",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "text": "When this artifact enters, destroy target creature.\n{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 57
+  },
+  {
+    "name": "Armaggon, Future Shark",
+    "cost": "{6}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shark",
+      "Horror",
+      "Mutant"
+    ],
+    "text": "Flash\nWhen Armaggon enters, destroy up to three target creatures.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 9,
+    "toughness": 6,
+    "keywords": [
+      "flash"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 58
+  },
+  {
+    "name": "Bebop, Warthog Warrior",
+    "cost": "{4}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Boar",
+      "Mutant",
+      "Warrior"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nRhinos you control have menace.\nSwampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "menace"
+    ],
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Swamp"
+      }
+    },
+    "set": "TMT",
+    "rarity": "C",
+    "number": 59
+  },
+  {
+    "name": "The Cloning of Shredder",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Exile target creature card from your graveyard. Create a token that's a copy of it, except it isn't legendary and is a Mutant in addition to its other types.\nII, III — Create a token that's a copy of a card exiled with this Saga, except it isn't legendary and is a Mutant in addition to its other types.",
+    "set": "TMT",
+    "rarity": "M",
+    "number": 60
+  },
+  {
+    "name": "Death in the Family",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Exile target creature with mana value 3 or less.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 61
+  },
+  {
+    "name": "Dream Beavers",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beaver",
+      "Nightmare"
+    ],
+    "text": "Flying\nWhen this creature enters, each opponent loses 1 life and you gain 1 life. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 62
+  },
+  {
+    "name": "Foot Mystic",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ninja",
+      "Warlock"
+    ],
+    "text": "Lifelink\nDisappear — When this creature enters, if a permanent left the battlefield under your control this turn, create a 1/1 black Ninja creature token.",
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "lifelink"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 63
+  },
+  {
+    "name": "Insectoid Exterminator",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Mutant"
+    ],
+    "text": "Flying\nDisappear — At the beginning of your end step, if a permanent left the battlefield under your control this turn, scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 64
+  },
+  {
+    "name": "Lord Dregg, Insect Invader",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Warrior"
+    ],
+    "text": "Flying\nDisappear — At the beginning of your end step, if a permanent left the battlefield under your control this turn, create a 1/1 black Insect Warrior creature token with flying.\n{3}{G}, Sacrifice a token: Draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 65
+  },
+  {
+    "name": "Madame Null, Power Broker",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon",
+      "Advisor"
+    ],
+    "text": "Deathtouch\nWhenever another creature you control enters, you may pay life equal to its power. If you do, put that many +1/+1 counters on it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 66
+  },
+  {
+    "name": "Ninja Teen",
+    "cost": "{2}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Class"
+    ],
+    "text": "(Gain the next level as a sorcery to add its ability.)\nWhenever a creature you control leaves the battlefield, each opponent loses 1 life.\n{1}{B}: Level 2\nCreatures you control get +1/+0 and have menace.\n{B}: Level 3\nCreature cards in your graveyard have sneak {3}{B}.\nYou may cast creature spells from your graveyard using their sneak abilities.",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 67
+  },
+  {
+    "name": "Oroku Saki, Shredder Rising",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ninja"
+    ],
+    "text": "Sneak {1}{B} (You may cast this spell for {1}{B} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nWhenever Oroku Saki deals combat damage to a player, you draw a card and lose 1 life.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 1,
+    "sneak": "{1}{B}",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 68
+  },
+  {
+    "name": "Pain 101",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Until end of turn, target creature gains deathtouch and \"When this creature dies, return it to the battlefield tapped under its owner's control.\"",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 69
+  },
+  {
+    "name": "Paramecia Coloniex",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Worm"
+    ],
+    "text": "When this creature enters, mill three cards. (Put the top three cards of your library into your graveyard.)\nWhen this creature dies, you may exile it. When you do, put target creature card from your graveyard on top of your library.",
+    "power": 2,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 70
+  },
+  {
+    "name": "Rat King, Verminister",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat",
+      "Avatar"
+    ],
+    "text": "Disappear — At the beginning of your end step, if a permanent left the battlefield under your control this turn, create a 1/1 black Rat creature token and put a +1/+1 counter on Rat King.\n{T}, Sacrifice three Rats: Return target creature card and all other cards with the same name as that card from your graveyard to the battlefield tapped.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 71
+  },
+  {
+    "name": "Savanti Romero, Time's Exile",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon",
+      "Wizard"
+    ],
+    "text": "Trample\nAt the beginning of combat on your turn, put a +1/+1 counter on Savanti Romero. Then you draw X cards and lose X life, where X is the number of counters on Savanti Romero.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 72
+  },
+  {
+    "name": "Shark Shredder, Killer Clone",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shark",
+      "Octopus",
+      "Ninja"
+    ],
+    "text": "Sneak {3}{B}{B}\nFirst strike\nWhenever Shark Shredder deals combat damage to a player, put up to one target creature card from that player's graveyard onto the battlefield under your control. It enters tapped and attacking that player.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "first_strike"
+    ],
+    "sneak": "{3}{B}{B}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 73
+  },
+  {
+    "name": "Shredder, Unrelenting",
+    "cost": "{4}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ninja"
+    ],
+    "text": "Sneak {3}{B} (You may cast this spell for {3}{B} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nDeathtouch\nWhenever Shredder enters or attacks, another target creature you control gains deathtouch until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch"
+    ],
+    "sneak": "{3}{B}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 74
+  },
+  {
+    "name": "Shredder's Armor",
+    "cost": "{1}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature gets +2/+1.\nWhen this Equipment enters, attach it to target creature you control.\nEquip—Sacrifice another nonland permanent. Activate only once each turn.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 75
+  },
+  {
+    "name": "Shredder's Revenge",
+    "cost": "{2}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Target player discards two cards.\n• Target player draws two cards and loses 2 life.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 76
+  },
+  {
+    "name": "Shredder's Technique",
+    "cost": "{2}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Sneak {B} (You may cast this spell for {B} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nDestroy target creature or enchantment. If an enchantment was destroyed this way, you lose 2 life.",
+    "sneak": "{B}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 77
+  },
+  {
+    "name": "South Wind Avatar",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake",
+      "Spirit",
+      "Avatar"
+    ],
+    "text": "Deathtouch\nWhenever another creature you control dies, you gain life equal to its toughness.\nWhenever you gain life, each opponent loses 1 life.",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 78
+  },
+  {
+    "name": "Splinter, Hamato Yoshi",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Rat"
+    ],
+    "text": "Sneak {B} (You may cast this spell for {B} if you also return an unblocked attacker you control to hand during the declare blockers step. It enters tapped and attacking.)\nMenace (This creature can't be blocked except by two or more creatures.)\nOther Ninjas you control get +1/+1.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "sneak": "{B}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 79
+  },
+  {
+    "name": "Splinter's Technique",
+    "cost": "{3}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Sneak {1}{B} (You may cast this spell for {1}{B} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nSearch your library for a card, put that card into your hand, then shuffle.",
+    "sneak": "{1}{B}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 80
+  },
+  {
+    "name": "Squirrelanoids",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Squirrel",
+      "Mutant"
+    ],
+    "text": "Deathtouch",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 81
+  },
+  {
+    "name": "Stomped by the Foot",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Kicker—Sacrifice an artifact or creature. (You may sacrifice an artifact or creature in addition to any other costs as you cast this spell.)\nTarget creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets -5/-5 until end of turn instead.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 82
+  },
+  {
+    "name": "Super Shredder",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Human"
+    ],
+    "text": "Menace\nWhenever another permanent leaves the battlefield, put a +1/+1 counter on Super Shredder.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ],
+    "set": "TMT",
+    "rarity": "M",
+    "number": 83
+  },
+  {
+    "name": "Tunnel Rats",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat"
+    ],
+    "text": "{4}{B}: Return this card from your graveyard to the battlefield tapped.",
+    "power": 2,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 84
+  },
+  {
+    "name": "Bot Bashing Time",
+    "cost": "{3}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Bot Bashing Time deals 6 damage to target creature. If that creature would die this turn, exile it instead.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 85
+  },
+  {
+    "name": "Broadcast Takeover",
+    "cost": "{2}{R}{R}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Gain control of all artifacts your opponents control until end of turn. Untap them. They gain haste until end of turn.",
+    "set": "TMT",
+    "rarity": "M",
+    "number": 86
+  },
+  {
+    "name": "Casey Jones, Jury-Rig Justiciar",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Berserker"
+    ],
+    "text": "Haste\nWhen Casey Jones enters, look at the top four cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "haste"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 87
+  },
+  {
+    "name": "Casey Jones, Vigilante",
+    "cost": "{1}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Berserker"
+    ],
+    "text": "When Casey Jones enters, draw three cards. At the beginning of your next upkeep, discard three cards at random.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 88
+  },
+  {
+    "name": "Cool but Rude",
+    "cost": "{1}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Class"
+    ],
+    "text": "(Gain the next level as a sorcery to add its ability.)\nWhenever you attack, you may discard a card. If you do, draw a card.\n{1}{R}: Level 2\nWhenever you discard a card, this Class deals 2 damage to each opponent.\n{1}{R}: Level 3\nWhen this Class becomes level 3, search your library for a card, put it into your hand, shuffle, then discard a card at random.",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 89
+  },
+  {
+    "name": "General Traag, Heart of Stone",
+    "cost": "{3}{R}{R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Soldier"
+    ],
+    "text": "Trample\nWhen General Traag enters, you may sacrifice another artifact. When you do, General Traag deals 4 damage to target creature.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 90
+  },
+  {
+    "name": "Hard-Won Jitte",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature has double strike.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 91
+  },
+  {
+    "name": "Improvised Arsenal",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature gets +1/+0 for each artifact you control.\n{4}{R}: Create a token that's a copy of this Equipment.\nEquip {R}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 92
+  },
+  {
+    "name": "Jennika's Technique",
+    "cost": "{2}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Sneak {R} (You may cast this spell for {R} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nJennika's Technique deals 2 damage to each creature.",
+    "sneak": "{R}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 93
+  },
+  {
+    "name": "Manhole Missile",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Manhole Missile deals 3 damage to target creature. You may put a card from your hand on the bottom of your library. If you do, draw a card.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 94
+  },
+  {
+    "name": "Mouser Attack!",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Create a 1/1 colorless Robot artifact creature token.\n• Target creature gets +3/+0 and gains first strike until end of turn.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 95
+  },
+  {
+    "name": "Mouser Foundry",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "When this artifact enters or leaves the battlefield, create a 1/1 colorless Robot artifact creature token.\n{4}{R}, Sacrifice this artifact: It deals 3 damage to target creature.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 96
+  },
+  {
+    "name": "Mutant Town Musicians",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Bard",
+      "Performer"
+    ],
+    "text": "Trample\nAlliance — Whenever another creature you control enters, this creature gets +1/+0 until end of turn.",
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 97
+  },
+  {
+    "name": "Null Group Biological Assets",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Mercenary"
+    ],
+    "text": "During your turn, this creature has first strike.\nWhenever this creature attacks, you may discard a card. If you do, draw a card.",
+    "power": 3,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 98
+  },
+  {
+    "name": "Old Hob, Alleycat Blues",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Mutant",
+      "Rebel"
+    ],
+    "text": "At the beginning of combat on your turn, create a 2/2 red Mutant creature token. It gains haste until end of turn. Destroy it at the beginning of the next end step.\n{1}{W}: Target attacking creature token gains indestructible until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 99
+  },
+  {
+    "name": "Purple Dragon Punks",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "{T}: Add {R}. Spend this mana only to cast an artifact spell or to activate an ability.",
+    "power": 2,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 100
+  },
+  {
+    "name": "Raphael, Most Attitude",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nAlliance — Whenever another creature you control enters, you may exile the top card of your library.\nWhenever Raphael attacks, until end of turn, you may play a card exiled with Raphael.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 101
+  },
+  {
+    "name": "Raphael, Ninja Destroyer",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Raphael must be blocked if able.\nEnrage — Whenever Raphael is dealt damage, add that much {R}. Until end of turn, you don't lose this mana as steps and phases end.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "M",
+    "number": 102
+  },
+  {
+    "name": "Raphael, the Nightwatcher",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Sneak {1}{R}{R} (You may cast this spell for {1}{R}{R} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nAttacking creatures you control have double strike.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "sneak": "{1}{R}{R}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 103
+  },
+  {
+    "name": "Raphael, Tough Turtle",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Alliance — Whenever another creature you control enters, Raphael deals 1 damage to target opponent.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 104
+  },
+  {
+    "name": "Raphael's Technique",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Sneak {2}{R} (You may cast this spell for {2}{R} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nEach player may discard their hand and draw seven cards.",
+    "sneak": "{2}{R}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 105
+  },
+  {
+    "name": "Ravenous Robots",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "text": "Whenever you cast an artifact spell, create a 1/1 colorless Robot artifact creature token.\n{R}, {T}: Creature tokens you control gain haste until end of turn.",
+    "power": 2,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 106
+  },
+  {
+    "name": "Rock Soldiers",
+    "cost": "{3}{R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Soldier"
+    ],
+    "text": "When this creature enters, destroy up to one target noncreature artifact.",
+    "power": 4,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 107
+  },
+  {
+    "name": "Slash, Reptile Rampager",
+    "cost": "{3}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Berserker",
+      "Turtle"
+    ],
+    "text": "Alliance — Whenever another creature you control enters, Slash deals 2 damage to each opponent.\nWhenever Slash attacks, create a 2/2 red Mutant token.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 7,
+    "toughness": 5,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 108
+  },
+  {
+    "name": "Spicy Oatmeal Pizza",
+    "cost": "{2}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "text": "When this artifact enters, it deals 4 damage to any target and 3 damage to you.\n{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 109
+  },
+  {
+    "name": "Wingnut, Bat on the Belfry",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bat",
+      "Mutant"
+    ],
+    "text": "Alliance — Whenever another creature you control enters, Wingnut gains your choice of flying, menace, or haste until end of turn.\nWhenever Wingnut attacks, each other attacking creature gets +1/+0 until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 110
+  },
+  {
+    "name": "Zog, Triceraton Castaway",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Soldier"
+    ],
+    "text": "Reach, trample\nWhen Zog enters, target creature can't block this turn.\nMountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "reach",
+      "trample"
+    ],
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Mountain"
+      }
+    },
+    "set": "TMT",
+    "rarity": "C",
+    "number": 111
+  },
+  {
+    "name": "Courier of Comestibles",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "When this creature enters, you may search your library for a Food card, reveal it, put it into your hand, then shuffle. If you don't put a card into your hand this way, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+    "power": 1,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 112
+  },
+  {
+    "name": "Cowabunga!",
+    "cost": "{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Look at the top four cards of your library. You may reveal a Mutant, Ninja, Turtle, or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 113
+  },
+  {
+    "name": "Frog Butler",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog",
+      "Spirit"
+    ],
+    "text": "Deathtouch\n{T}: Add one mana of any color.\n{2}: This creature gains reach until end of turn.",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 114
+  },
+  {
+    "name": "Groundchuck & Dirtbag",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ox",
+      "Mole",
+      "Mutant"
+    ],
+    "text": "Trample\nWhenever you tap a land for mana, add {G}.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 8,
+    "toughness": 8,
+    "keywords": [
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 115
+  },
+  {
+    "name": "Guac & Marshmallow Pizza",
+    "cost": "{G}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "text": "Flash\nWhen this artifact enters, target creature gets +2/+2 until end of turn. Untap it.\n{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+    "keywords": [
+      "flash"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 116
+  },
+  {
+    "name": "Leatherhead, Swamp Stalker",
+    "cost": "{2}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Crocodile",
+      "Mutant",
+      "Rogue"
+    ],
+    "text": "Trample\nLeatherhead enters with a hexproof counter on her.\nWhenever Leatherhead deals combat damage to a player, you may remove a counter from her. When you do, destroy target artifact or enchantment that player controls.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 117
+  },
+  {
+    "name": "Michelangelo, Game Master",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Disappear — At the beginning of your end step, if a permanent left the battlefield under your control this turn, put a +1/+1 counter on Michelangelo.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 118
+  },
+  {
+    "name": "Michelangelo, Improviser",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Sneak {2}{G}{G} (You may cast this spell for {2}{G}{G} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nWhenever Michelangelo deals combat damage to a player, you may put a creature card and/or a land card from your hand onto the battlefield.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "sneak": "{2}{G}{G}",
+    "set": "TMT",
+    "rarity": "M",
+    "number": 119
+  },
+  {
+    "name": "Michelangelo, Mutant BFF",
+    "cost": "{2}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Each creature you control with a counter on it can't be blocked by more than one creature.\nWhenever Michelangelo enters or attacks, create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 120
+  },
+  {
+    "name": "Michelangelo, Weirdness to 11",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "When Michelangelo enters, create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")\nIf one or more +1/+1 counters would be put on a creature you control, that many plus one +1/+1 counters are put on it instead.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 121
+  },
+  {
+    "name": "Michelangelo's Technique",
+    "cost": "{4}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Sneak {3}{G} (You may cast this spell for {3}{G} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nLook at the top eight cards of your library. Put up to two creature cards with total mana value 6 or less from among them onto the battlefield and the rest on the bottom of your library in a random order.",
+    "sneak": "{3}{G}",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 122
+  },
+  {
+    "name": "Mona Lisa, Science Geek",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Mutant"
+    ],
+    "text": "Reach\n{T}: Add X mana of any one color, where X is Mona Lisa's power.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 123
+  },
+  {
+    "name": "Mutagen Man, Living Ooze",
+    "cost": "{X}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ooze",
+      "Mutant"
+    ],
+    "text": "Trample\nActivated abilities of artifact tokens you control cost {1} less to activate.\nWhen Mutagen Man enters, create X Mutagen tokens. (They're artifacts with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 124
+  },
+  {
+    "name": "Mutant Chain Reaction",
+    "cost": "{2}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Destroy up to one target artifact, enchantment, or creature with flying. Create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 125
+  },
+  {
+    "name": "New Generation's Technique",
+    "cost": "{3}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Sneak {2}{G}\nSearch your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+    "sneak": "{2}{G}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 126
+  },
+  {
+    "name": "Novel Nunchaku",
+    "cost": "{2}{G}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When this Equipment enters, attach it to target creature you control. When you do, equipped creature fights up to one target creature an opponent controls. (Each deals damage equal to its power to the other.)\nEquipped creature gets +1/+1 and has trample.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 127
+  },
+  {
+    "name": "Party Dude",
+    "cost": "{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Class"
+    ],
+    "text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, each player creates a Food token.\n{1}{G}: Level 2\nWhenever an artifact an opponent controls is put into a graveyard from the battlefield, draw a card.\n{4}{G}: Level 3\nWhenever one or more of your opponents are attacked, up to one target attacking creature gets +X/+X until end of turn, where X is the number of cards in your hand.",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 128
+  },
+  {
+    "name": "Primordial Pachyderm",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant",
+      "Avatar"
+    ],
+    "text": "Reach, trample\nWhen this creature enters, you gain 2 life.",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach",
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 129
+  },
+  {
+    "name": "Ragamuffin Raptor",
+    "cost": "{4}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "text": "When this creature enters, return up to one target creature or Food card from your graveyard to your hand.",
+    "power": 4,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 130
+  },
+  {
+    "name": "Rocksteady, Crash Courser",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rhino",
+      "Mutant"
+    ],
+    "text": "Rocksteady can't be blocked by more than one creature.\nBoars you control can't be blocked by more than one creature.\nForestcycling {2} ({2}, Discard this card: Search your library for a Forest card, reveal it, put it into your hand, then shuffle.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 7,
+    "toughness": 7,
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Forest"
+      }
+    },
+    "set": "TMT",
+    "rarity": "C",
+    "number": 131
+  },
+  {
+    "name": "Saved by the Shell",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "This spell costs {1} less to cast if you control a Turtle.\nPut a +1/+1 counter on target creature you control. It gains trample, hexproof, and indestructible until end of turn.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 132
+  },
+  {
+    "name": "Tenderize",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control deals damage equal to its power to target creature an opponent controls.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 133
+  },
+  {
+    "name": "Transdimensional Bovine",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ox",
+      "Avatar"
+    ],
+    "text": "Flying\n{T}: Add two mana of any one color.",
+    "power": 0,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 134
+  },
+  {
+    "name": "Turtle Power!",
+    "cost": "{2}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Flash\nTurtles you control get +2/+2.",
+    "keywords": [
+      "flash"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 135
+  },
+  {
+    "name": "Venus, Torn Between Worlds",
+    "cost": "{4}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Frog",
+      "Turtle"
+    ],
+    "text": "Whenever Venus is dealt damage, put that many +1/+1 counters on her. (She must survive the damage to get the counters.)\nWhenever a creature you control with a counter on it deals combat damage to a player, you may pay {U}. If you do, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 136
+  },
+  {
+    "name": "West Wind Avatar",
+    "cost": "{5}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Spirit",
+      "Avatar"
+    ],
+    "text": "Trample\nWhenever this creature enters or attacks, you may sacrifice a token or a land. If you do, you gain 3 life.\nDisappear — At the beginning of your end step, if a permanent left the battlefield under your control this turn, draw a card.",
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 137
+  },
+  {
+    "name": "Zoo Escapees",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Boar",
+      "Rhino"
+    ],
+    "text": "When this creature leaves the battlefield, create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "power": 2,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 138
+  },
+  {
+    "name": "Baxter Stockman",
+    "cost": "{3}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist"
+    ],
+    "text": "When Baxter Stockman enters, create a 1/1 colorless Robot artifact creature token.\nAt the beginning of combat on your turn, target artifact creature you control gets +3/+0 and gains first strike and vigilance until end of turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 139
+  },
+  {
+    "name": "Bebop & Rocksteady",
+    "cost": "{1}{B/G}{B/G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Boar",
+      "Rhino",
+      "Mutant"
+    ],
+    "text": "Whenever Bebop & Rocksteady attack or block, sacrifice a permanent unless you discard a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 7,
+    "toughness": 5,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 140
+  },
+  {
+    "name": "Brilliance Unleashed",
+    "cost": "{4}{U}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one or both —\n• Brilliance Unleashed deals 5 damage to target creature.\n• Choose target artifact card in your graveyard. Return it to the battlefield if it's an artifact creature card. Otherwise, return it to the battlefield and it's a 3/3 Robot artifact creature with flying.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 141
+  },
+  {
+    "name": "Dark Leo & Shredder",
+    "cost": "{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle",
+      "Human"
+    ],
+    "text": "Sneak {W}{B}\nAttacking Ninjas you control have deathtouch.\nWhenever Dark Leo & Shredder deal combat damage to a player, create a 1/1 black Ninja creature token. Then if you control five or more Ninjas, that player loses half their life, rounded up.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "sneak": "{W}{B}",
+    "set": "TMT",
+    "rarity": "M",
+    "number": 142
+  },
+  {
+    "name": "Don & Leo, Problem Solvers",
+    "cost": "{3}{W/U}{W/U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Vigilance\nAt the beginning of your end step, exile up to one target artifact you control and up to one target creature you control. Then return them to the battlefield under their owners' control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 6,
+    "keywords": [
+      "vigilance"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 143
+  },
+  {
+    "name": "Don & Raph, Hard Science",
+    "cost": "{1}{U/R}{U/R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Menace\nWhenever Don & Raph attack, the next noncreature spell you cast this turn has affinity for artifacts. (It costs {1} less to cast for each artifact you control.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "menace"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 144
+  },
+  {
+    "name": "EPF Point Squad",
+    "cost": "{1}{R/W}{R/W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Alliance — Whenever another creature you control enters, put a +1/+1 counter on this creature.",
+    "power": 2,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 145
+  },
+  {
+    "name": "Foot Elite",
+    "cost": "{2}{W/B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ninja"
+    ],
+    "text": "Whenever this creature attacks, another target creature you control gets +1/+0 and gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "power": 2,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 146
+  },
+  {
+    "name": "Foot Ninjas",
+    "cost": "{4}{W/B}{W/B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ninja"
+    ],
+    "text": "Sneak {3}{W/B} (You may cast this spell for {3}{W/B} if you also return an unblocked attacker you control to hand during the declare blockers step. It enters tapped and attacking.)\nWhen this creature enters, you gain 3 life.",
+    "power": 5,
+    "toughness": 5,
+    "sneak": "{3}{W/B}",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 147
+  },
+  {
+    "name": "Genghis Frog",
+    "cost": "{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog",
+      "Mutant",
+      "Rogue"
+    ],
+    "text": "Trample\nWhenever Genghis Frog or another Mutant you control enters, create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 148
+  },
+  {
+    "name": "Go Ninja Go",
+    "cost": "{R}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one or both —\n• Exile target creature you control, then return it to the battlefield under its owner's control.\n• Go Ninja Go deals damage equal to the greatest power among creatures you control to target creature an opponent controls.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 149
+  },
+  {
+    "name": "Ice Cream Kitty",
+    "cost": "{1}{B/G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Food",
+      "Cat",
+      "Mutant"
+    ],
+    "text": "{2}, Sacrifice another creature or token: Draw a card. Activate only as a sorcery.\n{2}, {T}, Sacrifice this creature: You gain 3 life.",
+    "power": 1,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 150
+  },
+  {
+    "name": "Karai, Future of the Foot",
+    "cost": "{1}{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ninja"
+    ],
+    "text": "Sneak {2}{W}{B} (You may cast this spell for {2}{W}{B} if you also return an unblocked attacker you control to hand during the declare blockers step. She enters tapped and attacking.)\nWhenever Karai deals combat damage to a player, return target creature card from your graveyard to your hand. If her sneak cost was paid this turn, instead return that card to the battlefield.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "sneak": "{2}{W}{B}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 151
+  },
+  {
+    "name": "Karai's Technique",
+    "cost": "{1}{W}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Sneak {W}{B} (You may cast this spell for {W}{B} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nChoose one or both —\n• Target creature gets +3/+3 until end of turn.\n• Target creature gets -3/-3 until end of turn.",
+    "sneak": "{W}{B}",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 152
+  },
+  {
+    "name": "Krang & Shredder",
+    "cost": "{4}{U/B}{U/B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Utrom",
+      "Human",
+      "Ninja"
+    ],
+    "text": "Whenever Krang & Shredder enter or attack, each opponent exiles cards from the top of their library until they exile a nonland card.\nDisappear — At the beginning of your end step, if a permanent left the battlefield under your control this turn, you may cast a card exiled with Krang & Shredder without paying its mana cost.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 7,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 153
+  },
+  {
+    "name": "The Last Ronin",
+    "cost": "{4}{B}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Destroy all creatures.\nII — Mill four cards. When you do, return target creature card from your graveyard to your hand.\nIII — Whenever a creature you control attacks alone this turn, put three +1/+1 counters on it. It gains trample, lifelink, and indestructible until end of turn.",
+    "set": "TMT",
+    "rarity": "M",
+    "number": 154
+  },
+  {
+    "name": "Lessons from Life",
+    "cost": "{2}{G}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Draw three cards. You may put a land card from your hand onto the battlefield tapped.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 155
+  },
+  {
+    "name": "Mechanized Ninja Cavalry",
+    "cost": "{1}{R/W}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Ninja"
+    ],
+    "text": "When this creature enters, create a 1/1 colorless Robot artifact creature token.",
+    "power": 1,
+    "toughness": 1,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 156
+  },
+  {
+    "name": "Mikey & Don, Party Planners",
+    "cost": "{2}{G/U}{G/U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Ward {2}\nYou may look at the top card of your library any time.\nYou may play lands and cast Mutant, Ninja, or Turtle spells from the top of your library. If you cast a creature spell this way, that creature enters with an additional +1/+1 counter on it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "ward": 2,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 157
+  },
+  {
+    "name": "Mikey & Leo, Chaos & Order",
+    "cost": "{G/W}{G/W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Whenever you put a counter on a creature you control, draw a card. This ability triggers only once each turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 158
+  },
+  {
+    "name": "Mouser Mark III",
+    "cost": "{1}{U/R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "text": "This creature can't attack unless you control another artifact.",
+    "power": 2,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 159
+  },
+  {
+    "name": "The Neutrinos",
+    "cost": "{2}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Rebel"
+    ],
+    "text": "Flying\nAlliance — Whenever another creature you control enters, The Neutrinos get +1/+0 until end of turn.\nWhenever The Neutrinos attack, exile up to one target creature you own, then return it to the battlefield under your control tapped and attacking.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 160
+  },
+  {
+    "name": "Nobody",
+    "cost": "{1}{U/R}{U/R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Hero"
+    ],
+    "text": "When this creature enters, return up to one other target artifact you control to its owner's hand. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "power": 3,
+    "toughness": 2,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 161
+  },
+  {
+    "name": "North Wind Avatar",
+    "cost": "{2}{U}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon",
+      "Spirit",
+      "Avatar"
+    ],
+    "text": "Flying\nWhen this creature enters, if you cast it, you may put a card you own from outside the game into your hand.",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "M",
+    "number": 162
+  },
+  {
+    "name": "Pizza Face, Gastromancer",
+    "cost": "{3}{B}{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Food",
+      "Mutant"
+    ],
+    "text": "When Pizza Face enters, create a Food token.\nDisappear — At the beginning of your end step, if a permanent left the battlefield under your control this turn, put three +1/+1 counters on up to one other target artifact or creature. If it isn't a creature, it becomes a 0/0 Mutant creature in addition to its other types.\n{10}, {T}, Sacrifice Pizza Face: You gain 15 life.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 163
+  },
+  {
+    "name": "Punk Frogs",
+    "cost": "{3}{G/U}{G/U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog",
+      "Mutant",
+      "Rebel"
+    ],
+    "text": "Ward {3} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {3}.)",
+    "power": 4,
+    "toughness": 5,
+    "ward": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 164
+  },
+  {
+    "name": "Putrid Pals",
+    "cost": "{2}{B/G}{B/G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ooze",
+      "Mutant"
+    ],
+    "text": "Deathtouch\nDisappear — This creature enters with two +1/+1 counters on it if a permanent left the battlefield under your control this turn.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ],
+    "set": "TMT",
+    "rarity": "C",
+    "number": 165
+  },
+  {
+    "name": "Raph & Leo, Sibling Rivals",
+    "cost": "{1}{R/W}{R/W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Whenever Raph & Leo attack, if it's the first combat phase of the turn, untap one or two target attacking creatures. After this phase, there is an additional combat phase.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 166
+  },
+  {
+    "name": "Raph & Mikey, Troublemakers",
+    "cost": "{5}{R/G}{R/G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Turtle"
+    ],
+    "text": "Trample, haste\nWhenever Raph & Mikey attack, reveal cards from the top of your library until you reveal a creature card. Put that card onto the battlefield tapped and attacking and the rest on the bottom of your library in a random order.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "trample",
+      "haste"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 167
+  },
+  {
+    "name": "Slithering Cryptid",
+    "cost": "{2}{G/U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish",
+      "Mutant"
+    ],
+    "text": "When this creature enters, create a Mutagen token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+    "power": 2,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "C",
+    "number": 168
+  },
+  {
+    "name": "Splinter, Radical Rat",
+    "cost": "{1}{W/B}{W/B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Ninja",
+      "Rat"
+    ],
+    "text": "If an ability of a Ninja creature you control triggers, that ability triggers an additional time.\n{1}{U}: Target Ninja can't be blocked this turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 169
+  },
+  {
+    "name": "Tainted Treats",
+    "cost": "{1}{B}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target artifact or creature. If its mana value was 4 or less, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 170
+  },
+  {
+    "name": "Tokka & Rahzar, Terrible Twos",
+    "cost": "{B/R}{B/R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Turtle",
+      "Wolf",
+      "Mutant"
+    ],
+    "text": "This spell can't be countered.\nMenace\nWhenever a player casts a spell, if the amount of mana spent to cast it was less than its mana value, Tokka & Rahzar deal 3 damage to that player.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 171
+  },
+  {
+    "name": "Chrome Dome",
+    "cost": "{2}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Ninja"
+    ],
+    "text": "Other artifact creatures you control get +1/+0.\n{5}: Create a token that's a copy of another target artifact you control. That token gains haste. Sacrifice it at the beginning of the next end step.",
+    "power": 1,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 172
+  },
+  {
+    "name": "Everything Pizza",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "text": "When this artifact enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{2}{W}{U}{B}{R}{G}, {T}, Sacrifice this artifact: Target player gains 3 life and draws a card. Each of your opponents discards a card. This artifact deals 3 damage to any target. Put three +1/+1 counters on up to one target creature.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 173
+  },
+  {
+    "name": "Henchbots",
+    "cost": "{4}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "text": "When this creature enters, exile target tapped creature an opponent controls until this creature leaves the battlefield.",
+    "power": 2,
+    "toughness": 3,
+    "set": "TMT",
+    "rarity": "U",
+    "number": 174
+  },
+  {
+    "name": "Krang, Utrom Warlord",
+    "cost": "{9}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Utrom",
+      "Robot"
+    ],
+    "text": "Flying, trample, indestructible, haste\nOther artifact creatures you control have flying, trample, indestructible, and haste.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 9,
+    "toughness": 9,
+    "keywords": [
+      "flying",
+      "trample",
+      "haste"
+    ],
+    "set": "TMT",
+    "rarity": "M",
+    "number": 175
+  },
+  {
+    "name": "Omni-Cheese Pizza",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "text": "When this artifact enters, draw a card.\n{1}, {T}, Sacrifice this artifact: Add one mana of any color.\n{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 176
+  },
+  {
+    "name": "The Ooze",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Whenever a creature you control with a +1/+1 counter on it leaves the battlefield, create a Mutagen token for each +1/+1 counter on it. (A Mutagen token is an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")\n{T}: Exile target card from a graveyard. Create a Mutagen token.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "set": "TMT",
+    "rarity": "R",
+    "number": 177
+  },
+  {
+    "name": "Skateboard",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When this Equipment enters, tap target permanent.\nEquipped creature gets +1/+0 and has haste.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 178
+  },
+  {
+    "name": "Technodrome",
+    "cost": "{2}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "text": "Reach, trample\nThis creature can't attack or block unless its power is 6 or greater.\n{T}, Sacrifice another artifact: Draw a card. Put a +1/+1 counter on this creature.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "reach",
+      "trample"
+    ],
+    "set": "TMT",
+    "rarity": "M",
+    "number": 179
+  },
+  {
+    "name": "Turtle Blimp",
+    "cost": "{5}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Flying\nWhen this Vehicle enters, create a 2/2 red Mutant creature token.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "set": "TMT",
+    "rarity": "U",
+    "number": 180
+  },
+  {
+    "name": "Turtle Van",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Whenever this Vehicle attacks, put a +1/+1 counter on target creature that crewed it this turn. Then if that creature is a Mutant, Ninja, or Turtle, double the number of +1/+1 counters on it.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 4,
+    "toughness": 4,
+    "set": "TMT",
+    "rarity": "R",
+    "number": 181
+  },
+  {
+    "name": "Weather Maker",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Landfall — Whenever a land you control enters, put a charge counter on this artifact.\n{T}: Add one mana of any color.\n{T}, Remove two charge counters from this artifact: Add {C}{C}.\n{T}, Remove three charge counters from this artifact: It deals 3 damage to any target.",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 182
+  },
+  {
+    "name": "Dimension X",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {W}.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 183
+  },
+  {
+    "name": "Escape Tunnel",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}, Sacrifice Escape Tunnel: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\n{T}, Sacrifice Escape Tunnel: Target creature with power 2 or less can't be blocked this turn.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 184
+  },
+  {
+    "name": "Foot Headquarters",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {B}.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 185
+  },
+  {
+    "name": "Illegitimate Business",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {B} or {G}.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 186
+  },
+  {
+    "name": "Mutant Town",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {G} or {U}.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 187
+  },
+  {
+    "name": "Northampton Farm",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {C}.\n{1}, {T}: Exile target creature you own.\n{2}, {T}, Sacrifice this land: Return a creature card exiled with this land to the battlefield under your control. Return each other card exiled with this land to its owner's hand.",
+    "set": "TMT",
+    "rarity": "R",
+    "number": 188
+  },
+  {
+    "name": "TCRI Building",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {R}.",
+    "set": "TMT",
+    "rarity": "C",
+    "number": 189
+  },
+  {
+    "name": "Turtle Lair",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a Ninja or Turtle spell.\n{3}, {T}: Target Ninja or Turtle can't be blocked this turn.",
+    "set": "TMT",
+    "rarity": "U",
+    "number": 190
+  }
+]

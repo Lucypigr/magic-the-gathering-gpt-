@@ -24,10 +24,12 @@ import type { Card, GameEvent, GameState, PID, TargetRef, TriggeredAbility, Zone
 function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEvent): boolean {
   const pov = c.controller;
   switch (ab.on) {
+    case 'otherPermanentDies':return ev.type==='permanentDies'&&ev.card!==c.id&&matches(g,ab.filter,g.cards[ev.card],pov,c.id);
     case 'allyPermanentDies': return ev.type==='permanentDies'&&ev.controller===pov&&ev.card!==c.id&&matches(g,ab.filter,g.cards[ev.card],pov,c.id);
+    case 'combatDamageAny':return ev.type==='combatDamageAny'&&ev.source===c.id;
     case 'becomesTapped': return ev.type === 'tapped' && ev.card === c.id;
     case 'leaves': return ev.type === 'leaves' && ev.card === c.id;
-    case 'allyLeaves': return ev.type === 'leaves' && ev.controller === pov && ev.card !== c.id && matches(g, ab.filter, g.cards[ev.card], pov, c.id);
+    case 'allyLeaves': return ev.type === 'leaves' && ev.controller === pov && (ev.card !== c.id || !!ab.includeSelf) && matches(g, ab.filter, g.cards[ev.card], pov, c.id);
     case 'bend': return ev.type === 'bend' && ev.player === pov;
     case 'oppDrawSecond': return ev.type === 'drawSecond' && ev.player !== pov;
     case 'oppSearch': return ev.type === 'search' && ev.player !== pov;
@@ -186,6 +188,7 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 
 export function emit(g: GameState, ev: GameEvent): void {
   if (ev.type === 'sacrifice') g.players[ev.player].sacrificedThisTurn = true;
+  if(ev.type==='cast'){const p=g.players[ev.player];p.spellTypesThisTurn=[...new Set([...(p.spellTypesThisTurn??[]),...g.cards[ev.card].def.types])];}
   if (ev.type === 'etb') {
     const e = g.cards[ev.card];
     if (e && (isCreature(e) || e.def.types.includes('Artifact')) && etbTriggersSuppressed(g)) return;
@@ -203,7 +206,7 @@ export function emit(g: GameState, ev: GameEvent): void {
   }
   for (const id of g.battlefield) {
     const c = g.cards[id];
-    const doubleAlly=c.def.subtypes?.includes('Ally')&&g.battlefield.some(id=>g.cards[id].controller===c.controller&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.allyTriggerDouble));
+    const doubleAlly=g.battlefield.some(id=>{const s=g.cards[id];return s.controller===c.controller&&abilitiesOf(g,s).some(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id))));});
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
       for(let i=0;i<(doubleAlly?2:1);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
@@ -225,7 +228,7 @@ export function emit(g: GameState, ev: GameEvent): void {
       if (ab.cond && !checkCond(g, ab.cond, c.controller, c.id, [])) continue;
       if (ab.when && !checkCond(g, ab.when, c.controller, c.id, [])) continue;
       if (ab.oncePerTurn) c.usedThisTurn.push(i);
-      const copies = g.battlefield.some(id => { const s = g.cards[id]; return s.controller === c.controller && s.def.abilities?.some(a => a.kind === 'static' && a.allyTriggerDouble); }) && c.def.subtypes?.includes('Ally') ? 2 : 1;
+      const copies=doubleAlly?2:1;
       for (let copy = 0; copy < copies; copy++) g.pending.push({
         source: c.id,
         controller: c.controller,
@@ -290,6 +293,11 @@ function resetPermanentState(c: Card): void {
   c.returnControl = undefined;
   c.permanentGrants = undefined;
   c.charge = undefined;
+  c.classLevel=undefined;
+  c.colorProtection=undefined;
+  c.classModesTurn=undefined;
+  c.crewedBy=undefined;
+  c.crewedTurn=undefined;
   c.copiedAbilities = undefined;
   c.grantedFirebend = undefined;
   c.chosenModes = undefined;
@@ -345,11 +353,14 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
       host.auraBaseDef = undefined;
     }
   }
-  if (wasOnBf) { c.lastCounters = c.counters; c.lastPower = stats(g,c).p; emit(g, { type: 'leaves', card: c.id, controller: c.controller }); }
+  if (wasOnBf) {g.players[c.controller].permanentLeftThisTurn=true;c.countersBeforeLeaving=c.counters; c.lastCounters = c.counters; c.lastPower = stats(g,c).p; emit(g, { type: 'leaves', card: c.id, controller: c.controller }); }
   c.airbent = undefined;
   c.linkedCast = undefined;
   c.tlaExiledBy = undefined;
   c.waterCastBy = undefined;
+  c.sneakTurn=undefined;
+  c.sneakFromGy=undefined;
+  c.tmtLinked=undefined;
   // 直到回合結束，將要死去時改為放逐
   if (wasOnBf && to === 'graveyard' && c.exileOnDeathTurn === g.turn) {
     log(g, `${cardName(c)} 改為放逐`, c.owner);
@@ -447,7 +458,11 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   c.sick = true;
   c.enteredTurn = g.turn;
   c.enteredFrom = origin;
+  if(origin!=='stack'){c.sneakTurn=undefined;c.sneakFromGy=undefined;}
   c.counters = c.def.etbCounters ?? 0;
+  if(c.def.subtypes?.includes('Class'))c.classLevel=1;
+  if(c.def.id==='weather-maker')c.charge=0;
+  if(c.def.types.includes('Artifact'))g.players[controller].artifactEnteredThisTurn=true;
   if (c.counters > 0 && isCreature(c)) {
     // 帶著指示物進場：同樣套用「多放 n 個」
     for (const id of g.battlefield) {
@@ -664,6 +679,7 @@ export function dealDamage(
   const kws = src ? (src.zone === 'battlefield' ? stats(g, src).kw : new Set(src.def.keywords ?? [])) : new Set();
   if(src?.def.subtypes?.some(s=>s==='Noble'||s==='Lesson')&&g.battlefield.some(id=>g.cards[id].controller===srcController&&g.cards[id].def.id==='lo-and-li-twin-tutors'&&!abilitiesSuppressed(g,g.cards[id])))kws.add('lifelink');
   const srcName = src ? cardName(src) : '';
+  if(opts.combat&&src)emit(g,{type:'combatDamageAny',source:src.id,controller:srcController,amount:n});
   if ('p' in target) {
     const p = g.players[target.p];
     loseLife(g, target.p, n);

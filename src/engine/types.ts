@@ -92,6 +92,8 @@ export interface Filter {
   enteredThisTurn?: boolean;
   /** 本回合攻擊過 */
   attackedThisTurn?: boolean;
+  unblocked?: boolean;
+  owner?: 'you'|'opp';
 }
 
 export type TargetKind = 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
@@ -279,6 +281,11 @@ export type Cond =
   /** 永遠成立 */
   | { c: 'always' }
   | { c: 'charge'; n: number }
+  | { c: 'disappeared' }
+  | { c: 'classLevel'; n: number }
+  | { c: 'sneaked' }
+  | { c: 'artifactEntered' }
+
   | { c: 'selfAttacking' }
   | { c: 'sacrificed' }
   | { c: 'poolGte'; n: number }
@@ -306,6 +313,8 @@ export interface ExtraCost {
 }
 
 export type Effect =
+  | { e: 'tmt'; action: string; n?: number; what?: Ref }
+
   | { e: 'airbend'; what: Ref }
   | { e: 'firebend'; n: Amt }
   | { e: 'tla'; action: string; n?: Amt; what?: Ref }
@@ -488,7 +497,7 @@ export type Effect =
   | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
-  | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies'
+  | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies' | 'otherPermanentDies' | 'combatDamageAny'
 
   | 'etb'
   | 'dies'
@@ -610,6 +619,10 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+  levelUp?: {from:number;to:number};
+  removeCounter?: {n:number;fromCreature?:boolean};
+  sacN?: {n:number;filter:Filter};
+
   waterbend?: number;
   costLessPer?: Filter;
   duringYourTurn?: boolean;
@@ -644,6 +657,11 @@ export interface ActivatedAbility {
 }
 
 export interface StaticAbility {
+  triggerDouble?: Filter;
+  graveCast?: Filter;
+  artifactTokenCostLess?: number;
+  landManaBonus?: 'G';
+
   oneBlockerPower4?: boolean;
 
   condition?: Cond;
@@ -721,6 +739,11 @@ export interface SpellSpec {
 }
 
 export interface CardDef {
+  sneak?: string;
+  combatPowerMin?: number;
+  evadePowGte?: number;
+  evadeGreaterPower?: boolean;
+
   waterbend?: number;
   firebending?: Amt;
   flashCond?: Cond;
@@ -748,7 +771,7 @@ export interface CardDef {
   /** 產生有色法術力時要支付1點生命（{C} 不用） */
   painMana?: boolean;
   /** 產生的法術力只能用來施放某類咒語 */
-  manaOnly?: 'planeswalker' | 'notFromHand';
+  manaOnly?: 'planeswalker' | 'notFromHand' | 'artifactOrAbility';
   /** 冒險：同一張牌上的另一個瞬間或法術；施放後此牌放逐，之後可以從放逐區施放本體 */
   adventure?: { name: string; zh?: string; cost: string; types: CardType[]; text: string; spell: SpellSpec };
   /** 準備：此生物附帶的咒語；已準備時可以施放它的複製（之後取消準備） */
@@ -814,7 +837,7 @@ export interface CardDef {
   evadePowLte?: number;
   spell?: SpellSpec;
   aura?: { target?: TargetSpec; grant: Grant };
-  equip?: { cost: string; costLessPerCounter?: boolean; grant: Grant; /** 被裝備的生物獲得的觸發式異能 */ trigger?: TriggeredAbility; abilities?: ActivatedAbility[] };
+  equip?: { cost: string; manual?: boolean; powerPerArtifact?: boolean; costLessPerCounter?: boolean; grant: Grant; /** 被裝備的生物獲得的觸發式異能 */ trigger?: TriggeredAbility; abilities?: ActivatedAbility[] };
   abilities?: Ability[];
   /** 額外費用（例如：犧牲一個生物、支付生命） */
   addCost?: ExtraCost;
@@ -845,6 +868,17 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack';
 
 export interface Card {
+  sneakTurn?: number;
+  sneakFromGy?: boolean;
+  classLevel?: number;
+  countersBeforeLeaving?: number;
+  classModesTurn?: {turn:number;modes:number[]};
+  crewedBy?: number[];
+  crewedTurn?: number;
+  tmtLinked?: number;
+  manaSpent?: number;
+  colorProtection?: { color: Color; turn: number };
+
   lastAttachedTo?: number | null;
   tlaLandOriginal?: CardDef;
 
@@ -956,6 +990,11 @@ export interface Card {
 }
 
 export interface Player {
+  permanentLeftThisTurn?: boolean;
+  spellTypesThisTurn?: CardType[];
+  artifactEnteredThisTurn?: boolean;
+  nextAffinity?: boolean;
+
   firePool?: Mana[];
   bends?: string[];
   noHandLimit?: boolean;
@@ -1025,7 +1064,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free';
+export type CastAlt = 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak';
 
 export interface StackItem {
   sid: number;
@@ -1097,6 +1136,7 @@ export type GameEvent =
   | { type: 'bend'; player: PID; element: 'air' | 'water' | 'earth' | 'fire' }
   | { type: 'search'; player: PID }
   | { type: 'permanentDies'; card:number; controller:PID }
+  | {type:'combatDamageAny';source:number;controller:PID;amount:number}
 
   | { type: 'etb'; card: number; controller: PID }
   | { type: 'dies'; card: number; controller: PID; power: number }
@@ -1150,6 +1190,10 @@ export interface Show {
 }
 
 export interface GameState {
+  lastManaSpent?: number;
+  blockersDeclared?: boolean;
+  combatCount?: number;
+
   normalTurnAfterExtra?: PID;
 
   playerControl?: { controller: PID; player: PID; whole: boolean; starts: number; ends: number };

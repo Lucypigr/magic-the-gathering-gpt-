@@ -5,6 +5,11 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+  T({id:'tok-mutagen',name:'Mutagen',zh:'突變劑',types:['Artifact'],subtypes:['Mutagen'],text:'{1}，{T}，犧牲：在目標生物上放一個+1/+1指示物。限法術時機。',abilities:[{kind:'activated',cost:{mana:'{1}',tap:true,sacSelf:true},targets:[{kind:'creature'}],effects:[{e:'counters',what:'T0',n:1}],sorcery:true,label:'使用突變劑'}]}),
+  T({id:'tok-tmt-turtle-spirit',name:'Ninja Turtle Spirit',zh:'忍者龜精靈',types:['Creature'],subtypes:['Ninja','Turtle','Spirit'],colors:['W'],power:1,toughness:1,text:''}),
+  T({id:'tok-tmt-dinosaur',name:'Dinosaur Soldier',zh:'恐龍士兵',types:['Creature'],subtypes:['Dinosaur','Soldier'],colors:['W'],power:2,toughness:2,text:''}),
+  T({id:'tok-tmt-ninja',name:'Ninja',zh:'忍者',types:['Creature'],subtypes:['Ninja'],colors:['B'],power:1,toughness:1,text:''}),
+  T({id:'tok-tmt-insect',name:'Insect Warrior',zh:'昆蟲戰士',types:['Creature'],subtypes:['Insect','Warrior'],colors:['B'],power:1,toughness:1,keywords:['flying'],text:'飛行'}),
   T({id:'tok-fire-soldier',name:'Firebending Soldier',zh:'御火士兵',types:['Creature'],subtypes:['Soldier'],colors:['R'],power:2,toughness:2,firebending:1,text:'御火1'}),
   T({id:'tok-ballistic-boulder',name:'Ballistic Boulder',zh:'投射巨石',types:['Artifact','Creature'],subtypes:['Construct'],colors:[],power:2,toughness:1,keywords:['flying'],text:'飛行'}),
   T({id:'tok-tla-monk',name:'Monk',zh:'修行僧',types:['Creature'],subtypes:['Monk'],colors:['R'],power:1,toughness:1,keywords:['prowess'],text:'勇行'}),

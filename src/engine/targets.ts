@@ -1,8 +1,11 @@
+import { colorsOf } from './mana';
 import { hasKw, isCreature, matches, other } from './state';
 import type { Card, GameState, PID, TargetRef, TargetSpec } from './types';
 
 /** 辟邪：不能成為對手的咒語或異能的目標 */
-export function targetable(g: GameState, c: Card, by: PID): boolean {
+export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): boolean {
+  const source=sourceId!==undefined?g.cards[sourceId]:undefined;
+  if(c.controller!==by&&c.colorProtection?.turn===g.turn&&source&&colorsOf(source.def).includes(c.colorProtection.color))return false;
   if (c.controller !== by && hasKw(g, c, 'hexproof')) return false;
   return true;
 }
@@ -24,7 +27,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       if (creatureOnly && !isCreature(c) && !(orPlaneswalker && c.def.types.includes('Planeswalker'))) continue;
       if (spec.notSelf && id === sourceId) continue;
       if (!matches(g, f, c, controller, sourceId)) continue;
-      if (!targetable(g, c, controller)) continue;
+      if (!targetable(g, c, controller, sourceId)) continue;
       out.push({ c: id });
     }
   };

@@ -86,6 +86,8 @@ export function Permanent({ g, c, marks, onCard, onHover }: { g: GameState; c: C
         <div className="perm-badges">
           {c.counters !== 0 && <span className="b-counter">{c.counters > 0 ? `+${c.counters}` : c.counters}</span>}
           {lethal && <span className="b-dmg">-{c.damage}</span>}
+          {(c.charge??0)>0 && <span className="b-counter" title="任務／充能指示物">充{c.charge}</span>}
+          {c.classLevel!==undefined && <span className="b-counter">等級{c.classLevel}</span>}
           {c.stun > 0 && <span className="b-stun" title={`暈眩指示物 ${c.stun}`}>暈{c.stun}</span>}
           {cr && c.sick && !st.kw.has('haste') && c.controller === g.active && <span className="b-sick" title="召喚失調：剛進場，這回合不能攻擊或橫置">💤</span>}
           {attached.length > 0 && (

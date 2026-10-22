@@ -26,6 +26,8 @@ export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
   if (bs.cantBlock) return false;
   const as = stats(g, attacker);
   if (as.kw.has('unblockable')) return false;
+  if(attacker.def.evadePowGte!==undefined&&bs.p>=attacker.def.evadePowGte)return false;
+  if(attacker.def.evadeGreaterPower&&bs.p>as.p)return false;
   if((blocker.def.id==='tok-tla-spirit'&&!attacker.def.subtypes?.includes('Spirit'))||(attacker.def.id==='tok-tla-spirit'&&!blocker.def.subtypes?.includes('Spirit')))return false;
   if (as.kw.has('flying') && !bs.kw.has('flying') && !bs.kw.has('reach')) return false;
   if (attacker.def.evadePowLte !== undefined && bs.p <= attacker.def.evadePowLte) return false;
@@ -88,6 +90,7 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
     used.add(b);
     valid.push([b, a]);
   }
+  for(const a of attackers(g).filter(c=>c.def.id==='raphael-ninja-destroyer')){if(valid.some(([,id])=>id===a.id))continue;const b=creaturesOf(g,pid).find(c=>canBlock(g,c,a));if(b){valid=valid.filter(([id])=>id!==b.id);valid.push([b.id,a.id]);}}
   // 威懾：只被一個生物阻擋的攻擊無效
   const countFor = (a: number) => valid.filter(([, x]) => x === a).length;
   valid = valid.filter(([, a]) => !(stats(g, g.cards[a]).kw.has('menace') && countFor(a) < 2));

@@ -65,7 +65,7 @@ export function checkSBA(g: GameState): void {
       if (c.zone !== 'battlefield') continue;
       if (c.def.aura) {
         const t = c.attachedTo != null ? g.cards[c.attachedTo] : undefined;
-        if (!t || t.zone !== 'battlefield' || !isCreature(t)) {
+        if (!t || t.zone !== 'battlefield' || (c.def.aura.target?.kind!=='permanent'&&!isCreature(t))) {
           moveCard(g, c, 'graveyard');
           changed = true;
         }
@@ -304,6 +304,9 @@ export function* resolveTop(g: GameState): SubFlow {
       } else {
         enterBattlefield(g, src, item.controller);
         src.wasCast = true;
+        if(src.castOrigin==='library'&&g.battlefield.some(id=>g.cards[id].controller===item.controller&&g.cards[id].def.id==='mikey-don-party-planners'))putCounters(g,src,1);
+        if(item.alt==='sneak'){src.tapped=true;src.attacking=true;src.attackedTurn=g.turn;}
+        if(src.sneakFromGy)src.finality=true;
         if (item.x !== undefined) src.castX = item.x;
         if (def.etbCountersX && item.x) putCounters(g, src, item.x);
         log(g, `${cardName(src)} 進入戰場`, item.controller);
@@ -431,6 +434,8 @@ function* mulligans(g: GameState): SubFlow {
 
 function* combatPhase(g: GameState): SubFlow {
   const a = g.active;
+  g.blockersDeclared=false;
+  g.combatCount=(g.combatCount??0)+1;
   g.phase = 'combat_begin';
   emit(g, { type: 'step', step: 'combatStart', player: a });
   yield* priorityStep(g);
@@ -456,6 +461,7 @@ function* combatPhase(g: GameState): SubFlow {
     const rb: Response = yield { type: 'blockers', player: d };
     declareBlockers(g, d, rb.type === 'blockers' ? rb.blocks : []);
   }
+  g.blockersDeclared=true;
   yield* priorityStep(g);
   if (hasFirstStrikers(g)) {
     g.phase = 'combat_damage_first';
@@ -506,8 +512,14 @@ function* turn(g: GameState): SubFlow {
     p.firePool = [];
     p.bends = [];
     p.sacrificedThisTurn = false;
+    p.permanentLeftThisTurn=false;
+    p.artifactEnteredThisTurn=false;
+    p.spellTypesThisTurn=[];
+    p.nextAffinity=false;
     p.lifeLostThisTurn = 0;
   }
+  g.combatCount=0;
+  g.blockersDeclared=false;
   g.attackedThisTurn = false;
   g.creatureDiedThisTurn = false;
   g.creaturesDiedCount = 0;
@@ -554,7 +566,7 @@ function* turn(g: GameState): SubFlow {
   yield* priorityStep(g);
   // 戰鬥
   yield* combatPhase(g);
-  if(g.extraCombat?.player===a){g.extraCombat=undefined;g.landCombatOnly=true;yield* combatPhase(g);g.landCombatOnly=false;}
+  if(g.extraCombat?.player===a){g.landCombatOnly=g.extraCombat.landOnly;g.extraCombat=undefined;yield* combatPhase(g);g.landCombatOnly=false;}
   // 主要階段二
   for(const p of g.players) p.firePool=[];
   g.phase = 'main2';

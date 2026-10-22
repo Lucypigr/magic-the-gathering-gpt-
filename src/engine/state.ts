@@ -149,7 +149,7 @@ export function cloneGame(g: GameState): GameState {
   const cards: Record<number, Card> = {};
   for (const k in g.cards) {
     const c = g.cards[k];
-    cards[k] = { ...c, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
+    cards[k] = { ...c, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
   }
   const cp = (p: Player): Player => ({
     ...p,
@@ -157,7 +157,7 @@ export function cloneGame(g: GameState): GameState {
     hand: p.hand.slice(),
     graveyard: p.graveyard.slice(),
     exile: p.exile.slice(),
-    pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
+    spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
     ...g,
@@ -305,6 +305,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     if (abs.length) {
       for (const ab of abs) {
         if (ab.kind !== 'static') continue;
+        if(ab.condition&&!checkCond(g,ab.condition,s.controller,s.id,[]))continue;
         if (s.id === c.id && ab.selfPowerCount) st.p += countMatching(g, ab.selfPowerCount, s.controller, s.id);
         if (s.id === c.id && ab.selfLandCounters) st.p += g.battlefield.reduce((n,id) => n + (g.cards[id].controller === s.controller && (isLand(g.cards[id])||g.cards[id].def.id==='tok-earth') ? g.cards[id].counters : 0), 0);
         if (ab.zookeeper && s.controller === c.controller && isCreature(c) && !c.def.subtypes?.includes('Human')) { const n = Math.min(10, c.def.subtypes?.length ?? 0); st.p += n; st.t += n; }
@@ -348,6 +349,8 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   if(!lost && d.id==='earthen-ally') {const colors=new Set<string>();for(const id of g.battlefield){const a=g.cards[id];if(a.controller===c.controller&&a.def.subtypes?.includes('Ally'))for(const col of colorsOf(a.def))colors.add(col);}st.p+=colors.size;}
   if(c.attachedTo==null) for(const id of g.battlefield){const a=g.cards[id];if(a.def.id==='avatar-destiny'&&a.attachedTo===c.id){const n=g.players[a.controller].graveyard.filter(id=>isCreature(g.cards[id])).length;st.p+=n;st.t+=n;}}
   if(st.p>=4 && g.battlefield.some(id=>g.cards[id].controller===c.controller&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.oneBlockerPower4)))st.onlyOneBlocker=true;
+  if(d.combatPowerMin!==undefined&&st.p<d.combatPowerMin){st.cantAttack=true;st.cantBlock=true;}
+  for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===c.id&&eq.def.equip?.powerPerArtifact)st.p+=g.battlefield.filter(id=>g.cards[id].controller===eq.controller&&g.cards[id].def.types.includes('Artifact')).length;}
   return st;
 }
 
@@ -383,7 +386,9 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   if (f.mvMax !== undefined && manaValue(d) > f.mvMax) return false;
   if (f.mvMin !== undefined && manaValue(d) < f.mvMin) return false;
   if (f.tapped !== undefined && c.tapped !== f.tapped) return false;
+  if(f.owner && c.owner!==(f.owner==='you'?pov:other(pov)))return false;
   if (f.attacking && !c.attacking) return false;
+  if(f.unblocked && (!c.attacking||c.wasBlocked||c.blockedBy.length))return false;
   if (f.inCombat && !c.attacking && c.blocking == null) return false;
   if (f.other && c.id === sourceId) return false;
   if (f.token !== undefined && c.token !== f.token) return false;
@@ -457,6 +462,10 @@ export function checkCond(
       return me.instSorcThisTurn >= cond.n;
     case 'oppLostLife':
       return opp.lifeLostThisTurn > 0;
+    case 'disappeared':return !!me.permanentLeftThisTurn;
+    case 'artifactEntered':return !!me.artifactEnteredThisTurn;
+    case 'classLevel':return (g.cards[sourceId??-1]?.classLevel??1)>=cond.n;
+    case 'sneaked':return g.cards[sourceId??-1]?.sneakTurn===g.turn;
     case 'charge': return (g.cards[sourceId ?? -1]?.charge ?? 0) >= cond.n;
     case 'selfAttacking': return !!g.cards[sourceId ?? -1]?.attacking;
     case 'sacrificed': return !!me.sacrificedThisTurn;

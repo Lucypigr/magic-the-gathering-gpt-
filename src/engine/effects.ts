@@ -37,6 +37,7 @@ import {
   enterBattlefieldBack,
   transformCard,
 } from './zones';
+import { tmtEffect } from './tmt';
 import { tlaEffect } from './tla';
 import { putFaceDown } from './facedown';
 
@@ -415,6 +416,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'copyCreature': {
       for(const c of resolveRef(g,ctx,ef.what).cards) {const def={...c.def,id:`${c.def.id}-copy`,supertypes:ef.nonLegendary || ef.p!==undefined ? c.def.supertypes?.filter(s=>s!=='Legendary') : c.def.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(c.def.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const t=newCard(g,def,ctx.controller,true);t.zone='exile';enterBattlefield(g,t,ctx.controller);if(ef.temp)t.sacAtEnd=true;ctx.created=t.id;} return;
     }
+    case 'tmt': yield* tmtEffect(g,ctx,ef);return;
     case 'tla': yield* tlaEffect(g,ctx,ef); return;
     case 'tap':
       for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') tapCard(g,c);
@@ -1081,7 +1083,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'chargeCounter':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
-        if(c.def.set==='TLA') c.charge=(c.charge??0)+amount(g,ctx,ef.n);
+        if(c.def.set==='TLA'||c.def.set==='TMT') c.charge=(c.charge??0)+amount(g,ctx,ef.n);
         else c.counters += amount(g, ctx, ef.n);
         log(g, `${cardName(c)} 上放置了充能指示物（${c.charge??c.counters}）`, c.controller);
         if(c.def.id==='zhao-the-moon-slayer')refreshTlaPermanents(g);

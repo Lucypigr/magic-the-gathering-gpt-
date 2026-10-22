@@ -22,7 +22,7 @@ import {
   transformCard,
 } from './zones';
 
-function* choose(g: GameState, pid: PID, prompt: string, options: number[], min = 0, max = 1): SubFlow<number[]> {
+export function* choose(g: GameState, pid: PID, prompt: string, options: number[], min = 0, max = 1): SubFlow<number[]> {
   if (!options.length || max <= 0) return [];
   min = Math.min(min, options.length);
   max = Math.min(max, options.length);
@@ -31,7 +31,7 @@ function* choose(g: GameState, pid: PID, prompt: string, options: number[], min 
   for (const id of options) if (ids.length < min && !ids.includes(id)) ids.push(id);
   return ids;
 }
-function* target(g: GameState, ctx: Ctx, spec: TargetSpec, effects: Effect[]): SubFlow {
+export function* target(g: GameState, ctx: Ctx, spec: TargetSpec, effects: Effect[]): SubFlow {
   if (!legalTargets(g, spec, ctx.controller, ctx.source).length) return;
   const r: Response = yield {
     type: 'targets',
@@ -44,7 +44,7 @@ function* target(g: GameState, ctx: Ctx, spec: TargetSpec, effects: Effect[]): S
   if (r.type === 'targets' && !validateTargets(g, [spec], r.targets, ctx.controller, ctx.source))
     yield* runEffects(g, { ...ctx, targets: r.targets }, effects);
 }
-function* freeCast(g: GameState, ctx: Ctx, c: Card): SubFlow<boolean> {
+export function* freeCast(g: GameState, ctx: Ctx, c: Card): SubFlow<boolean> {
   const specs = castTargetSpecs(c.def);
   let targets: Ctx['targets'] = [];
   if (specs.length) {

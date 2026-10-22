@@ -523,7 +523,7 @@ export function Battle(props: Props) {
     if (draft.kind !== 'trigger') minor.push({ label: '取消', onClick: () => setDraft(null) });
     else if (legal.length === 0) main = { label: '繼續', onClick: () => chooseTarget(null) };
   } else if (draft?.stage === 'sac') {
-    status = '選擇要犧牲的永久物';
+    status = draft?.alt==='sneak'?'選擇收回手上的未被阻擋攻擊者':'選擇要犧牲的永久物';
     minor.push({ label: '取消', onClick: () => setDraft(null) });
   } else if (!d) {
     status = ctl.aiThinking ? '對手思考中…' : '';
