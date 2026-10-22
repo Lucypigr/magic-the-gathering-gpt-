@@ -156,10 +156,10 @@ export function cloneGame(g: GameState): GameState {
   const cards: Record<number, Card> = {};
   for (const k in g.cards) {
     const c = g.cards[k];
-    cards[k] = { ...c, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
+    cards[k] = { ...c, manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
   }
   const cp = (p: Player): Player => ({
-    ...p,
+    ...p,eclEntries:p.eclEntries?.slice(),eclMaralenUsed:p.eclMaralenUsed?.slice(),eclRestrictedMana:p.eclRestrictedMana?.map(m=>({...m})),
     outside: p.outside.slice(),
     library: p.library.slice(),
     hand: p.hand.slice(),
@@ -168,7 +168,7 @@ export function cloneGame(g: GameState): GameState {
     retainedRed:p.retainedRed?.slice(),spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
-    ...g,
+    ...g,eclEntryQueue:g.eclEntryQueue?.map(e=>({...e})),lastManaPayment:g.lastManaPayment?.slice(),
     cards,
     players: [cp(g.players[0]), cp(g.players[1])],
     battlefield: g.battlefield.slice(),
@@ -253,6 +253,7 @@ export interface Stats {
 
 /** 這張永久物是否因為光環而失去所有異能 */
 export function abilitiesSuppressed(g: GameState, c: Card): boolean {
+  if(c.eclLoseAbilities)return true;
   if (!g.loseAbilities || c.zone !== 'battlefield') return false;
   if (c.loseAbilitiesTurn === g.turn) return true;
   return g.battlefield.some((id) => {
@@ -291,7 +292,9 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
       }
     }
   }
+  for(const [kw,n] of Object.entries(c.eclCounters??{}))if(n>0&&['flying','first_strike','lifelink','trample','vigilance','haste','deathtouch','reach','hexproof','indestructible','double_strike','menace'].includes(kw))st.kw.add(kw as Keyword);
   if (c.hexproofCounters) st.kw.add('hexproof');
+  if(!lost&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.ecl==='vividPower'))st.p=new Set(g.battlefield.flatMap(id=>g.cards[id].controller===c.controller?colorsOf(g.cards[id].def):[])).size;
   st.p += c.counters;
   st.t += c.counters;
   const apply = (gr: Grant) => {
@@ -314,6 +317,13 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     if (abs.length) {
       for (const ab of abs) {
         if (ab.kind !== 'static') continue;
+        if(ab.ecl){
+          const hasType=(x:Card,sub:string)=>matches(g,{sub},x,s.controller,s.id);
+          if(ab.ecl==='kinbinding'&&s.controller===c.controller&&isCreature(c)){const n=g.players[s.controller].eclEntries?.length??0;st.p+=n;st.t+=n;}
+          if(ab.ecl==='boneclub'&&s.id===c.id)st.p+=2*g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===c.controller&&hasType(g.cards[id],'Goblin')).length;
+          if(ab.ecl==='moonVigil'&&s.id===c.id){const n=g.battlefield.filter(id=>g.cards[id].controller===c.controller&&isCreature(g.cards[id])).length+g.players[c.controller].graveyard.filter(id=>isCreature(g.cards[id])).length;st.p+=n;st.t+=n;}
+          if(ab.ecl==='chronicle'&&s.eclType&&s.controller===c.controller&&isCreature(c)&&hasType(c,s.eclType)){st.p+=2;st.t+=2;st.kw.add('first_strike');st.kw.add('trample');}
+        }
         if(ab.condition&&!checkCond(g,ab.condition,s.controller,s.id,[]))continue;
         if (s.id === c.id && ab.selfPowerCount) st.p += countMatching(g, ab.selfPowerCount, s.controller, s.id);
         if (s.id === c.id && ab.selfLandCounters) st.p += g.battlefield.reduce((n,id) => n + (g.cards[id].controller === s.controller && (isLand(g.cards[id])||g.cards[id].def.id==='tok-earth') ? g.cards[id].counters : 0), 0);
@@ -388,13 +398,17 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
     if (f.color && !asArr(f.color).some((x) => cols.includes(x))) return false;
     if (f.nonColor && asArr(f.nonColor).some((x) => cols.includes(x))) return false;
   }
-  if (f.sub && !(d.changeling && d.types.includes('Creature')) && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
+  if(f.chosenTribe){const source=g.cards[sourceId??-1];if(!source?.eclType||!(d.changeling||d.subtypes?.includes(source.eclType)))return false;}
+  if(f.minusCounters!==undefined&&(c.counters<0)!==f.minusCounters)return false;
+  const attachedChangeling=g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='stalactite-dagger');
+  if (f.sub && !attachedChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
   if (f.nonSub && (d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
   if (f.attackedThisTurn !== undefined && (c.attackedTurn === g.turn) !== f.attackedThisTurn) return false;
   if (f.legendary !== undefined && !!d.supertypes?.includes('Legendary') !== f.legendary) return false;
   if (f.basic !== undefined && !!d.supertypes?.includes('Basic') !== f.basic) return false;
-  if (f.mvMax !== undefined && manaValue(d) > f.mvMax) return false;
-  if (f.mvMin !== undefined && manaValue(d) < f.mvMin) return false;
+  const actualManaValue=manaValue(d)+(c.zone==='stack'?(g.stack.find(s=>s.kind==='spell'&&s.cardId===c.id)?.x??0)*(d.cost?.match(/\{X\}/g)?.length??0):0);
+  if (f.mvMax !== undefined && actualManaValue > f.mvMax) return false;
+  if (f.mvMin !== undefined && actualManaValue < f.mvMin) return false;
   if (f.tapped !== undefined && c.tapped !== f.tapped) return false;
   if(f.owner && c.owner!==(f.owner==='you'?pov:other(pov)))return false;
   if (f.attacking && !c.attacking) return false;
@@ -455,6 +469,23 @@ export function checkCond(
   const me = g.players[controller];
   const opp = g.players[other(controller)];
   switch (cond.c) {
+    case 'and':return cond.conds.every(c=>checkCond(g,c,controller,sourceId,targets,ev));
+    case 'ecl':{
+      const src=g.cards[sourceId??-1], n=cond.n??1;
+      if(cond.action.startsWith('paid'))return (src?.manaPaid??[]).filter(m=>m===cond.action.slice(4)).length>=n;
+      switch(cond.action){
+        case 'hasMinus':return (src?.counters??0)<0;
+        case 'otherEntry':return (me.eclEntries??[]).some(id=>id!==sourceId);
+        case 'creatureEntered':return !!me.eclEntries?.length;
+        case 'counterPlaced':return !!me.eclCounterPlaced;
+        case 'attackedMerfolk':return (me.eclAttackedMerfolk??0)>=n;
+        case 'vividFive':return new Set(g.battlefield.flatMap(id=>g.cards[id].controller===controller?colorsOf(g.cards[id].def):[])).size===5;
+        case 'graveEntry':{const c=ev&&'card'in ev?g.cards[ev.card]:undefined;return c?.enteredFrom==='graveyard'||(c?.enteredFrom==='stack'&&c?.castOrigin==='graveyard');}
+        case 'chosenEvent':{const c=ev&&'card'in ev?g.cards[ev.card]:undefined;return !!c&&!!src?.eclType&&matches(g,{sub:src.eclType},c,controller);}
+        default:throw new Error('Unknown ECL condition '+cond.action);
+      }
+    }
+
     case 'controls':
       return countMatching(g, { ...cond.filter, ctrl: 'you' }, controller, sourceId) >= (cond.n ?? 1);
     case 'lifeGte':
@@ -612,3 +643,5 @@ export function etbTriggersSuppressed(g: GameState): boolean {
   }
   return false;
 }
+
+export function uncounterableSpells(g:GameState,pid:PID){return g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.ecl==='squelcher'));}

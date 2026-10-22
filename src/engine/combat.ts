@@ -1,3 +1,4 @@
+import {colorsOf} from './mana';
 import { abilitiesSuppressed, cardName, creaturesOf, hasStaticFlag, isCreature, log, other, show, stats } from './state';
 import type { Card, GameState, PID } from './types';
 import { tapCard } from './zones';
@@ -25,6 +26,8 @@ export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
   const bs = stats(g, blocker);
   if (bs.cantBlock) return false;
   const as = stats(g, attacker);
+  if(as.kw.has('protection_opponent')&&blocker.controller!==attacker.controller)return false;
+  if(as.kw.has('protection_colors')&&colorsOf(blocker.def).length)return false;
   if (as.kw.has('unblockable')) return false;
   if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadePowGte!==undefined&&bs.p>=attacker.def.evadePowGte)return false;
   if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadeGreaterPower&&bs.p>as.p)return false;
@@ -90,7 +93,7 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
     used.add(b);
     valid.push([b, a]);
   }
-  for(const a of attackers(g).filter(c=>c.def.id==='raphael-ninja-destroyer'&&!abilitiesSuppressed(g,c))){
+  for(const a of attackers(g).filter(c=>['raphael-ninja-destroyer','vinebred-brawler'].includes(c.def.id)&&!abilitiesSuppressed(g,c))){
     const st=stats(g,a),minimum=st.kw.has('menace')?2:1;
     if(st.onlyOneBlocker&&minimum>1)continue;
     const assigned=valid.filter(([,id])=>id===a.id);

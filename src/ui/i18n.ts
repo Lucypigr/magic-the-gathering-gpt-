@@ -259,7 +259,7 @@ export const SUB_ZH: Record<string, string> = {
   Werewolf: '狼人',
 };
 
-export const KW_ZH: Record<Keyword, string> = {
+export const KW_ZH: Record<Keyword, string> = {wither:'凋萎',persist:'留存',protection_colors:'反各色保護',protection_opponent:'保護免於對手',
   flying: '飛行',
   reach: '延勢',
   first_strike: '先攻',
@@ -278,7 +278,7 @@ export const KW_ZH: Record<Keyword, string> = {
   unblockable: '不能被阻擋',
 };
 
-export const KW_DESC: Record<Keyword, string> = {
+export const KW_DESC: Record<Keyword, string> = {wither:'對生物以−1/−1指示物的形式造成傷害。',persist:'死去時若沒有−1/−1指示物，帶一個−1/−1指示物回場。',protection_colors:'不能被有色來源指定目標、傷害、結附、裝備或阻擋。',protection_opponent:'不能被對手操控的來源指定目標、傷害、結附、裝備或阻擋。',
   flying: '只能被具有飛行或延勢的生物阻擋。',
   reach: '可以阻擋具有飛行的生物。',
   first_strike: '在沒有先攻的生物之前造成戰鬥傷害。',

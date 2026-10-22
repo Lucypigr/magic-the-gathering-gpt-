@@ -1,3 +1,6 @@
+import {canReceiveCounters} from './ecl-support';
+import {abilitiesSuppressed,uncounterableSpells} from './state';
+import {eclEffect,makeEclTokenBatch} from './ecl';
 import { canPayCost, castDuringResolution, castTargetSpecs, manaSources, payCost, spellEffects } from './actions';
 import { colorsOf, findPayment, manaValue, parseCost } from './mana';
 import {
@@ -32,7 +35,7 @@ import {
   gainLife,
   loseLife,
   moveCard,
-  putCounters,
+  putCounters,putMinusCounters,
   sacrifice,
   enterBattlefieldBack,
   transformCard,
@@ -52,6 +55,7 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
+  sourceType?:string;
   sourceLinkKey?:number;
   sneakPaid?:boolean;
   controller: PID;
@@ -238,6 +242,7 @@ export function amount(g: GameState, ctx: Ctx, a: Amt): number {
   if ('x' in a) return ctx.x ?? g.cards[ctx.source]?.castX ?? 0;
   if ('spellsCast' in a) return g.players[ctx.controller].spellsThisTurn;
   if ('selfCounters' in a) { const c=g.cards[ctx.source]; return Math.max(0, (c?.counters??0) + (c?.def.id==='savanti-romero-times-exile' ? (c.charge??0)+c.stun+(c.hexproofCounters??0)+Number(!!c.finality)+(c.lore??0) : 0)); }
+  if('eclCount'in a){switch(a.eclCount){case 'elfTotal':return countMatching(g,{sub:'Elf',ctrl:'you'},ctx.controller)+g.players[ctx.controller].graveyard.filter(id=>matches(g,{sub:'Elf'},g.cards[id],ctx.controller)).length;default:return 0;}}
   if ('colors' in a) {
     const cols = new Set<string>();
     for (const id of g.battlefield) {
@@ -258,6 +263,7 @@ function counteredZone(g: GameState, c: Card): 'graveyard' | 'exile' {
 }
 
 export function* runEffects(g: GameState, ctx: Ctx, effects: Effect[]): SubFlow {
+  g.eclEventGroup=g.nextSid++;
   for (const ef of effects) yield* runEffect(g, ctx, ef);
 }
 
@@ -416,8 +422,9 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'grant': { for(const c of resolveRef(g,ctx,ef.what).cards) {if(ef.permanent)(c.permanentGrants??=[]).push(ef.grant);else g.eot.push({card:c.id,p:0,t:0,kw:[],...ef.grant});} return; }
     case 'copyCreature': {
-      for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=c.baseDef??c.tlaOriginalDef??c.auraBaseDef??c.def;const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const t=newCard(g,def,ctx.controller,true);t.zone='exile';enterBattlefield(g,t,ctx.controller);if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
+      for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=c.baseDef??c.tlaOriginalDef??c.auraBaseDef??c.def;const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const [t]=yield* makeEclTokenBatch(g,ctx.controller,def,1);if(!t)continue;if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
     }
+    case 'ecl':yield* eclEffect(g,ctx,ef);return;
     case 'tmt': yield* tmtEffect(g,ctx,ef);return;
     case 'tla': yield* tlaEffect(g,ctx,ef); return;
     case 'tap':
@@ -425,15 +432,15 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       g.version++;
       break;
     case 'untap':
-      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(c.stun>0)c.stun--;else c.tapped = false; }
+      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'&&!abilitiesSuppressed(g,g.cards[id])))continue; if(c.stun>0)c.stun--;else c.tapped = false; }
       g.version++;
       break;
     case 'stun':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
         const n=ef.n===undefined?1:amount(g,ctx,ef.n);
-        c.stun += n;
-        if(n>0)emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n});
+        if(canReceiveCounters(g,c))c.stun += n;
+        if(n>0&&canReceiveCounters(g,c))emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n});
         tapCard(g,c);
       }
       g.version++;
@@ -489,7 +496,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         if (c.zone !== 'battlefield' || !isCreature(c)) continue;
         let k = n;
         if (n > 0) k = putCounters(g, c, n);
-        else c.counters += n;
+        else putMinusCounters(g,c,-n);
         log(g, k >= 0 ? `${cardName(c)} 得到 ${k} 個 +1/+1 指示物` : `${cardName(c)} 得到 ${-k} 個 -1/-1 指示物`, c.controller);
       }
       break;
@@ -689,6 +696,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const orig = g.cards[item.cardId];
       const cp = newCard(g, orig.def, me, true);
       cp.zone = 'stack';
+      cp.spellWitherTurn=orig.spellWitherTurn;
       let targets = item.targets.slice();
       if (item.targetSpecs.length) {
         // 可以選擇新目標
@@ -698,7 +706,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
           if (!validateTargets(g, item.targetSpecs, chosen, me, cp.id)) targets = chosen;
         }
       }
-      g.stack.push({ ...item, sid: g.nextSid++, cardId: cp.id, controller: me, targets, alt: undefined, uncounterable: false });
+      g.stack.push({ ...item, sid: g.nextSid++, cardId: cp.id, controller: me, targets,targetVersions:targets.map(t=>t&&'c'in t?g.cards[t.c]?.objectVersion??0:undefined), alt: undefined, uncounterable: false });
       log(g, `複製了 ${cardName(orig)}`, me, 'cast');
       g.version++;
       break;
@@ -874,12 +882,8 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const n = amount(g, ctx, ef.n ?? 1);
       for (const p of resolveRef(g, ctx, ef.who ?? 'you').players) {
         const host = ef.attachTo ? resolveRef(g, ctx, ef.attachTo).cards.find((c) => c.zone === 'battlefield' && isCreature(c)) : undefined;
-        for (let i = 0; i < n; i++) {
-          const t = createToken(g, ef.token, p, { tapped: ef.tapped, attacking: ef.attacking, attachTo: host?.id });
-          if (ef.temp) t.sacAtEnd = true;
-          ctx.created = t.id;
-          (ctx.createdList ??= []).push(t.id);
-        }
+        const created=yield* makeEclTokenBatch(g,p,ef.token,n,{tapped:ef.tapped,attacking:ef.attacking,attachTo:host?.id});
+        for(const t of created){if(ef.temp)t.sacAtEnd=true;ctx.created=t.id;(ctx.createdList??=[]).push(t.id);}
         log(g, `派出 ${n} 個衍生物`, p);
       }
       break;
@@ -985,7 +989,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'counter': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'stack') continue;
-        if (c.def.uncounterable || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) {
+        if (uncounterableSpells(g,c.controller)||c.def.uncounterable || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) {
           log(g, `${cardName(c)} 不能被反擊`, c.controller);
           continue;
         }
@@ -996,7 +1000,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'counterUnless': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
-        if (c.zone !== 'stack' || c.def.uncounterable || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) continue;
+        if (c.zone !== 'stack' || uncounterableSpells(g,c.controller)||c.def.uncounterable || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) continue;
         const payer = c.controller;
         const cost = { ...parseCost(''), generic: ef.pay };
         let paid = false;
@@ -1095,7 +1099,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'chargeCounter':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
-        if(c.def.set==='TLA'||c.def.set==='TMT') c.charge=(c.charge??0)+amount(g,ctx,ef.n);
+        if(c.def.set==='TLA'||c.def.set==='TMT'||c.def.set==='ECL') c.charge=(c.charge??0)+amount(g,ctx,ef.n);
         else c.counters += amount(g, ctx, ef.n);
         log(g, `${cardName(c)} 上放置了充能指示物（${c.charge??c.counters}）`, c.controller);
         if(amount(g,ctx,ef.n)>0)emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:amount(g,ctx,ef.n)});
@@ -1417,12 +1421,12 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       } else if (cost.blight) {
         const opts = g.battlefield.filter((id) => {
           const c = g.cards[id];
-          return c.controller === me && isCreature(c);
+          return c.controller === me && isCreature(c)&&canReceiveCounters(g,c);
         });
         const ids = yield* choose(g, me, ef.prompt, opts, 0, 1, 'blight');
         if (ids.length) {
           const c = g.cards[ids[0]];
-          c.counters -= cost.blight;
+          putMinusCounters(g,c,cost.blight);
           log(g, `枯萎 ${cost.blight}：${cardName(c)} 得到 -1/-1 指示物`, me);
           paid = true;
         }

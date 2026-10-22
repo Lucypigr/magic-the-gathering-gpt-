@@ -6,7 +6,7 @@
 export type PID = 0 | 1;
 export type Color = 'W' | 'U' | 'B' | 'R' | 'G';
 export type Mana = Color | 'C';
-export type CardType = 'Creature' | 'Instant' | 'Sorcery' | 'Enchantment' | 'Artifact' | 'Land' | 'Planeswalker' | 'Emblem';
+export type CardType = 'Kindred' | 'Creature' | 'Instant' | 'Sorcery' | 'Enchantment' | 'Artifact' | 'Land' | 'Planeswalker' | 'Emblem';
 export type Rarity = 'C' | 'U' | 'R' | 'M' | 'L' | 'T'; // L = 基本地, T = 衍生物
 /** 標準賽系列（依發售順序） */
 export const STANDARD_SETS = [
@@ -34,6 +34,7 @@ export type StandardSet = (typeof STANDARD_SETS)[number];
 export type SetCode = StandardSet | 'CORE' | 'META' | 'BAS' | 'TOK';
 
 export type Keyword =
+  | 'wither' | 'persist' | 'protection_colors' | 'protection_opponent'
   | 'flying'
   | 'reach'
   | 'first_strike'
@@ -94,13 +95,16 @@ export interface Filter {
   attackedThisTurn?: boolean;
   crewedSourceThisTurn?: boolean;
   ids?:number[];
+  minusCounters?: boolean;
+  chosenTribe?: boolean;
   unblocked?: boolean;
   owner?: 'you'|'opp';
 }
 
-export type TargetKind = 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
+export type TargetKind = 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
 
 export interface TargetSpec {
+  sharesTypeWith?:number;
   allowRepeat?: boolean;
   differentControllerFrom?: number;
   targetsOwnArtifactOrCreature?: boolean;
@@ -147,6 +151,7 @@ export type Amt =
   | { ev: true }
   | { hand: true }
   /** 由你操控的永久物中的顏色數量（繽紛） */
+  | { eclCount:string }
   | { colors: true }
   /** 來源上的指示物數量 */
   | { selfCounters: true }
@@ -204,6 +209,8 @@ export interface Grant {
 }
 
 export type Cond =
+  | {c:'and';conds:Cond[]}
+  | { c: 'ecl'; action:string; n?:number; filter?:Filter }
   | { c: 'controls'; filter: Filter; n?: number }
   | { c: 'lifeGte'; n: number }
   | { c: 'lifeLte'; n: number }
@@ -319,6 +326,7 @@ export interface ExtraCost {
 }
 
 export type Effect =
+  | { e:'ecl';action:string;n?:number;value?:number;what?:Ref;filter?:Filter }
   | { e: 'tmt'; action: string; n?: number; amount?:number; what?: Ref }
 
   | { e: 'airbend'; what: Ref }
@@ -503,7 +511,7 @@ export type Effect =
   | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
-  | 'classLevel' | 'otherLeaves' | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies' | 'otherPermanentDies' | 'combatDamageAny'
+  | 'combatDamagePlayerOrWalker' | 'allyCombatDamagePlayerOrWalker' | 'eachDrawStep' | 'firstMain' | 'transformed' | 'allyBlocks' | 'permanentToGy' | 'classLevel' | 'otherLeaves' | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies' | 'otherPermanentDies' | 'combatDamageAny'
 
   | 'etb'
   | 'dies'
@@ -583,6 +591,7 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+  variableVividTargets?:boolean;
   modesOncePerTurn?: boolean;
   ownDiscard?: boolean;
   eachDiscard?: boolean;
@@ -630,7 +639,7 @@ export interface TriggeredAbility {
 
 export interface ActivatedAbility {
   levelUp?: {from:number;to:number};
-  removeCounter?: {n:number;fromCreature?:boolean};
+  removeCounter?: {n:number;fromCreature?:boolean;any?:boolean};
   sacN?: {n:number;filter:Filter};
 
   waterbend?: number;
@@ -640,7 +649,7 @@ export interface ActivatedAbility {
   kind: 'activated';
   /** loyalty：忠誠異能（+N 放置、-N 移除忠誠指示物；每個鵬洛客每回合只能起動一次，只能於法術時機） */
   /** crew：駕駛 N（橫置總力量 N 或更多的其他未橫置生物） */
-  cost: { mana?: string; discard?: number; tap?: boolean; tapN?: { filter: Filter; n: number }; discardSelf?: boolean; exileSelf?: boolean; sacSelf?: boolean; sacOther?: Filter; life?: number; craft?: Filter; craftCount?: number; loyalty?: number; crew?: number };
+  cost: { blight?:number; discardFilter?:Filter; mana?: string; discard?: number; tap?: boolean; tapN?: { filter: Filter; n: number }; discardSelf?: boolean; exileSelf?: boolean; sacSelf?: boolean; sacOther?: Filter; life?: number; craft?: Filter; craftCount?: number; loyalty?: number; crew?: number };
   targets?: TargetSpec[];
   effects: Effect[];
   sorcery?: boolean;
@@ -667,6 +676,7 @@ export interface ActivatedAbility {
 }
 
 export interface StaticAbility {
+  ecl?:string;
   triggerDouble?: Filter;
   graveCast?: Filter;
   artifactTokenCostLess?: number;
@@ -730,6 +740,7 @@ export interface StaticAbility {
 export type Ability = TriggeredAbility | ActivatedAbility | StaticAbility;
 
 export interface Mode {
+  blight?:number;
   waterbend?: number;
   life?: number;
 
@@ -749,6 +760,9 @@ export interface SpellSpec {
 }
 
 export interface CardDef {
+  eclAbilityPayment?:boolean;
+  evoke?:string;
+  ecl?: {variableTargets?:'creature';asEnters?:'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
   sneak?: string;
   combatPowerMin?: number;
   evadePowGte?: number;
@@ -878,6 +892,24 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  manaPaid?:Mana[];
+  eclType?:string;
+  eclBeholdType?:string;
+  eclBeheld?:number[];
+  eclBlightPaid?:boolean;
+  evokePaid?:boolean;
+  eclPrepared?:boolean;
+  eclEnterMinus?:number;
+  eclLinked?:number;
+  eclExiledTurn?:number;
+  eclCast?:{by:PID;until?:number;free?:boolean;source?:number;mode?:string;nextTurn?:number};
+  eclUsage?:{turn:number;n:number};
+  eclCounters?:Record<string,number>;
+  eclDream?:boolean;
+  spellWitherTurn?:number;
+  eclGyGroup?:number;
+  eclLoseAbilities?:boolean;
+  eclProtectionUntil?:PID;
   objectVersion?: number;
   sneakTurn?: number;
   sneakFromGy?: boolean;
@@ -1008,6 +1040,13 @@ export interface Card {
 }
 
 export interface Player {
+  eclEntries?:number[];
+  eclTurnCount?:number;
+  eclCounterPlaced?:boolean;
+  eclAttackedMerfolk?:number;
+  eclPreventDamageUntil?:PID;
+  eclMaralenUsed?:number[];
+  eclRestrictedMana?:{mana:Mana;rule:string;source?:number}[];
   permanentLeftThisTurn?: boolean;
   spellTypesThisTurn?: CardType[];
   artifactEnteredThisTurn?: boolean;
@@ -1084,9 +1123,10 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted';
+export type CastAlt = 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
+  sourceType?:string;
   sourceLinkKey?: number;
   sneakPaid?:boolean;
   targetVersions?: (number|undefined)[];
@@ -1156,9 +1196,12 @@ export type Phase =
   | 'cleanup';
 
 export type GameEvent =
+  | {type:'combatPlayerOrWalker';source:number;controller:PID;amount:number}
   | { type: 'tapped'; card: number; controller: PID }
+  | {type:'transformed';card:number;controller:PID}
+  | {type:'permanentToGy';card:number;player:PID}
   | { type: 'classLevel'; card: number; controller: PID; level: number }
-  | { type: 'leaves'; card: number; controller: PID; counterKinds?: Card['lastCounterKinds'] }
+  | { type: 'leaves'; card: number; controller: PID; counterKinds?: Card['lastCounterKinds'];beheld?:number[] }
   | { type: 'bend'; player: PID; element: 'air' | 'water' | 'earth' | 'fire' }
   | { type: 'search'; player: PID }
   | { type: 'permanentDies'; card:number; controller:PID; counterKinds?:Card['lastCounterKinds'] }
@@ -1185,9 +1228,10 @@ export type GameEvent =
   | { type: 'loyaltyActivated'; card: number; controller: PID; removed: number }
   | { type: 'noncombat'; player: PID; amount: number; sourceController: PID }
   | { type: 'discard'; player: PID; card: number; batchPart?:boolean; batchSummary?:boolean }
-  | { type: 'counterPlaced'; card: number; controller: PID; amount: number };
+  | { type: 'counterPlaced'; card: number; controller: PID; amount: number; counterKind?:string;counterPayments?:{kind:string;n:number}[];stackTargetSid?:number;tapCards?:number[] };
 
 export interface PendingTrigger {
+  sourceType?:string;
   sourceLinkKey?: number;
   sneakPaid?:boolean;
   source: number;
@@ -1218,6 +1262,9 @@ export interface Show {
 }
 
 export interface GameState {
+  eclEventGroup?:number;
+  eclEntryQueue?:{card:number;controller:PID;tapped:boolean;enterAs?:CardDef}[];
+  lastManaPayment?:Mana[];
   lastManaSpent?: number;
   blockersDeclared?: boolean;
   combatCount?: number;
@@ -1325,8 +1372,8 @@ export type ChoosePurpose =
 export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
-  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean }
-  | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number };
+  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];conspireTapped?:number[][] }
+  | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];stackTargetSid?:number;tapCards?:number[] };
 
 export type Response =
   | PriorityAction

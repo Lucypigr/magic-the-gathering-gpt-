@@ -1,3 +1,4 @@
+import {beholdOptions,canReceiveCounters} from './ecl-support';
 // Shared choices for TLA cards that cannot be expressed as a fixed effect list.
 import { canPayCost, castDuringResolution, castTargetSpecs, payCost, spellEffects } from './actions';
 import { resolveRef, runEffects, type Ctx } from './effects';
@@ -53,6 +54,7 @@ export function* freeCast(g: GameState, ctx: Ctx, c: Card): SubFlow<boolean> {
     const r:Response=yield {type:'mode',player:ctx.controller,source:c.id,prompt:'選擇施放模式',options:legal.map(i=>modes[i].text),count:1,purpose:'trigger'};
     mode=legal[r.type==='modes'?(r.picks[0]??0):0];
   }
+  if(c.def.ecl?.variableTargets){const count=g.battlefield.filter(id=>isCreature(g.cards[id])).length;const r:Response=yield {type:'mode',player:ctx.controller,prompt:'選擇目標生物數量',options:Array.from({length:count+1},(_,i)=>String(i)),count:1,purpose:'count'};mode=r.type==='modes'?r.picks[0]??0:0;}
   const specs = castTargetSpecs(c.def,mode);
   let targets: Ctx['targets'] = [];
   if (specs.length) {
@@ -67,7 +69,11 @@ export function* freeCast(g: GameState, ctx: Ctx, c: Card): SubFlow<boolean> {
     [sac]=yield* choose(g,ctx.controller,'選擇額外犧牲費用',options,1);
     if(sac===undefined)return false;
   }
-  return castDuringResolution(g, ctx.controller, c.id, targets, true,mode,sac) === null;
+  const extra:Partial<Extract<import('./types').PriorityAction,{type:'cast'}>>={};
+  const blight=c.def.spell?.modes?.[mode??0]?.blight??c.def.addCost?.blight;
+  if(blight){const options=g.battlefield.filter(id=>g.cards[id].controller===ctx.controller&&isCreature(g.cards[id])&&canReceiveCounters(g,g.cards[id]));[extra.blightCard]=yield* choose(g,ctx.controller,'選擇枯萎費用',options,1);if(extra.blightCard===undefined)return false;}
+  const req=c.def.ecl?.behold;if(req&&!req.flashbackOnly){let pick=true;if(req.optional||req.tax){const r:Response=yield {type:'yesno',player:ctx.controller,prompt:'支付Behold額外費用？'};pick=r.type==='yesno'&&r.yes;}extra.beheld=pick?yield* choose(g,ctx.controller,'選擇Behold物件',beholdOptions(g,ctx.controller,c),req.n,req.n):[];}
+  return castDuringResolution(g, ctx.controller, c.id, targets, true,mode,sac,extra) === null;
 }
 function waterMax(g: GameState, pid: PID, cap = 30): number {
   let n = 0;

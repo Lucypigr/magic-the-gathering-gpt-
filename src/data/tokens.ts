@@ -5,6 +5,16 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+  T({"id": "tok-ecl-kithkin", "name": "Kithkin", "zh": "奇斯金", "types": ["Creature"], "subtypes": ["Kithkin"], "colors": ["W", "G"], "power": 1, "toughness": 1, "text": ""}),
+  T({"id": "tok-ecl-merfolk", "name": "Merfolk", "zh": "人魚", "types": ["Creature"], "subtypes": ["Merfolk"], "colors": ["W", "U"], "power": 1, "toughness": 1, "text": ""}),
+  T({"id": "tok-ecl-faerie", "name": "Faerie", "zh": "妖精", "types": ["Creature"], "subtypes": ["Faerie"], "colors": ["U", "B"], "power": 1, "toughness": 1, "text": "", "keywords": ["flying"]}),
+  T({"id": "tok-ecl-goblin", "name": "Goblin", "zh": "鬼怪", "types": ["Creature"], "subtypes": ["Goblin"], "colors": ["B", "R"], "power": 1, "toughness": 1, "text": ""}),
+  T({"id": "tok-ecl-elf", "name": "Elf", "zh": "精靈", "types": ["Creature"], "subtypes": ["Elf"], "colors": ["B", "G"], "power": 2, "toughness": 2, "text": ""}),
+  T({"id": "tok-ecl-treefolk", "name": "Treefolk", "zh": "樹妖", "types": ["Creature"], "subtypes": ["Treefolk"], "colors": ["G"], "power": 3, "toughness": 4, "text": "", "keywords": ["reach"]}),
+  T({"id": "tok-ecl-elk", "name": "Elk", "zh": "麋鹿", "types": ["Creature"], "subtypes": ["Elk"], "colors": ["G"], "power": 3, "toughness": 3, "text": ""}),
+  T({"id": "tok-ecl-worm", "name": "Worm", "zh": "蠕蟲", "types": ["Creature"], "subtypes": ["Worm"], "colors": ["B", "G"], "power": 1, "toughness": 1, "text": ""}),
+  T({"id": "tok-ecl-shapeshifter", "name": "Shapeshifter", "zh": "變形獸", "types": ["Creature"], "subtypes": ["Shapeshifter"], "colors": [], "power": 1, "toughness": 1, "text": "", "changeling": true}),
+  T({id:'tok-ecl-mutavault',name:'Mutavault',zh:'易形地窖',types:['Land'],produces:['C'],text:'{T}：加{C}。{1}：本回合成為2/2且具有所有生物類別的地生物。',abilities:[{kind:'activated',cost:{mana:'{1}'},effects:[{e:'ecl',action:'mutavault'}],label:'成為2/2所有類別生物'}]}),
   T({id:'tok-tmt-rat',name:'Rat',zh:'老鼠',types:['Creature'],subtypes:['Rat'],colors:['B'],power:1,toughness:1,text:''}),
   T({id:'tok-mutagen',name:'Mutagen',zh:'突變劑',types:['Artifact'],subtypes:['Mutagen'],text:'{1}，{T}，犧牲：在目標生物上放一個+1/+1指示物。限法術時機。',abilities:[{kind:'activated',cost:{mana:'{1}',tap:true,sacSelf:true},targets:[{kind:'creature'}],effects:[{e:'counters',what:'T0',n:1}],sorcery:true,label:'使用突變劑'}]}),
   T({id:'tok-tmt-turtle-spirit',name:'Ninja Turtle Spirit',zh:'忍者龜精靈',types:['Creature'],subtypes:['Ninja','Turtle','Spirit'],colors:['W'],power:1,toughness:1,text:''}),

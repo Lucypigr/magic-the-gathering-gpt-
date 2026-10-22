@@ -1,3 +1,6 @@
+import {colorsOf} from './mana';
+import {resolveEclEntries} from './ecl';
+import {beholdOptions,canReceiveCounters,counterKinds,vividColors} from './ecl-support';
 import { abilitiesFor, canActivate, crewChoice, performAction, sacChoices } from './actions';
 import {
   attackCandidates,
@@ -10,7 +13,7 @@ import {
 } from './combat';
 import { runEffects, type Ctx } from './effects';
 import {
-  cardName,
+  abilitiesOf,cardName,
   checkCond,
   GameOver,
   hasStaticFlag,
@@ -22,7 +25,7 @@ import {
   randInt,
   show,
   shuffleArr,
-  stats,
+  stats,matches,
 } from './state';
 import { hasTargetsAvailable, isLegalTarget, legalTargets, validateTargets } from './targets';
 import type { Card, Effect, Flow, GameState, PID, Response, SubFlow, TargetRef, TargetSpec } from './types';
@@ -53,7 +56,7 @@ export function checkSBA(g: GameState): void {
       if (!isCreature(c)) continue;
       const st = stats(g, c);
       if (st.t <= 0) dying.push(c);
-      else if ((c.damage >= st.t || (c.dtDamage && c.damage > 0)) && !st.kw.has('indestructible')) dying.push(c);
+      else if ((c.damage >= st.t || c.dtDamage) && !st.kw.has('indestructible')) dying.push(c);
     }
     if (dying.length) {
       for (const c of dying) log(g, `${cardName(c)} 死去`, c.controller, 'combat');
@@ -171,7 +174,8 @@ function* flushTriggers(g: GameState): SubFlow {
       ab = { ...ab, modes: undefined, effects: eff, targets: sp.length ? sp : undefined };
       log(g, `${cardName(src)}：選擇了「${picks.map((i) => t.ability.modes![i].text).join('」「')}」`, t.controller);
     }
-    const specs = (ab.targets ?? []).map(s=>s.filter?.crewedSourceThisTurn?{...s,filter:{...s.filter,crewedSourceThisTurn:false,ids:(src.crewedBy??[]).slice()}}:s);
+    if(ab.variableVividTargets){const n=vividColors(g,t.controller).length;const r:Response=yield {type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:n+1},(_,i)=>String(i)),count:1,purpose:'count'};const k=r.type==='modes'?r.picks[0]??0:0;ab={...ab,targets:Array.from({length:Math.min(k,n)},()=>({kind:'creature' as const,filter:{ctrl:'you' as const}}))};}
+    const specs = (ab.targets ?? []).map(s=>s.filter?.chosenTribe?{...s,filter:{...s.filter,chosenTribe:false,sub:t.sourceType??src.eclType??''}}:s).map(s=>s.filter?.crewedSourceThisTurn?{...s,filter:{...s.filter,crewedSourceThisTurn:false,ids:(src.crewedBy??[]).slice()}}:s);
     let targets: (TargetRef | null)[] = [];
     if (specs.length) {
       const options = specs.map((s) => legalTargets(g, s, t.controller, t.source));
@@ -211,6 +215,7 @@ function* flushTriggers(g: GameState): SubFlow {
       cond: ab.cond,
       ev: t.ev,
       lkiPower: t.lkiPower,
+      sourceType:t.sourceType,
       sourceLinkKey:t.sourceLinkKey,
       sneakPaid:t.sneakPaid,
     });
@@ -231,10 +236,11 @@ function* flushTriggers(g: GameState): SubFlow {
 /** 反覆檢查狀態動作並將觸發放上堆疊，直到穩定 */
 export function* settle(g: GameState): SubFlow {
   for (let i = 0; i < 100; i++) {
+    yield* resolveEclEntries(g);
     for(const pid of [0,1] as PID[]){
       if(g.legendExempt?.pid===pid&&g.legendExempt.turn===g.turn)continue;
       const groups=new Map<string,number[]>();
-      for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&c.def.set==='TMT'&&c.def.supertypes?.includes('Legendary'))groups.set(c.def.name,[...(groups.get(c.def.name)??[]),id]);}
+      for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&(c.def.set==='TMT'||c.def.set==='ECL')&&c.def.supertypes?.includes('Legendary'))groups.set(c.def.name,[...(groups.get(c.def.name)??[]),id]);}
       for(const ids of groups.values())if(ids.length>1){
         const r:Response=yield {type:'choose',player:pid,prompt:'傳奇規則：選擇保留的一個永久物',options:ids,min:1,max:1,purpose:'sacrifice'};
         const keep=r.type==='choose'&&ids.includes(r.ids[0])?r.ids[0]:ids[ids.length-1];
@@ -271,6 +277,7 @@ export function* resolveTop(g: GameState): SubFlow {
     targets: legal,
     ev: item.ev,
     lkiPower: item.lkiPower,
+    sourceType:item.sourceType,
     sourceLinkKey:item.sourceLinkKey,
     sneakPaid:item.sneakPaid,
     x: item.x,
@@ -309,6 +316,7 @@ export function* resolveTop(g: GameState): SubFlow {
             ...host.def,
             types: [...new Set([...host.def.types, 'Creature' as const])],
             subtypes: anim.replaceCreatureTypes ? (anim.subtype?[anim.subtype]:[]) : [...(host.def.subtypes ?? []), ...(anim.subtype ? [anim.subtype] : [])],
+            ...(src.def.id==='noggle-the-mind'?{colors:[]}:{}),
             power: anim.p,
             toughness: anim.t,
           };
@@ -335,7 +343,7 @@ export function* resolveTop(g: GameState): SubFlow {
       }
     } else {
       yield* runEffects(g, ctx, item.effects);
-      if (src.zone === 'stack') moveCard(g, src, 'graveyard');
+      if(src.zone==='stack'){const dream=src.castOrigin==='hand'&&g.battlefield.some(id=>g.cards[id].controller===item.controller&&g.cards[id].def.id==='goliath-daydreamer'&&abilitiesOf(g,g.cards[id]).length);moveCard(g,src,dream?'exile':'graveyard');if(dream)src.eclDream=true;}
     }
   } else {
     if (item.cond && !checkCond(g, item.cond, item.controller, item.cardId, legal, item.ev)) return;
@@ -379,6 +387,17 @@ export function* priorityStep(g: GameState): SubFlow {
       }
       p = other(p);
     } else {
+      if(r.type==='cast'){
+        const c=g.cards[r.card],req=c?.def.ecl?.behold;
+        if(c&&req&&(!req.flashbackOnly||r.alt==='flashback')&&r.beheld===undefined){
+          let pick=true;if(req.tax||req.optional){const answer:Response=yield {type:'yesno',player:p,prompt:req.tax?`Behold而不另付{${req.tax}}？`:'支付Behold額外費用？'};pick=answer.type==='yesno'&&answer.yes;}
+          if(pick&&beholdOptions(g,p,c,r.alt).length>=req.n){const options=beholdOptions(g,p,c,r.alt);const answer:Response=yield {type:'choose',player:p,prompt:`選擇${req.n}個${req.sub??'共用生物類別的'}物件作Behold`,options,min:req.n,max:req.n,purpose:'dig',reveal:true};r.beheld=answer.type==='choose'?answer.ids:[];}else r.beheld=[];
+        }
+        if(c&&req&&!req.sub&&r.beheld?.length&&r.beholdType===undefined){const options=[...new Set(['Elemental','Elf','Faerie','Giant','Goblin','Kithkin','Merfolk','Treefolk',...r.beheld.flatMap(id=>g.cards[id].def.subtypes??[])])].filter(sub=>r.beheld!.every(id=>matches(g,{sub},g.cards[id],p)));const answer:Response=yield {type:'mode',player:p,prompt:'選擇所Behold的共用生物類別',options,count:1,purpose:'creatureType'};r.beholdType=options[answer.type==='modes'?answer.picks[0]??0:0];}
+        if(c&&!c.def.types.includes('Creature')&&r.conspireTapped===undefined){r.conspireTapped=[];const used=new Set<number>();for(const id of g.battlefield){const source=g.cards[id];if(source.controller!==p||!abilitiesOf(g,source).some(a=>a.kind==='static'&&a.ecl==='conspire'))continue;const options=g.battlefield.filter(id=>{const b=g.cards[id];return b.controller===p&&!b.tapped&&!used.has(id)&&isCreature(b)&&colorsOf(b.def).some(col=>colorsOf(c.def).includes(col));});if(options.length<2)continue;const answer:Response=yield {type:'choose',player:p,prompt:'可橫置兩個與咒語共色的生物作共謀（或略過）',options,min:0,max:2,purpose:'dig'};if(answer.type==='choose'&&answer.ids.length===2){r.conspireTapped.push(answer.ids);answer.ids.forEach(id=>used.add(id));}}}
+        const n=c?.def.ecl?.blightX?(r.x??0):c?.def.spell?.modes?.[r.mode??0]?.blight??c?.def.addCost?.blight??0;
+        if(n>0&&r.blightCard===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&canReceiveCounters(g,g.cards[id]));const answer:Response=yield {type:'choose',player:p,prompt:`選擇枯萎${n}的生物（不指定目標）`,options,min:1,max:1,purpose:'blight'};r.blightCard=answer.type==='choose'?answer.ids[0]:undefined;}
+      }
       if(r.type==='activate'){
         const c=g.cards[r.card],ab=c?abilitiesFor(g,c)[r.ability]:undefined;
         const chooseCost = function*(prompt:string,options:number[],min:number,max:number):SubFlow<number[]>{
@@ -386,13 +405,18 @@ export function* priorityStep(g: GameState): SubFlow {
           return answer.type==='choose'?answer.ids:[];
         };
         if(c&&ab&&canActivate(g,p,c,r.ability)){
+          if(ab.cost.tapN&&r.tapCards===undefined)r.tapCards=yield* chooseCost('選擇橫置作費用的永久物',g.battlefield.filter(id=>{const x=g.cards[id];return x.controller===p&&!x.tapped&&(!ab.cost.tap||id!==c.id)&&matches(g,ab.cost.tapN!.filter,x,p,c.id);}),ab.cost.tapN.n,ab.cost.tapN.n);
+          if(ab.effects.some(e=>e.e==='ecl'&&e.action==='kirol')&&r.stackTargetSid===undefined){const items=g.stack.filter(s=>s.kind==='trigger'&&s.controller===p);const answer:Response=yield {type:'mode',player:p,prompt:'選擇目標觸發異能',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSid=items[answer.type==='modes'?answer.picks[0]??0:0]?.sid;}
+          if(ab.cost.blight&&r.blightCard===undefined)r.blightCard=(yield* chooseCost('選擇枯萎生物',g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&canReceiveCounters(g,g.cards[id])),1,1))[0];
+          if(ab.removeCounter?.any&&!r.counterPayments){const remaining={...counterKinds(c)};r.counterPayments=[];for(let i=0;i<ab.removeCounter.n;i++){const kinds=Object.keys(remaining).filter(k=>remaining[k]>0);const answer:Response=yield {type:'mode',player:p,prompt:'選擇移除的指示物種類',options:kinds,count:1,purpose:'trigger'};const kind=kinds[answer.type==='modes'?answer.picks[0]??0:0];if(kind){remaining[kind]--;r.counterPayments.push({kind,n:1});}}}
+
           if(ab.sacN&&r.costCards===undefined)r.costCards=yield* chooseCost('選擇要犧牲的永久物',sacChoices(g,p,ab.sacN.filter,c.id),ab.sacN.n,ab.sacN.n);
           if(ab.cost.crew!==undefined&&r.costCards===undefined){
             const options=g.battlefield.filter(id=>{const x=g.cards[id];return x.controller===p&&id!==c.id&&!x.tapped&&isCreature(x);});
             r.costCards=g.players[p].isAI?(crewChoice(g,p,c,ab.cost.crew)??[]):yield* chooseCost(`選擇駕駛生物，總力量至少${ab.cost.crew}`,options,1,options.length);
           }
           if(ab.removeCounter?.fromCreature&&r.counterCard===undefined)r.counterCard=(yield* chooseCost('選擇要移除指示物的生物',g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&g.cards[id].counters>=ab.removeCounter!.n),1,1))[0];
-          if(ab.cost.discard===1&&r.discard===undefined)r.discard=(yield* chooseCost('選擇要棄掉的手牌',g.players[p].hand.slice(),1,1))[0];
+          if(ab.cost.discard===1&&r.discard===undefined)r.discard=(yield* chooseCost('選擇要棄掉的手牌',g.players[p].hand.filter(id=>!ab.cost.discardFilter||matches(g,ab.cost.discardFilter,g.cards[id],p)),1,1))[0];
         }
       }
       const err = performAction(g, p, r);
@@ -520,6 +544,7 @@ function* turn(g: GameState): SubFlow {
   const a = g.active;
   if(g.playerControl && a===g.playerControl.player && g.turn>=g.playerControl.starts)g.playerControl.ends=g.turn;
   const pl = g.players[a];
+  pl.eclTurnCount=(pl.eclTurnCount??0)+1;
   for(const p of g.players)if(p.noExileCastBy===a){p.noExileCastBy=undefined;p.noExileCastUntil=undefined;}
   for (const p of g.players) {
     p.landsPlayed = 0;
@@ -540,7 +565,7 @@ function* turn(g: GameState): SubFlow {
     p.loyaltyActivatedThisTurn = false;
     p.mountainBonus = false;
     p.pool = [];
-    p.retainedRed=[];
+    p.retainedRed=[];p.eclRestrictedMana=[];p.eclEntries=[];p.eclCounterPlaced=false;p.eclAttackedMerfolk=0;p.eclMaralenUsed=[];if(p.eclPreventDamageUntil===a)p.eclPreventDamageUntil=undefined;
     p.poolNoncreature = [];
     p.poolLesson=[];
     p.firePool = [];
@@ -652,6 +677,7 @@ function* turn(g: GameState): SubFlow {
     }
   }
   g.eot = g.eot.filter((e) => e.until !== undefined);
+  for(const c of Object.values(g.cards)){const permission=c.eclCast;if(permission&&((permission.until!==undefined&&permission.until<=g.turn)||(permission.by===a&&permission.nextTurn!==undefined&&permission.nextTurn<=(g.players[a].eclTurnCount??0))))c.eclCast=undefined;}
   // 清除階段若有觸發，再給一次優先權
   if (g.pending.length) yield* priorityStep(g);
 }

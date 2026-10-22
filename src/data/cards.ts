@@ -7,6 +7,7 @@ import type { CardDef, Mana } from '../engine/types';
 import { ANY, CR, MY_CR, OPP, OPP_CR, OUTLAWS, PLAYER, act, arti, cr, defs, destroyT0, dmg, ench, etb, inst, land, sorc, trig } from './dsl';
 import './sets';
 import { completeTla } from './sets/tla-extra';
+import { completeEcl } from './sets/ecl-extra';
 import { completeTmt } from './sets/tmt-extra';
 
 export { slug } from './dsl';
@@ -698,6 +699,7 @@ land('META', 'R', 'Fabled Passage', [], '{T}，犧牲此地：從你的牌庫中
 
 completeTla();
 completeTmt();
+completeEcl();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

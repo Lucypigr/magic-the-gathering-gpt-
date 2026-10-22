@@ -1,10 +1,15 @@
+import {eclStatic} from './ecl-support';
 import { colorsOf } from './mana';
 import { hasKw, isCreature, matches, other } from './state';
 import type { Card, GameState, PID, TargetRef, TargetSpec } from './types';
 
 /** 辟邪：不能成為對手的咒語或異能的目標 */
 export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): boolean {
+  const ks=hasKw(g,c,'protection_colors'),ko=hasKw(g,c,'protection_opponent');
   const source=sourceId!==undefined?g.cards[sourceId]:undefined;
+  if(source&&ks&&colorsOf(source.def).length)return false;
+  if(ko&&c.controller!==by)return false;
+  if(source&&c.controller!==by&&eclStatic(g,c.controller,'tam').some(s=>s.id!==c.id)&&colorsOf(c.def).some(col=>colorsOf(source.def).includes(col)))return false;
   if(c.controller!==by&&source&&c.colorProtections?.some(p=>p.turn===g.turn&&colorsOf(source.def).includes(p.color)))return false;
   if(c.controller!==by&&c.colorProtection?.turn===g.turn&&source&&colorsOf(source.def).includes(c.colorProtection.color))return false;
   if (c.controller !== by && hasKw(g, c, 'hexproof')) return false;
@@ -39,6 +44,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
     case 'opponent':
       out.push({ p: other(controller) });
       break;
+    case 'creatureOrPlaneswalker':addPerms(true,true);break;
     case 'creature':
       addPerms(true);
       break;
@@ -120,6 +126,8 @@ export function validateTargets(
       continue;
     }
     if (!isLegalTarget(g, specs[i], t, controller, sourceId)) return '目標不合法';
+    const sharedIndex=specs[i].sharesTypeWith;const shared=sharedIndex!==undefined?ts[sharedIndex]:null;
+    if(shared&&'c'in shared&&'c'in t){const a=g.cards[shared.c],b=g.cards[t.c];if(!a.def.changeling&&!b.def.changeling&&!a.def.subtypes?.some(sub=>b.def.subtypes?.includes(sub)))return '目標必須共用生物類別';}
     const otherIndex = specs[i].differentControllerFrom;
     const previous = otherIndex !== undefined ? ts[otherIndex] : null;
     if (previous && 'c' in previous && 'c' in t && g.cards[previous.c].controller === g.cards[t.c].controller) return '兩個目標必須由不同玩家操控';
