@@ -1,11 +1,22 @@
-import { allDefs } from './registry';
-import { choose, freeCast, target } from './tla';
+import { payCost } from './actions';
+import { choose, freeCast } from './tla';
 import { resolveRef, runEffects, type Ctx } from './effects';
-import { manaValue } from './mana';
-import { isCreature, isLand, matches, newCard, other, shuffleArr, stats } from './state';
-import { legalTargets } from './targets';
-import type { Card, Color, Effect, Filter, GameState, Ref, Response, SubFlow } from './types';
-import { createToken, destroyCards, discard, drawCards, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters } from './zones';
+import { manaValue, parseCost } from './mana';
+import { hasKw, isCreature, isLand, other, shuffleArr, stats } from './state';
+import type { Card, Color, Effect, GameState, PID, Ref, Response, SubFlow } from './types';
+import {
+  createToken,
+  destroyCards,
+  discard,
+  drawCards,
+  emit,
+  enterBattlefield,
+  gainLife,
+  loseLife,
+  moveCard,
+  putCounters,
+  sacrifice,
+} from './zones';
 
 export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt' }>): SubFlow {
   const me = ctx.controller,
@@ -13,87 +24,149 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
     src = g.cards[ctx.source],
     p = g.players[me];
   const card = (ref: Ref = ef.what ?? 'T0') => resolveRef(g, ctx, ref).cards[0];
+  const evKinds = ctx.ev && 'counterKinds' in ctx.ev ? ctx.ev.counterKinds : undefined;
   const evCard = ctx.ev && 'card' in ctx.ev ? g.cards[ctx.ev.card] : undefined;
   const run = (effects: Effect[]) => runEffects(g, ctx, effects);
+  const linkKey = ctx.sourceLinkKey ?? src.tmtLinkKey ?? src.id;
   const linked = (c: Card) => {
     moveCard(g, c, 'exile');
-    c.tmtLinked = src.id;
+    c.tmtLinked = linkKey;
   };
   switch (ef.action) {
-    case 'level':
-      if (src.zone === 'battlefield') src.classLevel = ef.n ?? 1;
+    case 'sacrificeSelf':
+      if (src.zone === 'battlefield') sacrifice(g, src);
       break;
+    case 'ward': {
+      const item = g.stack.find((s) => s.sid === ef.n);
+      if (!item) break;
+      const r: Response = yield {
+        type: 'yesno',
+        player: item.controller,
+        prompt: `支付{${ef.amount ?? 0}}守護費用？`,
+      };
+      if (r.type === 'yesno' && r.yes && payCost(g, item.controller, parseCost(`{${ef.amount ?? 0}}`))) break;
+      const c = g.cards[item.cardId];
+      if (item.kind === 'spell') {
+        if (!c.def.uncounterable && !item.uncounterable)
+          moveCard(g, c, item.alt === 'flashback' || item.alt === 'harmonize' ? 'exile' : 'graveyard');
+      } else g.stack = g.stack.filter((s) => s.sid !== item.sid);
+      break;
+    }
+    case 'level':
+      if (src.zone === 'battlefield') {
+        src.classLevel = ef.n ?? 1;
+        emit(g, {
+          type: 'classLevel',
+          card: src.id,
+          controller: me,
+          level: src.classLevel,
+        });
+      }
+      break;
+    case 'allianceExile': {
+      const c = g.cards[src.lastAttachedTo ?? -1];
+      if (c?.zone === 'battlefield') moveCard(g, c, 'exile');
+      break;
+    }
+    case 'southLife':
+      gainLife(g, me, Math.max(0, (ctx.ev?.type === 'dies' ? ctx.ev.toughness : undefined) ?? evCard?.lastToughness ?? 0));
+      break;
+    case 'missileLoot': {
+      const [id] = yield* choose(g, me, '可將手牌置底，然後抓牌', p.hand.slice());
+      if (id !== undefined) {
+        moveCard(g, g.cards[id], 'library', true);
+        drawCards(g, me, 1);
+      }
+      break;
+    }
+    case 'roninAlone':
+      (g.delayed ??= []).push({
+        source: src.id,
+        controller: me,
+        on: 'youAttack',
+        alone: true,
+        once: false,
+        effects: [
+          { e: 'counters', what: 'trig', n: 3 },
+          {
+            e: 'pump',
+            what: 'trig',
+            p: 0,
+            t: 0,
+            kw: ['trample', 'lifelink', 'indestructible'],
+          },
+        ],
+      });
+      break;
+    case 'mindTransfer': {
+      const c = card();
+      if (c?.zone === 'battlefield') {
+        c.baseDef ??= c.def;
+        c.def = {
+          ...c.def,
+          types: [...new Set([...c.def.types, 'Artifact' as const, 'Creature' as const])],
+          power: 4,
+          toughness: 5,
+        };
+      }
+      break;
+    }
+    case 'donLeo': {
+      const cs = [...new Set(ctx.targets.flatMap((t) => (t && 'c' in t ? [t.c] : [])))]
+        .map((id) => g.cards[id])
+        .filter((c) => c.zone === 'battlefield');
+      for (const c of cs) moveCard(g, c, 'exile');
+      for (const c of cs) if (!c.token && c.zone === 'exile') enterBattlefield(g, c, c.owner);
+      break;
+    }
     case 'leaderLife':
-      if ((evCard?.countersBeforeLeaving ?? 0) > 0) gainLife(g, me, 2);
+      if ((evKinds ?? evCard?.lastCounterKinds) && Object.values((evKinds ?? evCard!.lastCounterKinds)!).some((n) => Number(n) > 0))
+        gainLife(g, me, 2);
       break;
     case 'koya': {
       const c = card();
       if (c) {
-        linked(c);
+        const key = -g.nextSid++;
+        moveCard(g, c, 'exile');
+        c.tmtLinked = key;
         (g.delayed ??= []).push({
           source: src.id,
           controller: me,
           on: 'eachEndStep',
           once: true,
-          effects: [{ e: 'tmt', action: 'koyaReturn' }],
+          persistent: true,
+          effects: [{ e: 'tmt', action: 'koyaReturn', n: key }],
         });
       }
       break;
     }
     case 'koyaReturn': {
-      const options = g.players.flatMap((p) => p.exile).filter((id) => g.cards[id].tmtLinked === src.id);
+      const options = g.players.flatMap((q) => q.exile).filter((id) => g.cards[id].tmtLinked === ef.n);
       if (options.length)
         yield* run([
-          { e: 'costThen', prompt: '支付{3}{B}使放逐持續？', cost: { mana: '{3}{B}' }, then: [{ e: 'tmt', action: 'koyaKeep' }] },
+          {
+            e: 'costThen',
+            prompt: '支付{3}{B}使放逐持續？',
+            cost: { mana: '{3}{B}' },
+            then: [{ e: 'tmt', action: 'koyaKeep', n: ef.n }],
+          },
         ]);
       for (const id of options) {
         const c = g.cards[id];
-        if (c.tmtLinked === src.id) enterBattlefield(g, c, c.owner);
+        if (c.tmtLinked === ef.n) enterBattlefield(g, c, c.owner);
       }
       break;
     }
     case 'koyaKeep':
-      for (const pl of g.players) for (const id of pl.exile) if (g.cards[id].tmtLinked === src.id) g.cards[id].tmtLinked = undefined;
+      for (const pl of g.players) for (const id of pl.exile) if (g.cards[id].tmtLinked === ef.n) g.cards[id].tmtLinked = undefined;
       break;
-    case 'lita': {
-      const used = src.classModesTurn?.turn === g.turn ? src.classModesTurn.modes : [];
-      const modes = [0, 1, 2].filter((i) => !used.includes(i));
-      if (!modes.length) break;
-      const r: Response = yield {
-        type: 'mode',
-        player: me,
-        source: src.id,
-        prompt: '選擇本回合未選過的項目',
-        options: modes.map((i) => ['放指示物', '派出食物', '占卜1'][i]),
-        count: 1,
-        purpose: 'trigger',
-      };
-      const pick = modes[r.type === 'modes' ? (r.picks[0] ?? 0) : 0];
-      if (pick === undefined) break;
-      src.classModesTurn = { turn: g.turn, modes: [...used, pick] };
-      if (pick === 0) putCounters(g, src, 1);
-      if (pick === 1) createToken(g, 'tok-food', me);
-      if (pick === 2) yield* run([{ e: 'scry', n: 1 }]);
-      break;
-    }
     case 'aprilDraw':
-      drawCards(g, me, p.spellTypesThisTurn?.length ?? 0);
+      drawCards(g,me,p.spellTypesThisTurn?.length??0);
       break;
-    case 'recoverArtifacts': {
-      const ids = yield* choose(
-        g,
-        me,
-        '取回至多兩張神器',
-        p.graveyard.filter((id) => g.cards[id].def.types.includes('Artifact')),
-        0,
-        2,
-      );
-      for (const id of ids) moveCard(g, g.cards[id], 'hand');
-      break;
-    }
     case 'robot': {
       const c = card();
       if (c && c.zone === 'battlefield') {
+        putCounters(g, c, ef.n ?? 3);
         if (!isCreature(c)) {
           c.tlaOriginalDef ??= c.def;
           c.def = {
@@ -104,13 +177,20 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
             toughness: 0,
           };
         }
-        putCounters(g, c, ef.n ?? 3);
       }
       break;
     }
     case 'inheritArtifact': {
-      const c = card();
-      if (c) putCounters(g, c, evCard?.countersBeforeLeaving ?? evCard?.lastCounters ?? 0);
+      const c = card(),
+        kinds = evKinds ?? evCard?.lastCounterKinds;
+      if (c && kinds) {
+        putCounters(g, c, kinds.plus);
+        c.charge = (c.charge ?? 0) + kinds.charge;
+        c.stun += kinds.stun;
+        c.hexproofCounters = (c.hexproofCounters ?? 0) + kinds.hexproof;
+        if (kinds.finality) c.finality = true;
+        if (kinds.lore) c.lore = (c.lore ?? 0) + kinds.lore;
+      }
       break;
     }
     case 'protectCounter': {
@@ -132,51 +212,78 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
         const old = a.controller;
         a.controller = b.controller;
         b.controller = old;
+        for (const c of [a, b]) {
+          c.sick = true;
+          c.attacking = false;
+          c.blocking = null;
+          c.blockedBy = [];
+          for (const id of g.battlefield) {
+            const x = g.cards[id];
+            x.blockedBy = x.blockedBy.filter((id) => id !== c.id);
+            if (x.blocking === c.id) x.blocking = null;
+          }
+        }
       }
       break;
     }
     case 'halfMill':
-      yield* run([{ e: 'mill', who: 'opp', n: Math.ceil(g.players[opp].library.length / 2) }]);
+      yield* run([
+        {
+          e: 'mill',
+          who: 'opp',
+          n: Math.ceil(g.players[opp].library.length / 2),
+        },
+      ]);
       break;
     case 'refillFour':
       drawCards(g, me, Math.max(0, 4 - p.hand.length));
       break;
     case 'mondo': {
       const colors = ['W', 'U', 'B', 'R', 'G'] as const;
-      const r: Response = yield { type: 'mode', player: me, prompt: '選擇顏色', options: [...colors], count: 1, purpose: 'color' };
+      const r: Response = yield {
+        type: 'mode',
+        player: me,
+        prompt: '選擇顏色',
+        options: [...colors],
+        count: 1,
+        purpose: 'color',
+      };
       const color: Color = colors[r.type === 'modes' ? (r.picks[0] ?? 0) : 0] ?? 'W';
       src.baseDef ??= src.def;
       src.def = { ...src.def, colors: [color] };
-      src.colorProtection = { color, turn: g.turn };
-      break;
-    }
-    case 'retro': {
-      const host = src.attachedTo != null ? g.cards[src.attachedTo] : undefined;
-      if (host) {
-        host.auraBaseDef ??= host.def;
-        host.def = { ...host.def, subtypes: ['Turtle'], power: 0, toughness: 1 };
-      }
+      (src.colorProtections ??= []).push({ color, turn: g.turn });
       break;
     }
     case 'cam': {
       const c = card();
       if (c) {
-        const r: Response = yield { type: 'yesno', player: me, prompt: '橫置此生物？（否則重置）' };
+        const r: Response = yield {
+          type: 'yesno',
+          player: me,
+          prompt: '橫置此生物？（否則重置）',
+        };
         yield* run([{ e: r.type === 'yesno' && r.yes ? 'tap' : 'untap', what: 'T0' }]);
       }
       break;
     }
-    case 'resetHands':
-      for (const pid of [me, opp]) {
-        const q = g.players[pid];
-        const r: Response = yield { type: 'yesno', player: pid, prompt: '將手牌與墳墓場洗回並抓七張？' };
-        if (r.type === 'yesno' && r.yes) {
-          for (const id of [...q.hand, ...q.graveyard]) moveCard(g, g.cards[id], 'library');
-          shuffleArr(g, q.library);
-          drawCards(g, pid, 7);
-        }
+    case 'resetHands': {
+      const chosen: PID[] = [];
+      for (const pid of [g.active, other(g.active)]) {
+        const r: Response = yield {
+          type: 'yesno',
+          player: pid,
+          prompt: '將手牌與墳墓場洗回並抓七張？',
+        };
+        if (r.type === 'yesno' && r.yes) chosen.push(pid);
       }
+      for (const pid of chosen) {
+        const q = g.players[pid];
+        for (const id of [...q.hand, ...q.graveyard]) moveCard(g, g.cards[id], 'library');
+        shuffleArr(g, q.library);
+      }
+      for (const pid of chosen) drawCards(g, pid, 7);
       break;
+    }
     case 'cloneExile': {
       const c = card();
       if (c) {
@@ -186,7 +293,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       break;
     }
     case 'cloneAgain': {
-      const options = p.exile.filter((id) => g.cards[id].tmtLinked === src.id);
+      const options = p.exile.filter((id) => g.cards[id].tmtLinked === linkKey);
       const [id] = yield* choose(g, me, '複製以此傳紀放逐的生物', options, 1);
       if (id !== undefined)
         yield* runEffects(g, { ...ctx, targets: [{ c: id }] }, [{ e: 'copyCreature', what: 'T0', nonLegendary: true, sub: 'Mutant' }]);
@@ -196,7 +303,11 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       const c = evCard;
       if (c && c.zone === 'battlefield') {
         const n = Math.max(0, stats(g, c).p);
-        const r: Response = yield { type: 'yesno', player: me, prompt: `支付${n}生命，放${n}個指示物？` };
+        const r: Response = yield {
+          type: 'yesno',
+          player: me,
+          prompt: `支付${n}生命，放${n}個指示物？`,
+        };
         if (r.type === 'yesno' && r.yes && p.life >= n) {
           loseLife(g, me, n);
           putCounters(g, c, n);
@@ -206,23 +317,43 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
     }
     case 'returnOnDeath': {
       const c = card();
-      if (c)
-        (g.delayed ??= []).push({
-          source: c.id,
-          controller: c.owner,
-          on: 'dies',
-          effects: [{ e: 'reanimate', what: 'selfAny', owner: true, tapped: true }],
-          once: true,
-        });
+      if (c) {
+        const abilities = c.temporaryAbilities?.turn === g.turn ? c.temporaryAbilities.abilities : [];
+        c.temporaryAbilities = {
+          turn: g.turn,
+          abilities: [
+            ...abilities,
+            {
+              kind: 'trigger',
+              on: 'dies',
+              effects: [{ e: 'reanimate', what: 'selfAny', owner: true, tapped: true }],
+            },
+          ],
+        };
+      }
       break;
     }
     case 'paramecia': {
-      const r: Response = yield { type: 'yesno', player: me, prompt: '放逐此牌將生物牌放牌庫頂？' };
-      const c = card();
-      if (r.type === 'yesno' && r.yes && src.zone === 'graveyard' && c?.zone === 'graveyard') {
+      const r: Response = yield {
+        type: 'yesno',
+        player: me,
+        prompt: '放逐此牌將生物牌放牌庫頂？',
+      };
+      if (r.type === 'yesno' && r.yes && src.zone === 'graveyard') {
         moveCard(g, src, 'exile');
-        moveCard(g, c, 'library');
+        yield* run([
+          {
+            e: 'reflexive',
+            targets: [{ kind: 'gyCard', filter: { ctrl: 'you', type: 'Creature' } }],
+            effects: [{ e: 'tmt', action: 'parameciaTop' }],
+          },
+        ]);
       }
+      break;
+    }
+    case 'parameciaTop': {
+      const c = card();
+      if (c?.zone === 'graveyard') moveCard(g, c, 'library');
       break;
     }
     case 'rats': {
@@ -238,12 +369,21 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       }
       break;
     }
+    case 'tainted': {
+      const c = card();
+      if (c) {
+        const small = manaValue(c.def) <= 4;
+        destroyCards(g, [c]);
+        if (small) createToken(g, 'tok-food', me);
+      }
+      break;
+    }
     case 'shredderDestroy': {
       const c = card();
       if (c) {
-        const ench = c.def.types.includes('Enchantment');
+        const ench = c.def.types.includes('Enchantment') && !hasKw(g, c, 'indestructible');
         destroyCards(g, [c]);
-        if (ench && c.zone === 'graveyard') loseLife(g, me, 2);
+        if (ench) loseLife(g, me, 2);
       }
       break;
     }
@@ -274,43 +414,92 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
     case 'hob': {
       const t = createToken(g, 'tok-mutant', me);
       yield* runEffects(g, { ...ctx, targets: [{ c: t.id }] }, [{ e: 'pump', what: 'T0', p: 0, t: 0, kw: ['haste'] }]);
-      (g.delayed ??= []).push({ source: t.id, controller: me, on: 'eachEndStep', once: true, effects: [{ e: 'destroy', what: 'self' }] });
+      (g.delayed ??= []).push({
+        source: t.id,
+        controller: me,
+        on: 'eachEndStep',
+        once: true,
+        effects: [{ e: 'destroy', what: 'self' }],
+      });
       break;
     }
     case 'raphExile':
       if (p.library.length) linked(g.cards[p.library[0]]);
       break;
     case 'raphPlay': {
-      const options = p.exile.filter((id) => g.cards[id].tmtLinked === src.id);
-      const [id] = yield* choose(g, me, '本回合可使用其中一張牌', options);
-      if (id !== undefined) {
-        g.cards[id].playableBy = me;
-        g.cards[id].playableTurn = g.turn;
-      }
+      const key = g.nextSid++;
+      for (const id of p.exile)
+        if (g.cards[id].tmtLinked === linkKey) {
+          const c = g.cards[id];
+          c.playableBy = me;
+          c.playableTurn = g.turn;
+          (c.raphaelPermissions ??= []).push({ source: key, turn: g.turn });
+        }
       break;
     }
     case 'keepRed':
-      p.keepRedTurn = g.turn;
+      if (ctx.ev?.type === 'damaged') (p.retainedRed ??= []).push(...Array(ctx.ev.amount).fill('R'));
       break;
     case 'courier': {
-      const options = p.library.filter((id) => g.cards[id].def.subtypes?.includes('Food'));
-      const [id] = yield* choose(g, me, '搜尋食物牌（可略過以派出食物）', options);
-      if (id !== undefined) {
-        moveCard(g, g.cards[id], 'hand');
+      const r: Response = yield {
+        type: 'yesno',
+        player: me,
+        prompt: '搜尋牌庫中的食物牌？',
+      };
+      let found = false;
+      if (r.type === 'yesno' && r.yes) {
+        const [id] = yield* choose(
+          g,
+          me,
+          '可展示一張食物牌放手上',
+          p.library.filter((id) => g.cards[id].def.subtypes?.includes('Food')),
+        );
+        if (id !== undefined) {
+          moveCard(g, g.cards[id], 'hand');
+          found = true;
+        }
         shuffleArr(g, p.library);
         emit(g, { type: 'search', player: me });
-      } else createToken(g, 'tok-food', me);
+      }
+      if (!found) createToken(g, 'tok-food', me);
       break;
     }
     case 'leatherhead': {
-      const hex = src.permanentGrants?.findIndex((gr) => gr.kw?.includes('hexproof')) ?? -1;
-      const r: Response = yield { type: 'yesno', player: me, prompt: '移除指示物以消滅神器或結界？' };
-      if (r.type !== 'yesno' || !r.yes) break;
-      if (src.counters > 0) src.counters--;
-      else if (hex >= 0) src.permanentGrants!.splice(hex, 1);
-      else break;
-      yield* target(g, ctx, { kind: 'permanent', filter: { ctrl: 'opp', type: ['Artifact', 'Enchantment'] } }, [
-        { e: 'destroy', what: 'T0' },
+      if (src.zone !== 'battlefield') break;
+      const kinds = [
+        ...(src.counters > 0 ? ['+1/+1'] : []),
+        ...(src.hexproofCounters ? ['辟邪'] : []),
+        ...(src.stun ? ['暈眩'] : []),
+        ...(src.charge ? ['充能'] : []),
+        ...(src.finality ? ['終結'] : []),
+      ];
+      if (!kinds.length) break;
+      const r: Response = yield {
+        type: 'mode',
+        player: me,
+        prompt: '選擇移除的指示物，或略過',
+        options: [...kinds, '略過'],
+        count: 1,
+        purpose: 'trigger',
+      };
+      const kind = kinds[r.type === 'modes' ? r.picks[0] : kinds.length];
+      if (!kind) break;
+      if (kind === '+1/+1') src.counters--;
+      if (kind === '辟邪') src.hexproofCounters!--;
+      if (kind === '暈眩') src.stun--;
+      if (kind === '充能') src.charge!--;
+      if (kind === '終結') src.finality = false;
+      yield* run([
+        {
+          e: 'reflexive',
+          targets: [
+            {
+              kind: 'permanent',
+              filter: { ctrl: 'opp', type: ['Artifact', 'Enchantment'] },
+            },
+          ],
+          effects: [{ e: 'destroy', what: 'T0' }],
+        },
       ]);
       break;
     }
@@ -334,57 +523,62 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
     case 'mikeyTechnique': {
       const top = p.library.slice(0, 8);
       const options = top.filter((id) => isCreature(g.cards[id]));
-      const selected = yield* choose(g, me, '選至多兩個總費用不超過6的生物', options, 0, 2);
       let total = 0;
       const put: number[] = [];
-      for (const id of selected) {
-        const n = manaValue(g.cards[id].def);
-        if (total + n <= 6) {
-          total += n;
-          put.push(id);
-          enterBattlefield(g, g.cards[id], me);
-        }
+      for (let i = 0; i < 2; i++) {
+        const [id] = yield* choose(
+          g,
+          me,
+          '選擇生物，總法術力值至多6',
+          options.filter((id) => !put.includes(id) && manaValue(g.cards[id].def) <= 6 - total),
+        );
+        if (id === undefined) break;
+        total += manaValue(g.cards[id].def);
+        put.push(id);
       }
+      // Both choices are made before either creature enters.
+      for (const id of put) enterBattlefield(g, g.cards[id], me);
       const rest = top.filter((id) => !put.includes(id));
       shuffleArr(g, rest);
       for (const id of rest) moveCard(g, g.cards[id], 'library', true);
       break;
     }
     case 'nunchaku': {
-      const host = card();
-      if (host) {
-        const options = legalTargets(g, { kind: 'creature', filter: { ctrl: 'opp' } }, me, src.id);
-        const [id] = yield* choose(
-          g,
-          me,
-          '選擇互鬥的對手生物',
-          options.flatMap((t) => ('c' in t ? [t.c] : [])),
-        );
-        if (id !== undefined) yield* runEffects(g, { ...ctx, targets: [{ c: host.id }, { c: id }] }, [{ e: 'fight', a: 'T0', b: 'T1' }]);
-      }
+      const host = g.cards[src.attachedTo ?? -1],
+        opponent = card();
+      if (host?.zone === 'battlefield' && opponent?.zone === 'battlefield')
+        yield* runEffects(g, { ...ctx, targets: [{ c: host.id }, { c: opponent.id }] }, [{ e: 'fight', a: 'T0', b: 'T1' }]);
       break;
     }
     case 'bebop': {
       const [id] = yield* choose(g, me, '棄一張牌，否則犧牲永久物', p.hand.slice());
       if (id !== undefined) discard(g, g.cards[id]);
-      else yield* run([{ e: 'edict', who: 'you' }]);
+      else {
+        const [victim] = yield* choose(
+          g,
+          me,
+          '犧牲一個永久物',
+          g.battlefield.filter((id) => g.cards[id].controller === me),
+          1,
+        );
+        if (victim !== undefined) sacrifice(g, g.cards[victim]);
+      }
       break;
     }
     case 'brilliance': {
       const c = card();
       if (c) {
-        enterBattlefield(g, c, me);
-        if (!isCreature(c)) {
-          c.tlaOriginalDef ??= c.def;
-          c.def = {
-            ...c.def,
-            types: [...c.def.types, 'Creature'],
-            subtypes: [...(c.def.subtypes ?? []), 'Robot'],
-            power: 3,
-            toughness: 3,
-            keywords: [...(c.def.keywords ?? []), 'flying'],
-          };
-        }
+        const def = isCreature(c)
+          ? undefined
+          : {
+              ...c.def,
+              types: [...c.def.types, 'Creature' as const],
+              subtypes: [...(c.def.subtypes ?? []), 'Robot'],
+              power: 3,
+              toughness: 3,
+              keywords: [...(c.def.keywords ?? []), 'flying' as const],
+            };
+        enterBattlefield(g, c, me, false, def);
       }
       break;
     }
@@ -393,7 +587,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
         loseLife(g, opp, Math.ceil(g.players[opp].life / 2));
       break;
     case 'nextAffinity':
-      p.nextAffinity = true;
+      p.nextAffinity = (p.nextAffinity ?? 0) + 1;
       break;
     case 'krangExile': {
       const q = g.players[opp];
@@ -405,30 +599,33 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       break;
     }
     case 'krangCast': {
-      const options = g.players.flatMap((p) => p.exile).filter((id) => g.cards[id].tmtLinked === src.id && !isLand(g.cards[id]));
+      const options = g.players.flatMap((p) => p.exile).filter((id) => g.cards[id].tmtLinked === linkKey && !isLand(g.cards[id]));
       const [id] = yield* choose(g, me, '免費施放放逐的牌', options);
       if (id !== undefined) yield* freeCast(g, ctx, g.cards[id]);
       break;
     }
     case 'neutrinos': {
-      const options = legalTargets(g, { kind: 'creature' }, me, src.id).flatMap((t) =>
-        'c' in t && g.cards[t.c].owner === me ? [t.c] : [],
-      );
-      const [id] = yield* choose(g, me, '閃現你擁有的生物並使其攻擊', options);
-      if (id !== undefined) {
-        const c = g.cards[id];
+      const c = card();
+      if (c?.zone === 'battlefield') {
         moveCard(g, c, 'exile');
-        enterBattlefield(g, c, me, true);
-        c.attacking = true;
+        if (!c.token) {
+          enterBattlefield(g, c, me, true);
+          c.attacking = true;
+        }
       }
       break;
     }
     case 'sibling':
-      if (g.combatCount === 1) {
-        const options = g.battlefield.filter((id) => g.cards[id].controller === me && g.cards[id].attacking);
-        for (const id of yield* choose(g, me, '重置一至兩個攻擊者', options, 1, 2)) g.cards[id].tapped = false;
-        g.extraCombat = { player: me, landOnly: false };
-      }
+      for (const c of ctx.targets.flatMap((t) => (t && 'c' in t ? [g.cards[t.c]] : [])))
+        if (c.zone === 'battlefield') {
+          if (c.stun) c.stun--;
+          else c.tapped = false;
+        }
+      g.extraCombat = {
+        player: me,
+        landOnly: false,
+        count: (g.extraCombat?.count ?? (g.extraCombat ? 1 : 0)) + 1,
+      };
       break;
     case 'troublemakers': {
       const skipped: number[] = [];
@@ -449,19 +646,17 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
     case 'discountPunish':
       if (ctx.ev?.type === 'cast') {
         const c = g.cards[ctx.ev.card];
-        if ((c.manaSpent ?? manaValue(c.def)) < manaValue(c.def))
-          yield* runEffects(g, { ...ctx, targets: [{ p: ctx.ev.player }] }, [{ e: 'damage', n: 3, to: 'T0' }]);
+        const stackX = g.stack.find((s) => s.kind === 'spell' && s.cardId === c.id)?.x ?? 0;
+        const mv = manaValue(c.def) + (c.def.cost?.match(/\{X\}/g)?.length ?? 0) * stackX;
+        if ((c.manaSpent ?? mv) < mv) yield* runEffects(g, { ...ctx, targets: [{ p: ctx.ev.player }] }, [{ e: 'damage', n: 3, to: 'T0' }]);
       }
       break;
     case 'ooze':
-      for (let i = 0; i < (evCard?.countersBeforeLeaving ?? 0); i++) createToken(g, 'tok-mutagen', me);
+      for (let i = 0; i < (evKinds?.plus ?? evCard?.countersBeforeLeaving ?? 0); i++) createToken(g, 'tok-mutagen', me);
       break;
     case 'van': {
-      if (src.crewedTurn !== g.turn) break;
-      const options = (src.crewedBy ?? []).filter((id) => g.cards[id].zone === 'battlefield');
-      const [id] = yield* choose(g, me, '在本回合駕駛此載具的生物上放指示物', options, 1);
-      if (id !== undefined) {
-        const c = g.cards[id];
+      const c = card();
+      if (c?.zone === 'battlefield') {
         putCounters(g, c, 1);
         if (c.def.subtypes?.some((s) => ['Mutant', 'Ninja', 'Turtle'].includes(s))) putCounters(g, c, c.counters);
       }
@@ -473,7 +668,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       break;
     }
     case 'farmReturn': {
-      const options = p.exile.filter((id) => g.cards[id].tmtLinked === src.id);
+      const options = p.exile.filter((id) => g.cards[id].tmtLinked === linkKey);
       const [id] = yield* choose(g, me, '選一個放逐生物回場，其餘回手', options, 1);
       for (const cid of options)
         if (cid === id) enterBattlefield(g, g.cards[cid], me);
@@ -483,39 +678,18 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
     case 'wish':
     case 'forever': {
       const wish = ef.action === 'wish';
-      const filter: Filter = wish ? {} : { type: 'Creature', legendary: true };
-      const temp = allDefs()
-        .filter((d) => !d.token && d.set !== 'BAS' && (wish || (d.types.includes('Creature') && d.supertypes?.includes('Legendary'))))
-        .map((d) => newCard(g, d, me));
-      const offeredNames = new Set<string>();
-      const options = [...(wish ? [] : p.library.filter((id) => matches(g, filter, g.cards[id], me))), ...temp.map((c) => c.id)].filter(
-        (id) => {
-          const name = g.cards[id].def.name;
-          if (offeredNames.has(name)) return false;
-          offeredNames.add(name);
-          return true;
-        },
+      const options = [...(wish ? [] : p.library), ...p.outside].filter(
+        (id) => wish || (isCreature(g.cards[id]) && g.cards[id].def.supertypes?.includes('Legendary')),
       );
-      const chosen = yield* choose(
-        g,
-        me,
-        wish ? '選一張局外牌' : '找四張不同名傳奇生物',
-        options,
-        wish ? 0 : Math.min(4, options.length),
-        wish ? 1 : 4,
-      );
-      const ids: number[] = [];
-      const names = new Set<string>();
-      for (const id of chosen) {
-        const name = g.cards[id].def.name;
-        if (!names.has(name)) {
-          ids.push(id);
-          names.add(name);
-        }
+      if (!wish && new Set(options.map((id) => g.cards[id].def.name)).size < 4) break;
+      const chosen: number[] = [];
+      for (let i = 0; i < (wish ? 1 : 4); i++) {
+        const candidates = options.filter((id) => !chosen.some((cid) => g.cards[cid].def.name === g.cards[id].def.name));
+        const [id] = yield* choose(g, me, wish ? '選一張你持有的局外牌' : `選第${i + 1}張不同名傳奇生物`, candidates, wish ? 0 : 1, 1);
+        if (id !== undefined) chosen.push(id);
       }
-      const hand = wish ? ids : yield* choose(g, opp, '選兩張讓對手加入手上', ids, Math.min(2, ids.length), 2);
-      for (const c of temp) if (!ids.includes(c.id)) delete g.cards[c.id];
-      for (const id of ids) moveCard(g, g.cards[id], hand.includes(id) ? 'hand' : 'library');
+      const hand = wish ? chosen : yield* choose(g, opp, '選兩張讓對手加入手上', chosen, 2, 2);
+      for (const id of chosen) moveCard(g, g.cards[id], hand.includes(id) ? 'hand' : 'library');
       if (!wish) shuffleArr(g, p.library);
       break;
     }

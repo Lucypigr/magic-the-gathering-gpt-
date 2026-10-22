@@ -16,7 +16,7 @@ import {
   other,
   stats,
 } from './state';
-import type { Card, GameEvent, GameState, PID, TargetRef, TriggeredAbility, Zone } from './types';
+import type { Card, CardDef, GameEvent, GameState, PID, TargetRef, TriggeredAbility, Zone } from './types';
 
 // ------------------------------------------------------------
 // 觸發式能力偵測
@@ -24,8 +24,10 @@ import type { Card, GameEvent, GameState, PID, TargetRef, TriggeredAbility, Zone
 function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEvent): boolean {
   const pov = c.controller;
   switch (ab.on) {
+    case 'classLevel': return ev.type === 'classLevel' && ev.card === c.id && ev.level === ab.level;
+    case 'otherLeaves': return ev.type === 'leaves' && ev.card !== c.id;
     case 'otherPermanentDies':return ev.type==='permanentDies'&&ev.card!==c.id&&matches(g,ab.filter,g.cards[ev.card],pov,c.id);
-    case 'allyPermanentDies': return ev.type==='permanentDies'&&ev.controller===pov&&ev.card!==c.id&&matches(g,ab.filter,g.cards[ev.card],pov,c.id);
+    case 'allyPermanentDies': return ev.type==='permanentDies'&&ev.controller===pov&&(ev.card!==c.id||!!ab.includeSelf)&&matches(g,ab.filter,g.cards[ev.card],pov,c.id);
     case 'combatDamageAny':return ev.type==='combatDamageAny'&&ev.source===c.id;
     case 'becomesTapped': return ev.type === 'tapped' && ev.card === c.id;
     case 'leaves': return ev.type === 'leaves' && ev.card === c.id;
@@ -135,9 +137,9 @@ function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEve
     case 'noncombatOpp':
       return ev.type === 'noncombat' && ev.player !== pov;
     case 'anyDiscard':
-      return ev.type === 'discard';
+      return ev.type === 'discard' && (ab.eachDiscard?!ev.batchSummary:!ev.batchPart) && (!ab.ownDiscard || ev.player===pov);
     case 'discardSelf':
-      return ev.type === 'discard' && ev.card === c.id && ev.player === pov;
+      return ev.type === 'discard' && !ev.batchSummary && ev.card === c.id && ev.player === pov;
     case 'oppDrawStep':
       return ev.type === 'step' && ev.step === 'draw' && ev.player !== pov;
     case 'attackedYou': {
@@ -187,6 +189,13 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 }
 
 export function emit(g: GameState, ev: GameEvent): void {
+  if(ev.type==='targeted'&&ev.stackSid!==undefined){
+    const c=g.cards[ev.card];
+    if(c?.def.set==='TMT'&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
+      const extra=g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)).length:0);},0);
+      for(let i=0;i<(1+extra);i++)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-3,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:c.def.ward}]}});
+    }
+  }
   if (ev.type === 'sacrifice') g.players[ev.player].sacrificedThisTurn = true;
   if(ev.type==='cast'){const p=g.players[ev.player];p.spellTypesThisTurn=[...new Set([...(p.spellTypesThisTurn??[]),...g.cards[ev.card].def.types])];}
   if (ev.type === 'etb') {
@@ -206,18 +215,18 @@ export function emit(g: GameState, ev: GameEvent): void {
   }
   for (const id of g.battlefield) {
     const c = g.cards[id];
-    const doubleAlly=g.battlefield.some(id=>{const s=g.cards[id];return s.controller===c.controller&&abilitiesOf(g,s).some(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id))));});
+    const extraTriggers=g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
-      for(let i=0;i<(doubleAlly?2:1);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
+      for(let i=0;i<(1+extraTriggers);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
     const fire = c.grantedFirebend?.turn === g.turn ? c.grantedFirebend.n : c.def.firebending;
-    if (fire !== undefined && ev.type === 'attacks' && ev.card === c.id && !abilitiesSuppressed(g,c)) for(let i=0;i<(doubleAlly?2:1);i++) g.pending.push({ source:c.id, controller:c.controller, abilityIndex:-2, ev, ability:{kind:'trigger',on:'attacks',effects:[{e:'firebend',n:fire}]} });
+    if (fire !== undefined && ev.type === 'attacks' && ev.card === c.id && !abilitiesSuppressed(g,c)) for(let i=0;i<(1+extraTriggers);i++) g.pending.push({ source:c.id, controller:c.controller, abilityIndex:-2, ev, ability:{kind:'trigger',on:'attacks',effects:[{e:'firebend',n:fire}]} });
     const abs = abilitiesOf(g, c);
     // 裝備授予被裝備生物的觸發式異能
     for (const sid of g.battlefield) {
       const eq = g.cards[sid];
       const tr = eq.attachedTo === c.id ? eq.def.equip?.trigger : undefined;
-      if (tr && triggerMatches(g, c, tr, ev)) g.pending.push({ source: c.id, controller: c.controller, ability: tr, abilityIndex: -1, ev });
+      if (tr && !abilitiesSuppressed(g, c) && triggerMatches(g, c, tr, ev)) for (let copy=0;copy<(1+extraTriggers);copy++) g.pending.push({ source: c.id, controller: c.controller, ability: tr, abilityIndex: -1, ev });
     }
     if (!abs.length) continue;
     for (let i = 0; i < abs.length; i++) {
@@ -228,7 +237,7 @@ export function emit(g: GameState, ev: GameEvent): void {
       if (ab.cond && !checkCond(g, ab.cond, c.controller, c.id, [])) continue;
       if (ab.when && !checkCond(g, ab.when, c.controller, c.id, [])) continue;
       if (ab.oncePerTurn) c.usedThisTurn.push(i);
-      const copies=doubleAlly?2:1;
+      const copies=1+extraTriggers;
       for (let copy = 0; copy < copies; copy++) g.pending.push({
         source: c.id,
         controller: c.controller,
@@ -258,7 +267,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     for (const d of [...g.delayed]) {
       const src = g.cards[d.source];
       if (!src) continue;
-      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, filter:d.filter };
+      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, filter:d.filter, alone:d.alone };
       // 延遲觸發的控制者是建立它的玩家，不一定是來源目前的控制者
       const probe = src.controller === d.controller ? src : { ...src, controller: d.controller };
       if (!triggerMatches(g, probe, ab, ev)) continue;
@@ -266,6 +275,7 @@ export function emit(g: GameState, ev: GameEvent): void {
       if (d.once) g.delayed = g.delayed.filter((x) => x !== d);
     }
   }
+  for(const pending of g.pending){pending.sourceLinkKey??=g.cards[pending.source]?.tmtLinkKey;pending.sneakPaid??=g.cards[pending.source]?.sneakTurn===g.turn;}
 }
 
 // ------------------------------------------------------------
@@ -293,6 +303,9 @@ function resetPermanentState(c: Card): void {
   c.returnControl = undefined;
   c.permanentGrants = undefined;
   c.charge = undefined;
+  c.hexproofCounters = undefined;
+  c.temporaryAbilities=undefined;
+  c.colorProtections=undefined;
   c.classLevel=undefined;
   c.colorProtection=undefined;
   c.classModesTurn=undefined;
@@ -345,6 +358,7 @@ export function refreshTlaPermanents(g: GameState): void {
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
   const wasOnBf = c.zone === 'battlefield';
   const from = c.zone;
+  if(from!==to)c.objectVersion=(c.objectVersion??0)+1;
   // 使永久物變成生物的光環離開時，恢復原本的樣子
   if (wasOnBf && c.def.aura && c.attachedTo != null) {
     const host = g.cards[c.attachedTo];
@@ -353,7 +367,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
       host.auraBaseDef = undefined;
     }
   }
-  if (wasOnBf) {g.players[c.controller].permanentLeftThisTurn=true;c.countersBeforeLeaving=c.counters; c.lastCounters = c.counters; c.lastPower = stats(g,c).p; emit(g, { type: 'leaves', card: c.id, controller: c.controller }); }
+  if (wasOnBf) {c.lastToughness=stats(g,c).t;c.lastCounterKinds={plus:c.counters,charge:c.charge??0,stun:c.stun,hexproof:c.hexproofCounters??0,finality:!!c.finality,lore:c.lore??0};g.players[c.controller].permanentLeftThisTurn=true;c.countersBeforeLeaving=c.counters; c.lastCounters = c.counters; c.lastPower = stats(g,c).p; emit(g, { type: 'leaves', card: c.id, controller: c.controller, counterKinds:{...c.lastCounterKinds} }); }
   c.airbent = undefined;
   c.linkedCast = undefined;
   c.tlaExiledBy = undefined;
@@ -438,8 +452,9 @@ function returnLinked(g: GameState, sourceId: number): void {
   }
 }
 
-export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped = false): void {
+export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped = false, enterAs?: CardDef): void {
   const origin=c.zone;
+  if(origin!=='battlefield')c.objectVersion=(c.objectVersion??0)+1;
   let t = tapped || !!c.def.etbTapped;
   if (isLand(c) && !c.def.supertypes?.includes('Basic') && g.battlefield.some(id => abilitiesOf(g,g.cards[id]).some(a => a.kind === 'static' && a.allNonbasicTapped))) t = true;
   if (c.def.etbTappedUnless && !checkCond(g, c.def.etbTappedUnless, controller, c.id, [])) t = true;
@@ -451,6 +466,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   }
   if (c.zone !== 'battlefield') removeFromZone(g, c);
   resetPermanentState(c);
+  if(enterAs){c.tlaOriginalDef=c.def;c.def=enterAs;}
   c.zone = 'battlefield';
   g.battlefield.push(c.id);
   c.controller = controller;
@@ -458,9 +474,18 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   c.sick = true;
   c.enteredTurn = g.turn;
   c.enteredFrom = origin;
+  c.tmtLinkKey=g.nextSid++;
+  c.wasCast=origin==='stack'&&c.castOrigin!==undefined;
   if(origin!=='stack'){c.sneakTurn=undefined;c.sneakFromGy=undefined;}
   c.counters = c.def.etbCounters ?? 0;
+  if (c.def.id === 'putrid-pals' && g.players[controller].permanentLeftThisTurn) c.counters += 2;
+  if (c.def.id === 'leatherhead-swamp-stalker') c.hexproofCounters = 1;
   if(c.def.subtypes?.includes('Class'))c.classLevel=1;
+  if(origin==='stack' && isCreature(c)){
+    if(c.castOrigin==='library' && g.battlefield.some(id=>g.cards[id].controller===controller&&g.cards[id].def.id==='mikey-don-party-planners'&&!abilitiesSuppressed(g,g.cards[id])))c.counters++;
+    if(c.sneakFromGy)c.finality=true;
+    if(c.sneakTurn===g.turn){c.tapped=true;c.attacking=true;c.attackedTurn=g.turn;}
+  }
   if(c.def.id==='weather-maker')c.charge=0;
   if(c.def.types.includes('Artifact'))g.players[controller].artifactEnteredThisTurn=true;
   if (c.counters > 0 && isCreature(c)) {
@@ -482,6 +507,8 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   }
   if (!c.def.types.includes('Land')) g.players[controller].nonlandEtbThisTurn = (g.players[controller].nonlandEtbThisTurn ?? 0) + 1;
   refreshTlaPermanents(g);
+  const enterCounters=Math.abs(c.counters)+(c.hexproofCounters??0)+Number(!!c.finality)+(c.loyalty??0);
+  if(enterCounters)emit(g,{type:'counterPlaced',card:c.id,controller,amount:enterCounters});
   emit(g, { type: 'etb', card: c.id, controller });
   if (c.def.saga) addLore(g, c, 1);
 }
@@ -492,6 +519,7 @@ export function addLore(g: GameState, c: Card, n: number): void {
   if (!chapters || c.zone !== 'battlefield') return;
   for (let i = 0; i < n; i++) {
     c.lore = (c.lore ?? 0) + 1;
+    emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:1});
     const ch = chapters[c.lore - 1];
     if (!ch) continue;
     log(g, `${cardName(c)}：第 ${ROMAN[c.lore - 1]} 章`, c.controller);
@@ -563,13 +591,15 @@ function deathReplacedByExile(g: GameState, c: Card): boolean {
 export function putIntoGraveyard(g: GameState, cards: Card[]): void {
   const list = cards.filter((c) => c.zone === 'battlefield');
   for (const c of list) {
-    if(!deathReplacedByExile(g,c))emit(g,{type:'permanentDies',card:c.id,controller:c.controller});
+    c.lastToughness = stats(g,c).t;
+    c.lastCounterKinds={plus:c.counters,charge:c.charge??0,stun:c.stun,hexproof:c.hexproofCounters??0,finality:!!c.finality,lore:c.lore??0};
+    if(!deathReplacedByExile(g,c))emit(g,{type:'permanentDies',card:c.id,controller:c.controller,counterKinds:{...c.lastCounterKinds}});
     if (isCreature(c)) {
       // 將要死去時改為放逐的取代效果：它並沒有死去
       if (deathReplacedByExile(g, c)) continue;
       g.creatureDiedThisTurn = true;
       g.creaturesDiedCount = (g.creaturesDiedCount ?? 0) + 1;
-      emit(g, { type: 'dies', card: c.id, controller: c.controller, power: stats(g, c).p });
+      emit(g, { type: 'dies', card: c.id, controller: c.controller, power: stats(g, c).p, toughness:c.lastToughness });
     } else if (c.def.types.includes('Planeswalker')) {
       emit(g, { type: 'dies', card: c.id, controller: c.controller, power: 0 });
     }
@@ -622,8 +652,8 @@ export function discard(g: GameState, c: Card, silent = false): void {
 /** 同時棄掉多張牌：「一個或更多張」的觸發只會觸發一次 */
 export function discardMany(g: GameState, cards: Card[]): void {
   for (const c of cards) discard(g, c, true);
-  const first = cards[0];
-  if (first) emit(g, { type: 'discard', player: first.owner, card: first.id });
+  for(const c of cards)emit(g,{type:'discard',player:c.owner,card:c.id,batchPart:true});
+  if(cards[0])emit(g,{type:'discard',player:cards[0].owner,card:cards[0].id,batchSummary:true});
 }
 
 export function gainLife(g: GameState, pid: PID, n: number): void {
@@ -660,7 +690,7 @@ export function dealDamage(
   srcController: PID,
   target: TargetRef,
   n: number,
-  opts: { combat?: boolean; noLifeGain?: boolean } = {},
+  opts: { combat?: boolean; noLifeGain?: boolean; batchCombat?: boolean } = {},
 ): number {
   if (n <= 0) return 0;
   // 非戰鬥傷害加成（例如「多造成 1 點傷害」）：只對對手或其永久物
@@ -679,7 +709,7 @@ export function dealDamage(
   const kws = src ? (src.zone === 'battlefield' ? stats(g, src).kw : new Set(src.def.keywords ?? [])) : new Set();
   if(src?.def.subtypes?.some(s=>s==='Noble'||s==='Lesson')&&g.battlefield.some(id=>g.cards[id].controller===srcController&&g.cards[id].def.id==='lo-and-li-twin-tutors'&&!abilitiesSuppressed(g,g.cards[id])))kws.add('lifelink');
   const srcName = src ? cardName(src) : '';
-  if(opts.combat&&src)emit(g,{type:'combatDamageAny',source:src.id,controller:srcController,amount:n});
+  if(opts.combat&&src&&!opts.batchCombat)emit(g,{type:'combatDamageAny',source:src.id,controller:srcController,amount:n});
   if ('p' in target) {
     const p = g.players[target.p];
     loseLife(g, target.p, n);

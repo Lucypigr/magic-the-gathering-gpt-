@@ -52,6 +52,8 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
+  sourceLinkKey?:number;
+  sneakPaid?:boolean;
   controller: PID;
   source: number;
   /** 此效果中最近派出的衍生物 */
@@ -235,7 +237,7 @@ export function amount(g: GameState, ctx: Ctx, a: Amt): number {
   if ('hand' in a) return g.players[ctx.controller].hand.length;
   if ('x' in a) return ctx.x ?? g.cards[ctx.source]?.castX ?? 0;
   if ('spellsCast' in a) return g.players[ctx.controller].spellsThisTurn;
-  if ('selfCounters' in a) return Math.max(0, g.cards[ctx.source]?.counters ?? 0);
+  if ('selfCounters' in a) { const c=g.cards[ctx.source]; return Math.max(0, (c?.counters??0) + (c?.def.id==='savanti-romero-times-exile' ? (c.charge??0)+c.stun+(c.hexproofCounters??0)+Number(!!c.finality)+(c.lore??0) : 0)); }
   if ('colors' in a) {
     const cols = new Set<string>();
     for (const id of g.battlefield) {
@@ -369,7 +371,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'exile': {
       let n = 0;
       for (const c of resolveRef(g, ctx, ef.what).cards) {
-        if (c.zone !== 'battlefield') continue;
+        if (c.zone !== 'battlefield' && c.zone !== 'graveyard' && c.zone !== 'stack') continue;
         log(g, `${cardName(c)} 被放逐`, c.controller);
         moveCard(g, c, 'exile');
         n++;
@@ -378,7 +380,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     }
     case 'exileLinked': {
-      if (!src || src.zone !== 'battlefield') break;
+      if (!src || src.zone !== 'battlefield' || (ctx.sourceLinkKey!==undefined && ctx.sourceLinkKey!==src.tmtLinkKey)) break;
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
         log(g, `${cardName(c)} 被放逐（直到 ${cardName(src)} 離開戰場）`, c.controller);
@@ -414,7 +416,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'grant': { for(const c of resolveRef(g,ctx,ef.what).cards) {if(ef.permanent)(c.permanentGrants??=[]).push(ef.grant);else g.eot.push({card:c.id,p:0,t:0,kw:[],...ef.grant});} return; }
     case 'copyCreature': {
-      for(const c of resolveRef(g,ctx,ef.what).cards) {const def={...c.def,id:`${c.def.id}-copy`,supertypes:ef.nonLegendary || ef.p!==undefined ? c.def.supertypes?.filter(s=>s!=='Legendary') : c.def.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(c.def.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const t=newCard(g,def,ctx.controller,true);t.zone='exile';enterBattlefield(g,t,ctx.controller);if(ef.temp)t.sacAtEnd=true;ctx.created=t.id;} return;
+      for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=c.baseDef??c.tlaOriginalDef??c.auraBaseDef??c.def;const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const t=newCard(g,def,ctx.controller,true);t.zone='exile';enterBattlefield(g,t,ctx.controller);if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
     }
     case 'tmt': yield* tmtEffect(g,ctx,ef);return;
     case 'tla': yield* tlaEffect(g,ctx,ef); return;
@@ -423,13 +425,15 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       g.version++;
       break;
     case 'untap':
-      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') c.tapped = false;
+      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(c.stun>0)c.stun--;else c.tapped = false; }
       g.version++;
       break;
     case 'stun':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
-        c.stun += ef.n === undefined ? 1 : amount(g, ctx, ef.n);
+        const n=ef.n===undefined?1:amount(g,ctx,ef.n);
+        c.stun += n;
+        if(n>0)emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n});
         tapCard(g,c);
       }
       g.version++;
@@ -897,6 +901,12 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const top = g.players[me].library.slice(0, ef.n);
       const bottom = yield* choose(g, me, `占卜 ${ef.n}：選擇要放到牌庫底的牌`, top, 0, top.length, 'scryBottom', true);
       for (const id of bottom) moveCard(g, g.cards[id], 'library', true);
+      const remaining=top.filter(id=>!bottom.includes(id));
+      if(remaining.length>1){
+        const ordered:number[]=[];
+        while(ordered.length<remaining.length){const [id]=yield* choose(g,me,'選擇接下來的牌庫頂牌（由頂到底）',remaining.filter(id=>!ordered.includes(id)),1,1,'dig',true);if(id===undefined)break;ordered.push(id);}
+        for(const id of ordered.reverse())moveCard(g,g.cards[id],'library');
+      }
       log(g, `占卜 ${ef.n}`, me);
       g.players[me].scriedThisTurn = true;
       emit(g, { type: 'scry', player: me });
@@ -925,15 +935,17 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const opts = top.filter((id) => matches(g, ef.filter, g.cards[id], me));
       const take = ef.take ?? 1;
       const toBf = ef.to === 'battlefield';
-      const picked = yield* choose(g, me, toBf ? `選擇至多 ${take} 張牌放進戰場` : `選擇 ${take} 張牌置於手上`, opts, toBf ? 0 : Math.min(take, opts.length), take, 'dig', true);
+      const picked = yield* choose(g, me, toBf ? `選擇至多 ${take} 張牌放進戰場` : `選擇 ${take} 張牌置於手上`, opts, toBf || ef.optional ? 0 : Math.min(take, opts.length), take, 'dig', true);
       for (const id of picked) {
         if (toBf) {
           log(g, `將 ${cardName(g.cards[id])} 放進戰場`, me);
           enterBattlefield(g, g.cards[id], me);
         } else moveCard(g, g.cards[id], 'hand');
       }
-      for (const id of top) {
-        if (picked.includes(id) || ef.rest === 'top') continue;
+      const rest=top.filter(id=>!picked.includes(id));
+      if(ef.randomBottom)shuffleArr(g,rest);
+      for (const id of rest) {
+        if (ef.rest === 'top') continue;
         moveCard(g, g.cards[id], ef.rest === 'bottom' ? 'library' : 'graveyard', true);
       }
       break;
@@ -1023,7 +1035,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     case 'reanimate':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
-        if (c.zone !== 'graveyard') continue;
+        if (c.zone !== 'graveyard' || (ef.what==='selfAny' && ctx.sourceLinkKey!==undefined && c.tmtLinkKey!==ctx.sourceLinkKey)) continue;
         log(g, `${cardName(c)} 從墳墓場回到戰場`, me);
         enterBattlefield(g, c, ef.owner ? c.owner : me, !!ef.tapped);
         if (ef.counters) putCounters(g, c, ef.counters);
@@ -1086,6 +1098,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         if(c.def.set==='TLA'||c.def.set==='TMT') c.charge=(c.charge??0)+amount(g,ctx,ef.n);
         else c.counters += amount(g, ctx, ef.n);
         log(g, `${cardName(c)} 上放置了充能指示物（${c.charge??c.counters}）`, c.controller);
+        if(amount(g,ctx,ef.n)>0)emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:amount(g,ctx,ef.n)});
         if(c.def.id==='zhao-the-moon-slayer')refreshTlaPermanents(g);
       }
       g.version++;
@@ -1202,7 +1215,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const r: Response = yield { type: 'targets', player: me, source: ctx.source, specs, text: src?.def.text ?? '', effects: ef.effects };
       let targets = specs.map((_, i) => (r.type === 'targets' ? r.targets[i] ?? null : null));
       if (validateTargets(g, specs, targets, me, ctx.source)) targets = specs.map((s, i) => (s.optional ? null : options[i][0] ?? null));
-      g.stack.push({ sid: g.nextSid++, kind: 'trigger', controller: me, cardId: ctx.source, targets, targetSpecs: specs, effects: ef.effects, text: src?.def.text ?? '' });
+      g.stack.push({ sid: g.nextSid++, kind: 'trigger', controller: me, cardId: ctx.source, targets, targetSpecs: specs, targetVersions:targets.map(t=>t&&'c' in t?g.cards[t.c]?.objectVersion??0:undefined), effects: ef.effects, text: src?.def.text ?? '' });
       break;
     }
     case 'exileFromHandLinked': {
@@ -1379,7 +1392,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     }
     case 'if': {
-      const ok = ef.cond.c === 'castFromGy' ? ctx.alt === 'flashback' || ctx.alt === 'harmonize' || ctx.alt === 'mayhem' : checkCond(g, ef.cond, me, ctx.source, ctx.targets, ctx.ev);
+      const ok = ef.cond.c==='sneaked' && ctx.sneakPaid!==undefined ? ctx.sneakPaid : ef.cond.c === 'castFromGy' ? ctx.alt === 'flashback' || ctx.alt === 'harmonize' || ctx.alt === 'mayhem' : checkCond(g, ef.cond, me, ctx.source, ctx.targets, ctx.ev);
       yield* runEffects(g, ctx, ok ? ef.then : ef.else ?? []);
       break;
     }
@@ -1478,7 +1491,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const ids = yield* choose(g, me, '你可以將一張地牌從手上放進戰場', opts, 0, 1, 'landFromHand');
       for (const id of ids) {
         log(g, `將 ${cardName(g.cards[id])} 放進戰場`, me);
-        enterBattlefield(g, g.cards[id], me);
+        enterBattlefield(g, g.cards[id], me, !!ef.tapped);
       }
       break;
     }
@@ -1502,9 +1515,10 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'flicker': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
-        if (c.zone !== 'battlefield' || c.token) continue;
+        if (c.zone !== 'battlefield') continue;
         log(g, `${cardName(c)} 被放逐後回到戰場`, c.owner);
         moveCard(g, c, 'exile');
+        if (c.token) continue;
         enterBattlefield(g, c, c.owner);
         if (ef.counters) putCounters(g, c, ef.counters);
       }

@@ -16,7 +16,7 @@ import { costToString, manaValue } from '../../engine/mana';
 import { cardName, isCreature, stats } from '../../engine/state';
 import { legalTargets, sameTarget } from '../../engine/targets';
 import type { CardDef, CastAlt, Filter, PID, PriorityAction, TargetRef, TargetSpec } from '../../engine/types';
-import type { SavedDeck, Settings } from '../../meta/profile';
+import { loadProfile, type SavedDeck, type Settings } from '../../meta/profile';
 import { EMOTES, type Emote, type Opponent } from '../../meta/ladder';
 import { getDef, hasDef } from '../../engine/registry';
 import { RankBadge } from '../Ladder';
@@ -121,7 +121,7 @@ export function Battle(props: Props) {
 
   useEffect(() => {
     const c = new MatchController({
-      human: { name: '你', deckName: playerDeck.name, deck: expandDeck(playerDeck), isAI: false },
+      human: { name: '你', deckName: playerDeck.name, deck: expandDeck(playerDeck), isAI: false, outside: Object.entries(loadProfile().collection).flatMap(([id,n]) => Array(Math.max(0,n-(playerDeck.cards[id]??0))).fill(id)) },
       ai: { name: opponent?.name ?? '對手', deckName: aiDeck.name, deck: expandDeck(aiDeck), isAI: true },
       level,
       aiStyle: aiDeck.style,
@@ -298,7 +298,7 @@ export function Battle(props: Props) {
     if (!g || !dr || dr.stage !== 'targets') return [];
     const spec = dr.specs[dr.targets.length];
     if (!spec) return [];
-    return legalTargets(g, spec, actingPid, dr.source).filter((t) => !dr.targets.some((x) => sameTarget(x, t)));
+    return legalTargets(g, spec, actingPid, dr.source).filter((t) => (spec.allowRepeat || !dr.targets.some((x) => sameTarget(x, t))) && (spec.differentControllerFrom===undefined || (()=>{const previous=dr.targets[spec.differentControllerFrom];return !previous||!('c' in previous)||!('c' in t)||g.cards[previous.c].controller!==g.cards[t.c].controller;})()));
   }
 
   function sacNow(dr: Draft | null): number[] {
@@ -310,7 +310,7 @@ export function Battle(props: Props) {
     let cur = dr;
     while (cur.stage === 'targets' && cur.targets.length < cur.specs.length) {
       const spec = cur.specs[cur.targets.length];
-      const legal = g ? legalTargets(g, spec, actingPid, cur.source).filter((t) => !cur.targets.some((x) => sameTarget(x, t))) : [];
+      const legal = g ? legalTargets(g, spec, actingPid, cur.source).filter((t) => spec.allowRepeat || !cur.targets.some((x) => sameTarget(x, t))) : [];
       if (spec.kind === 'opponent' && legal.length === 1) cur = { ...cur, targets: [...cur.targets, legal[0]] };
       else if (spec.optional && legal.length === 0) cur = { ...cur, targets: [...cur.targets, null] };
       else break;
@@ -523,7 +523,7 @@ export function Battle(props: Props) {
     if (draft.kind !== 'trigger') minor.push({ label: '取消', onClick: () => setDraft(null) });
     else if (legal.length === 0) main = { label: '繼續', onClick: () => chooseTarget(null) };
   } else if (draft?.stage === 'sac') {
-    status = draft?.alt==='sneak'?'選擇收回手上的未被阻擋攻擊者':'選擇要犧牲的永久物';
+    status = (draft?.alt==='sneak'||draft?.alt==='sneakGranted')?'選擇收回手上的未被阻擋攻擊者':'選擇要犧牲的永久物';
     minor.push({ label: '取消', onClick: () => setDraft(null) });
   } else if (!d) {
     status = ctl.aiThinking ? '對手思考中…' : '';

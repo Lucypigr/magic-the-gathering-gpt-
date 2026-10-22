@@ -2,8 +2,8 @@
 import { canPayCost, castDuringResolution, castTargetSpecs, payCost, spellEffects } from './actions';
 import { resolveRef, runEffects, type Ctx } from './effects';
 import { manaValue, parseCost } from './mana';
-import { cardName, isCreature, isLand, other, shuffleArr, stats } from './state';
-import { legalTargets, validateTargets } from './targets';
+import { cardName, isCreature, isLand, matches, other, shuffleArr, stats } from './state';
+import { hasTargetsAvailable, legalTargets, validateTargets } from './targets';
 import type { Card, Effect, GameState, PID, Ref, Response, SubFlow, TargetSpec } from './types';
 import {
   bend,
@@ -45,21 +45,29 @@ export function* target(g: GameState, ctx: Ctx, spec: TargetSpec, effects: Effec
     yield* runEffects(g, { ...ctx, targets: r.targets }, effects);
 }
 export function* freeCast(g: GameState, ctx: Ctx, c: Card): SubFlow<boolean> {
-  const specs = castTargetSpecs(c.def);
+  let mode:number|undefined;
+  if(c.def.spell?.modes){
+    const modes=c.def.spell.modes;
+    const legal=modes.map((_,i)=>i).filter(i=>hasTargetsAvailable(g,modes[i].targets??[],ctx.controller,c.id));
+    if(!legal.length)return false;
+    const r:Response=yield {type:'mode',player:ctx.controller,source:c.id,prompt:'選擇施放模式',options:legal.map(i=>modes[i].text),count:1,purpose:'trigger'};
+    mode=legal[r.type==='modes'?(r.picks[0]??0):0];
+  }
+  const specs = castTargetSpecs(c.def,mode);
   let targets: Ctx['targets'] = [];
   if (specs.length) {
-    const r: Response = yield {
-      type: 'targets',
-      player: ctx.controller,
-      source: c.id,
-      specs,
-      text: c.def.text,
-      effects: spellEffects(c.def),
-    };
+    const r: Response = yield {type:'targets',player:ctx.controller,source:c.id,specs,text:c.def.text,effects:spellEffects(c.def,mode)};
     if (r.type !== 'targets' || validateTargets(g, specs, r.targets, ctx.controller, c.id)) return false;
     targets = r.targets;
   }
-  return castDuringResolution(g, ctx.controller, c.id, targets, true) === null;
+  let sac:number|undefined;
+  const sacFilter=c.def.spell?.modes?.[mode??0]?.sac??c.def.addCost?.sac;
+  if(sacFilter){
+    const options=g.battlefield.filter(id=>g.cards[id].controller===ctx.controller&&matches(g,sacFilter,g.cards[id],ctx.controller,c.id));
+    [sac]=yield* choose(g,ctx.controller,'選擇額外犧牲費用',options,1);
+    if(sac===undefined)return false;
+  }
+  return castDuringResolution(g, ctx.controller, c.id, targets, true,mode,sac) === null;
 }
 function waterMax(g: GameState, pid: PID, cap = 30): number {
   let n = 0;

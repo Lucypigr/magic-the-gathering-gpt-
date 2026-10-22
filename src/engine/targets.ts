@@ -5,6 +5,7 @@ import type { Card, GameState, PID, TargetRef, TargetSpec } from './types';
 /** 辟邪：不能成為對手的咒語或異能的目標 */
 export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): boolean {
   const source=sourceId!==undefined?g.cards[sourceId]:undefined;
+  if(c.controller!==by&&source&&c.colorProtections?.some(p=>p.turn===g.turn&&colorsOf(source.def).includes(p.color)))return false;
   if(c.controller!==by&&c.colorProtection?.turn===g.turn&&source&&colorsOf(source.def).includes(c.colorProtection.color))return false;
   if (c.controller !== by && hasKw(g, c, 'hexproof')) return false;
   return true;
@@ -62,7 +63,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       for (const s of g.stack) {
         if (s.kind !== 'spell' || s.cardId === sourceId) continue;
         const c = g.cards[s.cardId];
-        if (matches(g, f, c, controller, sourceId)) out.push({ c: c.id });
+        if (matches(g, f, c, controller, sourceId) && (!spec.targetsOwnArtifactOrCreature || s.targets.some(t => t && 'c' in t && g.cards[t.c]?.controller === controller && (isCreature(g.cards[t.c]) || g.cards[t.c].def.types.includes('Artifact'))))) out.push({ c: c.id });
       }
       break;
     case 'gyCard':
@@ -119,8 +120,11 @@ export function validateTargets(
       continue;
     }
     if (!isLegalTarget(g, specs[i], t, controller, sourceId)) return '目標不合法';
+    const otherIndex = specs[i].differentControllerFrom;
+    const previous = otherIndex !== undefined ? ts[otherIndex] : null;
+    if (previous && 'c' in previous && 'c' in t && g.cards[previous.c].controller === g.cards[t.c].controller) return '兩個目標必須由不同玩家操控';
     for (let j = 0; j < i; j++) {
-      if (sameTarget(ts[j] ?? null, t) && specs[j].kind === specs[i].kind) return '不能重複選擇相同目標';
+      if (!specs[i].allowRepeat && sameTarget(ts[j] ?? null, t) && specs[j].kind === specs[i].kind) return '不能重複選擇相同目標';
     }
   }
   return null;

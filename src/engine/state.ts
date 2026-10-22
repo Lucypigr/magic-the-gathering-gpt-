@@ -56,6 +56,7 @@ export interface PlayerSetup {
   deckName: string;
   deck: string[];
   isAI: boolean;
+  outside?: string[];
 }
 
 export function newPlayer(id: PID, s: PlayerSetup): Player {
@@ -64,6 +65,7 @@ export function newPlayer(id: PID, s: PlayerSetup): Player {
     name: s.name,
     deckName: s.deckName,
     life: 20,
+    outside: [],
     library: [],
     hand: [],
     graveyard: [],
@@ -109,6 +111,11 @@ export function createGame(p0: PlayerSetup, p1: PlayerSetup, seed = Date.now()):
   };
   [p0, p1].forEach((s, i) => {
     const pid = i as PID;
+    for (const id of s.outside ?? []) {
+      const c = newCard(g, getDef(id), pid);
+      c.zone = 'outside';
+      g.players[pid].outside.push(c.id);
+    }
     for (const id of s.deck) {
       const c = newCard(g, getDef(id), pid);
       c.zone = 'library';
@@ -149,15 +156,16 @@ export function cloneGame(g: GameState): GameState {
   const cards: Record<number, Card> = {};
   for (const k in g.cards) {
     const c = g.cards[k];
-    cards[k] = { ...c, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
+    cards[k] = { ...c, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
   }
   const cp = (p: Player): Player => ({
     ...p,
+    outside: p.outside.slice(),
     library: p.library.slice(),
     hand: p.hand.slice(),
     graveyard: p.graveyard.slice(),
     exile: p.exile.slice(),
-    spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
+    retainedRed:p.retainedRed?.slice(),spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
     ...g,
@@ -255,7 +263,7 @@ export function abilitiesSuppressed(g: GameState, c: Card): boolean {
 
 /** 永久物目前實際擁有的異能（失去所有異能時為空） */
 export function abilitiesOf(g: GameState, c: Card): Ability[] {
-  return abilitiesSuppressed(g, c) ? [] : [...(c.def.abilities ?? []), ...(c.copiedAbilities ?? [])];
+  return abilitiesSuppressed(g, c) ? [] : [...(c.def.abilities ?? []), ...(c.copiedAbilities ?? []), ...(c.temporaryAbilities?.turn===g.turn?c.temporaryAbilities.abilities:[])];
 }
 
 export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
@@ -283,6 +291,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
       }
     }
   }
+  if (c.hexproofCounters) st.kw.add('hexproof');
   st.p += c.counters;
   st.t += c.counters;
   const apply = (gr: Grant) => {
@@ -349,7 +358,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   if(!lost && d.id==='earthen-ally') {const colors=new Set<string>();for(const id of g.battlefield){const a=g.cards[id];if(a.controller===c.controller&&a.def.subtypes?.includes('Ally'))for(const col of colorsOf(a.def))colors.add(col);}st.p+=colors.size;}
   if(c.attachedTo==null) for(const id of g.battlefield){const a=g.cards[id];if(a.def.id==='avatar-destiny'&&a.attachedTo===c.id){const n=g.players[a.controller].graveyard.filter(id=>isCreature(g.cards[id])).length;st.p+=n;st.t+=n;}}
   if(st.p>=4 && g.battlefield.some(id=>g.cards[id].controller===c.controller&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.oneBlockerPower4)))st.onlyOneBlocker=true;
-  if(d.combatPowerMin!==undefined&&st.p<d.combatPowerMin){st.cantAttack=true;st.cantBlock=true;}
+  if(!lost&&d.combatPowerMin!==undefined&&st.p<d.combatPowerMin){st.cantAttack=true;st.cantBlock=true;}
   for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===c.id&&eq.def.equip?.powerPerArtifact)st.p+=g.battlefield.filter(id=>g.cards[id].controller===eq.controller&&g.cards[id].def.types.includes('Artifact')).length;}
   return st;
 }
@@ -366,6 +375,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;
+  if(f.ids&&!f.ids.includes(c.id))return false;
   const d = c.def;
   if (f.type && !asArr(f.type).some((t) => d.types.includes(t))) return false;
   if (f.nonType && asArr(f.nonType).some((t) => d.types.includes(t))) return false;
@@ -388,6 +398,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   if (f.tapped !== undefined && c.tapped !== f.tapped) return false;
   if(f.owner && c.owner!==(f.owner==='you'?pov:other(pov)))return false;
   if (f.attacking && !c.attacking) return false;
+  if(f.crewedSourceThisTurn && !(g.cards[sourceId??-1]?.crewedTurn===g.turn&&g.cards[sourceId??-1]?.crewedBy?.includes(c.id)))return false;
   if(f.unblocked && (!c.attacking||c.wasBlocked||c.blockedBy.length))return false;
   if (f.inCombat && !c.attacking && c.blocking == null) return false;
   if (f.other && c.id === sourceId) return false;
@@ -395,7 +406,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   if (f.enteredThisTurn !== undefined && (c.enteredTurn === g.turn) !== f.enteredThisTurn) return false;
   if (f.stunned && c.stun <= 0) return false;
   if (f.plusCounters !== undefined && c.counters > 0 !== f.plusCounters) return false;
-  if (f.hasCounters !== undefined && (c.counters !== 0) !== f.hasCounters) return false;
+  if (f.hasCounters !== undefined && (c.counters !== 0 || !!c.charge || !!c.stun || !!c.hexproofCounters || !!c.finality || !!c.lore || !!c.loyalty) !== f.hasCounters) return false;
   if (f.or && !f.or.some((x) => matches(g, x, c, pov, sourceId))) return false;
   if (f.vanilla !== undefined && (d.text.trim() === '' && !d.keywords?.length) !== f.vanilla) return false;
   if (f.damaged !== undefined && c.damage > 0 !== f.damaged) return false;
@@ -464,6 +475,7 @@ export function checkCond(
       return opp.lifeLostThisTurn > 0;
     case 'disappeared':return !!me.permanentLeftThisTurn;
     case 'artifactEntered':return !!me.artifactEnteredThisTurn;
+    case 'firstCombat': return g.combatCount === 1;
     case 'classLevel':return (g.cards[sourceId??-1]?.classLevel??1)>=cond.n;
     case 'sneaked':return g.cards[sourceId??-1]?.sneakTurn===g.turn;
     case 'charge': return (g.cards[sourceId ?? -1]?.charge ?? 0) >= cond.n;

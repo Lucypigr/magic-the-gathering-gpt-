@@ -92,6 +92,8 @@ export interface Filter {
   enteredThisTurn?: boolean;
   /** 本回合攻擊過 */
   attackedThisTurn?: boolean;
+  crewedSourceThisTurn?: boolean;
+  ids?:number[];
   unblocked?: boolean;
   owner?: 'you'|'opp';
 }
@@ -99,6 +101,9 @@ export interface Filter {
 export type TargetKind = 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
 
 export interface TargetSpec {
+  allowRepeat?: boolean;
+  differentControllerFrom?: number;
+  targetsOwnArtifactOrCreature?: boolean;
   kind: TargetKind;
   filter?: Filter;
   /** 「至多一個目標」：可以不選 */
@@ -178,7 +183,7 @@ export type Amt =
 
 export interface Grant {
   /** 成為生物（光環使永久物變成生物） */
-  animate?: { p: number; t: number; subtype?: string };
+  animate?: { p: number; t: number; subtype?: string; replaceCreatureTypes?: boolean };
   onlyOneBlocker?: boolean;
   removeKw?: Keyword[];
   p?: number;
@@ -282,6 +287,7 @@ export type Cond =
   | { c: 'always' }
   | { c: 'charge'; n: number }
   | { c: 'disappeared' }
+  | { c: 'firstCombat' }
   | { c: 'classLevel'; n: number }
   | { c: 'sneaked' }
   | { c: 'artifactEntered' }
@@ -313,7 +319,7 @@ export interface ExtraCost {
 }
 
 export type Effect =
-  | { e: 'tmt'; action: string; n?: number; what?: Ref }
+  | { e: 'tmt'; action: string; n?: number; amount?:number; what?: Ref }
 
   | { e: 'airbend'; what: Ref }
   | { e: 'firebend'; n: Amt }
@@ -431,7 +437,7 @@ export type Effect =
   | { e: 'scry'; n: number }
   /** retrieve：刺探後放進墳墓場的牌若符合條件，改為放到手上（mvLeLife：法術力值不超過本回合獲得的生命） */
   | { e: 'surveil'; n: number; retrieve?: { filter?: Filter; mvLeLife?: boolean } }
-  | { e: 'dig'; n: Amt; take?: number; filter?: Filter; rest: 'bottom' | 'graveyard' | 'top'; to?: 'hand' | 'battlefield' }
+  | { e: 'dig'; optional?: boolean; randomBottom?: boolean; n: Amt; take?: number; filter?: Filter; rest: 'bottom' | 'graveyard' | 'top'; to?: 'hand' | 'battlefield' }
   | { e: 'searchLand'; to: 'battlefield' | 'hand'; tapped?: boolean; untapIfLands?: number; who?: Ref; may?: boolean }
   | { e: 'counter'; what: Ref }
   | { e: 'counterUnless'; what: Ref; pay: number }
@@ -483,7 +489,7 @@ export type Effect =
   | { e: 'costThen'; prompt: string; cost: ExtraCost; then: Effect[] }
   | { e: 'shuffleIn'; what: Ref }
   | { e: 'exileGy'; what: Ref }
-  | { e: 'landFromHand' }
+  | { e: 'landFromHand'; tapped?: boolean }
   | { e: 'cantGainLife'; who: Ref }
   /** 在鵬洛客上放置（或移除）忠誠指示物 */
   | { e: 'loyalty'; what: Ref; n: Amt }
@@ -497,7 +503,7 @@ export type Effect =
   | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
-  | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies' | 'otherPermanentDies' | 'combatDamageAny'
+  | 'classLevel' | 'otherLeaves' | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies' | 'otherPermanentDies' | 'combatDamageAny'
 
   | 'etb'
   | 'dies'
@@ -577,6 +583,10 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+  modesOncePerTurn?: boolean;
+  ownDiscard?: boolean;
+  eachDiscard?: boolean;
+  level?: number;
   kind: 'trigger';
   on: TriggerOn;
   /** 模式式觸發：先選擇模式再選目標（此時 effects 為空） */
@@ -865,17 +875,25 @@ export interface CardDef {
   zh?: string;
 }
 
-export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack';
+export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  objectVersion?: number;
   sneakTurn?: number;
   sneakFromGy?: boolean;
   classLevel?: number;
+  temporaryAbilities?: {turn:number;abilities:Ability[]};
+  colorProtections?: {turn:number;color:Color}[];
+  hexproofCounters?: number;
+  lastCounterKinds?: {plus: number; charge: number; stun: number; hexproof: number; finality: boolean; lore: number};
+  lastToughness?: number;
   countersBeforeLeaving?: number;
   classModesTurn?: {turn:number;modes:number[]};
   crewedBy?: number[];
   crewedTurn?: number;
   tmtLinked?: number;
+  raphaelPermissions?: {source:number;turn:number}[];
+  tmtLinkKey?: number;
   manaSpent?: number;
   colorProtection?: { color: Color; turn: number };
 
@@ -993,12 +1011,13 @@ export interface Player {
   permanentLeftThisTurn?: boolean;
   spellTypesThisTurn?: CardType[];
   artifactEnteredThisTurn?: boolean;
-  nextAffinity?: boolean;
+  nextAffinity?: number;
 
   firePool?: Mana[];
   bends?: string[];
   noHandLimit?: boolean;
   keepRedTurn?: number;
+  retainedRed?: Mana[];
   sacrificedThisTurn?: boolean;
   noExileCastUntil?: number;
   noExileCastBy?: PID;
@@ -1008,6 +1027,7 @@ export interface Player {
   name: string;
   deckName: string;
   life: number;
+  outside: number[];
   library: number[];
   hand: number[];
   graveyard: number[];
@@ -1064,9 +1084,12 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak';
+export type CastAlt = 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted';
 
 export interface StackItem {
+  sourceLinkKey?: number;
+  sneakPaid?:boolean;
+  targetVersions?: (number|undefined)[];
   sid: number;
   kind: 'spell' | 'trigger' | 'activated';
   controller: PID;
@@ -1087,6 +1110,7 @@ export interface StackItem {
   x?: number;
   /** 不能被反擊 */
   uncounterable?: boolean;
+  manaAbility?: boolean;
 }
 
 export interface EotEffect extends Grant {
@@ -1102,6 +1126,7 @@ export interface EotEffect extends Grant {
 
 /** 延遲觸發：本回合內，事件發生時觸發 */
 export interface DelayedTrigger {
+  alone?: boolean;
   persistent?: boolean;
   filter?: Filter;
 
@@ -1132,14 +1157,15 @@ export type Phase =
 
 export type GameEvent =
   | { type: 'tapped'; card: number; controller: PID }
-  | { type: 'leaves'; card: number; controller: PID }
+  | { type: 'classLevel'; card: number; controller: PID; level: number }
+  | { type: 'leaves'; card: number; controller: PID; counterKinds?: Card['lastCounterKinds'] }
   | { type: 'bend'; player: PID; element: 'air' | 'water' | 'earth' | 'fire' }
   | { type: 'search'; player: PID }
-  | { type: 'permanentDies'; card:number; controller:PID }
+  | { type: 'permanentDies'; card:number; controller:PID; counterKinds?:Card['lastCounterKinds'] }
   | {type:'combatDamageAny';source:number;controller:PID;amount:number}
 
   | { type: 'etb'; card: number; controller: PID }
-  | { type: 'dies'; card: number; controller: PID; power: number }
+  | { type: 'dies'; card: number; controller: PID; power: number; toughness?:number }
   | { type: 'attacks'; card: number }
   | { type: 'youAttack'; player: PID; attackers: number[] }
   | { type: 'blocks'; card: number }
@@ -1149,7 +1175,7 @@ export type GameEvent =
   | { type: 'lifeloss'; player: PID; amount: number }
   | { type: 'combatDamage'; source: number; player: PID; amount: number }
   | { type: 'damaged'; card: number; amount: number }
-  | { type: 'targeted'; card: number; by: PID; spell: boolean }
+  | { type: 'targeted'; card: number; by: PID; spell: boolean; stackSid?:number }
   | { type: 'sacrifice'; card: number; player: PID }
   | { type: 'drawSecond'; player: PID }
   | { type: 'turnedFaceUp'; card: number }
@@ -1158,10 +1184,12 @@ export type GameEvent =
   | { type: 'loyaltyPlaced'; card: number; controller: PID; amount: number }
   | { type: 'loyaltyActivated'; card: number; controller: PID; removed: number }
   | { type: 'noncombat'; player: PID; amount: number; sourceController: PID }
-  | { type: 'discard'; player: PID; card: number }
+  | { type: 'discard'; player: PID; card: number; batchPart?:boolean; batchSummary?:boolean }
   | { type: 'counterPlaced'; card: number; controller: PID; amount: number };
 
 export interface PendingTrigger {
+  sourceLinkKey?: number;
+  sneakPaid?:boolean;
   source: number;
   controller: PID;
   ability: TriggeredAbility;
@@ -1198,7 +1226,7 @@ export interface GameState {
 
   playerControl?: { controller: PID; player: PID; whole: boolean; starts: number; ends: number };
   extraTurns?: PID[];
-  extraCombat?: { player: PID; landOnly: boolean };
+  extraCombat?: { player: PID; landOnly: boolean; count?: number };
   landCombatOnly?: boolean;
 
   cards: Record<number, Card>;
@@ -1298,7 +1326,7 @@ export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
   | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean }
-  | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number };
+  | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number };
 
 export type Response =
   | PriorityAction

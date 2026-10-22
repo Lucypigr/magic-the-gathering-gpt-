@@ -1,5 +1,5 @@
 import { activatedAbilities, manaSources } from '../../engine/actions';
-import { cardName, isCreature, isLand, stats } from '../../engine/state';
+import { abilitiesOf, cardName, isCreature, isLand, stats } from '../../engine/state';
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import type { Card, CardDef, GameState, Keyword, PID } from '../../engine/types';
 import { ROMAN } from '../../engine/zones';
@@ -87,6 +87,7 @@ export function Permanent({ g, c, marks, onCard, onHover }: { g: GameState; c: C
           {c.counters !== 0 && <span className="b-counter">{c.counters > 0 ? `+${c.counters}` : c.counters}</span>}
           {lethal && <span className="b-dmg">-{c.damage}</span>}
           {(c.charge??0)>0 && <span className="b-counter" title="任務／充能指示物">充{c.charge}</span>}
+          {(c.hexproofCounters??0)>0 && <span className="b-counter">辟邪{c.hexproofCounters}</span>}
           {c.classLevel!==undefined && <span className="b-counter">等級{c.classLevel}</span>}
           {c.stun > 0 && <span className="b-stun" title={`暈眩指示物 ${c.stun}`}>暈{c.stun}</span>}
           {cr && c.sick && !st.kw.has('haste') && c.controller === g.active && <span className="b-sick" title="召喚失調：剛進場，這回合不能攻擊或橫置">💤</span>}
@@ -269,11 +270,12 @@ export function Avatar({
 /** 牌庫、墳墓場、放逐區 */
 export function Piles({ g, pid, onGraveyard, onHover }: { g: GameState; pid: PID; onGraveyard: () => void; onHover: (id: number | null) => void }) {
   const p = g.players[pid];
+  const libraryTop=pid===0&&g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.topCast))?g.cards[p.library[0]]:undefined;
   const top = p.graveyard.length ? g.cards[p.graveyard[p.graveyard.length - 1]] : null;
   return (
     <div className={`piles ${pid === 0 ? 'me' : 'opp'}`}>
-      <div className="pile" title={`牌庫 ${p.library.length} 張`}>
-        <CardBack size="xs" />
+      <div className="pile" title={`牌庫 ${p.library.length} 張`} onMouseEnter={()=>libraryTop&&onHover(libraryTop.id)} onMouseLeave={()=>onHover(null)}>
+        {libraryTop?<CardFace def={libraryTop.def} size="xs" />:<CardBack size="xs" />}
         <span className="pile-count">{p.library.length}</span>
       </div>
       <button className="pile pile-gy" onClick={onGraveyard} onMouseEnter={() => top && onHover(top.id)} onMouseLeave={() => onHover(null)} title={`墳墓場 ${p.graveyard.length} 張`}>

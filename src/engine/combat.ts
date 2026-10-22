@@ -1,4 +1,4 @@
-import { cardName, creaturesOf, hasStaticFlag, isCreature, log, other, show, stats } from './state';
+import { abilitiesSuppressed, cardName, creaturesOf, hasStaticFlag, isCreature, log, other, show, stats } from './state';
 import type { Card, GameState, PID } from './types';
 import { tapCard } from './zones';
 import { dealDamage, emit } from './zones';
@@ -26,8 +26,8 @@ export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
   if (bs.cantBlock) return false;
   const as = stats(g, attacker);
   if (as.kw.has('unblockable')) return false;
-  if(attacker.def.evadePowGte!==undefined&&bs.p>=attacker.def.evadePowGte)return false;
-  if(attacker.def.evadeGreaterPower&&bs.p>as.p)return false;
+  if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadePowGte!==undefined&&bs.p>=attacker.def.evadePowGte)return false;
+  if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadeGreaterPower&&bs.p>as.p)return false;
   if((blocker.def.id==='tok-tla-spirit'&&!attacker.def.subtypes?.includes('Spirit'))||(attacker.def.id==='tok-tla-spirit'&&!blocker.def.subtypes?.includes('Spirit')))return false;
   if (as.kw.has('flying') && !bs.kw.has('flying') && !bs.kw.has('reach')) return false;
   if (attacker.def.evadePowLte !== undefined && bs.p <= attacker.def.evadePowLte) return false;
@@ -90,7 +90,16 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
     used.add(b);
     valid.push([b, a]);
   }
-  for(const a of attackers(g).filter(c=>c.def.id==='raphael-ninja-destroyer')){if(valid.some(([,id])=>id===a.id))continue;const b=creaturesOf(g,pid).find(c=>canBlock(g,c,a));if(b){valid=valid.filter(([id])=>id!==b.id);valid.push([b.id,a.id]);}}
+  for(const a of attackers(g).filter(c=>c.def.id==='raphael-ninja-destroyer'&&!abilitiesSuppressed(g,c))){
+    const st=stats(g,a),minimum=st.kw.has('menace')?2:1;
+    if(st.onlyOneBlocker&&minimum>1)continue;
+    const assigned=valid.filter(([,id])=>id===a.id);
+    if(assigned.length>=minimum)continue;
+    const candidates=creaturesOf(g,pid).filter(c=>canBlock(g,c,a)).sort((x,y)=>Number(valid.some(([id])=>id===x.id))-Number(valid.some(([id])=>id===y.id)));
+    if(candidates.length<minimum)continue;
+    const chosen=[...new Set([...assigned.map(([id])=>id),...candidates.map(c=>c.id)])].slice(0,minimum);
+    valid=valid.filter(([id])=>!chosen.includes(id));valid.push(...chosen.map(id=>[id,a.id] as [number,number]));
+  }
   // 威懾：只被一個生物阻擋的攻擊無效
   const countFor = (a: number) => valid.filter(([, x]) => x === a).length;
   valid = valid.filter(([, a]) => !(stats(g, g.cards[a]).kw.has('menace') && countFor(a) < 2));
@@ -204,12 +213,16 @@ export function combatDamage(g: GameState, step: DamageStep): void {
     if (p > 0) hits.push({ src: b, card: a, n: p });
   }
   const damagedPlayers = new Set<number>();
+  const dealt=new Map<Card,number>();
   for (const h of hits) {
+    let actual=0;
     if (h.player !== undefined) {
-      dealDamage(g, h.src, h.src.controller, { p: h.player }, h.n, { combat: true });
+      actual=dealDamage(g, h.src, h.src.controller, { p: h.player }, h.n, { combat: true, batchCombat:true });
       damagedPlayers.add(h.src.controller * 2 + h.player);
-    } else if (h.card) dealDamage(g, h.src, h.src.controller, { c: h.card.id }, h.n, { combat: true });
+    } else if (h.card) actual=dealDamage(g, h.src, h.src.controller, { c: h.card.id }, h.n, { combat: true, batchCombat:true });
+    if(actual>0)dealt.set(h.src,(dealt.get(h.src)??0)+actual);
   }
+  for(const [src,amount] of dealt)emit(g,{type:'combatDamageAny',source:src.id,controller:src.controller,amount});
   // 每個傷害步驟中，「一個或更多對手被造成戰鬥傷害」只觸發一次
   for (const k of damagedPlayers) emit(g, { type: 'combatBatch', attacker: (k >> 1) as PID, damaged: (k & 1) as PID });
   g.version++;

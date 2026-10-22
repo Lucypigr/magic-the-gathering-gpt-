@@ -5,6 +5,7 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+  T({id:'tok-tmt-rat',name:'Rat',zh:'老鼠',types:['Creature'],subtypes:['Rat'],colors:['B'],power:1,toughness:1,text:''}),
   T({id:'tok-mutagen',name:'Mutagen',zh:'突變劑',types:['Artifact'],subtypes:['Mutagen'],text:'{1}，{T}，犧牲：在目標生物上放一個+1/+1指示物。限法術時機。',abilities:[{kind:'activated',cost:{mana:'{1}',tap:true,sacSelf:true},targets:[{kind:'creature'}],effects:[{e:'counters',what:'T0',n:1}],sorcery:true,label:'使用突變劑'}]}),
   T({id:'tok-tmt-turtle-spirit',name:'Ninja Turtle Spirit',zh:'忍者龜精靈',types:['Creature'],subtypes:['Ninja','Turtle','Spirit'],colors:['W'],power:1,toughness:1,text:''}),
   T({id:'tok-tmt-dinosaur',name:'Dinosaur Soldier',zh:'恐龍士兵',types:['Creature'],subtypes:['Dinosaur','Soldier'],colors:['W'],power:2,toughness:2,text:''}),
