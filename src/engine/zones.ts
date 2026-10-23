@@ -235,7 +235,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
       let mana=0;for(const source of finStatic(g,c.controller,'yunaKeywords'))if(g.active===c.controller&&(source.id===c.id||isCreature(c)&&c.def.types.includes('Enchantment')))mana+=2;
       for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===c.id&&abilitiesOf(g,eq).some(a=>a.kind==='static'&&a.fin==='paladinWard'))mana++;}
-      for(const id of g.battlefield){const a=g.cards[id];if(a.attachedTo===c.id)for(const ab of abilitiesOf(g,a))if(ab.kind==='static'&&((ab.msh==='equipWard1')||(ab.msh==='equipWard2')||(ab.frontier==='equipWard1')))mana+=ab.msh==='equipWard1'?1:2;}
+      for(const id of g.battlefield){const a=g.cards[id];if(a.attachedTo===c.id)for(const ab of abilitiesOf(g,a))if(ab.kind==='static'&&((ab.msh==='equipWard1')||(ab.msh==='equipWard2')||(ab.frontier==='equipWard1')))mana+=ab.msh==='equipWard2'?2:1;}
       mana+=g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='royalWard')).length;
       if(mana)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-45,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:mana}]}});
       if(c.def.fin?.wardPower)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-46,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'ecl',action:'wardLife',n:ev.stackSid,value:Math.max(0,stats(g,c).p)}]}});
@@ -847,7 +847,7 @@ export function dealDamage(
   if(src)for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===src.id&&abilitiesOf(g,eq).some(a=>a.kind==='static'&&a.msh==='doubleEquippedDamage'))n*=2;}
   const victim='p' in target?target.p:g.cards[target.c]?.controller;
   if(victim!==undefined && victim!==srcController)for(const id of g.battlefield){const s=g.cards[id];if(s.controller===srcController&&s.def.id==='fated-firepower'&&!abilitiesSuppressed(g,s))n+=s.charge??0;}
-  const kws = src ? (src.zone === 'battlefield' ? stats(g, src).kw : new Set(src.def.keywords ?? [])) : new Set();
+  const kws = src ? (src.zone === 'battlefield' ? stats(g, src).kw : new Set(cardDefinition(src).keywords ?? [])) : new Set();
   if(src?.def.subtypes?.some(s=>s==='Noble'||s==='Lesson')&&g.battlefield.some(id=>g.cards[id].controller===srcController&&g.cards[id].def.id==='lo-and-li-twin-tutors'&&!abilitiesSuppressed(g,g.cards[id])))kws.add('lifelink');
   if(src?.spellWitherTurn===g.turn)kws.add('wither');
   if(src?.mkmMarks?.judith===g.turn){kws.add('deathtouch');kws.add('lifelink');}
@@ -876,19 +876,21 @@ export function dealDamage(
       c.loyalty = (c.loyalty ?? 0) - n;
       if(opts.combat&&src)emit(g,{type:'combatPlayerOrWalker',source:src.id,controller:srcController,amount:n});
       log(g, `${srcName} 對 ${cardName(c)} 造成 ${n} 點傷害（忠誠 ${c.loyalty}）`, srcController, 'damage');
-      if (kws.has('lifelink')||(src?.def.types.some(t=>t==='Instant'||t==='Sorcery')&&frontierStatic(g,srcController,'spellLifelink').length)) gainLife(g, srcController, n);
+      if (kws.has('lifelink')||(src&&cardDefinition(src).types.some(t=>t==='Instant'||t==='Sorcery')&&frontierStatic(g,srcController,'spellLifelink').length)) gainLife(g, srcController, n);
       g.version++;
       return n;
     }
     if(src&&!opts.combat&&n===stats(g,c).t)emit(g,{type:'frontier',action:'exactNoncombat',card:src.id,player:srcController,other:c.id,amount:n});
-    if(src&&src.def.types.some(t=>t==='Instant'||t==='Sorcery')&&g.stack.some(s=>s.kind==='spell'&&s.cardId===src.id&&s.targets.filter(Boolean).length===1&&s.targets.some(t=>t&&'c'in t&&t.c===c.id)))emit(g,{type:'frontier',action:'imodaneHit',player:srcController,card:src.id,amount:n});
+    const resolving=src&&g.resolvingSpell?.card===src.id?g.resolvingSpell:g.stack.find(s=>s.kind==='spell'&&s.cardId===src?.id);
+    const spellTargets=resolving?.targets.filter((t):t is TargetRef=>!!t)??[];
+    if(src&&cardDefinition(src).types.some(t=>t==='Instant'||t==='Sorcery')&&spellTargets.length&&spellTargets.every(t=>'c'in t&&t.c===c.id))emit(g,{type:'frontier',action:'imodaneHit',player:srcController,card:src.id,amount:n});
     if(kws.has('wither'))putMinusCounters(g,c,n);else c.damage += n;
     if (opts.combat && src) src.dealtCombat = true;
     if (kws.has('deathtouch')) c.dtDamage = true;
     log(g, `${srcName} 對 ${cardName(c)} 造成 ${n} 點傷害`, srcController, 'damage');
     emit(g, { type: 'damaged', card: c.id, amount: n });
   }
-  if (kws.has('lifelink')||(src?.def.types.some(t=>t==='Instant'||t==='Sorcery')&&frontierStatic(g,srcController,'spellLifelink').length)) gainLife(g, srcController, n);
+  if (kws.has('lifelink')||(src&&cardDefinition(src).types.some(t=>t==='Instant'||t==='Sorcery')&&frontierStatic(g,srcController,'spellLifelink').length)) gainLife(g, srcController, n);
   if(src&&'p'in target&&matches(g,{sub:'Hero'},src,srcController)){const flags=mshFlags(g,srcController),key=opts.batchCombat?-10*(g.combatCount??1)-(g.phase==='combat_damage_first'?1:2):g.nextSid++;if(flags.heroDamageGroup!==key){flags.heroDamageGroup=key;emit(g,{type:'msh',action:'heroDamage',card:src.id,player:srcController,n});}}
   if(src)emit(g,{type:'fin',action:'sourceDamage',card:src.id,player:srcController,amount:n});
   return n;

@@ -11,7 +11,7 @@ import {
 } from "./state";
 import { manaValue, parseCost } from "./mana";
 import { runEffects, resolveRef, type Ctx } from "./effects";
-import { legalTargets } from "./targets";
+import { legalAuraHosts } from "./targets";
 import { choose, freeCast } from "./tla";
 import { makeEclTokenBatch } from "./ecl";
 import { mshEffect } from "./msh";
@@ -160,11 +160,7 @@ export function* woeEffect(
         };
       let attachTo: number | undefined;
       if (def.aura) {
-        const options = legalTargets(
-          g,
-          def.aura.target ?? { kind: "creature" },
-          pid,
-        ).flatMap((t) => ("c" in t ? [t.c] : []));
+        const options=legalAuraHosts(g,def,pid);
         if (!options.length) break;
         attachTo = (yield* pick(options, "選擇靈氣進場結附的永久物", 1))[0];
       }

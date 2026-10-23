@@ -1329,6 +1329,7 @@ export interface Show {
 }
 
 export interface GameState {
+  resolvingSpell?:{card:number;targets:(TargetRef|null)[]};
   frontierExtraUpkeeps?:number;frontierEntryBatch?:number;
   mshTokenGroup?:number;mshTapGroup?:number;mshEvent?:number;
   mkmCollecting?:number;

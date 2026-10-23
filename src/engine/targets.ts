@@ -5,7 +5,7 @@ import {finStatic} from './fin-support';
 import {eclStatic} from './ecl-support';
 import { colorsOf } from './mana';
 import { hasKw, isCreature, matches, other } from './state';
-import type { Card, GameState, PID, TargetRef, TargetSpec } from './types';
+import type { Card, GameState, PID, CardDef, TargetRef, TargetSpec } from './types';
 
 /** 辟邪：不能成為對手的咒語或異能的目標 */
 export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): boolean {
@@ -22,7 +22,7 @@ export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): bo
   return true;
 }
 
-export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, sourceId?: number): TargetRef[] {
+export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, sourceId?: number, attachment=false): TargetRef[] {
   controller=spec.targetController??controller;
   const out: TargetRef[] = [];
   const f = spec.filter;
@@ -42,7 +42,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       if (creatureOnly && !isCreature(c) && !(orPlaneswalker && c.def.types.includes('Planeswalker'))) continue;
       if (spec.notSelf && id === sourceId) continue;
       if (!matches(g, f, c, controller, sourceId)) continue;
-      if (!targetable(g, c, controller, sourceId)) continue;
+      if (!attachment && !targetable(g, c, controller, sourceId)) continue;
       out.push({ c: id });
     }
   };
@@ -157,4 +157,20 @@ export function validateTargets(
 /** 每個必選目標是否都至少有一個合法選項 */
 export function hasTargetsAvailable(g: GameState, specs: TargetSpec[], controller: PID, sourceId?: number): boolean {
   return specs.every((s) => s.optional || legalTargets(g, s, controller, sourceId).length > 0);
+}
+
+/** An Aura entering without being cast chooses a legal host; this does not target. */
+export function legalAuraHosts(g:GameState,def:CardDef,controller:PID):number[]{
+  const colors=colorsOf(def);
+  return legalTargets(g,def.aura?.target??{kind:'creature'},controller,undefined,true).flatMap(t=>{
+    if(!('c'in t))return [];
+    const c=g.cards[t.c];if(c.zone!=='battlefield')return [];
+    if(hasKw(g,c,'protection_colors')&&colors.length)return [];
+    if(hasKw(g,c,'protection_opponent')&&c.controller!==controller)return [];
+    if(c.colorProtection?.turn===g.turn&&colors.includes(c.colorProtection.color))return [];
+    if(c.colorProtections?.some(p=>p.turn===g.turn&&colors.includes(p.color)))return [];
+    if(c.def.id==='niv-mizzet-guildpact'&&colors.length>1)return [];
+    if(frontierStatic(g,c.controller,'coyoteProtection').some(s=>s.id===c.id)&&def.subtypes?.includes('Coyote'))return [];
+    return [c.id];
+  });
 }

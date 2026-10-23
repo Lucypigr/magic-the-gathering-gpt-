@@ -280,8 +280,13 @@ export function* settle(g: GameState): SubFlow {
 // 堆疊結算
 // ------------------------------------------------------------
 export function* resolveTop(g: GameState): SubFlow {
+  const previous=g.resolvingSpell;
+  try {yield* resolveTopItem(g);}finally {g.resolvingSpell=previous;}
+}
+function* resolveTopItem(g: GameState): SubFlow {
   const item = g.stack.pop();
   if (!item) return;
+  g.resolvingSpell=item.kind==='spell'?{card:item.cardId,targets:item.targets}:undefined;
   g.version++;
   const src = g.cards[item.cardId];
   const specs = item.targetSpecs;
