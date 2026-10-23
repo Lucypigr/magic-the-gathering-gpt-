@@ -1,3 +1,4 @@
+import {completeFrontierTokens} from './sets/frontier-tokens';
 import type { CardDef } from '../engine/types';
 import { GEN_TOKENS } from './sets/gen/tokens';
 
@@ -691,3 +692,5 @@ export const TOKENS: CardDef[] = [
   }),
   ...GEN_TOKENS,
 ];
+
+completeFrontierTokens(TOKENS);

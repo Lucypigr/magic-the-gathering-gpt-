@@ -1,3 +1,4 @@
+import {frontierBaseStats,frontierStats,frontierCondition,enchanted} from './frontier-support';
 import {mshApplyStats,mshBaseStats,mshCondition} from './msh-support';
 import {mkmApplyStats,mkmBaseStats,mkmCondition,mkmStatic} from './mkm-support';
 import {finApplyStats,finBaseStats,finCondition} from './fin-support';
@@ -222,7 +223,8 @@ export function decisionController(g:GameState,player:PID):PID {
 }
 
 export const isType = (def: CardDef, t: CardType) => def.types.includes(t);
-export const isCreature = (c: Card) => c.def.types.includes('Creature');
+export const cardDefinition=(c:Card)=>c.zone==='stack'&&c.castFace?c.castFace:c.def;
+export const isCreature = (c: Card) => cardDefinition(c).types.includes('Creature');
 export const isLand = (c: Card) => c.def.types.includes('Land');
 export const isPermanentDef = (def: CardDef) => !def.types.includes('Instant') && !def.types.includes('Sorcery');
 
@@ -291,7 +293,9 @@ export function hasSupertype(g: GameState, c: Card, type: 'Basic' | 'Legendary')
 }
 
 export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
-  const d = c.def;
+  const original = cardDefinition(c);
+  const typed=c.zone==='battlefield'&&c.def.id==='goddric-cloaked-reveler'&&!abilitiesSuppressed(g,c)&&(g.players[c.controller].nonlandEtbThisTurn??0)>=2?{...original,subtypes:['Dragon']}:original;
+  const d=c.zone==='battlefield'&&isCreature(c)&&c.owner!==c.controller&&g.battlefield.some(id=>g.cards[id].controller===c.controller&&g.cards[id].def.id==='laughing-jasper-flint'&&!abilitiesSuppressed(g,g.cards[id]))?{...typed,subtypes:[...(typed.subtypes??[]),'Mercenary']}:typed;
   const lost = abilitiesSuppressed(g, c);
   const st: Stats = {
     p: d.power ?? 0,
@@ -300,6 +304,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     cantAttack: false,
     cantBlock: false,
   };
+  frontierBaseStats(g,c,st);
   mshBaseStats(g,c,st);
   if (c.zone !== 'battlefield') return st;
   if(c.noUntapBy!==undefined && g.cards[c.noUntapBy]?.zone==='battlefield' && g.cards[c.noUntapBy].controller===c.noUntapController) st.noUntap=true;
@@ -399,6 +404,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   finApplyStats(g,c,st);
   mkmApplyStats(g,c,st);
   mshApplyStats(g,c,st);
+  frontierStats(g,c,st);
   return st;
 }
 
@@ -414,13 +420,24 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;
+  const outlaw=c.def.subtypes?.some(t=>['Assassin','Mercenary','Pirate','Rogue','Warlock'].includes(t))||c.zone==='battlefield'&&c.owner!==c.controller&&g.battlefield.some(id=>g.cards[id].controller===c.controller&&g.cards[id].def.id==='laughing-jasper-flint'&&!abilitiesSuppressed(g,g.cards[id]));
+  if(f.outlaw&&!outlaw||f.notOutlaw&&outlaw)return false;
+  if(f.enchanted!==undefined&&enchanted(g,c)!==f.enchanted)return false;
+  if(f.alsoType&&!c.def.types.includes(f.alsoType))return false;
+  if(f.frontierAdventure&&!c.def.adventure)return false;
+  if(f.frontierSpellOrAdventure&&!c.def.adventure&&!c.def.types.some(t=>t==='Instant'||t==='Sorcery'))return false;
+  if(f.frontierNoTokenName&&g.battlefield.some(id=>g.cards[id].controller===pov&&g.cards[id].token&&g.cards[id].def.name===c.def.name))return false;
+  if(f.frontierUniqueName&&g.battlefield.some(id=>id!==c.id&&g.cards[id].controller===pov&&g.cards[id].def.name===c.def.name))return false;
+  if(f.attachedToSource&&c.attachedTo!==sourceId)return false;
   if(f.mshWorthy&&(!hasSupertype(g,c,'Legendary')||c.def.subtypes?.includes('Villain')||!colorsOf(c.def).some(col=>col==='R'||col==='W')))return false;
   if(f.suspected!==undefined&&!!c.suspected!==f.suspected)return false;
   if(f.faceDown!==undefined&&!!c.hidden!==f.faceDown)return false;
   if(f.dealtDamage!==undefined&&(c.mkmMarks?.dealtDamage===g.turn)!==f.dealtDamage)return false;
   if(f.gyThisTurn&&c.gyTurn!==g.turn)return false;
   if(f.ids&&!f.ids.includes(c.id))return false;
-  const d = c.def;
+  const original = cardDefinition(c);
+  const typed=c.zone==='battlefield'&&c.def.id==='goddric-cloaked-reveler'&&!abilitiesSuppressed(g,c)&&(g.players[c.controller].nonlandEtbThisTurn??0)>=2?{...original,subtypes:['Dragon']}:original;
+  const d=c.zone==='battlefield'&&isCreature(c)&&c.owner!==c.controller&&g.battlefield.some(id=>g.cards[id].controller===c.controller&&g.cards[id].def.id==='laughing-jasper-flint'&&!abilitiesSuppressed(g,g.cards[id]))?{...typed,subtypes:[...(typed.subtypes??[]),'Mercenary']}:typed;
   if (f.type && !asArr(f.type).some((t) => d.types.includes(t))) return false;
   if (f.nonType && asArr(f.nonType).some((t) => d.types.includes(t))) return false;
   if (f.ctrl) {
@@ -512,6 +529,7 @@ export function checkCond(
   const opp = g.players[other(controller)];
   switch (cond.c) {
     case 'msh':return mshCondition(g,cond,controller,sourceId??-1);
+    case 'frontier':return frontierCondition(g,cond,controller,sourceId??-1);
     case 'mkm':return mkmCondition(g,cond,controller,sourceId??-1,ev);
     case 'and':return cond.conds.every(c=>checkCond(g,c,controller,sourceId,targets,ev));
     case 'fin':return finCondition(g,cond,controller,sourceId??-1,ev);

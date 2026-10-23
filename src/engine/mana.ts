@@ -120,6 +120,7 @@ export interface ManaSource {
   /** 額外的一點法術力（來自某個永久物的加成，不會橫置任何東西；排在最後才用） */
   extra?: boolean;
   extraRequires?:{id:number;mana:Mana};
+  matchManaOf?:number;
 }
 
 /**
@@ -170,7 +171,7 @@ function findPaymentBase(cost: ManaCost, sources: ManaSource[]): { id: number; m
   const used = new Set<number>();
   const assign: { id: number; mana: Mana }[] = [];
 
-  const compatible=(s:ManaSource,m:Mana)=>{const parent=s.extraRequires,chosen=parent?assign.find(p=>p.id===parent.id):undefined;if(chosen&&chosen.mana!==parent!.mana)return false;return !assign.some(p=>{const req=sources.find(x=>x.id===p.id)?.extraRequires;return req?.id===s.id&&req.mana!==m;});};
+  const compatible=(s:ManaSource,m:Mana)=>{if(s.matchManaOf!==undefined){const p=assign.find(p=>p.id===s.matchManaOf);if(p&&p.mana!==m)return false;if(assign.some(p=>sources.find(x=>x.id===p.id)?.matchManaOf===s.matchManaOf&&p.mana!==m))return false;}if(assign.some(p=>sources.find(x=>x.id===p.id)?.matchManaOf===s.id&&p.mana!==m))return false;const parent=s.extraRequires,chosen=parent?assign.find(p=>p.id===parent.id):undefined;if(chosen&&chosen.mana!==parent!.mana)return false;return !assign.some(p=>{const req=sources.find(x=>x.id===p.id)?.extraRequires;return req?.id===s.id&&req.mana!==m;});};
 
   // 過濾地變出顏色時，要多用一個來源支付 {1}
   let extra = 0;

@@ -1,10 +1,11 @@
+import {commitCrime,refreshFrontierCopies} from './otj-support';
 import {mshStatic} from './msh-support';
 import {mkmStatic} from './mkm-support';
 import {refreshFinLands} from './fin-support';
 import {colorsOf} from './mana';
 import {resolveEclEntries} from './ecl';
 import {beholdOptions,canReceiveCounters,counterKinds,vividColors} from './ecl-support';
-import { abilitiesFor, canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
+import { abilitiesFor, frontierStackChoices,castDef,canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
 import {
   attackCandidates,
   blockCandidates,
@@ -40,6 +41,8 @@ import { addLore, discard, drawCards, emit, enterBattlefield, enterBattlefieldBa
 export function checkSBA(g: GameState): void {
   for (let iter = 0; iter < 30; iter++) {
     let changed = false;
+    refreshFrontierCopies(g);
+    for(const host of g.battlefield){for(const pid of [0,1]as PID[]){const roles=g.battlefield.filter(id=>g.cards[id].attachedTo===host&&g.cards[id].controller===pid&&g.cards[id].def.subtypes?.includes('Role'));if(roles.length>1){for(const id of roles.slice(0,-1))moveCard(g,g.cards[id],'graveyard');changed=true;}}}
     const losers = g.players.filter((p) => p.life <= 0 || p.drewFromEmpty || (p.poison??0)>=10);
     if (losers.length) {
       for (const p of losers) p.lost = true;
@@ -192,6 +195,7 @@ function* flushTriggers(g: GameState): SubFlow {
     if(ab.mshDynamic==='lifeTargets'||ab.mshDynamic==='equipment'){const max=ab.mshDynamic==='lifeTargets'?(t.ev.type==='lifegain'?t.ev.amount:0):g.battlefield.filter(id=>g.cards[id].controller===t.controller&&g.cards[id].def.subtypes?.includes('Equipment')).length;const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};const n=r.type==='modes'?Math.min(max,r.picks[0]??0):0;ab={...ab,targets:Array.from({length:n},()=>ab.mshDynamic==='lifeTargets'?{kind:'creature' as const,filter:{ctrl:'you' as const}}:{kind:'permanent' as const,filter:{ctrl:'you' as const,sub:'Equipment'}})};}
     if(ab.finDynamic){const options=g.players[t.controller].graveyard.filter(id=>isCreature(g.cards[id]));const max=options.length;const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇返回生物目標數量（總法力值至多6）',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};const n=r.type==='modes'?Math.min(max,r.picks[0]??0):0;ab={...ab,targets:Array.from({length:n},()=>({kind:'gyCard' as const,filter:{ctrl:'you' as const,type:'Creature' as const},totalMvMax:6}))};}
     if(ab.variableVividTargets){const n=vividColors(g,t.controller).length;const r:Response=yield {type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:n+1},(_,i)=>String(i)),count:1,purpose:'count'};const k=r.type==='modes'?r.picks[0]??0:0;ab={...ab,targets:Array.from({length:Math.min(k,n)},()=>({kind:'creature' as const,filter:{ctrl:'you' as const}}))};}
+    if(ab.frontierDynamic){const max=ab.frontierDynamic==='players'?2:Math.min(src.castX??0,g.battlefield.filter(id=>isCreature(g.cards[id])).length);const answer:Response=yield{type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};const n=answer.type==='modes'?answer.picks[0]??0:0;ab={...ab,targets:Array.from({length:n},()=>({kind:ab.frontierDynamic==='players'?'player' as const:'creature' as const}))};}
     const specs = (ab.targets ?? []).map(s=>s.filter?.chosenTribe?{...s,filter:{...s.filter,chosenTribe:false,sub:t.sourceType??src.eclType??''}}:s).map(s=>s.filter?.crewedSourceThisTurn?{...s,filter:{...s.filter,crewedSourceThisTurn:false,ids:(src.crewedBy??[]).slice()}}:s);
     let targets: (TargetRef | null)[] = [];
     if (specs.length) {
@@ -236,6 +240,7 @@ function* flushTriggers(g: GameState): SubFlow {
       sourceLinkKey:t.sourceLinkKey,
       sneakPaid:t.sneakPaid,
     });
+    commitCrime(g,t.controller,t.source,targets,g.stack[g.stack.length-1].sid);
     if(t.ev.type==='attacks' && t.ev.card===t.source) {
       for(const id of g.battlefield){const asc=g.cards[id];if(asc.controller!==t.controller||asc.def.id!=='firebender-ascension')continue;asc.charge=(asc.charge??0)+1;if(asc.charge<4)continue;
         const r:Response=yield {type:'yesno',player:t.controller,prompt:'複製攻擊觸發異能？'};
@@ -280,6 +285,7 @@ export function* resolveTop(g: GameState): SubFlow {
   g.version++;
   const src = g.cards[item.cardId];
   const specs = item.targetSpecs;
+  if(item.frontierStackSids?.length&&item.frontierStackSids.every(id=>!g.stack.some(s=>s.sid===id))&&!item.targets.some(Boolean)){if(item.kind==='spell'&&src.zone==='stack')moveCard(g,src,'graveyard');return;}
   const hadTargets = item.targets.some((t) => !!t);
   const legal = item.targets.map((t, i) =>
     t && specs[i] && (item.targetVersions?.[i]===undefined || !('c' in t) || item.targetVersions[i]===(g.cards[t.c]?.objectVersion??0)) && isLegalTarget(g, specs[i], t, item.controller, item.cardId) ? t : null,
@@ -299,6 +305,7 @@ export function* resolveTop(g: GameState): SubFlow {
     sourceLinkKey:item.sourceLinkKey,
     sneakPaid:item.sneakPaid,
     x: item.x,
+    distribution:item.distribution,
     alt: item.alt,
   };
   if (item.kind === 'spell') {
@@ -312,11 +319,12 @@ export function* resolveTop(g: GameState): SubFlow {
       } else if (src.zone === 'stack') {
         moveCard(g, src, def.mkm?.split?'graveyard':'exile');
         if (item.alt === 'adventure'&&!def.mkm?.split) {
-          src.onAdventure = true;
+          src.onAdventure = true;if(src.frontierMarks?.lilahPlot){src.plottedTurn=g.turn;delete src.frontierMarks.lilahPlot;}
           log(g, `${cardName(src)} 踏上冒險（之後可以從放逐區施放）`, item.controller);
         }
       }
     } else if (isPermanentDef(def)) {
+      if(item.x!==undefined)src.castX=item.x;
       if (def.aura) {
         const t = legal[0];
         if (!t || !('c' in t)) {
@@ -325,6 +333,7 @@ export function* resolveTop(g: GameState): SubFlow {
         }
         enterBattlefield(g, src, item.controller);
         src.attachedTo = t.c;
+        emit(g,{type:'frontier',action:'attached',card:src.id,player:item.controller,other:t.c,amount:0});
         // 讓永久物變成生物的光環
         const anim = def.aura.grant.animate;
         const host = g.cards[t.c];
@@ -361,6 +370,7 @@ export function* resolveTop(g: GameState): SubFlow {
       }
     } else {
       yield* runEffects(g, ctx, item.effects);
+      if(src.zone==='stack'&&src.frontierMarks?.lilahPlot){moveCard(g,src,'exile');src.plottedTurn=g.turn;delete src.frontierMarks.lilahPlot;}
       if(src.zone==='stack'){const dream=src.castOrigin==='hand'&&g.battlefield.some(id=>g.cards[id].controller===item.controller&&g.cards[id].def.id==='goliath-daydreamer'&&abilitiesOf(g,g.cards[id]).length);moveCard(g,src,dream||src.finExileOnResolve?'exile':'graveyard');src.finExileOnResolve=undefined;if(dream)src.eclDream=true;}
     }
   } else {
@@ -394,7 +404,7 @@ export function* priorityStep(g: GameState): SubFlow {
             pl.pool=ozai ? [...(pl.pool??[]),...(pl.firePool??[])].map(()=> 'R' as const) : [];
             if(ozai) pl.firePool=[];
             pl.poolNoncreature = [];pl.mshRestricted=[];pl.mkmGossip=[];
-            pl.poolLesson=[];
+            pl.poolLesson=[];pl.frontierMana=[];
           }
           return;
         }
@@ -408,6 +418,11 @@ export function* priorityStep(g: GameState): SubFlow {
     } else {
       if(r.type==='cast'){
         const card=g.cards[r.card];
+        const view=card?castDef(card.def,r.alt):undefined;
+        const stackKinds=view?.spell?.modes?.[r.mode??0]?.frontierStackTargets??(view?.frontierStack?[view.frontierStack]:[]);
+        if(stackKinds.length&&!r.stackTargetSids){r.stackTargetSids=r.stackTargetSid!==undefined?[r.stackTargetSid]:[];for(let i=r.stackTargetSids.length;i<stackKinds.length;i++){const items=frontierStackChoices(g,p,stackKinds[i]);if(!items.length)break;const answer:Response=yield{type:'mode',player:p,prompt:'選擇堆疊上的目標',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSids.push(items[answer.type==='modes'?answer.picks[0]??0:0].sid);}}
+        const total=view?.frontier?.distribute==='X'?r.x??0:view?.frontier?.distribute;
+        if(total!==undefined&&!r.distribution){let left=total;r.distribution=[];const n=r.targets.filter(Boolean).length;for(let i=0;i<n;i++){const max=left-(n-i-1);let amount=left;if(i<n-1&&max>=1){const answer:Response=yield{type:'mode',player:p,prompt:'分給第'+(i+1)+'個目標的指示物',options:Array.from({length:max},(_,j)=>String(j+1)),count:1,purpose:'count'};amount=1+(answer.type==='modes'?answer.picks[0]??0:0);}r.distribution.push(amount);left-=amount;}}
         if(card?.def.fin?.stackTarget&&r.stackTargetSid===undefined){const items=finStackChoices(g,p,false);const rr:Response=yield{type:'mode',player:p,prompt:'選擇要反擊的咒語或異能',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSid=items[rr.type==='modes'?rr.picks[0]??0:0]?.sid;}
         if(card?.def.fin?.returnLandCost&&r.mode===1&&r.returnLand===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&g.cards[id].def.types.includes('Land'));const rr:Response=yield{type:'choose',player:p,prompt:'收回一個地作額外費用',options,min:1,max:1,purpose:'dig'};r.returnLand=rr.type==='choose'?rr.ids[0]:undefined;}
         const c=g.cards[r.card],req=c?.def.ecl?.behold;
@@ -559,6 +574,7 @@ function* combatPhase(g: GameState): SubFlow {
   emit(g,{type:'fin',action:'endCombat',card:-1,player:a,amount:0});
   yield* priorityStep(g);
   endCombat(g);
+  while((g.frontierExtraUpkeeps??0)>0){g.frontierExtraUpkeeps!--;g.phase='upkeep';emit(g,{type:'step',step:'upkeep',player:a});yield*priorityStep(g);}
 }
 
 function* turn(g: GameState): SubFlow {
@@ -591,7 +607,7 @@ function* turn(g: GameState): SubFlow {
     p.extraLandsThisTurn = 0;
     p.loyaltyActivatedThisTurn = false;
     p.mountainBonus = false;
-    p.pool = [];p.mkmGossip=[];p.mshRestricted=[];
+    p.pool = [];p.frontierMana=[];p.mkmGossip=[];p.mshRestricted=[];
     const lightning=p.finFlags?.lightningUntil;
     p.finFlags=lightning&&lightning!==a+1?{lightningUntil:lightning}:{};
     p.retainedRed=[];p.eclRestrictedMana=[];p.eclEntries=[];p.eclCounterPlaced=false;p.eclAttackedMerfolk=0;p.eclMaralenUsed=[];if(p.eclPreventDamageUntil===a)p.eclPreventDamageUntil=undefined;

@@ -1,6 +1,6 @@
 import {beholdOptions,canReceiveCounters} from './ecl-support';
 // Shared choices for TLA cards that cannot be expressed as a fixed effect list.
-import { canPayCost, castDuringResolution, castTargetSpecs, payCost, spellEffects } from './actions';
+import { canPayCost, maxXFor, frontierStackChoices,castDef,castDuringResolution, castTargetSpecs, payCost, spellEffects } from './actions';
 import { resolveRef, runEffects, type Ctx } from './effects';
 import { manaValue, parseCost } from './mana';
 import { cardName, isCreature, isLand, matches, other, shuffleArr, stats } from './state';
@@ -45,35 +45,42 @@ export function* target(g: GameState, ctx: Ctx, spec: TargetSpec, effects: Effec
   if (r.type === 'targets' && !validateTargets(g, [spec], r.targets, ctx.controller, ctx.source))
     yield* runEffects(g, { ...ctx, targets: r.targets }, effects);
 }
-export function* freeCast(g: GameState, ctx: Ctx, c: Card): SubFlow<boolean> {
+export function* freeCast(g: GameState, ctx: Ctx, c: Card, free=true,alt?:import('./types').CastAlt): SubFlow<boolean> {
+  const view=castDef(c.def,alt);
+  const extra:Partial<Extract<import('./types').PriorityAction,{type:'cast'}>>={alt};
   let mode:number|undefined;
-  if(c.def.spell?.modes){
-    const modes=c.def.spell.modes;
+  if(view.spell?.modes){
+    const modes=view.spell.modes;
     const legal=modes.map((_,i)=>i).filter(i=>hasTargetsAvailable(g,modes[i].targets??[],ctx.controller,c.id));
     if(!legal.length)return false;
     const r:Response=yield {type:'mode',player:ctx.controller,source:c.id,prompt:'選擇施放模式',options:legal.map(i=>modes[i].text),count:1,purpose:'trigger'};
     mode=legal[r.type==='modes'?(r.picks[0]??0):0];
   }
-  if(c.def.ecl?.variableTargets){const count=g.battlefield.filter(id=>isCreature(g.cards[id])).length;const r:Response=yield {type:'mode',player:ctx.controller,prompt:'選擇目標生物數量',options:Array.from({length:count+1},(_,i)=>String(i)),count:1,purpose:'count'};mode=r.type==='modes'?r.picks[0]??0:0;}
-  const specs = castTargetSpecs(c.def,mode);
+  if(!free&&parseCost(view.cost).x){const max=maxXFor(g,ctx.controller,c,mode,alt)??0;const r:Response=yield{type:'mode',player:ctx.controller,prompt:'選擇X',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};extra.x=r.type==='modes'?r.picks[0]??0:0;}
+  if(view.ecl?.variableTargets){const cap=view.frontier?.distribute==='X'?extra.x??0:view.frontier?.distribute??g.battlefield.length;const count=Math.min(cap,g.battlefield.filter(id=>isCreature(g.cards[id])&&(view.frontier?.variableTargets!=='own'||g.cards[id].controller===ctx.controller)).length);const r:Response=yield {type:'mode',player:ctx.controller,prompt:'選擇目標生物數量',options:Array.from({length:count+1},(_,i)=>String(i)),count:1,purpose:'count'};mode=r.type==='modes'?r.picks[0]??0:0;}
+  const specs = castTargetSpecs(view,mode);
   let targets: Ctx['targets'] = [];
   if (specs.length) {
-    const r: Response = yield {type:'targets',player:ctx.controller,source:c.id,specs,text:c.def.text,effects:spellEffects(c.def,mode)};
+    const r: Response = yield {type:'targets',player:ctx.controller,source:c.id,specs,text:view.text,effects:spellEffects(view,mode)};
     if (r.type !== 'targets' || validateTargets(g, specs, r.targets, ctx.controller, c.id)) return false;
     targets = r.targets;
   }
+  const total=view.frontier?.distribute==='X'?extra.x??0:view.frontier?.distribute;
+  if(total!==undefined){let left=total;extra.distribution=[];for(let i=0;i<targets.length;i++){const max=left-(targets.length-i-1);let n=left;if(i<targets.length-1&&max>0){const r:Response=yield{type:'mode',player:ctx.controller,prompt:'分配指示物',options:Array.from({length:max},(_,j)=>String(j+1)),count:1,purpose:'count'};n=1+(r.type==='modes'?r.picks[0]??0:0);}extra.distribution.push(n);left-=n;}}
+  const stackKinds=view.spell?.modes?.[mode??0]?.frontierStackTargets??(view.frontierStack?[view.frontierStack]:[]);
+  if(stackKinds.length){extra.stackTargetSids=[];for(const kind of stackKinds){const items=frontierStackChoices(g,ctx.controller,kind);if(!items.length)return false;const r:Response=yield{type:'mode',player:ctx.controller,prompt:'選擇堆疊目標',options:items.map(s=>s.text),count:1,purpose:'trigger'};extra.stackTargetSids.push(items[r.type==='modes'?r.picks[0]??0:0].sid);}}
   let sac:number|undefined;
-  const sacFilter=c.def.spell?.modes?.[mode??0]?.sac??c.def.addCost?.sac;
+  const sacFilter=view.spell?.modes?.[mode??0]?.sac??view.addCost?.sac;
   if(sacFilter){
     const options=g.battlefield.filter(id=>g.cards[id].controller===ctx.controller&&matches(g,sacFilter,g.cards[id],ctx.controller,c.id));
     [sac]=yield* choose(g,ctx.controller,'選擇額外犧牲費用',options,1);
     if(sac===undefined)return false;
   }
-  const extra:Partial<Extract<import('./types').PriorityAction,{type:'cast'}>>={};
-  const blight=c.def.spell?.modes?.[mode??0]?.blight??c.def.addCost?.blight;
+
+  const blight=view.spell?.modes?.[mode??0]?.blight??view.addCost?.blight;
   if(blight){const options=g.battlefield.filter(id=>g.cards[id].controller===ctx.controller&&isCreature(g.cards[id])&&canReceiveCounters(g,g.cards[id]));[extra.blightCard]=yield* choose(g,ctx.controller,'選擇枯萎費用',options,1);if(extra.blightCard===undefined)return false;}
-  const req=c.def.ecl?.behold;if(req&&!req.flashbackOnly){let pick=true;if(req.optional||req.tax){const r:Response=yield {type:'yesno',player:ctx.controller,prompt:'支付Behold額外費用？'};pick=r.type==='yesno'&&r.yes;}extra.beheld=pick?yield* choose(g,ctx.controller,'選擇Behold物件',beholdOptions(g,ctx.controller,c),req.n,req.n):[];}
-  return castDuringResolution(g, ctx.controller, c.id, targets, true,mode,sac,extra) === null;
+  const req=view.ecl?.behold;if(req&&!req.flashbackOnly){let pick=true;if(req.optional||req.tax){const r:Response=yield {type:'yesno',player:ctx.controller,prompt:'支付Behold額外費用？'};pick=r.type==='yesno'&&r.yes;}extra.beheld=pick?yield* choose(g,ctx.controller,'選擇Behold物件',beholdOptions(g,ctx.controller,c),req.n,req.n):[];}
+  return castDuringResolution(g, ctx.controller, c.id, targets, free,mode,sac,extra) === null;
 }
 function waterMax(g: GameState, pid: PID, cap = 30): number {
   let n = 0;

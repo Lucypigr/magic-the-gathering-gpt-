@@ -1,0 +1,93 @@
+[
+  {
+    "id": "tok-g-knight-22-w-vigilance",
+    "name": "Knight",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Knight"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ],
+    "text": "警戒"
+  },
+  {
+    "id": "tok-g-sheep-11-w",
+    "name": "Sheep",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Sheep"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-spirit-22-w-flying",
+    "name": "Spirit",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-zombie-rogue-22-bu",
+    "name": "Zombie Rogue",
+    "colors": [
+      "U",
+      "B"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Rogue"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "text": ""
+  },
+  {
+    "id": "tok-g-angel-33-w-flying",
+    "name": "Angel",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Angel"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  }
+]

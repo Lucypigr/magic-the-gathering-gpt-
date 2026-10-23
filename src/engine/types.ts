@@ -54,6 +54,7 @@ export type Keyword =
 
 /** 篩選條件：用來描述「哪些物件」符合。ctrl 以能力控制者的視角判斷。 */
 export interface Filter {
+  outlaw?:boolean;notOutlaw?:boolean;enchanted?:boolean;alsoType?:CardType;frontierAdventure?:boolean;frontierSpellOrAdventure?:boolean;frontierNoTokenName?:boolean;frontierUniqueName?:boolean;attachedToSource?:boolean;
   mshWorthy?:boolean;
   suspected?:boolean;faceDown?:boolean;dealtDamage?:boolean;gyThisTurn?:boolean;
   name?:string; nonNames?:string[];
@@ -104,9 +105,10 @@ export interface Filter {
   owner?: 'you'|'opp';
 }
 
-export type TargetKind = 'permanentOrPlayer' | 'creatureOrGy' | 'spellOrPermanent' | 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
+export type TargetKind = 'exileCard' | 'permanentOrPlayer' | 'creatureOrGy' | 'spellOrPermanent' | 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
 
 export interface TargetSpec {
+  targetController?:PID;differentFrom?:number;
   sameGraveyardAs?:number;totalMvMax?:number;
   sharesTypeWith?:number;
   allowRepeat?: boolean;
@@ -131,9 +133,7 @@ export type Ref =
   | 'evAttackers'
   /** 此效果中派出的所有衍生物 */
   | 'allCreated'
-  | 'T0'
-  | 'T1'
-  | 'T2'
+  | `T${number}`
   | 'self'
   | 'you'
   | 'opp'
@@ -148,6 +148,7 @@ export type Ref =
   | { all: Filter };
 
 export type Amt =
+  | {frontier:string}
   | {msh:string}
   | {mkm:string}
   | { fin:string }
@@ -216,6 +217,7 @@ export interface Grant {
 }
 
 export type Cond =
+  | {c:'frontier';action:string}
   | {c:'msh';action:string;n?:number}
   | {c:'mkm';action:string;n?:number}
   | {c:'fin';action:string;n?:number}
@@ -336,6 +338,7 @@ export interface ExtraCost {
 }
 
 export type Effect =
+  | {e:'frontier';action:string;what?:Ref;n?:number}
   | {e:'msh';action:string;n?:number;what?:Ref;ids?:number[]}
   | {e:'mkm';action:string;n?:number;what?:Ref}
   | {e:'fin';action:string;n?:number;what?:Ref;filter?:Filter;value?:number}
@@ -524,6 +527,7 @@ export type Effect =
   | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
+  | 'frontierEvent'
   | 'mshEvent'
   | 'mkmEvent'
   | 'finEvent'
@@ -607,6 +611,7 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+  frontierDynamic?:'players'|'creaturesX';frontierPlayer?:PID;frontierEvent?:string;
   mshEvent?:string;mshDynamic?:'lifeTargets'|'equipment'|'wrecking';
   mkmDynamic?:'vindicator'|'maze'|'falcon'|'distribute2'|'distribute3';
   mkmEvent?:string;
@@ -659,6 +664,8 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+  frontierOwnTurnDiscount?:number;frontierRemoveLoot?:number;
+  frontierMode?:number;
   mshStack?:'creature'|'artifact';mshBoast?:boolean;
   evidence?:number;
   xMana?:number; xMin?:number; finStack?:'ownAbility';
@@ -700,6 +707,7 @@ export interface ActivatedAbility {
 }
 
 export interface StaticAbility {
+  frontier?:string;
   msh?:string;
   mkm?:string;
   fin?:string;
@@ -767,6 +775,7 @@ export interface StaticAbility {
 export type Ability = TriggeredAbility | ActivatedAbility | StaticAbility;
 
 export interface Mode {
+  frontierChoices?:number;frontierStackTargets?:('copy'|'retarget'|'ownAbility')[];
   blight?:number;
   waterbend?: number;
   life?: number;
@@ -787,6 +796,9 @@ export interface SpellSpec {
 }
 
 export interface CardDef {
+  boosterExcluded?:boolean;
+  frontier?:{flashExtra?:number;dustAnimus?:boolean;sheriffCounters?:boolean;morbidCounter?:boolean;freeCounters?:number;ownTargetDiscount?:number;variableTargets?:'own'|'graceful';distribute?:number|'X';bargain?:boolean;bargainDiscount?:number;flashMode?:number;attackerDiscount?:boolean;enterStun?:number;enterDeaths?:boolean;chooseMana?:boolean};
+  frontierStack?:string;
   msh?:{teamwork?:number;teamworkSpell?:SpellSpec;improvise?:boolean;};
   faceUpPayment?:boolean;
   mkm?:{evidence?:number;optionalEvidence?:number;split?:boolean;};
@@ -795,7 +807,7 @@ export interface CardDef {
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
-  ecl?: {variableTargets?:'creature';asEnters?:'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
+  ecl?: {variableTargets?:'creature';asEnters?:'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
   sneak?: string;
   combatPowerMin?: number;
   evadePowGte?: number;
@@ -830,7 +842,7 @@ export interface CardDef {
   /** 產生的法術力只能用來施放某類咒語 */
   manaOnly?: 'planeswalker' | 'notFromHand' | 'artifactOrAbility' | 'notNonartifactSpell';
   /** 冒險：同一張牌上的另一個瞬間或法術；施放後此牌放逐，之後可以從放逐區施放本體 */
-  adventure?: { name: string; zh?: string; cost: string; types: CardType[]; text: string; spell: SpellSpec };
+  adventure?: { frontier?:CardDef['frontier'];ecl?:CardDef['ecl'];frontierStack?:string;name: string; zh?: string; cost: string; types: CardType[]; text: string; spell: SpellSpec };
   /** 準備：此生物附帶的咒語；已準備時可以施放它的複製（之後取消準備） */
   prepare?: { name: string; zh?: string; cost: string; types: CardType[]; text: string; spell: SpellSpec };
   /** 折躍：可以用此費用從手上施放，下一個結束步驟開始時放逐，之後的回合可以從放逐區施放 */
@@ -925,6 +937,8 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  castFace?:CardDef;
+  frontierMarks?:Record<string,number>;frontierBargained?:boolean;frontierTaken?:number;frontierTakenTurn?:number;
   mshHarnessed?:boolean;mshTeamwork?:boolean;mshMarks?:Record<string,number>;mshLinked?:number[];mshCopyUntil?:number;
   mkmSolved?:boolean;mkmEvidence?:boolean;mkmMarks?:Record<string,number>;mkmLinked?:number[];gyTurn?:number;
   /** Copiable values installed by a persistent copy effect. */
@@ -1079,6 +1093,7 @@ export interface Card {
 }
 
 export interface Player {
+  frontierTurn?:number;frontierFlags?:Record<string,number>;
   mshNoPowerTurn?:number;mshFlagsTurn?:number;mshFlags?:Record<string,number>;mshRestricted?:{mana:Mana;rule:string}[];
   mkmGossip?:Mana[];
   poison?:number;
@@ -1091,6 +1106,7 @@ export interface Player {
   eclAttackedMerfolk?:number;
   eclPreventDamageUntil?:PID;
   eclMaralenUsed?:number[];
+  frontierMana?:{mana:Mana;rule:'mountVehicle'|'bigSpell'}[];
   eclRestrictedMana?:{mana:Mana;rule:string;source?:number}[];
   permanentLeftThisTurn?: boolean;
   spellTypesThisTurn?: CardType[];
@@ -1168,9 +1184,10 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
+  frontierStackSids?:number[];distribution?:number[];
   sourceType?:string;
   sourceLinkKey?: number;
   sneakPaid?:boolean;
@@ -1211,7 +1228,7 @@ export interface EotEffect extends Grant {
 
 /** 延遲觸發：本回合內，事件發生時觸發 */
 export interface DelayedTrigger {
-  mshEvent?:string;finEvent?:string;
+  frontierDynamic?:'players'|'creaturesX';frontierPlayer?:PID;frontierEvent?:string;mshEvent?:string;finEvent?:string;
   alone?: boolean;
   persistent?: boolean;
   filter?: Filter;
@@ -1242,6 +1259,7 @@ export type Phase =
   | 'cleanup';
 
 export type GameEvent =
+ | {type:'frontier';action:string;card:number;player:PID;other?:number;amount:number}
   | {type:'msh';action:string;player:PID;card:number;n?:number}
   | {type:'mkm';action:string;player:PID;card:number;n?:number}
   | {type:'combatPlayerOrWalker';source:number;controller:PID;amount:number}
@@ -1261,7 +1279,7 @@ export type GameEvent =
   | { type: 'youAttack'; player: PID; attackers: number[] }
   | { type: 'blocks'; card: number }
   | { type: 'step'; step: 'upkeep' | 'endStep' | 'combatStart' | 'main1' | 'draw'; player: PID }
-  | { type: 'cast'; card: number; player: PID; opponentTurn: boolean }
+  | { type: 'cast'; distribution?:number[];stackTargetSids?:number[];card: number; player: PID; opponentTurn: boolean }
   | { type: 'lifegain'; player: PID; amount: number }
   | { type: 'lifeloss'; player: PID; amount: number }
   | { type: 'combatDamage'; source: number; player: PID; amount: number }
@@ -1311,6 +1329,7 @@ export interface Show {
 }
 
 export interface GameState {
+  frontierExtraUpkeeps?:number;frontierEntryBatch?:number;
   mshTokenGroup?:number;mshTapGroup?:number;mshEvent?:number;
   mkmCollecting?:number;
   finEndTurn?:boolean;finExtraEnd?:boolean;finCombatNumber?:number;finEndNumber?:number;
@@ -1424,7 +1443,7 @@ export type ChoosePurpose =
 export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
-  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
+  | { type: 'cast'; distribution?:number[];stackTargetSids?:number[];card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
   | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export type Response =

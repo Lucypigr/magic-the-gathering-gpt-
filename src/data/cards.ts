@@ -1,3 +1,5 @@
+import {completeOtj} from './sets/otj-extra';
+import {completeWoe} from './sets/woe-extra';
 import {completeMsh} from './sets/msh-extra';
 import {completeMkm} from './sets/mkm-extra';
 import {completeFin} from './sets/fin-extra';
@@ -706,6 +708,8 @@ completeEcl();
 completeFin();
 completeMkm();
 completeMsh();
+completeWoe();
+completeOtj();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

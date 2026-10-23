@@ -76,6 +76,7 @@ const PRESENT_MS = { slow: 1500, normal: 1050, fast: 550 } as const;
 function specPrompt(spec: TargetSpec): string {
   if (spec.prompt) return spec.prompt;
   switch (spec.kind) {
+    case 'exileCard':return '選擇放逐區的牌';
     case 'creatureOrPlaneswalker':return '選擇一個生物或鵬洛客';
     case 'any':
       return '選擇任意一個目標（生物或玩家）';

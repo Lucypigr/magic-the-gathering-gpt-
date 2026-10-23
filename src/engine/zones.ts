@@ -1,3 +1,4 @@
+import {frontierTrigger,frontierObserve,frontierStatic,frontierFlags} from './frontier-support';
 import {mshObserve,mshStatic,mshTriggerMatches,mshFlags} from './msh-support';
 import {mshCounter} from './msh';
 import {mkmObserve,mkmStatic,mkmTriggerMatches} from './mkm-support';
@@ -5,7 +6,7 @@ import {finTriggerMatches,finStatic} from './fin-support';
 import { colorsOf } from './mana';
 import { getDef } from './registry';
 import {
-  abilitiesOf,
+  cardDefinition,abilitiesOf,
   abilitiesSuppressed,
   cardName,
   checkCond,
@@ -29,6 +30,7 @@ import type { Card, CardDef, GameEvent, GameState, PID, TargetRef, TriggeredAbil
 function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEvent): boolean {
   const pov = c.controller;
   switch (ab.on) {
+    case 'frontierEvent':return frontierTrigger(g,c,ab,ev);
     case 'mshEvent':return mshTriggerMatches(g,c,ab,ev);
     case 'mkmEvent':return mkmTriggerMatches(g,c,ab,ev);
     case 'finEvent':return finTriggerMatches(g,c,ab,ev);
@@ -71,7 +73,7 @@ function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEve
       return ev.type === 'cast' && (ev.player === pov || !!ab.anyPlayer) && !isCreature(g.cards[ev.card]);
     case 'castInstSorc': {
       if (ev.type !== 'cast' || ev.player !== pov) return false;
-      const t = g.cards[ev.card].def.types;
+      const t = cardDefinition(g.cards[ev.card]).types;
       return t.includes('Instant') || t.includes('Sorcery');
     }
     case 'castAny': {
@@ -191,9 +193,10 @@ function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEve
 /** 勇行：每當你施放非生物咒語時，此生物得+1/+1直到回合結束 */
 const PROWESS: TriggeredAbility = { kind: 'trigger', on: 'castNoncreature', effects: [{ e: 'pump', what: 'self', p: 1, t: 1 }] };
 
-export function tapCard(g: GameState, c: Card): void {
+export function tapCard(g: GameState, c: Card, by?:PID): void {
   if (c.tapped) return;
   c.tapped = true;
+  (c.frontierMarks??={}).tappedBy=by??c.controller;
   emit(g, { type: 'tapped', card: c.id, controller: c.controller });
   g.version++;
 }
@@ -207,6 +210,8 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 export function emit(g: GameState, ev: GameEvent): void {
   mkmObserve(g,ev);
   mshObserve(g,ev);
+  frontierObserve(g,ev);
+  if(ev.type==='fin'&&ev.action==='zoneMove'&&ev.from==='battlefield'&&ev.to==='graveyard'&&ev.card!==undefined){const c=g.cards[ev.card];if(c.token)for(const [i,a] of (c.def.abilities??[]).entries())if(a.kind==='trigger'&&a.frontierEvent==='selfToGrave')g.pending.push({source:c.id,controller:(c.frontierMarks?.lastController??c.owner)as PID,ability:a,abilityIndex:i,ev});}
   if(ev.type==='dies'){for(const pl of g.players)(pl.finFlags??={}).creaturesDied=(pl.finFlags?.creaturesDied??0)+1;(g.players[other(ev.controller)].finFlags??={}).opponentCreatureDied=1;}
   if(ev.type==='combatDamage'){const source=g.cards[ev.source],pid=source.controller;(g.players[ev.player].finFlags??={}).combatTaken=(g.players[ev.player].finFlags?.combatTaken??0)+ev.amount;if(matches(g,{legendary:true},source,pid))(g.players[pid].finFlags??={}).legendCombat=1;if(matches(g,{sub:['Scout','Pirate','Rogue']},source,pid))for(const c of g.battlefield.map(id=>g.cards[id]).filter(c=>c.controller===pid&&c.def.id==='vaan-street-thief'))(c.finMarks??={}).vaanHit=1;}
   if(ev.type==='cast'&&g.cards[ev.card].def.id==='photon-blast-barrage'){const n=g.stack.find(s=>s.kind==='spell'&&s.cardId===ev.card)?.x??0;if(n)g.pending.push({source:ev.card,controller:ev.player,abilityIndex:-90,ev,ability:{kind:'trigger',on:'castAny',effects:[{e:'msh',action:'photonCopies',n}]}});}
@@ -230,14 +235,16 @@ export function emit(g: GameState, ev: GameEvent): void {
     if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
       let mana=0;for(const source of finStatic(g,c.controller,'yunaKeywords'))if(g.active===c.controller&&(source.id===c.id||isCreature(c)&&c.def.types.includes('Enchantment')))mana+=2;
       for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===c.id&&abilitiesOf(g,eq).some(a=>a.kind==='static'&&a.fin==='paladinWard'))mana++;}
-      for(const id of g.battlefield){const a=g.cards[id];if(a.attachedTo===c.id)for(const ab of abilitiesOf(g,a))if(ab.kind==='static'&&((ab.msh==='equipWard1')||(ab.msh==='equipWard2')))mana+=ab.msh==='equipWard1'?1:2;}
+      for(const id of g.battlefield){const a=g.cards[id];if(a.attachedTo===c.id)for(const ab of abilitiesOf(g,a))if(ab.kind==='static'&&((ab.msh==='equipWard1')||(ab.msh==='equipWard2')||(ab.frontier==='equipWard1')))mana+=ab.msh==='equipWard1'?1:2;}
+      mana+=g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='royalWard')).length;
       if(mana)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-45,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:mana}]}});
       if(c.def.fin?.wardPower)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-46,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'ecl',action:'wardLife',n:ev.stackSid,value:Math.max(0,stats(g,c).p)}]}});
     }
 
     if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)&&['the-serpent-society','titania-rugged-rumbler'].includes(c.def.id))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-72,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'msh',action:'ward',n:ev.stackSid}]}});
     if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)&&(c.def.id==='vein-ripper'||c.def.id==='axebane-ferox'))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-71,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'mkm',action:'ward',n:ev.stackSid}]}});
-    if((c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN'||c?.def.set==='MKM'||c?.def.set==='MSH')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
+    if(c?.def.id==='gisa-the-hellraiser'&&c.controller!==ev.by&&!abilitiesSuppressed(g,c))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-101,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'otj:gisaWard',n:ev.stackSid}]}});
+    if(c?.def.id!=='gisa-the-hellraiser'&&(c?.def.set==='WOE'||c?.def.set==='OTJ'||c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN'||c?.def.set==='MKM'||c?.def.set==='MSH')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
       const extra=g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)).length:0);},0);
       for(let i=0;i<(1+extra);i++)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-3,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:c.def.ward}]}});
     }
@@ -263,7 +270,7 @@ export function emit(g: GameState, ev: GameEvent): void {
   for (const id of g.battlefield) {
     const c = g.cards[id];
     const finExtra=g.battlefield.reduce((n,sid)=>{const source=g.cards[sid];if(source.controller!==c.controller)return n;for(const a of abilitiesOf(g,source))if(a.kind==='static'){if(a.fin==='masamune'&&ev.type==='dies'){const host=g.cards[source.attachedTo??-1];if(host&&host.controller===c.controller&&(host.id===c.id||c.def.types.includes('Emblem')&&c.owner===host.controller))n++;}if(a.fin==='cloudDouble'&&g.battlefield.some(id=>g.cards[id].attachedTo===source.id&&g.cards[id].def.equip)&&(c.id===source.id||c.attachedTo===source.id))n++;if(a.fin==='travelingDouble'&&ev.type==='etb'&&g.cards[ev.card].controller===source.controller&&(isLand(g.cards[ev.card])||matches(g,{sub:'Bird'},g.cards[ev.card],source.controller)))n++;}return n;},0);
-    const extraTriggers=(isCreature(c)&&stats(g,c).p<=2?mkmStatic(g,c.controller,'delney').length:0)+finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
+    const extraTriggers=(isCreature(c)&&matches(g,{legendary:true},c,c.controller)?frontierStatic(g,c.controller,'annieDouble').length:0)+(ev.type==='etb'?frontierStatic(g,c.controller,'knowledgeDouble').length:0)+(isCreature(c)&&stats(g,c).p<=2?mkmStatic(g,c.controller,'delney').length:0)+finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
       for(let i=0;i<(1+extraTriggers);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
@@ -315,7 +322,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     for (const d of [...g.delayed]) {
       const src = g.cards[d.source];
       if (!src) continue;
-      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, filter:d.filter, alone:d.alone,finEvent:d.finEvent,mshEvent:d.mshEvent };
+      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, filter:d.filter, alone:d.alone,frontierEvent:d.frontierEvent,frontierPlayer:d.frontierPlayer,finEvent:d.finEvent,mshEvent:d.mshEvent };
       // 延遲觸發的控制者是建立它的玩家，不一定是來源目前的控制者
       const probe = src.controller === d.controller ? src : { ...src, controller: d.controller };
       if (!triggerMatches(g, probe, ab, ev)) continue;
@@ -408,6 +415,7 @@ export function refreshTlaPermanents(g: GameState): void {
 }
 
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
+  if(c.zone==='battlefield')(c.frontierMarks??={}).lastController=c.controller;
   if(c.zone==='battlefield'&&c.mkmMarks?.controlled!==undefined){const x=g.cards[c.mkmMarks.controlled];if(x?.zone==='battlefield'){x.controller=c.mkmMarks.previous as PID;if(x.tlaOriginalDef){x.def=x.tlaOriginalDef;x.tlaOriginalDef=undefined;}}}
   if(c.zone==='battlefield'){(c.mshMarks??={}).lastController=c.controller;for(const id of g.battlefield){const x=g.cards[id];if(x.mshMarks?.controlSource===c.id){x.controller=x.mshMarks.controlPlayer as PID;delete x.mshMarks.controlSource;delete x.mshMarks.controlPlayer;}if(x.mshMarks?.invasion===c.id&&x.tlaOriginalDef){x.def=x.tlaOriginalDef;x.tlaOriginalDef=undefined;x.copyLayer=undefined;delete x.mshMarks.invasion;}}}
   if(c.zone==='battlefield')(c.mkmMarks??={}).lastController=c.controller;
@@ -546,11 +554,14 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   if(enterAs){c.tlaOriginalDef=c.def;c.def=enterAs;c.copyLayer=enterAs;}
   c.mkmSolved=undefined;if(c.mkmMarks)for(const key of ['impostor','unlock','blood','killer','controlled','previous'])delete c.mkmMarks[key];
   c.mshMarks=undefined;c.mshLinked=undefined;
+  c.frontierMarks={...(origin==='stack'||c.eclPrepared?c.frontierMarks:{}),...(origin==='exile'?{enteredFromExile:g.turn}:{})};c.frontierTaken=0;c.frontierTakenTurn=g.turn;
+  if(origin!=='stack')c.frontierBargained=undefined;
   c.zone = 'battlefield';
   g.battlefield.push(c.id);
   c.controller = controller;
   c.tapped = t;
   c.sick = true;
+  if(c.def.frontier?.enterStun)c.stun=c.def.frontier.enterStun;
   c.enteredTurn = g.turn;
   c.enteredFrom = origin;
   c.tmtLinkKey=g.nextSid++;
@@ -559,6 +570,11 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   c.counters = finCounters+(c.def.etbCounters ?? 0)-(c.eclEnterMinus??0);c.eclEnterMinus=undefined;
   if(c.finMarks){delete c.finMarks.enterCounters;delete c.finMarks.enterFinality;}
   if(finFinality)c.finality=true;
+  if(c.def.frontier?.dustAnimus&&g.battlefield.filter(id=>g.cards[id].controller===controller&&isLand(g.cards[id])&&!g.cards[id].tapped).length>=5){c.counters+=2;(c.eclCounters??={}).lifelink=1;}
+  if(c.def.frontier?.sheriffCounters)c.counters+=1+g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===controller&&isCreature(g.cards[id])).length;
+  if(c.def.frontier?.morbidCounter&&g.creatureDiedThisTurn)c.counters++;
+  if(c.def.frontier?.freeCounters&&(origin!=='stack'||(c.manaSpent??0)===0))c.counters+=c.def.frontier.freeCounters;
+  if(c.def.frontier?.enterDeaths)c.counters+=frontierFlags(g,controller).deaths??0;
   if(finStatic(g,controller,'landsUntapped').length&&isLand(c))c.tapped=false;
   if (c.def.id === 'putrid-pals' && g.players[controller].permanentLeftThisTurn) c.counters += 2;
   if (c.def.id === 'leatherhead-swamp-stalker') c.hexproofCounters = 1;
@@ -672,6 +688,7 @@ export function putCounters(g: GameState, c: Card, n: number, counterBatch?: num
   }
   n*=2**finStatic(g,c.controller,'doubleCounters').length;
   n+=mshStatic(g,c.controller,'extraCounters').length;
+  n+=frontierFlags(g,c.controller).prairiePlus??0;
   c.counters += n;
   emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: n, counterKind: '+1/+1', counterBatch });
   return n;
@@ -798,6 +815,9 @@ export function dealDamage(
   opts: { combat?: boolean; noLifeGain?: boolean; batchCombat?: boolean } = {},
 ): number {
   if (n <= 0) return 0;
+  const frontierVictim='p'in target?target.p:g.cards[target.c]?.controller;
+  if(src&&isCreature(src)&&frontierVictim!==undefined&&frontierFlags(g,frontierVictim).creatureDamageFog)return 0;
+  if(!opts.combat)n+=frontierFlags(g,srcController).taii??0;
   const redirects=new Set<number>();
   for(;;){const pid='p'in target?target.p:g.cards[target.c]?.controller;if(pid===undefined)break;
     if('p'in target&&finStatic(g,pid,'playerProtection').length&&srcController!==pid)return 0;
@@ -809,7 +829,7 @@ export function dealDamage(
   if(src&&matches(g,{sub:'Wizard'},src,srcController))n*=2**finStatic(g,srcController,'doubleWizardDamage').length;
   if('c'in target){const c=g.cards[target.c];if(c&&isCreature(c)&&(g.players[c.controller].finFlags?.creatureFog===g.turn||opts.combat&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.fin==='preventCombat')))return 0;}
   if('p'in target&&g.players[target.p].eclPreventDamageUntil!==undefined)return 0;
-  if('c'in target){const c=g.cards[target.c];if(c){const ks=stats(g,c).kw;if(ks.has('protection_opponent')&&c.controller!==srcController)return 0;if(ks.has('protection_colors')&&src&&colorsOf(src.def).length)return 0;}}
+  if('c'in target){const c=g.cards[target.c];if(c){const ks=stats(g,c).kw;if(src&&frontierStatic(g,c.controller,'coyoteProtection').some(s=>s.id===c.id)&&matches(g,{sub:'Coyote'},src,srcController))return 0;if(ks.has('protection_opponent')&&c.controller!==srcController)return 0;if(ks.has('protection_colors')&&src&&colorsOf(src.def).length)return 0;}}
   for(const id of g.battlefield){const s=g.cards[id];if(s.controller===srcController&&s.def.id==='collective-inferno'&&s.eclType&&src&&matches(g,{sub:s.eclType},src,srcController)&&!abilitiesSuppressed(g,s))n*=2;}
   // 非戰鬥傷害加成（例如「多造成 1 點傷害」）：只對對手或其永久物
   if (!opts.combat) {
@@ -856,17 +876,19 @@ export function dealDamage(
       c.loyalty = (c.loyalty ?? 0) - n;
       if(opts.combat&&src)emit(g,{type:'combatPlayerOrWalker',source:src.id,controller:srcController,amount:n});
       log(g, `${srcName} 對 ${cardName(c)} 造成 ${n} 點傷害（忠誠 ${c.loyalty}）`, srcController, 'damage');
-      if (kws.has('lifelink')) gainLife(g, srcController, n);
+      if (kws.has('lifelink')||(src?.def.types.some(t=>t==='Instant'||t==='Sorcery')&&frontierStatic(g,srcController,'spellLifelink').length)) gainLife(g, srcController, n);
       g.version++;
       return n;
     }
+    if(src&&!opts.combat&&n===stats(g,c).t)emit(g,{type:'frontier',action:'exactNoncombat',card:src.id,player:srcController,other:c.id,amount:n});
+    if(src&&src.def.types.some(t=>t==='Instant'||t==='Sorcery')&&g.stack.some(s=>s.kind==='spell'&&s.cardId===src.id&&s.targets.filter(Boolean).length===1&&s.targets.some(t=>t&&'c'in t&&t.c===c.id)))emit(g,{type:'frontier',action:'imodaneHit',player:srcController,card:src.id,amount:n});
     if(kws.has('wither'))putMinusCounters(g,c,n);else c.damage += n;
     if (opts.combat && src) src.dealtCombat = true;
     if (kws.has('deathtouch')) c.dtDamage = true;
     log(g, `${srcName} 對 ${cardName(c)} 造成 ${n} 點傷害`, srcController, 'damage');
     emit(g, { type: 'damaged', card: c.id, amount: n });
   }
-  if (kws.has('lifelink')) gainLife(g, srcController, n);
+  if (kws.has('lifelink')||(src?.def.types.some(t=>t==='Instant'||t==='Sorcery')&&frontierStatic(g,srcController,'spellLifelink').length)) gainLife(g, srcController, n);
   if(src&&'p'in target&&matches(g,{sub:'Hero'},src,srcController)){const flags=mshFlags(g,srcController),key=opts.batchCombat?-10*(g.combatCount??1)-(g.phase==='combat_damage_first'?1:2):g.nextSid++;if(flags.heroDamageGroup!==key){flags.heroDamageGroup=key;emit(g,{type:'msh',action:'heroDamage',card:src.id,player:srcController,n});}}
   if(src)emit(g,{type:'fin',action:'sourceDamage',card:src.id,player:srcController,amount:n});
   return n;
@@ -892,7 +914,7 @@ export function createToken(
   const c = newCard(g, getDef(tokenId), controller, true);
   c.zone = 'exile'; // 暫存，隨即進場
   enterBattlefield(g, c, controller, !!opts.tapped);
-  if (opts.attachTo != null) c.attachedTo = opts.attachTo;
+  if (opts.attachTo != null){c.attachedTo = opts.attachTo;emit(g,{type:'frontier',action:'attached',card:c.id,player:controller,other:opts.attachTo,amount:0});}
   if (opts.attacking) {
     c.attacking = true;
   }

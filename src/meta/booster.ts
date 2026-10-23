@@ -39,7 +39,7 @@ export function pool(set: SetCode, r: Rarity): CardDef[] {
   const key = `${set}:${r}`;
   let list = poolCache.get(key);
   if (!list) {
-    list = CARDS.filter((c) => c.set === set && c.rarity === r);
+    list = CARDS.filter((c) => c.set === set && c.rarity === r && !c.boosterExcluded);
     for (const [id, rr] of REPRINTS[set as StandardSet] ?? []) if (rr === r) list.push(getDef(id));
     poolCache.set(key, list);
   }

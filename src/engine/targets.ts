@@ -1,3 +1,4 @@
+import {frontierStatic} from './frontier-support';
 import {mshStatic} from './msh-support';
 import {manaValue} from './mana';
 import {finStatic} from './fin-support';
@@ -10,6 +11,7 @@ import type { Card, GameState, PID, TargetRef, TargetSpec } from './types';
 export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): boolean {
   const ks=hasKw(g,c,'protection_colors'),ko=hasKw(g,c,'protection_opponent');
   const source=sourceId!==undefined?g.cards[sourceId]:undefined;
+  if(source&&frontierStatic(g,c.controller,'coyoteProtection').some(s=>s.id===c.id)&&matches(g,{sub:'Coyote'},source,by))return false;
   if(source&&ks&&colorsOf(source.def).length)return false;
   if(ko&&c.controller!==by)return false;
   if(source&&c.controller!==by&&eclStatic(g,c.controller,'tam').some(s=>s.id!==c.id)&&colorsOf(c.def).some(col=>colorsOf(source.def).includes(col)))return false;
@@ -21,6 +23,7 @@ export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): bo
 }
 
 export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, sourceId?: number): TargetRef[] {
+  controller=spec.targetController??controller;
   const out: TargetRef[] = [];
   const f = spec.filter;
   const addPlayers = (onlyOpp: boolean) => {
@@ -52,6 +55,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       break;
     case 'permanentOrPlayer':addPerms(false);addPlayers(false);break;
     case 'creatureOrPlaneswalker':addPerms(true,true);break;
+    case 'exileCard':for(const id of g.players.flatMap(p=>p.exile)){const c=g.cards[id];if(matches(g,f,c,controller,sourceId))out.push({c:id});}break;
     case 'creature':
       addPerms(true);
       break;
@@ -135,6 +139,7 @@ export function validateTargets(
       continue;
     }
     if (!isLegalTarget(g, specs[i], t, controller, sourceId)) return '目標不合法';
+    if(specs[i].differentFrom!==undefined&&sameTarget(ts[specs[i].differentFrom!]??null,t))return '必須選不同的目標';
     const graveIndex=specs[i].sameGraveyardAs,graveTarget=graveIndex!==undefined?ts[graveIndex]:null;if(graveTarget&&'c'in graveTarget&&'c'in t&&g.cards[graveTarget.c].owner!==g.cards[t.c].owner)return '必須選同一墳墓場的牌';
     const totalMax=specs[i].totalMvMax;if(totalMax!==undefined&&ts.reduce((n,t)=>n+(t&&'c'in t?manaValue(g.cards[t.c].def):0),0)>totalMax)return '目標總法力值超過限制';
     const sharedIndex=specs[i].sharesTypeWith;const shared=sharedIndex!==undefined?ts[sharedIndex]:null;

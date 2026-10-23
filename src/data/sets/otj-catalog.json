@@ -1,0 +1,4566 @@
+[
+  {
+    "name": "Another Round",
+    "cost": "{X}{X}{2}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Exile any number of creatures you control, then return them to the battlefield under their owner's control. Then repeat this process X more times.",
+    "number": 1,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Archangel of Tithes",
+    "cost": "{1}{W}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Angel"
+    ],
+    "text": "Flying\nAs long as Archangel of Tithes is untapped, creatures can't attack you or planeswalkers you control unless their controller pays {1} for each of those creatures.\nAs long as Archangel of Tithes is attacking, creatures can't block unless their controller pays {1} for each of those creatures.",
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "number": 2,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Armored Armadillo",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Armadillo"
+    ],
+    "text": "Ward {1} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)\n{3}{W}: Armored Armadillo gets +X/+0 until end of turn, where X is its toughness.",
+    "power": 0,
+    "toughness": 4,
+    "ward": 1,
+    "number": 3,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Aven Interrupter",
+    "cost": "{1}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Rogue"
+    ],
+    "text": "Flash\nFlying\nWhen Aven Interrupter enters, exile target spell. It becomes plotted. (Its owner may cast it as a sorcery on a later turn without paying its mana cost.)\nSpells your opponents cast from graveyards or from exile cost {2} more to cast.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flash",
+      "flying"
+    ],
+    "number": 4,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Bounding Felidar",
+    "cost": "{5}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Beast",
+      "Mount"
+    ],
+    "text": "Whenever Bounding Felidar attacks while saddled, put a +1/+1 counter on each other creature you control. You gain 1 life for each of those creatures.\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 4,
+    "toughness": 7,
+    "number": 5,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Bovine Intervention",
+    "cost": "{1}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target artifact or creature. Its controller creates a 2/2 white Ox creature token.",
+    "number": 6,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Bridled Bighorn",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Sheep",
+      "Mount"
+    ],
+    "text": "Vigilance\nWhenever Bridled Bighorn attacks while saddled, create a 1/1 white Sheep creature token.\nSaddle 2",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 7,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Claim Jumper",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rabbit",
+      "Mercenary"
+    ],
+    "text": "Vigilance\nWhen Claim Jumper enters, if an opponent controls more lands than you, you may search your library for a Plains card and put it onto the battlefield tapped. Then if an opponent controls more lands than you, repeat this process once. If you search your library this way, shuffle.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 8,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Dust Animus",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Flying\nIf you control five or more untapped lands, Dust Animus enters with two +1/+1 counters and a lifelink counter on it.\nPlot {1}{W} (You may pay {1}{W} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 9,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Eriette's Lullaby",
+    "cost": "{1}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Destroy target tapped creature. You gain 2 life.",
+    "number": 10,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Final Showdown",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — All creatures lose all abilities until end of turn.\n+ {1} — Choose a creature you control. It gains indestructible until end of turn.\n+ {3}{W}{W} — Destroy all creatures.",
+    "number": 11,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Fortune, Loyal Steed",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast",
+      "Mount"
+    ],
+    "text": "When Fortune, Loyal Steed enters, scry 2.\nWhenever Fortune attacks while saddled, at end of combat, exile it and up to one creature that saddled it this turn, then return those cards to the battlefield under their owner's control.\nSaddle 1",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "number": 12,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Frontier Seeker",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "When Frontier Seeker enters, look at the top five cards of your library. You may reveal a Mount creature card or a Plains card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "power": 2,
+    "toughness": 1,
+    "number": 13,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Getaway Glamer",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Exile target nontoken creature. Return it to the battlefield under its owner's control at the beginning of the next end step.\n+ {2} — Destroy target creature if no other creature has greater power.",
+    "number": 14,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "High Noon",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Each player can't cast more than one spell each turn.\n{4}{R}, Sacrifice High Noon: It deals 5 damage to any target.",
+    "number": 15,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Holy Cow",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ox",
+      "Angel"
+    ],
+    "text": "Flash\nFlying\nWhen Holy Cow enters, you gain 2 life and scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flash",
+      "flying"
+    ],
+    "number": 16,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Inventive Wingsmith",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Artificer"
+    ],
+    "text": "At the beginning of your end step, if you haven't cast a spell from your hand this turn and Inventive Wingsmith doesn't have a flying counter on it, put a flying counter on it.",
+    "power": 2,
+    "toughness": 4,
+    "number": 17,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Lassoed by the Law",
+    "cost": "{3}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Lassoed by the Law enters, exile target nonland permanent an opponent controls until Lassoed by the Law leaves the battlefield.\nWhen Lassoed by the Law enters, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+    "number": 18,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Mystical Tether",
+    "cost": "{2}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "You may cast Mystical Tether as though it had flash if you pay {2} more to cast it.\nWhen Mystical Tether enters, exile target artifact or creature an opponent controls until Mystical Tether leaves the battlefield.",
+    "number": 19,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Nurturing Pixie",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Faerie",
+      "Rogue"
+    ],
+    "text": "Flying\nWhen Nurturing Pixie enters, return up to one target non-Faerie, nonland permanent you control to its owner's hand. If a permanent was returned this way, put a +1/+1 counter on Nurturing Pixie.",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "number": 20,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Omenport Vigilante",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "Omenport Vigilante has double strike as long as you've committed a crime this turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 21,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "One Last Job",
+    "cost": "{2}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {2} — Return target creature card from your graveyard to the battlefield.\n+ {1} — Return target Mount or Vehicle card from your graveyard to the battlefield.\n+ {1} — Return target Aura or Equipment card from your graveyard to the battlefield attached to a creature you control.",
+    "number": 22,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Outlaw Medic",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Lifelink\nWhen Outlaw Medic dies, draw a card.",
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 23,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Prairie Dog",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Squirrel"
+    ],
+    "text": "Lifelink\nAt the beginning of your end step, if you haven't cast a spell from your hand this turn, put a +1/+1 counter on Prairie Dog.\n{4}{W}: Until end of turn, if you would put one or more +1/+1 counters on a creature you control, put that many plus one +1/+1 counters on it instead.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 24,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Prosperity Tycoon",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "text": "When Prosperity Tycoon enters, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"\n{2}, Sacrifice a token: Prosperity Tycoon gains indestructible until end of turn. Tap it. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "power": 4,
+    "toughness": 2,
+    "number": 25,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Requisition Raid",
+    "cost": "{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Destroy target artifact.\n+ {1} — Destroy target enchantment.\n+ {1} — Put a +1/+1 counter on each creature target player controls.",
+    "number": 26,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Rustler Rampage",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Untap all creatures target player controls.\n+ {1} — Target creature gains double strike until end of turn.",
+    "number": 27,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Shepherd of the Clouds",
+    "cost": "{4}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Pegasus"
+    ],
+    "text": "Flying, vigilance\nWhen Shepherd of the Clouds enters, return target permanent card with mana value 3 or less from your graveyard to your hand. Return that card to the battlefield instead if you control a Mount.",
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "number": 28,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Sheriff of Safe Passage",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "text": "Sheriff of Safe Passage enters with a +1/+1 counter on it plus an additional +1/+1 counter on it for each other creature you control.\nPlot {1}{W} (You may pay {1}{W} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 0,
+    "toughness": 0,
+    "number": 29,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Stagecoach Security",
+    "cost": "{4}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "When Stagecoach Security enters, creatures you control get +1/+1 and gain vigilance until end of turn.\nPlot {3}{W} (You may pay {3}{W} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 4,
+    "toughness": 5,
+    "number": 30,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Steer Clear",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Steer Clear deals 2 damage to target attacking or blocking creature. Steer Clear deals 4 damage to that creature instead if you controlled a Mount as you cast this spell.",
+    "number": 31,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Sterling Keykeeper",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "{2}, {T}: Tap target non-Mount creature.",
+    "power": 2,
+    "toughness": 2,
+    "number": 32,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Sterling Supplier",
+    "cost": "{4}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Soldier"
+    ],
+    "text": "Flying\nWhen Sterling Supplier enters, put a +1/+1 counter on another target creature you control.",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 33,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Take Up the Shield",
+    "cost": "{1}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Put a +1/+1 counter on target creature. It gains lifelink and indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "number": 34,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Thunder Lasso",
+    "cost": "{2}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Thunder Lasso enters, attach it to target creature you control.\nEquipped creature gets +1/+1.\nWhenever equipped creature attacks, tap target creature defending player controls.\nEquip {2}",
+    "number": 35,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Trained Arynx",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Beast",
+      "Mount"
+    ],
+    "text": "Whenever Trained Arynx attacks while saddled, it gains first strike until end of turn. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 3,
+    "toughness": 1,
+    "number": 36,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Vengeful Townsfolk",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "text": "Whenever one or more other creatures you control die, put a +1/+1 counter on Vengeful Townsfolk.",
+    "power": 3,
+    "toughness": 3,
+    "number": 37,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Wanted Griffin",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Griffin"
+    ],
+    "text": "Flying\nWhen Wanted Griffin dies, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 38,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Archmage's Newt",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Salamander",
+      "Mount"
+    ],
+    "text": "Whenever Archmage's Newt deals combat damage to a player, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost. That card gains flashback {0} until end of turn instead if Archmage's Newt is saddled. (You may cast that card from your graveyard for its flashback cost. Then exile it.)\nSaddle 3",
+    "power": 2,
+    "toughness": 2,
+    "number": 39,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Canyon Crab",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Crab"
+    ],
+    "text": "{1}{U}: Canyon Crab gets +2/-2 until end of turn.\nAt the beginning of your end step, if you haven't cast a spell from your hand this turn, draw a card, then discard a card.",
+    "power": 0,
+    "toughness": 5,
+    "number": 40,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Daring Thunder-Thief",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Turtle",
+      "Rogue"
+    ],
+    "text": "Flash\nDaring Thunder-Thief enters tapped.",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flash"
+    ],
+    "number": 41,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Deepmuck Desperado",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Homarid",
+      "Mercenary"
+    ],
+    "text": "Whenever you commit a crime, each opponent mills three cards. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 2,
+    "toughness": 4,
+    "number": 42,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Djinn of Fool's Fall",
+    "cost": "{4}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn"
+    ],
+    "text": "Flying\nPlot {3}{U} (You may pay {3}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 43,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Double Down",
+    "cost": "{3}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Whenever you cast an outlaw spell, copy that spell. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws. Copies of permanent spells become tokens.)",
+    "number": 44,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Duelist of the Mind",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "text": "Flying, vigilance\nDuelist of the Mind's power is equal to the number of cards you've drawn this turn.\nWhenever you commit a crime, you may draw a card. If you do, discard a card. This ability triggers only once each turn.",
+    "power": 0,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "number": 45,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Emergent Haunting",
+    "cost": "{1}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "At the beginning of your end step, if you haven't cast a spell from your hand this turn and Emergent Haunting isn't a creature, it becomes a 3/3 Spirit creature with flying in addition to its other types.\n{2}{U}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "number": 46,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Failed Fording",
+    "cost": "{1}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Return target nonland permanent to its owner's hand. If you control a Desert, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "number": 47,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Fblthp, Lost on the Range",
+    "cost": "{1}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Homunculus"
+    ],
+    "text": "Ward {2}\nYou may look at the top card of your library any time.\nThe top card of your library has plot. The plot cost is equal to its mana cost.\nYou may plot nonland cards from the top of your library.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "ward": 2,
+    "number": 48,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Fleeting Reflection",
+    "cost": "{1}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control gains hexproof until end of turn. Untap that creature. Until end of turn, it becomes a copy of up to one other target creature.",
+    "number": 49,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Geralf, the Fleshwright",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Whenever you cast a spell during your turn other than your first spell that turn, create a 2/2 blue and black Zombie Rogue creature token.\nWhenever a Zombie you control enters, put a +1/+1 counter on it for each other Zombie that entered the battlefield under your control this turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 50,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Geyser Drake",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Drake"
+    ],
+    "text": "Flying\nAs long as it's not your turn, spells you cast cost {1} less to cast.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 51,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Harrier Strix",
+    "cost": "{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "text": "Flying\nWhen Harrier Strix enters, tap target permanent.\n{2}{U}: Draw a card, then discard a card.",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "number": 52,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Jailbreak Scheme",
+    "cost": "{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {3} — Put a +1/+1 counter on target creature. It can't be blocked this turn.\n+ {2} — Target artifact or creature's owner puts it on the top or bottom of their library.",
+    "number": 53,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "The Key to the Vault",
+    "cost": "{1}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Whenever equipped creature deals combat damage to a player, look at that many cards from the top of your library. You may exile a nonland card from among them. Put the rest on the bottom of your library in a random order. You may cast the exiled card without paying its mana cost.\nEquip {2}{U}",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 54,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Loan Shark",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shark",
+      "Rogue"
+    ],
+    "text": "When Loan Shark enters, if you've cast two or more spells this turn, draw a card.\nPlot {3}{U} (You may pay {3}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 3,
+    "toughness": 4,
+    "number": 55,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Marauding Sphinx",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Sphinx",
+      "Rogue"
+    ],
+    "text": "Flying, vigilance, ward {2}\nWhenever you commit a crime, surveil 2. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "ward": 2,
+    "number": 56,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Metamorphic Blast",
+    "cost": "{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Until end of turn, target creature becomes a white Rabbit with base power and toughness 0/1.\n+ {3} — Target player draws two cards.",
+    "number": 57,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Nimble Brigand",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Nimble Brigand can't be blocked if you've committed a crime this turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)\nWhenever Nimble Brigand deals combat damage to a player, draw a card.",
+    "power": 1,
+    "toughness": 3,
+    "number": 58,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Outlaw Stitcher",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "When Outlaw Stitcher enters, create a 2/2 blue and black Zombie Rogue creature token, then put two +1/+1 counters on that token for each spell you've cast this turn other than the first.\nPlot {4}{U} (You may pay {4}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 1,
+    "toughness": 4,
+    "number": 59,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Peerless Ropemaster",
+    "cost": "{4}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "When Peerless Ropemaster enters, return up to one target tapped creature to its owner's hand.",
+    "power": 4,
+    "toughness": 4,
+    "number": 60,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Phantom Interference",
+    "cost": "{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {3} — Create a 2/2 white Spirit creature token with flying.\n+ {1} — Counter target spell unless its controller pays {2}.",
+    "number": 61,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Plan the Heist",
+    "cost": "{2}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Surveil 3 if you have no cards in hand. Then draw three cards. (To surveil 3, look at the top three cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\nPlot {3}{U} (You may pay {3}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 62,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Razzle-Dazzler",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Whenever you cast your second spell each turn, put a +1/+1 counter on Razzle-Dazzler. It can't be blocked this turn.",
+    "power": 1,
+    "toughness": 2,
+    "number": 63,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Seize the Secrets",
+    "cost": "{2}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "This spell costs {1} less to cast if you've committed a crime this turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)\nDraw two cards.",
+    "number": 64,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Shackle Slinger",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Whenever you cast your second spell each turn, choose target creature an opponent controls. If it's tapped, put a stun counter on it. Otherwise, tap it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "power": 3,
+    "toughness": 2,
+    "number": 65,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Shifting Grift",
+    "cost": "{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+{2} — Exchange control of two target creatures.\n+{1} — Exchange control of two target artifacts.\n+{1} — Exchange control of two target enchantments.",
+    "number": 66,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Slickshot Lockpicker",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "When Slickshot Lockpicker enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost. (You may cast that card from your graveyard for its flashback cost. Then exile it.)\nPlot {2}{U} (You may pay {2}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 2,
+    "toughness": 3,
+    "number": 67,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Slickshot Vault-Buster",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Vigilance\nSlickshot Vault-Buster gets +2/+0 as long as you've committed a crime this turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 68,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Spring Splasher",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog",
+      "Beast"
+    ],
+    "text": "Whenever Spring Splasher attacks, target creature defending player controls gets -3/-0 until end of turn.",
+    "power": 2,
+    "toughness": 1,
+    "number": 69,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Step Between Worlds",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Each player may shuffle their hand and graveyard into their library. Each player who does draws seven cards. Exile Step Between Worlds.\nPlot {4}{U}{U} (You may pay {4}{U}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 70,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Stoic Sphinx",
+    "cost": "{2}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Sphinx"
+    ],
+    "text": "Flash\nFlying\nStoic Sphinx has hexproof as long as you haven't cast a spell this turn.",
+    "power": 5,
+    "toughness": 3,
+    "keywords": [
+      "flash",
+      "flying"
+    ],
+    "number": 71,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Stop Cold",
+    "cost": "{3}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Flash\nEnchant artifact or creature\nWhen this Aura enters, tap enchanted permanent.\nEnchanted permanent loses all abilities and doesn't untap during its controller's untap step.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 72,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Take the Fall",
+    "cost": "{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets -1/-0 until end of turn. It gets -4/-0 until end of turn instead if you control an outlaw. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)\nDraw a card.",
+    "number": 73,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "This Town Ain't Big Enough",
+    "cost": "{4}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "This spell costs {3} less to cast if it targets a permanent you control.\nReturn up to two target nonland permanents to their owners' hands.",
+    "number": 74,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Three Steps Ahead",
+    "cost": "{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1}{U} — Counter target spell.\n+ {3} — Create a token that's a copy of target artifact or creature you control.\n+ {2} — Draw two cards, then discard a card.",
+    "number": 75,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Visage Bandit",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shapeshifter",
+      "Rogue"
+    ],
+    "text": "You may have Visage Bandit enter as a copy of a creature you control, except it's a Shapeshifter Rogue in addition to its other types.\nPlot {2}{U} (You may pay {2}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 76,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Ambush Gigapede",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "text": "Flash\nWhen Ambush Gigapede enters, target creature an opponent controls gets -2/-2 until end of turn.",
+    "power": 6,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ],
+    "number": 77,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Binding Negotiation",
+    "cost": "{1}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Target opponent reveals their hand. You may choose a nonland card from it. If you do, they discard it. Otherwise, you may put a face-up exiled card they own into their graveyard.",
+    "number": 78,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Blacksnag Buzzard",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "text": "Flying\nBlacksnag Buzzard enters with a +1/+1 counter on it if a creature died this turn.\nPlot {1}{B} (You may pay {1}{B} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "number": 79,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Blood Hustler",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Rogue"
+    ],
+    "text": "Whenever you commit a crime, put a +1/+1 counter on Blood Hustler. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)\n{3}{B}: Target opponent loses 1 life and you gain 1 life.",
+    "power": 1,
+    "toughness": 1,
+    "number": 80,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Boneyard Desecrator",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Mercenary"
+    ],
+    "text": "Menace\n{1}{B}, Sacrifice another creature: Put a +1/+1 counter on Boneyard Desecrator. If an outlaw was sacrificed this way, create a Treasure token. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "menace"
+    ],
+    "number": 81,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Caustic Bronco",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake",
+      "Horse",
+      "Mount"
+    ],
+    "text": "Whenever Caustic Bronco attacks, reveal the top card of your library and put it into your hand. You lose life equal to that card's mana value if Caustic Bronco isn't saddled. Otherwise, each opponent loses that much life.\nSaddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 82,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Consuming Ashes",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Exile target creature. If it had mana value 3 or less, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "number": 83,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Corrupted Conviction",
+    "cost": "{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, sacrifice a creature.\nDraw two cards.",
+    "number": 84,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Desert's Due",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets -2/-2 until end of turn. It gets an additional -1/-1 until end of turn for each Desert you control.",
+    "number": 85,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Desperate Bloodseeker",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire"
+    ],
+    "text": "Lifelink\nWhen Desperate Bloodseeker enters, target player mills two cards. (They put the top two cards of their library into their graveyard.)",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 86,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Fake Your Own Death",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Until end of turn, target creature gets +2/+0 and gains \"When this creature dies, return it to the battlefield tapped under its owner's control and you create a Treasure token.\" (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "number": 87,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Forsaken Miner",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Skeleton",
+      "Rogue"
+    ],
+    "text": "Forsaken Miner can't block.\nWhenever you commit a crime, you may pay {B}. If you do, return Forsaken Miner from your graveyard to the battlefield. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 88,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Gisa, the Hellraiser",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Ward—{2}, Pay 2 life.\nSkeletons and Zombies you control get +1/+1 and have menace.\nWhenever you commit a crime, create two tapped 2/2 blue and black Zombie Rogue creature tokens. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "ward": 2,
+    "number": 89,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Hollow Marauder",
+    "cost": "{6}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Specter",
+      "Rogue"
+    ],
+    "text": "This spell costs {1} less to cast for each creature card in your graveyard.\nFlying\nWhen Hollow Marauder enters, any number of target opponents each discard a card. For each of those opponents who didn't discard a card with mana value 4 or greater, draw a card.",
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 90,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Insatiable Avarice",
+    "cost": "{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+{2} — Search your library for a card, then shuffle and put that card on top.\n+{B}{B} — Target player draws three cards and loses 3 life.",
+    "number": 91,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Kaervek, the Punisher",
+    "cost": "{1}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Whenever you commit a crime, exile up to one target black card from your graveyard and copy it. You may cast the copy. If you do, you lose 2 life. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime. Copies of permanent spells become tokens.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 92,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Lively Dirge",
+    "cost": "{1}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Search your library for a card, put it into your graveyard, then shuffle.\n+ {2} — Return up to two creature cards with total mana value 4 or less from your graveyard to the battlefield.",
+    "number": 93,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Mourner's Surprise",
+    "cost": "{1}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Return up to one target creature card from your graveyard to your hand. Create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+    "number": 94,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Neutralize the Guards",
+    "cost": "{2}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Creatures target opponent controls get -1/-1 until end of turn. Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "number": 95,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Nezumi Linkbreaker",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat",
+      "Warlock"
+    ],
+    "text": "When Nezumi Linkbreaker dies, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+    "power": 1,
+    "toughness": 1,
+    "number": 96,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Overzealous Muscle",
+    "cost": "{4}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ogre",
+      "Mercenary"
+    ],
+    "text": "Whenever you commit a crime during your turn, Overzealous Muscle gains indestructible until end of turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime. Damage and effects that say \"destroy\" don't destroy a creature with indestructible.)",
+    "power": 5,
+    "toughness": 4,
+    "number": 97,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Pitiless Carnage",
+    "cost": "{3}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Sacrifice any number of permanents you control, then draw that many cards.\nPlot {1}{B}{B} (You may pay {1}{B}{B} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 98,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Rakish Crew",
+    "cost": "{2}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Rakish Crew enters, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"\nWhenever an outlaw you control dies, each opponent loses 1 life and you gain 1 life. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)",
+    "number": 99,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Rattleback Apothecary",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Gorgon",
+      "Warlock"
+    ],
+    "text": "Deathtouch\nWhenever you commit a crime, target creature you control gains your choice of menace or lifelink until end of turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 100,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Raven of Fell Omens",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "text": "Flying\nWhenever you commit a crime, each opponent loses 1 life and you gain 1 life. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 101,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Rictus Robber",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Rogue"
+    ],
+    "text": "When Rictus Robber enters, if a creature died this turn, create a 2/2 blue and black Zombie Rogue creature token.\nPlot {2}{B} (You may pay {2}{B} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 4,
+    "toughness": 3,
+    "number": 102,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Rooftop Assassin",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Assassin"
+    ],
+    "text": "Flash\nFlying, lifelink\nWhen Rooftop Assassin enters, destroy target creature an opponent controls that was dealt damage this turn.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flash",
+      "flying",
+      "lifelink"
+    ],
+    "number": 103,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Rush of Dread",
+    "cost": "{1}{B}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Target opponent sacrifices half the creatures they control, rounded up.\n+ {2} — Target opponent discards half the cards in their hand, rounded up.\n+ {2} — Target opponent loses half their life, rounded up.",
+    "number": 104,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Servant of the Stinger",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Deathtouch\nWhenever Servant of the Stinger deals combat damage to a player, if you've committed a crime this turn, you may sacrifice Servant of the Stinger. If you do, search your library for a card, put it into your hand, then shuffle. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 105,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Shoot the Sheriff",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target non-outlaw creature. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws. Everyone else is fair game.)",
+    "number": 106,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Skulduggery",
+    "cost": "{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Until end of turn, target creature you control gets +1/+1 and target creature an opponent controls gets -1/-1.",
+    "number": 107,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Tinybones Joins Up",
+    "cost": "{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Tinybones Joins Up enters, any number of target players each discard a card.\nWhenever a legendary creature you control enters, any number of target players each mill a card and lose 1 life.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 108,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Tinybones, the Pickpocket",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Skeleton",
+      "Rogue"
+    ],
+    "text": "Deathtouch\nWhenever Tinybones, the Pickpocket deals combat damage to a player, you may cast target nonland permanent card from that player's graveyard, and mana of any type can be spent to cast that spell.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 109,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Treasure Dredger",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "{1}, {T}, Pay 1 life: Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "power": 2,
+    "toughness": 2,
+    "number": 110,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Unfortunate Accident",
+    "cost": "{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {2}{B} — Destroy target creature.\n+ {1} — Create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+    "number": 111,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Unscrupulous Contractor",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Assassin"
+    ],
+    "text": "When Unscrupulous Contractor enters, you may sacrifice a creature. When you do, target player draws two cards and loses 2 life.\nPlot {2}{B} (You may pay {2}{B} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 3,
+    "toughness": 2,
+    "number": 112,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Vadmir, New Blood",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Rogue"
+    ],
+    "text": "Whenever you commit a crime, put a +1/+1 counter on Vadmir, New Blood. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)\nAs long as Vadmir has four or more +1/+1 counters on it, it has menace and lifelink.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 113,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Vault Plunderer",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "When Vault Plunderer enters, target player draws a card and loses 1 life.",
+    "power": 3,
+    "toughness": 1,
+    "number": 114,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Brimstone Roundup",
+    "cost": "{1}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Whenever you cast your second spell each turn, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"\nPlot {2}{R} (You may pay {2}{R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 115,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Calamity, Galloping Inferno",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Horse",
+      "Mount"
+    ],
+    "text": "Haste\nWhenever Calamity, Galloping Inferno attacks while saddled, choose a nonlegendary creature that saddled it this turn and create a tapped and attacking token that's a copy of it. Sacrifice that token at the beginning of the next end step. Repeat this process once.\nSaddle 1",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 6,
+    "keywords": [
+      "haste"
+    ],
+    "number": 116,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Caught in the Crossfire",
+    "cost": "{R}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Caught in the Crossfire deals 2 damage to each outlaw creature. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)\n+ {1} — Caught in the Crossfire deals 2 damage to each non-outlaw creature.",
+    "number": 117,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Cunning Coyote",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Coyote"
+    ],
+    "text": "Haste\nWhen Cunning Coyote enters, another target creature you control gets +1/+1 and gains haste until end of turn.\nPlot {1}{R} (You may pay {1}{R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "haste"
+    ],
+    "number": 118,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Deadeye Duelist",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Assassin"
+    ],
+    "text": "Reach\n{1}, {T}: Deadeye Duelist deals 1 damage to target opponent.",
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "number": 119,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Demonic Ruckus",
+    "cost": "{1}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nEnchanted creature gets +1/+1 and has menace and trample.\nWhen Demonic Ruckus is put into a graveyard from the battlefield, draw a card.\nPlot {R} (You may pay {R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 120,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Discerning Peddler",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "When Discerning Peddler enters, you may discard a card. If you do, draw a card.",
+    "power": 2,
+    "toughness": 2,
+    "number": 121,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Explosive Derailment",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {2} — Explosive Derailment deals 4 damage to target creature.\n+ {2} — Destroy target artifact.",
+    "number": 122,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Ferocification",
+    "cost": "{2}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "At the beginning of combat on your turn, choose one —\n• Target creature you control gets +2/+0 until end of turn.\n• Target creature you control gains menace and haste until end of turn.",
+    "number": 123,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Gila Courser",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Mount"
+    ],
+    "text": "Whenever Gila Courser attacks while saddled, exile the top card of your library. Until the end of your next turn, you may play that card.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 4,
+    "toughness": 2,
+    "number": 124,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Great Train Heist",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {2}{R} — Untap all creatures you control. If it's your combat phase, there is an additional combat phase after this phase.\n+ {2} — Creatures you control get +1/+0 and gain first strike until end of turn.\n+ {R} — Choose target opponent. Whenever a creature you control deals combat damage to that player this turn, create a tapped Treasure token.",
+    "number": 125,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Hell to Pay",
+    "cost": "{X}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Hell to Pay deals X damage to target creature. Create a number of tapped Treasure tokens equal to the amount of excess damage dealt to that creature this way.",
+    "number": 126,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Hellspur Brute",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Minotaur",
+      "Mercenary"
+    ],
+    "text": "Affinity for outlaws (This spell costs {1} less to cast for each Assassin, Mercenary, Pirate, Rogue, and/or Warlock you control.)\nTrample",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "number": 127,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Hellspur Posse Boss",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Rogue"
+    ],
+    "text": "Other outlaws you control have haste. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)\nWhen Hellspur Posse Boss enters, create two 1/1 red Mercenary creature tokens with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+    "power": 2,
+    "toughness": 4,
+    "number": 128,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Highway Robbery",
+    "cost": "{1}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "You may discard a card or sacrifice a land. If you do, draw two cards.\nPlot {1}{R} (You may pay {1}{R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 129,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Irascible Wolverine",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolverine"
+    ],
+    "text": "When Irascible Wolverine enters, exile the top card of your library. Until end of turn, you may play that card.\nPlot {2}{R} (You may pay {2}{R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 3,
+    "toughness": 2,
+    "number": 130,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Iron-Fist Pulverizer",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Giant",
+      "Warrior"
+    ],
+    "text": "Reach\nWhenever you cast your second spell each turn, Iron-Fist Pulverizer deals 2 damage to target opponent. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ],
+    "number": 131,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Longhorn Sharpshooter",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Minotaur",
+      "Rogue"
+    ],
+    "text": "Reach\nWhen Longhorn Sharpshooter becomes plotted, it deals 2 damage to any target.\nPlot {3}{R} (You may pay {3}{R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "number": 132,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Magda, the Hoardmaster",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Berserker"
+    ],
+    "text": "Whenever you commit a crime, create a tapped Treasure token. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)\nSacrifice three Treasures: Create a 4/4 red Scorpion Dragon creature token with flying and haste. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 133,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Magebane Lizard",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard"
+    ],
+    "text": "Whenever a player casts a noncreature spell, Magebane Lizard deals damage to that player equal to the number of noncreature spells they've cast this turn.",
+    "power": 1,
+    "toughness": 4,
+    "number": 134,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Mine Raider",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Trample\nWhen Mine Raider enters, if you control another outlaw, create a Treasure token. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws. A Treasure token is an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ],
+    "number": 135,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Outlaws' Fury",
+    "cost": "{2}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Creatures you control get +2/+0 until end of turn. If you control an outlaw, exile the top card of your library. Until the end of your next turn, you may play that card. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)",
+    "number": 136,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Prickly Pair",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Mercenary"
+    ],
+    "text": "When Prickly Pair enters, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+    "power": 2,
+    "toughness": 2,
+    "number": 137,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Quick Draw",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control gets +1/+1 and gains first strike until end of turn. Creatures target opponent controls lose first strike and double strike until end of turn.",
+    "number": 138,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Quilled Charger",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Porcupine",
+      "Mount"
+    ],
+    "text": "Whenever Quilled Charger attacks while saddled, it gets +1/+2 and gains menace until end of turn. (It can't be blocked except by two or more creatures.)\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 4,
+    "toughness": 3,
+    "number": 139,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Reckless Lackey",
+    "cost": "{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Pirate"
+    ],
+    "text": "First strike, haste\n{2}{R}, Sacrifice Reckless Lackey: Draw a card and create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "first_strike",
+      "haste"
+    ],
+    "number": 140,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Resilient Roadrunner",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "text": "Haste, protection from Coyotes\n{3}: Resilient Roadrunner can't be blocked this turn except by creatures with haste.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "haste"
+    ],
+    "number": 141,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Return the Favor",
+    "cost": "{R}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Copy target instant spell, sorcery spell, activated ability, or triggered ability. You may choose new targets for the copy.\n+ {1} — Change the target of target spell or ability with a single target.",
+    "number": 142,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Rodeo Pyromancers",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "Whenever you cast your first spell each turn, add {R}{R}.",
+    "power": 3,
+    "toughness": 4,
+    "number": 143,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Scalestorm Summoner",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Whenever Scalestorm Summoner attacks, create a 3/1 red Dinosaur creature token if you control a creature with power 4 or greater.",
+    "power": 3,
+    "toughness": 3,
+    "number": 144,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Scorching Shot",
+    "cost": "{R}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Scorching Shot deals 5 damage to target creature.",
+    "number": 145,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Slickshot Show-Off",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Wizard"
+    ],
+    "text": "Flying, haste\nWhenever you cast a noncreature spell, Slickshot Show-Off gets +2/+0 until end of turn.\nPlot {1}{R} (You may pay {1}{R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "haste"
+    ],
+    "number": 146,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Stingerback Terror",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Scorpion",
+      "Dragon"
+    ],
+    "text": "Flying, trample\nStingerback Terror gets -1/-1 for each card in your hand.\nPlot {2}{R} (You may pay {2}{R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "flying",
+      "trample"
+    ],
+    "number": 147,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Take for a Ride",
+    "cost": "{2}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Take for a Ride has flash as long as you've committed a crime this turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)\nGain control of target creature until end of turn. Untap that creature. It gains haste until end of turn.",
+    "number": 148,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Terror of the Peaks",
+    "cost": "{3}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "text": "Flying\nSpells your opponents cast that target Terror of the Peaks cost an additional 3 life to cast.\nWhenever another creature you control enters, Terror of the Peaks deals damage equal to that creature's power to any target.",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 149,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Thunder Salvo",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Thunder Salvo deals X damage to target creature, where X is 2 plus the number of other spells you've cast this turn.",
+    "number": 150,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Trick Shot",
+    "cost": "{4}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Trick Shot deals 6 damage to target creature and 2 damage to up to one other target creature token.",
+    "number": 151,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Aloe Alchemist",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Warlock"
+    ],
+    "text": "Trample\nWhen Aloe Alchemist becomes plotted, target creature gets +3/+2 and gains trample until end of turn.\nPlot {1}{G} (You may pay {1}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ],
+    "number": 152,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Ankle Biter",
+    "cost": "{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake"
+    ],
+    "text": "Deathtouch",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 153,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Beastbond Outcaster",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "text": "When Beastbond Outcaster enters, if you control a creature with power 4 or greater, draw a card.\nPlot {1}{G} (You may pay {1}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 3,
+    "toughness": 3,
+    "number": 154,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Betrayal at the Vault",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control deals damage equal to its power to each of two other target creatures.",
+    "number": 155,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Bristlepack Sentry",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Wolf"
+    ],
+    "text": "Defender\nAs long as you control a creature with power 4 or greater, Bristlepack Sentry can attack as though it didn't have defender.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "defender"
+    ],
+    "number": 156,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Bristly Bill, Spine Sower",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Druid"
+    ],
+    "text": "Landfall — Whenever a land you control enters, put a +1/+1 counter on target creature.\n{3}{G}{G}: Double the number of +1/+1 counters on each creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 157,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Cactarantula",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Spider"
+    ],
+    "text": "This spell costs {1} less to cast if you control a Desert.\nReach\nWhenever Cactarantula becomes the target of a spell or ability an opponent controls, you may draw a card.",
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ],
+    "number": 158,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Colossal Rattlewurm",
+    "cost": "{2}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wurm"
+    ],
+    "text": "Colossal Rattlewurm has flash as long as you control a Desert.\nTrample\n{1}{G}, Exile Colossal Rattlewurm from your graveyard: Search your library for a Desert card, put it onto the battlefield tapped, then shuffle.",
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ],
+    "number": 159,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Dance of the Tumbleweeds",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {1} — Search your library for a basic land card or a Desert card, put it onto the battlefield, then shuffle.\n+ {3} — Create an X/X green Elemental creature token, where X is the number of lands you control.",
+    "number": 160,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Drover Grizzly",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear",
+      "Mount"
+    ],
+    "text": "Whenever Drover Grizzly attacks while saddled, creatures you control gain trample until end of turn.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 4,
+    "toughness": 2,
+    "number": 161,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Freestrider Commando",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Centaur",
+      "Mercenary"
+    ],
+    "text": "Freestrider Commando enters with two +1/+1 counters on it if it wasn't cast or no mana was spent to cast it.\nPlot {3}{G} (You may pay {3}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 3,
+    "toughness": 3,
+    "number": 162,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Freestrider Lookout",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Reach\nWhenever you commit a crime, look at the top five cards of your library. You may put a land card from among them onto the battlefield tapped. Put the rest on the bottom of your library in a random order. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "number": 163,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Full Steam Ahead",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Until end of turn, each creature you control gets +2/+2 and gains trample and \"This creature can't be blocked by more than one creature.\"",
+    "number": 164,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Giant Beaver",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beaver",
+      "Mount"
+    ],
+    "text": "Vigilance\nWhenever Giant Beaver attacks while saddled, put a +1/+1 counter on target creature that saddled it this turn.\nSaddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 165,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Gold Rush",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Create a Treasure token. Until end of turn, up to one target creature gets +2/+2 for each Treasure you control.",
+    "number": 166,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Goldvein Hydra",
+    "cost": "{X}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Hydra"
+    ],
+    "text": "Vigilance, trample, haste\nGoldvein Hydra enters with X +1/+1 counters on it.\nWhen Goldvein Hydra dies, create a number of tapped Treasure tokens equal to its power.",
+    "power": 0,
+    "toughness": 0,
+    "keywords": [
+      "vigilance",
+      "trample",
+      "haste"
+    ],
+    "number": 167,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Hardbristle Bandit",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Rogue"
+    ],
+    "text": "{T}: Add one mana of any color.\nWhenever you commit a crime, untap Hardbristle Bandit. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "power": 1,
+    "toughness": 1,
+    "number": 168,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Intrepid Stablemaster",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "Reach\n{T}: Add {G}.\n{T}: Add two mana of any one color. Spend this mana only to cast Mount or Vehicle spells.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "reach"
+    ],
+    "number": 169,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Map the Frontier",
+    "cost": "{3}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Search your library for up to two basic land cards and/or Desert cards, put them onto the battlefield tapped, then shuffle.",
+    "number": 170,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Ornery Tumblewagg",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Brushwagg",
+      "Mount"
+    ],
+    "text": "At the beginning of combat on your turn, put a +1/+1 counter on target creature.\nWhenever Ornery Tumblewagg attacks while saddled, double the number of +1/+1 counters on target creature.\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 171,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Outcaster Greenblade",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "When Outcaster Greenblade enters, search your library for a basic land card or a Desert card, reveal it, put it into your hand, then shuffle.\nOutcaster Greenblade gets +1/+1 for each Desert you control.",
+    "power": 1,
+    "toughness": 2,
+    "number": 172,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Outcaster Trailblazer",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "text": "When Outcaster Trailblazer enters, add one mana of any color.\nWhenever another creature you control with power 4 or greater enters, draw a card.\nPlot {2}{G} (You may pay {2}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 4,
+    "toughness": 2,
+    "number": 173,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Patient Naturalist",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "When Patient Naturalist enters, mill three cards. Put a land card from among the milled cards into your hand. If you can't, create a Treasure token. (To mill three cards, put the top three cards of your library into your graveyard.)",
+    "power": 2,
+    "toughness": 3,
+    "number": 174,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Railway Brawler",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rhino",
+      "Warrior"
+    ],
+    "text": "Reach, trample\nWhenever another creature you control enters, put X +1/+1 counters on it, where X is its power.\nPlot {3}{G} (You may pay {3}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "reach",
+      "trample"
+    ],
+    "number": 175,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Rambling Possum",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Possum",
+      "Mount"
+    ],
+    "text": "Whenever Rambling Possum attacks while saddled, it gains +1/+2 until end of turn. Then you may return any number of creatures that saddled it this turn to their owner's hand.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 3,
+    "toughness": 3,
+    "number": 176,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Raucous Entertainer",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Bard"
+    ],
+    "text": "{1}, {T}: Put a +1/+1 counter on each creature you control that entered this turn.",
+    "power": 2,
+    "toughness": 2,
+    "number": 177,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Reach for the Sky",
+    "cost": "{3}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Flash\nEnchant creature\nEnchanted creature gets +3/+2 and has reach.\nWhen Reach for the Sky is put into a graveyard from the battlefield, draw a card.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 178,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Rise of the Varmints",
+    "cost": "{3}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create X 2/1 green Varmint creature tokens, where X is the number of creature cards in your graveyard.\nPlot {2}{G} (You may pay {2}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 179,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Smuggler's Surprise",
+    "cost": "{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {2} — Mill four cards. You may put up to two creature and/or land cards from among the milled cards into your hand.\n+ {4}{G} — You may put up to two creature cards from your hand onto the battlefield.\n+ {1} — Creatures you control with power 4 or greater gain hexproof and indestructible until end of turn.",
+    "number": 180,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Snakeskin Veil",
+    "cost": "{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Put a +1/+1 counter on target creature you control. It gains hexproof until end of turn.",
+    "number": 181,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Spinewoods Armadillo",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Armadillo"
+    ],
+    "text": "Reach\nWard {3} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {3}.)\n{1}{G}, Discard Spinewoods Armadillo: Search your library for a basic land card or a Desert card, reveal it, put it into your hand, then shuffle. You gain 3 life.",
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "reach"
+    ],
+    "ward": 3,
+    "number": 182,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Spinewoods Paladin",
+    "cost": "{4}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "text": "Trample\nWhen Spinewoods Paladin enters, you gain 3 life.\nPlot {3}{G} (You may pay {3}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "number": 183,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Stubborn Burrowfiend",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Badger",
+      "Beast",
+      "Mount"
+    ],
+    "text": "Whenever Stubborn Burrowfiend becomes saddled for the first time each turn, mill two cards, then Stubborn Burrowfiend gets +X/+X until end of turn, where X is the number of creature cards in your graveyard.\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 184,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Throw from the Saddle",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control gets +1/+1 until end of turn. Put a +1/+1 counter on it instead if it's a Mount. Then it deals damage equal to its power to target creature you don't control.",
+    "number": 185,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Trash the Town",
+    "cost": "{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Spree (Choose one or more additional costs.)\n+ {2} — Put two +1/+1 counters on target creature.\n+ {1} — Target creature gains trample until end of turn.\n+ {1} — Until end of turn, target creature gains \"Whenever this creature deals combat damage to a player, draw two cards.\"",
+    "number": 186,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Tumbleweed Rising",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create an X/X green Elemental creature token, where X is the greatest power among creatures you control.\nPlot {2}{G} (You may pay {2}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 187,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Voracious Varmint",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Varmint"
+    ],
+    "text": "Vigilance\n{1}, Sacrifice Voracious Varmint: Destroy target artifact or enchantment.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 188,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Akul the Unrepentant",
+    "cost": "{B}{B}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Scorpion",
+      "Dragon",
+      "Rogue"
+    ],
+    "text": "Flying, trample\nSacrifice three other creatures: You may put a creature card from your hand onto the battlefield. Activate only as a sorcery and only once each turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "trample"
+    ],
+    "number": 189,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Annie Flash, the Veteran",
+    "cost": "{3}{R}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Flash\nWhen Annie Flash, the Veteran enters, if you cast it, return target permanent card with mana value 3 or less from your graveyard to the battlefield tapped.\nWhenever Annie Flash becomes tapped, exile the top two cards of your library. You may play those cards this turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flash"
+    ],
+    "number": 190,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Annie Joins Up",
+    "cost": "{1}{R}{G}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Annie Joins Up enters, it deals 5 damage to target creature or planeswalker an opponent controls.\nIf a triggered ability of a legendary creature you control triggers, that ability triggers an additional time.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 191,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Assimilation Aegis",
+    "cost": "{1}{W}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Assimilation Aegis enters, exile up to one target creature until Assimilation Aegis leaves the battlefield.\nWhenever Assimilation Aegis becomes attached to a creature, for as long as Assimilation Aegis remains attached to it, that creature becomes a copy of a creature card exiled with Assimilation Aegis.\nEquip {2}",
+    "number": 192,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "At Knifepoint",
+    "cost": "{1}{B}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "During your turn, outlaws you control have first strike. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)\nWhenever you commit a crime, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\" This ability triggers only once each turn.",
+    "number": 193,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Badlands Revival",
+    "cost": "{3}{B}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Return up to one target creature card from your graveyard to the battlefield. Return up to one target permanent card from your graveyard to your hand.",
+    "number": 194,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Baron Bertram Graywater",
+    "cost": "{2}{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Noble"
+    ],
+    "text": "Whenever one or more tokens you control enter, create a 1/1 black Vampire Rogue creature token with lifelink. This ability triggers only once each turn.\n{1}{B}, Sacrifice another creature or artifact: Draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "number": 195,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Bonny Pall, Clearcutter",
+    "cost": "{3}{G}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Giant",
+      "Scout"
+    ],
+    "text": "Reach\nWhen Bonny Pall, Clearcutter enters, create Beau, a legendary blue Ox creature token with \"Beau's power and toughness are each equal to the number of lands you control.\"\nWhenever you attack, draw a card, then you may put a land card from your hand or graveyard onto the battlefield.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ],
+    "number": 196,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Breeches, the Blastmaker",
+    "cost": "{1}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Pirate"
+    ],
+    "text": "Menace\nWhenever you cast your second spell each turn, you may sacrifice an artifact. If you do, flip a coin. When you win the flip, copy that spell. You may choose new targets for the copy. When you lose the flip, Breeches, the Blastmaker deals damage equal to that spell's mana value to any target.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "number": 197,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Bruse Tarl, Roving Rancher",
+    "cost": "{2}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "text": "Oxen you control have double strike.\nWhenever Bruse Tarl, Roving Rancher enters or attacks, exile the top card of your library. If it's a land card, create a 2/2 white Ox creature token. Otherwise, you may cast it until the end of your next turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "number": 198,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Cactusfolk Sureshot",
+    "cost": "{2}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Mercenary"
+    ],
+    "text": "Reach\nWard {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nAt the beginning of combat on your turn, other creatures you control with power 4 or greater gain trample and haste until end of turn.",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ],
+    "ward": 2,
+    "number": 199,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Congregation Gryff",
+    "cost": "{1}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Hippogriff",
+      "Mount"
+    ],
+    "text": "Flying, lifelink\nWhenever Congregation Gryff attacks while saddled, it gets +X/+X until end of turn, where X is the number of Mounts you control.\nSaddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ],
+    "number": 200,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Doc Aurlock, Grizzled Genius",
+    "cost": "{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear",
+      "Druid"
+    ],
+    "text": "Spells you cast from your graveyard or from exile cost {2} less to cast.\nPlotting cards from your hand costs {2} less.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 201,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Eriette, the Beguiler",
+    "cost": "{1}{W}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Lifelink\nWhenever an Aura you control becomes attached to a nonland permanent an opponent controls with mana value less than or equal to that Aura's mana value, gain control of that permanent for as long as that Aura is attached to it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 202,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Ertha Jo, Frontier Mentor",
+    "cost": "{2}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kor",
+      "Advisor"
+    ],
+    "text": "When Ertha Jo, Frontier Mentor enters, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"\nWhenever you activate an ability that targets a creature or player, copy that ability. You may choose new targets for the copy.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "number": 203,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Form a Posse",
+    "cost": "{X}{R}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create X 1/1 red Mercenary creature tokens with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+    "number": 204,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Ghired, Mirror of the Wilds",
+    "cost": "{R}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Shaman"
+    ],
+    "text": "Haste\nNontoken creatures you control have \"{T}: Create a token that's a copy of target token you control that entered this turn.\"",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "haste"
+    ],
+    "number": 205,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "The Gitrog, Ravenous Ride",
+    "cost": "{3}{B}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog",
+      "Horror",
+      "Mount"
+    ],
+    "text": "Trample, haste\nWhenever The Gitrog, Ravenous Ride deals combat damage to a player, you may sacrifice a creature that saddled it this turn. If you do, draw X cards, then put up to X land cards from your hand onto the battlefield tapped, where X is the sacrificed creature's power.\nSaddle 1",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "trample",
+      "haste"
+    ],
+    "number": 206,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Honest Rutstein",
+    "cost": "{1}{B}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "When Honest Rutstein enters, return target creature card from your graveyard to your hand.\nCreature spells you cast cost {1} less to cast.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "number": 207,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Intimidation Campaign",
+    "cost": "{1}{U}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Intimidation Campaign enters, each opponent loses 1 life, you gain 1 life, and you draw a card.\nWhenever you commit a crime, you may return Intimidation Campaign to its owner's hand. (It returns only from the battlefield. Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "number": 208,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Jem Lightfoote, Sky Explorer",
+    "cost": "{2}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "Flying, vigilance\nAt the beginning of your end step, if you haven't cast a spell from your hand this turn, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "number": 209,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Jolene, Plundering Pugilist",
+    "cost": "{1}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "Whenever you attack with one or more creatures with power 4 or greater, create a Treasure token.\n{1}{R}, Sacrifice a Treasure: Jolene, Plundering Pugilist deals 1 damage to any target.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 2,
+    "number": 210,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Kambal, Profiteering Mayor",
+    "cost": "{1}{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "text": "Whenever one or more tokens enter under your opponents' control, for each of them, create a tapped token that's a copy of it. This ability triggers only once each turn.\nWhenever one or more tokens you control enter, each opponent loses 1 life and you gain 1 life.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "number": 211,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Kellan Joins Up",
+    "cost": "{G}{W}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Kellan Joins Up enters, you may exile a nonland card with mana value 3 or less from your hand. If you do, it becomes plotted. (You may cast it as a sorcery on a later turn without paying its mana cost.)\nWhenever a legendary creature you control enters, put a +1/+1 counter on each creature you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 212,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Kellan, the Kid",
+    "cost": "{G}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Faerie",
+      "Rogue"
+    ],
+    "text": "Flying, lifelink\nWhenever you cast a spell from anywhere other than your hand, you may cast a permanent spell with equal or lesser mana value from your hand without paying its mana cost. If you don't, you may put a land card from your hand onto the battlefield.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ],
+    "number": 213,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Kraum, Violent Cacophony",
+    "cost": "{2}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Horror"
+    ],
+    "text": "Flying\nWhenever you cast your second spell each turn, put a +1/+1 counter on Kraum, Violent Cacophony and draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 214,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Laughing Jasper Flint",
+    "cost": "{1}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Rogue"
+    ],
+    "text": "Creatures you control but don't own are Mercenaries in addition to their other types.\nAt the beginning of your upkeep, exile the top X cards of target opponent's library, where X is the number of outlaws you control. Until end of turn, you may cast spells from among those cards, and mana of any type can be spent to cast those spells.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "number": 215,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Lazav, Familiar Stranger",
+    "cost": "{1}{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shapeshifter"
+    ],
+    "text": "Whenever you commit a crime, put a +1/+1 counter on Lazav, Familiar Stranger. Then you may exile a card from a graveyard. If a creature card was exiled this way, you may have Lazav become a copy of that card until end of turn. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 4,
+    "number": 216,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Lilah, Undefeated Slickshot",
+    "cost": "{1}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever you cast a multicolored instant or sorcery spell from your hand, exile that spell instead of putting it into your graveyard as it resolves. If you do, it becomes plotted. (You may cast it as a sorcery on a later turn without paying its mana cost.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "prowess"
+    ],
+    "number": 217,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Make Your Own Luck",
+    "cost": "{3}{G}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Look at the top three cards of your library. You may exile a nonland card from among them. If you do, it becomes plotted. Put the rest into your hand. (You may cast it as a sorcery on a later turn without paying its mana cost.)",
+    "number": 218,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Malcolm, the Eyes",
+    "cost": "{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Siren",
+      "Pirate"
+    ],
+    "text": "Flying, haste\nWhenever you cast your second spell each turn, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "haste"
+    ],
+    "number": 219,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Marchesa, Dealer of Death",
+    "cost": "{U}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "Whenever you commit a crime, you may pay {1}. If you do, look at the top two cards of your library. Put one of them into your hand and the other into your graveyard. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "number": 220,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Miriam, Herd Whisperer",
+    "cost": "{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "text": "During your turn, Mounts and Vehicles you control have hexproof.\nWhenever a Mount or Vehicle you control attacks, put a +1/+1 counter on it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "number": 221,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Obeka, Splitter of Seconds",
+    "cost": "{1}{U}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ogre",
+      "Warlock"
+    ],
+    "text": "Menace\nWhenever Obeka, Splitter of Seconds deals combat damage to a player, you get that many additional upkeep steps after this phase.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "menace"
+    ],
+    "number": 222,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Oko, the Ringleader",
+    "cost": "{2}{G}{U}",
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Oko"
+    ],
+    "text": "At the beginning of combat on your turn, Oko, the Ringleader becomes a copy of up to one target creature you control until end of turn, except he has hexproof.\n[+1]: Draw two cards. If you've committed a crime this turn, discard a card. Otherwise, discard two cards.\n[-1]: Create a 3/3 green Elk creature token.\n[-5]: For each other nonland permanent you control, create a token that's a copy of that permanent.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "loyalty": 3,
+    "number": 223,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Pillage the Bog",
+    "cost": "{B}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Look at the top X cards of your library, where X is twice the number of lands you control. Put one of them into your hand and the rest on the bottom of your library in a random order.\nPlot {1}{B}{G} (You may pay {1}{B}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+    "number": 224,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Rakdos Joins Up",
+    "cost": "{3}{B}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Rakdos Joins Up enters, return target creature card from your graveyard to the battlefield with two additional +1/+1 counters on it.\nWhenever a legendary creature you control dies, Rakdos Joins Up deals damage equal to that creature's power to target opponent.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 225,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Rakdos, the Muscle",
+    "cost": "{2}{B}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon",
+      "Mercenary"
+    ],
+    "text": "Flying, trample\nWhenever you sacrifice another creature, exile cards equal to its mana value from the top of target player's library. Until your next end step, you may play those cards and mana of any type can be spent to cast those spells.\nSacrifice another creature: Rakdos, the Muscle gains indestructible until end of turn. Tap it. Activate only once each turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "trample"
+    ],
+    "number": 226,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Riku of Many Paths",
+    "cost": "{G}{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Whenever you cast a modal spell, choose up to X, where X is the number of times you chose a mode for that spell —\n• Exile the top card of your library. Until the end of your next turn, you may play it.\n• Put a +1/+1 counter on Riku of Many Paths. It gains trample until end of turn.\n• Create a 1/1 blue Bird creature token with flying.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 227,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Roxanne, Starfall Savant",
+    "cost": "{3}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Druid"
+    ],
+    "text": "Whenever Roxanne, Starfall Savant enters or attacks, create a tapped colorless artifact token named Meteorite with \"When this token enters, it deals 2 damage to any target\" and \"{T}: Add one mana of any color.\"\nWhenever you tap an artifact token for mana, add one mana of any type that artifact token produced.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "number": 228,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Ruthless Lawbringer",
+    "cost": "{1}{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Assassin"
+    ],
+    "text": "When Ruthless Lawbringer enters, you may sacrifice another creature. When you do, destroy target nonland permanent.",
+    "power": 3,
+    "toughness": 2,
+    "number": 229,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Satoru, the Infiltrator",
+    "cost": "{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ninja",
+      "Rogue"
+    ],
+    "text": "Menace\nWhenever Satoru, the Infiltrator and/or one or more other nontoken creatures you control enter, if none of them were cast or no mana was spent to cast them, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "number": 230,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Selvala, Eager Trailblazer",
+    "cost": "{2}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Scout"
+    ],
+    "text": "Vigilance\nWhenever you cast a creature spell, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"\n{T}: Choose a color. Add one mana of that color for each different power among creatures you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 231,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Seraphic Steed",
+    "cost": "{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Unicorn",
+      "Mount"
+    ],
+    "text": "First strike, lifelink\nWhenever Seraphic Steed attacks while saddled, create a 3/3 white Angel creature token with flying.\nSaddle 4 (Tap any number of other creatures you control with total power 4 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "first_strike",
+      "lifelink"
+    ],
+    "number": 232,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Slick Sequence",
+    "cost": "{U}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Slick Sequence deals 2 damage to any target. If you've cast another spell this turn, draw a card.",
+    "number": 233,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Taii Wakeen, Perfect Shot",
+    "cost": "{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "text": "Whenever a source you control deals noncombat damage to a creature equal to that creature's toughness, draw a card.\n{X}, {T}: If a source you control would deal noncombat damage to a permanent or player this turn, it deals that much damage plus X instead.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 234,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Vial Smasher, Gleeful Grenadier",
+    "cost": "{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Mercenary"
+    ],
+    "text": "Whenever another outlaw you control enters, Vial Smasher, Gleeful Grenadier deals 1 damage to target opponent. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "number": 235,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Vraska Joins Up",
+    "cost": "{B}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Vraska Joins Up enters, put a deathtouch counter on each creature you control.\nWhenever a legendary creature you control deals combat damage to a player, draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 236,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Vraska, the Silencer",
+    "cost": "{1}{B}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Gorgon",
+      "Assassin"
+    ],
+    "text": "Deathtouch\nWhenever a nontoken creature an opponent controls dies, you may pay {1}. If you do, return that card to the battlefield tapped under your control. It's a Treasure artifact with \"{T}, Sacrifice this artifact: Add one mana of any color,\" and it loses all other card types.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 237,
+    "set": "OTJ",
+    "rarity": "M"
+  },
+  {
+    "name": "Wrangler of the Damned",
+    "cost": "{3}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Flash\nAt the beginning of your end step, if you haven't cast a spell from your hand this turn, create a 2/2 white Spirit creature token with flying.",
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "flash"
+    ],
+    "number": 238,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Wylie Duke, Atiin Hero",
+    "cost": "{1}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ranger"
+    ],
+    "text": "Vigilance\nWhenever Wylie Duke, Atiin Hero becomes tapped, you gain 1 life and draw a card.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 239,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Bandit's Haul",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Whenever you commit a crime, put a loot counter on Bandit's Haul. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)\n{T}: Add one mana of any color.\n{2}, {T}, Remove two loot counters from Bandit's Haul: Draw a card.",
+    "number": 240,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Boom Box",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{6}, {T}, Sacrifice Boom Box: Destroy up to one target artifact, up to one target creature, and up to one target land.",
+    "number": 241,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Gold Pan",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Gold Pan enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nEquipped creature gets +1/+1.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 242,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Lavaspur Boots",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature gets +1/+0 and has haste and ward {1}.\nEquip {1}",
+    "number": 243,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Luxurious Locomotive",
+    "cost": "{5}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Whenever Luxurious Locomotive attacks, create a Treasure token for each creature that crewed it this turn. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")\nCrew 1. Activate only once each turn. (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 6,
+    "toughness": 5,
+    "number": 244,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Mobile Homestead",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Mobile Homestead has haste as long as you control a Mount.\nWhenever Mobile Homestead attacks, look at the top card of your library. If it's a land card, you may put it onto the battlefield tapped.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 3,
+    "toughness": 3,
+    "number": 245,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Oasis Gardener",
+    "cost": "{3}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "text": "When Oasis Gardener enters, you gain 2 life.\n{T}: Add one mana of any color.",
+    "power": 2,
+    "toughness": 2,
+    "number": 246,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Redrock Sentinel",
+    "cost": "{3}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "text": "Defender\n{2}, {T}, Sacrifice a land: Draw a card and create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "defender"
+    ],
+    "number": 247,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Silver Deputy",
+    "cost": "{2}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Mercenary"
+    ],
+    "text": "When Silver Deputy enters, you may search your library for a basic land card or a Desert card, reveal it, then shuffle and put it on top.\n{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.",
+    "power": 1,
+    "toughness": 2,
+    "number": 248,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Sterling Hound",
+    "cost": "{3}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog"
+    ],
+    "text": "When Sterling Hound enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "power": 3,
+    "toughness": 2,
+    "number": 249,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Tomb Trawler",
+    "cost": "{2}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "text": "{2}: Put target card from your graveyard on the bottom of your library.",
+    "power": 0,
+    "toughness": 4,
+    "number": 250,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Abraded Bluffs",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Abraded Bluffs enters tapped.\nWhen Abraded Bluffs enters, it deals 1 damage to target opponent.\n{T}: Add {R} or {W}.",
+    "produces": [
+      "C"
+    ],
+    "number": 251,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Arid Archway",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Arid Archway enters tapped.\nWhen Arid Archway enters, return a land you control to its owner's hand. If another Desert was returned this way, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{T}: Add {C}{C}.",
+    "produces": [
+      "C"
+    ],
+    "number": 252,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Bristling Backwoods",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Bristling Backwoods enters tapped.\nWhen Bristling Backwoods enters, it deals 1 damage to target opponent.\n{T}: Add {R} or {G}.",
+    "produces": [
+      "C"
+    ],
+    "number": 253,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Conduit Pylons",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "When Conduit Pylons enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{T}: Add {C}.\n{1}, {T}: Add one mana of any color.",
+    "produces": [
+      "C"
+    ],
+    "number": 254,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Creosote Heath",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Creosote Heath enters tapped.\nWhen Creosote Heath enters, it deals 1 damage to target opponent.\n{T}: Add {W} or {G}.",
+    "produces": [
+      "C"
+    ],
+    "number": 255,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Eroded Canyon",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Eroded Canyon enters tapped.\nWhen Eroded Canyon enters, it deals 1 damage to target opponent.\n{T}: Add {U} or {R}.",
+    "produces": [
+      "C"
+    ],
+    "number": 256,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Festering Gulch",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Festering Gulch enters tapped.\nWhen Festering Gulch enters, it deals 1 damage to target opponent.\n{T}: Add {B} or {G}.",
+    "produces": [
+      "C"
+    ],
+    "number": 257,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Forlorn Flats",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Forlorn Flats enters tapped.\nWhen Forlorn Flats enters, it deals 1 damage to target opponent.\n{T}: Add {W} or {B}.",
+    "produces": [
+      "C"
+    ],
+    "number": 258,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Jagged Barrens",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Jagged Barrens enters tapped.\nWhen Jagged Barrens enters, it deals 1 damage to target opponent.\n{T}: Add {B} or {R}.",
+    "produces": [
+      "C"
+    ],
+    "number": 259,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Lonely Arroyo",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Lonely Arroyo enters tapped.\nWhen Lonely Arroyo enters, it deals 1 damage to target opponent.\n{T}: Add {W} or {U}.",
+    "produces": [
+      "C"
+    ],
+    "number": 260,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Lush Oasis",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Lush Oasis enters tapped.\nWhen Lush Oasis enters, it deals 1 damage to target opponent.\n{T}: Add {G} or {U}.",
+    "produces": [
+      "C"
+    ],
+    "number": 261,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Mirage Mesa",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Mirage Mesa enters tapped. As it enters, choose a color.\n{T}: Add one mana of the chosen color.",
+    "produces": [
+      "C"
+    ],
+    "number": 262,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Sandstorm Verge",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "{T}: Add {C}.\n{3}, {T}: Target creature can't block this turn. Activate only as a sorcery.",
+    "produces": [
+      "C"
+    ],
+    "number": 263,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Soured Springs",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "Soured Springs enters tapped.\nWhen Soured Springs enters, it deals 1 damage to target opponent.\n{T}: Add {U} or {B}.",
+    "produces": [
+      "C"
+    ],
+    "number": 264,
+    "set": "OTJ",
+    "rarity": "C"
+  },
+  {
+    "name": "Bucolic Ranch",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Desert"
+    ],
+    "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a Mount spell.\n{3}, {T}: Look at the top card of your library. If it's a Mount card, you may reveal it and put it into your hand. If you don't put it into your hand, you may put it on the bottom of your library.",
+    "produces": [
+      "C"
+    ],
+    "number": 265,
+    "set": "OTJ",
+    "rarity": "U"
+  },
+  {
+    "name": "Blooming Marsh",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Blooming Marsh enters tapped unless you control two or fewer other lands.\n{T}: Add {B} or {G}.",
+    "produces": [
+      "C"
+    ],
+    "number": 266,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Botanical Sanctum",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Botanical Sanctum enters tapped unless you control two or fewer other lands.\n{T}: Add {G} or {U}.",
+    "produces": [
+      "C"
+    ],
+    "number": 267,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Concealed Courtyard",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Concealed Courtyard enters tapped unless you control two or fewer other lands.\n{T}: Add {W} or {B}.",
+    "produces": [
+      "C"
+    ],
+    "number": 268,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Inspiring Vantage",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Inspiring Vantage enters tapped unless you control two or fewer other lands.\n{T}: Add {R} or {W}.",
+    "produces": [
+      "C"
+    ],
+    "number": 269,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Spirebluff Canal",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Spirebluff Canal enters tapped unless you control two or fewer other lands.\n{T}: Add {U} or {R}.",
+    "produces": [
+      "C"
+    ],
+    "number": 270,
+    "set": "OTJ",
+    "rarity": "R"
+  },
+  {
+    "name": "Jace Reawakened",
+    "cost": "{U}{U}",
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Jace"
+    ],
+    "text": "You can't cast this spell during your first, second, or third turns of the game.\n[+1]: Draw a card, then discard a card.\n[+1]: You may exile a nonland card with mana value 3 or less from your hand. If you do, it becomes plotted.\n[-6]: Until end of turn, whenever you cast a spell, copy it. You may choose new targets for the copy.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "loyalty": 3,
+    "number": 271,
+    "set": "OTJ",
+    "rarity": "M"
+  }
+]

@@ -266,6 +266,10 @@ export function lineNotes(def: CardDef): LineNote[] {
     }
     out.push({ kind: 'static', text: line, desc: '只要這張牌在戰場上就一直有效，不需要任何操作。' });
   }
+  if(def.adventure&&!out.some(l=>l.kind==='adventure'))out.push({
+    kind:'adventure',text:def.adventure.text,cost:def.adventure.cost,effect:def.adventure.text,
+    desc:`你可以施放冒險「${def.adventure.name}」。結算後放逐此牌，之後可以從放逐區施放本體。`,
+  });
   return out;
 }
 

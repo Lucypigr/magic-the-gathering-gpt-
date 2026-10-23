@@ -91,12 +91,14 @@ export function* resolveEclEntries(g: GameState): SubFlow {
       tapped = entry.tapped;
     const choice = c.def.ecl?.asEnters;
     if (choice === 'tribe' || choice === 'tribe8') c.eclType = yield* chooseEclType(g, entry.controller, choice === 'tribe8');
+    if(choice==='talion'){const r:Response=yield{type:'mode',player:entry.controller,prompt:'選擇1至10',options:Array.from({length:10},(_,i)=>String(i+1)),count:1,purpose:'count'};(c.frontierMarks??={}).talion=1+(r.type==='modes'?r.picks[0]??0:0);}
     if (choice === 'color') c.chosenColor = yield* color(g, entry.controller);
     if (choice === 'shock') {
       if (g.players[entry.controller].life >= 2 && (yield* yes(g, entry.controller, '支付2生命使震地不橫置？')))
         loseLife(g, entry.controller, 2);
       else tapped = true;
     }
+    if(choice==='otjClone'){const ids=g.battlefield.filter(id=>g.cards[id].controller===entry.controller&&isCreature(g.cards[id]));const [id]=yield*choose(g,entry.controller,'可複製一個己方生物',ids);if(id!==undefined){const base=copiable(g.cards[id]);def={...base,subtypes:[...(base.subtypes??[]),'Shapeshifter','Rogue'],ecl:undefined};}}
     if (choice === 'clone') {
       const [id] = yield* choose(
         g,
@@ -126,7 +128,7 @@ export function* makeEclTokenBatch(
   pid: PID,
   token: string | CardDef,
   n: number,
-  opts: { tapped?: boolean; attacking?: boolean; attachTo?: number } = {},
+  opts: { tapped?: boolean; attacking?: boolean; attachTo?: number; batch?:number } = {},
 ): SubFlow<Card[]> {
   if (n <= 0) return [];
   type Group = { def: CardDef; n: number; primary: boolean };
@@ -183,7 +185,7 @@ export function* makeEclTokenBatch(
     }
   }
   g.players[pid].tokensCreatedTurn = g.turn;
-  const previousGroup=g.mshTokenGroup;g.mshTokenGroup=g.nextSid++;
+  const previousGroup=g.mshTokenGroup;g.mshTokenGroup=opts.batch??g.nextSid++;
   const out: Card[] = [];
   for (const group of groups)
     for (let i = 0; i < group.n; i++) {
@@ -191,7 +193,7 @@ export function* makeEclTokenBatch(
       c.zone = 'exile';
       enterBattlefield(g, c, pid, !!opts.tapped);
       if (opts.attacking && isCreature(c)) c.attacking = true;
-      if (opts.attachTo !== undefined) c.attachedTo = opts.attachTo;
+      if (opts.attachTo !== undefined){c.attachedTo = opts.attachTo;emit(g,{type:'frontier',action:'attached',card:c.id,player:pid,other:opts.attachTo,amount:0});}
       if (group.primary) out.push(c);
     }
   g.mshTokenGroup=previousGroup;

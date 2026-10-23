@@ -1,3 +1,6 @@
+import {otjEffect} from './otj';
+import {woeEffect} from './woe';
+import {frontierAmount} from './frontier-support';
 import {mshEffect} from './msh';
 import {mshAmount,mshStatic,mshUntapLocked} from './msh-support';
 import {mkmEffect} from './mkm';
@@ -61,6 +64,7 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
+  distribution?:number[];
   sourceType?:string;
   sourceLinkKey?:number;
   sneakPaid?:boolean;
@@ -94,9 +98,7 @@ interface Resolved {
 }
 
 function targetIndex(ref: Ref): number {
-  if (ref === 'T0') return 0;
-  if (ref === 'T1') return 1;
-  if (ref === 'T2') return 2;
+  if (typeof ref==='string'&&/^T\d+$/.test(ref)) return Number(ref.slice(1));
   return -1;
 }
 
@@ -249,6 +251,7 @@ export function amount(g: GameState, ctx: Ctx, a: Amt): number {
   if ('x' in a) return ctx.x ?? g.cards[ctx.source]?.castX ?? 0;
   if ('spellsCast' in a) return g.players[ctx.controller].spellsThisTurn;
   if ('selfCounters' in a) { const c=g.cards[ctx.source]; return Math.max(0, (c?.counters??0) + (c?.def.id==='savanti-romero-times-exile' ? (c.charge??0)+c.stun+(c.hexproofCounters??0)+Number(!!c.finality)+(c.lore??0) : 0)); }
+  if('frontier'in a)return frontierAmount(g,ctx.controller,ctx.source,a.frontier,ctx.x??0,ctx.ev);
   if('msh'in a)return mshAmount(g,ctx.controller,ctx.source,a.msh,ctx.ev);
   if('mkm'in a)return mkmAmount(g,ctx.controller,ctx.source,a.mkm,ctx.x??0);
   if('fin'in a)return finAmount(g,ctx.controller,ctx.source,a.fin,ctx.ev);
@@ -434,6 +437,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'copyCreature': {
       for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=copiableDefinition(c);const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const [t]=yield* makeEclTokenBatch(g,ctx.controller,def,1);if(!t)continue;if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
     }
+    case 'frontier':if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
     case 'msh':yield* mshEffect(g,ctx,ef);return;
     case 'mkm':yield* mkmEffect(g,ctx,ef);return;
     case 'fin':yield* finEffect(g,ctx,ef);return;
@@ -441,7 +445,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'tmt': yield* tmtEffect(g,ctx,ef);return;
     case 'tla': yield* tlaEffect(g,ctx,ef); return;
     case 'tap':
-      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') tapCard(g,c);
+      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') tapCard(g,c,me);
       g.version++;
       break;
     case 'untap':
@@ -454,7 +458,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         const n=ef.n===undefined?1:amount(g,ctx,ef.n);
         if(canReceiveCounters(g,c))c.stun += n;
         if(n>0&&canReceiveCounters(g,c))emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n,counterKind:'stun'});
-        tapCard(g,c);
+        tapCard(g,c,me);
       }
       g.version++;
       break;
@@ -871,7 +875,9 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     case 'saddle':
       if (src && src.zone === 'battlefield') {
+        const first=src.saddledTurn!==g.turn;
         src.saddledTurn = g.turn;
+        emit(g,{type:'frontier',action:'saddled',card:src.id,player:me,amount:first?1:0});
         g.version++;
       }
       break;
@@ -1410,6 +1416,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const t = resolveRef(g, ctx, ef.what).cards[0];
       if (!src || src.zone !== 'battlefield' || !t || t.zone !== 'battlefield' || !isCreature(t)) break;
       src.attachedTo = t.id;
+      emit(g,{type:'frontier',action:'attached',card:src.id,player:me,other:t.id,amount:0});
       log(g, `${cardName(src)} 裝備到 ${cardName(t)}`, me);
       g.version++;
       break;

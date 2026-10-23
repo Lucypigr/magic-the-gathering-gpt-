@@ -1,6 +1,8 @@
+import {frontierCanBlock,frontierStatic,enchanted} from './frontier-support';
 import {mshStatic} from './msh-support';
 import {mkmStatic} from './mkm-support';
-import {colorsOf} from './mana';
+import {colorsOf,parseCost} from './mana';
+import {payCost} from './actions';
 import { abilitiesSuppressed, cardName, creaturesOf, hasStaticFlag, isCreature, log, other, show, stats } from './state';
 import type { Card, GameState, PID } from './types';
 import { tapCard } from './zones';
@@ -12,6 +14,7 @@ export function canAttack(g: GameState, c: Card): boolean {
   if(g.landCombatOnly&&!c.def.types.includes('Land')&&c.def.id!=='tok-earth')return false;
   if(stats(g,c).kw.has('flying')&&mshStatic(g,(1-c.controller) as PID,'stormFlying').length)return false;
   const st = stats(g, c);
+  if(frontierStatic(g,other(c.controller),'erietteAttack').some(s=>enchanted(g,c,s.controller)))return false;
   if (st.cantAttack || (st.kw.has('defender') && !st.ignoreDefender)) return false;
   if (c.sick && !st.kw.has('haste')) return false;
   return true;
@@ -26,6 +29,7 @@ export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
   if (!isCreature(blocker) || blocker.zone !== 'battlefield' || blocker.tapped) return false;
   if (!attacker.attacking || attacker.zone !== 'battlefield') return false;
   if (blocker.controller === attacker.controller) return false;
+  if(!frontierCanBlock(g,blocker,attacker))return false;
   const bs = stats(g, blocker);
   if (bs.cantBlock) return false;
   const as = stats(g, attacker);
@@ -63,6 +67,13 @@ export function declareAttackers(g: GameState, pid: PID, ids: number[], targets?
   const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&((c.mkmMarks?.mustAttackBlock===g.turn)||(!abilitiesSuppressed(g,c)&&['red-herring','ares-god-of-war','tok-msh-void','tok-msh-alien'].includes(c.def.id)));});
   const uniq = [...new Set([...ids,...forced])];
   const list = uniq.map((id) => g.cards[id]).filter((c) => c && c.controller === pid && canAttack(g, c));
+  const tax=frontierStatic(g,(1-pid) as PID,'archangelTax').filter(c=>!c.tapped).length;
+  if(tax&&list.length){
+    // Nonvigilant attackers are already tapped when attack costs are paid.
+    const reserved=list.filter(c=>!stats(g,c).kw.has('vigilance'));for(const c of reserved)c.tapped=true;
+    const paid=payCost(g,pid,parseCost('{'+tax*list.length+'}'));for(const c of reserved)c.tapped=false;
+    if(!paid)return [];
+  }
   const pws = new Set(attackablePlaneswalkers(g, pid).map((c) => c.id));
   const attackedPw = new Set<number>();
   const oldTapGroup=g.mshTapGroup;g.mshTapGroup=g.nextSid++;
@@ -119,13 +130,16 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
   const countFor = (a: number) => valid.filter(([, x]) => x === a).length;
   valid = valid.filter(([, a]) => !(g.cards[a].def.id==='relentless-x-atm092'?countFor(a)<3:stats(g,g.cards[a]).kw.has('menace')&&countFor(a)<2));
   valid = valid.filter(([,a],i) => !stats(g,g.cards[a]).onlyOneBlocker || valid.findIndex(([,id])=>id===a)===i);
+  const tax=frontierStatic(g,(1-pid) as PID,'archangelTax').filter(c=>c.attacking).length;if(tax&&valid.length&&!payCost(g,pid,parseCost('{'+tax*valid.length+'}')))return [];
   for (const [b, a] of valid) {
     const bc = g.cards[b];
     const ac = g.cards[a];
     bc.blocking = a;
     ac.blockedBy.push(b);
     ac.wasBlocked = true;
+    for(const [source,otherCard] of [[bc,ac],[ac,bc]])if(source.def.id==='skewer-slinger')emit(g,{type:'frontier',action:'slingerBlock',card:source.id,other:otherCard.id,player:source.controller,amount:0});
   }
+  for(const a of attackers(g))if(a.blockedBy.length&&a.def.subtypes?.includes('Rat'))emit(g,{type:'frontier',action:'ratBlocked',card:a.id,player:a.controller,amount:0});
   for(const a of attackers(g))if(a.blockedBy.length)emit(g,{type:'mkm',action:'blocked',card:a.id,player:a.controller});
   if (valid.length) {
     log(
