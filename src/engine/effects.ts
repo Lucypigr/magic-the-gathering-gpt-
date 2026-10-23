@@ -453,7 +453,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         if (c.zone !== 'battlefield') continue;
         const n=ef.n===undefined?1:amount(g,ctx,ef.n);
         if(canReceiveCounters(g,c))c.stun += n;
-        if(n>0&&canReceiveCounters(g,c))emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n});
+        if(n>0&&canReceiveCounters(g,c))emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n,counterKind:'stun'});
         tapCard(g,c);
       }
       g.version++;
@@ -505,10 +505,12 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'counters': {
       const n = amount(g, ctx, ef.n);
+      // One simultaneous placement, rather than the entire spell's resolution.
+      const counterBatch = g.nextSid++;
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield' || !isCreature(c)) continue;
         let k = n;
-        if (n > 0) k = putCounters(g, c, n);
+        if (n > 0) k = putCounters(g, c, n, counterBatch);
         else putMinusCounters(g,c,-n);
         log(g, k >= 0 ? `${cardName(c)} 得到 ${k} 個 +1/+1 指示物` : `${cardName(c)} 得到 ${-k} 個 -1/-1 指示物`, c.controller);
       }
@@ -1119,7 +1121,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         if(c.def.set==='TLA'||c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN') c.charge=(c.charge??0)+amount(g,ctx,ef.n);
         else c.counters += amount(g, ctx, ef.n);
         log(g, `${cardName(c)} 上放置了充能指示物（${c.charge??c.counters}）`, c.controller);
-        if(amount(g,ctx,ef.n)>0)emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:amount(g,ctx,ef.n)});
+        if(amount(g,ctx,ef.n)>0)emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:amount(g,ctx,ef.n),counterKind:'charge'});
         if(c.def.id==='zhao-the-moon-slayer')refreshTlaPermanents(g);
       }
       g.version++;

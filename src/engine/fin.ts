@@ -218,7 +218,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
       for (const id of opts({ type: 'Creature' }).filter((id) => id !== src.id)) {
         const c = g.cards[id];
         (c.eclCounters ??= {}).indestructible = ((c.eclCounters ?? {}).indestructible ?? 0) + 1;
-        emit(g, { type: 'counterPlaced', card: id, controller: me, amount: 1 });
+        emit(g, { type: 'counterPlaced', card: id, controller: me, amount: 1, counterKind: 'indestructible' });
       }
       break;
     case 'creatureFog':

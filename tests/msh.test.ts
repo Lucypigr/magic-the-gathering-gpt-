@@ -20,6 +20,41 @@ const cast = (g: GameState, id: number, targets: (TargetRef | null)[] = [], extr
 const activate = (g: GameState, id: number, ability = 0, targets: (TargetRef | null)[] = [], extra: object = {}) =>
   expect(performAction(g, 0, { type: 'activate', card: id, ability, targets, ...extra })).toBeNull();
 describe('MSH full main set and mechanics', () => {
+  it('Invisible Woman triggers for independent counter placements without an effect batch', () => {
+    const g = mk();
+    put(g, 0, 'invisible-woman-sue-storm');
+    const hero = put(g, 0, 'brave-brawler');
+    putCounters(g, hero, 1);
+    settleAll(g);
+    putCounters(g, hero, 1);
+    settleAll(g);
+    expect(g.battlefield.filter(id => g.cards[id].def.id === 'tok-msh-wall')).toHaveLength(2);
+  });
+  it('Invisible Woman triggers once per simultaneous instruction, including separate instructions in one effect', () => {
+    const g = mk();
+    const sue = put(g, 0, 'invisible-woman-sue-storm');
+    put(g, 0, 'brave-brawler');
+    put(g, 0, 'brave-brawler');
+    effect(g, sue.id, [
+      { e: 'counters', what: { all: { ctrl: 'you', sub: 'Hero', other: true } }, n: 1 },
+      { e: 'counters', what: { all: { ctrl: 'you', sub: 'Hero', other: true } }, n: 1 },
+    ]);
+    settleAll(g);
+    expect(g.battlefield.filter(id => g.cards[id].def.id === 'tok-msh-wall')).toHaveLength(2);
+  });
+  it('stun and charge counters do not trigger +1/+1 counter abilities or grant flying', () => {
+    for (const kind of ['stun', 'chargeCounter'] as const) {
+      const g = mk();
+      const sue = put(g, 0, 'invisible-woman-sue-storm');
+      const beast = put(g, 0, 'beast-erudite-aerialist');
+      const knight = put(g, 0, 'knight-of-wundagore');
+      effect(g, sue.id, [{ e: kind, what: 'T0', n: 1 }], [{ c: beast.id }]);
+      settleAll(g);
+      expect(knight.counters).toBe(0);
+      expect(stats(g, beast).kw.has('flying')).toBe(false);
+      expect(g.battlefield.some(id => g.cards[id].def.id === 'tok-msh-wall')).toBe(false);
+    }
+  });
   it('contains all 276 printed definitions and the exact booster pool', () => {
     expect(catalog).toHaveLength(276);
     expect(poolSize('MSH')).toBe(276);

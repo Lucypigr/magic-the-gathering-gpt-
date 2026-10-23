@@ -593,8 +593,12 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   }
   if (!c.def.types.includes('Land')) g.players[controller].nonlandEtbThisTurn = (g.players[controller].nonlandEtbThisTurn ?? 0) + 1;
   refreshTlaPermanents(g);
-  const enterCounters=Math.abs(c.counters)+(c.hexproofCounters??0)+Number(!!c.finality)+(c.loyalty??0);
-  if(enterCounters)emit(g,{type:'counterPlaced',card:c.id,controller,amount:enterCounters});
+  const enterCounters: [string, number][] = [
+    [c.counters < 0 ? 'minus' : '+1/+1', Math.abs(c.counters)],
+    ['hexproof', c.hexproofCounters ?? 0], ['finality', Number(!!c.finality)], ['loyalty', c.loyalty ?? 0],
+  ];
+  for (const [counterKind, amount] of enterCounters)
+    if (amount) emit(g, { type: 'counterPlaced', card: c.id, controller, amount, counterKind });
   emit(g, { type: 'etb', card: c.id, controller });
   if (c.def.saga) addLore(g, c, 1);
 }
@@ -606,7 +610,7 @@ export function addLore(g: GameState, c: Card, n: number): void {
   for (let i = 0; i < n; i++) {
     (c.finMarks??={}).loreTurn=g.turn;for(const id of c.finLinked??[]){const exiled=g.cards[id];if(exiled?.zone==='exile'&&exiled.eclCast?.mode==='brynhildr')(exiled.finMarks??={}).brynhildrTurn=g.turn;}
     c.lore = (c.lore ?? 0) + 1;
-    emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:1});
+    emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:1,counterKind:'lore'});
     const ch = chapters[c.lore - 1];
     if (!ch) continue;
     log(g, `${cardName(c)}：第 ${ROMAN[c.lore - 1]} 章`, c.controller);
@@ -656,7 +660,7 @@ export function transformCard(g: GameState, c: Card): boolean {
 }
 
 /** 在生物上放置 +1/+1 指示物（套用「多放 n 個」的取代效果）；回傳實際放置的數量 */
-export function putCounters(g: GameState, c: Card, n: number): number {
+export function putCounters(g: GameState, c: Card, n: number, counterBatch?: number): number {
   if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'))return 0;
   if (n <= 0 || c.zone !== 'battlefield') return 0;
   if (isCreature(c)) {
@@ -669,7 +673,7 @@ export function putCounters(g: GameState, c: Card, n: number): number {
   n*=2**finStatic(g,c.controller,'doubleCounters').length;
   n+=mshStatic(g,c.controller,'extraCounters').length;
   c.counters += n;
-  emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: n });
+  emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: n, counterKind: '+1/+1', counterBatch });
   return n;
 }
 

@@ -1277,7 +1277,7 @@ export type GameEvent =
   | { type: 'loyaltyActivated'; card: number; controller: PID; removed: number }
   | { type: 'noncombat'; player: PID; amount: number; sourceController: PID }
   | { type: 'discard'; player: PID; card: number; batchPart?:boolean; batchSummary?:boolean }
-  | { type: 'counterPlaced'; card: number; controller: PID; amount: number; counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
+  | { type: 'counterPlaced'; card: number; controller: PID; amount: number; counterBatch?:number; counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export interface PendingTrigger {
   sourceType?:string;

@@ -857,7 +857,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
         for (const kw of ['flying', 'first_strike', 'lifelink'] as const) {
           (c.eclCounters ??= {})[kw] = ((c.eclCounters ?? {})[kw] ?? 0) + 1;
         }
-        emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: 3 });
+        emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: 3, counterKind: 'keyword' });
       }
       break;
     }

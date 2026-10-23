@@ -123,8 +123,10 @@ export function mshTriggerMatches(g: GameState, c: Card, ab: TriggeredAbility, e
         matches(g, { sub: 'Hero' }, ec, pid) &&
         (ev.counterKind === undefined || ev.counterKind === '+1/+1')
       ) {
-        if (c.mshMarks?.heroCounterGroup === g.eclEventGroup) return false;
-        (c.mshMarks ??= {}).heroCounterGroup = g.eclEventGroup ?? g.nextSid++;
+        if (ev.counterBatch !== undefined) {
+          if (c.mshMarks?.heroCounterGroup === ev.counterBatch) return false;
+          (c.mshMarks ??= {}).heroCounterGroup = ev.counterBatch;
+        }
         return true;
       }
       return false;
