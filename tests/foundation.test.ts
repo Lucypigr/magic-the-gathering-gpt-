@@ -509,3 +509,13 @@ it("Undead Sprinter has graveyard permission during the opponent turn when High 
   resolve(g);
   expect(c.counters).toBe(1);
 });
+
+it("Fog Bank cannot deal combat damage to players even after a power boost", () => {
+  const g = mk(),
+    c = put(g, 0, "fog-bank");
+  g.eot.push({ card: c.id, p: 4, t: 0, kw: [] });
+  expect(stats(g, c).p).toBe(4);
+  expect(dealDamage(g, c, 0, { p: 1 }, 4, { combat: true })).toBe(0);
+  expect(g.players[1].life).toBe(20);
+  expect(dealDamage(g, c, 0, { p: 1 }, 1)).toBe(1);
+});

@@ -35,6 +35,14 @@ export function foundationDamage(
   n: number,
   combat: boolean,
 ): { n: number; mill?: number } {
+  if (
+    combat &&
+    src &&
+    frontierStatic(g, src.controller, "fdn:preventCombatBoth").some(
+      (c) => c.id === src.id,
+    )
+  )
+    return { n: 0 };
   const victim = "p" in target ? target.p : g.cards[target.c]?.controller;
   if (victim !== undefined && victim !== pid)
     n *= 2 ** frontierStatic(g, pid, "fdn:doubleDamage").length;
