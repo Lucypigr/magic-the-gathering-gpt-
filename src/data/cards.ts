@@ -1,3 +1,4 @@
+import {completeMsh} from './sets/msh-extra';
 import {completeMkm} from './sets/mkm-extra';
 import {completeFin} from './sets/fin-extra';
 // ============================================================
@@ -704,6 +705,7 @@ completeTmt();
 completeEcl();
 completeFin();
 completeMkm();
+completeMsh();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

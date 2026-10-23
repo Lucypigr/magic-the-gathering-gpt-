@@ -1,3 +1,4 @@
+import {mshApplyStats,mshCondition} from './msh-support';
 import {mkmApplyStats,mkmCondition,mkmStatic} from './mkm-support';
 import {finApplyStats,finBaseStats,finCondition} from './fin-support';
 import { displayName } from '../data/names';
@@ -262,6 +263,7 @@ export interface Stats {
 
 /** 這張永久物是否因為光環而失去所有異能 */
 export function abilitiesSuppressed(g: GameState, c: Card): boolean {
+  if(c.mshMarks?.waspSource!==undefined&&g.battlefield.some(id=>(g.cards[id].tmtLinkKey??id)===c.mshMarks?.waspSource))return true;
   if(c.eclLoseAbilities)return true;
   if (!g.loseAbilities || c.zone !== 'battlefield') return false;
   if (c.loseAbilitiesTurn === g.turn) return true;
@@ -382,6 +384,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===c.id&&eq.def.equip?.powerPerArtifact)st.p+=g.battlefield.filter(id=>g.cards[id].controller===eq.controller&&g.cards[id].def.types.includes('Artifact')).length;}
   finApplyStats(g,c,st);
   mkmApplyStats(g,c,st);
+  mshApplyStats(g,c,st);
   return st;
 }
 
@@ -397,6 +400,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;
+  if(f.mshWorthy&&(!c.def.supertypes?.includes('Legendary')||c.def.subtypes?.includes('Villain')||!colorsOf(c.def).some(col=>col==='R'||col==='W')))return false;
   if(f.suspected!==undefined&&!!c.suspected!==f.suspected)return false;
   if(f.faceDown!==undefined&&!!c.hidden!==f.faceDown)return false;
   if(f.dealtDamage!==undefined&&(c.mkmMarks?.dealtDamage===g.turn)!==f.dealtDamage)return false;
@@ -416,11 +420,12 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   }
   if(f.chosenTribe){const source=g.cards[sourceId??-1];if(!source?.eclType||!(d.changeling||d.subtypes?.includes(source.eclType)))return false;}
   if(f.minusCounters!==undefined&&(c.counters<0)!==f.minusCounters)return false;
+  const mshChangeling=c.def.id==='undercover-skrull'&&g.players[c.controller].graveyard.filter(id=>isCreature(g.cards[id])).length>=2&&!abilitiesSuppressed(g,c);
   const attachedChangeling=g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='stalactite-dagger');
   const jobTypes=c.zone==='battlefield'?g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&!abilitiesSuppressed(g,g.cards[id])).flatMap(id=>g.cards[id].def.fin?.job?[g.cards[id].def.fin!.job!]:[]):[];
   const mkmLandTypes=isLand(c)&&c.zone==='battlefield'&&mkmStatic(g,c.controller,'guildpact').length?['Plains','Island','Swamp','Mountain','Forest']:[];
-  if (f.sub && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
-  if (f.nonSub && (asArr(f.nonSub).some(s=>jobTypes.includes(s))||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
+  if (f.sub && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !mshChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
+  if (f.nonSub && (asArr(f.nonSub).some(s=>jobTypes.includes(s))||mshChangeling||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
   if (f.attackedThisTurn !== undefined && (c.attackedTurn === g.turn) !== f.attackedThisTurn) return false;
   if(f.name&&d.name!==f.name)return false;
   if(f.nonNames?.includes(d.name))return false;
@@ -491,6 +496,7 @@ export function checkCond(
   const me = g.players[controller];
   const opp = g.players[other(controller)];
   switch (cond.c) {
+    case 'msh':return mshCondition(g,cond,controller,sourceId??-1);
     case 'mkm':return mkmCondition(g,cond,controller,sourceId??-1,ev);
     case 'and':return cond.conds.every(c=>checkCond(g,c,controller,sourceId,targets,ev));
     case 'fin':return finCondition(g,cond,controller,sourceId??-1,ev);

@@ -54,6 +54,7 @@ export type Keyword =
 
 /** 篩選條件：用來描述「哪些物件」符合。ctrl 以能力控制者的視角判斷。 */
 export interface Filter {
+  mshWorthy?:boolean;
   suspected?:boolean;faceDown?:boolean;dealtDamage?:boolean;gyThisTurn?:boolean;
   name?:string; nonNames?:string[];
   type?: CardType | CardType[];
@@ -103,7 +104,7 @@ export interface Filter {
   owner?: 'you'|'opp';
 }
 
-export type TargetKind = 'creatureOrGy' | 'spellOrPermanent' | 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
+export type TargetKind = 'permanentOrPlayer' | 'creatureOrGy' | 'spellOrPermanent' | 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
 
 export interface TargetSpec {
   sameGraveyardAs?:number;totalMvMax?:number;
@@ -147,6 +148,7 @@ export type Ref =
   | { all: Filter };
 
 export type Amt =
+  | {msh:string}
   | {mkm:string}
   | { fin:string }
   | number
@@ -214,6 +216,7 @@ export interface Grant {
 }
 
 export type Cond =
+  | {c:'msh';action:string;n?:number}
   | {c:'mkm';action:string;n?:number}
   | {c:'fin';action:string;n?:number}
   | {c:'and';conds:Cond[]}
@@ -333,6 +336,7 @@ export interface ExtraCost {
 }
 
 export type Effect =
+  | {e:'msh';action:string;n?:number;what?:Ref;ids?:number[]}
   | {e:'mkm';action:string;n?:number;what?:Ref}
   | {e:'fin';action:string;n?:number;what?:Ref;filter?:Filter;value?:number}
   | { e:'ecl';action:string;n?:number;value?:number;what?:Ref;filter?:Filter }
@@ -520,6 +524,7 @@ export type Effect =
   | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
+  | 'mshEvent'
   | 'mkmEvent'
   | 'finEvent'
   | 'combatDamagePlayerOrWalker' | 'allyCombatDamagePlayerOrWalker' | 'eachDrawStep' | 'firstMain' | 'transformed' | 'allyBlocks' | 'permanentToGy' | 'classLevel' | 'otherLeaves' | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies' | 'otherPermanentDies' | 'combatDamageAny'
@@ -602,6 +607,7 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+  mshEvent?:string;mshDynamic?:'lifeTargets'|'equipment'|'wrecking';
   mkmDynamic?:'vindicator'|'maze'|'falcon'|'distribute2'|'distribute3';
   mkmEvent?:string;
   finDynamic?:boolean;
@@ -653,6 +659,7 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+  mshStack?:'creature'|'artifact';mshBoast?:boolean;
   evidence?:number;
   xMana?:number; xMin?:number; finStack?:'ownAbility';
   levelUp?: {from:number;to:number};
@@ -693,6 +700,7 @@ export interface ActivatedAbility {
 }
 
 export interface StaticAbility {
+  msh?:string;
   mkm?:string;
   fin?:string;
   ecl?:string;
@@ -779,6 +787,7 @@ export interface SpellSpec {
 }
 
 export interface CardDef {
+  msh?:{teamwork?:number;teamworkSpell?:SpellSpec;improvise?:boolean;};
   faceUpPayment?:boolean;
   mkm?:{evidence?:number;optionalEvidence?:number;split?:boolean;};
   /** Carries the other copiable face when constructing a transforming token. */
@@ -819,7 +828,7 @@ export interface CardDef {
   /** 產生有色法術力時要支付1點生命（{C} 不用） */
   painMana?: boolean;
   /** 產生的法術力只能用來施放某類咒語 */
-  manaOnly?: 'planeswalker' | 'notFromHand' | 'artifactOrAbility';
+  manaOnly?: 'planeswalker' | 'notFromHand' | 'artifactOrAbility' | 'notNonartifactSpell';
   /** 冒險：同一張牌上的另一個瞬間或法術；施放後此牌放逐，之後可以從放逐區施放本體 */
   adventure?: { name: string; zh?: string; cost: string; types: CardType[]; text: string; spell: SpellSpec };
   /** 準備：此生物附帶的咒語；已準備時可以施放它的複製（之後取消準備） */
@@ -916,6 +925,7 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  mshHarnessed?:boolean;mshTeamwork?:boolean;mshMarks?:Record<string,number>;mshLinked?:number[];mshCopyUntil?:number;
   mkmSolved?:boolean;mkmEvidence?:boolean;mkmMarks?:Record<string,number>;mkmLinked?:number[];gyTurn?:number;
   /** Copiable values installed by a persistent copy effect. */
   copyLayer?:CardDef;
@@ -1069,6 +1079,7 @@ export interface Card {
 }
 
 export interface Player {
+  mshNoPowerTurn?:number;mshFlagsTurn?:number;mshFlags?:Record<string,number>;mshRestricted?:{mana:Mana;rule:string}[];
   mkmGossip?:Mana[];
   poison?:number;
   mkmTurn?:number;mkmFlags?:Record<string,number>;mkmSources?:number[];
@@ -1157,7 +1168,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
   sourceType?:string;
@@ -1200,7 +1211,7 @@ export interface EotEffect extends Grant {
 
 /** 延遲觸發：本回合內，事件發生時觸發 */
 export interface DelayedTrigger {
-  finEvent?:string;
+  mshEvent?:string;finEvent?:string;
   alone?: boolean;
   persistent?: boolean;
   filter?: Filter;
@@ -1231,6 +1242,7 @@ export type Phase =
   | 'cleanup';
 
 export type GameEvent =
+  | {type:'msh';action:string;player:PID;card:number;n?:number}
   | {type:'mkm';action:string;player:PID;card:number;n?:number}
   | {type:'combatPlayerOrWalker';source:number;controller:PID;amount:number}
   | { type: 'tapped'; card: number; controller: PID }
@@ -1299,6 +1311,7 @@ export interface Show {
 }
 
 export interface GameState {
+  mshTokenGroup?:number;mshTapGroup?:number;mshEvent?:number;
   mkmCollecting?:number;
   finEndTurn?:boolean;finExtraEnd?:boolean;finCombatNumber?:number;finEndNumber?:number;
   eclEventGroup?:number;
@@ -1411,7 +1424,7 @@ export type ChoosePurpose =
 export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
-  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
+  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
   | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export type Response =

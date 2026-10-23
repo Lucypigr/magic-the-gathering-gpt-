@@ -1,3 +1,4 @@
+import {mshStatic} from './msh-support';
 import {mkmStatic} from './mkm-support';
 import {colorsOf} from './mana';
 import { abilitiesSuppressed, cardName, creaturesOf, hasStaticFlag, isCreature, log, other, show, stats } from './state';
@@ -9,6 +10,7 @@ export function canAttack(g: GameState, c: Card): boolean {
   if (!isCreature(c) || c.zone !== 'battlefield' || c.tapped) return false;
   if (c.controller !== g.active) return false;
   if(g.landCombatOnly&&!c.def.types.includes('Land')&&c.def.id!=='tok-earth')return false;
+  if(stats(g,c).kw.has('flying')&&mshStatic(g,(1-c.controller) as PID,'stormFlying').length)return false;
   const st = stats(g, c);
   if (st.cantAttack || (st.kw.has('defender') && !st.ignoreDefender)) return false;
   if (c.sick && !st.kw.has('haste')) return false;
@@ -32,6 +34,8 @@ export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
   if(bs.p>=3&&as.p<=2&&mkmStatic(g,attacker.controller,'delney').length)return false;
   if(attacker.def.id==='pompous-gadabout'&&blocker.hidden)return false;
   if(g.battlefield.some(id=>g.cards[id].def.id==='burden-of-proof'&&g.cards[id].attachedTo===blocker.id)&&attacker.def.subtypes?.includes('Detective')&&!(blocker.controller===g.cards[g.battlefield.find(id=>g.cards[id].def.id==='burden-of-proof'&&g.cards[id].attachedTo===blocker.id)!].controller&&blocker.def.subtypes?.includes('Detective')))return false;
+  if(bs.kw.has('flying')&&mshStatic(g,attacker.controller,'stormFlying').length)return false;
+  if(attacker.mshMarks?.hasteBlock===g.turn&&!bs.kw.has('haste'))return false;
   if (as.kw.has('unblockable')) return false;
   if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadePowGte!==undefined&&bs.p>=attacker.def.evadePowGte)return false;
   if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadeGreaterPower&&bs.p>as.p)return false;
@@ -56,11 +60,12 @@ export function attackablePlaneswalkers(g: GameState, attacker: PID): Card[] {
 }
 
 export function declareAttackers(g: GameState, pid: PID, ids: number[], targets?: Record<number, number>): Card[] {
-  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&((c.mkmMarks?.mustAttackBlock===g.turn)||(!abilitiesSuppressed(g,c)&&c.def.id==='red-herring'));});
+  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&((c.mkmMarks?.mustAttackBlock===g.turn)||(!abilitiesSuppressed(g,c)&&['red-herring','ares-god-of-war','tok-msh-void','tok-msh-alien'].includes(c.def.id)));});
   const uniq = [...new Set([...ids,...forced])];
   const list = uniq.map((id) => g.cards[id]).filter((c) => c && c.controller === pid && canAttack(g, c));
   const pws = new Set(attackablePlaneswalkers(g, pid).map((c) => c.id));
   const attackedPw = new Set<number>();
+  const oldTapGroup=g.mshTapGroup;g.mshTapGroup=g.nextSid++;
   for (const c of list) {
     c.attacking = true;
     c.attackedTurn = g.turn;
@@ -74,6 +79,7 @@ export function declareAttackers(g: GameState, pid: PID, ids: number[], targets?
     }
     if (!stats(g, c).kw.has('vigilance')) tapCard(g,c);
   }
+  g.mshTapGroup=oldTapGroup;
   if (list.length) {
     g.attackedThisTurn = true;
     const desc = (c: Card) => (c.attackTarget != null ? `${cardName(c)}（→ ${cardName(g.cards[c.attackTarget])}）` : cardName(c));

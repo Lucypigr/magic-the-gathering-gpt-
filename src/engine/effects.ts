@@ -1,3 +1,5 @@
+import {mshEffect} from './msh';
+import {mshAmount,mshStatic} from './msh-support';
 import {mkmEffect} from './mkm';
 import {mkmAmount} from './mkm-support';
 import {finEffect} from './fin';
@@ -247,6 +249,7 @@ export function amount(g: GameState, ctx: Ctx, a: Amt): number {
   if ('x' in a) return ctx.x ?? g.cards[ctx.source]?.castX ?? 0;
   if ('spellsCast' in a) return g.players[ctx.controller].spellsThisTurn;
   if ('selfCounters' in a) { const c=g.cards[ctx.source]; return Math.max(0, (c?.counters??0) + (c?.def.id==='savanti-romero-times-exile' ? (c.charge??0)+c.stun+(c.hexproofCounters??0)+Number(!!c.finality)+(c.lore??0) : 0)); }
+  if('msh'in a)return mshAmount(g,ctx.controller,ctx.source,a.msh,ctx.ev);
   if('mkm'in a)return mkmAmount(g,ctx.controller,ctx.source,a.mkm,ctx.x??0);
   if('fin'in a)return finAmount(g,ctx.controller,ctx.source,a.fin,ctx.ev);
   if('eclCount'in a){switch(a.eclCount){case 'elfTotal':return countMatching(g,{sub:'Elf',ctrl:'you'},ctx.controller)+g.players[ctx.controller].graveyard.filter(id=>matches(g,{sub:'Elf'},g.cards[id],ctx.controller)).length;default:return 0;}}
@@ -431,6 +434,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'copyCreature': {
       for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=copiableDefinition(c);const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const [t]=yield* makeEclTokenBatch(g,ctx.controller,def,1);if(!t)continue;if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
     }
+    case 'msh':yield* mshEffect(g,ctx,ef);return;
     case 'mkm':yield* mkmEffect(g,ctx,ef);return;
     case 'fin':yield* finEffect(g,ctx,ef);return;
     case 'ecl':yield* eclEffect(g,ctx,ef);return;
@@ -441,7 +445,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       g.version++;
       break;
     case 'untap':
-      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'&&!abilitiesSuppressed(g,g.cards[id])))continue; if(c.stun>0)c.stun--;else c.tapped = false; }
+      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(c.mshMarks?.freezeBy!==undefined&&g.cards[c.mshMarks.freezeBy]?.zone==='battlefield'||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='frozen-in-ice'))continue; if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'&&!abilitiesSuppressed(g,g.cards[id])))continue; if(c.stun>0)c.stun--;else c.tapped = false; }
       g.version++;
       break;
     case 'stun':
@@ -521,14 +525,14 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
         const p = c.controller;
+        if(mshStatic(g,p,'extraConniveDraw').length)drawCards(g,p,mshStatic(g,p,'extraConniveDraw').length);
         drawCards(g, p, 1);
         const ids = yield* choose(g, p, '密謀：選擇一張牌棄掉', g.players[p].hand.slice(), 1, 1, 'discard');
         const d = ids.length ? g.cards[ids[0]] : undefined;
         if (d) {
           discard(g, d);
           if (!isLand(d) && c.zone === 'battlefield') {
-            c.counters++;
-            emit(g, { type: 'counterPlaced', card: c.id, controller: p, amount: 1 });
+            putCounters(g,c,1);
           }
         }
       }
@@ -705,7 +709,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const orig = g.cards[item.cardId];
       const copiedDef=item.alt==='adventure'||item.alt==='back'?castDef(orig.def,item.alt):orig.def;
       const cp = newCard(g, copiedDef, me, true);
-      cp.evokePaid=orig.evokePaid;cp.mkmEvidence=orig.mkmEvidence;
+      cp.evokePaid=orig.evokePaid;cp.mkmEvidence=orig.mkmEvidence;cp.mshTeamwork=orig.mshTeamwork;
       cp.zone = 'stack';
       cp.spellWitherTurn=orig.spellWitherTurn;
       let targets = item.targets.slice();

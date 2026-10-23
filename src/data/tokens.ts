@@ -5,6 +5,21 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+  T({"id": "tok-msh-wall", "name": "Wall", "types": ["Creature"], "subtypes": ["Wall"], "colors": [], "power": 0, "toughness": 4, "keywords": ["defender"], "text": ""}),
+  T({"id": "tok-msh-void", "name": "The Void", "types": ["Creature"], "subtypes": ["Horror", "Villain"], "colors": ["B"], "power": 5, "toughness": 5, "keywords": ["flying", "indestructible"], "text": "", "supertypes": ["Legendary"], "abilities": [{"kind": "static", "msh": "mustAttack"}]}),
+  T({"id": "tok-msh-leviathan", "name": "Leviathan", "types": ["Creature"], "subtypes": ["Leviathan"], "colors": ["U"], "power": 6, "toughness": 5, "keywords": ["hexproof"], "text": ""}),
+  T({"id": "tok-msh-villain", "name": "Villain", "types": ["Creature"], "subtypes": ["Villain"], "colors": ["B"], "power": 2, "toughness": 1, "keywords": ["menace"], "text": ""}),
+  T({"id": "tok-msh-doombot", "name": "Doombot", "types": ["Artifact", "Creature"], "subtypes": ["Robot", "Villain"], "colors": [], "power": 3, "toughness": 3, "keywords": [], "text": ""}),
+  T({"id": "tok-msh-robot", "name": "Robot", "types": ["Artifact", "Creature"], "subtypes": ["Robot", "Villain"], "colors": [], "power": 2, "toughness": 2, "keywords": [], "text": ""}),
+  T({"id": "tok-msh-redwing", "name": "Redwing", "types": ["Creature"], "subtypes": ["Bird", "Scout"], "colors": ["U"], "power": 1, "toughness": 1, "keywords": ["flying"], "text": "", "supertypes": ["Legendary"], "abilities": [{"kind": "trigger", "on": "attacks", "effects": [{"e": "surveil", "n": 1}]}]}),
+  T({"id": "tok-msh-merfolk", "name": "Merfolk", "types": ["Creature"], "subtypes": ["Merfolk"], "colors": ["U"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-msh-squirrel", "name": "Squirrel", "types": ["Creature"], "subtypes": ["Squirrel"], "colors": ["G"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-msh-zabu", "name": "Zabu", "types": ["Creature"], "subtypes": ["Cat"], "colors": ["G"], "power": 2, "toughness": 2, "keywords": [], "text": "", "supertypes": ["Legendary"], "abilities": [{"kind": "trigger", "on": "landfall", "effects": [{"e": "counters", "what": "self", "n": 1}]}]}),
+  T({"id": "tok-msh-moloid", "name": "Moloid", "types": ["Creature"], "subtypes": ["Minion"], "colors": ["G"], "power": 1, "toughness": 1, "keywords": [], "text": "", "abilities": [{"kind": "trigger", "on": "attacks", "effects": [{"e": "may", "prompt": "\u78e8\u4e00\u5f35\uff1f", "effects": [{"e": "mill", "n": 1}]}]}]}),
+  T({"id": "tok-msh-insect", "name": "Insect", "types": ["Creature"], "subtypes": ["Insect"], "colors": ["G"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-msh-tigerGod", "name": "The Tiger God", "types": ["Creature"], "subtypes": ["Cat", "God"], "colors": ["G"], "power": 4, "toughness": 4, "keywords": [], "text": "", "supertypes": ["Legendary"], "abilities": [{"kind": "static", "self": {"grant": {"onlyOneBlocker": true}}}]}),
+  T({"id": "tok-msh-alien", "name": "Alien", "types": ["Creature"], "subtypes": ["Alien"], "colors": ["R"], "power": 1, "toughness": 1, "keywords": ["haste"], "text": "", "abilities": [{"kind": "static", "msh": "mustAttack"}]}),
+  T({"id": "tok-msh-galactus", "name": "Galactus", "types": ["Creature"], "subtypes": ["Elder", "Alien"], "colors": ["B"], "power": 16, "toughness": 16, "keywords": ["flying", "trample"], "text": "", "supertypes": ["Legendary"], "abilities": [{"kind": "trigger", "on": "attacks", "targets": [{"kind": "permanent", "filter": {"type": "Land"}}], "effects": [{"e": "destroy", "what": "T0"}]}]}),
   T({"id": "tok-mkm-dog", "name": "Dog", "types": ["Creature"], "subtypes": ["Dog"], "colors": ["W"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
   T({"id": "tok-mkm-human", "name": "Human", "types": ["Creature"], "subtypes": ["Human"], "colors": ["W"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
   T({"id": "tok-mkm-merfolk", "name": "Merfolk", "types": ["Creature"], "subtypes": ["Merfolk"], "colors": ["U"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),

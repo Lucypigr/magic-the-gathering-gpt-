@@ -1,3 +1,4 @@
+import {mshStatic} from './msh-support';
 import {manaValue} from './mana';
 import {finStatic} from './fin-support';
 import {eclStatic} from './ecl-support';
@@ -27,6 +28,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       if (onlyOpp && pid === controller) continue;
       if (f?.ctrl === 'opp' && pid === controller) continue;
       if (f?.ctrl === 'you' && pid !== controller) continue;
+      if(pid!==controller&&mshStatic(g,pid,'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0))continue;
       if(pid!==controller&&finStatic(g,pid,'playerProtection').length)continue;
       out.push({ p: pid });
     }
@@ -46,8 +48,9 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       addPlayers(false);
       break;
     case 'opponent':
-      if(!finStatic(g,other(controller),'playerProtection').length)out.push({ p: other(controller) });
+      if(!mshStatic(g,other(controller),'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,other(controller),'playerProtection').length)out.push({ p: other(controller) });
       break;
+    case 'permanentOrPlayer':addPerms(false);addPlayers(false);break;
     case 'creatureOrPlaneswalker':addPerms(true,true);break;
     case 'creature':
       addPerms(true);
@@ -58,7 +61,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
     case 'any': {
       // 任意一個目標：生物、鵬洛客或玩家
       addPerms(true, true);
-      for (const pid of [0, 1] as PID[])if(pid===controller||!finStatic(g,pid,'playerProtection').length)out.push({ p: pid });
+      for (const pid of [0, 1] as PID[])if(pid===controller||!mshStatic(g,pid,'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,pid,'playerProtection').length)out.push({ p: pid });
       break;
     }
     case 'creatureOrGy':addPerms(true);for(const id of g.players.flatMap(p=>p.graveyard)){const c=g.cards[id];if(isCreature(c)&&id!==sourceId&&matches(g,f,c,controller,sourceId))out.push({c:id});}break;

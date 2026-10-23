@@ -183,6 +183,7 @@ export function* makeEclTokenBatch(
     }
   }
   g.players[pid].tokensCreatedTurn = g.turn;
+  const previousGroup=g.mshTokenGroup;g.mshTokenGroup=g.nextSid++;
   const out: Card[] = [];
   for (const group of groups)
     for (let i = 0; i < group.n; i++) {
@@ -193,6 +194,7 @@ export function* makeEclTokenBatch(
       if (opts.attachTo !== undefined) c.attachedTo = opts.attachTo;
       if (group.primary) out.push(c);
     }
+  g.mshTokenGroup=previousGroup;
   return out;
 }
 
