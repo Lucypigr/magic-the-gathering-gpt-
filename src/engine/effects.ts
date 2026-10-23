@@ -1,3 +1,5 @@
+import {frontierStatic} from './frontier-support';
+import {foundationEffect} from './foundation';
 import {otjEffect} from './otj';
 import {woeEffect} from './woe';
 import {frontierAmount} from './frontier-support';
@@ -64,6 +66,7 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
+ mode?:number;sacToughness?:number;
   distribution?:number[];
   sourceType?:string;
   sourceLinkKey?:number;
@@ -433,11 +436,11 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       if(r.type==='yesno'&&r.yes&&payCost(g,ctx.controller,parseCost(''),undefined,false,undefined,false,ef.n)) yield* runEffects(g,ctx,ef.then);
       else if(ef.else) yield* runEffects(g,ctx,ef.else); return;
     }
-    case 'grant': { for(const c of resolveRef(g,ctx,ef.what).cards) {if(ef.permanent)(c.permanentGrants??=[]).push(ef.grant);else g.eot.push({card:c.id,p:0,t:0,kw:[],...ef.grant});} return; }
+    case 'grant': { for(const c of resolveRef(g,ctx,ef.what).cards) {if(ef.permanent)(c.permanentGrants??=[]).push(ef.grant);else g.eot.push({card:c.id,p:0,t:0,kw:[],...ef.grant,...(ef.untilNext?{until:me}: {})});} return; }
     case 'copyCreature': {
-      for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=copiableDefinition(c);const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const [t]=yield* makeEclTokenBatch(g,ctx.controller,def,1);if(!t)continue;if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
+      for(const c of resolveRef(g,ctx,ef.what).cards){const copiable=copiableDefinition(c),def={...copiable,supertypes:ef.nonLegendary||ef.p!==undefined?copiable.supertypes?.filter(s=>s!=='Legendary'):copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const tokens=yield*makeEclTokenBatch(g,ctx.controller,def,1);for(const t of tokens){if(ef.temp){g.eot.push({card:t.id,p:0,t:0,kw:['haste']});(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});}ctx.created=t.id;}ctx.createdList=tokens.map(t=>t.id);}return;
     }
-    case 'frontier':if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
+    case 'frontier':if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
     case 'msh':yield* mshEffect(g,ctx,ef);return;
     case 'mkm':yield* mkmEffect(g,ctx,ef);return;
     case 'fin':yield* finEffect(g,ctx,ef);return;
@@ -449,7 +452,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       g.version++;
       break;
     case 'untap':
-      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(mshUntapLocked(g,c)||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='frozen-in-ice'))continue; if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'&&!abilitiesSuppressed(g,g.cards[id])))continue; if(c.stun>0)c.stun--;else c.tapped = false; }
+      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(mshUntapLocked(g,c)||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='frozen-in-ice'))continue; if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'&&!abilitiesSuppressed(g,g.cards[id])))continue; if(c.stun>0)c.stun--;else if(c.tapped){c.tapped=false;emit(g,{type:'frontier',action:'untapped',card:c.id,player:c.controller,amount:0});} }
       g.version++;
       break;
     case 'stun':
@@ -483,6 +486,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield' || c.baseDef) continue;
         c.baseDef = c.def;
+        if(ef.permanent)(c.frontierMarks??={}).permanentAnimation=1;if(ef.untilNext)(c.frontierMarks??={}).animationUntilTurn=g.turn+2;
         c.def = {
           ...c.def,
           types: [...new Set([...c.def.types, 'Creature' as const])],
@@ -962,7 +966,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'dig': {
       const top = g.players[me].library.slice(0, amount(g, ctx, ef.n));
       const opts = top.filter((id) => matches(g, ef.filter, g.cards[id], me));
-      const take = ef.take ?? 1;
+      const take = ef.all ? opts.length : ef.take ?? 1;
       const toBf = ef.to === 'battlefield';
       const picked = yield* choose(g, me, toBf ? `選擇至多 ${take} 張牌放進戰場` : `選擇 ${take} 張牌置於手上`, opts, toBf || ef.optional ? 0 : Math.min(take, opts.length), take, 'dig', true);
       for (const id of picked) {
@@ -1124,7 +1128,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'chargeCounter':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
-        if(c.def.set==='TLA'||c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN') c.charge=(c.charge??0)+amount(g,ctx,ef.n);
+        if(c.def.set==='FDN'||c.def.set==='DSK'||c.def.set==='TLA'||c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN') c.charge=(c.charge??0)+amount(g,ctx,ef.n)*2**frontierStatic(g,c.controller,'fdn:doubleCounters').length;
         else c.counters += amount(g, ctx, ef.n);
         log(g, `${cardName(c)} 上放置了充能指示物（${c.charge??c.counters}）`, c.controller);
         if(amount(g,ctx,ef.n)>0)emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:amount(g,ctx,ef.n),counterKind:'charge'});
@@ -1391,6 +1395,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         for (const id of ids) sacrifice(g, g.cards[id]);
       }
       break;
+    case 'sacPlayer':{for(const who of resolveRef(g,ctx,ef.who).players){const ids=g.battlefield.filter(id=>g.cards[id].controller===who&&matches(g,ef.filter,g.cards[id],who));const n=amount(g,ctx,ef.n??1),picked=yield*choose(g,who,'犧牲永久物',ids,Math.min(n,ids.length),n,'sacrifice');for(const id of picked)sacrifice(g,g.cards[id]);}break;}
     case 'sac':
       for (const c of resolveRef(g, ctx, ef.what).cards) sacrifice(g, c);
       break;

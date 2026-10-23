@@ -1,4 +1,4 @@
-import {frontierBaseStats,frontierStats,frontierCondition,enchanted} from './frontier-support';
+import {frontierStatic,frontierBaseStats,frontierStats,frontierCondition,enchanted} from './frontier-support';
 import {mshApplyStats,mshBaseStats,mshCondition} from './msh-support';
 import {mkmApplyStats,mkmBaseStats,mkmCondition,mkmStatic} from './mkm-support';
 import {finApplyStats,finBaseStats,finCondition} from './fin-support';
@@ -206,12 +206,12 @@ export function log(g: GameState, text: string, player?: PID, kind: LogEntry['ki
 
 /** Copy effects copy earlier copy effects, while ignoring counters and later power/type changes. */
 export function copiableDefinition(c:Card):CardDef {
-  const base=c.copyLayer??c.baseDef??c.tlaOriginalDef??c.auraBaseDef??c.def;
+  const base=c.copyLayer??c.baseDef??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.def;
   return {...base,...(!c.copyLayer&&c.front?{copyFront:c.front}:{})};
 }
 
 export function cardName(c: Card | undefined): string {
-  return c ? displayName(c.def) : '?';
+  return c ? displayName(c.def.name?c.def:c.tlaOriginalDef??c.def) : '?';
 }
 
 // ------------------------------------------------------------
@@ -420,6 +420,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;
+  if(f.mvMaxSourcePower){const source=g.cards[sourceId??-1];if(!source||manaValue(c.def)>(source.zone==='battlefield'?stats(g,source).p:source.lastPower??stats(g,source).p))return false;}
   const outlaw=c.def.subtypes?.some(t=>['Assassin','Mercenary','Pirate','Rogue','Warlock'].includes(t))||c.zone==='battlefield'&&c.owner!==c.controller&&g.battlefield.some(id=>g.cards[id].controller===c.controller&&g.cards[id].def.id==='laughing-jasper-flint'&&!abilitiesSuppressed(g,g.cards[id]));
   if(f.outlaw&&!outlaw||f.notOutlaw&&outlaw)return false;
   if(f.enchanted!==undefined&&enchanted(g,c)!==f.enchanted)return false;
@@ -456,8 +457,9 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   const jobTypes=c.zone==='battlefield'?g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&!abilitiesSuppressed(g,g.cards[id])).flatMap(id=>g.cards[id].def.fin?.job?[g.cards[id].def.fin!.job!]:[]):[];
   const serumTypes=hasSerum(g,c)?['Soldier']:[];
   const mkmLandTypes=isLand(c)&&c.zone==='battlefield'&&mkmStatic(g,c.controller,'guildpact').length?['Plains','Island','Swamp','Mountain','Forest']:[];
-  if (f.sub && !asArr(f.sub).some(s=>serumTypes.includes(s)) && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !mshChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
-  if (f.nonSub && (asArr(f.nonSub).some(s=>serumTypes.includes(s))||asArr(f.nonSub).some(s=>jobTypes.includes(s))||mshChangeling||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
+  const foundationTypes:string[]=[];if(isCreature(c)){if(c.def.id==='skyknight-squire'&&c.counters>=3&&!abilitiesSuppressed(g,c))foundationTypes.push('Knight');if(c.def.id==='adaptive-automaton'&&c.eclType&&!abilitiesSuppressed(g,c))foundationTypes.push(c.eclType);for(const a of frontierStatic(g,c.controller,'dsk:allTribe'))if(a.eclType)foundationTypes.push(a.eclType);if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='fdn:angelAura')))foundationTypes.push('Angel');}
+  if (f.sub && !asArr(f.sub).some(x=>foundationTypes.includes(x)) && !asArr(f.sub).some(s=>serumTypes.includes(s)) && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !mshChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
+  if (f.nonSub && (asArr(f.nonSub).some(x=>foundationTypes.includes(x))||asArr(f.nonSub).some(s=>serumTypes.includes(s))||asArr(f.nonSub).some(s=>jobTypes.includes(s))||mshChangeling||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
   if (f.attackedThisTurn !== undefined && (c.attackedTurn === g.turn) !== f.attackedThisTurn) return false;
   if(f.name&&d.name!==f.name)return false;
   if(f.nonNames?.includes(d.name))return false;
@@ -707,4 +709,4 @@ export function etbTriggersSuppressed(g: GameState): boolean {
   return false;
 }
 
-export function uncounterableSpells(g:GameState,pid:PID){return g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.ecl==='squelcher'));}
+export function uncounterableSpells(g:GameState,pid:PID){if(frontierStatic(g,pid,'fdn:spellUncounterable').length)return true;return g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.ecl==='squelcher'));}

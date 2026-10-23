@@ -1,0 +1,5034 @@
+[
+  {
+    "name": "Acrobatic Cheerleader",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Acrobatic Cheerleader is tapped, put a flying counter on it. This ability triggers only once.",
+    "power": 2,
+    "toughness": 2,
+    "number": 1,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Cult Healer",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Doctor"
+    ],
+    "text": "Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, Cult Healer gains lifelink until end of turn.",
+    "power": 3,
+    "toughness": 3,
+    "number": 2,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Dazzling Theater // Prop Room",
+    "cost": "{3}{W}{2}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Dazzling Theater\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nCreature spells you cast have convoke. (Your creatures can help cast those spells. Each creature you tap while casting a creature spell pays for {1} or one mana of that creature's color.)\n\nProp Room\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nUntap each creature you control during each other player's untap step.",
+    "number": 3,
+    "set": "DSK",
+    "rarity": "R",
+    "room": {
+      "left": {
+        "name": "Dazzling Theater",
+        "cost": "{3}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nCreature spells you cast have convoke. (Your creatures can help cast those spells. Each creature you tap while casting a creature spell pays for {1} or one mana of that creature's color.)",
+        "number": 3,
+        "set": "DSK",
+        "rarity": "R"
+      },
+      "right": {
+        "name": "Prop Room",
+        "cost": "{2}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nUntap each creature you control during each other player's untap step."
+      }
+    }
+  },
+  {
+    "name": "Dollmaker's Shop // Porcelain Gallery",
+    "cost": "{1}{W}{4}{W}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Dollmaker's Shop\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever one or more non-Toy creatures you control attack a player, create a 1/1 white Toy artifact creature token.\n\nPorcelain Gallery\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nCreatures you control have base power and toughness each equal to the number of creatures you control.",
+    "number": 4,
+    "set": "DSK",
+    "rarity": "M",
+    "room": {
+      "left": {
+        "name": "Dollmaker's Shop",
+        "cost": "{1}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever one or more non-Toy creatures you control attack a player, create a 1/1 white Toy artifact creature token.",
+        "number": 4,
+        "set": "DSK",
+        "rarity": "M"
+      },
+      "right": {
+        "name": "Porcelain Gallery",
+        "cost": "{4}{W}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nCreatures you control have base power and toughness each equal to the number of creatures you control."
+      }
+    }
+  },
+  {
+    "name": "Emerge from the Cocoon",
+    "cost": "{4}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Return target creature card from your graveyard to the battlefield. You gain 3 life.",
+    "number": 5,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Enduring Innocence",
+    "cost": "{1}{W}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Sheep",
+      "Glimmer"
+    ],
+    "text": "Lifelink\nWhenever one or more other creatures you control with power 2 or less enter, draw a card. This ability triggers only once each turn.\nWhen Enduring Innocence dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 6,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Ethereal Armor",
+    "cost": "{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nEnchanted creature gets +1/+1 for each enchantment you control and has first strike.",
+    "number": 7,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Exorcise",
+    "cost": "{1}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Exile target artifact, enchantment, or creature with power 4 or greater.",
+    "number": 8,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Fear of Abduction",
+    "cost": "{4}{W}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "As an additional cost to cast this spell, exile a creature you control.\nFlying\nWhen Fear of Abduction enters, exile target creature an opponent controls.\nWhen Fear of Abduction leaves the battlefield, put each card exiled with it into its owner's hand.",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "number": 9,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Fear of Immobility",
+    "cost": "{4}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "When Fear of Immobility enters, tap up to one target creature. If an opponent controls that creature, put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "power": 4,
+    "toughness": 4,
+    "number": 10,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Fear of Surveillance",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "Vigilance\nWhenever Fear of Surveillance attacks, surveil 1.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 11,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Friendly Ghost",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Flying\nWhen Friendly Spirit enters, target creature gets +2/+4 until end of turn.",
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 12,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Ghostly Dancers",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Flying\nWhen Ghostly Dancers enters, return an enchantment card from your graveyard to your hand or unlock a locked door of a Room you control.\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, create a 3/1 white Spirit creature token with flying.",
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "number": 13,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Glimmer Seeker",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Glimmer Seeker is tapped, draw a card if you control a Glimmer creature. If you don't control a Glimmer creature, create a 1/1 white Glimmer enchantment creature token.",
+    "power": 3,
+    "toughness": 3,
+    "number": 14,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Grand Entryway // Elegant Rotunda",
+    "cost": "{1}{W}{2}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Grand Entryway\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, create a 1/1 white Glimmer enchantment creature token.\n\nElegant Rotunda\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, put a +1/+1 counter on each of up to two target creatures.",
+    "number": 15,
+    "set": "DSK",
+    "rarity": "C",
+    "room": {
+      "left": {
+        "name": "Grand Entryway",
+        "cost": "{1}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, create a 1/1 white Glimmer enchantment creature token.",
+        "number": 15,
+        "set": "DSK",
+        "rarity": "C"
+      },
+      "right": {
+        "name": "Elegant Rotunda",
+        "cost": "{2}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, put a +1/+1 counter on each of up to two target creatures."
+      }
+    }
+  },
+  {
+    "name": "Hardened Escort",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "text": "Whenever Hardened Escort attacks, another target creature you control gets +1/+0 and gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "power": 2,
+    "toughness": 4,
+    "number": 16,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Jump Scare",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Until end of turn, target creature gets +2/+2, gains flying, and becomes a Horror enchantment creature in addition to its other types.",
+    "number": 17,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Leyline of Hope",
+    "cost": "{2}{W}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "If Leyline of Hope is in your opening hand, you may begin the game with it on the battlefield.\nIf you would gain life, you gain that much life plus 1 instead.\nAs long as you have at least 7 life more than your starting life total, creatures you control get +2/+2.",
+    "number": 18,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Lionheart Glimmer",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Glimmer"
+    ],
+    "text": "Ward {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nWhenever you attack, creatures you control get +1/+1 until end of turn.",
+    "power": 2,
+    "toughness": 5,
+    "ward": 2,
+    "number": 19,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Living Phone",
+    "cost": "{2}{W}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "text": "When Living Phone dies, look at the top five cards of your library. You may reveal a creature card with power 2 or less from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "power": 2,
+    "toughness": 1,
+    "number": 20,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Optimistic Scavenger",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, put a +1/+1 counter on target creature.",
+    "power": 1,
+    "toughness": 1,
+    "number": 21,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Orphans of the Wheat",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human"
+    ],
+    "text": "Whenever Orphans of the Wheat attacks, you may tap any number of untapped creatures you control. Orphans of the Wheat gets +1/+1 until end of turn for each creature tapped this way.",
+    "power": 2,
+    "toughness": 1,
+    "number": 22,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Overlord of the Mistmoors",
+    "cost": "{5}{W}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Horror"
+    ],
+    "text": "Impending 4—{2}{W}{W} (If you cast this spell for its impending cost, it enters with four time counters and isn't a creature until the last is removed. At the beginning of your end step, remove a time counter from it.)\nWhenever Overlord of the Mistmoors enters or attacks, create two 2/1 white Insect creature tokens with flying.",
+    "power": 6,
+    "toughness": 6,
+    "number": 23,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Patched Plaything",
+    "cost": "{2}{W}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "text": "Double strike\nPatched Plaything enters with two -1/-1 counters on it if you cast it from your hand.",
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "double_strike"
+    ],
+    "number": 24,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Possessed Goat",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goat"
+    ],
+    "text": "{3}, Discard a card: Put three +1/+1 counters on Possessed Goat and it becomes a black Demon in addition to its other colors and types. Activate only once.",
+    "power": 1,
+    "toughness": 1,
+    "number": 25,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Reluctant Role Model",
+    "cost": "{1}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Reluctant Role Model is tapped, put a flying, lifelink, or +1/+1 counter on it.\nWhenever Reluctant Role Model or another creature you control dies, if it had counters on it, put those counters on up to one target creature.",
+    "power": 2,
+    "toughness": 2,
+    "number": 26,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Savior of the Small",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kor",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Savior of the Small is tapped, return target creature card with mana value 3 or less from your graveyard to your hand.",
+    "power": 3,
+    "toughness": 4,
+    "number": 27,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Seized from Slumber",
+    "cost": "{4}{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "This spell costs {3} less to cast if it targets a tapped creature.\nDestroy target creature.",
+    "number": 28,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Shardmage's Rescue",
+    "cost": "{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Flash\nEnchant creature you control\nAs long as Shardmage's Rescue entered this turn, enchanted creature has hexproof.\nEnchanted creature gets +1/+1.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 29,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Sheltered by Ghosts",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature you control\nWhen Sheltered by Ghosts enters, exile target nonland permanent an opponent controls until Sheltered by Ghosts leaves the battlefield.\nEnchanted creature gets +1/+0 and has lifelink and ward {2}.",
+    "number": 30,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Shepherding Spirits",
+    "cost": "{4}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Flying\nPlainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Plains"
+      }
+    },
+    "number": 31,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Split Up",
+    "cost": "{1}{W}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Destroy all tapped creatures.\n• Destroy all untapped creatures.",
+    "number": 32,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Splitskin Doll",
+    "cost": "{1}{W}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "text": "When Splitskin Doll enters, draw a card. Then discard a card unless you control another creature with power 2 or less.",
+    "power": 2,
+    "toughness": 1,
+    "number": 33,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Surgical Suite // Hospital Room",
+    "cost": "{1}{W}{3}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Surgical Suite\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, return target creature card with mana value 3 or less from your graveyard to the battlefield.\n\nHospital Room\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever you attack, put a +1/+1 counter on target attacking creature.",
+    "number": 34,
+    "set": "DSK",
+    "rarity": "U",
+    "room": {
+      "left": {
+        "name": "Surgical Suite",
+        "cost": "{1}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, return target creature card with mana value 3 or less from your graveyard to the battlefield.",
+        "number": 34,
+        "set": "DSK",
+        "rarity": "U"
+      },
+      "right": {
+        "name": "Hospital Room",
+        "cost": "{3}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever you attack, put a +1/+1 counter on target attacking creature."
+      }
+    }
+  },
+  {
+    "name": "Toby, Beastie Befriender",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "When Toby, Beastie Befriender enters, create a 4/4 white Beast creature token with \"This creature can't attack or block alone.\"\nAs long as you control four or more creature tokens, creature tokens you control have flying.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "number": 35,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Trapped in the Screen",
+    "cost": "{2}{W}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Ward {2} (Whenever this enchantment becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nWhen Trapped in the Screen enters, exile target artifact, creature, or enchantment an opponent controls until Trapped in the Screen leaves the battlefield.",
+    "ward": 2,
+    "number": 36,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Unidentified Hovership",
+    "cost": "{1}{W}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Flying\nWhen Unidentified Hovership enters, exile up to one target creature with toughness 5 or less.\nWhen Unidentified Hovership leaves the battlefield, the exiled card's owner manifests dread.\nCrew 1",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "number": 37,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Unsettling Twins",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human"
+    ],
+    "text": "When Unsettling Twins enters, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 38,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Unwanted Remake",
+    "cost": "{W}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target creature. Its controller manifests dread. (That player looks at the top two cards of their library, then puts one onto the battlefield face down as a 2/2 creature and the other into their graveyard. If it's a creature card, it can be turned face up any time for its mana cost.)",
+    "number": 39,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Veteran Survivor",
+    "cost": "{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Veteran Survivor is tapped, exile up to one target card from a graveyard.\nAs long as there are three or more cards exiled with Veteran Survivor, it gets +3/+3 and has hexproof. (It can't be the target of spells or abilities your opponents control.)",
+    "power": 2,
+    "toughness": 1,
+    "number": 40,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "The Wandering Rescuer",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Samurai",
+      "Noble"
+    ],
+    "text": "Flash\nConvoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.)\nDouble strike\nOther tapped creatures you control have hexproof.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flash",
+      "double_strike"
+    ],
+    "convoke": true,
+    "number": 41,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Abhorrent Oculus",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Eye"
+    ],
+    "text": "As an additional cost to cast this spell, exile six cards from your graveyard.\nFlying\nAt the beginning of each opponent's upkeep, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "number": 42,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Bottomless Pool // Locker Room",
+    "cost": "{U}{4}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Bottomless Pool\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, return up to one target creature to its owner's hand.\n\nLocker Room\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever one or more creatures you control deal combat damage to a player, draw a card.",
+    "number": 43,
+    "set": "DSK",
+    "rarity": "U",
+    "room": {
+      "left": {
+        "name": "Bottomless Pool",
+        "cost": "{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, return up to one target creature to its owner's hand.",
+        "number": 43,
+        "set": "DSK",
+        "rarity": "U"
+      },
+      "right": {
+        "name": "Locker Room",
+        "cost": "{4}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever one or more creatures you control deal combat damage to a player, draw a card."
+      }
+    }
+  },
+  {
+    "name": "Central Elevator // Promising Stairs",
+    "cost": "{3}{U}{2}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Central Elevator\nWhen you unlock this door, search your library for a Room card that doesn't have the same name as a Room you control, reveal it, put it into your hand, then shuffle.\n\nPromising Stairs\nAt the beginning of your upkeep, surveil 1. You win the game if there are eight or more different names among unlocked doors of Rooms you control.",
+    "number": 44,
+    "set": "DSK",
+    "rarity": "R",
+    "room": {
+      "left": {
+        "name": "Central Elevator",
+        "cost": "{3}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "When you unlock this door, search your library for a Room card that doesn't have the same name as a Room you control, reveal it, put it into your hand, then shuffle.",
+        "number": 44,
+        "set": "DSK",
+        "rarity": "R"
+      },
+      "right": {
+        "name": "Promising Stairs",
+        "cost": "{2}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "At the beginning of your upkeep, surveil 1. You win the game if there are eight or more different names among unlocked doors of Rooms you control."
+      }
+    }
+  },
+  {
+    "name": "Clammy Prowler",
+    "cost": "{3}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "text": "Whenever Clammy Prowler attacks, another target attacking creature can't be blocked this turn.",
+    "power": 2,
+    "toughness": 5,
+    "number": 45,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Creeping Peeper",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Eye"
+    ],
+    "text": "{T}: Add {U}. Spend this mana only to cast an enchantment spell, unlock a door, or turn a permanent face up.",
+    "power": 2,
+    "toughness": 1,
+    "number": 46,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Cursed Windbreaker",
+    "cost": "{2}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Cursed Windbreaker enters, manifest dread, then attach Cursed Windbreaker to that creature. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\nEquipped creature has flying.\nEquip {3}",
+    "number": 47,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Daggermaw Megalodon",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shark"
+    ],
+    "text": "Vigilance\nIslandcycling {2} ({2}, Discard this card: Search your library for an Island card, reveal it, put it into your hand, then shuffle.)",
+    "power": 5,
+    "toughness": 7,
+    "keywords": [
+      "vigilance"
+    ],
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Island"
+      }
+    },
+    "number": 48,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Don't Make a Sound",
+    "cost": "{1}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Counter target spell unless its controller pays {2}. If they do, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "number": 49,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Duskmourn's Domination",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nYou control enchanted creature.\nEnchanted creature gets -3/-0 and loses all abilities.",
+    "number": 50,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Enduring Curiosity",
+    "cost": "{2}{U}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Glimmer"
+    ],
+    "text": "Flash\nWhenever a creature you control deals combat damage to a player, draw a card.\nWhen Enduring Curiosity dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flash"
+    ],
+    "number": 51,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Enter the Enigma",
+    "cost": "{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Target creature can't be blocked this turn.\nDraw a card.",
+    "number": 52,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Entity Tracker",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "Flash\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, draw a card.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flash"
+    ],
+    "number": 53,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Erratic Apparition",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Flying, vigilance\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, Erratic Apparition gets +1/+1 until end of turn.",
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "number": 54,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Fear of Failed Tests",
+    "cost": "{4}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "Whenever Fear of Failed Tests deals combat damage to a player, draw that many cards.",
+    "power": 2,
+    "toughness": 7,
+    "number": 55,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Fear of Falling",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "Flying\nWhenever Fear of Falling attacks, target creature defending player controls gets -2/-0 and loses flying until your next turn.",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 56,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Fear of Impostors",
+    "cost": "{1}{U}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "Flash\nWhen Fear of Impostors enters, counter target spell. Its controller manifests dread. (That player looks at the top two cards of their library, then puts one onto the battlefield face down as a 2/2 creature and the other into their graveyard. If it's a creature card, it can be turned face up any time for its mana cost.)",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ],
+    "number": 57,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Fear of Isolation",
+    "cost": "{1}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "As an additional cost to cast this spell, return a permanent you control to its owner's hand.\nFlying",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 58,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Floodpits Drowner",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk"
+    ],
+    "text": "Flash\nVigilance\nWhen Floodpits Drowner enters, tap target creature an opponent controls and put a stun counter on it.\n{1}{U}, {T}: Shuffle Floodpits Drowner and target creature with a stun counter on it into their owners' libraries.",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flash",
+      "vigilance"
+    ],
+    "number": 59,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Get Out",
+    "cost": "{U}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Counter target creature or enchantment spell.\n• Return one or two target creatures and/or enchantments you own to your hand.",
+    "number": 60,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Ghostly Keybearer",
+    "cost": "{3}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Flying\nWhenever Ghostly Keybearer deals combat damage to a player, unlock a locked door of up to one target Room you control.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 61,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Glimmerburst",
+    "cost": "{3}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Draw two cards. Create a 1/1 white Glimmer enchantment creature token.",
+    "number": 62,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Leyline of Transformation",
+    "cost": "{2}{U}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "If Leyline of Transformation is in your opening hand, you may begin the game with it on the battlefield.\nAs Leyline of Transformation enters, choose a creature type.\nCreatures you control are the chosen type in addition to their other types. The same is true for creature spells you control and creature cards you own that aren't on the battlefield.",
+    "number": 63,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Marina Vendrell's Grimoire",
+    "cost": "{5}{U}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Book"
+    ],
+    "text": "When Marine Vendrell's Grimoire enters, if you cast it, draw five cards.\nYou have no maximum hand size and don't lose the game for having 0 or less life.\nWhenever you gain life, draw that many cards.\nWhenever you lose life, discard that many cards. Then if you have no cards in hand, you lose the game.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 64,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Meat Locker // Drowned Diner",
+    "cost": "{2}{U}{3}{U}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Meat Locker\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, tap up to one target creature and put two stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\n\nDrowned Diner\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, draw three cards, then discard a card.",
+    "number": 65,
+    "set": "DSK",
+    "rarity": "C",
+    "room": {
+      "left": {
+        "name": "Meat Locker",
+        "cost": "{2}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, tap up to one target creature and put two stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+        "number": 65,
+        "set": "DSK",
+        "rarity": "C"
+      },
+      "right": {
+        "name": "Drowned Diner",
+        "cost": "{3}{U}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, draw three cards, then discard a card."
+      }
+    }
+  },
+  {
+    "name": "The Mindskinner",
+    "cost": "{U}{U}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "The Mindskinner can't be blocked.\nIf a source you control would deal damage to an opponent, prevent that damage and each opponent mills that many cards.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 10,
+    "toughness": 1,
+    "number": 66,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Mirror Room // Fractured Realm",
+    "cost": "{2}{U}{5}{U}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Mirror Room\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, create a token that's a copy of target creature you control, except it's a Reflection in addition to its other creature types.\n\nFractured Realm\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nIf a triggered ability of a permanent you control triggers, that ability triggers an additional time.",
+    "number": 67,
+    "set": "DSK",
+    "rarity": "M",
+    "room": {
+      "left": {
+        "name": "Mirror Room",
+        "cost": "{2}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, create a token that's a copy of target creature you control, except it's a Reflection in addition to its other creature types.",
+        "number": 67,
+        "set": "DSK",
+        "rarity": "M"
+      },
+      "right": {
+        "name": "Fractured Realm",
+        "cost": "{5}{U}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nIf a triggered ability of a permanent you control triggers, that ability triggers an additional time."
+      }
+    }
+  },
+  {
+    "name": "Overlord of the Floodpits",
+    "cost": "{3}{U}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Horror"
+    ],
+    "text": "Impending 4—{1}{U}{U} (If you cast this spell for its impending cost, it enters with four time counters and isn't a creature until the last is removed. At the beginning of your end step, remove a time counter from it.)\nFlying\nWhenever Overlord of the Floodpits enters or attacks, draw two cards, then discard a card.",
+    "power": 5,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "number": 68,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Paranormal Analyst",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Detective"
+    ],
+    "text": "Whenever you manifest dread, put a card you put into your graveyard this way into your hand.",
+    "power": 1,
+    "toughness": 3,
+    "number": 69,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Piranha Fly",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish",
+      "Insect"
+    ],
+    "text": "Flying\nPiranha Fly enters tapped.",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "number": 70,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Scrabbling Skullcrab",
+    "cost": "{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Crab",
+      "Skeleton"
+    ],
+    "text": "Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, target player mills two cards. (They put the top two cards of their library into their graveyard.)",
+    "power": 0,
+    "toughness": 3,
+    "number": 71,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Silent Hallcreeper",
+    "cost": "{1}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "text": "Silent Hallcreeper can't be blocked.\nWhenever Silent Hallcreeper deals combat damage to a player, choose one that hasn't been chosen -\n• Put two +1/+1 counters on Silent Hallcreeper.\n• Draw a card.\n• Silent Hallcreeper becomes a copy of another target creature you control.",
+    "power": 1,
+    "toughness": 1,
+    "number": 72,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Stalked Researcher",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Defender\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, Stalker Researcher can attack this turn as though it didn't have defender.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "defender"
+    ],
+    "number": 73,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Stay Hidden, Stay Silent",
+    "cost": "{1}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nWhen Stay Hidden, Stay Silent enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\n{4}{U}{U}: Shuffle enchanted creature into its owner's library, then manifest dread. Activate only as a sorcery.",
+    "number": 74,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "The Tale of Tamiyo",
+    "cost": "{2}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II, III — Mill two cards. If two cards that share a card type were milled this way, draw a card and repeat this process.\nIV — Exile any number of target instant, sorcery, and/or Tamiyo planeswalker cards from your graveyard. Copy them. You may cast any number of the copies.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 75,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Tunnel Surveyor",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Detective"
+    ],
+    "text": "When Tunnel Surveyor enters, create a 1/1 white Glimmer enchantment creature token.",
+    "power": 2,
+    "toughness": 2,
+    "number": 76,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Twist Reality",
+    "cost": "{1}{U}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Counter target spell.\n• Manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "number": 77,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Unable to Scream",
+    "cost": "{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nEnchanted creature loses all abilities and is a Toy artifact creature with base power and toughness 0/2 in addition to its other types.\nAs long as enchanted creature is face down, it can't be turned face up.",
+    "number": 78,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Underwater Tunnel // Slimy Aquarium",
+    "cost": "{U}{3}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Underwater Tunnel\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\n\nSlimy Aquarium\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, manifest dread, then put a +1/+1 counter on that creature.",
+    "number": 79,
+    "set": "DSK",
+    "rarity": "C",
+    "room": {
+      "left": {
+        "name": "Underwater Tunnel",
+        "cost": "{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+        "number": 79,
+        "set": "DSK",
+        "rarity": "C"
+      },
+      "right": {
+        "name": "Slimy Aquarium",
+        "cost": "{3}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, manifest dread, then put a +1/+1 counter on that creature."
+      }
+    }
+  },
+  {
+    "name": "Unnerving Grasp",
+    "cost": "{2}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Return up to one target nonland permanent to its owner's hand. Manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "number": 80,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Unwilling Vessel",
+    "cost": "{2}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "Vigilance\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, put a possession counter on Unwilling Vessel.\nWhen Unwilling Vessel dies, create an X/X blue Spirit creature token with flying, where X is the number of counters on Unwilling Vessel.",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 81,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Vanish from Sight",
+    "cost": "{3}{U}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target nonland permanent's owner puts it on the top or bottom of their library. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "number": 82,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Appendage Amalgam",
+    "cost": "{2}{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "text": "Flash\nWhenever Appendage Amalgam attacks, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ],
+    "number": 83,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Balemurk Leech",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Leech"
+    ],
+    "text": "Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, each opponent loses 1 life.",
+    "power": 2,
+    "toughness": 2,
+    "number": 84,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Cackling Slasher",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Assassin"
+    ],
+    "text": "Deathtouch\nCackling Slasher enters with a +1/+1 counter on it if a creature died this turn.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 85,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Come Back Wrong",
+    "cost": "{2}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Destroy target creature. If a creature card is put into a graveyard this way, return it to the battlefield under your control. Sacrifice it at the beginning of your next end step.",
+    "number": 86,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Commune with Evil",
+    "cost": "{2}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Look at the top four cards of your library. Put one of them into your hand and the rest into your graveyard. You gain 3 life.",
+    "number": 87,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Cracked Skull",
+    "cost": "{2}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nWhen Cracked Skull enters, look at target player's hand. You may choose a nonland card from it. That player discards that card.\nWhen enchanted creature is dealt damage, destroy it.",
+    "number": 88,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Cynical Loner",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Cynical Loner can't be blocked by Glimmers.\nSurvival — At the beginning of your second main phase, if Cynical Loner is tapped, you may search your library for a card, put it into your graveyard, then shuffle.",
+    "power": 3,
+    "toughness": 1,
+    "number": 89,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Dashing Bloodsucker",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Warrior"
+    ],
+    "text": "Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, Dashing Bloodsucker gets +2/+0 and gains lifelink until end of turn.",
+    "power": 2,
+    "toughness": 5,
+    "number": 90,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Defiled Crypt // Cadaver Lab",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Defiled Crypt\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever one or more cards leave your graveyard, create a 2/2 black Horror enchantment creature token. This ability triggers only once each turn.\n\nCadaver Lab\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, return target creature card from your graveyard to your hand.",
+    "number": 91,
+    "set": "DSK",
+    "rarity": "U",
+    "room": {
+      "left": {
+        "name": "Defiled Crypt",
+        "cost": "{3}{B}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever one or more cards leave your graveyard, create a 2/2 black Horror enchantment creature token. This ability triggers only once each turn.",
+        "number": 91,
+        "set": "DSK",
+        "rarity": "U"
+      },
+      "right": {
+        "name": "Cadaver Lab",
+        "cost": "{B}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, return target creature card from your graveyard to your hand."
+      }
+    }
+  },
+  {
+    "name": "Demonic Counsel",
+    "cost": "{1}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Search your library for a Demon card, reveal it, put it into your hand, then shuffle.\nDelirium — If there are four or more card types among cards in your graveyard, instead search your library for any card, put it into your hand, then shuffle.",
+    "number": 92,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Derelict Attic // Widow's Walk",
+    "cost": "{2}{B}{3}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Derelict Attic\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, you draw two cards and you lose 2 life.\n\nWidow's Walk\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever a creature you control attacks alone, it gets +1/+0 and gains deathtouch until end of turn.",
+    "number": 93,
+    "set": "DSK",
+    "rarity": "C",
+    "room": {
+      "left": {
+        "name": "Derelict Attic",
+        "cost": "{2}{B}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, you draw two cards and you lose 2 life.",
+        "number": 93,
+        "set": "DSK",
+        "rarity": "C"
+      },
+      "right": {
+        "name": "Widow's Walk",
+        "cost": "{3}{B}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever a creature you control attacks alone, it gets +1/+0 and gains deathtouch until end of turn."
+      }
+    }
+  },
+  {
+    "name": "Doomsday Excruciator",
+    "cost": "{B}{B}{B}{B}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "text": "Flying\nWhen Doomsday Excruciator enters, if it was cast, each player exiles all but the bottom six cards of their library face down.\nAt the beginning of your upkeep, draw a card.",
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "flying"
+    ],
+    "number": 94,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Enduring Tenacity",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake",
+      "Glimmer"
+    ],
+    "text": "Whenever you gain life, target opponent loses that much life.\nWhen Enduring Tenacity dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+    "power": 4,
+    "toughness": 3,
+    "number": 95,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Fanatic of the Harrowing",
+    "cost": "{3}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "text": "When Fanatic of the Harrowing enters, each player discards a card. If you discarded a card this way, draw a card.",
+    "power": 2,
+    "toughness": 2,
+    "number": 96,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Fear of Lost Teeth",
+    "cost": "{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "When Fear of Lost Teeth dies, it deals 1 damage to any target and you gain 1 life.",
+    "power": 1,
+    "toughness": 1,
+    "number": 97,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Fear of the Dark",
+    "cost": "{4}{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "Whenever Fear of the Dark attacks, if defending player controls no Glimmer creatures, it gains menace and deathtouch until end of turn. (A creature with menace can't be blocked except by two or more creatures.)",
+    "power": 5,
+    "toughness": 5,
+    "number": 98,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Final Vengeance",
+    "cost": "{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, sacrifice a creature or enchantment.\nExile target creature.",
+    "number": 99,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Funeral Room // Awakening Hall",
+    "cost": "{2}{B}{6}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Funeral Room\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever a creature you control dies, each opponent loses 1 life and you gain 1 life.\n\nAwakening Hall\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, return all creature cards from your graveyard to the battlefield.",
+    "number": 100,
+    "set": "DSK",
+    "rarity": "M",
+    "room": {
+      "left": {
+        "name": "Funeral Room",
+        "cost": "{2}{B}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever a creature you control dies, each opponent loses 1 life and you gain 1 life.",
+        "number": 100,
+        "set": "DSK",
+        "rarity": "M"
+      },
+      "right": {
+        "name": "Awakening Hall",
+        "cost": "{6}{B}{B}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, return all creature cards from your graveyard to the battlefield."
+      }
+    }
+  },
+  {
+    "name": "Give In to Violence",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +2/+2 and gains lifelink until end of turn.",
+    "number": 101,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Grievous Wound",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant player\nEnchanted player can't gain life.\nWhenever enchanted player is dealt damage, they lose half their life, rounded up.",
+    "number": 102,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Innocuous Rat",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat"
+    ],
+    "text": "When Innocuous Rat dies, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "power": 1,
+    "toughness": 1,
+    "number": 103,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Killer's Mask",
+    "cost": "{2}{B}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Killer's Mask enters, manifest dread, then attach Killer's Mask to that creature. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\nEquipped creature has menace.\nEquip {2}",
+    "number": 104,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Let's Play a Game",
+    "cost": "{3}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Delirium — Choose one. If there are four or more card types among cards in your graveyard, choose one or more instead.\n• Creatures your opponents control get -1/-1 until end of turn.\n• Each opponent discards two cards.\n• Each opponent loses 3 life and you gain 3 life.",
+    "number": 105,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Leyline of the Void",
+    "cost": "{2}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "If Leyline of the Void is in your opening hand, you may begin the game with it on the battlefield.\nIf a card would be put into an opponent's graveyard from anywhere, exile it instead.",
+    "number": 106,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Live or Die",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Return target creature card from your graveyard to the battlefield.\n• Destroy target creature.",
+    "number": 107,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Meathook Massacre II",
+    "cost": "{X}{X}{B}{B}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Meathook Massacre II enters, each player sacrifices X creatures.\nWhenever a creature you control dies, you may pay 3 life. If you do, return that card under your control with a finality counter on it.\nWhenever a creature an opponent controls dies, they may pay 3 life. If they don't, return that card under your control with a finality counter on it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 108,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Miasma Demon",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "text": "Flying\nWhen Miasma Demon enters, you may discard any number of cards. When you do, up to that many target creatures each get -2/-2 until end of turn.",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 109,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Murder",
+    "cost": "{1}{B}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target creature.",
+    "number": 110,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Nowhere to Run",
+    "cost": "{1}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Flash\nWhen Nowhere to Run enters, target creature an opponent controls gets -3/-3 until end of turn.\nCreatures your opponents control can be the targets of spells and abilities as though they didn't have hexproof. Ward abilities of those creatures don't trigger.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 111,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Osseous Sticktwister",
+    "cost": "{1}{B}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "text": "Lifelink\nDelirium — At the beginning of your end step, if there are four or more card types among cards in your graveyard, each opponent may sacrifice a nonland permanent or discard a card. Then Osseous Sticktwister deals damage equal to its power to each opponent who didn't sacrifice a permanent or discard a card this way.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ],
+    "number": 112,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Overlord of the Balemurk",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Horror"
+    ],
+    "text": "Impending 5—{1}{B} (If you cast this spell for its impending cost, it enters with five time counters and isn't a creature until the last is removed. At the beginning of your end step, remove a time counter from it.)\nWhenever Overlord of the Balemurk enters or attacks, mill four cards, then you may return a non-Avatar creature card or a planeswalker card from your graveyard to your hand.",
+    "power": 5,
+    "toughness": 5,
+    "number": 113,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Popular Egotist",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "text": "{1}{B}, Sacrifice another creature or enchantment: Popular Egotist gains indestructible until end of turn. Tap it. (Damage and effects that say \"destroy\" don't destroy it.)\nWhenever you sacrifice a permanent, target opponent loses 1 life and you gain 1 life.",
+    "power": 3,
+    "toughness": 2,
+    "number": 114,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Resurrected Cultist",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "text": "Delirium — {2}{B}{B}: Return Resurrected Cultist from your graveyard to the battlefield with a finality counter on it. Activate only if there are four or more card types among cards in your graveyard and only as a sorcery. (If a creature with a finality counter on it would die, exile it instead.)",
+    "power": 4,
+    "toughness": 1,
+    "number": 115,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Spectral Snatcher",
+    "cost": "{4}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Ward—Discard a card. (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player discards a card.)\nSwampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)",
+    "power": 6,
+    "toughness": 5,
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Swamp"
+      }
+    },
+    "number": 116,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Sporogenic Infection",
+    "cost": "{1}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Enchant creature\nWhen Sporogenic Infection enters, target player sacrifices a creature other than enchanted creature.\nWhen enchanted creature is dealt damage, destroy it.",
+    "number": 117,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Unholy Annex // Ritual Chamber",
+    "cost": "{2}{B}{3}{B}{B}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Unholy Annex\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nAt the beginning of your end step, draw a card. If you control a Demon, each opponent loses 2 life and you gain 2 life. Otherwise, you lose 2 life.\n\nRitual Chamber\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, create a 6/6 black Demon creature token with flying.",
+    "number": 118,
+    "set": "DSK",
+    "rarity": "R",
+    "room": {
+      "left": {
+        "name": "Unholy Annex",
+        "cost": "{2}{B}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nAt the beginning of your end step, draw a card. If you control a Demon, each opponent loses 2 life and you gain 2 life. Otherwise, you lose 2 life.",
+        "number": 118,
+        "set": "DSK",
+        "rarity": "R"
+      },
+      "right": {
+        "name": "Ritual Chamber",
+        "cost": "{3}{B}{B}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, create a 6/6 black Demon creature token with flying."
+      }
+    }
+  },
+  {
+    "name": "Unstoppable Slasher",
+    "cost": "{2}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Assassin"
+    ],
+    "text": "Deathtouch\nWhenever Unstoppable Slasher deals combat damage to a player, they lose half their life, rounded up.\nWhen Unstoppable Slasher dies, if it had no counters on it, return it to the battlefield tapped under its owner's control with two stun counters on it.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 119,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Valgavoth, Terror Eater",
+    "cost": "{6}{B}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Demon"
+    ],
+    "text": "Flying, lifelink\nWard—Sacrifice three nonland permanents.\nIf a card you didn't control would be put into an opponent's graveyard from anywhere, exile it instead.\nDuring your turn, you may play cards exiled with Valgavoth. If you cast a spell this way, pay life equal to its mana value rather than pay its mana cost.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 9,
+    "toughness": 9,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ],
+    "number": 120,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Valgavoth's Faithful",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "text": "{3}{B}, Sacrifice Valgavoth's Faithful: Return target creature card from your graveyard to the battlefield. Activate only as a sorcery.",
+    "power": 1,
+    "toughness": 1,
+    "number": 121,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Vile Mutilator",
+    "cost": "{5}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "text": "As an additional cost to cast this spell, sacrifice a creature or enchantment.\nFlying, trample\nWhen Vile Mutilator enters, each opponent sacrifices a nontoken enchantment, then sacrifices a nontoken creature.",
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "trample"
+    ],
+    "number": 122,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Winter's Intervention",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Winter's Intervention deals 2 damage to target creature. You gain 2 life.",
+    "number": 123,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Withering Torment",
+    "cost": "{2}{B}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Destroy target creature or enchantment. You lose 2 life.",
+    "number": 124,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Bedhead Beastie",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nMountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)",
+    "power": 5,
+    "toughness": 6,
+    "keywords": [
+      "menace"
+    ],
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Mountain"
+      }
+    },
+    "number": 125,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Betrayer's Bargain",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, sacrifice a creature or enchantment or pay {2}.\nBetrayer's Bargain deals 5 damage to target creature. If that creature would die this turn, exile it instead.",
+    "number": 126,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Boilerbilges Ripper",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Assassin"
+    ],
+    "text": "When Boilerbilges Ripper enters, you may sacrifice another creature or enchantment. When you do, Boilerbilges Ripper deals 2 damage to any target.",
+    "power": 4,
+    "toughness": 4,
+    "number": 127,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Chainsaw",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Chainsaw enters, it deals 3 damage to up to one target creature.\nWhenever one or more creatures die, put a rev counter on Chainsaw.\nEquipped creature gets +X/+0, where X is the number of rev counters on Chainsaw.\nEquip {3}",
+    "number": 128,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Charred Foyer // Warped Space",
+    "cost": "{3}{R}{4}{R}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Charred Foyer\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nAt the beginning of your upkeep, exile the top card of your library. You may play that card this turn.\n\nWarped Space\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nOnce each turn, you may pay {0} rather than pay the mana cost for a spell you cast from exile.",
+    "number": 129,
+    "set": "DSK",
+    "rarity": "M",
+    "room": {
+      "left": {
+        "name": "Charred Foyer",
+        "cost": "{3}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nAt the beginning of your upkeep, exile the top card of your library. You may play that card this turn.",
+        "number": 129,
+        "set": "DSK",
+        "rarity": "M"
+      },
+      "right": {
+        "name": "Warped Space",
+        "cost": "{4}{R}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nOnce each turn, you may pay {0} rather than pay the mana cost for a spell you cast from exile."
+      }
+    }
+  },
+  {
+    "name": "Clockwork Percussionist",
+    "cost": "{R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Monkey",
+      "Toy"
+    ],
+    "text": "Haste\nWhen Clockwork Percussionist dies, exile the top card of your library. You may play it until the end of your next turn.",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "haste"
+    ],
+    "number": 130,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Cursed Recording",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Whenever you cast an instant or sorcery spell, put a time counter on Cursed Recording. Then if there are seven or more time counters on it, remove those counters and it deals 20 damage to you.\n{T}: When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+    "number": 131,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Diversion Specialist",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\n{1}, Sacrifice another creature or enchantment: Exile the top card of your library. You may play that card this turn.",
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "number": 132,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Enduring Courage",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Glimmer"
+    ],
+    "text": "Whenever another creature you control enters, it gets +2/+0 and gains haste until end of turn.\nWhen Enduring Courage dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+    "power": 3,
+    "toughness": 3,
+    "number": 133,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Fear of Being Hunted",
+    "cost": "{1}{R}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "Haste\nFear of Being Hunted must be blocked if able.",
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "haste"
+    ],
+    "number": 134,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Fear of Burning Alive",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "When Fear of Burning Alive enters, it deals 4 damage to each opponent.\nDelirium — Whenever a source you control deals noncombat damage to an opponent, if there are four or more card types among cards in your graveyard, Fear of Burning Alive deals that amount of damage to target creature that player controls.",
+    "power": 4,
+    "toughness": 4,
+    "number": 135,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Fear of Missing Out",
+    "cost": "{1}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "When Fear of Missing Out enters, discard a card, then draw a card.\nDelirium — Whenever Fear of Missing Out attacks for the first time each turn, if there are four or more card types among cards in your graveyard, untap target creature. After this phase, there is an additional combat phase.",
+    "power": 2,
+    "toughness": 3,
+    "number": 136,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Glassworks // Shattered Yard",
+    "cost": "{2}{R}{4}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Glassworks\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, this Room deals 4 damage to target creature an opponent controls.\n\nShattered Yard\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nAt the beginning of your end step, this Room deals 1 damage to each opponent.",
+    "number": 137,
+    "set": "DSK",
+    "rarity": "C",
+    "room": {
+      "left": {
+        "name": "Glassworks",
+        "cost": "{2}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, this Room deals 4 damage to target creature an opponent controls.",
+        "number": 137,
+        "set": "DSK",
+        "rarity": "C"
+      },
+      "right": {
+        "name": "Shattered Yard",
+        "cost": "{4}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nAt the beginning of your end step, this Room deals 1 damage to each opponent."
+      }
+    }
+  },
+  {
+    "name": "Grab the Prize",
+    "cost": "{1}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, discard a card.\nDraw two cards. If the discarded card wasn't a land card, Grab the Prize deals 2 damage to each opponent.",
+    "number": 138,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Hand That Feeds",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant"
+    ],
+    "text": "Delirium — Whenever Hand That Feeds attacks while there are four or more card types among cards in your graveyard, it gets +2/+0 and gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+    "power": 2,
+    "toughness": 2,
+    "number": 139,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Impossible Inferno",
+    "cost": "{4}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Impossible Inferno deals 6 damage to target creature.\nDelirium — If there are four or more card types among cards in your graveyard, exile the top card of your library. You may play it until the end of your next turn.",
+    "number": 140,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Infernal Phantom",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, Infernal Phantom gets +2/+0 until end of turn.\nWhen Infernal Phantom dies, it deals damage equal to its power to any target.",
+    "power": 2,
+    "toughness": 3,
+    "number": 141,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Irreverent Gremlin",
+    "cost": "{1}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Gremlin"
+    ],
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever another creature you control with power 2 or less enters, you may discard a card. If you do, draw a card. Do this only once each turn.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ],
+    "number": 142,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Leyline of Resonance",
+    "cost": "{2}{R}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "If Leyline of Resonance is in your opening hand, you may begin the game with it on the battlefield.\nWhenever you cast an instant or sorcery spell that targets only a single creature you control, copy that spell. You may choose new targets for the copy.",
+    "number": 143,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Most Valuable Slayer",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "text": "Whenever you attack, target attacking creature gets +1/+0 and gains first strike until end of turn.",
+    "power": 2,
+    "toughness": 4,
+    "number": 144,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Norin, Swift Survivalist",
+    "cost": "{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Coward"
+    ],
+    "text": "Norin, Swift Survivalist can't block.\nWhenever a creature you control becomes blocked, you may exile it. You may play that card from exile this turn.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "number": 145,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Overlord of the Boilerbilges",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Horror"
+    ],
+    "text": "Impending 4—{2}{R}{R} (If you cast this spell for its impending cost, it enters with four time counters and isn't a creature until the last is removed. At the beginning of your end step, remove a time counter from it.)\nWhenever Overlord of the Boilerbilges enters or attacks, it deals 4 damage to any target.",
+    "power": 5,
+    "toughness": 5,
+    "number": 146,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Painter's Studio // Defaced Gallery",
+    "cost": "{2}{R}{1}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Painter's Studio\nWhen you unlock this door, exile the top two cards of your library. You may play them until the end of your next turn.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\n\nDefaced Gallery\nWhenever you attack, attacking creatures you control get +1/+0 until end of turn.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+    "number": 147,
+    "set": "DSK",
+    "rarity": "U",
+    "room": {
+      "left": {
+        "name": "Painter's Studio",
+        "cost": "{2}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "When you unlock this door, exile the top two cards of your library. You may play them until the end of your next turn.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+        "number": 147,
+        "set": "DSK",
+        "rarity": "U"
+      },
+      "right": {
+        "name": "Defaced Gallery",
+        "cost": "{1}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "Whenever you attack, attacking creatures you control get +1/+0 until end of turn.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)"
+      }
+    }
+  },
+  {
+    "name": "Piggy Bank",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Boar",
+      "Toy"
+    ],
+    "text": "When Piggy Bank dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "power": 3,
+    "toughness": 2,
+    "number": 148,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Pyroclasm",
+    "cost": "{1}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Pyroclasm deals 2 damage to each creature.",
+    "number": 149,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Ragged Playmate",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "text": "{1}, {T}: Target creature with power 2 or less can't be blocked this turn.",
+    "power": 2,
+    "toughness": 2,
+    "number": 150,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Rampaging Soulrager",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Rampaging Soulrager gets +3/+0 as long as there are two or more unlocked doors among Rooms you control.",
+    "power": 1,
+    "toughness": 4,
+    "number": 151,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Razorkin Hordecaller",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Clown",
+      "Berserker"
+    ],
+    "text": "Haste\nWhenever you attack, create a 1/1 red Gremlin creature token.",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ],
+    "number": 152,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Razorkin Needlehead",
+    "cost": "{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Assassin"
+    ],
+    "text": "Razorkin Needlehead has first strike during your turn.\nWhenever an opponent draws a card, Razorkin Needlehead deals 1 damage to them.",
+    "power": 2,
+    "toughness": 2,
+    "number": 153,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Ripchain Razorkin",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Berserker"
+    ],
+    "text": "Reach\n{2}{R}, Sacrifice a land: Draw a card.",
+    "power": 5,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "number": 154,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "The Rollercrusher Ride",
+    "cost": "{X}{2}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Delirium — If a source you control would deal noncombat damage to a permanent or player while there are four or more card types among cards in your graveyard, it deals double that damage instead.\nWhen The Rollercrusher Ride enters, it deals X damage to each of up to X target creatures.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "number": 155,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Scorching Dragonfire",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Scorching Dragonfire deals 3 damage to target creature or planeswalker. If that creature or planeswalker would die this turn, exile it instead.",
+    "number": 156,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Screaming Nemesis",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Haste\nWhenever Screaming Nemesis is dealt damage, it deals that much damage to any other target. If a player is dealt damage this way, they can't gain life for the rest of the game.",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "haste"
+    ],
+    "number": 157,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Ticket Booth // Tunnel of Hate",
+    "cost": "{2}{R}{4}{R}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Ticket Booth\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, manifest dread.\n\nTunnel of Hate\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever you attack, target attacking creature gains double strike until end of turn.",
+    "number": 158,
+    "set": "DSK",
+    "rarity": "C",
+    "room": {
+      "left": {
+        "name": "Ticket Booth",
+        "cost": "{2}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, manifest dread.",
+        "number": 158,
+        "set": "DSK",
+        "rarity": "C"
+      },
+      "right": {
+        "name": "Tunnel of Hate",
+        "cost": "{4}{R}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhenever you attack, target attacking creature gains double strike until end of turn."
+      }
+    }
+  },
+  {
+    "name": "Trial of Agony",
+    "cost": "{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose two target creatures controlled by the same opponent. That player chooses one of those creatures. Trial of Agony deals 5 damage to that creature, and the other can't block this turn.",
+    "number": 159,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Turn Inside Out",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +3/+0 until end of turn. When it dies this turn, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "number": 160,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Untimely Malfunction",
+    "cost": "{1}{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Destroy target artifact.\n• Change the target of target spell or ability with a single target.\n• One or two target creatures can't block this turn.",
+    "number": 161,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Vengeful Possession",
+    "cost": "{2}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Gain control of target creature until end of turn. Untap it. It gains haste until end of turn. You may discard a card. If you do, draw a card.",
+    "number": 162,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Vicious Clown",
+    "cost": "{2}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Clown"
+    ],
+    "text": "Whenever another creature you control with power 2 or less enters, Vicious Clown gets +2/+0 until end of turn.",
+    "power": 2,
+    "toughness": 3,
+    "number": 163,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Violent Urge",
+    "cost": "{R}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gets +1/+0 and first strike until end of turn.\nDelirium — If there are four or more card types in your graveyard, that creature gains double strike until end of turn.",
+    "number": 164,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Waltz of Rage",
+    "cost": "{3}{R}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Target creature you control deals damage equal to its power to each other creature. Until end of turn, whenever a creature you control dies, exile the top card of your library. You may play it until the end of your next turn.",
+    "number": 165,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Altanak, the Thrice-Called",
+    "cost": "{5}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Beast"
+    ],
+    "text": "Trample\nWhenever Altanak, the Thrice-Called becomes the target of a spell or ability an opponent controls, draw a card.\n{1}{G}, Discard Altanak, the Thrice-Called: Return target land card from your graveyard to the battlefield tapped.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 9,
+    "toughness": 9,
+    "keywords": [
+      "trample"
+    ],
+    "number": 166,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Anthropede",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "text": "Reach\nWhen Anthropede enters, you may discard a card or pay {2}. When you do, destroy target Room.",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ],
+    "number": 167,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Balustrade Wurm",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wurm"
+    ],
+    "text": "This spell can't be countered.\nTrample, haste\nDelirium — {2}{G}{G}: Return Balustrade Wurm from your graveyard to the battlefield with a finality counter on it. Activate only if there are four or more card types among cards in your graveyard and only as a sorcery.",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "trample",
+      "haste"
+    ],
+    "number": 168,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Bashful Beastie",
+    "cost": "{4}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "text": "When Bashful Beastie dies, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "power": 5,
+    "toughness": 4,
+    "number": 169,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Break Down the Door",
+    "cost": "{2}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Choose one —\n• Exile target artifact.\n• Exile target enchantment.\n• Manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "number": 170,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Cathartic Parting",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "The owner of target artifact or enchantment an opponent controls shuffles it into their library. You may shuffle up to four target cards from your graveyard into your library.",
+    "number": 171,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Cautious Survivor",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Cautious Survivor is tapped, you gain 2 life.",
+    "power": 4,
+    "toughness": 4,
+    "number": 172,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Coordinated Clobbering",
+    "cost": "{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Tap one or two target untapped creatures you control. They each deal damage equal to their power to target creature an opponent controls.",
+    "number": 173,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Cryptid Inspector",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Warrior"
+    ],
+    "text": "Vigilance\nWhenever a face-down permanent you control enters and whenever Cryptid Inspector or another permanent you control is turned face up, put a +1/+1 counter on Cryptid Inspector.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 174,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Defiant Survivor",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Defiant Survivor is tapped, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "power": 3,
+    "toughness": 2,
+    "number": 175,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Enduring Vitality",
+    "cost": "{1}{G}{G}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Elk",
+      "Glimmer"
+    ],
+    "text": "Vigilance\nCreatures you control have \"{T}: Add one mana of any color.\"\nWhen Enduring Vitality dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 176,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Fear of Exposure",
+    "cost": "{2}{G}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "As an additional cost to cast this spell, tap two untapped creatures and/or lands you control.\nTrample",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "number": 177,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Flesh Burrower",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "text": "Deathtouch\nWhenever Flesh Burrower attacks, another target creature you control gains deathtouch until end of turn.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 178,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Frantic Strength",
+    "cost": "{2}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "text": "Flash\nEnchant creature\nEnchanted creature gets +2/+2 and has trample.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 179,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Grasping Longneck",
+    "cost": "{2}{G}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "text": "Reach\nWhen Grasping Longneck dies, you gain 2 life.",
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "reach"
+    ],
+    "number": 180,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Greenhouse // Rickety Gazebo",
+    "cost": "{2}{G}{3}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Greenhouse\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nLands you control have \"{T}: Add one mana of any color.\"\n\nRickety Gazebo\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, mill four cards, then return up to two permanent cards from among them to your hand.",
+    "number": 181,
+    "set": "DSK",
+    "rarity": "U",
+    "room": {
+      "left": {
+        "name": "Greenhouse",
+        "cost": "{2}{G}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nLands you control have \"{T}: Add one mana of any color.\"",
+        "number": 181,
+        "set": "DSK",
+        "rarity": "U"
+      },
+      "right": {
+        "name": "Rickety Gazebo",
+        "cost": "{3}{G}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, mill four cards, then return up to two permanent cards from among them to your hand."
+      }
+    }
+  },
+  {
+    "name": "Hauntwoods Shrieker",
+    "cost": "{1}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast",
+      "Mutant"
+    ],
+    "text": "Whenever Hauntwoods Shrieker attacks, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\n{1}{G}: Reveal target face-down permanent. If it's a creature card, you may turn it face up.",
+    "power": 3,
+    "toughness": 3,
+    "number": 182,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Hedge Shredder",
+    "cost": "{2}{G}{G}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "text": "Whenever Hedge Shredder attacks, you may mill two cards.\nWhenever one or more land cards are put into your graveyard from your library, put them onto the battlefield tapped.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "power": 5,
+    "toughness": 5,
+    "number": 183,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Horrid Vigor",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Target creature gains deathtouch and indestructible until end of turn.",
+    "number": 184,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "House Cartographer",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if House Cartographer is tapped, reveal cards from the top of your library until you reveal a land card. Put that card into your hand and the rest on the bottom of your library in a random order.",
+    "power": 2,
+    "toughness": 2,
+    "number": 185,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Insidious Fungus",
+    "cost": "{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fungus"
+    ],
+    "text": "{2}, Sacrifice Insidious Fungus: Choose one —\n• Destroy target artifact.\n• Destroy target enchantment.\n• Draw a card. Then you may put a land card from your hand onto the battlefield tapped.",
+    "power": 1,
+    "toughness": 2,
+    "number": 186,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Kona, Rescue Beastie",
+    "cost": "{3}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Kona, Rescue Beastie is tapped, you may put a permanent card from your hand onto the battlefield.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "number": 187,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Leyline of Mutation",
+    "cost": "{2}{G}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "If Leyline of Mutation is in your opening hand, you may begin the game with it on the battlefield.\nYou may pay {W}{U}{B}{R}{G} rather than pay the mana cost for spells that you cast.",
+    "number": 188,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Manifest Dread",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Manifest dread. (Look at the top two cards of your library, then put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "number": 189,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Moldering Gym // Weight Room",
+    "cost": "{2}{G}{5}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Moldering Gym\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\n\nWeight Room\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, manifest dread, then put three +1/+1 counters on that creature.",
+    "number": 190,
+    "set": "DSK",
+    "rarity": "C",
+    "room": {
+      "left": {
+        "name": "Moldering Gym",
+        "cost": "{2}{G}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+        "number": 190,
+        "set": "DSK",
+        "rarity": "C"
+      },
+      "right": {
+        "name": "Weight Room",
+        "cost": "{5}{G}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, manifest dread, then put three +1/+1 counters on that creature."
+      }
+    }
+  },
+  {
+    "name": "Monstrous Emergence",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "As an additional cost to cast this spell, choose a creature you control or reveal a creature card from your hand.\nMonstrous Emergence deals damage equal to the power of the creature you chose or the card you revealed to target creature.",
+    "number": 191,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Omnivorous Flytrap",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant"
+    ],
+    "text": "Delirium — Whenever Omnivorous Flytrap enters or attacks, if there are four or more card types among cards in your graveyard, distribute two +1/+1 counters among one or two target creatures. Then if there are six or more card types among cards in your graveyard, double the number of +1/+1 counters on those creatures.",
+    "power": 2,
+    "toughness": 4,
+    "number": 192,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Overgrown Zealot",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "text": "{T}: Add one mana of any color.\n{T}: Add two mana of any one color. Spend this mana only to turn permanents face up.",
+    "power": 0,
+    "toughness": 4,
+    "number": 193,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Overlord of the Hauntwoods",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Horror"
+    ],
+    "text": "Impending 4—{1}{G}{G} (If you cast this spell for its impending cost, it enters with four time counters and isn't a creature until the last is removed. At the beginning of your end step, remove a time counter from it.)\nWhenever Overlord of the Hauntwoods enters or attacks, create a tapped colorless land token named Everywhere that is every basic land type.",
+    "power": 6,
+    "toughness": 5,
+    "number": 194,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Patchwork Beastie",
+    "cost": "{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "text": "Delirium — Patchwork Beastie can't attack or block unless there are four or more card types among cards in your graveyard.\nAt the beginning of your upkeep, you may mill a card. (You may put the top card of your library into your graveyard.)",
+    "power": 3,
+    "toughness": 3,
+    "number": 195,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Rootwise Survivor",
+    "cost": "{3}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Haste\nSurvival — At the beginning of your second main phase, if Rootwise Survivor is tapped, put three +1/+1 counters on up to one target land you control. That land becomes a 0/0 Elemental creature in addition to its other types. It gains haste until your next turn.",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ],
+    "number": 196,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Say Its Name",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Mill three cards. Then you may return a creature or land card from your graveyard to your hand.\nExile this card and two other cards named Say Its Name from your graveyard: Search your graveyard, hand, and/or library for a card named Altanak, the Thrice-Called and put it onto the battlefield. If you search your library this way, shuffle. Activate only as a sorcery.",
+    "number": 197,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Slavering Branchsnapper",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard"
+    ],
+    "text": "Trample\nForestcycling {2} ({2}, Discard this card: Search your library for a Forest card, reveal it, put it into your hand, then shuffle.)",
+    "power": 7,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ],
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Forest"
+      }
+    },
+    "number": 198,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Spineseeker Centipede",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "text": "When Spineseeker Centipede enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nDelirium — Spineseeker Centipede gets +1/+2 and has vigilance as long as there are four or more card types among cards in your graveyard.",
+    "power": 2,
+    "toughness": 1,
+    "number": 199,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Threats Around Every Corner",
+    "cost": "{3}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Threats Around Every Corner enters, manifest dread.\nWhenever a face-down permanent you control enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "number": 200,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Twitching Doll",
+    "cost": "{1}{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Toy"
+    ],
+    "text": "{T}: Add one mana of any color. Put a nest counter on Twitching Doll.\n{T}, Sacrifice Twitching Doll: Create a 2/2 green Spider creature token with reach for each counter on Twitching Doll. Activate only as a sorcery.",
+    "power": 2,
+    "toughness": 2,
+    "number": 201,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Tyvar, the Pummeler",
+    "cost": "{1}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Warrior"
+    ],
+    "text": "Tap another untapped creature you control: Tyvar, the Pummeler gains indestructible until end of turn. Tap it.\n{3}{G}{G}: Creatures you control get +X/+X until end of turn, where X is the greatest power among creatures you control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 202,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Under the Skin",
+    "cost": "{2}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\nYou may return a permanent card from your graveyard to your hand.",
+    "number": 203,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Valgavoth's Onslaught",
+    "cost": "{X}{X}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Manifest dread X times, then put X +1/+1 counters on each of those creatures. (To manifest dread, look at the top two cards of your library, then put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "number": 204,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Walk-In Closet // Forgotten Cellar",
+    "cost": "{2}{G}{3}{G}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Walk-In Closet\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nYou may play lands from your graveyard.\n\nForgotten Cellar\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, you may cast spells from your graveyard this turn, and if a card would be put into your graveyard from anywhere this turn, exile it instead.",
+    "number": 205,
+    "set": "DSK",
+    "rarity": "M",
+    "room": {
+      "left": {
+        "name": "Walk-In Closet",
+        "cost": "{2}{G}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nYou may play lands from your graveyard.",
+        "number": 205,
+        "set": "DSK",
+        "rarity": "M"
+      },
+      "right": {
+        "name": "Forgotten Cellar",
+        "cost": "{3}{G}{G}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, you may cast spells from your graveyard this turn, and if a card would be put into your graveyard from anywhere this turn, exile it instead."
+      }
+    }
+  },
+  {
+    "name": "Wary Watchdog",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog"
+    ],
+    "text": "When Wary Watchdog enters or dies, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+    "power": 3,
+    "toughness": 1,
+    "number": 206,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Wickerfolk Thresher",
+    "cost": "{3}{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "text": "Delirium — Whenever Wickerfolk Thresher attacks, if there are four or more card types among cards in your graveyard, look at the top card of your library. If it's a land card, you may put it onto the battlefield. If you don't put the card onto the battlefield, put it into your hand.",
+    "power": 5,
+    "toughness": 4,
+    "number": 207,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Arabella, Abandoned Doll",
+    "cost": "{R}{W}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "text": "Whenever Arabella, Abandoned Doll attacks, it deals X damage to each opponent and you gain X life, where X is the number of creatures you control with power 2 or less.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 3,
+    "number": 208,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Baseball Bat",
+    "cost": "{G}{W}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Baseball Bat enters, attach it to target creature you control.\nEquipped creature gets +1/+1.\nWhenever equipped creature attacks, tap up to one target creature.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 209,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Beastie Beatdown",
+    "cost": "{R}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Choose target creature you control and target creature an opponent controls.\nDelirium — If there are four or more card types among cards in your graveyard, put two +1/+1 counters on the creature you control.\nThe creature you control deals damage equal to its power to the creature an opponent controls.",
+    "number": 210,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Broodspinner",
+    "cost": "{B}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider"
+    ],
+    "text": "Reach\nWhen Broodspinner enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\n{4}{B}{G}, {T}, Sacrifice Broodspinner: Create a number of 1/1 black and green Insect creature tokens with flying equal to the number of card types among cards in your graveyard.",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "number": 211,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Disturbing Mirth",
+    "cost": "{B}{R}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "When Disturbing Mirth enters, you may sacrifice another enchantment or creature. If you do, draw two cards.\nWhen you sacrifice Disturbing Mirth, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+    "number": 212,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Drag to the Roots",
+    "cost": "{2}{B}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Delirium — This spell costs {2} less to cast if there are four or more card types among cards in your graveyard.\nDestroy target nonland permanent.",
+    "number": 213,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Fear of Infinity",
+    "cost": "{1}{U}{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "text": "Flying, lifelink\nFear of Infinity can't block.\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, you may return Fear of Infinity from your graveyard to your hand.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ],
+    "number": 214,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Gremlin Tamer",
+    "cost": "{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "text": "Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, create a 1/1 red Gremlin creature token.",
+    "power": 2,
+    "toughness": 2,
+    "number": 215,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Growing Dread",
+    "cost": "{G}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "text": "Flash\nWhen Growing Dread enters, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\nWhenever you turn a permanent face up, put a +1/+1 counter on it.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 216,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Inquisitive Glimmer",
+    "cost": "{W}{U}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Fox",
+      "Glimmer"
+    ],
+    "text": "Enchantment spells you cast cost {1} less to cast.\nUnlock costs you pay cost {1} less.",
+    "power": 2,
+    "toughness": 3,
+    "number": 217,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Intruding Soulrager",
+    "cost": "{U}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "Vigilance\n{T}, Sacrifice a Room: Intruding Soulrager deals 2 damage to each opponent. Draw a card.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ],
+    "number": 218,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "The Jolly Balloon Man",
+    "cost": "{1}{R}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Clown"
+    ],
+    "text": "Haste\n{1}, {T}: Create a token that's a copy of another target creature you control, except it's a 1/1 red Balloon creature in addition to its other colors and types and it has flying and haste. Sacrifice it at the beginning of the next end step. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ],
+    "number": 219,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Kaito, Bane of Nightmares",
+    "cost": "{2}{U}{B}",
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Kaito"
+    ],
+    "text": "Ninjutsu {1}{U}{B} ({1}{U}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nDuring your turn, as long as Kaito has one or more loyalty counters on him, he's a 3/4 Ninja creature and has hexproof.\n[+1]: You get an emblem with \"Ninjas you control get +1/+1.\"\n[0]: Surveil 2. Then draw a card for each opponent who lost life this turn.\n[-2]: Tap target creature. Put two stun counters on it.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "loyalty": 4,
+    "number": 220,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Marina Vendrell",
+    "cost": "{W}{U}{B}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "When Marina Vendrell enters, reveal the top seven cards of your library. Put all enchantment cards from among them into your hand and the rest on the bottom of your library in a random order.\n{T}: Lock or unlock a door of target Room you control. Activate only as a sorcery.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 5,
+    "number": 221,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Midnight Mayhem",
+    "cost": "{2}{R}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Create three 1/1 red Gremlin creature tokens. Gremlins you control gain menace, lifelink, and haste until end of turn. (A creature with menace can't be blocked except by two or more creatures.)",
+    "number": 222,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Nashi, Searcher in the Dark",
+    "cost": "{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat",
+      "Ninja",
+      "Wizard"
+    ],
+    "text": "Menace\nWhenever Nashi, Searcher in the Dark deals combat damage to a player, you mill that many cards. You may put any number of legendary and/or enchantment cards from among them into your hand. If you put no cards into your hand this way, put a +1/+1 counter on Nashi.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ],
+    "number": 223,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Niko, Light of Hope",
+    "cost": "{2}{W}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "When Niko, Light of Hope enters, create two Shard tokens. (They're enchantments with \"{2}, Sacrifice this token: Scry 1, then draw a card.\")\n{2}, {T}: Exile target nonlegendary creature you control. Shards you control become copies of it until the beginning of the next end step. Return it to the battlefield under its owner's control at the beginning of the next end step.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "number": 224,
+    "set": "DSK",
+    "rarity": "M"
+  },
+  {
+    "name": "Oblivious Bookworm",
+    "cost": "{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "At the beginning of your end step, you may draw a card. If you do, discard a card unless a permanent entered the battlefield face down under your control this turn or you turned a permanent face up this turn.",
+    "power": 2,
+    "toughness": 3,
+    "number": 225,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Peer Past the Veil",
+    "cost": "{2}{R}{G}",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "text": "Discard your hand. Then draw X cards, where X is the number of card types among cards in your graveyard.",
+    "number": 226,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Restricted Office // Lecture Hall",
+    "cost": "{2}{W}{W}{5}{U}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Restricted Office\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, destroy all creatures with power 3 or greater.\n\nLecture Hall\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nOther permanents you control have hexproof.",
+    "number": 227,
+    "set": "DSK",
+    "rarity": "R",
+    "room": {
+      "left": {
+        "name": "Restricted Office",
+        "cost": "{2}{W}{W}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, destroy all creatures with power 3 or greater.",
+        "number": 227,
+        "set": "DSK",
+        "rarity": "R"
+      },
+      "right": {
+        "name": "Lecture Hall",
+        "cost": "{5}{U}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nOther permanents you control have hexproof."
+      }
+    }
+  },
+  {
+    "name": "Rip, Spawn Hunter",
+    "cost": "{2}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Rip, Spawn Hunter is tapped, reveal the top X cards of your library, where X is its power. Put any number of creature and/or Vehicle cards with different powers from among them into your hand. Put the rest on the bottom of your library in a random order.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "number": 228,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Rite of the Moth",
+    "cost": "{1}{W}{B}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "text": "Return target creature card from your graveyard to the battlefield with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)\nFlashback {3}{W}{W}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "flashback": "{3}{W}{W}{B}",
+    "number": 229,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Roaring Furnace // Steaming Sauna",
+    "cost": "{1}{R}{3}{U}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Roaring Furnace\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, this Room deals damage equal to the number of cards in your hand to target creature an opponent controls.\n\nSteaming Sauna\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nYou have no maximum hand size.\nAt the beginning of your end step, draw a card.",
+    "number": 230,
+    "set": "DSK",
+    "rarity": "R",
+    "room": {
+      "left": {
+        "name": "Roaring Furnace",
+        "cost": "{1}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, this Room deals damage equal to the number of cards in your hand to target creature an opponent controls.",
+        "number": 230,
+        "set": "DSK",
+        "rarity": "R"
+      },
+      "right": {
+        "name": "Steaming Sauna",
+        "cost": "{3}{U}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nYou have no maximum hand size.\nAt the beginning of your end step, draw a card."
+      }
+    }
+  },
+  {
+    "name": "Sawblade Skinripper",
+    "cost": "{1}{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Assassin"
+    ],
+    "text": "Menace\n{2}, Sacrifice another creature or enchantment: Put a +1/+1 counter on Sawblade Skinripper.\nAt the beginning of your end step, if you sacrificed one or more permanents this turn, Sawblade Skinripper deals that much damage to any target.",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ],
+    "number": 231,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Shrewd Storyteller",
+    "cost": "{1}{G}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Survivor"
+    ],
+    "text": "Survival — At the beginning of your second main phase, if Shrewd Storyteller is tapped, put a +1/+1 counter on target creature.",
+    "power": 3,
+    "toughness": 3,
+    "number": 232,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Shroudstomper",
+    "cost": "{3}{W}{W}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "text": "Deathtouch\nWhenever Shroudstomper enters or attacks, each opponent loses 2 life. You gain 2 life and draw a card.",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "deathtouch"
+    ],
+    "number": 233,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Skullsnap Nuisance",
+    "cost": "{U}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Skeleton"
+    ],
+    "text": "Flying\nEerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 234,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Smoky Lounge // Misty Salon",
+    "cost": "{2}{R}{3}{U}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Room"
+    ],
+    "text": "Smoky Lounge\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nAt the beginning of your first main phase, add {R}{R}. Spend this mana only to cast Room spells and unlock doors.\n\nMisty Salon\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, create an X/X blue Spirit creature token with flying, where X is the number of unlocked doors among Rooms you control.",
+    "number": 235,
+    "set": "DSK",
+    "rarity": "U",
+    "room": {
+      "left": {
+        "name": "Smoky Lounge",
+        "cost": "{2}{R}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nAt the beginning of your first main phase, add {R}{R}. Spend this mana only to cast Room spells and unlock doors.",
+        "number": 235,
+        "set": "DSK",
+        "rarity": "U"
+      },
+      "right": {
+        "name": "Misty Salon",
+        "cost": "{3}{U}",
+        "types": [
+          "Enchantment"
+        ],
+        "subtypes": [
+          "Room"
+        ],
+        "text": "(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)\nWhen you unlock this door, create an X/X blue Spirit creature token with flying, where X is the number of unlocked doors among Rooms you control."
+      }
+    }
+  },
+  {
+    "name": "The Swarmweaver",
+    "cost": "{2}{B}{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "text": "When The Swarmweaver enters, create two 1/1 black and green Insect creature tokens with flying.\nDelirium — As long as there are four or more card types among cards in your graveyard, Insects and Spiders you control get +1/+1 and have deathtouch.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 3,
+    "number": 236,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Undead Sprinter",
+    "cost": "{B}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie"
+    ],
+    "text": "Trample, haste\nYou may cast Undead Sprinter from your graveyard if a non-Zombie creature died this turn. If you do, Undead Sprinter enters with a +1/+1 counter on it.",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "trample",
+      "haste"
+    ],
+    "number": 237,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Victor, Valgavoth's Seneschal",
+    "cost": "{1}{W}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, surveil 2 if this is the first time this ability has resolved this turn. If it's the second time, each opponent discards a card. If it's the third time, put a creature card from a graveyard onto the battlefield under your control.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "number": 238,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Wildfire Wickerfolk",
+    "cost": "{R}{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "text": "Haste\nDelirium — Wildfire Wickerfolk gets +1/+1 and has trample as long as there are four or more card types among cards in your graveyard.",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "haste"
+    ],
+    "number": 239,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Winter, Misanthropic Guide",
+    "cost": "{1}{B}{R}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "text": "Ward {2}\nAt the beginning of your upkeep, each player draws two cards.\nDelirium — As long as there are four or more card types among cards in your graveyard, each opponent's maximum hand size is equal to seven minus the number of those card types.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 3,
+    "toughness": 4,
+    "ward": 2,
+    "number": 240,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Zimone, All-Questioning",
+    "cost": "{1}{G}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "At the beginning of your end step, if a land entered the battlefield under your control this turn and you control a prime number of lands, create Primo, the Indivisible, a legendary 0/0 green and blue Fractal creature token, then put that many +1/+1 counters on it. (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31 are prime numbers.)",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "number": 241,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Attack-in-the-Box",
+    "cost": "{3}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "text": "Whenever Attack-in-the-box attacks, you may have it get +4/+0 until end of turn. If you do, sacrifice it at the beginning of the next end step.",
+    "power": 2,
+    "toughness": 4,
+    "number": 242,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Bear Trap",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "Flash\n{3}, {T}, Sacrifice Bear Trap: It deals 3 damage to target creature.",
+    "keywords": [
+      "flash"
+    ],
+    "number": 243,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Conductive Machete",
+    "cost": "{4}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Conductive Machete enters, manifest dread, then attach Conductive Machete to that creature. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\nEquipped creature gets +2/+1.\nEquip {4}",
+    "number": 244,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Dissection Tools",
+    "cost": "{5}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Dissection Tools enters, manifest dread, then attach Dissection Tools to that creature.\nEquipped creature has +2/+2 and has deathtouch and lifelink.\nEquip—Sacrifice a creature.",
+    "number": 245,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Found Footage",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Clue"
+    ],
+    "text": "You may look at face-down creatures your opponents control any time.\n{2}, Sacrifice Found Footage: Surveil 2, then draw a card. (To surveil 2, look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "number": 246,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Friendly Teddy",
+    "cost": "{2}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear",
+      "Toy"
+    ],
+    "text": "When Friendly Teddy dies, each player draws a card.",
+    "power": 2,
+    "toughness": 2,
+    "number": 247,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Ghost Vacuum",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{T}: Exile target card from a graveyard.\n{6}, {T}, Sacrifice Ghost Vacuum: Put each creature card exiled with Ghost Vacuum onto the battlefield under your control with a flying counter on it. Each of them is a 1/1 Spirit in addition to its other types. Activate only as a sorcery.",
+    "number": 248,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Glimmerlight",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "When Glimmerlight enters, create a 1/1 white Glimmer enchantment creature token.\nEquipped creature gets +1/+1.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 249,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Haunted Screen",
+    "cost": "{3}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {W} or {B}.\n{T}, Pay 1 life: Add {G}, {U}, or {R}.\n{7}: Put seven +1/+1 counters on Haunted Screen. It becomes a 0/0 Spirit creature in addition to its other types. Activate only once.",
+    "number": 250,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Keys to the House",
+    "cost": "{1}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "text": "{1}, {T}, Sacrifice Keys to the House: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{3}, {T}, Sacrifice Keys to the House: Lock or unlock a door of target Room you control. Activate only as a sorcery.",
+    "number": 251,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Malevolent Chandelier",
+    "cost": "{6}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "text": "Flying\n{2}: Put target card from a graveyard on the bottom of its owner's library. Activate only as a sorcery.",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "number": 252,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Marvin, Murderous Mimic",
+    "cost": "{2}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "text": "Marvin, Murderous Mimic has all activated abilities of creatures you control that don't have the same name as this creature.",
+    "supertypes": [
+      "Legendary"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "number": 253,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Saw",
+    "cost": "{2}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "text": "Equipped creature gets +2/+0.\nWhenever equipped creature attacks, you may sacrifice a permanent other than that creature or Saw. If you do, draw a card.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "number": 254,
+    "set": "DSK",
+    "rarity": "U"
+  },
+  {
+    "name": "Abandoned Campground",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Abandoned Campground enters tapped unless a player has 13 or less life.\n{T}: Add {W} or {U}.",
+    "produces": [
+      "C"
+    ],
+    "number": 255,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Blazemire Verge",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {B}.\n{T}: Add {R}. Activate only if you control a Swamp or a Mountain.",
+    "produces": [
+      "B"
+    ],
+    "number": 256,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Bleeding Woods",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Bleeding Woods enters tapped unless a player has 13 or less life.\n{T}: Add {R} or {G}.",
+    "produces": [
+      "C"
+    ],
+    "number": 257,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Etched Cornfield",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Etched Cornfield enters tapped unless a player has 13 or less life.\n{T}: Add {G} or {W}.",
+    "produces": [
+      "C"
+    ],
+    "number": 258,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Floodfarm Verge",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {W}.\n{T}: Add {U}. Activate only if you control a Plains or an Island.",
+    "produces": [
+      "W"
+    ],
+    "number": 259,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Gloomlake Verge",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {U}.\n{T}: Add {B}. Activate only if you control an Island or a Swamp.",
+    "produces": [
+      "U"
+    ],
+    "number": 260,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Hushwood Verge",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {G}.\n{T}: Add {W}. Activate only if you control a Forest or a Plains.",
+    "produces": [
+      "G"
+    ],
+    "number": 261,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Lakeside Shack",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Lakeside Shack enters tapped unless a player has 13 or less life.\n{T}: Add {G} or {U}.",
+    "produces": [
+      "C"
+    ],
+    "number": 262,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Murky Sewer",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Murky Sewer enters tapped unless a player has 13 or less life.\n{T}: Add {U} or {B}.",
+    "produces": [
+      "C"
+    ],
+    "number": 263,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Neglected Manor",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Neglected Manor enters tapped unless a player has 13 or less life.\n{T}: Add {W} or {B}.",
+    "produces": [
+      "C"
+    ],
+    "number": 264,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Peculiar Lighthouse",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Peculiar Lighthouse enters tapped unless a player has 13 or less life.\n{T}: Add {U} or {R}.",
+    "produces": [
+      "C"
+    ],
+    "number": 265,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Raucous Carnival",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Raucous Carnival enters tapped unless a player has 13 or less life.\n{T}: Add {R} or {W}.",
+    "produces": [
+      "C"
+    ],
+    "number": 266,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Razortrap Gorge",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Razortrap Gorge enters tapped unless a player has 13 or less life.\n{T}: Add {B} or {R}.",
+    "produces": [
+      "C"
+    ],
+    "number": 267,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Strangled Cemetery",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Strangled Cemetery enters tapped unless a player has 13 or less life.\n{T}: Add {B} or {G}.",
+    "produces": [
+      "C"
+    ],
+    "number": 268,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Terramorphic Expanse",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}, Sacrifice Terramorphic Expanse: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "number": 269,
+    "set": "DSK",
+    "rarity": "C"
+  },
+  {
+    "name": "Thornspire Verge",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "{T}: Add {R}.\n{T}: Add {G}. Activate only if you control a Mountain or a Forest.",
+    "produces": [
+      "R"
+    ],
+    "number": 270,
+    "set": "DSK",
+    "rarity": "R"
+  },
+  {
+    "name": "Valgavoth's Lair",
+    "cost": "",
+    "types": [
+      "Enchantment",
+      "Land"
+    ],
+    "subtypes": [],
+    "text": "Hexproof\nValgavoth's Lair enters tapped. As it enters, choose a color.\n{T}: Add one mana of the chosen color.",
+    "produces": [
+      "C"
+    ],
+    "keywords": [
+      "hexproof"
+    ],
+    "number": 271,
+    "set": "DSK",
+    "rarity": "R"
+  }
+]

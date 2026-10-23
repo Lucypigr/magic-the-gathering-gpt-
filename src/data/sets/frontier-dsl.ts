@@ -11,7 +11,7 @@ import type {
   Amt,
   Mode,
 } from "../../engine/types";
-export function setBuilder(code: "WOE" | "OTJ", catalog: any[], auto: object) {
+export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK", catalog: any[], auto: object) {
   const patches = new Map<number, Partial<CardDef>>(
     Object.entries(auto).map(([n, p]) => [Number(n), p]),
   );
@@ -70,6 +70,9 @@ export function setBuilder(code: "WOE" | "OTJ", catalog: any[], auto: object) {
         id: slug(row.name),
         text: row.text,
       } as unknown as CardDef;
+      if(row.text.includes("This spell can't be countered."))c.uncounterable=true;
+      const impending=row.text.match(/Impending (\d+)—((?:\{[^}]+\})+)/);if(impending)c.impending={n:Number(impending[1]),cost:impending[2]};
+      if(code==='FDN'||code==='DSK')for(const ab of c.abilities??[]){if(ab.kind!=='trigger')continue;const lines=row.text.split('\n').filter((line:string)=>/^Whenever /.test(line));if(ab.on==='allyDies'&&lines.some((line:string)=>/you control dies/.test(line)&&(!/\b(?:another|other)\b/.test(line)||/(?:this creature|this permanent|another creature) or another/.test(line))))ab.includeSelf=true;}
       const plot = row.text.match(/^Plot ((?:\{[^}]+\})+)/m);
       if (plot) c.plot = plot[1];
       const saddle = row.text.match(/^Saddle (\d+)/m);
@@ -104,6 +107,7 @@ export function setBuilder(code: "WOE" | "OTJ", catalog: any[], auto: object) {
         };
       if (old && old.set !== code) {
         c.set = old.set;
+        if(old.boosterExcluded)c.boosterExcluded=true;
         const list = (REPRINTS[code] ??= []);
         if (!list.some(([id]) => id === c.id)) list.push([c.id, c.rarity]);
       }
@@ -140,7 +144,7 @@ export const mine: Ref = { all: { ctrl: "you", type: "Creature" } },
 export const draw: Effect = { e: "draw", n: 1 },
   food: Effect = { e: "token", token: "tok-food" },
   treasure: Effect = { e: "token", token: "tok-treasure" };
-export const token = (token: string, n: Amt = 1): Effect => ({
+export const token = (token: string, n: Amt = 1): Extract<Effect,{e:"token"}> => ({
   e: "token",
   token,
   n,

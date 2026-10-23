@@ -54,6 +54,7 @@ export type Keyword =
 
 /** 篩選條件：用來描述「哪些物件」符合。ctrl 以能力控制者的視角判斷。 */
 export interface Filter {
+ mvMaxSourcePower?:boolean;
   outlaw?:boolean;notOutlaw?:boolean;enchanted?:boolean;alsoType?:CardType;frontierAdventure?:boolean;frontierSpellOrAdventure?:boolean;frontierNoTokenName?:boolean;frontierUniqueName?:boolean;attachedToSource?:boolean;
   mshWorthy?:boolean;
   suspected?:boolean;faceDown?:boolean;dealtDamage?:boolean;gyThisTurn?:boolean;
@@ -338,6 +339,7 @@ export interface ExtraCost {
 }
 
 export type Effect =
+ | {e:'sacPlayer';who:Ref;filter:Filter;n?:Amt}
   | {e:'frontier';action:string;what?:Ref;n?:number}
   | {e:'msh';action:string;n?:number;what?:Ref;ids?:number[]}
   | {e:'mkm';action:string;n?:number;what?:Ref}
@@ -348,14 +350,14 @@ export type Effect =
   | { e: 'airbend'; what: Ref }
   | { e: 'firebend'; n: Amt }
   | { e: 'tla'; action: string; n?: Amt; what?: Ref }
-  | { e: 'grant'; what: Ref; grant: Grant; permanent?: boolean }
+  | { e: 'grant'; untilNext?:boolean; what: Ref; grant: Grant; permanent?: boolean }
   | { e: 'waterbend'; n: number; then: Effect[]; else?: Effect[] }
   | { e: 'copyCreature'; what: Ref; p?: number; t?: number; sub?: string; temp?: boolean; nonLegendary?: boolean }
 
   | { e: 'damage'; n: Amt; to: Ref; noLifeGain?: boolean; from?: Ref }
   | { e: 'draw'; n: Amt; who?: Ref }
   | { e: 'discard'; n: Amt; who: Ref; random?: boolean }
-  | { e: 'discardChosen'; who: Ref; filter?: Filter }
+  | { e: 'discardChosen'; optional?:boolean; who: Ref; filter?: Filter }
   | { e: 'gain'; n: Amt; who?: Ref }
   | { e: 'lose'; n: Amt; who: Ref }
   /** sameName：連同所有與它同名的其他永久物一起消滅 */
@@ -386,7 +388,7 @@ export type Effect =
   /** 招募：抓一張牌，然後棄一張牌；若棄掉的不是地，派出 1/1 人類士兵 */
   | { e: 'recruit' }
   /** 從牌庫中搜尋一張符合條件的牌放到手上 */
-  | { e: 'tutor'; filter: Filter; to?: 'hand' | 'top' | 'battlefield' | 'graveyard' }
+  | { e: 'tutor'; optional?:boolean; filter: Filter; to?: 'hand' | 'top' | 'battlefield' | 'graveyard' }
   /** 移除至多 n 個指示物 */
   | { e: 'removeCounters'; what: Ref; n: number; upTo?: boolean }
   /** 大地彎折（簡化）：派出一個 0/0 具敏捷的大地元素，並放上 n 個 +1/+1 指示物 */
@@ -461,7 +463,7 @@ export type Effect =
   | { e: 'scry'; n: number }
   /** retrieve：刺探後放進墳墓場的牌若符合條件，改為放到手上（mvLeLife：法術力值不超過本回合獲得的生命） */
   | { e: 'surveil'; n: number; retrieve?: { filter?: Filter; mvLeLife?: boolean } }
-  | { e: 'dig'; optional?: boolean; randomBottom?: boolean; n: Amt; take?: number; filter?: Filter; rest: 'bottom' | 'graveyard' | 'top'; to?: 'hand' | 'battlefield' }
+  | { e: 'dig'; all?:boolean; optional?: boolean; randomBottom?: boolean; n: Amt; take?: number; filter?: Filter; rest: 'bottom' | 'graveyard' | 'top'; to?: 'hand' | 'battlefield' }
   | { e: 'searchLand'; to: 'battlefield' | 'hand'; tapped?: boolean; untapIfLands?: number; who?: Ref; may?: boolean }
   | { e: 'counter'; what: Ref }
   | { e: 'counterUnless'; what: Ref; pay: number }
@@ -524,9 +526,10 @@ export type Effect =
   | { e: 'transform'; what: Ref }
   /** 放逐此牌（不論在戰場或墳墓場），再以轉化後的面放回戰場 */
   | { e: 'returnTransformed'; tapped?: boolean }
-  | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
+  | { e: 'animate'; permanent?:boolean;untilNext?:boolean; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
+ | 'main2' | 'draw' | 'counterPlacedSelf' | 'oppCreatureEtb' | 'oppCast' | 'castOpp' | 'oppDies'
   | 'frontierEvent'
   | 'mshEvent'
   | 'mkmEvent'
@@ -611,6 +614,7 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+ foundationDoor?:0|1;foundationModes?:'pact'|'hallcreeper';foundationDistribution?:number;foundationVariableTargets?:number;oncePerGame?:boolean;
   frontierDynamic?:'players'|'creaturesX';frontierPlayer?:PID;frontierEvent?:string;
   mshEvent?:string;mshDynamic?:'lifeTargets'|'equipment'|'wrecking';
   mkmDynamic?:'vindicator'|'maze'|'falcon'|'distribute2'|'distribute3';
@@ -658,12 +662,13 @@ export interface TriggeredAbility {
   effects: Effect[];
   /** 「你可以」：結算時詢問 */
   may?: string;
-  oncePerTurn?: boolean;
+  oncePerTurn?: boolean;onceOnResolve?:boolean;
   /** 施放類觸發：只有以「準備」施放的咒語 */
   preparedOnly?: boolean;
 }
 
 export interface ActivatedAbility {
+ roomDoor?:0|1;foundationDistribution?:number;foundationNinjutsu?:boolean;manaAbility?:boolean;
   frontierOwnTurnDiscount?:number;frontierRemoveLoot?:number;
   frontierMode?:number;
   mshStack?:'creature'|'artifact';mshBoast?:boolean;
@@ -775,6 +780,7 @@ export interface StaticAbility {
 export type Ability = TriggeredAbility | ActivatedAbility | StaticAbility;
 
 export interface Mode {
+ cond?:Cond;foundationRequireDelirium?:boolean;
   frontierChoices?:number;frontierStackTargets?:('copy'|'retarget'|'ownAbility')[];
   blight?:number;
   waterbend?: number;
@@ -795,9 +801,12 @@ export interface SpellSpec {
   modes?: Mode[];
 }
 
+export interface RoomDoor {name:string;cost:string;text:string;abilities?:Ability[]}
 export interface CardDef {
+ room?:{left:RoomDoor;right:RoomDoor}; impending?:{n:number;cost:string}; kicker?:string;
+ foundation?:{revival?:number;raidCounter?:boolean;kickerCounters?:number;charge?:number;divinity?:boolean;zegana?:boolean;totalPowerDiscount?:boolean;leyline?:boolean;plaything?:boolean;morbidCounter?:boolean;exileCreatureCost?:boolean;returnPermanentCost?:boolean;exileGraveCost?:number;tapCastCost?:number;revealCreaturePower?:boolean;ninjutsu?:string;verge?:readonly string[];unlockPayment?:boolean};
   boosterExcluded?:boolean;
-  frontier?:{flashExtra?:number;dustAnimus?:boolean;sheriffCounters?:boolean;morbidCounter?:boolean;freeCounters?:number;ownTargetDiscount?:number;variableTargets?:'own'|'graceful';distribute?:number|'X';bargain?:boolean;bargainDiscount?:number;flashMode?:number;attackerDiscount?:boolean;enterStun?:number;enterDeaths?:boolean;chooseMana?:boolean};
+  frontier?:{tappedTargetDiscount?:number;flashExtra?:number;dustAnimus?:boolean;sheriffCounters?:boolean;morbidCounter?:boolean;freeCounters?:number;ownTargetDiscount?:number;variableTargets?:'own'|'graceful';distribute?:number|'X';bargain?:boolean;bargainDiscount?:number;flashMode?:number;attackerDiscount?:boolean;enterStun?:number;enterDeaths?:boolean;chooseMana?:boolean};
   frontierStack?:string;
   msh?:{teamwork?:number;teamworkSpell?:SpellSpec;improvise?:boolean;};
   faceUpPayment?:boolean;
@@ -807,7 +816,7 @@ export interface CardDef {
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
-  ecl?: {variableTargets?:'creature';asEnters?:'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
+  ecl?: {variableTargets?:'creature';asEnters?:'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
   sneak?: string;
   combatPowerMin?: number;
   evadePowGte?: number;
@@ -840,7 +849,7 @@ export interface CardDef {
   /** 產生有色法術力時要支付1點生命（{C} 不用） */
   painMana?: boolean;
   /** 產生的法術力只能用來施放某類咒語 */
-  manaOnly?: 'planeswalker' | 'notFromHand' | 'artifactOrAbility' | 'notNonartifactSpell';
+  manaOnly?: 'angel' | 'enchantOrSpecial' | 'planeswalker' | 'notFromHand' | 'artifactOrAbility' | 'notNonartifactSpell';
   /** 冒險：同一張牌上的另一個瞬間或法術；施放後此牌放逐，之後可以從放逐區施放本體 */
   adventure?: { frontier?:CardDef['frontier'];ecl?:CardDef['ecl'];frontierStack?:string;name: string; zh?: string; cost: string; types: CardType[]; text: string; spell: SpellSpec };
   /** 準備：此生物附帶的咒語；已準備時可以施放它的複製（之後取消準備） */
@@ -937,6 +946,7 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+ foundationNamed?:string;kicked?:boolean;impendingPaid?:boolean;impendingTime?:number;roomUnlocked?:number;attachedToPlayer?:PID;foundationAuraOriginal?:CardDef;hiddenExile?:boolean;
   castFace?:CardDef;
   frontierMarks?:Record<string,number>;frontierBargained?:boolean;frontierTaken?:number;frontierTakenTurn?:number;
   mshHarnessed?:boolean;mshTeamwork?:boolean;mshMarks?:Record<string,number>;mshLinked?:number[];mshCopyUntil?:number;
@@ -970,7 +980,7 @@ export interface Card {
   temporaryAbilities?: {turn:number;abilities:Ability[]};
   colorProtections?: {turn:number;color:Color}[];
   hexproofCounters?: number;
-  lastCounterKinds?: {plus: number; charge: number; stun: number; hexproof: number; finality: boolean; lore: number};
+  lastCounterKinds?: {[kind:string]:number|boolean;plus: number; charge: number; stun: number; hexproof: number; finality: boolean; lore: number};
   lastToughness?: number;
   countersBeforeLeaving?: number;
   classModesTurn?: {turn:number;modes:number[]};
@@ -1093,6 +1103,7 @@ export interface Card {
 }
 
 export interface Player {
+ foundationPool?:{mana:Mana;rule:'room'|'any';keepTurn?:number}[];foundationNoLifeGain?:boolean;foundationLost?:boolean;
   frontierTurn?:number;frontierFlags?:Record<string,number>;
   mshNoPowerTurn?:number;mshFlagsTurn?:number;mshFlags?:Record<string,number>;mshRestricted?:{mana:Mana;rule:string}[];
   mkmGossip?:Mana[];
@@ -1184,7 +1195,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
   frontierStackSids?:number[];distribution?:number[];
@@ -1259,6 +1270,7 @@ export type Phase =
   | 'cleanup';
 
 export type GameEvent =
+ | {type:'draw';player:PID;card:number}
  | {type:'frontier';action:string;card:number;player:PID;other?:number;amount:number}
   | {type:'msh';action:string;player:PID;card:number;n?:number}
   | {type:'mkm';action:string;player:PID;card:number;n?:number}
@@ -1267,19 +1279,19 @@ export type GameEvent =
   | {type:'transformed';card:number;controller:PID}
   | {type:'permanentToGy';card:number;player:PID}
   | { type: 'classLevel'; card: number; controller: PID; level: number }
-  | { type: 'leaves'; card: number; controller: PID; counterKinds?: Card['lastCounterKinds'];beheld?:number[] }
+  | { type: 'leaves'; foundationMarks?:Record<string,number>; card: number; controller: PID; counterKinds?: Card['lastCounterKinds'];beheld?:number[] }
   | { type: 'bend'; player: PID; element: 'air' | 'water' | 'earth' | 'fire' }
   | { type: 'search'; player: PID }
   | { type: 'permanentDies'; card:number; controller:PID; counterKinds?:Card['lastCounterKinds'] }
   | {type:'combatDamageAny';source:number;controller:PID;amount:number}
 
   | { type: 'etb'; card: number; controller: PID }
-  | { type: 'dies'; card: number; controller: PID; power: number; toughness?:number }
+  | { type: 'dies'; wasAttacking?:boolean; card: number; controller: PID; power: number; toughness?:number }
   | { type: 'attacks'; card: number }
   | { type: 'youAttack'; player: PID; attackers: number[] }
   | { type: 'blocks'; card: number }
-  | { type: 'step'; step: 'upkeep' | 'endStep' | 'combatStart' | 'main1' | 'draw'; player: PID }
-  | { type: 'cast'; distribution?:number[];stackTargetSids?:number[];card: number; player: PID; opponentTurn: boolean }
+  | { type: 'step'; step: 'main2' | 'upkeep' | 'endStep' | 'combatStart' | 'main1' | 'draw'; player: PID }
+  | { type: 'cast'; foundationCosts?:number[]; distribution?:number[];stackTargetSids?:number[];card: number; player: PID; opponentTurn: boolean }
   | { type: 'lifegain'; player: PID; amount: number }
   | { type: 'lifeloss'; player: PID; amount: number }
   | { type: 'combatDamage'; source: number; player: PID; amount: number }
@@ -1336,7 +1348,7 @@ export interface GameState {
   finEndTurn?:boolean;finExtraEnd?:boolean;finCombatNumber?:number;finEndNumber?:number;
   eclEventGroup?:number;
   eclEntryQueue?:{card:number;controller:PID;tapped:boolean;enterAs?:CardDef}[];
-  lastManaPayment?:Mana[];
+  lastManaPayment?:Mana[];lastManaSourceIds?:number[];
   lastManaSpent?: number;
   blockersDeclared?: boolean;
   combatCount?: number;
@@ -1444,8 +1456,8 @@ export type ChoosePurpose =
 export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
-  | { type: 'cast'; distribution?:number[];stackTargetSids?:number[];card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
-  | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
+  | { type: 'cast'; foundationCosts?:number[]; distribution?:number[];stackTargetSids?:number[];card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
+  | { type: 'activate'; distribution?:number[]; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export type Response =
   | PriorityAction

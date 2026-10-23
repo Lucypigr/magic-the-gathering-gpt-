@@ -1,3 +1,4 @@
+import {frontierStatic} from './frontier-support';
 import {mkmStatic} from './mkm-support';
 import { finStatic } from './fin-support';
 import { validateTargets } from './targets';
@@ -92,6 +93,7 @@ export function* resolveEclEntries(g: GameState): SubFlow {
     const choice = c.def.ecl?.asEnters;
     if (choice === 'tribe' || choice === 'tribe8') c.eclType = yield* chooseEclType(g, entry.controller, choice === 'tribe8');
     if(choice==='talion'){const r:Response=yield{type:'mode',player:entry.controller,prompt:'選擇1至10',options:Array.from({length:10},(_,i)=>String(i+1)),count:1,purpose:'count'};(c.frontierMarks??={}).talion=1+(r.type==='modes'?r.picks[0]??0:0);}
+    if(choice==='cardName'){const defs=allDefs().filter(d=>d.set!=='TOK');const answer:Response=yield{type:'mode',player:entry.controller,prompt:'對手手牌：'+g.players[other(entry.controller)].hand.map(id=>g.cards[id].def.name).join('、')+'；選擇一張牌名',options:defs.map(d=>d.name),count:1,purpose:'trigger'};c.foundationNamed=defs[answer.type==='modes'?answer.picks[0]??0:0]?.name;}
     if (choice === 'color') c.chosenColor = yield* color(g, entry.controller);
     if (choice === 'shock') {
       if (g.players[entry.controller].life >= 2 && (yield* yes(g, entry.controller, '支付2生命使震地不橫置？')))
@@ -187,6 +189,7 @@ export function* makeEclTokenBatch(
   g.players[pid].tokensCreatedTurn = g.turn;
   const previousGroup=g.mshTokenGroup;g.mshTokenGroup=opts.batch??g.nextSid++;
   const out: Card[] = [];
+  for(const group of groups)group.n*=2**frontierStatic(g,pid,'fdn:doubleTokens').length;
   for (const group of groups)
     for (let i = 0; i < group.n; i++) {
       const c = newCard(g, group.def, pid, true);

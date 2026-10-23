@@ -1,3 +1,4 @@
+import foundationTokens from './sets/foundation-tokens.json';
 import {completeFrontierTokens} from './sets/frontier-tokens';
 import type { CardDef } from '../engine/types';
 import { GEN_TOKENS } from './sets/gen/tokens';
@@ -694,3 +695,5 @@ export const TOKENS: CardDef[] = [
 ];
 
 completeFrontierTokens(TOKENS);
+
+for(const row of foundationTokens)if(!TOKENS.some(c=>c.id===row.id))TOKENS.push({...row,set:"TOK",rarity:"T",token:true} as CardDef);

@@ -190,7 +190,7 @@ export function lineNotes(def: CardDef): LineNote[] {
       });
       continue;
     }
-    const fb = line.match(/^返照((?:\{[^}]+\})+)/);
+    const fb = line.match(/^(?:返照|Flashback\s*)((?:\{[^}]+\})+)/);
     if (fb) {
       out.push({ kind: 'flashback', text: line, cost: fb[1], effect: '從墳墓場再施放一次此牌', desc: '這張牌在你的墳墓場時，支付這個費用就能再施放一次，之後它會被放逐。' });
       continue;

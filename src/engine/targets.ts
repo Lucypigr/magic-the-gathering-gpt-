@@ -18,7 +18,10 @@ export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): bo
   if(c.controller!==by&&source&&c.colorProtections?.some(p=>p.turn===g.turn&&colorsOf(source.def).includes(p.color)))return false;
   if(c.controller!==by&&c.colorProtection?.turn===g.turn&&source&&colorsOf(source.def).includes(c.colorProtection.color))return false;
   if(source&&c.controller!==by&&c.def.id==='niv-mizzet-guildpact'&&colorsOf(source.def).length>1)return false;
-  if (c.controller !== by && hasKw(g, c, 'hexproof')) return false;
+  const ignore=c.controller!==by&&isCreature(c)&&frontierStatic(g,by,'dsk:ignoreHexproofWard').length;
+  if(frontierStatic(g,c.controller,'fdn:protectionEverything').some(x=>x.id===c.id))return false;
+  if(source&&c.controller!==by&&!ignore){const colors=colorsOf(source.castFace??source.def);if(frontierStatic(g,c.controller,'fdn:hexproofBlack').some(x=>x.id===c.id)&&colors.includes('B')||frontierStatic(g,c.controller,'fdn:hexproofWhite').some(x=>x.id===c.id)&&colors.includes('W')||frontierStatic(g,c.controller,'fdn:hexproofInstants').some(x=>x.id===c.id)&&(source.castFace??source.def).types.includes('Instant'))return false;}
+  if (!ignore&&c.controller !== by && hasKw(g, c, 'hexproof')) return false;
   return true;
 }
 
@@ -28,6 +31,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
   const f = spec.filter;
   const addPlayers = (onlyOpp: boolean) => {
     for (const pid of [0, 1] as PID[]) {
+      if(pid!==controller&&frontierStatic(g,pid,'fdn:playerHexproof').length)continue;
       if (onlyOpp && pid === controller) continue;
       if (f?.ctrl === 'opp' && pid === controller) continue;
       if (f?.ctrl === 'you' && pid !== controller) continue;
@@ -65,7 +69,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
     case 'any': {
       // 任意一個目標：生物、鵬洛客或玩家
       addPerms(true, true);
-      for (const pid of [0, 1] as PID[])if(pid===controller||!mshStatic(g,pid,'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,pid,'playerProtection').length)out.push({ p: pid });
+      for (const pid of [0, 1] as PID[])if(pid===controller||!frontierStatic(g,pid,'fdn:playerHexproof').length&&!mshStatic(g,pid,'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,pid,'playerProtection').length)out.push({ p: pid });
       break;
     }
     case 'creatureOrGy':addPerms(true);for(const id of g.players.flatMap(p=>p.graveyard)){const c=g.cards[id];if(isCreature(c)&&id!==sourceId&&matches(g,f,c,controller,sourceId))out.push({c:id});}break;

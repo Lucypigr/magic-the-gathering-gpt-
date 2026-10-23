@@ -1,0 +1,679 @@
+[
+  {
+    "id": "tok-g-knight-33-w",
+    "name": "Knight",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Knight"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "text": ""
+  },
+  {
+    "id": "tok-g-cat-11-w",
+    "name": "Cat",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-faerie-11-u-flying",
+    "name": "Faerie",
+    "colors": [
+      "U"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Faerie"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-dragon-44-r-flying",
+    "name": "Dragon",
+    "colors": [
+      "R"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-dragon-55-r-flying",
+    "name": "Dragon",
+    "colors": [
+      "R"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-goblin-11-r",
+    "name": "Goblin",
+    "colors": [
+      "R"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-elf-warrior-11-g",
+    "name": "Elf Warrior",
+    "colors": [
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Warrior"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-soldier-11-w",
+    "name": "Soldier",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Soldier"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-zombie-22-b",
+    "name": "Zombie",
+    "colors": [
+      "B"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "text": ""
+  },
+  {
+    "id": "tok-g-cat-11-w-lifelink",
+    "name": "Cat",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ],
+    "text": "繫命"
+  },
+  {
+    "id": "tok-g-dog-11-w",
+    "name": "Dog",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-beast-33-g",
+    "name": "Beast",
+    "colors": [
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "text": ""
+  },
+  {
+    "id": "tok-g-beast-44-g",
+    "name": "Beast",
+    "colors": [
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "text": ""
+  },
+  {
+    "id": "tok-g-insect-21-w-flying",
+    "name": "Insect",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-gremlin-11-r",
+    "name": "Gremlin",
+    "colors": [
+      "R"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Gremlin"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-insect-11-bg-flying",
+    "name": "Insect",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-fdn-cat22",
+    "name": "Cat",
+    "power": 2,
+    "toughness": 2,
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-fdn-cat-beast",
+    "name": "Cat Beast",
+    "power": 2,
+    "toughness": 2,
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Beast"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-fdn-drake",
+    "name": "Drake",
+    "power": 2,
+    "toughness": 2,
+    "colors": [
+      "U"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Drake"
+    ],
+    "keywords": [
+      "flying"
+    ],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-fdn-fish",
+    "name": "Fish",
+    "power": 1,
+    "toughness": 1,
+    "colors": [
+      "U"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-fdn-ninja",
+    "name": "Ninja",
+    "power": 2,
+    "toughness": 1,
+    "colors": [
+      "U"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ninja"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-fdn-raccoon",
+    "name": "Raccoon",
+    "power": 3,
+    "toughness": 3,
+    "colors": [
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Raccoon"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-fdn-rat",
+    "name": "Rat",
+    "power": 1,
+    "toughness": 1,
+    "colors": [
+      "B"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-fdn-scion",
+    "name": "Scion of the Deep",
+    "power": 8,
+    "toughness": 8,
+    "colors": [
+      "U"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Octopus"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": [],
+    "supertypes": [
+      "Legendary"
+    ]
+  },
+  {
+    "id": "tok-fdn-phyrexian-goblin",
+    "name": "Phyrexian Goblin",
+    "power": 1,
+    "toughness": 1,
+    "colors": [
+      "R"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Phyrexian",
+      "Goblin"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-fdn-coil",
+    "name": "Koma's Coil",
+    "power": 3,
+    "toughness": 3,
+    "colors": [
+      "U"
+    ],
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Serpent"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-dsk-spirit",
+    "name": "Spirit",
+    "power": 1,
+    "toughness": 1,
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "keywords": [
+      "flying"
+    ],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-dsk-toy",
+    "name": "Toy",
+    "power": 1,
+    "toughness": 1,
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-dsk-beast",
+    "name": "Beast",
+    "power": 4,
+    "toughness": 4,
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-dsk-demon",
+    "name": "Demon",
+    "power": 6,
+    "toughness": 6,
+    "colors": [
+      "B"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "keywords": [
+      "flying"
+    ],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-dsk-horror",
+    "name": "Horror",
+    "power": 2,
+    "toughness": 2,
+    "colors": [
+      "B"
+    ],
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-dsk-everywhere",
+    "name": "Everywhere",
+    "colors": [],
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Plains",
+      "Island",
+      "Swamp",
+      "Mountain",
+      "Forest"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": [],
+    "etbTapped": true,
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ]
+  },
+  {
+    "id": "tok-dsk-spider",
+    "name": "Spider",
+    "power": 2,
+    "toughness": 2,
+    "colors": [
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider"
+    ],
+    "keywords": [
+      "reach"
+    ],
+    "text": "",
+    "abilities": []
+  },
+  {
+    "id": "tok-dsk-shard",
+    "name": "Shard",
+    "colors": [],
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Shard"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": [
+      {
+        "kind": "activated",
+        "label": "占卜並抽牌",
+        "cost": {
+          "mana": "{2}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "scry",
+            "n": 1
+          },
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tok-dsk-primo",
+    "name": "Primo, the Indivisible",
+    "power": 0,
+    "toughness": 0,
+    "colors": [
+      "G",
+      "U"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fractal"
+    ],
+    "keywords": [],
+    "text": "",
+    "abilities": [],
+    "supertypes": [
+      "Legendary"
+    ]
+  },
+  {
+    "id": "tok-fdn-rabbit",
+    "name": "Rabbit",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rabbit"
+    ],
+    "colors": [
+      "W"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  }
+]

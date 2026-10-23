@@ -3,7 +3,7 @@
 
 interface Named {
   name: string;
-  zh?: string;
+  zh?: string;room?:unknown;
 }
 
 const zhNames = new Map<string, string>();
@@ -24,5 +24,5 @@ export function zhName(def: Named): string | undefined {
 
 /** 依目前的語言設定回傳要顯示的卡名 */
 export function displayName(def: Named): string {
-  return (useZh && zhName(def)) || def.name;
+  return (useZh && zhName(def)) || def.name || (def.room?'房間（尚未解鎖）':'');
 }

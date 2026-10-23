@@ -1,3 +1,4 @@
+import {foundationAmount,foundationCondition,foundationTrigger,foundationObserve,foundationBaseStats,foundationStats,foundationGrantedAbilities} from './foundation-support';
 import {
   otjAmount,
   otjCondition,
@@ -66,6 +67,7 @@ export function frontierAmount(
   x = 0,
   ev?: GameEvent,
 ) {
+  if(/^(fdn|dsk):/.test(key))return foundationAmount(g,pid,source,key,ev);
   const p = g.players[pid],
     s = g.cards[source];
   switch (key) {
@@ -105,6 +107,7 @@ export function frontierCondition(
   pid: PID,
   source: number,
 ) {
+  if(/^(fdn|dsk):/.test(c.action))return foundationCondition(g,c.action,pid,source);
   switch (c.action) {
     case "exiledThisTurn":
       return !!frontierFlags(g, pid).exiled;
@@ -138,6 +141,7 @@ export function frontierTrigger(
   a: TriggeredAbility,
   ev: GameEvent,
 ) {
+  if(/^(fdn|dsk):/.test(a.frontierEvent??''))return foundationTrigger(g,c,a,ev);
   const pid = c.controller,
     ec = "card" in ev ? g.cards[ev.card] : undefined;
   const move = ev.type === "fin" && ev.action === "zoneMove";
@@ -272,6 +276,7 @@ export function frontierTrigger(
 }
 export function frontierObserve(g: GameState, ev: GameEvent) {
   otjObserve(g, ev);
+  foundationObserve(g,ev);
   if (ev.type === "step" && ev.step === "endStep")
     for (const c of Object.values(g.cards))
       if (
@@ -313,6 +318,7 @@ export function frontierBaseStats(
   st: import("./state").Stats,
 ) {
   otjBaseStats(g, c, st);
+  foundationBaseStats(g,c,st);
   if (!abilitiesSuppressed(g, c)) {
     if (c.def.id === "regal-bunnicorn")
       st.p = st.t = g.battlefield.filter(
@@ -351,6 +357,7 @@ export function frontierStats(
   st: import("./state").Stats,
 ) {
   otjStats(g, c, st);
+  foundationStats(g,c,st);
   if (
     isCreature(c) &&
     frontierStatic(g, c.controller, "roseBase").some((s) => s.id !== c.id) &&
@@ -458,7 +465,7 @@ export function frontierGrantedAbilities(
   g: GameState,
   c: Card,
 ): import("./types").ActivatedAbility[] {
-  const out: import("./types").ActivatedAbility[] = [];
+  const out: import("./types").ActivatedAbility[] = foundationGrantedAbilities(g,c);
   if (
     c.def.types.includes("Artifact") &&
     frontierStatic(g, c.controller, "foodFight").length

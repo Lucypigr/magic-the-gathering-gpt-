@@ -1,0 +1,1504 @@
+{
+  "5": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Emerge from the Cocoon",
+    "cost": "{4}{W}",
+    "types": [
+      "Sorcery"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "reanimate",
+          "what": "T0"
+        },
+        {
+          "e": "gain",
+          "n": 3
+        }
+      ],
+      "targets": [
+        {
+          "kind": "gyCard",
+          "filter": {
+            "ctrl": "you",
+            "type": "Creature"
+          },
+          "prompt": "選擇你墳墓場中的生物牌"
+        }
+      ]
+    },
+    "text": "將目標生物牌從你的墳墓場移回戰場。你獲得3點生命。"
+  },
+  "11": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Fear of Surveillance",
+    "cost": "{1}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nightmare"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "text": "警戒\n每當此生物攻擊時，刺探1。"
+  },
+  "16": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Hardened Escort",
+    "cost": "{2}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 0,
+            "kw": [
+              "indestructible"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            },
+            "notSelf": true
+          }
+        ]
+      }
+    ],
+    "text": "每當此生物攻擊時，另一個目標由你操控的生物得+1/+0並獲得不滅異能直到回合結束。"
+  },
+  "19": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Lionheart Glimmer",
+    "cost": "{3}{W}{W}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Glimmer"
+    ],
+    "power": 2,
+    "toughness": 5,
+    "ward": 2,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "youAttack",
+        "effects": [
+          {
+            "e": "pump",
+            "what": {
+              "all": {
+                "type": "Creature",
+                "ctrl": "you"
+              }
+            },
+            "p": 1,
+            "t": 1
+          }
+        ]
+      }
+    ],
+    "text": "守護{2}\n每當你攻擊時，由你操控的生物得+1/+1直到回合結束。"
+  },
+  "31": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Shepherding Spirits",
+    "cost": "{4}{W}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "power": 4,
+    "toughness": 5,
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Plains"
+      }
+    },
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行\n平原循環{2}（{2}，從手上棄掉此牌：從你的牌庫中搜尋一張平原牌，展示並置於你手上，然後洗牌。）"
+  },
+  "38": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Unsettling Twins",
+    "cost": "{3}{W}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "manifestDread"
+          }
+        ]
+      }
+    ],
+    "text": "當此生物進戰場時，顯化恐懼（檢視你牌庫頂的兩張牌，將其中一張面朝下放進戰場成為2/2生物，另一張置入你的墳墓場。若它是生物牌，可以隨時支付其法術力費用將它翻成正面。）。"
+  },
+  "48": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Daggermaw Megalodon",
+    "cost": "{4}{U}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shark"
+    ],
+    "power": 5,
+    "toughness": 7,
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Island"
+      }
+    },
+    "keywords": [
+      "vigilance"
+    ],
+    "text": "警戒\n海島循環{2}（{2}，從手上棄掉此牌：從你的牌庫中搜尋一張海島牌，展示並置於你手上，然後洗牌。）"
+  },
+  "52": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Enter the Enigma",
+    "cost": "{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 0,
+          "t": 0,
+          "kw": [
+            "unblockable"
+          ]
+        },
+        {
+          "e": "draw",
+          "n": 1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    },
+    "text": "目標生物本回合不能被阻擋。抓一張牌。"
+  },
+  "70": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Piranha Fly",
+    "cost": "{1}{U}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish",
+      "Insect"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "etbTapped": true,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行\n此生物橫置進戰場。"
+  },
+  "77": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Twist Reality",
+    "cost": "{1}{U}{U}",
+    "types": [
+      "Instant"
+    ],
+    "spell": {
+      "modes": [
+        {
+          "text": "反擊目標咒語",
+          "effects": [
+            {
+              "e": "counter",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "spell"
+            }
+          ]
+        },
+        {
+          "text": "顯化恐懼（檢視你牌庫頂的兩張牌，將其中一",
+          "effects": [
+            {
+              "e": "manifestDread"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "選擇一項：\n• 反擊目標咒語。\n• 顯化恐懼（檢視你牌庫頂的兩張牌，將其中一張面朝下放進戰場成為2/2生物，另一張置入你的墳墓場。若它是生物牌，可以隨時支付其法術力費用將它翻成正面。）。"
+  },
+  "80": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Unnerving Grasp",
+    "cost": "{2}{U}",
+    "types": [
+      "Sorcery"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "bounce",
+          "what": "T0"
+        },
+        {
+          "e": "manifestDread"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "permanent",
+          "filter": {
+            "nonType": "Land"
+          },
+          "optional": true
+        }
+      ]
+    },
+    "text": "將至多一個目標非地永久物移回其擁有者手上。顯化恐懼（檢視你牌庫頂的兩張牌，將其中一張面朝下放進戰場成為2/2生物，另一張置入你的墳墓場。若它是生物牌，可以隨時支付其法術力費用將它翻成正面。）。"
+  },
+  "83": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Appendage Amalgam",
+    "cost": "{2}{B}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "text": "閃現\n每當此生物攻擊時，刺探1。"
+  },
+  "87": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Commune with Evil",
+    "cost": "{2}{B}",
+    "types": [
+      "Sorcery"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "dig",
+          "n": 4,
+          "take": 1,
+          "rest": "graveyard"
+        },
+        {
+          "e": "gain",
+          "n": 3
+        }
+      ]
+    },
+    "text": "檢視你牌庫頂的四張牌。將其中一張置於你手上，將其餘的牌置入你的墳墓場。你獲得3點生命。"
+  },
+  "101": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Give In to Violence",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 2,
+          "t": 2,
+          "kw": [
+            "lifelink"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    },
+    "text": "目標生物得+2/+2並獲得繫命異能直到回合結束。"
+  },
+  "103": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Innocuous Rat",
+    "cost": "{1}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rat"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "manifestDread"
+          }
+        ]
+      }
+    ],
+    "text": "當此生物死去時，顯化恐懼（檢視你牌庫頂的兩張牌，將其中一張面朝下放進戰場成為2/2生物，另一張置入你的墳墓場。若它是生物牌，可以隨時支付其法術力費用將它翻成正面。）。"
+  },
+  "107": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Live or Die",
+    "cost": "{3}{B}{B}",
+    "types": [
+      "Instant"
+    ],
+    "spell": {
+      "modes": [
+        {
+          "text": "將目標生物牌從你的墳墓場移回戰場",
+          "effects": [
+            {
+              "e": "reanimate",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "gyCard",
+              "filter": {
+                "ctrl": "you",
+                "type": "Creature"
+              },
+              "prompt": "選擇你墳墓場中的生物牌"
+            }
+          ]
+        },
+        {
+          "text": "消滅目標生物",
+          "effects": [
+            {
+              "e": "destroy",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "選擇一項：\n• 將目標生物牌從你的墳墓場移回戰場。\n• 消滅目標生物。"
+  },
+  "110": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Murder",
+    "cost": "{1}{B}{B}",
+    "types": [
+      "Instant"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "destroy",
+          "what": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    },
+    "text": "消滅目標生物。"
+  },
+  "121": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Valgavoth's Faithful",
+    "cost": "{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}{B}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "reanimate",
+            "what": "T0"
+          }
+        ],
+        "label": "將目標生物牌從你的墳墓場移回戰場",
+        "targets": [
+          {
+            "kind": "gyCard",
+            "filter": {
+              "ctrl": "you",
+              "type": "Creature"
+            },
+            "prompt": "選擇你墳墓場中的生物牌"
+          }
+        ],
+        "sorcery": true
+      }
+    ],
+    "text": "{3}{B}，犧牲此生物：將目標生物牌從你的墳墓場移回戰場。只能於法術時機起動。"
+  },
+  "123": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Winter's Intervention",
+    "cost": "{1}{B}",
+    "types": [
+      "Instant"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 2,
+          "to": "T0"
+        },
+        {
+          "e": "gain",
+          "n": 2
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    },
+    "text": "對目標生物造成2點傷害。你獲得2點生命。"
+  },
+  "124": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Withering Torment",
+    "cost": "{2}{B}",
+    "types": [
+      "Instant"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "destroy",
+          "what": "T0"
+        },
+        {
+          "e": "lose",
+          "n": 2,
+          "who": "you"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "permanent",
+          "filter": {
+            "type": [
+              "Creature",
+              "Enchantment"
+            ]
+          }
+        }
+      ]
+    },
+    "text": "消滅目標生物或結界。你失去2點生命。"
+  },
+  "125": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Bedhead Beastie",
+    "cost": "{4}{R}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "power": 5,
+    "toughness": 6,
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Mountain"
+      }
+    },
+    "keywords": [
+      "menace"
+    ],
+    "text": "威懾\n山脈循環{2}（{2}，從手上棄掉此牌：從你的牌庫中搜尋一張山脈牌，展示並置於你手上，然後洗牌。）"
+  },
+  "144": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Most Valuable Slayer",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "power": 2,
+    "toughness": 4,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "youAttack",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 0,
+            "kw": [
+              "first_strike"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "attacking": true
+            }
+          }
+        ]
+      }
+    ],
+    "text": "每當你攻擊時，目標進行攻擊的生物得+1/+0並獲得先攻異能直到回合結束。"
+  },
+  "148": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Piggy Bank",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Boar",
+      "Toy"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ]
+      }
+    ],
+    "text": "當此生物死去時，派出一個珍寶衍生物。"
+  },
+  "149": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Pyroclasm",
+    "cost": "{1}{R}",
+    "types": [
+      "Sorcery"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 2,
+          "to": {
+            "all": {
+              "type": "Creature"
+            }
+          }
+        }
+      ]
+    },
+    "text": "對每個生物各造成2點傷害。"
+  },
+  "150": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Ragged Playmate",
+    "cost": "{1}{R}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "unblockable"
+            ]
+          }
+        ],
+        "label": "目標力量為2或更少的生物本回合不能被",
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "powMax": 2
+            }
+          }
+        ]
+      }
+    ],
+    "text": "{1}，{T}：目標力量為2或更少的生物本回合不能被阻擋。"
+  },
+  "152": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Razorkin Hordecaller",
+    "cost": "{4}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Clown",
+      "Berserker"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "youAttack",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-gremlin-11-r"
+          }
+        ]
+      }
+    ],
+    "text": "敏捷\n每當你攻擊時，派出一個1/1紅色的Gremlin衍生生物。"
+  },
+  "154": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Ripchain Razorkin",
+    "cost": "{3}{R}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Berserker"
+    ],
+    "power": 5,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{R}",
+          "sacOther": {
+            "type": "Land"
+          }
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌"
+      }
+    ],
+    "text": "延勢\n{2}{R}，犧牲一個地：抓一張牌。"
+  },
+  "169": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Bashful Beastie",
+    "cost": "{4}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "power": 5,
+    "toughness": 4,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "manifestDread"
+          }
+        ]
+      }
+    ],
+    "text": "當此生物死去時，顯化恐懼（檢視你牌庫頂的兩張牌，將其中一張面朝下放進戰場成為2/2生物，另一張置入你的墳墓場。若它是生物牌，可以隨時支付其法術力費用將它翻成正面。）。"
+  },
+  "170": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Break Down the Door",
+    "cost": "{2}{G}",
+    "types": [
+      "Instant"
+    ],
+    "spell": {
+      "modes": [
+        {
+          "text": "放逐目標神器",
+          "effects": [
+            {
+              "e": "exile",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "permanent",
+              "filter": {
+                "type": "Artifact"
+              }
+            }
+          ]
+        },
+        {
+          "text": "放逐目標結界",
+          "effects": [
+            {
+              "e": "exile",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "permanent",
+              "filter": {
+                "type": "Enchantment"
+              }
+            }
+          ]
+        },
+        {
+          "text": "顯化恐懼（檢視你牌庫頂的兩張牌，將其中一",
+          "effects": [
+            {
+              "e": "manifestDread"
+            }
+          ]
+        }
+      ]
+    },
+    "text": "選擇一項：\n• 放逐目標神器。\n• 放逐目標結界。\n• 顯化恐懼（檢視你牌庫頂的兩張牌，將其中一張面朝下放進戰場成為2/2生物，另一張置入你的墳墓場。若它是生物牌，可以隨時支付其法術力費用將它翻成正面。）。"
+  },
+  "179": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Frantic Strength",
+    "cost": "{2}{G}",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "aura": {
+      "target": {
+        "kind": "creature",
+        "prompt": "選擇要結附的生物"
+      },
+      "grant": {
+        "p": 2,
+        "t": 2,
+        "kw": [
+          "trample"
+        ]
+      }
+    },
+    "keywords": [
+      "flash"
+    ],
+    "text": "閃現\n結附於生物\n所結附的生物得+2/+2且具有踐踏異能。"
+  },
+  "180": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Grasping Longneck",
+    "cost": "{2}{G}",
+    "types": [
+      "Enchantment",
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ]
+      }
+    ],
+    "text": "延勢\n當此生物死去時，你獲得2點生命。"
+  },
+  "184": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Horrid Vigor",
+    "cost": "{1}{G}",
+    "types": [
+      "Instant"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 0,
+          "t": 0,
+          "kw": [
+            "deathtouch",
+            "indestructible"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    },
+    "text": "目標生物獲得死觸與不滅異能直到回合結束。"
+  },
+  "189": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Manifest Dread",
+    "cost": "{1}{G}",
+    "types": [
+      "Sorcery"
+    ],
+    "spell": {
+      "effects": [
+        {
+          "e": "manifestDread"
+        }
+      ]
+    },
+    "text": "顯化恐懼（檢視你牌庫頂的兩張牌，將其中一張面朝下放進戰場成為2/2生物，另一張置入你的墳墓場。若它是生物牌，可以隨時支付其法術力費用將它翻成正面。）。"
+  },
+  "198": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Slavering Branchsnapper",
+    "cost": "{4}{G}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard"
+    ],
+    "power": 7,
+    "toughness": 6,
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Forest"
+      }
+    },
+    "keywords": [
+      "trample"
+    ],
+    "text": "踐踏\n樹林循環{2}（{2}，從手上棄掉此牌：從你的牌庫中搜尋一張樹林牌，展示並置於你手上，然後洗牌。）"
+  },
+  "199": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Spineseeker Centipede",
+    "cost": "{2}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "delirium"
+          },
+          "grant": {
+            "p": 1,
+            "t": 2,
+            "kw": [
+              "vigilance"
+            ]
+          }
+        }
+      },
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "hand"
+          }
+        ]
+      }
+    ],
+    "text": "當此生物進戰場時，從你的牌庫中搜尋一張基本地牌，展示該牌並置於你手上，然後將你的牌庫洗牌。\n譫妄—只要你墳墓場中的牌有四種或更多類別，此生物便得+1/+2且具有警戒異能。"
+  },
+  "206": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Wary Watchdog",
+    "cost": "{1}{G}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog"
+    ],
+    "power": 3,
+    "toughness": 1,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "text": "當此生物進戰場或死去時，刺探1。"
+  },
+  "233": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Shroudstomper",
+    "cost": "{3}{W}{W}{B}{B}",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 2,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 2
+          },
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 2,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 2
+          },
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "text": "死觸\n每當此生物進戰場或攻擊時，每位對手失去2點生命。你獲得2點生命，並抓一張牌。"
+  },
+  "239": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Wildfire Wickerfolk",
+    "cost": "{R}{G}",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "power": 3,
+    "toughness": 2,
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "delirium"
+          },
+          "grant": {
+            "p": 1,
+            "t": 1,
+            "kw": [
+              "trample"
+            ]
+          }
+        }
+      }
+    ],
+    "keywords": [
+      "haste"
+    ],
+    "text": "敏捷\n譫妄—只要你墳墓場中的牌有四種或更多類別，此生物便得+1/+1且具有踐踏異能。"
+  },
+  "244": {
+    "set": "DSK",
+    "rarity": "U",
+    "name": "Conductive Machete",
+    "cost": "{4}",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "equip": {
+      "cost": "{4}",
+      "grant": {
+        "p": 2,
+        "t": 1
+      }
+    },
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "manifestDread"
+          },
+          {
+            "e": "attach",
+            "what": "created"
+          }
+        ]
+      }
+    ],
+    "text": "當此武具進戰場時，顯化恐懼（檢視你牌庫頂的兩張牌，將其中一張面朝下放進戰場成為2/2生物，另一張置入你的墳墓場。若它是生物牌，可以隨時支付其法術力費用將它翻成正面。），然後將此武具貼附在該生物上。\n佩帶此武具的生物得+2/+1。\n裝備{4}"
+  },
+  "255": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Abandoned Campground",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "W",
+      "U"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{W}或{U}。"
+  },
+  "257": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Bleeding Woods",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "R",
+      "G"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{R}或{G}。"
+  },
+  "258": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Etched Cornfield",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "G",
+      "W"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{G}或{W}。"
+  },
+  "262": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Lakeside Shack",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "G",
+      "U"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{G}或{U}。"
+  },
+  "263": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Murky Sewer",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "U",
+      "B"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{U}或{B}。"
+  },
+  "264": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Neglected Manor",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "W",
+      "B"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{W}或{B}。"
+  },
+  "265": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Peculiar Lighthouse",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "U",
+      "R"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{U}或{R}。"
+  },
+  "266": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Raucous Carnival",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "R",
+      "W"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{R}或{W}。"
+  },
+  "267": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Razortrap Gorge",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "B",
+      "R"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{B}或{R}。"
+  },
+  "268": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Strangled Cemetery",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "etbTappedUnless": {
+      "c": "anyLifeLte",
+      "n": 13
+    },
+    "produces": [
+      "B",
+      "G"
+    ],
+    "text": "除非有玩家的生命為13點或更少，否則此地橫置進戰場。\n{T}：加{B}或{G}。"
+  },
+  "269": {
+    "set": "DSK",
+    "rarity": "C",
+    "name": "Terramorphic Expanse",
+    "cost": "",
+    "types": [
+      "Land"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "battlefield",
+            "tapped": true
+          }
+        ],
+        "label": "從你的牌庫中搜尋一張基本地牌，將它橫"
+      }
+    ],
+    "text": "{T}，犧牲此地：從你的牌庫中搜尋一張基本地牌，將它橫置放進戰場，然後將你的牌庫洗牌。"
+  },
+  "271": {
+    "set": "DSK",
+    "rarity": "R",
+    "name": "Valgavoth's Lair",
+    "cost": "",
+    "types": [
+      "Enchantment",
+      "Land"
+    ],
+    "etbTapped": true,
+    "keywords": [
+      "hexproof"
+    ],
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "text": "辟邪\n此地橫置進戰場。\n{T}：加一點任意顏色的法術力。（簡化：原本是進場時選定一種顏色）"
+  }
+}

@@ -1,3 +1,4 @@
+import {frontierStatic} from '../../engine/frontier-support';
 import {teamworkOptions,blackSymbols} from '../../engine/msh-support';
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import type { Level } from '../../ai/combatAI';
@@ -828,8 +829,8 @@ export function Battle(props: Props) {
                 ✕
               </button>
             )}
-            <CardZoom def={inspected.hidden && (inspected.controller === 0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) ? inspected.hidden : inspected.def} />
-            {inspected.hidden && (inspected.controller === 0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) && <div className="peek-chips"><span className="chip">面朝下（只有你看得到）</span></div>}
+            <CardZoom def={inspected.hidden && (inspected.controller === 0||isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) ? inspected.hidden : inspected.def} />
+            {inspected.hidden && (inspected.controller === 0||isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) && <div className="peek-chips"><span className="chip">面朝下（只有你看得到）</span></div>}
             {(liveStats || inspected.tapped || inspected.controller === 1 || inspected.loyalty != null) && inspected.zone === 'battlefield' && (
               <div className="peek-chips">
                 {inspected.loyalty != null && <span className="chip chip-loyal">忠誠 {inspected.loyalty}</span>}
