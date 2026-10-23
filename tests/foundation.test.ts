@@ -257,6 +257,7 @@ describe("FDN / DSK costs and combinations", () => {
     settleAll(g);
     expect(c.zone).toBe("battlefield");
     expect(c.attacking).toBe(true);
+    expect(c.def.types).toEqual(["Creature"]);
     expect(stats(g, c).p).toBe(3);
     expect(stats(g, c).t).toBe(4);
   });

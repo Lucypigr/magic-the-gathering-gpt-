@@ -950,7 +950,7 @@ export function foundationRefresh(g: GameState) {
         c.tlaOriginalDef ??= c.def;
         c.def = {
           ...c.def,
-          types: ["Planeswalker", "Creature"],
+          types: ["Creature"],
           subtypes: ["Ninja"],
           power: 3,
           toughness: 4,
