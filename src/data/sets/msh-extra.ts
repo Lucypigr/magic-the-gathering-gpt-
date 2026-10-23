@@ -103,7 +103,7 @@ a(18, [F('ownTurnSilence'), transform('{3}{G}{W}{W}')]);
 back(18, {
   abilities: [
     F('ownTurnSilence'),
-    event('allyDamaged', [dmg({ ev: true })], { targets: [ANY], may: '讓She-Hulk造成等量傷害？', oncePerTurn: true }),
+    event('allyDamaged', [E('sheHulkDamage')], { targets: [ANY] }),
   ],
 });
 a(19, []);
@@ -165,7 +165,7 @@ equip(
 a(37, [etb([{ e: 'exileLinked', what: 'T0' }], { targets: [spec('creature', { ctrl: 'opp', tapped: true })] })]);
 d(38, {
   aura: { grant: { p: 2, t: 2, kw: ['first_strike', 'vigilance'] } },
-  abilities: [etb([E('serumType')]), event('enchantedAttackBlock', [E('serumEquip')], { mshDynamic: 'equipment' })],
+  abilities: [event('enchantedAttackBlock', [E('serumEquip')], { mshDynamic: 'equipment' })],
 });
 s(39, [cnt('T0'), pump('T0', 0, 0, ['lifelink', 'indestructible'])], [CR]);
 a(40, [etb([{ e: 'scry', n: 2 }])]);

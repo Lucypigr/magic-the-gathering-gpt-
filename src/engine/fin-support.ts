@@ -78,7 +78,7 @@ export function finCondition(g: GameState, cond: Extract<Cond, { c: 'fin' }>, pi
             (cond.action === 'legends' || id !== source) &&
             g.cards[id].controller === pid &&
             isCreature(g.cards[id]) &&
-            g.cards[id].def.supertypes?.includes('Legendary'),
+            matches(g, { legendary: true }, g.cards[id], pid),
         ).length >= n
       );
     case 'legendCombat':

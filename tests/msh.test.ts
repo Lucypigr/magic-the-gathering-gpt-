@@ -5,7 +5,7 @@ import { poolSize } from '../src/meta/booster';
 import { mk, put, inHand, inGy, lands, resolve, settleAll, answerDefault } from './helpers';
 import { canActivate, performAction, castAlts, canPayCost, payCost } from '../src/engine/actions';
 import { runEffects } from '../src/engine/effects';
-import { newCard, stats } from '../src/engine/state';
+import { newCard, stats, matches, copiableDefinition } from '../src/engine/state';
 import { getDef } from '../src/engine/registry';
 import { parseCost } from '../src/engine/mana';
 import { emit, enterBattlefield, dealDamage, destroyCards, putCounters, moveCard, transformCard } from '../src/engine/zones';
@@ -20,6 +20,58 @@ const cast = (g: GameState, id: number, targets: (TargetRef | null)[] = [], extr
 const activate = (g: GameState, id: number, ability = 0, targets: (TargetRef | null)[] = [], extra: object = {}) =>
   expect(performAction(g, 0, { type: 'activate', card: id, ability, targets, ...extra })).toBeNull();
 describe('MSH full main set and mechanics', () => {
+  it('Spider-Woman untap prevention ends when control is lost or she leaves and returns', () => {
+    const g = mk(), source = put(g, 0, 'spider-woman-secret-agent'), victim = put(g, 1, 'topiary-panther');
+    effect(g, source.id, [{ e: 'msh', action: '229' }], [{ c: victim.id }]);
+    expect(stats(g, victim).noUntap).toBe(true);
+    source.controller = 1;
+    expect(stats(g, victim).noUntap).not.toBe(true);
+    source.controller = 0;
+    expect(stats(g, victim).noUntap).not.toBe(true);
+    effect(g, source.id, [{ e: 'msh', action: '229' }], [{ c: victim.id }]);
+    moveCard(g, source, 'hand');
+    enterBattlefield(g, source, 0);
+    expect(stats(g, victim).noUntap).not.toBe(true);
+    effect(g, source.id, [{ e: 'untap', what: 'T0' }], [{ c: victim.id }]);
+    expect(victim.tapped).toBe(false);
+  });
+  it('declining She-Hulk damage does not consume the once-per-turn effect', () => {
+    const g = mk(), hulk = put(g, 0, 'jennifer-walters');
+    transformCard(g, hulk);
+    const ally = put(g, 0, 'topiary-panther'), enemy = put(g, 1, 'novice-inspector');
+    dealDamage(g, enemy, 1, { c: ally.id }, 1);
+    settleAll(g, d => d.type === 'yesno' ? { type: 'yesno', yes: false } : d.type === 'targets' ? { type: 'targets', targets: [{ p: 1 }] } : undefined);
+    expect(g.players[1].life).toBe(20);
+    dealDamage(g, enemy, 1, { c: ally.id }, 2);
+    settleAll(g, d => d.type === 'targets' ? { type: 'targets', targets: [{ p: 1 }] } : undefined);
+    expect(g.players[1].life).toBe(18);
+    dealDamage(g, enemy, 1, { c: hulk.id }, 1);
+    settleAll(g, d => d.type === 'targets' ? { type: 'targets', targets: [{ p: 1 }] } : undefined);
+    expect(g.players[1].life).toBe(18);
+  });
+  it('variable base powers retain counters and other power bonuses', () => {
+    for (const id of ['namor-the-sub-mariner', 'super-adaptoid', 'ms-marvel-kamala-khan']) {
+      const g = mk(), c = put(g, 0, id);
+      put(g, 0, 'loki-god-of-mischief');
+      inHand(g, 0, 'plains');
+      if (id === 'ms-marvel-kamala-khan') effect(g, c.id, [{ e: 'msh', action: '67' }]);
+      putCounters(g, c, 1);
+      effect(g, c.id, [{ e: 'pump', what: 'self', p: 3, t: 3 }]);
+      expect(stats(g, c).p, id).toBe(id === 'super-adaptoid' ? 6 : 5);
+    }
+  });
+  it('Super-Soldier Serum grants continuous types without changing the copiable definition', () => {
+    const g = mk(), c = put(g, 0, 'brave-brawler'), aura = inHand(g, 0, 'super-soldier-serum');
+    lands(g, 0, 'plains', 2);
+    cast(g, aura.id, [{ c: c.id }]);
+    resolve(g);
+    settleAll(g);
+    expect(matches(g, { legendary: true, sub: 'Soldier' }, c, 0)).toBe(true);
+    expect(copiableDefinition(c).supertypes ?? []).not.toContain('Legendary');
+    moveCard(g, aura, 'graveyard');
+    expect(matches(g, { legendary: true }, c, 0)).toBe(false);
+    expect(matches(g, { sub: 'Soldier' }, c, 0)).toBe(false);
+  });
   it('Invisible Woman triggers for independent counter placements without an effect batch', () => {
     const g = mk();
     put(g, 0, 'invisible-woman-sue-storm');

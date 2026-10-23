@@ -1,5 +1,5 @@
 import {mshEffect} from './msh';
-import {mshAmount,mshStatic} from './msh-support';
+import {mshAmount,mshStatic,mshUntapLocked} from './msh-support';
 import {mkmEffect} from './mkm';
 import {mkmAmount} from './mkm-support';
 import {finEffect} from './fin';
@@ -445,7 +445,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       g.version++;
       break;
     case 'untap':
-      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(c.mshMarks?.freezeBy!==undefined&&g.cards[c.mshMarks.freezeBy]?.zone==='battlefield'||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='frozen-in-ice'))continue; if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'&&!abilitiesSuppressed(g,g.cards[id])))continue; if(c.stun>0)c.stun--;else c.tapped = false; }
+      for (const c of resolveRef(g, ctx, ef.what).cards) if (c.zone === 'battlefield') { if(mshUntapLocked(g,c)||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='frozen-in-ice'))continue; if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'&&!abilitiesSuppressed(g,g.cards[id])))continue; if(c.stun>0)c.stun--;else c.tapped = false; }
       g.version++;
       break;
     case 'stun':

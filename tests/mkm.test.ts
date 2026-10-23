@@ -24,6 +24,46 @@ function effect(g: GameState, source: number, effects: Effect[], targets: Target
 const cast = (g: GameState, id: number, targets: (TargetRef | null)[] = [], extra: object = {}) =>
   expect(performAction(g, 0, { type: 'cast', card: id, targets, ...extra })).toBeNull();
 describe('MKM complete main set', () => {
+  it('Living Conundrum sets its base to 10/10 without erasing counters or pumps', () => {
+    const g = mk(), c = put(g, 0, 'living-conundrum');
+    g.players[0].library = [];
+    effect(g, c.id, [{ e: 'counters', what: 'self', n: 1 }, { e: 'pump', what: 'self', p: 3, t: 3 }]);
+    expect(stats(g, c).p).toBe(14);
+    expect(stats(g, c).t).toBe(14);
+  });
+  it('Burden of Proof changes base power and toughness while retaining bonuses', () => {
+    const g = mk(), c = put(g, 1, 'topiary-panther'), aura = put(g, 0, 'burden-of-proof');
+    aura.attachedTo = c.id;
+    effect(g, aura.id, [{ e: 'counters', what: 'T0', n: 1 }, { e: 'pump', what: 'T0', p: 3, t: 3 }], [{ c: c.id }]);
+    expect(stats(g, c).p).toBe(5);
+    expect(stats(g, c).t).toBe(5);
+  });
+  it('Demand Answers cannot discard itself as its additional cost', () => {
+    const g = mk(), spell = inHand(g, 0, 'demand-answers');
+    inHand(g, 0, 'novice-inspector');
+    lands(g, 0, 'mountain', 2);
+    expect(performAction(g, 0, { type: 'cast', card: spell.id, targets: [], mode: 0, discard: spell.id })).not.toBeNull();
+    expect(spell.zone).toBe('hand');
+    expect(g.battlefield.every(id => !g.cards[id].tapped)).toBe(true);
+  });
+  it('Demand Answers pays the chosen discard option even if an artifact ID is supplied', () => {
+    const g = mk(), artifact = put(g, 0, 'tok-clue');
+    const spell = inHand(g, 0, 'demand-answers'), spare = inHand(g, 0, 'novice-inspector');
+    lands(g, 0, 'mountain', 2);
+    cast(g, spell.id, [], { mode: 0, discard: spare.id, sac: artifact.id });
+    expect(spare.zone).toBe('graveyard');
+    expect(artifact.zone).toBe('battlefield');
+  });
+  it('Lost in the Maze grants hexproof even to a creature that lost its own abilities', () => {
+    const g = mk();
+    put(g, 0, 'lost-in-the-maze');
+    const c = put(g, 0, 'novice-inspector');
+    c.tapped = true;
+    c.eclLoseAbilities = true;
+    expect(stats(g, c).kw.has('hexproof')).toBe(true);
+    c.tapped = false;
+    expect(stats(g, c).kw.has('hexproof')).toBe(false);
+  });
   it('contains all 271 main cards with printed characteristics and executable definitions', () => {
     expect(catalog).toHaveLength(271);
     expect(poolSize('MKM')).toBe(271);

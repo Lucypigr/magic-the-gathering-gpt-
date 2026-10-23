@@ -241,22 +241,30 @@ export function mkmObserve(g: GameState, ev: GameEvent) {
   if (ev.type === 'combatDamage' && g.cards[ev.source].hidden) mkmFlags(g, g.cards[ev.source].controller).faceDownHit = g.turn;
   if (ev.type === 'cast' && g.cards[ev.card].castOrigin === 'library') mkmFlags(g, ev.player).topCast = 1;
 }
+export function mkmBaseStats(g: GameState, c: Card, st: import('./state').Stats) {
+  if (!abilitiesSuppressed(g, c) && c.def.id === 'living-conundrum' && !g.players[c.controller].library.length)
+    st.p = st.t = 10;
+  for (const id of g.battlefield) {
+    const a = g.cards[id];
+    if (a.attachedTo === c.id && a.def.id === 'burden-of-proof' && !abilitiesSuppressed(g, a) &&
+        !(a.controller === c.controller && matches(g, { sub: 'Detective' }, c, c.controller)))
+      st.p = st.t = 1;
+  }
+}
 export function mkmApplyStats(g: GameState, c: Card, st: import('./state').Stats) {
   const pid = c.controller;
 
-  if (abilitiesSuppressed(g, c)) return;
-  if (c.def.id === 'flourishing-bloom-kin') {
+  const lost = abilitiesSuppressed(g, c);
+  if (!lost && c.def.id === 'flourishing-bloom-kin') {
     const n = g.battlefield.filter((id) => g.cards[id].controller === pid && matches(g, { sub: 'Forest' }, g.cards[id], pid)).length;
     st.p += n;
     st.t += n;
   }
-  if (c.def.id === 'living-conundrum' && !g.players[pid].library.length) {
-    st.p = 10 + c.counters;
-    st.t = 10 + c.counters;
+  if (!lost && c.def.id === 'living-conundrum' && !g.players[pid].library.length) {
     st.kw.add('flying');
     st.kw.add('vigilance');
   }
-  if (c.def.id === 'furtive-courier' && mkmFlags(g, pid).artifactSac) st.kw.add('unblockable');
+  if (!lost && c.def.id === 'furtive-courier' && mkmFlags(g, pid).artifactSac) st.kw.add('unblockable');
   if (c.tapped && mkmStatic(g, pid, 'tappedHexproof').length) st.kw.add('hexproof');
   for (const id of g.battlefield) {
     const a = g.cards[id];
@@ -269,9 +277,6 @@ export function mkmApplyStats(g: GameState, c: Card, st: import('./state').Stats
       if (a.controller === pid && matches(g, { sub: 'Detective' }, c, pid)) {
         st.p += 2;
         st.t += 2;
-      } else {
-        st.p = 1 + c.counters;
-        st.t = 1 + c.counters;
       }
     }
   }

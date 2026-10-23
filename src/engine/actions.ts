@@ -1058,7 +1058,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if(evidenceN&&!evidenceIds)return '墳墓場牌的總法力值不足以蒐證';
 
   if(def.id==='demand-answers'&&(mode??0)===0&&!p.hand.some(id=>id!==c.id))return '需要棄一張牌';
-  if(def.id==='demand-answers'&&a.discard!==undefined&&!p.hand.includes(a.discard))return '棄牌費用不合法';
+  if(def.id==='demand-answers'&&(mode??0)===0&&a.discard!==undefined&&(a.discard===c.id||!p.hand.includes(a.discard)))return '棄牌費用不合法';
   const schemes=eclStatic(g,pid,'conspire'),groups=a.conspireTapped??[],conspireIds=groups.flat();
   if(groups.length&&(def.types.includes('Creature')||groups.length>schemes.length||new Set(conspireIds).size!==conspireIds.length||groups.some(ids=>ids.length!==2||ids.some(id=>{const b=g.cards[id];return !b||b.zone!=='battlefield'||b.controller!==pid||b.tapped||!isCreature(b)||!colorsOf(b.def).some(col=>colorsOf(def).includes(col));}))))return '共謀費用不合法';
   for(const id of [...conspireIds,...teamwork])g.cards[id].tapped=true;
@@ -1075,7 +1075,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
     log(g, `和聲：橫置 ${cardName(g.cards[tapper.id])}，費用減少 {${tapper.p}}`, pid);
   }
   c.mkmEvidence=false;if(evidenceN&&evidenceIds)payEvidence(g,pid,c,evidenceIds);
-  if(def.id==='demand-answers'){const artifact=a.sac!==undefined?g.cards[a.sac]:undefined;if(artifact&&artifact.zone==='battlefield'&&artifact.controller===pid&&artifact.def.types.includes('Artifact'))sacrifice(g,artifact);else{const id=a.discard??p.hand.find(id=>id!==c.id);if(id!==undefined)discard(g,g.cards[id]);}}
+  if(def.id==='demand-answers'&&(mode??0)===0){const id=a.discard??p.hand.find(id=>id!==c.id);if(id!==undefined)discard(g,g.cards[id]);}
   c.manaPaid=g.lastManaPayment?.slice();
   if(returnLand)moveCard(g,returnLand,'hand');
   if(noctisCost){loseLife(g,pid,3);(c.finMarks??={}).enterFinality=1;}

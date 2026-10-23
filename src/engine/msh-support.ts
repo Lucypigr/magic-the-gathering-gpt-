@@ -1,4 +1,4 @@
-import { abilitiesSuppressed, isCreature, isLand, matches, stats } from './state';
+import { abilitiesSuppressed, hasSupertype, isCreature, isLand, matches, stats } from './state';
 import { colorsOf, manaValue, parseCost } from './mana';
 import type { Card, CardDef, Cond, GameEvent, GameState, PID, TriggeredAbility } from './types';
 export function mshStatic(g: GameState, pid: PID, name: string) {
@@ -244,6 +244,27 @@ export function mshObserve(g: GameState, ev: GameEvent) {
     }
   }
 }
+/** Characteristic/base power is established before counters, auras and pumps. */
+export function mshBaseStats(g: GameState, c: Card, st: import('./state').Stats) {
+  if (abilitiesSuppressed(g, c)) return;
+  if (c.def.id === 'namor-the-sub-mariner')
+    st.p = g.battlefield.filter(id => g.cards[id].controller === c.controller && matches(g, { sub: 'Merfolk' }, g.cards[id], c.controller)).length;
+  if (c.def.id === 'super-adaptoid')
+    st.p = g.battlefield.filter(id => g.cards[id].controller === c.controller && isCreature(g.cards[id]) && hasSupertype(g, g.cards[id], 'Legendary')).length;
+  if (c.mshMarks?.sizeHand === g.turn) st.p = g.players[c.controller].hand.length;
+}
+export function mshUntapLocked(g: GameState, c: Card): boolean {
+  const marks = c.mshMarks;
+  if (marks?.freezeBy === undefined) return false;
+  const source = g.cards[marks.freezeBy];
+  if (source?.zone === 'battlefield' && source.controller === marks.freezeController &&
+      (source.objectVersion ?? 0) === marks.freezeVersion) return true;
+  // A duration ending on loss of control/leaving does not restart later.
+  delete marks.freezeBy;
+  delete marks.freezeVersion;
+  delete marks.freezeController;
+  return false;
+}
 export function mshApplyStats(g: GameState, c: Card, st: import('./state').Stats) {
   const pid = c.controller;
   for (const [kw, n] of Object.entries(c.eclCounters ?? {}))
@@ -264,21 +285,8 @@ export function mshApplyStats(g: GameState, c: Card, st: import('./state').Stats
       ].includes(kw)
     )
       st.kw.add(kw as import('./types').Keyword);
-  if (c.mshMarks?.freezeBy !== undefined) {
-    const s = g.cards[c.mshMarks.freezeBy];
-    if (s?.zone === 'battlefield') st.noUntap = true;
-  }
-  if (c.mshMarks?.sizeHand === g.turn) st.p = g.players[pid].hand.length + c.counters;
+  if (mshUntapLocked(g, c)) st.noUntap = true;
   if (!abilitiesSuppressed(g, c)) {
-    if (c.def.id === 'namor-the-sub-mariner')
-      st.p =
-        g.battlefield.filter((id) => g.cards[id].controller === pid && matches(g, { sub: 'Merfolk' }, g.cards[id], pid)).length +
-        c.counters;
-    if (c.def.id === 'super-adaptoid')
-      st.p =
-        g.battlefield.filter(
-          (id) => g.cards[id].controller === pid && isCreature(g.cards[id]) && g.cards[id].def.supertypes?.includes('Legendary'),
-        ).length + c.counters;
     if (c.def.id === 'stature-size-shifter' && st.p <= 1) st.kw.add('unblockable');
     if (c.def.id === 'doctor-doom' && mshCondition(g, { c: 'msh', action: 'doomIndestructible' }, pid, c.id)) st.kw.add('indestructible');
     if (c.def.id === 'iron-man-master-of-machines')

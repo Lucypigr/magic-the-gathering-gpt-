@@ -3,7 +3,7 @@ import { payCost } from './actions';
 import { choose, freeCast } from './tla';
 import { resolveRef, runEffects, type Ctx } from './effects';
 import { manaValue, parseCost } from './mana';
-import { hasKw, isCreature, isLand, other, shuffleArr, stats } from './state';
+import { hasKw, isCreature, isLand, matches, other, shuffleArr, stats } from './state';
 import type { Card, Color, Effect, GameState, PID, Ref, Response, SubFlow } from './types';
 import {
   createToken,
@@ -680,7 +680,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
     case 'forever': {
       const wish = ef.action === 'wish';
       const options = [...(wish ? [] : p.library), ...p.outside].filter(
-        (id) => wish || (isCreature(g.cards[id]) && g.cards[id].def.supertypes?.includes('Legendary')),
+        (id) => wish || (isCreature(g.cards[id]) && matches(g, { legendary: true }, g.cards[id], me)),
       );
       if (!wish && new Set(options.map((id) => g.cards[id].def.name)).size < 4) break;
       const chosen: number[] = [];

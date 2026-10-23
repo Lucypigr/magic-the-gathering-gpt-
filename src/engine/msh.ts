@@ -83,6 +83,12 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
     else for (let j = 0; j < n; j++) (p.pool ??= []).push(mana);
   };
   switch (ef.action) {
+    case 'sheHulkDamage':
+      if (src.mshMarks?.sheHulkUsedTurn !== g.turn && (yield* yes(pid, '讓She-Hulk造成等量傷害？'))) {
+        (src.mshMarks ??= {}).sheHulkUsedTurn = g.turn;
+        yield* run([{ e: 'damage', n: { ev: true }, to: 'T0' }]);
+      }
+      break;
     case 'photonCopies':
       for (let i = 0; i < (ef.n ?? 0); i++) yield* run([{ e: 'copySpell' }]);
       break;
@@ -185,15 +191,6 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
       ))[0];
       if (id !== undefined) enterBattlefield(g, g.cards[id], pid);
       else drawCards(g, pid, 1);
-      break;
-    }
-    case 'serumType': {
-      const host = g.cards[src.attachedTo ?? -1];
-      if (host)
-        change(host, {
-          supertypes: [...new Set([...(host.def.supertypes ?? []), 'Legendary'] as const)],
-          subtypes: [...new Set([...(host.def.subtypes ?? []), 'Soldier'])],
-        });
       break;
     }
     case 'serumEquip': {
@@ -682,9 +679,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
     case '229':
       if (c) {
         tapCard(g, c);
-        c.noUntapBy = src.id;
-        c.noUntapController = pid;
-        (c.mshMarks ??= {}).freezeBy = src.id;
+        Object.assign((c.mshMarks ??= {}), { freezeBy: src.id, freezeVersion: src.objectVersion ?? 0, freezeController: pid });
       }
       break;
     case '230': {

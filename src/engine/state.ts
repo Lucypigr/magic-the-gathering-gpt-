@@ -1,5 +1,5 @@
-import {mshApplyStats,mshCondition} from './msh-support';
-import {mkmApplyStats,mkmCondition,mkmStatic} from './mkm-support';
+import {mshApplyStats,mshBaseStats,mshCondition} from './msh-support';
+import {mkmApplyStats,mkmBaseStats,mkmCondition,mkmStatic} from './mkm-support';
 import {finApplyStats,finBaseStats,finCondition} from './fin-support';
 import { displayName } from '../data/names';
 import { colorsOf, manaValue } from './mana';
@@ -278,6 +278,18 @@ export function abilitiesOf(g: GameState, c: Card): Ability[] {
   return abilitiesSuppressed(g, c) ? [] : [...(c.def.abilities ?? []), ...(c.copiedAbilities ?? []), ...(c.temporaryAbilities?.turn===g.turn?c.temporaryAbilities.abilities:[])];
 }
 
+function hasSerum(g: GameState, c: Card): boolean {
+  return c.zone === 'battlefield' && g.battlefield.some(id => {
+    const a = g.cards[id];
+    return a.attachedTo === c.id && a.def.id === 'super-soldier-serum' && !abilitiesSuppressed(g, a);
+  });
+}
+
+/** Continuous type changes are not part of a permanent's copiable values. */
+export function hasSupertype(g: GameState, c: Card, type: 'Basic' | 'Legendary'): boolean {
+  return !!c.def.supertypes?.includes(type) || (type === 'Legendary' && hasSerum(g, c));
+}
+
 export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   const d = c.def;
   const lost = abilitiesSuppressed(g, c);
@@ -288,12 +300,14 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     cantAttack: false,
     cantBlock: false,
   };
+  mshBaseStats(g,c,st);
   if (c.zone !== 'battlefield') return st;
   if(c.noUntapBy!==undefined && g.cards[c.noUntapBy]?.zone==='battlefield' && g.cards[c.noUntapBy].controller===c.noUntapController) st.noUntap=true;
   if (c.suspected) {
     st.kw.add('menace');
     st.cantBlock = true;
   }
+  mkmBaseStats(g,c,st);
   finBaseStats(g,c,st);
   // 直到回合結束的基礎力量與防禦力（在指示物與加成之前套用）
   if (!ignoreEot) {
@@ -400,7 +414,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;
-  if(f.mshWorthy&&(!c.def.supertypes?.includes('Legendary')||c.def.subtypes?.includes('Villain')||!colorsOf(c.def).some(col=>col==='R'||col==='W')))return false;
+  if(f.mshWorthy&&(!hasSupertype(g,c,'Legendary')||c.def.subtypes?.includes('Villain')||!colorsOf(c.def).some(col=>col==='R'||col==='W')))return false;
   if(f.suspected!==undefined&&!!c.suspected!==f.suspected)return false;
   if(f.faceDown!==undefined&&!!c.hidden!==f.faceDown)return false;
   if(f.dealtDamage!==undefined&&(c.mkmMarks?.dealtDamage===g.turn)!==f.dealtDamage)return false;
@@ -423,13 +437,14 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   const mshChangeling=c.def.id==='undercover-skrull'&&g.players[c.controller].graveyard.filter(id=>isCreature(g.cards[id])).length>=2&&!abilitiesSuppressed(g,c);
   const attachedChangeling=g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='stalactite-dagger');
   const jobTypes=c.zone==='battlefield'?g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&!abilitiesSuppressed(g,g.cards[id])).flatMap(id=>g.cards[id].def.fin?.job?[g.cards[id].def.fin!.job!]:[]):[];
+  const serumTypes=hasSerum(g,c)?['Soldier']:[];
   const mkmLandTypes=isLand(c)&&c.zone==='battlefield'&&mkmStatic(g,c.controller,'guildpact').length?['Plains','Island','Swamp','Mountain','Forest']:[];
-  if (f.sub && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !mshChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
-  if (f.nonSub && (asArr(f.nonSub).some(s=>jobTypes.includes(s))||mshChangeling||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
+  if (f.sub && !asArr(f.sub).some(s=>serumTypes.includes(s)) && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !mshChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
+  if (f.nonSub && (asArr(f.nonSub).some(s=>serumTypes.includes(s))||asArr(f.nonSub).some(s=>jobTypes.includes(s))||mshChangeling||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
   if (f.attackedThisTurn !== undefined && (c.attackedTurn === g.turn) !== f.attackedThisTurn) return false;
   if(f.name&&d.name!==f.name)return false;
   if(f.nonNames?.includes(d.name))return false;
-  if (f.legendary !== undefined && !!d.supertypes?.includes('Legendary') !== f.legendary) return false;
+  if (f.legendary !== undefined && hasSupertype(g,c,'Legendary') !== f.legendary) return false;
   if (f.basic !== undefined && !!d.supertypes?.includes('Basic') !== f.basic) return false;
   const stackItem=c.zone==='stack'?g.stack.find(s=>s.kind==='spell'&&s.cardId===c.id):undefined;
   const valueDef=stackItem&&d.mkm?.split?{...d,cost:stackItem.alt==='adventure'?d.adventure?.cost:d.cost,mkm:undefined}:d;
