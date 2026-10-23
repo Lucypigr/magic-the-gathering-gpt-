@@ -76,7 +76,7 @@ export function MulliganModal({ g, mulligans, onKeep, onMull }: { g: GameState; 
   );
 }
 
-export function ChooseModal({ g, d, onSubmit }: { g: GameState; d: Extract<Decision, { type: 'choose' }>; onSubmit: (ids: number[]) => void }) {
+export function ChooseModal({ g, d, onSubmit,onCancel }: { g: GameState; d: Extract<Decision, { type: 'choose' }>; onSubmit: (ids: number[]) => void;onCancel?:()=>void }) {
   const [sel, setSel] = useState<number[]>([]);
   const toggle = (id: number) => {
     setSel((s) => (s.includes(id) ? s.filter((x) => x !== id) : d.max === 1 ? [id] : s.length >= d.max ? s : [...s, id]));
@@ -99,6 +99,7 @@ export function ChooseModal({ g, d, onSubmit }: { g: GameState; d: Extract<Decis
           <span className="muted">
             已選 {sel.length}／{d.min === d.max ? d.min : `${d.min}–${d.max}`}
           </span>
+          {onCancel&&<button className="btn" onClick={onCancel}>取消</button>}
           <button className="btn btn-primary" disabled={!ok} onClick={() => onSubmit(sel)}>
             確定
           </button>

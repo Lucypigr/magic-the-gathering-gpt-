@@ -5,6 +5,18 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+  T({"id": "tok-mkm-dog", "name": "Dog", "types": ["Creature"], "subtypes": ["Dog"], "colors": ["W"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-mkm-human", "name": "Human", "types": ["Creature"], "subtypes": ["Human"], "colors": ["W"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-mkm-merfolk", "name": "Merfolk", "types": ["Creature"], "subtypes": ["Merfolk"], "colors": ["U"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-mkm-goblin", "name": "Goblin", "types": ["Creature"], "subtypes": ["Goblin"], "colors": ["R"], "power": 1, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-mkm-bat", "name": "Bat", "types": ["Creature"], "subtypes": ["Bat"], "colors": ["B"], "power": 1, "toughness": 1, "keywords": ["flying"], "text": ""}),
+  T({"id": "tok-mkm-skeleton", "name": "Skeleton", "types": ["Creature"], "subtypes": ["Skeleton"], "colors": ["B"], "power": 2, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-mkm-plant", "name": "Plant", "types": ["Creature"], "subtypes": ["Plant"], "colors": ["G"], "power": 0, "toughness": 1, "keywords": [], "text": ""}),
+  T({"id": "tok-mkm-ooze", "name": "Ooze", "types": ["Creature"], "subtypes": ["Ooze"], "colors": ["G"], "power": 0, "toughness": 0, "keywords": ["trample"], "text": ""}),
+  T({"id": "tok-mkm-spider", "name": "Spider", "types": ["Creature"], "subtypes": ["Spider"], "colors": ["B", "G"], "power": 2, "toughness": 1, "keywords": ["menace", "reach"], "text": ""}),
+  T({"id": "tok-mkm-spirit", "name": "Spirit", "types": ["Creature"], "subtypes": ["Spirit"], "colors": ["W", "B"], "power": 1, "toughness": 1, "keywords": ["flying"], "text": ""}),
+  T({"id": "tok-mkm-imp", "name": "Imp", "types": ["Creature"], "subtypes": ["Imp"], "colors": ["R"], "power": 2, "toughness": 2, "keywords": [], "text": "", "abilities": [{"kind": "trigger", "on": "dies", "effects": [{"e": "damage", "to": "opp", "n": 2}]}]}),
+  T({"id": "tok-mkm-voja", "name": "Voja Fenstalker", "types": ["Creature"], "subtypes": ["Wolf"], "colors": ["G", "W"], "power": 5, "toughness": 5, "keywords": ["trample"], "text": "", "supertypes": ["Legendary"]}),
   T({"id": "tok-fin-hero", "name": "Hero", "cost": "", "types": ["Creature"], "subtypes": ["Hero"], "colors": [], "power": 1, "toughness": 1, "text": "", "keywords": []}),
   T({"id": "tok-fin-knight", "name": "Knight", "cost": "", "types": ["Creature"], "subtypes": ["Knight"], "colors": ["W"], "power": 2, "toughness": 2, "text": "", "keywords": []}),
   T({"id": "tok-fin-moogle", "name": "Moogle", "cost": "", "types": ["Creature"], "subtypes": ["Moogle"], "colors": ["W"], "power": 1, "toughness": 2, "text": "", "keywords": ["lifelink"]}),

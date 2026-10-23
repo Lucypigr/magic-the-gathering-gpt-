@@ -1,3 +1,4 @@
+import {completeMkm} from './sets/mkm-extra';
 import {completeFin} from './sets/fin-extra';
 // ============================================================
 // 卡牌資料庫：經典卡牌
@@ -702,6 +703,7 @@ completeTla();
 completeTmt();
 completeEcl();
 completeFin();
+completeMkm();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

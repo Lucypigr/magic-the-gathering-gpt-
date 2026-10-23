@@ -54,6 +54,7 @@ export type Keyword =
 
 /** 篩選條件：用來描述「哪些物件」符合。ctrl 以能力控制者的視角判斷。 */
 export interface Filter {
+  suspected?:boolean;faceDown?:boolean;dealtDamage?:boolean;gyThisTurn?:boolean;
   name?:string; nonNames?:string[];
   type?: CardType | CardType[];
   nonType?: CardType | CardType[];
@@ -102,7 +103,7 @@ export interface Filter {
   owner?: 'you'|'opp';
 }
 
-export type TargetKind = 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
+export type TargetKind = 'creatureOrGy' | 'spellOrPermanent' | 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
 
 export interface TargetSpec {
   sameGraveyardAs?:number;totalMvMax?:number;
@@ -146,6 +147,7 @@ export type Ref =
   | { all: Filter };
 
 export type Amt =
+  | {mkm:string}
   | { fin:string }
   | number
   | { count: Filter }
@@ -212,6 +214,7 @@ export interface Grant {
 }
 
 export type Cond =
+  | {c:'mkm';action:string;n?:number}
   | {c:'fin';action:string;n?:number}
   | {c:'and';conds:Cond[]}
   | { c: 'ecl'; action:string; n?:number; filter?:Filter }
@@ -330,6 +333,7 @@ export interface ExtraCost {
 }
 
 export type Effect =
+  | {e:'mkm';action:string;n?:number;what?:Ref}
   | {e:'fin';action:string;n?:number;what?:Ref;filter?:Filter;value?:number}
   | { e:'ecl';action:string;n?:number;value?:number;what?:Ref;filter?:Filter }
   | { e: 'tmt'; action: string; n?: number; amount?:number; what?: Ref }
@@ -516,6 +520,7 @@ export type Effect =
   | { e: 'animate'; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
+  | 'mkmEvent'
   | 'finEvent'
   | 'combatDamagePlayerOrWalker' | 'allyCombatDamagePlayerOrWalker' | 'eachDrawStep' | 'firstMain' | 'transformed' | 'allyBlocks' | 'permanentToGy' | 'classLevel' | 'otherLeaves' | 'becomesTapped' | 'leaves' | 'allyLeaves' | 'bend' | 'oppDrawSecond' | 'oppSearch' | 'allyPermanentDies' | 'otherPermanentDies' | 'combatDamageAny'
 
@@ -597,6 +602,8 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+  mkmDynamic?:'vindicator'|'maze'|'falcon'|'distribute2'|'distribute3';
+  mkmEvent?:string;
   finDynamic?:boolean;
   finEvent?:string;
   variableVividTargets?:boolean;
@@ -646,6 +653,7 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+  evidence?:number;
   xMana?:number; xMin?:number; finStack?:'ownAbility';
   levelUp?: {from:number;to:number};
   removeCounter?: {n:number;fromCreature?:boolean;any?:boolean};
@@ -685,6 +693,7 @@ export interface ActivatedAbility {
 }
 
 export interface StaticAbility {
+  mkm?:string;
   fin?:string;
   ecl?:string;
   triggerDouble?: Filter;
@@ -770,6 +779,8 @@ export interface SpellSpec {
 }
 
 export interface CardDef {
+  faceUpPayment?:boolean;
+  mkm?:{evidence?:number;optionalEvidence?:number;split?:boolean;};
   /** Carries the other copiable face when constructing a transforming token. */
   copyFront?:CardDef;
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
@@ -905,6 +916,7 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  mkmSolved?:boolean;mkmEvidence?:boolean;mkmMarks?:Record<string,number>;mkmLinked?:number[];gyTurn?:number;
   /** Copiable values installed by a persistent copy effect. */
   copyLayer?:CardDef;
   tokenDeparted?:boolean;
@@ -1057,6 +1069,9 @@ export interface Card {
 }
 
 export interface Player {
+  mkmGossip?:Mana[];
+  poison?:number;
+  mkmTurn?:number;mkmFlags?:Record<string,number>;mkmSources?:number[];
   tokensCreatedTurn?:number;
   finFlags?:Record<string,number>;
   eclEntries?:number[];
@@ -1142,7 +1157,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
   sourceType?:string;
@@ -1216,6 +1231,7 @@ export type Phase =
   | 'cleanup';
 
 export type GameEvent =
+  | {type:'mkm';action:string;player:PID;card:number;n?:number}
   | {type:'combatPlayerOrWalker';source:number;controller:PID;amount:number}
   | { type: 'tapped'; card: number; controller: PID }
   | {type:'transformed';card:number;controller:PID}
@@ -1249,7 +1265,7 @@ export type GameEvent =
   | { type: 'loyaltyActivated'; card: number; controller: PID; removed: number }
   | { type: 'noncombat'; player: PID; amount: number; sourceController: PID }
   | { type: 'discard'; player: PID; card: number; batchPart?:boolean; batchSummary?:boolean }
-  | { type: 'counterPlaced'; card: number; controller: PID; amount: number; counterKind?:string;counterPayments?:{kind:string;n:number}[];stackTargetSid?:number;tapCards?:number[] };
+  | { type: 'counterPlaced'; card: number; controller: PID; amount: number; counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export interface PendingTrigger {
   sourceType?:string;
@@ -1283,6 +1299,7 @@ export interface Show {
 }
 
 export interface GameState {
+  mkmCollecting?:number;
   finEndTurn?:boolean;finExtraEnd?:boolean;finCombatNumber?:number;finEndNumber?:number;
   eclEventGroup?:number;
   eclEntryQueue?:{card:number;controller:PID;tapped:boolean;enterAs?:CardDef}[];
@@ -1394,8 +1411,8 @@ export type ChoosePurpose =
 export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
-  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
-  | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];stackTargetSid?:number;tapCards?:number[] };
+  | { type: 'cast'; card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
+  | { type: 'activate'; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export type Response =
   | PriorityAction

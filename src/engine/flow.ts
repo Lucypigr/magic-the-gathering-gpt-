@@ -1,3 +1,4 @@
+import {mkmStatic} from './mkm-support';
 import {refreshFinLands} from './fin-support';
 import {colorsOf} from './mana';
 import {resolveEclEntries} from './ecl';
@@ -38,7 +39,7 @@ import { addLore, discard, drawCards, emit, enterBattlefield, enterBattlefieldBa
 export function checkSBA(g: GameState): void {
   for (let iter = 0; iter < 30; iter++) {
     let changed = false;
-    const losers = g.players.filter((p) => p.life <= 0 || p.drewFromEmpty);
+    const losers = g.players.filter((p) => p.life <= 0 || p.drewFromEmpty || (p.poison??0)>=10);
     if (losers.length) {
       for (const p of losers) p.lost = true;
       g.winner = losers.length === 2 ? 'draw' : other(losers[0].id);
@@ -175,6 +176,17 @@ function* flushTriggers(g: GameState): SubFlow {
       ab = { ...ab, modes: undefined, effects: eff, targets: sp.length ? sp : undefined };
       log(g, `${cardName(src)}：選擇了「${picks.map((i) => t.ability.modes![i].text).join('」「')}」`, t.controller);
     }
+    if(ab.mkmDynamic){
+      const kind=ab.mkmDynamic;const total=kind==='vindicator'?src.mkmMarks?.faceUpX??0:kind==='maze'?src.castX??0:kind==='distribute2'?2:kind==='distribute3'?3:g.battlefield.length;
+      const template:TargetSpec=kind==='vindicator'?{kind:'creatureOrGy',notSelf:true}:kind==='falcon'?{kind:'permanent',filter:{ctrl:'you'}}:{kind:'creature',...(kind==='distribute2'?{filter:{ctrl:'you' as const}}:{})};
+      const available=legalTargets(g,template,t.controller,t.source).length;
+      if(kind==='maze'&&available<total)continue;
+      let n=kind==='maze'?total:Math.min(total,available);
+      if(kind!=='maze'&&n>0){const min=kind.startsWith('distribute')?1:0;const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:n-min+1},(_,i)=>String(i+min)),count:1,purpose:'count'};n=Math.min(n,min+(r.type==='modes'?r.picks[0]??0:0));}
+      let effects=ab.effects;
+      if(kind.startsWith('distribute')){let left=total;const allocation:Effect[]=[];for(let j=0;j<n;j++){const max=left-(n-j-1);let amount=max;if(j<n-1&&max>1){const r:Response=yield{type:'mode',player:t.controller,prompt:`分給第${j+1}個目標的指示物`,options:Array.from({length:max},(_,i)=>String(i+1)),count:1,purpose:'count'};amount=1+(r.type==='modes'?r.picks[0]??0:0);}allocation.push({e:'counters',what:(['T0','T1','T2'] as const)[j],n:amount});left-=amount;}effects=[...allocation,...effects.filter(e=>!(e.e==='mkm'&&e.action==='distribute'))];}
+      ab={...ab,targets:Array.from({length:n},()=>template),effects};
+    }
     if(ab.finDynamic){const options=g.players[t.controller].graveyard.filter(id=>isCreature(g.cards[id]));const max=options.length;const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇返回生物目標數量（總法力值至多6）',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};const n=r.type==='modes'?Math.min(max,r.picks[0]??0):0;ab={...ab,targets:Array.from({length:n},()=>({kind:'gyCard' as const,filter:{ctrl:'you' as const,type:'Creature' as const},totalMvMax:6}))};}
     if(ab.variableVividTargets){const n=vividColors(g,t.controller).length;const r:Response=yield {type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:n+1},(_,i)=>String(i)),count:1,purpose:'count'};const k=r.type==='modes'?r.picks[0]??0:0;ab={...ab,targets:Array.from({length:Math.min(k,n)},()=>({kind:'creature' as const,filter:{ctrl:'you' as const}}))};}
     const specs = (ab.targets ?? []).map(s=>s.filter?.chosenTribe?{...s,filter:{...s.filter,chosenTribe:false,sub:t.sourceType??src.eclType??''}}:s).map(s=>s.filter?.crewedSourceThisTurn?{...s,filter:{...s.filter,crewedSourceThisTurn:false,ids:(src.crewedBy??[]).slice()}}:s);
@@ -243,7 +255,7 @@ export function* settle(g: GameState): SubFlow {
     for(const pid of [0,1] as PID[]){
       if(g.legendExempt?.pid===pid&&g.legendExempt.turn===g.turn)continue;
       const groups=new Map<string,number[]>();
-      for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&(c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN')&&c.def.supertypes?.includes('Legendary'))groups.set(c.def.name,[...(groups.get(c.def.name)??[]),id]);}
+      for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&(c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN'||c.def.set==='MKM')&&c.def.supertypes?.includes('Legendary'))groups.set(c.def.name,[...(groups.get(c.def.name)??[]),id]);}
       for(const ids of groups.values())if(ids.length>1){
         const r:Response=yield {type:'choose',player:pid,prompt:'傳奇規則：選擇保留的一個永久物',options:ids,min:1,max:1,purpose:'sacrifice'};
         const keep=r.type==='choose'&&ids.includes(r.ids[0])?r.ids[0]:ids[ids.length-1];
@@ -295,8 +307,8 @@ export function* resolveTop(g: GameState): SubFlow {
         enterBattlefieldBack(g, src, item.controller);
         log(g, `${cardName(src)} 轉化後進入戰場`, item.controller);
       } else if (src.zone === 'stack') {
-        moveCard(g, src, 'exile');
-        if (item.alt === 'adventure') {
+        moveCard(g, src, def.mkm?.split?'graveyard':'exile');
+        if (item.alt === 'adventure'&&!def.mkm?.split) {
           src.onAdventure = true;
           log(g, `${cardName(src)} 踏上冒險（之後可以從放逐區施放）`, item.controller);
         }
@@ -378,7 +390,7 @@ export function* priorityStep(g: GameState): SubFlow {
             const ozai=g.battlefield.some(id=>g.cards[id].controller===pl.id&&g.cards[id].def.id==='ozai-the-phoenix-king');
             pl.pool=ozai ? [...(pl.pool??[]),...(pl.firePool??[])].map(()=> 'R' as const) : [];
             if(ozai) pl.firePool=[];
-            pl.poolNoncreature = [];
+            pl.poolNoncreature = [];pl.mkmGossip=[];
             pl.poolLesson=[];
           }
           return;
@@ -574,7 +586,7 @@ function* turn(g: GameState): SubFlow {
     p.extraLandsThisTurn = 0;
     p.loyaltyActivatedThisTurn = false;
     p.mountainBonus = false;
-    p.pool = [];
+    p.pool = [];p.mkmGossip=[];
     const lightning=p.finFlags?.lightningUntil;
     p.finFlags=lightning&&lightning!==a+1?{lightningUntil:lightning}:{};
     p.retainedRed=[];p.eclRestrictedMana=[];p.eclEntries=[];p.eclCounterPlaced=false;p.eclAttackedMerfolk=0;p.eclMaralenUsed=[];if(p.eclPreventDamageUntil===a)p.eclPreventDamageUntil=undefined;
@@ -612,11 +624,13 @@ function* turn(g: GameState): SubFlow {
     if(c.def.id==="benders-waterskin") c.tapped=false;
     if (c.controller !== a) continue;
     c.sick = false;
+    if(c.tapped&&c.def.id==='hedge-whisperer'){const r:Response=yield{type:'yesno',player:a,prompt:'保持 Hedge Whisperer 橫置？'};if(r.type==='yesno'&&r.yes)continue;}
     if (c.tapped && !stats(g, c).noUntap) {
       if (c.stun > 0) c.stun--;
       else c.tapped = false;
     }
   }
+  for(const id of g.battlefield){const c=g.cards[id],hedge=c.mkmMarks?.hedge;if(hedge!==undefined&&(!g.cards[hedge]?.tapped||g.cards[hedge].zone!=='battlefield')){if(c.tlaOriginalDef){c.def=c.tlaOriginalDef;c.tlaOriginalDef=undefined;}delete c.mkmMarks!.hedge;}}
   g.version++;
   // 維持
   phases:{
@@ -664,7 +678,7 @@ function* turn(g: GameState): SubFlow {
   }
   // 清除
   g.phase = 'cleanup';
-  const over = pl.noHandLimit ? 0 : pl.hand.length - 7;
+  const over = pl.noHandLimit||mkmStatic(g,a,'noMaxHand').length ? 0 : pl.hand.length - 7;
   if (over > 0) {
     const r: Response = yield {
       type: 'choose',
@@ -689,6 +703,7 @@ function* turn(g: GameState): SubFlow {
     if (c.baseDef) {
       c.def = c.baseDef;
       c.baseDef = undefined;
+      c.copyLayer=undefined;
     }
   }
   g.eot = g.eot.filter((e) => e.until !== undefined);

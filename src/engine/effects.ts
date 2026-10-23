@@ -1,3 +1,5 @@
+import {mkmEffect} from './mkm';
+import {mkmAmount} from './mkm-support';
 import {finEffect} from './fin';
 import {finAmount,finStatic} from './fin-support';
 import {canReceiveCounters} from './ecl-support';
@@ -245,6 +247,7 @@ export function amount(g: GameState, ctx: Ctx, a: Amt): number {
   if ('x' in a) return ctx.x ?? g.cards[ctx.source]?.castX ?? 0;
   if ('spellsCast' in a) return g.players[ctx.controller].spellsThisTurn;
   if ('selfCounters' in a) { const c=g.cards[ctx.source]; return Math.max(0, (c?.counters??0) + (c?.def.id==='savanti-romero-times-exile' ? (c.charge??0)+c.stun+(c.hexproofCounters??0)+Number(!!c.finality)+(c.lore??0) : 0)); }
+  if('mkm'in a)return mkmAmount(g,ctx.controller,ctx.source,a.mkm,ctx.x??0);
   if('fin'in a)return finAmount(g,ctx.controller,ctx.source,a.fin,ctx.ev);
   if('eclCount'in a){switch(a.eclCount){case 'elfTotal':return countMatching(g,{sub:'Elf',ctrl:'you'},ctx.controller)+g.players[ctx.controller].graveyard.filter(id=>matches(g,{sub:'Elf'},g.cards[id],ctx.controller)).length;default:return 0;}}
   if ('colors' in a) {
@@ -428,6 +431,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'copyCreature': {
       for(const c of resolveRef(g,ctx,ef.what).cards) {const copiable=copiableDefinition(c);const def={...copiable,supertypes:ef.nonLegendary || ef.p!==undefined ? copiable.supertypes?.filter(s=>s!=='Legendary') : copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const [t]=yield* makeEclTokenBatch(g,ctx.controller,def,1);if(!t)continue;if(ef.temp)(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});ctx.created=t.id;} return;
     }
+    case 'mkm':yield* mkmEffect(g,ctx,ef);return;
     case 'fin':yield* finEffect(g,ctx,ef);return;
     case 'ecl':yield* eclEffect(g,ctx,ef);return;
     case 'tmt': yield* tmtEffect(g,ctx,ef);return;
@@ -632,7 +636,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'suspect':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield' || !isCreature(c)) continue;
-        c.suspected = true;
+        if(!g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='airtight-alibi'))c.suspected = true;
         log(g, `${cardName(c)} 被懷疑（威懾、不能阻擋）`, me);
         g.version++;
       }
@@ -701,7 +705,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const orig = g.cards[item.cardId];
       const copiedDef=item.alt==='adventure'||item.alt==='back'?castDef(orig.def,item.alt):orig.def;
       const cp = newCard(g, copiedDef, me, true);
-      cp.evokePaid=orig.evokePaid;
+      cp.evokePaid=orig.evokePaid;cp.mkmEvidence=orig.mkmEvidence;
       cp.zone = 'stack';
       cp.spellWitherTurn=orig.spellWitherTurn;
       let targets = item.targets.slice();

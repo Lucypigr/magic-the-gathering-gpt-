@@ -48,7 +48,7 @@ export function costTotal(c: ManaCost): number {
 }
 
 export function manaValue(def: CardDef): number {
-  return costTotal(parseCost(def.cost));
+  return costTotal(parseCost(def.cost))+(def.mkm?.split?costTotal(parseCost(def.adventure?.cost)):0);
 }
 
 export function addCosts(a: ManaCost, b: ManaCost): ManaCost {

@@ -1,3 +1,4 @@
+import {mkmStatic} from './mkm-support';
 import { finStatic } from './fin-support';
 import { validateTargets } from './targets';
 import { canPayCost, payCost } from './actions';
@@ -149,6 +150,7 @@ export function* makeEclTokenBatch(
   const pending = [
     ...crowns.map((c) => ({ card: c, kind: 'crown' as const })),
     ...finStatic(g, pid, 'extraFrog').map((c) => ({ card: c, kind: 'frog' as const })),
+    ...mkmStatic(g,pid,'extraClue').filter(c=>c.mkmSolved).map(c=>({card:c,kind:'clue' as const})),
     ...g.battlefield
       .map((id) => g.cards[id])
       .filter((c) => c.controller === pid && abilitiesOf(g, c).some((a) => a.kind === 'static' && a.artifactTokenDragon))
@@ -171,7 +173,8 @@ export function* makeEclTokenBatch(
     }
     const selected = applicable[pick] ?? applicable[0];
     pending.splice(pending.indexOf(selected), 1);
-    if (selected.kind === 'frog') groups.push({ def: getDef('tok-fin-frog'), n: 1, primary: false });
+    if(selected.kind==='clue')groups.push({def:getDef('tok-clue'),n:1,primary:false});
+    else if (selected.kind === 'frog') groups.push({ def: getDef('tok-fin-frog'), n: 1, primary: false });
     else if (selected.kind === 'dragon') {
       for (const group of groups) if (group.def.types.includes('Artifact')) group.def = getDef('tok-fra-dragon');
     } else if (yield* yes(g, pid, '以佩帶生物的複製取代本次衍生物？')) {

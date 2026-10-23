@@ -14,6 +14,7 @@ export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): bo
   if(source&&c.controller!==by&&eclStatic(g,c.controller,'tam').some(s=>s.id!==c.id)&&colorsOf(c.def).some(col=>colorsOf(source.def).includes(col)))return false;
   if(c.controller!==by&&source&&c.colorProtections?.some(p=>p.turn===g.turn&&colorsOf(source.def).includes(p.color)))return false;
   if(c.controller!==by&&c.colorProtection?.turn===g.turn&&source&&colorsOf(source.def).includes(c.colorProtection.color))return false;
+  if(source&&c.controller!==by&&c.def.id==='niv-mizzet-guildpact'&&colorsOf(source.def).length>1)return false;
   if (c.controller !== by && hasKw(g, c, 'hexproof')) return false;
   return true;
 }
@@ -60,8 +61,10 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       for (const pid of [0, 1] as PID[])if(pid===controller||!finStatic(g,pid,'playerProtection').length)out.push({ p: pid });
       break;
     }
+    case 'creatureOrGy':addPerms(true);for(const id of g.players.flatMap(p=>p.graveyard)){const c=g.cards[id];if(isCreature(c)&&id!==sourceId&&matches(g,f,c,controller,sourceId))out.push({c:id});}break;
+    case 'spellOrPermanent':
     case 'spellOrCreature':
-      addPerms(true);
+      addPerms(spec.kind==='spellOrCreature');
       for (const s of g.stack) {
         if (s.kind !== 'spell' || s.cardId === sourceId) continue;
         const c = g.cards[s.cardId];
@@ -107,7 +110,7 @@ export function isLegalTarget(
     const c = g.cards[t.c];
     if (!c) return false;
     const zoneOk =
-      spec.kind === 'spell' ? c.zone === 'stack' : spec.kind === 'gyCard' ? c.zone === 'graveyard' : spec.kind === 'spellOrCreature' ? c.zone === 'stack' || c.zone === 'battlefield' : c.zone === 'battlefield';
+      spec.kind==='creatureOrGy'?(c.zone==='battlefield'||c.zone==='graveyard'):spec.kind === 'spell' ? c.zone === 'stack' : spec.kind === 'gyCard' ? c.zone === 'graveyard' : (spec.kind === 'spellOrCreature'||spec.kind==='spellOrPermanent') ? c.zone === 'stack' || c.zone === 'battlefield' : c.zone === 'battlefield';
     if (!zoneOk) return false;
   }
   return legalTargets(g, spec, controller, sourceId).some((x) => sameTarget(x, t));

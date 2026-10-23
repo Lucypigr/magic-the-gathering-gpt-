@@ -63,6 +63,7 @@ interface Draft {
   stage: 'targets' | 'sac';
   label: string;
   alt?: CastAlt;
+  evidenceCards?:number[];
   /** X 咒語選定的 X */
   x?: number;
 }
@@ -89,6 +90,8 @@ function specPrompt(spec: TargetSpec): string {
       return '選擇堆疊上的咒語';
     case 'gyCard':
       return '選擇墳墓場中的牌';
+    case 'creatureOrGy':return '選擇生物或墳墓場的生物牌';
+    case 'spellOrPermanent':return '選擇咒語或非地永久物';
     case 'spellOrCreature':
       return '選擇一個咒語或生物';
   }
@@ -113,6 +116,7 @@ export function Battle(props: Props) {
   const [confirmConcede, setConfirmConcede] = useState(false);
   const [menu, setMenu] = useState(false);
   /** X 咒語：選擇 X 的對話框 */
+  const [evidencePick,setEvidencePick]=useState<{draft:Draft;n:number}|null>(null);
   const [xPick, setXPick] = useState<{ draft: Draft; max: number; value: number } | null>(null);
   const [detail, setDetail] = useState<number | null>(null);
   const [seq, setSeq] = useState(0);
@@ -337,10 +341,11 @@ export function Battle(props: Props) {
       setDraft(null);
       return;
     }
+    if(g&&dr.evidenceCards===undefined){const c=g.cards[dr.source],ab=dr.kind==='activate'?abilitiesFor(g,c)[dr.ability!]:undefined;const n=dr.kind==='cast'?(dr.alt==='evidenceFree'?10:dr.alt==='evidence'?c.def.mkm?.optionalEvidence??0:c.def.mkm?.evidence===-1?dr.targets.reduce((v,t)=>v+(t&&'c'in t?manaValue(g.cards[t.c].def):0),0):c.def.mkm?.evidence??0):ab?.evidence??0;if(n>0){setDraft(null);setEvidencePick({draft:dr,n});return;}}
     const a: PriorityAction =
       dr.kind === 'cast'
-        ? { type: 'cast', card: dr.source, targets: dr.targets, mode: dr.mode, sac: dr.sac, alt: dr.alt, x: dr.x }
-        : { type: 'activate', card: dr.source, ability: dr.ability!, targets: dr.targets, sac: dr.sac, x: dr.x };
+        ? { type: 'cast', card: dr.source, targets: dr.targets, mode: dr.mode, sac: dr.sac, alt: dr.alt, x: dr.x,evidenceCards:dr.evidenceCards }
+        : { type: 'activate', card: dr.source, ability: dr.ability!, targets: dr.targets, sac: dr.sac, x: dr.x,evidenceCards:dr.evidenceCards };
     submitAction(a);
   }
 
@@ -580,7 +585,7 @@ export function Battle(props: Props) {
     ...castableCards(g,actingPid).filter(c=>c.zone!=='hand'),
     ...g.players[actingPid].graveyard.map(id=>g.cards[id]).filter(c=>c.def.abilities?.some(a=>a.kind==='activated'&&a.fromGraveyard)),
   ])];
-  const gySpec = draft?.stage === 'targets' && draft.specs[draft.targets.length]?.kind === 'gyCard';
+  const gySpec = draft?.stage === 'targets' && ['gyCard','creatureOrGy'].includes(draft.specs[draft.targets.length]?.kind??'');
 
   return (
     <div className="battle">
@@ -814,8 +819,8 @@ export function Battle(props: Props) {
                 ✕
               </button>
             )}
-            <CardZoom def={inspected.hidden && inspected.controller === 0 ? inspected.hidden : inspected.def} />
-            {inspected.hidden && inspected.controller === 0 && <div className="peek-chips"><span className="chip">面朝下（只有你看得到）</span></div>}
+            <CardZoom def={inspected.hidden && (inspected.controller === 0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) ? inspected.hidden : inspected.def} />
+            {inspected.hidden && (inspected.controller === 0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) && <div className="peek-chips"><span className="chip">面朝下（只有你看得到）</span></div>}
             {(liveStats || inspected.tapped || inspected.controller === 1 || inspected.loyalty != null) && inspected.zone === 'battlefield' && (
               <div className="peek-chips">
                 {inspected.loyalty != null && <span className="chip chip-loyal">忠誠 {inspected.loyalty}</span>}
@@ -874,7 +879,7 @@ export function Battle(props: Props) {
         <PileModal
           g={g}
           title={specPrompt(draft.specs[draft.targets.length])}
-          ids={[...g.players[0].graveyard, ...g.players[1].graveyard]}
+          ids={[...g.players[0].graveyard, ...g.players[1].graveyard,...(draft.specs[draft.targets.length].kind==='creatureOrGy'?g.battlefield:[])]}
           selectable={legalCards}
           onPick={(id) => chooseTarget({ c: id })}
           footer={
@@ -896,6 +901,7 @@ export function Battle(props: Props) {
       {pile != null && !gySpec && (
         <PileModal g={g} title={`${g.players[pile].name}的墳墓場`} ids={[...g.players[pile].graveyard].reverse()} onClose={() => setPile(null)} />
       )}
+      {evidencePick && <ChooseModal key={'evidence-'+evidencePick.draft.source} g={g} d={{type:'choose',player:actingPid,prompt:`蒐證${evidencePick.n}：選擇法力值合計至少${evidencePick.n}的牌`,options:g.players[actingPid].graveyard.filter(id=>id!==evidencePick.draft.source),min:1,max:g.players[actingPid].graveyard.length,purpose:'dig'}} onCancel={()=>setEvidencePick(null)} onSubmit={ids=>{if(ids.reduce((v,id)=>v+manaValue(g.cards[id].def),0)<evidencePick.n){setToast('所選牌的法力值合計不足');return;}const dr=evidencePick.draft;setEvidencePick(null);finish({...dr,evidenceCards:ids});}} />}
       {xPick && (
         <Modal title={`決定 X 的值`} onClose={() => setXPick(null)}>
           <div className="x-pick">

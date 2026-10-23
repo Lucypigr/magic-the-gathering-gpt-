@@ -1,3 +1,4 @@
+import {mkmStatic} from './mkm-support';
 import {colorsOf} from './mana';
 import { abilitiesSuppressed, cardName, creaturesOf, hasStaticFlag, isCreature, log, other, show, stats } from './state';
 import type { Card, GameState, PID } from './types';
@@ -28,6 +29,9 @@ export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
   const as = stats(g, attacker);
   if(as.kw.has('protection_opponent')&&blocker.controller!==attacker.controller)return false;
   if(as.kw.has('protection_colors')&&colorsOf(blocker.def).length)return false;
+  if(bs.p>=3&&as.p<=2&&mkmStatic(g,attacker.controller,'delney').length)return false;
+  if(attacker.def.id==='pompous-gadabout'&&blocker.hidden)return false;
+  if(g.battlefield.some(id=>g.cards[id].def.id==='burden-of-proof'&&g.cards[id].attachedTo===blocker.id)&&attacker.def.subtypes?.includes('Detective')&&!(blocker.controller===g.cards[g.battlefield.find(id=>g.cards[id].def.id==='burden-of-proof'&&g.cards[id].attachedTo===blocker.id)!].controller&&blocker.def.subtypes?.includes('Detective')))return false;
   if (as.kw.has('unblockable')) return false;
   if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadePowGte!==undefined&&bs.p>=attacker.def.evadePowGte)return false;
   if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadeGreaterPower&&bs.p>as.p)return false;
@@ -52,7 +56,8 @@ export function attackablePlaneswalkers(g: GameState, attacker: PID): Card[] {
 }
 
 export function declareAttackers(g: GameState, pid: PID, ids: number[], targets?: Record<number, number>): Card[] {
-  const uniq = [...new Set(ids)];
+  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&((c.mkmMarks?.mustAttackBlock===g.turn)||(!abilitiesSuppressed(g,c)&&c.def.id==='red-herring'));});
+  const uniq = [...new Set([...ids,...forced])];
   const list = uniq.map((id) => g.cards[id]).filter((c) => c && c.controller === pid && canAttack(g, c));
   const pws = new Set(attackablePlaneswalkers(g, pid).map((c) => c.id));
   const attackedPw = new Set<number>();
@@ -103,6 +108,7 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
     const chosen=[...new Set([...assigned.map(([id])=>id),...candidates.map(c=>c.id)])].slice(0,minimum);
     valid=valid.filter(([id])=>!chosen.includes(id));valid.push(...chosen.map(id=>[id,a.id] as [number,number]));
   }
+  for(const id of g.battlefield){const b=g.cards[id];if(b.controller!==pid||valid.some(([id])=>id===b.id))continue;const w=g.cards[b.mkmMarks?.blockWolf??-1];const target=w?.attacking&&canBlock(g,b,w)?w:b.mkmMarks?.mustAttackBlock===g.turn?attackers(g).find(a=>canBlock(g,b,a)):undefined;if(target)valid.push([b.id,target.id]);}
   // 威懾：只被一個生物阻擋的攻擊無效
   const countFor = (a: number) => valid.filter(([, x]) => x === a).length;
   valid = valid.filter(([, a]) => !(g.cards[a].def.id==='relentless-x-atm092'?countFor(a)<3:stats(g,g.cards[a]).kw.has('menace')&&countFor(a)<2));
@@ -114,6 +120,7 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
     ac.blockedBy.push(b);
     ac.wasBlocked = true;
   }
+  for(const a of attackers(g))if(a.blockedBy.length)emit(g,{type:'mkm',action:'blocked',card:a.id,player:a.controller});
   if (valid.length) {
     log(
       g,

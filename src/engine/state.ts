@@ -1,3 +1,4 @@
+import {mkmApplyStats,mkmCondition,mkmStatic} from './mkm-support';
 import {finApplyStats,finBaseStats,finCondition} from './fin-support';
 import { displayName } from '../data/names';
 import { colorsOf, manaValue } from './mana';
@@ -380,6 +381,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   if(!lost&&d.combatPowerMin!==undefined&&st.p<d.combatPowerMin){st.cantAttack=true;st.cantBlock=true;}
   for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===c.id&&eq.def.equip?.powerPerArtifact)st.p+=g.battlefield.filter(id=>g.cards[id].controller===eq.controller&&g.cards[id].def.types.includes('Artifact')).length;}
   finApplyStats(g,c,st);
+  mkmApplyStats(g,c,st);
   return st;
 }
 
@@ -395,6 +397,10 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;
+  if(f.suspected!==undefined&&!!c.suspected!==f.suspected)return false;
+  if(f.faceDown!==undefined&&!!c.hidden!==f.faceDown)return false;
+  if(f.dealtDamage!==undefined&&(c.mkmMarks?.dealtDamage===g.turn)!==f.dealtDamage)return false;
+  if(f.gyThisTurn&&c.gyTurn!==g.turn)return false;
   if(f.ids&&!f.ids.includes(c.id))return false;
   const d = c.def;
   if (f.type && !asArr(f.type).some((t) => d.types.includes(t))) return false;
@@ -404,7 +410,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
     if (f.ctrl === 'you' ? ctl !== pov : ctl === pov) return false;
   }
   if (f.color || f.nonColor) {
-    const cols = colorsOf(d);
+    const cols = c.zone==='battlefield'&&!isLand(c)&&mkmStatic(g,c.controller,'guildpact').length?['W','U','B','R','G']:colorsOf(d);
     if (f.color && !asArr(f.color).some((x) => cols.includes(x))) return false;
     if (f.nonColor && asArr(f.nonColor).some((x) => cols.includes(x))) return false;
   }
@@ -412,14 +418,17 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   if(f.minusCounters!==undefined&&(c.counters<0)!==f.minusCounters)return false;
   const attachedChangeling=g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='stalactite-dagger');
   const jobTypes=c.zone==='battlefield'?g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&!abilitiesSuppressed(g,g.cards[id])).flatMap(id=>g.cards[id].def.fin?.job?[g.cards[id].def.fin!.job!]:[]):[];
-  if (f.sub && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
+  const mkmLandTypes=isLand(c)&&c.zone==='battlefield'&&mkmStatic(g,c.controller,'guildpact').length?['Plains','Island','Swamp','Mountain','Forest']:[];
+  if (f.sub && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
   if (f.nonSub && (asArr(f.nonSub).some(s=>jobTypes.includes(s))||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
   if (f.attackedThisTurn !== undefined && (c.attackedTurn === g.turn) !== f.attackedThisTurn) return false;
   if(f.name&&d.name!==f.name)return false;
   if(f.nonNames?.includes(d.name))return false;
   if (f.legendary !== undefined && !!d.supertypes?.includes('Legendary') !== f.legendary) return false;
   if (f.basic !== undefined && !!d.supertypes?.includes('Basic') !== f.basic) return false;
-  const actualManaValue=manaValue(d)+(c.zone==='stack'?(g.stack.find(s=>s.kind==='spell'&&s.cardId===c.id)?.x??0)*(d.cost?.match(/\{X\}/g)?.length??0):0);
+  const stackItem=c.zone==='stack'?g.stack.find(s=>s.kind==='spell'&&s.cardId===c.id):undefined;
+  const valueDef=stackItem&&d.mkm?.split?{...d,cost:stackItem.alt==='adventure'?d.adventure?.cost:d.cost,mkm:undefined}:d;
+  const actualManaValue=manaValue(valueDef)+(c.zone==='stack'?(g.stack.find(s=>s.kind==='spell'&&s.cardId===c.id)?.x??0)*(d.cost?.match(/\{X\}/g)?.length??0):0);
   if (f.mvMax !== undefined && actualManaValue > f.mvMax) return false;
   if (f.mvMin !== undefined && actualManaValue < f.mvMin) return false;
   if (f.tapped !== undefined && c.tapped !== f.tapped) return false;
@@ -482,6 +491,7 @@ export function checkCond(
   const me = g.players[controller];
   const opp = g.players[other(controller)];
   switch (cond.c) {
+    case 'mkm':return mkmCondition(g,cond,controller,sourceId??-1,ev);
     case 'and':return cond.conds.every(c=>checkCond(g,c,controller,sourceId,targets,ev));
     case 'fin':return finCondition(g,cond,controller,sourceId??-1,ev);
     case 'ecl':{

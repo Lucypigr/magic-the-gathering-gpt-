@@ -34,7 +34,7 @@ export function faceDownDef(real: CardDef, ward: boolean): CardDef {
     faceDown: true,
     ...(ward ? { ward: 2 } : {}),
     abilities: up
-      ? [{ kind: 'activated', cost: { mana: up }, effects: [], label: `翻成正面 ${up}`, special: true }]
+      ? [{ kind: 'activated', cost: { mana: up }, effects: [], label: `翻成正面 ${up}`, special: true,...(up.includes('X')?{xMana:1}:{}) }]
       : [],
     text: `面朝下的2/2生物${ward ? '，守護{2}' : ''}。${up ? `\n${up}：翻成正面（任何時候都可以，不使用堆疊）。` : ''}`,
   };
@@ -52,8 +52,12 @@ export function putFaceDown(g: GameState, c: Card, pid: PID, ward: boolean): voi
 
 export function turnFaceUp(g: GameState, c: Card): boolean {
   if (c.zone !== 'battlefield' || !c.hidden) return false;
+  if(g.active!==c.controller&&g.battlefield.some(id=>g.cards[id].controller===g.active&&g.cards[id].def.id==='karlov-watchdog'))return false;
+  const real=c.hidden;
   c.def = c.hidden;
   c.hidden = undefined;
+  if(real.id==='bubble-smuggler')c.counters+=4;
+  if(real.id==='crowd-control-warden')c.counters+=g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===c.controller&&g.cards[id].def.types.includes('Creature')).length;
   g.version++;
   log(g, `${cardName(c)} 翻成正面`, c.controller, 'cast');
   emit(g, { type: 'turnedFaceUp', card: c.id });

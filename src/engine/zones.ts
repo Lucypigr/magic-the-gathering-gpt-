@@ -1,3 +1,4 @@
+import {mkmObserve,mkmStatic,mkmTriggerMatches} from './mkm-support';
 import {finTriggerMatches,finStatic} from './fin-support';
 import { colorsOf } from './mana';
 import { getDef } from './registry';
@@ -26,6 +27,7 @@ import type { Card, CardDef, GameEvent, GameState, PID, TargetRef, TriggeredAbil
 function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEvent): boolean {
   const pov = c.controller;
   switch (ab.on) {
+    case 'mkmEvent':return mkmTriggerMatches(g,c,ab,ev);
     case 'finEvent':return finTriggerMatches(g,c,ab,ev);
     case 'combatDamagePlayerOrWalker':return ev.type==='combatPlayerOrWalker'&&ev.source===c.id;
     case 'allyCombatDamagePlayerOrWalker':return ev.type==='combatPlayerOrWalker'&&ev.controller===pov;
@@ -200,6 +202,7 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 }
 
 export function emit(g: GameState, ev: GameEvent): void {
+  mkmObserve(g,ev);
   if(ev.type==='dies'){for(const pl of g.players)(pl.finFlags??={}).creaturesDied=(pl.finFlags?.creaturesDied??0)+1;(g.players[other(ev.controller)].finFlags??={}).opponentCreatureDied=1;}
   if(ev.type==='combatDamage'){const source=g.cards[ev.source],pid=source.controller;(g.players[ev.player].finFlags??={}).combatTaken=(g.players[ev.player].finFlags?.combatTaken??0)+ev.amount;if(source.def.supertypes?.includes('Legendary'))(g.players[pid].finFlags??={}).legendCombat=1;if(matches(g,{sub:['Scout','Pirate','Rogue']},source,pid))for(const c of g.battlefield.map(id=>g.cards[id]).filter(c=>c.controller===pid&&c.def.id==='vaan-street-thief'))(c.finMarks??={}).vaanHit=1;}
   if(ev.type==='cast'){const c=g.cards[ev.card],p=g.players[ev.player];if(isCreature(c)&&matches(g,{sub:'Human'},c,ev.player)){const before=p.finFlags?.humanCast??0;(p.finFlags??={}).humanCast=before+1;;}if(isCreature(c)&&c.def.supertypes?.includes('Legendary'))(p.finFlags??={}).legendCast=(p.finFlags?.legendCast??0)+1;}
@@ -226,7 +229,8 @@ export function emit(g: GameState, ev: GameEvent): void {
       if(c.def.fin?.wardPower)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-46,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'ecl',action:'wardLife',n:ev.stackSid,value:Math.max(0,stats(g,c).p)}]}});
     }
 
-    if((c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
+    if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)&&(c.def.id==='vein-ripper'||c.def.id==='axebane-ferox'))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-71,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'mkm',action:'ward',n:ev.stackSid}]}});
+    if((c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN'||c?.def.set==='MKM')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
       const extra=g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)).length:0);},0);
       for(let i=0;i<(1+extra);i++)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-3,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:c.def.ward}]}});
     }
@@ -248,10 +252,11 @@ export function emit(g: GameState, ev: GameEvent): void {
       }
     }
   }
+  if(ev.type==='etb'&&(isCreature(g.cards[ev.card])||g.cards[ev.card].def.types.includes('Artifact'))&&g.battlefield.some(id=>abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.mkm==='noEtb')))return;
   for (const id of g.battlefield) {
     const c = g.cards[id];
     const finExtra=g.battlefield.reduce((n,sid)=>{const source=g.cards[sid];if(source.controller!==c.controller)return n;for(const a of abilitiesOf(g,source))if(a.kind==='static'){if(a.fin==='masamune'&&ev.type==='dies'){const host=g.cards[source.attachedTo??-1];if(host&&host.controller===c.controller&&(host.id===c.id||c.def.types.includes('Emblem')&&c.owner===host.controller))n++;}if(a.fin==='cloudDouble'&&g.battlefield.some(id=>g.cards[id].attachedTo===source.id&&g.cards[id].def.equip)&&(c.id===source.id||c.attachedTo===source.id))n++;if(a.fin==='travelingDouble'&&ev.type==='etb'&&g.cards[ev.card].controller===source.controller&&(isLand(g.cards[ev.card])||matches(g,{sub:'Bird'},g.cards[ev.card],source.controller)))n++;}return n;},0);
-    const extraTriggers=finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
+    const extraTriggers=(isCreature(c)&&stats(g,c).p<=2?mkmStatic(g,c.controller,'delney').length:0)+finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
       for(let i=0;i<(1+extraTriggers);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
@@ -395,7 +400,10 @@ export function refreshTlaPermanents(g: GameState): void {
 }
 
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
+  if(c.zone==='battlefield'&&c.mkmMarks?.controlled!==undefined){const x=g.cards[c.mkmMarks.controlled];if(x?.zone==='battlefield'){x.controller=c.mkmMarks.previous as PID;if(x.tlaOriginalDef){x.def=x.tlaOriginalDef;x.tlaOriginalDef=undefined;}}}
+  if(c.zone==='battlefield')(c.mkmMarks??={}).lastController=c.controller;
   if(c.tokenDeparted)return;
+  if(c.zone==='stack'&&to==='graveyard'&&c.mkmMarks?.voltBottom){to='library';bottom=true;delete c.mkmMarks.voltBottom;}
   if(to==='graveyard'&&c.zone==='stack'&&c.finExileOnResolve)to='exile';
   if(to==='graveyard'&&(c.finMarks?.deathHades||finStatic(g,c.owner,'hadesExile').length))to='exile';
   if(to==='graveyard'&&c.zone==='battlefield'&&isCreature(c)&&!c.token){const crystal=c.finMarks?.deathCrystal?g.cards[c.finMarks.deathCrystal]:finStatic(g,other(c.controller),'darkness')[0];if(crystal){to='exile';(crystal.finLinked??=[]).push(c.id);gainLife(g,crystal.controller,2);}}
@@ -483,7 +491,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   }
   g.version++;
   if(to==='graveyard'&&!c.token&&c.def.types.some(t=>['Creature','Artifact','Enchantment','Planeswalker','Land'].includes(t)))emit(g,{type:'permanentToGy',card:c.id,player:c.owner});
-  if (wasOnBf) returnLinked(g, c.id);
+  if (wasOnBf) {returnLinked(g, c.id);if(c.def.id==='aurelias-vindicator')for(const id of c.mkmLinked??[])if(g.cards[id]?.zone==='exile')moveCard(g,g.cards[id],'hand');c.mkmSolved=undefined;c.mkmLinked=undefined;}
   emit(g,{type:'fin',action:'zoneMove',card:c.id,player:c.owner,amount:0,from,to});
   if(wasOnBf&&c.finPartner!==undefined){const partner=g.cards[c.finPartner];c.finPartner=undefined;if(partner?.zone==='exile'){partner.finPartner=undefined;moveCard(g,partner,to,bottom);}}
   refreshTlaPermanents(g);
@@ -526,6 +534,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   resetPermanentState(c);
   if(eclAttachment!==null)c.attachedTo=eclAttachment;
   if(enterAs){c.tlaOriginalDef=c.def;c.def=enterAs;c.copyLayer=enterAs;}
+  c.mkmSolved=undefined;if(c.mkmMarks)for(const key of ['impostor','unlock','blood','killer','controlled','previous'])delete c.mkmMarks[key];
   c.zone = 'battlefield';
   g.battlefield.push(c.id);
   c.controller = controller;
@@ -550,6 +559,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   }
   if(c.def.id==='weather-maker')c.charge=0;
   if(c.def.types.includes('Artifact'))g.players[controller].artifactEnteredThisTurn=true;
+  if(c.def.id==='crowd-control-warden')c.counters+=g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===controller&&isCreature(g.cards[id])).length;
   if(c.counters>0&&isCreature(c))c.counters*=2**finStatic(g,c.controller,'doubleCounters').length;
   if (c.counters > 0 && isCreature(c)) {
     // 帶著指示物進場：同樣套用「多放 n 個」
@@ -697,6 +707,7 @@ export function drawCards(g: GameState, pid: PID, n: number): number {
   let drawn = 0;
   for (let i = 0; i < n; i++) {
     if (!p.library.length) {
+      if(mkmStatic(g,pid,'emptyLibrary').length)return drawn;
       p.drewFromEmpty = true;
       return drawn;
     }
@@ -797,6 +808,7 @@ export function dealDamage(
   const kws = src ? (src.zone === 'battlefield' ? stats(g, src).kw : new Set(src.def.keywords ?? [])) : new Set();
   if(src?.def.subtypes?.some(s=>s==='Noble'||s==='Lesson')&&g.battlefield.some(id=>g.cards[id].controller===srcController&&g.cards[id].def.id==='lo-and-li-twin-tutors'&&!abilitiesSuppressed(g,g.cards[id])))kws.add('lifelink');
   if(src?.spellWitherTurn===g.turn)kws.add('wither');
+  if(src?.mkmMarks?.judith===g.turn){kws.add('deathtouch');kws.add('lifelink');}
   const srcName = src ? cardName(src) : '';
   if(opts.combat&&src&&!opts.batchCombat)emit(g,{type:'combatDamageAny',source:src.id,controller:srcController,amount:n});
   if ('p' in target) {
