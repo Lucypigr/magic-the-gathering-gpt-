@@ -26,3 +26,5 @@ export function zhName(def: Named): string | undefined {
 export function displayName(def: Named): string {
   return (useZh && zhName(def)) || def.name || (def.room?'房間（尚未解鎖）':'');
 }
+
+export function isChineseCardLanguage(): boolean { return useZh; }

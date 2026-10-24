@@ -241,8 +241,8 @@ export function Home({ profile, go, update }: { profile: Profile; go: (s: Screen
 function zhText(): string {
   const s = zhStatus();
   if (s.loading) return '正在向 Scryfall 查詢中文版卡牌…';
-  const base = '卡名與完整卡面優先使用繁體中文版，其次簡體中文版（卡名轉為繁體字），沒有中文版的卡維持英文。';
-  if (s.failed && !s.named) return `目前無法連線到 Scryfall，暫時顯示英文卡名。${base}`;
+  const base = '效果文字使用本機繁體中文，不需等待下載。卡名與卡圖維持原有語言設定；沒有中文版時保留原圖。';
+  if (s.failed && !s.named) return `目前無法連線到 Scryfall，部分卡名暫用英文；效果文字仍顯示繁體中文。${base}`;
   return `${base}已取得 ${s.named} 張卡的中文名。`;
 }
 

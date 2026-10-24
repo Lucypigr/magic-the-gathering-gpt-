@@ -1,3 +1,4 @@
+import {traditionalRulesText} from '../data/localization';
 import { displayName, zhName } from '../data/names';
 import { useMemo, useState } from 'react';
 import type { Screen, UpdateProfile } from '../App';
@@ -25,7 +26,7 @@ export interface PoolFilter {
 export function matchFilter(d: CardDef, f: PoolFilter): boolean {
   if (f.q) {
     const q = f.q.toLowerCase();
-    if (!d.name.toLowerCase().includes(q) && !d.text.includes(f.q) && !(zhName(d) ?? '').includes(f.q)) return false;
+    if (!d.name.toLowerCase().includes(q) && !d.text.includes(f.q) && !traditionalRulesText(d.text).includes(f.q) && !(zhName(d) ?? '').includes(f.q)) return false;
   }
   if (f.color) {
     const cols = colorsOf(d);

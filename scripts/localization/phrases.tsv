@@ -1,0 +1,331 @@
+first strike	先攻
+double strike	連擊
+combat damage	戰鬥傷害
+noncombat damage	非戰鬥傷害
+mana value	法術力值
+mana cost	法術力費用
+mana costs	法術力費用
+converted mana cost	法術力值
+any target	任意一個目標
+any number of	任意數量的
+one or more	一個或更多
+one or two	一個或兩個
+up to	至多
+at least	至少
+or greater	或更大
+or less	或更小
+or fewer	或更少
+at random	隨機
+in any order	以任意順序
+in a random order	以隨機順序
+until end of turn	直到回合結束
+until the end of your next turn	直到你的下一個回合結束
+until the end of the turn	直到回合結束
+until your next turn	直到你的下一個回合
+for the rest of the game	直到本局遊戲結束
+for the first time each turn	每回合中的第一次
+only once each turn	每回合只會觸發一次
+only as a sorcery	只能於巫術時機
+only during your turn	只能在你的回合中
+only on your turn	只能在你的回合中
+during your turn	在你的回合中
+during each of your turns	在你的每個回合中
+at the beginning of your end step	在你的結束步驟開始時
+at the beginning of the next end step	在下一個結束步驟開始時
+at the beginning of each end step	在每個結束步驟開始時
+at the beginning of your upkeep	在你的維持開始時
+at the beginning of each upkeep	在每個維持開始時
+at the beginning of your second main phase	在你的第二主階段開始時
+at the beginning of combat on your turn	在你回合的戰鬥開始時
+at the beginning of combat	在戰鬥開始時
+at the beginning of your precombat main phase	在你的戰鬥前主階段開始時
+at the beginning of your first main phase	在你的第一主階段開始時
+at the beginning of your postcombat main phase	在你的戰鬥後主階段開始時
+at the beginning of	在開始時：
+from anywhere	從任何區域
+from among them	從其中
+from among those cards	從那些牌中
+into your hand	放進你手上
+into their hand	放進其手上
+into its owner's hand	放進其擁有者手上
+from your hand	從你手上
+from their hand	從其手上
+from your graveyard	從你的墳墓場
+from a graveyard	從任一墳墓場
+from the battlefield	從戰場
+from exile	從放逐區
+from your library	從你的牌庫
+onto the battlefield	放進戰場
+on the battlefield	在戰場上
+to the battlefield	回到戰場
+leaves the battlefield	離開戰場
+enters the battlefield	進戰場
+under your control	在你的操控下
+under its owner's control	在其擁有者的操控下
+under their owners' control	在各自擁有者的操控下
+on top of your library	置於你的牌庫頂
+on the bottom of your library	置於你的牌庫底
+to the top of your library	置於你的牌庫頂
+to the bottom of your library	置於你的牌庫底
+in your graveyard	在你的墳墓場中
+in their graveyard	在其墳墓場中
+in a graveyard	在任一墳墓場中
+in all graveyards	在所有墳墓場中
+in your hand	在你手上
+in their hand	在其手上
+in exile	在放逐區中
+on the stack	在堆疊中
+top of your library	你的牌庫頂
+bottom of your library	你的牌庫底
+the top	牌庫頂的
+put the rest	將其餘牌放置
+then shuffle	然後洗牌
+shuffle your library	將你的牌庫洗牌
+shuffle their library	將其牌庫洗牌
+search your library for	從你的牌庫中搜尋
+search their library for	從其牌庫中搜尋
+look at	檢視
+any time	任何時機
+as though	視同
+without paying its mana cost	而不需支付其法術力費用
+without paying their mana costs	而不需支付其法術力費用
+rather than pay its mana cost	代替支付其法術力費用
+rather than paying its mana cost	代替支付其法術力費用
+as an additional cost to cast this spell	施放此咒語的額外費用為
+as an additional cost to cast	施放的額外費用為
+as long as	只要
+if you do	若你如此作
+if you don't	若你未如此作
+when you do	當你如此作時
+if it does	若它如此作
+if they do	若其如此作
+if they don't	若其未如此作
+if it was	若它曾
+if you would	如果你將要
+if a source	如果某個來源
+would be dealt	將受到
+would deal	將造成
+would enter	將進戰場
+would die	將死去
+would be put	將被放置
+instead of	代替
+other than	以外的
+except that	但有以下差異：
+in addition to its other types	且仍具有原有類別
+in addition to its other creature types	且仍具有原有生物類別
+in addition to their other types	且仍具有原有類別
+with the same name	同名的
+with different names	名稱各不相同的
+of your choice	由你選擇
+that hasn't been chosen	尚未被選擇的
+that haven't been chosen	尚未被選擇的
+choose one that hasn't been chosen	選擇一項尚未選過的模式
+choose one or both	選擇一項或兩項
+choose one	選擇一項
+choose two	選擇兩項
+choose three	選擇三項
+for each	每有一個
+for each of	每有一個
+number of	數量的
+an amount of	數量的
+equal to	等同於
+where X is	其中X為
+where X is the	其中X為
+divided as you choose among	由你選擇分配給
+rounded up	向上取整
+rounded down	向下取整
+any combination of	任意組合的
+of any color	任意顏色的
+of any one color	任意單一顏色的
+of any type	任意類型的
+any color	任意顏色
+in any combination of colors	任意顏色組合
+this turn	本回合
+that turn	該回合
+each turn	每回合
+last turn	上一回合
+next turn	下一回合
+your turn	你的回合
+your next turn	你的下一個回合
+the same turn	同一回合
+the first time	第一次
+the second time	第二次
+this way	以此法
+that way	以該方式
+those creatures	那些生物
+that creature	該生物
+that player	該玩家
+that opponent	該對手
+that card	該牌
+that spell	該咒語
+that permanent	該永久物
+those cards	那些牌
+those permanents	那些永久物
+that source	該來源
+this creature	此生物
+this permanent	此永久物
+this spell	此咒語
+this artifact	此神器
+this enchantment	此結界
+this Equipment	此武具
+this Aura	此靈氣
+this land	此地
+this Vehicle	此載具
+this Saga	此傳紀
+this card	此牌
+this ability	此異能
+this token	此衍生物
+creature card	生物牌
+creature cards	生物牌
+land card	地牌
+land cards	地牌
+permanent card	永久物牌
+permanent cards	永久物牌
+artifact card	神器牌
+enchantment card	結界牌
+instant card	瞬間牌
+sorcery card	法術牌
+creature spell	生物咒語
+creature spells	生物咒語
+noncreature spell	非生物咒語
+noncreature spells	非生物咒語
+enchanted creature	所結附的生物
+equipped creature	佩帶此武具的生物
+activated ability	起動式異能
+activated abilities	起動式異能
+triggered ability	觸發式異能
+triggered abilities	觸發式異能
+loyalty ability	忠誠異能
+loyalty counter	忠誠指示物
+loyalty counters	忠誠指示物
+time counter	計時指示物
+time counters	計時指示物
+stun counter	暈眩指示物
+stun counters	暈眩指示物
+finality counter	終結指示物
+finality counters	終結指示物
+lore counter	學問指示物
+lore counters	學問指示物
+shield counter	護盾指示物
+shield counters	護盾指示物
+charge counter	充能指示物
+charge counters	充能指示物
+revival counter	復生指示物
+revival counters	復生指示物
+incubation counter	孵化指示物
+incubation counters	孵化指示物
+fellowship counter	同伴指示物
+fellowship counters	同伴指示物
+bait counter	魚餌指示物
+bait counters	魚餌指示物
+stash counter	藏貨指示物
+stash counters	藏貨指示物
+nest counter	巢穴指示物
+nest counters	巢穴指示物
++1/+1 counter	+1/+1指示物
++1/+1 counters	+1/+1指示物
+-1/-1 counter	-1/-1指示物
+-1/-1 counters	-1/-1指示物
+protection from everything	反一切保護
+hexproof from instants	反瞬間辟邪
+protection from	反色保護：
+hexproof from	反色辟邪：
+no maximum hand size	沒有手牌數量上限
+maximum hand size	手牌數量上限
+card types	牌的類別
+basic land types	基本地類別
+creature types	生物類別
+creature type	生物類別
+power and toughness	力量與防禦力
+base power and toughness	基礎力量與防禦力
+power or toughness	力量或防禦力
+becomes tapped	成為已橫置
+becomes untapped	成為未橫置
+becomes the target of	成為以下來源的目標：
+can't be countered	不能被反擊
+can't be blocked	不能被阻擋
+can't attack or block	不能攻擊或阻擋
+can't attack	不能攻擊
+can't block	不能阻擋
+can't gain life	不能獲得生命
+can't lose the game	不會輸掉遊戲
+can't win the game	不能贏得遊戲
+lose the game	輸掉遊戲
+win the game	贏得遊戲
+don't lose the game	不會輸掉遊戲
+doesn't untap	不會重置
+can't activate	不能起動
+can't cast	不能施放
+can't be activated	不能被起動
+can be spent	可以用來支付
+may be spent	可以用來支付
+hasn't been chosen	尚未選過
+haven't been chosen	尚未選過
+face down	牌面朝下
+face up	牌面朝上
+face-down	牌面朝下的
+face-up	牌面朝上的
+mana abilities	法術力異能
+mana ability	法術力異能
+beginning of	開始時：
+end of	結束時：
+attack alone	單獨攻擊
+attacks alone	單獨攻擊
+one fewer	少一個
+a copy of	一個複製品，複製對象為
+copies of	複製品，複製對象為
+that much life	等量生命
+that much damage	等量傷害
+that many cards	等量的牌
+that many	等量的
+that much	等量的
+twice that many	兩倍數量的
+this creature or another	此生物或另一個
+its owner's hand	其擁有者手上
+their owners' hands	各自擁有者手上
+their owners' libraries	各自擁有者的牌庫
+into its owner's library	放進其擁有者的牌庫
+up to one	至多一個
+up to two	至多兩個
+up to three	至多三個
+up to four	至多四個
+up to five	至多五個
+a card	一張牌
+one card	一張牌
+two cards	兩張牌
+three cards	三張牌
+four cards	四張牌
+five cards	五張牌
+six cards	六張牌
+seven cards	七張牌
+X cards	X張牌
+an effect	一個效應
+as this creature enters	於此生物進場時
+as this artifact enters	於此神器進場時
+as this land enters	於此地進場時
+if you don't	若你未如此作
+if you do	若你如此作
+in hand	在手上
+0 or less life	0或更少的生命
+has one or more loyalty counters on him	上面有一個或更多忠誠指示物
+other than	但不包括
+rather than	以代替
+can't be blocked by more than one creature	不能被多於一個生物阻擋
+must be blocked if able	若能阻擋，則必須阻擋它
+attacks each combat if able	若能攻擊，則每次戰鬥都必須攻擊
+is dealt damage	受到傷害
+are dealt damage	受到傷害
+was dealt damage	受到過傷害
+activate only if	只能於以下條件成立時起動：
+activate only	起動限制：
+spend this mana only to	此法術力只能用來
+spend that mana only to	該法術力只能用來
+you have no maximum hand size	你沒有手牌數量上限
+at the beginning of the next end step	在下一個結束步驟開始時
+there is an additional combat phase after this phase	在此階段後額外進行一個戰鬥階段
+it enters tapped	它須橫置進場
+enters tapped	須橫置進場
+as 此牌 enters	於此牌進場時
+as a sorcery	於巫術時機
+this ability triggers only once each turn	此異能每回合只會觸發一次
+one fewer	少一個

@@ -25,7 +25,7 @@ import { RankBadge } from '../Ladder';
 import { CardDetail, CardFace, CardZoom } from '../CardView';
 import { Modal } from '../common';
 import { LEVEL_ZH } from '../i18n';
-import { ManaCost } from '../Mana';
+import { ManaCost,RulesText } from '../Mana';
 import { Avatar, CreatureZone, LandZone, OppHand, OtherZone, PhaseTrack, Piles, StackView, type Marks } from './Board';
 import { ArrowLayer, Spotlight } from './Fx';
 import { ChooseModal, GameOverModal, ModeModal, MulliganModal, PileModal, YesNoModal } from './Modals';
@@ -831,6 +831,12 @@ export function Battle(props: Props) {
             )}
             <CardZoom def={inspected.hidden && (inspected.controller === 0||isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) ? inspected.hidden : inspected.def} />
             {inspected.hidden && (inspected.controller === 0||isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) && <div className="peek-chips"><span className="chip">面朝下（只有你看得到）</span></div>}
+            {focus===inspectId && settings.cardLang==='zh' && inspected.def.text && (
+              <details className="peek-rules" open>
+                <summary>中文效果</summary>
+                <RulesText text={inspected.hidden && (inspected.controller===0 || isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0 || g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) ? inspected.hidden.text : inspected.def.text} size={14}/>
+              </details>
+            )}
             {(liveStats || inspected.tapped || inspected.controller === 1 || inspected.loyalty != null) && inspected.zone === 'battlefield' && (
               <div className="peek-chips">
                 {inspected.loyalty != null && <span className="chip chip-loyal">忠誠 {inspected.loyalty}</span>}

@@ -1,3 +1,4 @@
+import {displayRulesText} from '../data/localization';
 import { Fragment, type ReactNode } from 'react';
 
 const GLYPH: Record<string, string> = { W: '白', U: '藍', B: '黑', R: '紅', G: '綠', C: '◇' };
@@ -62,6 +63,7 @@ export function ManaCost({ cost, size }: { cost?: string; size?: number }) {
 /** 把規則敘述中的 {R}、{T} 等符號換成圖示 */
 export function RulesText({ text, size }: { text: string; size?: number }) {
   if (!text) return null;
+  text=displayRulesText(text);
   return (
     <>
       {text.split('\n').map((line, i) => {
