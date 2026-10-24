@@ -1,0 +1,37 @@
+{
+  "tok-emblem-chandra-burn": {
+    "name": "反抗烈炬茜卓徽記",
+    "sourceName": "Chandra, Torch of Defiance Emblem",
+    "originalChinese": "反抗烈炬茜卓徽记",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 64259,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "50ce1db3-417c-4c22-84e5-c463addde476",
+    "set": "TKLD",
+    "number": "10",
+    "released": "2016-09-30",
+    "aliasReason": "施放咒語造成5點傷害的徽記；不能與同名的抓牌徽記混用。"
+  },
+  "tok-emblem-chandra-draw": {
+    "name": "適令寒冰茜卓徽記",
+    "sourceName": "Chandra, Chill of Compliance Emblem",
+    "originalChinese": "适令寒冰茜卓徽记",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18518,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "f28bd571-eccd-4d8e-afee-5a87ed8529e1",
+    "faceOracleId": "94fd845e-9050-58f9-a397-8da84b01a1f5",
+    "set": "TFRA",
+    "number": "17",
+    "stage": 5,
+    "released": "2026-10-02",
+    "aliasReason": "施放咒語抓牌的徽記；不能與同名的傷害徽記混用。"
+  }
+}

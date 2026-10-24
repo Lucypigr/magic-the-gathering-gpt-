@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { displayName } from '../../data/names';
 import type { ReactNode } from 'react';
 import type { Decision, GameState, TargetRef } from '../../engine/types';
 import { CardDetail, CardFace } from '../CardView';
@@ -116,6 +117,10 @@ export function ModeModal({ g, d, onSubmit }: { g: GameState; d: Extract<Decisio
   const [sel, setSel] = useState<number[]>([]);
   const src = d.source != null ? g.cards[d.source] : null;
   const toggle = (i: number) => setSel((s) => (s.includes(i) ? s.filter((x) => x !== i) : d.count === 1 ? [i] : s.length >= d.count ? s : [...s, i]));
+  const optionName = (name: string) => {
+    const numbered = name.match(/^(.*)( #\d+)$/);
+    return numbered ? displayName({ name: numbered[1] }) + numbered[2] : displayName({ name });
+  };
   return (
     <Modal
       title={d.prompt}
@@ -135,7 +140,7 @@ export function ModeModal({ g, d, onSubmit }: { g: GameState; d: Extract<Decisio
         <div className="mode-list">
           {d.options.map((o, i) => (
             <button key={i} className={`btn mode-opt ${sel.includes(i) ? 'btn-primary' : ''}`} onClick={() => toggle(i)}>
-              {d.purpose === 'creatureType' ? SUB_ZH[o] ?? o : d.purpose === 'color' ? COLOR_ZH[o as 'W'] ?? o : d.purpose === 'keyword' ? KW_ZH[o as 'trample'] ?? o : o}
+              {d.purpose === 'creatureType' ? SUB_ZH[o] ?? o : d.purpose === 'color' ? COLOR_ZH[o as 'W'] ?? o : d.purpose === 'keyword' ? KW_ZH[o as 'trample'] ?? o : optionName(o)}
             </button>
           ))}
         </div>

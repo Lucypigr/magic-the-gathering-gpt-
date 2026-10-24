@@ -1,0 +1,16 @@
+{
+  "byName": {
+    "Firebending Soldier": { "sourceName": "Soldier", "textIncludes": "Firebending", "reason": "遊戲用異能區分的士兵；對應 TLA 御火士兵衍生物。" },
+    "Firebending Dragon": { "sourceName": "Dragon", "terminology": true, "reason": "遊戲用異能區分的龍；依卡庫龍類別名稱顯示，不宣稱另有同名印刷卡。" },
+    "wicked Role": { "sourceName": "Wicked", "reason": "Role 是類別，實際衍生物名稱為 Wicked。" },
+    "monster Role": { "sourceName": "Monster", "reason": "Role 是類別，實際衍生物名稱為 Monster。" },
+    "royal Role": { "sourceName": "Royal", "reason": "Role 是類別，實際衍生物名稱為 Royal。" },
+    "sorcerer Role": { "sourceName": "Sorcerer", "reason": "Role 是類別，實際衍生物名稱為 Sorcerer。" },
+    "young-hero Role": { "sourceName": "Young Hero", "reason": "還原遊戲別名的連字號及額外的 Role 類別。" },
+    "cursed Role": { "sourceName": "Cursed", "reason": "Role 是類別，實際衍生物名稱為 Cursed。" }
+  },
+  "byId": {
+    "tok-emblem-chandra-draw": { "sourceName": "Chandra, Chill of Compliance Emblem", "reason": "施放咒語抓牌的徽記；不能與同名的傷害徽記混用。" },
+    "tok-emblem-chandra-burn": { "sourceName": "Chandra, Torch of Defiance Emblem", "reason": "施放咒語造成5點傷害的徽記；不能與同名的抓牌徽記混用。" }
+  }
+}

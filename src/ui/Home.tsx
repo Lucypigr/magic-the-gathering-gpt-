@@ -8,7 +8,7 @@ import { CHAPTERS, CHAPTER_REWARD } from './tutorial';
 import { ColorPips, Gold } from './common';
 import { LEVEL_ZH } from './i18n';
 import { hasLocalImages, imagesUnavailable, useImageVersion, zhStatus } from './images';
-import { publishedChineseNameCount } from '../data/names';
+import { publishedChineseNameCount, sourcedChineseNameCount } from '../data/names';
 
 export function TopBar({ profile, go, title }: { profile: Profile; go: (s: Screen) => void; title: string }) {
   return (
@@ -241,10 +241,10 @@ export function Home({ profile, go, update }: { profile: Profile; go: (s: Screen
 
 function zhText(): string {
   const s = zhStatus();
-  const base = `已內建 ${publishedChineseNameCount} 個中文出版卡名，優先採用繁體印刷版，僅有簡體版時轉為繁體字。效果文字也可離線閱讀。`;
+  const base = `已內建 ${publishedChineseNameCount} 個中文出版卡名，另收錄 ${sourcedChineseNameCount} 個中文卡庫名稱。出版名稱優先；僅有簡體字時轉為繁體字，卡片詳情可查看來源。名稱與效果文字都可離線閱讀。`;
   if (s.loading) return `${base}正在向 Scryfall 補查其他中文名稱；卡圖沿用原有設定。`;
   if (s.failed) return `${base}目前無法連線補查，未收錄的名稱可能仍顯示英文。`;
-  return `${base}查不到中文出版名稱時保留英文，不自行翻譯卡名；卡圖沿用原有設定。`;
+  return `${base}沒有收錄來源的名稱保留英文，不自行翻譯卡名；卡圖沿用原有設定。`;
 }
 
 function RedeemRow({ profile, update }: { profile: Profile; update: UpdateProfile }) {

@@ -1,4 +1,5 @@
 import {displayRulesText} from '../data/localization';
+import {displayName} from '../data/names';
 // ============================================================
 // 卡牌效果的白話解說：符號、每一行異能的種類、遊戲術語
 // ============================================================
@@ -277,7 +278,7 @@ export function lineNotes(def: CardDef): LineNote[] {
   }
   if(def.adventure&&!out.some(l=>l.kind==='adventure'))out.push({
     kind:'adventure',text:def.adventure.text,cost:def.adventure.cost,effect:def.adventure.text,
-    desc:`你可以施放冒險「${def.adventure.name}」。結算後放逐此牌，之後可以從放逐區施放本體。`,
+    desc:`你可以施放冒險「${displayName(def.adventure)}」。結算後放逐此牌，之後可以從放逐區施放本體。`,
   });
   return out;
 }

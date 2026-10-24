@@ -1,0 +1,175 @@
+{
+  "cards": 4133,
+  "collectibleCards": 4128,
+  "tokens": 234,
+  "additionalFaces": 173,
+  "totalRows": 4540,
+  "uniqueEnglishNames": 4446,
+  "translatedRows": 4540,
+  "unresolved": [],
+  "counts": {
+    "published": 1689,
+    "database": 2848,
+    "terminology": 3
+  },
+  "bySet": {
+    "TLA": {
+      "cards": 280,
+      "translated": 280,
+      "published": 3,
+      "database": 277,
+      "terminology": 0
+    },
+    "ECL": {
+      "cards": 267,
+      "translated": 267,
+      "published": 15,
+      "database": 252,
+      "terminology": 0
+    },
+    "SOS": {
+      "cards": 115,
+      "translated": 115,
+      "published": 8,
+      "database": 107,
+      "terminology": 0
+    },
+    "TMT": {
+      "cards": 189,
+      "translated": 189,
+      "published": 2,
+      "database": 187,
+      "terminology": 0
+    },
+    "MSH": {
+      "cards": 273,
+      "translated": 273,
+      "published": 3,
+      "database": 270,
+      "terminology": 0
+    },
+    "HOB": {
+      "cards": 89,
+      "translated": 89,
+      "published": 1,
+      "database": 88,
+      "terminology": 0
+    },
+    "SPM": {
+      "cards": 83,
+      "translated": 83,
+      "published": 0,
+      "database": 83,
+      "terminology": 0
+    },
+    "EOE": {
+      "cards": 111,
+      "translated": 111,
+      "published": 8,
+      "database": 103,
+      "terminology": 0
+    },
+    "FIN": {
+      "cards": 306,
+      "translated": 306,
+      "published": 3,
+      "database": 303,
+      "terminology": 0
+    },
+    "TDM": {
+      "cards": 122,
+      "translated": 122,
+      "published": 6,
+      "database": 116,
+      "terminology": 0
+    },
+    "DFT": {
+      "cards": 113,
+      "translated": 113,
+      "published": 2,
+      "database": 111,
+      "terminology": 0
+    },
+    "DSK": {
+      "cards": 266,
+      "translated": 266,
+      "published": 4,
+      "database": 262,
+      "terminology": 0
+    },
+    "BLB": {
+      "cards": 112,
+      "translated": 112,
+      "published": 5,
+      "database": 107,
+      "terminology": 0
+    },
+    "OTJ": {
+      "cards": 263,
+      "translated": 263,
+      "published": 263,
+      "database": 0,
+      "terminology": 0
+    },
+    "MKM": {
+      "cards": 266,
+      "translated": 266,
+      "published": 266,
+      "database": 0,
+      "terminology": 0
+    },
+    "LCI": {
+      "cards": 123,
+      "translated": 123,
+      "published": 123,
+      "database": 0,
+      "terminology": 0
+    },
+    "WOE": {
+      "cards": 269,
+      "translated": 269,
+      "published": 269,
+      "database": 0,
+      "terminology": 0
+    },
+    "FDN": {
+      "cards": 477,
+      "translated": 477,
+      "published": 335,
+      "database": 142,
+      "terminology": 0
+    },
+    "FRA": {
+      "cards": 278,
+      "translated": 278,
+      "published": 10,
+      "database": 268,
+      "terminology": 0
+    },
+    "BAS": {
+      "cards": 5,
+      "translated": 5,
+      "published": 5,
+      "database": 0,
+      "terminology": 0
+    },
+    "CORE": {
+      "cards": 67,
+      "translated": 67,
+      "published": 66,
+      "database": 1,
+      "terminology": 0
+    },
+    "META": {
+      "cards": 59,
+      "translated": 59,
+      "published": 49,
+      "database": 10,
+      "terminology": 0
+    }
+  },
+  "databaseRelease": "data-2026-10-18",
+  "sourceArchiveSha256": "09f5a743c581e210903b7f91ea246052489523139d0fc8d8f75c33d279d02ecc",
+  "importedDeckNames": 418,
+  "unresolvedImportedDeckNames": []
+}
