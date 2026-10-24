@@ -9,6 +9,12 @@ const input = JSON.parse(await readFile('/tmp/translation-cards.json', 'utf8'));
 const source = JSON.parse(await readFile('scripts/localization/name-sources.json', 'utf8'));
 const cacheDir = process.argv[2] ?? '/tmp/name-printings';
 const wanted = new Set(input.map(c => c.name.toLowerCase()));
+// Imported deck lists also show original cards that are outside the game pool.
+// Keep their published names, including sideboards and substitution source rows.
+const netdecks = JSON.parse(await readFile('public/netdecks.json', 'utf8'));
+for (const deck of netdecks.decks ?? []) {
+  for (const [, name] of [...(deck.main ?? []), ...(deck.side ?? [])]) wanted.add(name.toLowerCase());
+}
 const toTraditional = Converter({ from: 'cn', to: 'tw' });
 const names = new Map();
 const han = /[\u3400-\u9fff]/;

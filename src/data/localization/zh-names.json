@@ -1509,6 +1509,16 @@
     "scryfallId": "cc255bb1-45da-445d-9a8c-a517ecc450a3",
     "sourceFile": "OTJ.json"
   },
+  "braided net": {
+    "name": "織綜漁網",
+    "printedName": "织综渔网",
+    "language": "zhs",
+    "set": "LCI",
+    "number": "47",
+    "multiverseId": "638990",
+    "scryfallId": "144790ac-b765-44a3-8be5-0af6bf4e6581",
+    "sourceFile": "LCI.json"
+  },
   "branch of vitu-ghazi": {
     "name": "維圖加基分枝",
     "printedName": "维图加基分枝",
@@ -1628,6 +1638,16 @@
     "multiverseId": "469604",
     "scryfallId": "2e398238-7a76-4bcb-bd9a-abe4210a6e3a",
     "sourceFile": "M20.json"
+  },
+  "bringer of the last gift": {
+    "name": "終禮使者",
+    "printedName": "终礼使者",
+    "language": "zhs",
+    "set": "LCI",
+    "number": "94",
+    "multiverseId": "639045",
+    "scryfallId": "cf5d4f61-927f-49da-b5bf-1c756ec75f72",
+    "sourceFile": "LCI.json"
   },
   "bristlepack sentry": {
     "name": "棘群哨衛",
@@ -3709,6 +3729,16 @@
     "scryfallId": "a45f029b-43b8-4590-b9e9-747548353774",
     "sourceFile": "MID.json"
   },
+  "dusk rose reliquary": {
+    "name": "暮影薔薇聖物箱",
+    "printedName": "暮影蔷薇圣物箱",
+    "language": "zhs",
+    "set": "LCI",
+    "number": "10",
+    "multiverseId": "638948",
+    "scryfallId": "95df9ccf-2183-409c-952f-b6737d0e6836",
+    "sourceFile": "LCI.json"
+  },
   "dust animus": {
     "name": "沙塵原心",
     "printedName": "沙尘原心",
@@ -4658,6 +4688,16 @@
     "multiverseId": "330880",
     "scryfallId": "05f3629c-dfd3-4771-b9b4-36db7c75ce67",
     "sourceFile": "M13.json"
+  },
+  "fomori vault": {
+    "name": "佛莫里寶庫",
+    "printedName": "佛莫里宝库",
+    "language": "zhs",
+    "set": "BIG",
+    "number": "29",
+    "multiverseId": "660535",
+    "scryfallId": "b51822f6-098c-40ab-b856-fb987ab30f26",
+    "sourceFile": "BIG.json"
   },
   "food coma": {
     "name": "飽食昏睡",
@@ -6468,6 +6508,16 @@
     "multiverseId": "418347",
     "scryfallId": "e7b3b7ee-fbec-4f2a-82e8-7da933213788",
     "sourceFile": "KLD.json"
+  },
+  "inti, seneschal of the sun": {
+    "name": "烈陽總督因提",
+    "printedName": "烈阳总督因提",
+    "language": "zhs",
+    "set": "LCI",
+    "number": "156",
+    "multiverseId": "639115",
+    "scryfallId": "9ba13d6b-c002-451a-9b65-c00df7eda572",
+    "sourceFile": "LCI.json"
   },
   "intimidation campaign": {
     "name": "散佈威嚇",
@@ -9999,6 +10049,16 @@
     "scryfallId": "dc157d29-9ce5-4f07-ad45-959dc7df28c8",
     "sourceFile": "M19.json"
   },
+  "rest in peace": {
+    "name": "得享安息",
+    "printedName": "得享安息",
+    "language": "zht",
+    "set": "RTR",
+    "number": "18",
+    "multiverseId": "355480",
+    "scryfallId": "7d8c6e22-f0ca-45bc-b251-f195feb28361",
+    "sourceFile": "RTR.json"
+  },
   "restless anchorage": {
     "name": "不息錨岸",
     "printedName": "不息锚岸",
@@ -11639,6 +11699,16 @@
     "scryfallId": "6e1f4c11-1c84-4ce4-aaff-5d14f8b6c920",
     "sourceFile": "OTJ.json"
   },
+  "spring-loaded sawblades": {
+    "name": "壓簧鋸輪",
+    "printedName": "压簧锯轮",
+    "language": "zhs",
+    "set": "LCI",
+    "number": "36",
+    "multiverseId": "638976",
+    "scryfallId": "101e7f33-f265-4ab7-82a0-4876eff6f4d6",
+    "sourceFile": "LCI.json"
+  },
   "springleaf drum": {
     "name": "春葉鼓",
     "printedName": "春葉鼓",
@@ -13039,6 +13109,16 @@
     "scryfallId": "215395a7-ea0f-4907-9a24-cc48d3db83cc",
     "sourceFile": "OTJ.json"
   },
+  "tishana's tidebinder": {
+    "name": "提莎娜的縛潮師",
+    "printedName": "提莎娜的缚潮师",
+    "language": "zhs",
+    "set": "LCI",
+    "number": "81",
+    "multiverseId": "639030",
+    "scryfallId": "453752bd-56e0-488b-a990-dbdcb4b9ceeb",
+    "sourceFile": "LCI.json"
+  },
   "titanic growth": {
     "name": "巨力成長",
     "printedName": "巨力成長",
@@ -13128,6 +13208,16 @@
     "multiverseId": "648729",
     "scryfallId": "9798fae5-4719-44b2-bfc7-0898da6aaf67",
     "sourceFile": "MKM.json"
+  },
+  "torpor orb": {
+    "name": "遲鈍法球",
+    "printedName": "迟钝法球",
+    "language": "zhs",
+    "set": "BIG",
+    "number": "27",
+    "multiverseId": "660533",
+    "scryfallId": "374987c8-ec72-4f2a-8608-fd758d99a8c3",
+    "sourceFile": "BIG.json"
   },
   "totentanz, swarm piper": {
     "name": "鼠群笛手托騰坦",

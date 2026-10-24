@@ -47,6 +47,17 @@ describe('published Chinese card names', () => {
     expect(html).toContain(`https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=${record.multiverseId}`);
   });
 
+  it('includes published names of imported cards outside the playable pool', () => {
+    const original = { name: "Tishana's Tidebinder" };
+    expect(CARDS.some(c => c.name === original.name)).toBe(false);
+    setCardLanguage(true);
+    expect(displayName(original)).toBe('提莎娜的縛潮師');
+    expect(publishedChineseName(original)?.set).toBe('LCI');
+    expect(original.name).toBe("Tishana's Tidebinder");
+    setCardLanguage(false);
+    expect(displayName(original)).toBe(original.name);
+  });
+
   it('retains publication identifiers and pinned source files for every bundled name', () => {
     const files: Record<string, string> = sources.files;
     for (const [en, record] of Object.entries(names)) {

@@ -361,14 +361,14 @@ function ImportPreview({
                 <button className="linkish nd-cn" onClick={() => setDetail(l.def)}>
                   {l.sub ? (
                     <>
-                      <s>{l.name}</s> → {displayName(l.def)}
+                      <s title={l.name}>{displayName({ name: l.name })}</s> → {displayName(l.def)}
                     </>
                   ) : (
                     displayName(l.def)
                   )}
                 </button>
               ) : (
-                <span className="nd-cn">{l.name}</span>
+                <span className="nd-cn" title={l.name}>{displayName({ name: l.name })}</span>
               )}
               {l.def?.cost && <ManaCost cost={l.def.cost} size={13} />}
               <span className="nd-st">{statusText(l)}</span>
