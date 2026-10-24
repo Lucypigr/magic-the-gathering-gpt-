@@ -1,5 +1,25 @@
 // 顯示用的卡名。規則引擎一律以英文原名辨識卡牌，只有顯示在畫面與紀錄時才換成中文。
-// 中文卡名由介面層（ui/images.ts）向 Scryfall 取得後填入。
+// 優先採用隨網站保存的中文印刷卡名；即時查詢只補充尚未收錄的名稱。
+import publishedNames from './localization/zh-names.json';
+
+export interface PublishedChineseName {
+  name: string;
+  printedName: string;
+  language: 'zht' | 'zhs';
+  set: string;
+  number: string;
+  multiverseId?: string;
+  scryfallId?: string;
+  sourceFile: string;
+}
+const published: Readonly<Record<string, PublishedChineseName>> = publishedNames as Record<string, PublishedChineseName>;
+
+/** 出版名稱與來源；zhs 僅轉換字形，未自行翻譯英文名。 */
+export function publishedChineseName(def: Named): PublishedChineseName | undefined {
+  return published[def.name.toLowerCase()];
+}
+
+export const publishedChineseNameCount = Object.keys(published).length;
 
 interface Named {
   name: string;
@@ -19,7 +39,7 @@ export function setZhNames(entries: Iterable<[string, string]>): void {
 
 /** 中文卡名（沒有就回傳 undefined），不受語言設定影響 */
 export function zhName(def: Named): string | undefined {
-  return zhNames.get(def.name.toLowerCase()) ?? def.zh;
+  return publishedChineseName(def)?.name ?? zhNames.get(def.name.toLowerCase()) ?? def.zh;
 }
 
 /** 依目前的語言設定回傳要顯示的卡名 */

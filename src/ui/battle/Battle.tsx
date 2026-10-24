@@ -1,4 +1,5 @@
 import {frontierStatic} from '../../engine/frontier-support';
+import { displayName } from '../../data/names';
 import {teamworkOptions,blackSymbols} from '../../engine/msh-support';
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import type { Level } from '../../ai/combatAI';
@@ -583,6 +584,7 @@ export function Battle(props: Props) {
   // ---------- 卡牌預覽 ----------
   const inspectId = draft ? focus : (focus ?? hover);
   const inspected = inspectId != null ? g.cards[inspectId] : null;
+  const inspectedDef = inspected ? inspected.hidden && (inspected.controller===0 || isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0 || g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) ? inspected.hidden : inspected.def : null;
   let actions: PlayOption[] = [];
   if (inspected && myPriority && !draft && focus === inspectId) {
     if (inspected.zone === 'hand' || inspected.zone === 'exile' || inspected.zone === 'graveyard' || inspected.zone === 'library') actions = castOptionsFor(g, actingPid, inspected);
@@ -829,12 +831,13 @@ export function Battle(props: Props) {
                 ✕
               </button>
             )}
-            <CardZoom def={inspected.hidden && (inspected.controller === 0||isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) ? inspected.hidden : inspected.def} />
+            <CardZoom def={inspectedDef!} />
+            {focus===inspectId && settings.cardLang==='zh' && <div className="peek-name">{displayName(inspectedDef!)}</div>}
             {inspected.hidden && (inspected.controller === 0||isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0||g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) && <div className="peek-chips"><span className="chip">面朝下（只有你看得到）</span></div>}
-            {focus===inspectId && settings.cardLang==='zh' && inspected.def.text && (
+            {focus===inspectId && settings.cardLang==='zh' && inspectedDef!.text && (
               <details className="peek-rules" open>
                 <summary>中文效果</summary>
-                <RulesText text={inspected.hidden && (inspected.controller===0 || isCreature(inspected)&&frontierStatic(g,0,'dsk:seeFaceDown').length>0 || g.players[0].mkmTurn===g.turn&&g.players[0].mkmFlags?.lookHidden===g.turn) ? inspected.hidden.text : inspected.def.text} size={14}/>
+                <RulesText text={inspectedDef!.text} size={14}/>
               </details>
             )}
             {(liveStats || inspected.tapped || inspected.controller === 1 || inspected.loyalty != null) && inspected.zone === 'battlefield' && (

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, type CSSProperties, type MouseEvent, type ReactNode } from 'react';
-import { displayName, zhName } from '../data/names';
+import { displayName, zhName, publishedChineseName } from '../data/names';
 import { SET_INFO, isStandardBanned, isStandardLegal } from '../data';
 import { colorsOf } from '../engine/mana';
 import type { CardDef, Keyword } from '../engine/types';
@@ -132,6 +132,7 @@ export function CardDetail({ def, extra, special }: { def: CardDef; extra?: Reac
   const name = displayName(def);
   // 中文模式顯示英文原名、英文模式顯示中文名，方便對照
   const alt = name === def.name ? zhName(def) : def.name;
+  const publishedName = publishedChineseName(def);
   const kws = new Set<Keyword>(def.keywords ?? []);
   for (const k of Object.keys(KW_ZH) as Keyword[]) if (def.text.includes(KW_ZH[k])) kws.add(k);
   return (
@@ -149,6 +150,10 @@ export function CardDetail({ def, extra, special }: { def: CardDef; extra?: Reac
           <ManaCost cost={def.cost} size={18} />
         </div>
         {alt && <div className="cd-zh">{alt}</div>}
+        {publishedName && <div className="muted small">
+          卡名來源：{publishedName.language === 'zht' ? '繁體中文印刷版' : '簡體中文印刷版（轉為繁體字顯示）'}
+          {publishedName.multiverseId && <> · <a href={`https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=${publishedName.multiverseId}`} target="_blank" rel="noreferrer">查看官方牌張</a></>}
+        </div>}
         <div className="cd-type">
           {typeLine(def)}
           <span className={`rarity-tag r-${def.rarity}`}>{RARITY_ZH[def.rarity]}</span>

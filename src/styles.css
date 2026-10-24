@@ -4373,6 +4373,7 @@ button {
 }
 
 /* Chinese companion text keeps the original card image intact. */
+.peek-name { padding: 8px 12px; font-weight: 700; color: var(--brass-hi); background: var(--bg); }
 .peek-rules {
   max-height: 200px;
   overflow-y: auto;
