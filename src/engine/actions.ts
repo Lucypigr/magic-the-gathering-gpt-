@@ -1,3 +1,5 @@
+import {campusLink} from './campus';
+import {campusCost,campusTargets,campusFree,campusCraftOptions,campusCraftValid,campusActivationBlocked,campusCastBlocked} from './campus-casting';
 import {crewPower,ignoreExhaust} from './meadow-dft-support';
 import {forageOptions,validForage,payForage,osteoCast,festivalCast} from './meadow-costs';
 import {foundationPermission,foundationCastError,foundationPayExtras,foundationExtraCosts} from './foundation-casting';
@@ -40,7 +42,7 @@ import type {
   TargetRef,
   TargetSpec,
 } from './types';
-import { putMinusCounters, bend, tapCard, discard, emit, enterBattlefield, loseLife, moveCard, removeFromZone, sacrifice } from './zones';
+import { putMinusCounters, bend, tapCard, discard, discardMany, emit, enterBattlefield, loseLife, moveCard, removeFromZone, sacrifice } from './zones';
 import { faceDownDef, turnFaceUp } from './facedown';
 
 // ------------------------------------------------------------
@@ -96,7 +98,7 @@ export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = 
   (g.players[pid].retainedRed ?? []).forEach((m,i)=>out.push({id:-25000-i,produces:[m],isCreature:false,pool:true}));
   (g.players[pid].firePool ?? []).forEach((m,i)=>out.push({id:-30000-i,produces:[m],isCreature:false,pool:true}));
   for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&!c.tapped&&(isLand(c)||['elvish-archdruid','gilded-lotus','hedron-archive','overgrown-zealot'].includes(c.def.id)||c.def.id==='arc-reactor'||c.def.id==='troyan-gutsy-explorer'||c.def.id==='intrepid-stablemaster'||c.token&&c.def.types.includes('Artifact'))&&c.def.produces&&id!==exclude&&out.some(s=>s.id===id))landManaExtras(g,c,forDef).forEach((produces,k)=>out.push({id:-400000-id*1000-k,produces,isCreature:false,extra:true,...(produces.matches?{matchManaOf:id}:{}),...(produces.requires?{extraRequires:{id,mana:produces.requires}}:{})}));}
-  (g.players[pid].eclRestrictedMana??[]).forEach((m,i)=>{const ok=forDef&&(m.rule==='ability'?!!forDef.eclAbilityPayment:m.rule==='artifactAbility'?!!forDef.eclAbilityPayment||forDef.types.includes('Artifact'):!forDef.eclAbilityPayment&&(m.rule==='creature'?forDef.types.includes('Creature'):m.rule==='bdHelga'?forDef.types.includes('Creature')&&(manaValue(forDef)>=4||(forDef.cost??'').includes('{X}')):m.rule==='elemental'?matchesDefSubtype(forDef,'Elemental'):m.rule==='mv4'?manaValue(forDef)>=4:m.rule==='tribe'?!!g.cards[m.source??-1]?.eclType&&matchesDefSubtype(forDef,g.cards[m.source??-1].eclType!):false));if(ok)out.push({id:-70000-i,produces:[m.mana],isCreature:false,pool:true});});
+  (g.players[pid].eclRestrictedMana??[]).forEach((m,i)=>{const ok=forDef&&(m.rule==='ability'?!!forDef.eclAbilityPayment:m.rule==='artifactAbility'?forDef.types.includes('Artifact'):m.rule==='campusSpell'?!forDef.eclAbilityPayment&&forDef.types.some(t=>t==='Instant'||t==='Sorcery'):m.rule==='campusLandAbility'?!!forDef.eclAbilityPayment&&forDef.types.includes('Land'):m.rule==='campusDinosaur'?forDef.subtypes?.includes('Dinosaur'):m.rule==='campusCavern'?!forDef.eclAbilityPayment&&forDef.types.includes('Creature')&&!!g.cards[m.source??-1]?.eclType&&matchesDefSubtype(forDef,g.cards[m.source??-1].eclType!):!forDef.eclAbilityPayment&&(m.rule==='creature'?forDef.types.includes('Creature'):m.rule==='bdHelga'?forDef.types.includes('Creature')&&(manaValue(forDef)>=4||(forDef.cost??'').includes('{X}')):m.rule==='elemental'?matchesDefSubtype(forDef,'Elemental'):m.rule==='mv4'?manaValue(forDef)>=4:m.rule==='tribe'?!!g.cards[m.source??-1]?.eclType&&matchesDefSubtype(forDef,g.cards[m.source??-1].eclType!):false));if(ok)out.push({id:-70000-i,produces:[m.mana],isCreature:false,pool:true});});
   (g.players[pid].frontierMana??[]).forEach((m,i)=>{if(forDef&&!forDef.eclAbilityPayment&&(m.rule==='mountVehicle'?forDef.subtypes?.some(s=>s==='Mount'||s==='Vehicle'):manaValue(forDef)>=5||(forDef.cost??'').includes('{X}')))out.push({id:-84000-i,produces:[m.mana],isCreature:false,pool:true});});
   (g.players[pid].foundationPool??[]).forEach((m,i)=>{if(m.rule==='any'||forDef&&(forDef.foundation?.unlockPayment||!forDef.eclAbilityPayment&&forDef.subtypes?.includes('Room')))out.push({id:-85000-i,produces:[m.mana],isCreature:false,pool:true});});
   // 法術力池
@@ -267,6 +269,9 @@ export function castDef(def: CardDef, alt?: CastAlt): CardDef {
   } else if (alt === 'plotted') {
     d = def;
   } else if(alt==='graveCost'){d={...def,addCost:{life:2,sac:{type:['Artifact','Creature']}}};
+  } else if(alt==='campusSac'){d={...def,addCost:{sac:{}}};
+  } else if(alt==='campusCasualty'){d=def;
+  } else if(alt==='campusExile'||alt==='campusFree'||alt==='campusMiracle'){d=def;
   } else if (alt === 'cycle' && def.cycling) {
     // 循環是起動式異能：任何時候都能起動，不是施放咒語
     d = { ...def, cost: def.cycling.cost, types: ['Instant'], spell: { effects: cycleEffects(def) }, addCost: undefined, costReduce: undefined };
@@ -321,6 +326,10 @@ function baseCastAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] 
   if(c.zone!=='hand' && (g.players[pid].noExileCastUntil??-1)>=g.turn) return [];
   if (c.zone === 'hand' && c.owner === pid) {
     const base: (CastAlt | undefined)[] = def.room ? ['roomLeft','roomRight'] : def.adventure ? [undefined, 'adventure'] : def.mdfc && def.back ? [undefined, 'back'] : [undefined];
+    if(def.meadow?.campusExileOrPay&&g.players[pid].graveyard.length>=Number(def.meadow.campusExileOrPay))base.push('campusExile');
+    if(def.meadow?.campusDiscardOrSac&&g.battlefield.some(id=>g.cards[id].controller===pid))base.push('campusSac');
+    if(campusFree(g,pid,c))base.push('campusFree');
+    if(def.types.some(t=>t==='Instant'||t==='Sorcery')&&frontierStatic(g,pid,'sos:casualty').length&&g.battlefield.some(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])&&stats(g,g.cards[id]).p>=1))base.push('campusCasualty');
     if(def.kicker)base.push('kicked');if(def.impending)base.push('impending');
     if(def.sneak&&sneakAttackers(g,pid).length)base.push('sneak');
     if(def.id==='titania-rugged-rumbler')base.push('titaniaMana');
@@ -375,7 +384,7 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
   if (alt === 'plotTop') return parseCost(def.cost);
   if(alt==='plot')return reduceCost(parseCost(def.cost),parseCost('{'+2*frontierStatic(g,pid,'aurlockDiscount').length+'}'));
   if(alt==='flashback'&&c.frontierMarks?.freeFlashback===g.turn)return parseCost('');
-  if (alt === 'free') {
+  if (alt === 'free'||alt==='campusFree') {
     const cost = parseCost('');
     if (targets) cost.generic += wardTax(g, pid, targets);
     return cost;
@@ -391,7 +400,8 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
     if (targets) cost.generic += wardTax(g, pid, targets);
     return cost;
   }
-  let cost = c.eclCast?.free&&eclPermission(g,pid,c)?parseCost(''):parseCost(c.airbent ? '{2}' : def.spell?.modes?.[mode ?? 0]?.cost ?? def.cost);
+  let cost = alt==='campusMiracle'?parseCost('{2}'):c.eclCast?.free&&eclPermission(g,pid,c)?parseCost(''):parseCost(c.airbent ? '{2}' : def.spell?.modes?.[mode ?? 0]?.cost ?? def.cost);
+  campusCost(g,pid,c,def,cost,targets,alt);
   if(c.def.ecl?.behold?.tax&&!canBehold(g,pid,c,alt))cost.generic+=c.def.ecl.behold.tax;
   if(['rime-chill','wildvine-pummeler'].includes(def.id))cost.generic=Math.max(0,cost.generic-vividColors(g,pid).length);
   if(def.id==='swat-away'&&g.battlefield.some(id=>g.cards[id].controller!==pid&&g.cards[id].attacking))cost.generic=Math.max(0,cost.generic-2);
@@ -505,7 +515,7 @@ export function wardLifeTax(g: GameState, pid: PID, targets: (TargetRef | null)[
   for (const t of targets) {
     if (!t || !('c' in t)) continue;
     const tc = g.cards[t.c];
-    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.wardLife && tc.def.set!=='FDN'&&tc.def.set!=='DSK'&&tc.def.set!=='ECL'&&tc.def.set!=='FIN'&&tc.def.set!=='MKM'&&tc.def.set!=='MSH'&&tc.def.set!=='WOE'&&tc.def.set!=='OTJ'&&tc.def.set!=='BLB'&&tc.def.set!=='DFT' && !abilitiesSuppressed(g, tc)) n += tc.def.wardLife;
+    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.wardLife && tc.def.set!=='FDN'&&tc.def.set!=='DSK'&&tc.def.set!=='ECL'&&tc.def.set!=='FIN'&&tc.def.set!=='MKM'&&tc.def.set!=='MSH'&&tc.def.set!=='WOE'&&tc.def.set!=='OTJ'&&tc.def.set!=='BLB'&&tc.def.set!=='SOS'&&tc.def.set!=='DFT'&&tc.def.set!=='LCI' && !abilitiesSuppressed(g, tc)) n += tc.def.wardLife;
   }
   return n;
 }
@@ -516,7 +526,7 @@ export function wardDiscardCount(g: GameState, pid: PID, targets: (TargetRef | n
   for (const t of targets) {
     if (!t || !('c' in t)) continue;
     const tc = g.cards[t.c];
-    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.wardDiscard&&tc.def.set!=='FDN'&&tc.def.set!=='DSK'&&tc.def.set!=='BLB' && !abilitiesSuppressed(g, tc)) n++;
+    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.wardDiscard&&tc.def.set!=='FDN'&&tc.def.set!=='DSK'&&tc.def.set!=='BLB'&&tc.def.set!=='SOS' && !abilitiesSuppressed(g, tc)) n++;
   }
   return n;
 }
@@ -560,7 +570,7 @@ export function wardTax(g: GameState, pid: PID, targets: (TargetRef | null)[]): 
   for (const t of targets) {
     if (!t || !('c' in t)) continue;
     const tc = g.cards[t.c];
-    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.ward && tc.def.set!=='TMT'&&tc.def.set!=='FDN'&&tc.def.set!=='DSK'&&tc.def.set!=='ECL'&&tc.def.set!=='FIN'&&tc.def.set!=='MKM'&&tc.def.set!=='MSH'&&tc.def.set!=='WOE'&&tc.def.set!=='OTJ'&&tc.def.set!=='BLB'&&tc.def.set!=='DFT' && !abilitiesSuppressed(g, tc)) n += tc.def.ward;
+    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.ward && tc.def.set!=='TMT'&&tc.def.set!=='FDN'&&tc.def.set!=='DSK'&&tc.def.set!=='ECL'&&tc.def.set!=='FIN'&&tc.def.set!=='MKM'&&tc.def.set!=='MSH'&&tc.def.set!=='WOE'&&tc.def.set!=='OTJ'&&tc.def.set!=='BLB'&&tc.def.set!=='SOS'&&tc.def.set!=='DFT'&&tc.def.set!=='LCI' && !abilitiesSuppressed(g, tc)) n += tc.def.ward;
   }
   return n;
 }
@@ -685,7 +695,8 @@ function tokenAbilityReduction(g:GameState,c:Card):number{return c.token&&c.def.
 
 export function canActivate(g: GameState, pid: PID, c: Card, idx: number): boolean {
   const ab = abilitiesFor(g, c)[idx];
-  if (!ab) return false;
+  if (!ab||campusActivationBlocked(g,c,ab)) return false;
+  if(ab.cost.craft&&campusCraftOptions(g,pid,c,ab).length<(ab.cost.craftCount??1))return false;
   if(ab.roomDoor!==undefined){const cost=parseCost(ab.cost.mana);cost.generic=Math.max(0,cost.generic-frontierStatic(g,pid,'dsk:unlockDiscount').length);return c.zone==='battlefield'&&c.controller===pid&&sorceryTiming(g,pid)&&canPayCost(g,pid,cost,undefined,false,{...c.def,eclAbilityPayment:true,foundation:{...c.def.foundation,unlockPayment:true}});}
   if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.fin==='disableAttached')))return false;
   const isMana=ab.manaAbility||!ab.targets?.length&&ab.cost.loyalty===undefined&&ab.effects.every(e=>e.e==='addMana'||e.e==='addManaOfChoice'||e.e==='frontier'&&e.action==='fdn:lotusMana');if(!isMana&&[...frontierStatic(g,0,'fdn:spyglass'),...frontierStatic(g,1,'fdn:spyglass')].some(s=>s.foundationNamed===c.def.name))return false;
@@ -851,6 +862,7 @@ export function castOptionsFor(g: GameState, pid: PID, c: Card): PlayOption[] {
 function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined): PlayOption[] {
   const def = castDef(c.def, alt);
   const out: PlayOption[] = [];
+  if(campusCastBlocked(g,pid))return out;
   if(pid!==g.active&&mshStatic(g,g.active,'ownTurnSilence').length)return out;
   if (alt === 'cycle') {
     if (!canPayCost(g, pid, parseCost(def.cost))) return out;
@@ -864,6 +876,7 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
   if(frontierStatic(g,0,'highNoon').length+frontierStatic(g,1,'highNoon').length&&g.players[pid].spellsThisTurn>=1)return out;
   if (alt === 'plotted' && !sorceryTiming(g, pid)) return out;
   if (alt!=='sneak'&&alt!=='sneakGranted' && !instantSpeed(def) && !frontierStatic(g,pid,'fdn:allFlash').length && !(frontierStatic(g,pid,'blb:noncreatureFlash').length&&!def.types.includes('Creature')) && !mshCosmicFlash(g,pid) && !(def.flashCond && checkCond(g,def.flashCond,pid,c.id,[])) && !sorceryTiming(g, pid)) return out;
+  if(alt==='campusFree'&&!campusFree(g,pid,c))return out;
   if (c.def.castCond && !checkCond(g, c.def.castCond, pid, c.id, [])) return out;
   const fc=foundationExtraCosts(g,pid,c,alt);if(fc&&fc.ids.length<fc.n)return out;
   if(def.fin?.stackTarget&&!finStackChoices(g,pid,false).length)return out;
@@ -872,7 +885,7 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
   if (def.addCost?.life && g.players[pid].life < def.addCost.life) return out;
   if (def.addCost?.sac && sacCandidates(g, pid, def.addCost.sac).length === 0) return out;
   if (def.addCost?.discard && g.players[pid].hand.filter((id) => id !== c.id).length < def.addCost.discard) return out;
-  const n = def.ecl?.variableTargets?g.battlefield.filter(id=>def.id==='doppelgang'||isCreature(g.cards[id])).length+1:modeCount(def);
+  const n = def.meadow?.campusVariable==='graveSpellsX'?g.players[pid].graveyard.filter(id=>g.cards[id].def.types.some(t=>t==='Instant'||t==='Sorcery')).length+1:def.ecl?.variableTargets?g.battlefield.filter(id=>def.id==='doppelgang'||isCreature(g.cards[id])).length+1:modeCount(def);
   for (let m = 0; m < n; m++) {
     if(def.spell?.modes?.[m]?.foundationRequireDelirium&&new Set(g.players[pid].graveyard.flatMap(id=>g.cards[id].def.types)).size<4)continue;
     if(def.spell?.modes?.[m]?.cond&&!checkCond(g,def.spell.modes[m].cond!,pid,c.id,[]))continue;
@@ -883,11 +896,11 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
     if(def.id==='demand-answers'&&m===0&&!g.players[pid].hand.some(id=>id!==c.id))continue;
     if(def.fin?.returnLandCost&&mode===1&&!g.battlefield.some(id=>g.cards[id].controller===pid&&isLand(g.cards[id])))continue;
     if((def.spell?.modes?.[mode??0]?.blight||def.addCost?.blight||def.ecl?.blightX)&&!hasBlightBody(g,pid))continue;
-    const specs = castTargetSpecs(def, mode);
+    const specs = campusTargets(g,pid,c,def,castTargetSpecs(def, mode),mode);
     if (!hasTargetsAvailable(g, specs, pid, c.id)) continue;
     const msac = alt==='bargain'?{or:[{type:'Artifact' as const},{type:'Enchantment' as const},{token:true}]}:def.spell?.modes?.[m]?.sac;
     if (msac && sacCandidates(g, pid, msac).length === 0) continue;
-    const cost = spellCost(g, c, pid, mode, def.id==='fate-of-the-sun-cryst'?g.battlefield.filter(id=>isCreature(g.cards[id])&&g.cards[id].tapped).slice(0,1).map(c=>({c})):undefined, alt,def.id==='doppelgang'?mode??0:0);
+    const cost = spellCost(g, c, pid, mode, def.id==='fate-of-the-sun-cryst'?g.battlefield.filter(id=>isCreature(g.cards[id])&&g.cards[id].tapped).slice(0,1).map(c=>({c})):undefined, alt,def.id==='doppelgang'||def.meadow?.campusVariable==='graveSpellsX'?mode??0:0);
   const tapper = alt === 'harmonize' ? harmonizeTapper(g, pid)?.id : undefined;
     if (!canPayCost(g, pid, cost, tapper, !!def.convoke, def, c.zone === 'hand' && !c.token, c.waterCastBy!==undefined ? manaValue(def) : def.spell?.modes?.[mode??0]?.waterbend ?? def.waterbend)) continue;
     const name = alt === 'adventure' ? (def.zh ?? def.name) : displayName(def);
@@ -899,7 +912,7 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
       sacFilter: (alt==='sneak'||alt==='sneakGranted')?{type:'Creature',ctrl:'you',unblocked:true}:msac ?? def.addCost?.sac,
       alt,
       effects: spellEffects(def, mode),
-      maxX: def.id==='doppelgang'||alt === 'plotted' || alt === 'disguise' ? undefined : maxXFor(g, pid, c, mode, alt),
+      maxX: def.meadow?.campusLifeX?g.players[pid].life:def.id==='doppelgang'||alt === 'plotted' || alt === 'disguise' ? undefined : maxXFor(g, pid, c, mode, alt),
       label:
         alt==='titaniaMana'?`另付{2}施放：${name}`:alt==='teamwork'?`Teamwork ${def.msh?.teamwork}：${def.spell?.modes?.[m]?.text??name}`:def.ecl?.variableTargets?`選${m}個目標：${name}`:alt==='evidence'?`蒐證${def.mkm?.optionalEvidence}：${name}`:alt==='evidenceFree'?`蒐證10取代法力費用：${name}`:alt==='evoke'?`呼魂 ${def.cost}：${name}`:(alt==='sneak'||alt==='sneakGranted') ? `潛行 ${def.cost}：收回未被阻擋的攻擊者` : alt === 'adventure'
           ? `${c.def.mkm?.split?'施放另一半':'冒險'}：${name}`
@@ -1088,17 +1101,21 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if (c && (alt === 'plot'||alt==='plotTop')) return doPlot(g, pid, c,alt==='plotTop');
   if(frontierStatic(g,0,'highNoon').length+frontierStatic(g,1,'highNoon').length&&g.players[pid].spellsThisTurn>=1)return 'High Noon：每回合至多施放一個咒語';
   if (c && alt === 'prepared') return doCastPrepared(g, pid, c, a);
+  if(campusCastBlocked(g,pid))return '目前不能施放咒語';
   if(pid!==g.active&&mshStatic(g,g.active,'ownTurnSilence').length)return '對手回合中不能施放咒語';
   if (!c || (isLand(c)&&alt!=='adventure') || (!duringResolution && !inCastableZone(g, pid, c, alt))) return '無法施放這張牌';
   const def = castDef(c.def, alt);
   if ((alt === 'plotted' || (alt!=='sneak'&&alt!=='sneakGranted' && !instantSpeed(def) && !frontierStatic(g,pid,'fdn:allFlash').length && !(frontierStatic(g,pid,'blb:noncreatureFlash').length&&!def.types.includes('Creature')) && !mshCosmicFlash(g,pid) && !(def.flashCond && checkCond(g,def.flashCond,pid,c.id,[])))) && !sorceryTiming(g, pid) && !a.ignoreTiming) return '只能在你的主要階段且堆疊為空時施放';
+  if(alt==='campusFree'&&!campusFree(g,pid,c))return '目前不能免費施放';
+  if(c.def.meadow?.campusLifeX&&((a.x??0)<0||(a.x??0)>g.players[pid].life))return '生命不足';
   if (c.def.castCond && !checkCond(g, c.def.castCond, pid, c.id, [])) return '不滿足施放此咒語的條件';
-  const mode = def.ecl?.variableTargets?Math.max(0,Math.min(g.battlefield.length,a.mode??0)):def.spell?.modes ? Math.max(0, Math.min(def.spell.modes.length - 1, a.mode ?? 0)) : undefined;
+  const mode = def.ecl?.variableTargets?Math.max(0,Math.min(def.meadow?.campusVariable==='graveSpellsX'?g.players[pid].graveyard.length:g.battlefield.length,a.mode??0)):def.spell?.modes ? Math.max(0, Math.min(def.spell.modes.length - 1, a.mode ?? 0)) : undefined;
   if(def.spell?.modes?.[mode??0]?.foundationRequireDelirium&&new Set(g.players[pid].graveyard.flatMap(id=>g.cards[id].def.types)).size<4)return '需要譫妄';
   if(def.spell?.modes?.[mode??0]?.cond&&!checkCond(g,def.spell.modes[mode??0].cond!,pid,c.id,[]))return '不滿足模式條件';
   const eaterLife=c.zone==='exile'&&frontierStatic(g,pid,'dsk:valgavothPlay').some(s=>c.frontierMarks?.valgavothLink===s.tmtLinkKey)?manaValue(def)+(a.x??0):0;if(eaterLife&&!frontierCanPayLife(g,pid,eaterLife))return '生命不足以施放';
+  if(alt==='campusCasualty'&&a.sac!==undefined&&a.foundationCosts?.includes(a.sac))return '兩項犧牲費用不能使用同一永久物';
   const foundationErr=foundationCastError(g,pid,c,a);if(foundationErr)return foundationErr;
-  const specs = castTargetSpecs(def, mode);
+  const specs = campusTargets(g,pid,c,def,castTargetSpecs(def, mode),mode);
   const targets = specs.map((_, i) => a.targets?.[i] ?? null);
   const targetVersions=targets.map(t=>t&&'c' in t?g.cards[t.c]?.objectVersion??0:undefined);
   const err = validateTargets(g, specs, targets, pid, c.id);
@@ -1120,7 +1137,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   const sneakReturn=(alt==='sneak'||alt==='sneakGranted')?(a.sac!==undefined?sneakAttackers(g,pid).find(c=>c.id===a.sac):sneakAttackers(g,pid)[0]):undefined;
   if((alt==='sneak'||alt==='sneakGranted')&&!sneakReturn)return '潛行只能在宣告阻擋後收回未被阻擋的己方攻擊生物';
   let discardCard: Card | undefined;
-  if (def.addCost?.discard) {
+  if (def.addCost?.discard||def.meadow?.campusDiscardMode&&(mode??0)===0) {
     discardCard = a.discard != null ? g.cards[a.discard] : undefined;
     if (!discardCard) {
       // 沒有指定時，自動選擇最不重要的牌（非地優先棄法術力值低的；全是地就棄地）
@@ -1132,7 +1149,8 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
       return '請選擇要棄掉的牌';
   }
   if (def.addCost?.life && !frontierCanPayLife(g,pid,def.addCost.life)) return '生命不足';
-  const x = def.id==='doppelgang'?(mode??0):(def.ecl?.blightX||parseCost(def.spell?.modes?.[mode ?? 0]?.cost ?? def.cost).x) ? Math.max(0, Math.floor(a.x ?? 0)) : undefined;
+  const x = def.meadow?.campusLifeX?Math.max(0,Math.floor(a.x??0)):def.id==='doppelgang'?(mode??0):(def.ecl?.blightX||parseCost(def.spell?.modes?.[mode ?? 0]?.cost ?? def.cost).x) ? Math.max(0, Math.floor(a.x ?? 0)) : undefined;
+  if(def.meadow?.campusVariable==='graveSpellsX'&&(mode??0)>(x??0))return '目標數量不能超過X';
   const blightN=def.ecl?.blightX?(x??0):def.spell?.modes?.[mode??0]?.blight??def.addCost?.blight??0;
   const body=blightN>0?(a.blightCard!==undefined?g.cards[a.blightCard]:g.battlefield.map(id=>g.cards[id]).find(c=>c.controller===pid&&isCreature(c)&&canReceiveCounters(g,c))):undefined;
   if(blightN>0&&(!body||body.zone!=='battlefield'||body.controller!==pid||!isCreature(body)||!canReceiveCounters(g,body)))return '請選擇枯萎生物';
@@ -1178,8 +1196,10 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   for(const id of [...conspireIds,...teamwork,...foundationTapIds])g.cards[id].tapped=false;
   if(!paid)return `法術力不足（需要 ${costToString(cost)}）`;
   const tapGroup=g.mshTapGroup;g.mshTapGroup=g.nextSid++;for(const id of teamwork){tapCard(g,g.cards[id]);emit(g,{type:'msh',action:'teamworkTap',card:id,player:pid});}g.mshTapGroup=tapGroup;
-  const foundationManaSources=(g.lastManaSourceIds??[]).slice();
+  const foundationManaSources=(g.lastManaSourceIds??[]).slice(),campusPaid=g.lastManaPayment?.slice(),campusSpent=g.lastManaSpent??0;
+  const caveMana=foundationManaSources.filter(id=>g.cards[id].def.subtypes?.includes('Cave')).length;
   if(eaterLife)frontierPayLife(g,pid,eaterLife);if(c.zone==='exile'&&alt==='free')frontierFlags(g,pid).warpedUsed=1;
+  if(alt==='campusCasualty'&&a.foundationCosts===undefined){const cost=foundationExtraCosts(g,pid,c,alt);a.foundationCosts=cost?.ids.filter(id=>id!==a.sac).slice(0,1);}
   foundationPayExtras(g,pid,c,a);
   if(def.types.includes('Creature')&&def.subtypes?.includes('Dragon')&&foundationManaSources.some(id=>g.cards[id].def.id==='orb-of-dragonkind'))(c.frontierMarks??={}).orbHaste=1;
   c.mshTeamwork=alt==='teamwork';
@@ -1194,7 +1214,9 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   }
   c.mkmEvidence=false;if(evidenceN&&evidenceIds)payEvidence(g,pid,c,evidenceIds);
   if(def.id==='demand-answers'&&(mode??0)===0){const id=a.discard??p.hand.find(id=>id!==c.id);if(id!==undefined)discard(g,g.cards[id]);}
-  c.manaPaid=g.lastManaPayment?.slice();
+  c.manaPaid=campusPaid;
+  for(const k of Object.keys(c.frontierMarks??{}))if(k.startsWith('cpUsedMana:')||k==='cpRebound')delete c.frontierMarks![k];
+  (c.frontierMarks??={}).cpCaveMana=caveMana;for(const id of foundationManaSources)c.frontierMarks['cpUsedMana:'+id]=1;
   if(returnLand)moveCard(g,returnLand,'hand');
   if(noctisCost){loseLife(g,pid,3);(c.finMarks??={}).enterFinality=1;}
   c.eclBlightPaid=blightN>0;if(body)putMinusCounters(g,body,blightN);
@@ -1204,7 +1226,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if(c.eclCast?.mode==='maralen'&&c.eclCast.source!==undefined)(p.eclMaralenUsed??=[]).push(c.eclCast.source);
   c.eclCast=undefined;
   consumeRaphaelPermission(g,c);
-  c.manaSpent=g.lastManaSpent??0;
+  c.manaSpent=campusSpent;
   if(!def.types.includes('Creature'))p.nextAffinity=0;
   if (alt === 'warp') g.voidThisTurn = true;
   const wl = wardLifeTax(g, pid, targets);
@@ -1224,6 +1246,10 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if (discardCard) discard(g, discardCard);
   removeFromZone(g, c);
   c.castOrigin = c.zone;
+  if(alt==='campusFree')frontierFlags(g,pid).cpFreeUsed=1;
+  if(c.def.meadow?.campusLifeX)frontierPayLife(g,pid,a.x??0);
+  if(c.zone==='graveyard'&&isCreature(c)&&frontierFlags(g,pid).cpTomb){frontierFlags(g,pid).cpTomb=0;(c.finMarks??={}).enterFinality=1;(c.frontierMarks??={}).cpVampire=1;}
+  if(c.zone==='exile'&&isCreature(c)&&c.def.subtypes?.includes('Dinosaur')&&frontierStatic(g,pid,'lci:paleontologist').some(s=>s.campusLinked?.some(x=>x.id===c.id&&x.version===c.objectVersion)))(c.finMarks??={}).enterFinality=1;
   c.airbent = undefined;
   c.onAdventure = false;
   c.plottedTurn = undefined;
@@ -1259,6 +1285,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   show(g, { kind: 'spell', player: pid, card: c.id, targets });
   if(sacCard)(c.frontierMarks??={}).sacOutlaw=Number(matches(g,{outlaw:true},sacCard,pid));
   if (sacCard){if(sacCard.suspected)(c.mkmMarks??={}).sacSuspect=g.turn;sacrifice(g,sacCard);}
+  if(alt==='campusCasualty')g.pending.push({source:c.id,controller:pid,abilityIndex:-315,ev:{type:'cast',card:c.id,player:pid,opponentTurn:g.active!==pid,bdSpell:{...g.stack[g.stack.length-1]}},ability:{kind:'trigger',on:'castAny',effects:[{e:'copySpell'}]}});
   p.spellsThisTurn++;
   if (def.types.includes('Instant') || def.types.includes('Sorcery')) p.instSorcThisTurn++;
   if (!def.types.includes('Creature')) p.noncreatureThisTurn = (p.noncreatureThisTurn ?? 0) + 1;
@@ -1300,6 +1327,12 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   if(c.def.id==='ronin-shadow-stalker'&&sacCard&&sacCard.attachedTo!==c.id)return '必須犧牲結附在Ronin上的武具';
   // Validate explicit payment choices before spending any mana.
   const chosen = a.costCards;
+  const craftIds=ab.cost.craft?(chosen??campusCraftOptions(g,pid,c,ab).slice(0,ab.cost.craftCount??1)):[];
+  if(ab.cost.craft&&!campusCraftValid(g,pid,c,ab,craftIds))return '製作素材不合法';
+  const foundryIds=ab.campusExileArtifacts?(chosen??g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===pid&&g.cards[id].def.types.includes('Artifact')).slice(0,1)):[];
+  if(ab.campusExileArtifacts&&(!foundryIds.length||new Set(foundryIds).size!==foundryIds.length||foundryIds.some(id=>id===c.id||!g.battlefield.includes(id)||g.cards[id].controller!==pid||!g.cards[id].def.types.includes('Artifact'))))return '放逐神器費用不合法';
+  const foundryMv=foundryIds.reduce((n,id)=>n+manaValue(g.cards[id].def),0);
+  if(ab.campusExileArtifacts&&targets.some(t=>t&&'c'in t&&manaValue(g.cards[t.c].def)>foundryMv))return '所放逐神器總法術力值不足';
   const exileCards=ab.bdExile?(chosen??g.players[pid].graveyard.filter(id=>id!==c.id&&matches(g,ab.bdExile!.filter,g.cards[id],pid)).slice(0,ab.bdExile.n??0)):[];
   if(ab.bdExile&&(new Set(exileCards).size!==exileCards.length||!ab.bdExile.any&&exileCards.length!==(ab.bdExile.n??0)||exileCards.some(id=>id===c.id||!g.players[pid].graveyard.includes(id)||!matches(g,ab.bdExile!.filter,g.cards[id],pid))))return '放逐費用不合法';
   const sacAny=ab.bdSacAny?(chosen??g.battlefield.filter(id=>g.cards[id].controller===pid&&matches(g,ab.bdSacAny,g.cards[id],pid)).slice(0,1)):[];
@@ -1450,12 +1483,21 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
     else if (ab.cost.exileSelf) moveCard(g, c, 'exile');
   }
   if (ab.cost.craft) {
-    for (const m of craftMaterials(g, pid, ab.cost.craft, c.id, ab.cost.craftCount) ?? []) {
+    c.campusLinked=[];
+    for (const m of craftIds) {
       log(g, `工藝：放逐 ${cardName(g.cards[m])}`, pid);
-      moveCard(g, g.cards[m], 'exile');
+      const material=g.cards[m],craftTriggers=abilitiesOf(g,material).filter(a=>a.kind==='trigger'&&a.frontierEvent==='lci:craftExiled');
+      campusLink(g,c,material);
+      for(const ability of craftTriggers)if(ability.kind==='trigger')g.pending.push({source:m,controller:pid,abilityIndex:-316,ev:{type:'frontier',action:'cpCraftExiled',card:m,player:pid,amount:c.id},ability});
+      emit(g,{type:'frontier',action:'cpCraftExiled',card:m,player:pid,amount:c.id});
     }
   }
+  if(ab.cost.craft){moveCard(g,c,'exile');(c.frontierMarks??={}).cpCraftVersion=c.objectVersion??0;}
+  if(ab.campusDiscardHand)discardMany(g,g.players[pid].hand.map(id=>g.cards[id]));
+  if(ab.campusEquipmentSac!==undefined)sacrifice(g,g.cards[ab.campusEquipmentSac]);
   const activatedItem=g.stack[g.stack.length-1];
+  if(ab.campusExileArtifacts){activatedItem.x=foundryMv;for(const id of foundryIds)moveCard(g,g.cards[id],'exile');}
+  if(!activatedItem.manaAbility)emit(g,{type:'frontier',action:'activated',card:c.id,player:pid,other:activatedItem.sid,amount:a.ability,bdStack:{...activatedItem,targets:activatedItem.targets.slice()}});
   if(ab.bdExhaust){frontierFlags(g,pid).bdExhausted=1;emit(g,{type:'frontier',action:'bdExhaust',card:c.id,player:pid,other:activatedItem.sid,amount:a.ability,bdStack:{...activatedItem,targets:activatedItem.targets.slice()}});}
   commitCrime(g,pid,c.id,targets,activatedItem.sid);
   if(targets.some(t=>t&&('p'in t||isCreature(g.cards[t.c]))))emit(g,{type:'frontier',action:'activatedTargets',card:c.id,player:pid,amount:activatedItem.sid});

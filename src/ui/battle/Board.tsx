@@ -270,7 +270,7 @@ export function Avatar({
 /** 牌庫、墳墓場、放逐區 */
 export function Piles({ g, pid, onGraveyard, onHover }: { g: GameState; pid: PID; onGraveyard: () => void; onHover: (id: number | null) => void }) {
   const p = g.players[pid];
-  const libraryTop=pid===0&&g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.topCast))?g.cards[p.library[0]]:undefined;
+  const libraryTop=pid===0&&(g.players[pid].frontierFlags?.cpTopPlay&&g.players[pid].frontierTurn===g.turn||g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&(a.topCast||a.frontier==='blb:lookTop'||a.frontier==='lci:equippedTopLook'&&g.cards[id].attachedTo!==null))))?g.cards[p.library[0]]:undefined;
   const top = p.graveyard.length ? g.cards[p.graveyard[p.graveyard.length - 1]] : null;
   return (
     <div className={`piles ${pid === 0 ? 'me' : 'opp'}`}>

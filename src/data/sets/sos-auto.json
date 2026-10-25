@@ -1,0 +1,1544 @@
+{
+  "10": {
+    "flashback": "{W}",
+    "spell": {
+      "effects": [
+        {
+          "e": "counters",
+          "what": "T0",
+          "n": 1
+        },
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 0,
+          "t": 0,
+          "kw": [
+            "vigilance"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "you"
+          }
+        }
+      ]
+    }
+  },
+  "11": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-inkling-11-bw-flying"
+          }
+        ]
+      }
+    ]
+  },
+  "19": {
+    "etbPrepared": true,
+    "keywords": [
+      "first_strike"
+    ],
+    "prepare": {
+      "name": "Forum's Favor",
+      "cost": "{W}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Target creature gets +1/+0 and gains flying until end of turn.",
+      "spell": {
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 0,
+            "kw": [
+              "flying"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "set": "SOS",
+      "rarity": "C"
+    },
+    "imageName": "Honorbound Page // Forum's Favor"
+  },
+  "22": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 2,
+          "t": 2,
+          "kw": [
+            "first_strike"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "27": {
+    "etbPrepared": true,
+    "keywords": [
+      "double_strike"
+    ],
+    "prepare": {
+      "name": "Twofold Intent",
+      "cost": "{1}{W}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Target creature gets +1/+0 and gains double strike until end of turn.",
+      "spell": {
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 0,
+            "kw": [
+              "double_strike"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "set": "SOS",
+      "rarity": "U"
+    },
+    "imageName": "Quill-Blade Laureate // Twofold Intent"
+  },
+  "28": {
+    "spell": {
+      "effects": [
+        {
+          "e": "tap",
+          "what": "T0"
+        },
+        {
+          "e": "if",
+          "cond": {
+            "c": "yourTurn"
+          },
+          "then": [
+            {
+              "e": "stun",
+              "what": "T0"
+            }
+          ]
+        },
+        {
+          "e": "draw",
+          "n": 1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "31": {
+    "keywords": [
+      "lifelink"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "destroy",
+            "what": "T0"
+          }
+        ],
+        "label": "消滅目標神器或結界",
+        "targets": [
+          {
+            "kind": "permanent",
+            "filter": {
+              "type": [
+                "Artifact",
+                "Enchantment"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "34": {
+    "spell": {
+      "effects": [
+        {
+          "e": "destroy",
+          "what": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "powMin": 3
+          }
+        }
+      ]
+    }
+  },
+  "36": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{W}"
+        },
+        "effects": [
+          {
+            "e": "gain",
+            "n": 2
+          },
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ],
+        "label": "你獲得2點生命。刺探1",
+        "fromGraveyard": true,
+        "sorcery": true
+      }
+    ]
+  },
+  "38": {
+    "spell": {
+      "effects": [
+        {
+          "e": "bounce",
+          "what": "T0"
+        },
+        {
+          "e": "surveil",
+          "n": 1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "permanent",
+          "filter": {
+            "nonType": "Land"
+          }
+        }
+      ]
+    }
+  },
+  "40": {
+    "ward": 2,
+    "etbPrepared": true,
+    "prepare": {
+      "name": "Aqueous Aria",
+      "cost": "{4}{U}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Create a 3/3 blue and red Elemental creature token with flying.",
+      "spell": {
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-elemental-33-ru-flying"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "set": "SOS",
+      "rarity": "U"
+    },
+    "imageName": "Campus Composer // Aqueous Aria"
+  },
+  "41": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 0,
+          "t": 3,
+          "kw": [
+            "hexproof"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "you"
+          }
+        }
+      ]
+    }
+  },
+  "46": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "prepare"
+          }
+        ]
+      }
+    ],
+    "prepare": {
+      "name": "Jump",
+      "cost": "{U}",
+      "types": [
+        "Instant"
+      ],
+      "text": "Target creature gains flying until end of turn.",
+      "spell": {
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "flying"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "set": "SOS",
+      "rarity": "U"
+    },
+    "imageName": "Encouraging Aviator // Jump"
+  },
+  "47": {
+    "spell": {
+      "effects": [
+        {
+          "e": "counter",
+          "what": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "spell",
+          "filter": {
+            "type": "Creature"
+          }
+        }
+      ]
+    }
+  },
+  "56": {
+    "etbPrepared": true,
+    "prepare": {
+      "name": "Vibrant Idea",
+      "cost": "{4}{U}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Draw two cards.",
+      "spell": {
+        "effects": [
+          {
+            "e": "draw",
+            "n": 2
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "set": "SOS",
+      "rarity": "C"
+    },
+    "imageName": "Landscape Painter // Vibrant Idea"
+  },
+  "61": {
+    "spell": {
+      "effects": [
+        {
+          "e": "token",
+          "token": "tok-g-elemental-33-ru-flying"
+        },
+        {
+          "e": "surveil",
+          "n": 2
+        }
+      ]
+    }
+  },
+  "65": {
+    "spell": {
+      "effects": [
+        {
+          "e": "draw",
+          "n": 2
+        }
+      ]
+    }
+  },
+  "68": {
+    "etbPrepared": true,
+    "keywords": [
+      "flying"
+    ],
+    "prepare": {
+      "name": "Careful Study",
+      "cost": "{U}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Draw two cards, then discard two cards.",
+      "spell": {
+        "effects": [
+          {
+            "e": "draw",
+            "n": 2
+          },
+          {
+            "e": "discard",
+            "n": 2,
+            "who": "you"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "set": "SOS",
+      "rarity": "C"
+    },
+    "imageName": "Spellbook Seeker // Careful Study"
+  },
+  "72": {
+    "etbPrepared": true,
+    "prepare": {
+      "name": "Have a Bite",
+      "cost": "{B}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Put a +1/+1 counter on target creature. You gain 1 life.",
+      "spell": {
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          },
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "set": "SOS",
+      "rarity": "C"
+    },
+    "imageName": "Adventurous Eater // Have a Bite"
+  },
+  "75": {
+    "keywords": [
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}{B}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "label": "此生物得+1/+1直到回合結束"
+      }
+    ]
+  },
+  "76": {
+    "etbPrepared": true,
+    "prepare": {
+      "name": "Raise Dead",
+      "cost": "{B}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Return target creature card from your graveyard to your hand.",
+      "spell": {
+        "effects": [
+          {
+            "e": "toHand",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "gyCard",
+            "filter": {
+              "ctrl": "you",
+              "type": "Creature"
+            },
+            "prompt": "選擇你墳墓場中的生物牌"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "set": "SOS",
+      "rarity": "C"
+    },
+    "imageName": "Cheerful Osteomancer // Raise Dead"
+  },
+  "79": {
+    "spell": {
+      "effects": [
+        {
+          "e": "lose",
+          "n": 1,
+          "who": "T0"
+        },
+        {
+          "e": "gain",
+          "n": 1
+        },
+        {
+          "e": "pump",
+          "what": "T1",
+          "p": 1,
+          "t": 1
+        },
+        {
+          "e": "pump",
+          "what": "T2",
+          "p": -1,
+          "t": -1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "opponent"
+        },
+        {
+          "kind": "creature",
+          "optional": true
+        },
+        {
+          "kind": "creature",
+          "optional": true
+        }
+      ]
+    }
+  },
+  "82": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}{B}"
+        },
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-inkling-11-bw-flying",
+            "n": 2
+          }
+        ],
+        "label": "派出兩個1/1白色與黑色，具有飛行異",
+        "fromGraveyard": true
+      }
+    ]
+  },
+  "86": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": -3,
+          "t": -3
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "89": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 1,
+          "t": 0,
+          "kw": [
+            "indestructible"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "you"
+          }
+        }
+      ]
+    }
+  },
+  "101": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 2,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "104": {
+    "spell": {
+      "effects": [
+        {
+          "e": "exile",
+          "what": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "117": {
+    "etbPrepared": true,
+    "prepare": {
+      "name": "Craft with Pride",
+      "cost": "{R}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "spell": {
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "set": "SOS",
+      "rarity": "C"
+    },
+    "imageName": "Goblin Glasswright // Craft with Pride"
+  },
+  "127": {
+    "keywords": [
+      "reach",
+      "haste"
+    ]
+  },
+  "131": {
+    "wardLife": 2,
+    "etbPrepared": true,
+    "prepare": {
+      "name": "Awaken the Ages",
+      "cost": "{5}{R}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Create two 2/2 red and white Spirit creature tokens.",
+      "spell": {
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-spirit-22-rw",
+            "n": 2
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "set": "SOS",
+      "rarity": "C"
+    },
+    "imageName": "Strife Scholar // Awaken the Ages"
+  },
+  "135": {
+    "flashback": "{4}{R}",
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 2,
+          "to": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "any"
+        }
+      ]
+    }
+  },
+  "136": {
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 4,
+          "to": "T0"
+        },
+        {
+          "e": "surveil",
+          "n": 1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "139": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-fractal-00-gu"
+          },
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 3
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "combatStart",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          },
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "vigilance"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "147": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "hand"
+          }
+        ],
+        "may": "從你的牌庫中搜尋一張基本地牌，展示該牌並置於你手上，然後將你的牌庫洗牌？"
+      }
+    ]
+  },
+  "154": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{G}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 2,
+            "t": 2
+          }
+        ],
+        "label": "此生物得+2/+2直到回合結束",
+        "oncePerTurn": true
+      }
+    ]
+  },
+  "155": {
+    "keywords": [
+      "deathtouch"
+    ],
+    "produces": [
+      "G"
+    ]
+  },
+  "159": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "170": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "castAny",
+        "effects": [
+          {
+            "e": "prepare"
+          }
+        ],
+        "filter": {
+          "type": "Creature"
+        }
+      }
+    ],
+    "prepare": {
+      "name": "Heroic Stanza",
+      "cost": "{1}{W/B}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Put a +1/+1 counter on target creature.",
+      "spell": {
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      },
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W",
+        "B"
+      ],
+      "set": "SOS",
+      "rarity": "U"
+    },
+    "imageName": "Abigale, Poet Laureate // Heroic Stanza"
+  },
+  "179": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "allyDies",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 1,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ],
+        "includeSelf": true
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}{B}{G}",
+          "tap": true,
+          "sacOther": {
+            "type": "Creature"
+          }
+        },
+        "effects": [
+          {
+            "e": "reanimate",
+            "what": "T0"
+          }
+        ],
+        "label": "將目標生物牌從你的墳墓場移回戰場",
+        "targets": [
+          {
+            "kind": "gyCard",
+            "filter": {
+              "ctrl": "you",
+              "type": "Creature"
+            },
+            "prompt": "選擇你墳墓場中的生物牌"
+          }
+        ],
+        "sorcery": true
+      }
+    ]
+  },
+  "189": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "tap",
+            "what": "T0"
+          },
+          {
+            "e": "stun",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "opp"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "192": {
+    "spell": {
+      "effects": [
+        {
+          "e": "destroy",
+          "what": "T0"
+        },
+        {
+          "e": "gain",
+          "n": 1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "permanent",
+          "filter": {
+            "type": [
+              "Artifact",
+              "Creature"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "195": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "209": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "lifegain",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "213": {
+    "spell": {
+      "effects": [
+        {
+          "e": "bounce",
+          "what": "T0"
+        },
+        {
+          "e": "searchLand",
+          "to": "battlefield",
+          "tapped": true
+        }
+      ],
+      "targets": [
+        {
+          "kind": "permanent",
+          "filter": {
+            "nonType": "Land"
+          },
+          "optional": true
+        }
+      ]
+    }
+  },
+  "215": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ]
+      }
+    ],
+    "etbCountersX": true
+  },
+  "216": {
+    "flashback": "{2}{R}{W}",
+    "spell": {
+      "effects": [
+        {
+          "e": "gain",
+          "n": 2
+        },
+        {
+          "e": "costThen",
+          "prompt": "棄一張牌來抓兩張牌？",
+          "cost": {
+            "discard": 1
+          },
+          "then": [
+            {
+              "e": "draw",
+              "n": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "220": {
+    "spell": {
+      "effects": [
+        {
+          "e": "discardChosen",
+          "who": "T0",
+          "filter": {
+            "nonType": "Land"
+          }
+        },
+        {
+          "e": "counters",
+          "what": "T1",
+          "n": 2
+        }
+      ],
+      "targets": [
+        {
+          "kind": "opponent"
+        },
+        {
+          "kind": "creature",
+          "optional": true
+        }
+      ]
+    }
+  },
+  "225": {
+    "spell": {
+      "modes": [
+        {
+          "text": "在目標生物上放置兩個+1/+1指示物",
+          "effects": [
+            {
+              "e": "counters",
+              "what": "T0",
+              "n": 2
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature"
+            }
+          ]
+        },
+        {
+          "text": "放逐目標力量為2或更少的生物",
+          "effects": [
+            {
+              "e": "exile",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "powMax": 2
+              }
+            }
+          ]
+        },
+        {
+          "text": "每位對手失去3點生命，且你獲得3點生命",
+          "effects": [
+            {
+              "e": "lose",
+              "n": 3,
+              "who": "opp"
+            },
+            {
+              "e": "gain",
+              "n": 3
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "239": {
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": {
+            "x": true
+          },
+          "to": "T0"
+        },
+        {
+          "e": "draw",
+          "n": 2
+        },
+        {
+          "e": "discard",
+          "n": 1,
+          "who": "you"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "any"
+        }
+      ]
+    }
+  },
+  "240": {
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 3,
+          "to": "T0"
+        },
+        {
+          "e": "tap",
+          "what": "T1"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "any"
+        },
+        {
+          "kind": "creature",
+          "optional": true
+        }
+      ]
+    }
+  },
+  "252": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "hand"
+          }
+        ],
+        "may": "從你的牌庫中搜尋一張基本地牌，展示該牌並置於你手上，然後將你的牌庫洗牌？"
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 2
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 2
+          }
+        ],
+        "label": "駕駛2"
+      }
+    ]
+  },
+  "253": {
+    "etbTappedUnless": {
+      "c": "controls",
+      "filter": {
+        "type": "Land",
+        "other": true
+      },
+      "n": 2
+    },
+    "produces": [
+      "B",
+      "G"
+    ]
+  },
+  "254": {
+    "etbTappedUnless": {
+      "c": "controls",
+      "filter": {
+        "type": "Land",
+        "other": true
+      },
+      "n": 2
+    },
+    "produces": [
+      "G",
+      "U"
+    ]
+  },
+  "255": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{R}{W}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ],
+        "label": "刺探1"
+      }
+    ],
+    "produces": [
+      "R",
+      "W"
+    ]
+  },
+  "256": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{W}{B}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ],
+        "label": "刺探1"
+      }
+    ],
+    "produces": [
+      "W",
+      "B"
+    ]
+  },
+  "258": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{G}{U}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ],
+        "label": "刺探1"
+      }
+    ],
+    "produces": [
+      "G",
+      "U"
+    ]
+  },
+  "260": {
+    "etbTappedUnless": {
+      "c": "controls",
+      "filter": {
+        "type": "Land",
+        "other": true
+      },
+      "n": 2
+    },
+    "produces": [
+      "W",
+      "B"
+    ]
+  },
+  "262": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{U}{R}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ],
+        "label": "刺探1"
+      }
+    ],
+    "produces": [
+      "U",
+      "R"
+    ]
+  },
+  "263": {
+    "etbTappedUnless": {
+      "c": "controls",
+      "filter": {
+        "type": "Land",
+        "other": true
+      },
+      "n": 2
+    },
+    "produces": [
+      "U",
+      "R"
+    ]
+  },
+  "264": {
+    "etbTappedUnless": {
+      "c": "controls",
+      "filter": {
+        "type": "Land",
+        "other": true
+      },
+      "n": 2
+    },
+    "produces": [
+      "R",
+      "W"
+    ]
+  },
+  "265": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "battlefield",
+            "tapped": true
+          }
+        ],
+        "label": "從你的牌庫中搜尋一張基本地牌，將它橫"
+      }
+    ]
+  },
+  "266": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{B}{G}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ],
+        "label": "刺探1"
+      }
+    ],
+    "produces": [
+      "B",
+      "G"
+    ]
+  }
+}

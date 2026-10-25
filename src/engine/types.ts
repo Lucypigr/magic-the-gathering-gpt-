@@ -388,7 +388,7 @@ export type Effect =
   /** 招募：抓一張牌，然後棄一張牌；若棄掉的不是地，派出 1/1 人類士兵 */
   | { e: 'recruit' }
   /** 從牌庫中搜尋一張符合條件的牌放到手上 */
-  | { e: 'tutor'; optional?:boolean; filter: Filter; to?: 'hand' | 'top' | 'battlefield' | 'graveyard' }
+  | { e: 'tutor'; tapped?:boolean; optional?:boolean; filter: Filter; to?: 'hand' | 'top' | 'battlefield' | 'graveyard' }
   /** 移除至多 n 個指示物 */
   | { e: 'removeCounters'; what: Ref; n: number; upTo?: boolean }
   /** 大地彎折（簡化）：派出一個 0/0 具敏捷的大地元素，並放上 n 個 +1/+1 指示物 */
@@ -463,7 +463,7 @@ export type Effect =
   | { e: 'scry'; n: number }
   /** retrieve：刺探後放進墳墓場的牌若符合條件，改為放到手上（mvLeLife：法術力值不超過本回合獲得的生命） */
   | { e: 'surveil'; n: number; retrieve?: { filter?: Filter; mvLeLife?: boolean } }
-  | { e: 'dig'; all?:boolean; optional?: boolean; randomBottom?: boolean; n: Amt; take?: number; filter?: Filter; rest: 'bottom' | 'graveyard' | 'top'; to?: 'hand' | 'battlefield' }
+  | { e: 'dig'; tapped?:boolean; all?:boolean; optional?: boolean; randomBottom?: boolean; n: Amt; take?: number; filter?: Filter; rest: 'bottom' | 'graveyard' | 'top'; to?: 'hand' | 'battlefield' }
   | { e: 'searchLand'; to: 'battlefield' | 'hand'; tapped?: boolean; untapIfLands?: number; who?: Ref; may?: boolean }
   | { e: 'counter'; what: Ref }
   | { e: 'counterUnless'; what: Ref; pay: number }
@@ -614,6 +614,8 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+ campusAbilityTarget?:boolean;campusConvergeTargets?:boolean;campusLifeTargets?:boolean;
+
  foundationDoor?:0|1;foundationModes?:'pact'|'hallcreeper';foundationDistribution?:number;foundationVariableTargets?:number;oncePerGame?:boolean;
   frontierDynamic?:'players'|'creaturesX';frontierPlayer?:PID;frontierEvent?:string;
   mshEvent?:string;mshDynamic?:'lifeTargets'|'equipment'|'wrecking';
@@ -669,6 +671,8 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+ campusEquipmentSac?:number;campusLocusKey?:number;campusExileArtifacts?:boolean;campusDiscardHand?:boolean;campusVariable?:'players';campusPageDiscount?:boolean;
+
  bdExhaust?:boolean;bdExert?:boolean;bdExile?:{filter:Filter;n?:number;any?:boolean};bdSacAny?:Filter;bdInstantOnly?:boolean;
  bdForage?:boolean;bdTapMana?:boolean;bdRemove?:string;
  roomDoor?:0|1;foundationDistribution?:number;foundationNinjutsu?:boolean;manaAbility?:boolean;
@@ -820,7 +824,7 @@ export interface CardDef {
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
-  ecl?: {variableTargets?:'creature';asEnters?:'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
+  ecl?: {variableTargets?:'creature';asEnters?:'campusLandCopy'|'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
   sneak?: string;
   combatPowerMin?: number;
   evadePowGte?: number;
@@ -950,6 +954,9 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+ campusLinked?:{id:number;version:number;def:CardDef;power:number;token?:boolean}[];
+ campusOriginalDef?:CardDef;campusTypeDef?:CardDef;
+
  finalityCount?:number;
  meadowLinked?:number[];meadowTypeDef?:CardDef;lastKeywords?:Keyword[];lastWasFood?:boolean;
  offspringPaid?:boolean;
@@ -1110,6 +1117,8 @@ export interface Card {
 }
 
 export interface Player {
+ campusSkipTurns?:number;
+
  foundationPool?:{mana:Mana;rule:'room'|'any';keepTurn?:number}[];foundationNoLifeGain?:boolean;foundationLost?:boolean;
   frontierTurn?:number;frontierFlags?:Record<string,number>;
   mshNoPowerTurn?:number;mshFlagsTurn?:number;mshFlags?:Record<string,number>;mshRestricted?:{mana:Mana;rule:string}[];
@@ -1202,7 +1211,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
  bdCounters?:Record<string,number>;
@@ -1242,7 +1251,7 @@ export interface EotEffect extends Grant {
   t: number;
   kw: Keyword[];
   /** 直到回合結束的基礎力量與防禦力 */
-  base?: { p: number; t: number };
+  base?: { p?: number; t?: number };
   /** 持續到該玩家的下一個回合開始（預設到回合結束） */
   until?: PID;
 }
@@ -1351,6 +1360,9 @@ export interface Show {
 }
 
 export interface GameState {
+ campusParadigms?:{name:string;player:PID;card:number;version:number}[];
+ campusDelayed?:{kind:string;player:PID;source:number;n:number;turn:number}[];
+
   resolvingSpell?:{card:number;targets:(TargetRef|null)[]};
   frontierExtraUpkeeps?:number;frontierEntryBatch?:number;
   mshTokenGroup?:number;mshTapGroup?:number;mshEvent?:number;

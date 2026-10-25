@@ -1,0 +1,6071 @@
+[
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "The Dawning Archaic",
+    "cost": "{10}",
+    "text": "This spell costs {1} less to cast for each instant and sorcery card in your graveyard.\nReach\nWhenever The Dawning Archaic attacks, you may cast target instant or sorcery card from your graveyard without paying its mana cost. If that spell would be put into your graveyard, exile it instead.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 1,
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Rancorous Archaic",
+    "cost": "{5}",
+    "text": "Reach, trample\nConverge — This creature enters with a +1/+1 counter on it for each color of mana spent to cast it.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 2,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "reach",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sundering Archaic",
+    "cost": "{6}",
+    "text": "Converge — When this creature enters, exile target nonland permanent an opponent controls with mana value less than or equal to the number of colors of mana spent to cast this creature.\n{2}: Put target card from a graveyard on the bottom of its owner's library.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 3,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Together as One",
+    "cost": "{6}",
+    "text": "Converge — Target player draws X cards, Together as One deals X damage to any target, and you gain X life, where X is the number of colors of mana spent to cast this spell.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Transcendent Archaic",
+    "cost": "{7}",
+    "text": "Vigilance\nConverge — When this creature enters, you may draw X cards, where X is the number of colors of mana spent to cast this spell. If you draw one or more cards this way, discard two cards.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 5,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Ajani's Response",
+    "cost": "{4}{W}",
+    "text": "This spell costs {3} less to cast if it targets a tapped creature.\nDestroy target creature.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Antiquities on the Loose",
+    "cost": "{1}{W}{W}",
+    "text": "Create two 2/2 red and white Spirit creature tokens. Then if this spell was cast from anywhere other than your hand, put a +1/+1 counter on each Spirit you control.\nFlashback {4}{W}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Ascendant Dustspeaker",
+    "cost": "{4}{W}",
+    "text": "Flying\nWhen this creature enters, put a +1/+1 counter on another target creature you control.\nAt the beginning of combat on your turn, exile up to one target card from a graveyard.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 8,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Daydream",
+    "cost": "{W}",
+    "text": "Exile target creature you control, then return that card to the battlefield under its owner's control with a +1/+1 counter on it.\nFlashback {2}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 9,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dig Site Inventory",
+    "cost": "{W}",
+    "text": "Put a +1/+1 counter on target creature you control. It gains vigilance until end of turn.\nFlashback {W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 10,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Eager Glyphmage",
+    "cost": "{3}{W}",
+    "text": "When this creature enters, create a 1/1 white and black Inkling creature token with flying.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 11,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Elite Interceptor",
+    "cost": "{W}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 12,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Rejoinder",
+      "cost": "{1}{W}",
+      "text": "You may tap or untap target creature.\nDraw a card.",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Elite Interceptor // Rejoinder"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Emeritus of Truce",
+    "cost": "{1}{W}{W}",
+    "text": "When this creature enters, target player creates a 1/1 white and black Inkling creature token with flying. Then if an opponent controls more creatures than you, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 13,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Swords to Plowshares",
+      "cost": "{W}",
+      "text": "Exile target creature. Its controller gains life equal to its power.",
+      "set": "SOS",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Emeritus of Truce // Swords to Plowshares"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Ennis, Debate Moderator",
+    "cost": "{1}{W}",
+    "text": "When Ennis enters, exile up to one other target creature you control. Return that card to the battlefield under its owner's control at the beginning of the next end step.\nAt the beginning of your end step, if one or more cards were put into exile this turn, put a +1/+1 counter on Ennis.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 14,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Erode",
+    "cost": "{W}",
+    "text": "Destroy target creature or planeswalker. Its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 15,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Graduation Day",
+    "cost": "{W}",
+    "text": "Repartee — Whenever you cast an instant or sorcery spell that targets a creature, put a +1/+1 counter on target creature you control.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 16,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Group Project",
+    "cost": "{1}{W}",
+    "text": "Create a 2/2 red and white Spirit creature token.\nFlashback—Tap three untapped creatures you control. (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 17,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Harsh Annotation",
+    "cost": "{1}{W}",
+    "text": "Destroy target creature. Its controller creates a 1/1 white and black Inkling creature token with flying.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 18,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Honorbound Page",
+    "cost": "{3}{W}",
+    "text": "First strike\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 19,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "first_strike"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Forum's Favor",
+      "cost": "{W}",
+      "text": "Target creature gets +1/+0 and gains flying until end of turn.",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Honorbound Page // Forum's Favor"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Informed Inkwright",
+    "cost": "{1}{W}",
+    "text": "Vigilance\nRepartee — Whenever you cast an instant or sorcery spell that targets a creature, create a 1/1 white and black Inkling creature token with flying.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 20,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Inkshape Demonstrator",
+    "cost": "{3}{W}",
+    "text": "Ward {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nRepartee — Whenever you cast an instant or sorcery spell that targets a creature, this creature gets +1/+0 and gains lifelink until end of turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 21,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Interjection",
+    "cost": "{W}",
+    "text": "Target creature gets +2/+2 and gains first strike until end of turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 22,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Joined Researchers",
+    "cost": "{1}{W}",
+    "text": "First strike\nAt the beginning of each end step, if an opponent has more cards in hand than you, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 23,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "first_strike"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Secret Rendezvous",
+      "cost": "{1}{W}{W}",
+      "text": "You and target opponent each draw three cards.",
+      "set": "SOS",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Joined Researchers // Secret Rendezvous"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Owlin Historian",
+    "cost": "{2}{W}",
+    "text": "Flying\nWhen this creature enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\nWhenever one or more cards leave your graveyard, this creature gets +1/+1 until end of turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 24,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Practiced Offense",
+    "cost": "{2}{W}",
+    "text": "Put a +1/+1 counter on each creature target player controls. Target creature gains your choice of double strike or lifelink until end of turn.\nFlashback {1}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 25,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Primary Research",
+    "cost": "{4}{W}",
+    "text": "When this enchantment enters, return target nonland permanent card with mana value 3 or less from your graveyard to the battlefield.\nAt the beginning of your end step, if a card left your graveyard this turn, draw a card.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 26,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Quill-Blade Laureate",
+    "cost": "{1}{W}",
+    "text": "Double strike\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 27,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "double_strike"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Twofold Intent",
+      "cost": "{1}{W}",
+      "text": "Target creature gets +1/+0 and gains double strike until end of turn.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Quill-Blade Laureate // Twofold Intent"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Rapier Wit",
+    "cost": "{1}{W}",
+    "text": "Tap target creature. If it's your turn, put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nDraw a card.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 28,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Rehearsed Debater",
+    "cost": "{2}{W}",
+    "text": "Vigilance\nRepartee — Whenever you cast an instant or sorcery spell that targets a creature, this creature gets +1/+1 until end of turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 29,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Restoration Seminar",
+    "cost": "{5}{W}{W}",
+    "text": "Return target nonland permanent card from your graveyard to the battlefield.\nParadigm (Then exile this spell. After you first resolve a spell with this name, you may cast a copy of it from exile without paying its mana cost at the beginning of each of your first main phases.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 30,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Shattered Acolyte",
+    "cost": "{1}{W}",
+    "text": "Lifelink\n{1}, Sacrifice this creature: Destroy target artifact or enchantment.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 31,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Soaring Stoneglider",
+    "cost": "{2}{W}",
+    "text": "As an additional cost to cast this spell, exile two cards from your graveyard or pay {1}{W}.\nFlying, vigilance",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 32,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Spiritcall Enthusiast",
+    "cost": "{2}{W}",
+    "text": "Whenever one or more tokens you control enter, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 33,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Scrollboost",
+      "cost": "{1}{W}",
+      "text": "One or two target creatures each get +2/+2 until end of turn.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Spiritcall Enthusiast // Scrollboost"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Stand Up for Yourself",
+    "cost": "{2}{W}",
+    "text": "Destroy target creature with power 3 or greater.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 34,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Stirring Hopesinger",
+    "cost": "{2}{W}",
+    "text": "Flying, lifelink\nRepartee — Whenever you cast an instant or sorcery spell that targets a creature, put a +1/+1 counter on each creature you control.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 35,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Chimera"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Stone Docent",
+    "cost": "{1}{W}",
+    "text": "{W}, Exile this card from your graveyard: You gain 2 life. Surveil 1. Activate only as a sorcery. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 36,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Camel"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Summoned Dromedary",
+    "cost": "{3}{W}",
+    "text": "Vigilance\n{1}{W}: Return this card from your graveyard to your hand. Activate only as a sorcery.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 37,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Banishing Betrayal",
+    "cost": "{1}{U}",
+    "text": "Return target nonland permanent to its owner's hand. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 38,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Brush Off",
+    "cost": "{2}{U}{U}",
+    "text": "This spell costs {1}{U} less to cast if it targets an instant or sorcery spell.\nCounter target spell.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 39,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Campus Composer",
+    "cost": "{3}{U}",
+    "text": "Ward {2}\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 40,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Aqueous Aria",
+      "cost": "{4}{U}",
+      "text": "Create a 3/3 blue and red Elemental creature token with flying.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Campus Composer // Aqueous Aria"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Chase Inspiration",
+    "cost": "{U}",
+    "text": "Target creature you control gets +0/+3 and gains hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 41,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Deluge Virtuoso",
+    "cost": "{2}{U}",
+    "text": "When this creature enters, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nOpus — Whenever you cast an instant or sorcery spell, this creature gets +1/+1 until end of turn. If five or more mana was spent to cast that spell, this creature gets +2/+2 until end of turn instead.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 42,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Divergent Equation",
+    "cost": "{X}{X}{U}",
+    "text": "Return up to X target instant and/or sorcery cards from your graveyard to your hand.\nExile Divergent Equation.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 43,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Echocasting Symposium",
+    "cost": "{4}{U}{U}",
+    "text": "Target player creates a token that's a copy of target creature you control.\nParadigm (Then exile this spell. After you first resolve a spell with this name, you may cast a copy of it from exile without paying its mana cost at the beginning of each of your first main phases.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 44,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Emeritus of Ideation",
+    "cost": "{3}{U}{U}",
+    "text": "Flying, ward {2}\nThis creature enters prepared.\nWhenever this creature attacks, you may exile eight cards from your graveyard. If you do, this creature becomes prepared.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 45,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Ancestral Recall",
+      "cost": "{U}",
+      "text": "Target player draws three cards.",
+      "set": "SOS",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Emeritus of Ideation // Ancestral Recall"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Encouraging Aviator",
+    "cost": "{2}{U}",
+    "text": "Flying\nWhenever this creature attacks, it becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 46,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "prepare": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Jump",
+      "cost": "{U}",
+      "text": "Target creature gains flying until end of turn.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Encouraging Aviator // Jump"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Essence Scatter",
+    "cost": "{1}{U}",
+    "text": "Counter target creature spell.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 47,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Exhibition Tidecaller",
+    "cost": "{U}",
+    "text": "Opus — Whenever you cast an instant or sorcery spell, target player mills three cards. If five or more mana was spent to cast that spell, that player mills ten cards instead.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 48,
+    "power": 0,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Flow State",
+    "cost": "{1}{U}",
+    "text": "Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order. If there is an instant card and a sorcery card in your graveyard, instead put two of them into your hand and the rest on the bottom of your library in any order.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 49,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Fractal Anomaly",
+    "cost": "{U}",
+    "text": "Create a 0/0 green and blue Fractal creature token and put X +1/+1 counters on it, where X is the number of cards you've drawn this turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 50,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Fractalize",
+    "cost": "{X}{U}",
+    "text": "Until end of turn, target creature becomes a green and blue Fractal with base power and toughness each equal to X plus 1. (It loses all other colors and creature types.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 51,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Bard",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Harmonized Trio",
+    "cost": "{U}",
+    "text": "{T}, Tap two untapped creatures you control: This creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 52,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Brainstorm",
+      "cost": "{U}",
+      "text": "Draw three cards, then put two cards from your hand on top of your library in any order.",
+      "set": "SOS",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Harmonized Trio // Brainstorm"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Homesickness",
+    "cost": "{4}{U}{U}",
+    "text": "Target player draws two cards. Tap up to two target creatures. Put a stun counter on each of them. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 53,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Hydro-Channeler",
+    "cost": "{1}{U}",
+    "text": "{T}: Add {U}. Spend this mana only to cast an instant or sorcery spell.\n{1}, {T}: Add one mana of any color. Spend this mana only to cast an instant or sorcery spell.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 54,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Jadzi, Steward of Fate",
+    "cost": "{2}{U}",
+    "text": "Jadzi enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nWhen Jadzi enters, draw two cards, then discard two cards.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 55,
+    "power": 2,
+    "toughness": 4,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Oracle's Gift",
+      "cost": "{X}{X}{U}",
+      "text": "Create X 0/0 green and blue Fractal creature tokens, then put X +1/+1 counters on each Fractal you control.",
+      "set": "SOS",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Jadzi, Steward of Fate // Oracle's Gift"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Landscape Painter",
+    "cost": "{1}{U}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 56,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Vibrant Idea",
+      "cost": "{4}{U}",
+      "text": "Draw two cards.",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Landscape Painter // Vibrant Idea"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mana Sculpt",
+    "cost": "{1}{U}{U}",
+    "text": "Counter target spell. If you control a Wizard, add an amount of {C} equal to the amount of mana spent to cast that spell at the beginning of your next main phase.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 57,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mathemagics",
+    "cost": "{X}{X}{U}{U}",
+    "text": "Target player draws 2ˣ cards. (2⁰ = 1, 2¹ = 2, 2² = 4, 2³ = 8, 2⁴ = 16, 2⁵ = 32, and so on.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 58,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Matterbending Mage",
+    "cost": "{2}{U}",
+    "text": "When this creature enters, return up to one other target creature to its owner's hand.\nWhenever you cast a spell with {X} in its mana cost, this creature can't be blocked this turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 59,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Muse Seeker",
+    "cost": "{1}{U}",
+    "text": "Opus — Whenever you cast an instant or sorcery spell, draw a card. Then discard a card unless five or more mana was spent to cast that spell.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 60,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Muse's Encouragement",
+    "cost": "{4}{U}",
+    "text": "Create a 3/3 blue and red Elemental creature token with flying.\nSurveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 61,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Bard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Orysa, Tide Choreographer",
+    "cost": "{4}{U}",
+    "text": "This spell costs {3} less to cast if creatures you control have total toughness 10 or greater.\nWhen Orysa enters, draw two cards.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 62,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Pensive Professor",
+    "cost": "{1}{U}{U}",
+    "text": "Increment (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)\nWhenever one or more +1/+1 counters are put on this creature, draw a card.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 63,
+    "power": 0,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Procrastinate",
+    "cost": "{X}{U}",
+    "text": "Tap target creature. Put twice X stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 64,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Quick Study",
+    "cost": "{2}{U}",
+    "text": "Draw two cards.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 65,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Run Behind",
+    "cost": "{3}{U}",
+    "text": "This spell costs {1} less to cast if it targets an attacking creature.\nTarget creature's owner puts it on their choice of the top or bottom of their library.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 66,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Skycoach Conductor",
+    "cost": "{2}{U}",
+    "text": "Flash\nFlying, vigilance\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 67,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flash",
+      "flying",
+      "vigilance"
+    ],
+    "prepare": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "All Aboard",
+      "cost": "{U}",
+      "text": "Exile target non-Pilot creature you control, then return that card to the battlefield under its owner's control.",
+      "set": "SOS",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Skycoach Conductor // All Aboard"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Spellbook Seeker",
+    "cost": "{3}{U}",
+    "text": "Flying\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 68,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Careful Study",
+      "cost": "{U}",
+      "text": "Draw two cards, then discard two cards.",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Spellbook Seeker // Careful Study"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Tester of the Tangential",
+    "cost": "{1}{U}",
+    "text": "Increment (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)\nAt the beginning of combat on your turn, you may pay {X}. When you do, move X +1/+1 counters from this creature onto another target creature.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 69,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Textbook Tabulator",
+    "cost": "{2}{U}",
+    "text": "Increment (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)\nWhen this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 70,
+    "power": 0,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Wisdom of Ages",
+    "cost": "{4}{U}{U}{U}",
+    "text": "Return all instant and sorcery cards from your graveyard to your hand. You have no maximum hand size for the rest of the game.\nExile Wisdom of Ages.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 71,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Adventurous Eater",
+    "cost": "{2}{B}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 72,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Have a Bite",
+      "cost": "{B}",
+      "text": "Put a +1/+1 counter on target creature. You gain 1 life.",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Adventurous Eater // Have a Bite"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Arcane Omens",
+    "cost": "{4}{B}",
+    "text": "Converge — Target player discards X cards, where X is the number of colors of mana spent to cast this spell.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 73,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Druid"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Arnyn, Deathbloom Botanist",
+    "cost": "{2}{B}",
+    "text": "Deathtouch\nWhenever a creature you control with power or toughness 1 or less dies, target opponent loses 2 life and you gain 2 life.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 74,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Burrog Banemaker",
+    "cost": "{B}",
+    "text": "Deathtouch\n{1}{B}: This creature gets +1/+1 until end of turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 75,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Cheerful Osteomancer",
+    "cost": "{3}{B}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 76,
+    "power": 4,
+    "toughness": 2,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Raise Dead",
+      "cost": "{B}",
+      "text": "Return target creature card from your graveyard to your hand.",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Cheerful Osteomancer // Raise Dead"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Cost of Brilliance",
+    "cost": "{2}{B}",
+    "text": "Target player draws two cards and loses 2 life. Put a +1/+1 counter on up to one target creature.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 77,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Decorum Dissertation",
+    "cost": "{3}{B}{B}",
+    "text": "Target player draws two cards and loses 2 life.\nParadigm (Then exile this spell. After you first resolve a spell with this name, you may cast a copy of it from exile without paying its mana cost at the beginning of each of your first main phases.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 78,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Dissection Practice",
+    "cost": "{B}",
+    "text": "Target opponent loses 1 life and you gain 1 life.\nUp to one target creature gets +1/+1 until end of turn.\nUp to one target creature gets -1/-1 until end of turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 79,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Emeritus of Woe",
+    "cost": "{3}{B}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nAt the beginning of your end step, if two or more creatures died this turn, this creature becomes prepared.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 80,
+    "power": 5,
+    "toughness": 4,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Demonic Tutor",
+      "cost": "{1}{B}",
+      "text": "Search your library for a card, put that card into your hand, then shuffle.",
+      "set": "SOS",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Emeritus of Woe // Demonic Tutor"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "End of the Hunt",
+    "cost": "{1}{B}",
+    "text": "Target opponent exiles a creature or planeswalker they control with the greatest mana value among creatures and planeswalkers they control.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 81,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Eternal Student",
+    "cost": "{3}{B}",
+    "text": "{1}{B}, Exile this card from your graveyard: Create two 1/1 white and black Inkling creature tokens with flying.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 82,
+    "power": 4,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Foolish Fate",
+    "cost": "{2}{B}",
+    "text": "Destroy target creature.\nInfusion — If you gained life this turn, that creature's controller loses 3 life.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 83,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Troll",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Forum Necroscribe",
+    "cost": "{5}{B}",
+    "text": "Ward—Discard a card.\nRepartee — Whenever you cast an instant or sorcery spell that targets a creature, return target creature card from your graveyard to the battlefield.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 84,
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Troll",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Grave Researcher",
+    "cost": "{2}{B}",
+    "text": "At the beginning of your upkeep, surveil 1. Then if there are three or more creature cards in your graveyard, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 85,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Reanimate",
+      "cost": "{B}",
+      "text": "Put target creature card from a graveyard onto the battlefield under your control. You lose life equal to that card's mana value.",
+      "set": "SOS",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Grave Researcher // Reanimate"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Last Gasp",
+    "cost": "{1}{B}",
+    "text": "Target creature gets -3/-3 until end of turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 86,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Lecturing Scornmage",
+    "cost": "{B}",
+    "text": "Repartee — Whenever you cast an instant or sorcery spell that targets a creature, put a +1/+1 counter on this creature.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 87,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Leech Collector",
+    "cost": "{1}{B}",
+    "text": "Whenever you gain life for the first time each turn, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 88,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Bloodletting",
+      "cost": "{B}",
+      "text": "Each opponent loses 2 life.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Leech Collector // Bloodletting"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Masterful Flourish",
+    "cost": "{B}",
+    "text": "Target creature you control gets +1/+0 and gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 89,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Melancholic Poet",
+    "cost": "{1}{B}",
+    "text": "Repartee — Whenever you cast an instant or sorcery spell that targets a creature, each opponent loses 1 life and you gain 1 life.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 90,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Skeleton",
+      "Warlock"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Moseo, Vein's New Dean",
+    "cost": "{2}{B}",
+    "text": "Flying\nWhen Moseo enters, create a 1/1 black and green Pest creature token with \"Whenever this token attacks, you gain 1 life.\"\nInfusion — At the beginning of your end step, if you gained life this turn, return up to one target creature card with mana value X or less from your graveyard to the battlefield, where X is the amount of life you gained this turn.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 91,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Poisoner's Apprentice",
+    "cost": "{2}{B}",
+    "text": "Infusion — When this creature enters, target creature an opponent controls gets -4/-4 until end of turn if you gained life this turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 92,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Postmortem Professor",
+    "cost": "{1}{B}",
+    "text": "This creature can't block.\nWhenever this creature attacks, each opponent loses 1 life and you gain 1 life.\n{1}{B}, Exile an instant or sorcery card from your graveyard: Return this card from your graveyard to the battlefield.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 93,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Pox Plague",
+    "cost": "{B}{B}{B}{B}{B}",
+    "text": "Each player loses half their life, then discards half the cards in their hand, then sacrifices half the permanents they control of their choice. Round down each time.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 94,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Pull from the Grave",
+    "cost": "{2}{B}",
+    "text": "Return up to two target creature cards from your graveyard to your hand. You gain 2 life.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 95,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Rabid Attack",
+    "cost": "{1}{B}",
+    "text": "Until end of turn, any number of target creatures you control each get +1/+0 and gain \"When this creature dies, draw a card.\"",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 96,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Ral"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Ral Zarek, Guest Lecturer",
+    "cost": "{1}{B}{B}",
+    "text": "[+1]: Surveil 2.\n[−1]: Any number of target players each discard a card.\n[−2]: Return target creature card with mana value 3 or less from your graveyard to the battlefield.\n[−7]: Flip five coins. Target opponent skips their next X turns, where X is the number of coins that came up heads.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 97,
+    "loyalty": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Scathing Shadelock",
+    "cost": "{4}{B}",
+    "text": "At the beginning of your first main phase, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 98,
+    "power": 4,
+    "toughness": 6,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Venomous Words",
+      "cost": "{B}",
+      "text": "Target creature you control gets +2/+0 and gains deathtouch until end of turn.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Scathing Shadelock // Venomous Words"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Scheming Silvertongue",
+    "cost": "{1}{B}",
+    "text": "Flying, lifelink\nAt the beginning of your second main phase, if you gained 2 or more life this turn, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 99,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Sign in Blood",
+      "cost": "{B}{B}",
+      "text": "Target player draws two cards and loses 2 life.",
+      "set": "SOS",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Scheming Silvertongue // Sign in Blood"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Send in the Pest",
+    "cost": "{1}{B}",
+    "text": "Each opponent discards a card. You create a 1/1 black and green Pest creature token with \"Whenever this token attacks, you gain 1 life.\"",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 100,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Sneering Shadewriter",
+    "cost": "{4}{B}",
+    "text": "Flying\nWhen this creature enters, each opponent loses 2 life and you gain 2 life.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 101,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Tragedy Feaster",
+    "cost": "{2}{B}{B}",
+    "text": "Trample\nWard—Discard a card.\nInfusion — At the beginning of your end step, sacrifice a permanent unless you gained life this turn.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 102,
+    "power": 7,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Ulna Alley Shopkeep",
+    "cost": "{2}{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nInfusion — This creature gets +2/+0 as long as you gained life this turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 103,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Wander Off",
+    "cost": "{3}{B}",
+    "text": "Exile target creature.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 104,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Withering Curse",
+    "cost": "{1}{B}{B}",
+    "text": "All creatures get -2/-2 until end of turn.\nInfusion — If you gained life this turn, destroy all creatures instead.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 105,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Ancestral Anger",
+    "cost": "{R}",
+    "text": "Target creature gains trample and gets +X/+0 until end of turn, where X is 1 plus the number of cards named Ancestral Anger in your graveyard.\nDraw a card.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 106,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Archaic's Agony",
+    "cost": "{4}{R}",
+    "text": "Converge — Archaic's Agony deals X damage to target creature, where X is the number of colors of mana spent to cast this spell. Exile cards from the top of your library equal to the excess damage dealt to that creature this way. You may play those cards until the end of your next turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 107,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Artistic Process",
+    "cost": "{3}{R}{R}",
+    "text": "Choose one —\n• Artistic Process deals 6 damage to target creature.\n• Artistic Process deals 2 damage to each creature you don't control.\n• Create a 3/3 blue and red Elemental creature token with flying. It gains haste until end of turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 108,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Blazing Firesinger",
+    "cost": "{2}{R}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 109,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Seething Song",
+      "cost": "{2}{R}",
+      "text": "Add {R}{R}{R}{R}{R}.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Blazing Firesinger // Seething Song"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Charging Strifeknight",
+    "cost": "{2}{R}",
+    "text": "Haste\n{T}, Discard a card: Draw a card.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 110,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Choreographed Sparks",
+    "cost": "{R}{R}",
+    "text": "This spell can't be copied.\nChoose one or both —\n• Copy target instant or sorcery spell you control. You may choose new targets for the copy.\n• Copy target creature spell you control. The copy gains haste and \"At the beginning of the end step, sacrifice this token.\"",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 111,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Duel Tactics",
+    "cost": "{R}",
+    "text": "Duel Tactics deals 1 damage to target creature. It can't block this turn.\nFlashback {1}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 112,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Emeritus of Conflict",
+    "cost": "{1}{R}",
+    "text": "First strike\nWhenever you cast your third spell each turn, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 113,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "first_strike"
+    ],
+    "prepare": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Lightning Bolt",
+      "cost": "{R}",
+      "text": "Lightning Bolt deals 3 damage to any target.",
+      "set": "SOS",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Emeritus of Conflict // Lightning Bolt"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Expressive Firedancer",
+    "cost": "{1}{R}",
+    "text": "Opus — Whenever you cast an instant or sorcery spell, this creature gets +1/+1 until end of turn. If five or more mana was spent to cast that spell, this creature also gains double strike until end of turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 114,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Flashback",
+    "cost": "{R}",
+    "text": "Target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost. (You may cast that card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 115,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Garrison Excavator",
+    "cost": "{3}{R}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever one or more cards leave your graveyard, create a 2/2 red and white Spirit creature token.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 116,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Goblin Glasswright",
+    "cost": "{1}{R}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 117,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Craft with Pride",
+      "cost": "{R}",
+      "text": "Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Goblin Glasswright // Craft with Pride"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Heated Argument",
+    "cost": "{4}{R}",
+    "text": "Heated Argument deals 6 damage to target creature. You may exile a card from your graveyard. If you do, Heated Argument also deals 2 damage to that creature's controller.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 118,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Impractical Joke",
+    "cost": "{R}",
+    "text": "Damage can't be prevented this turn. Impractical Joke deals 3 damage to up to one target creature or planeswalker.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 119,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Improvisation Capstone",
+    "cost": "{5}{R}{R}",
+    "text": "Exile cards from the top of your library until you exile cards with total mana value 4 or greater. You may cast any number of spells from among them without paying their mana costs.\nParadigm (Then exile this spell. After you first resolve a spell with this name, you may cast a copy of it from exile without paying its mana cost at the beginning of each of your first main phases.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 120,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Living History",
+    "cost": "{1}{R}",
+    "text": "When this enchantment enters, create a 2/2 red and white Spirit creature token.\nWhenever you attack, if a card left your graveyard this turn, target attacking creature gets +2/+0 until end of turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 121,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Minotaur",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Maelstrom Artisan",
+    "cost": "{1}{R}{R}",
+    "text": "Haste\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 122,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "haste"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Rocket Volley",
+      "cost": "{1}{R}",
+      "text": "Destroy target nonbasic land.",
+      "set": "SOS",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Maelstrom Artisan // Rocket Volley"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Magmablood Archaic",
+    "cost": "{2/R}{2/R}{2/R}",
+    "text": "Reach, trample\nConverge — This creature enters with a +1/+1 counter on it for each color of mana spent to cast it.\nWhenever you cast an instant or sorcery spell, creatures you control get +1/+0 until end of turn for each color of mana spent to cast that spell.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 123,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "reach",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Mica, Reader of Ruins",
+    "cost": "{3}{R}",
+    "text": "Ward—Pay 3 life. (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays 3 life.)\nWhenever you cast an instant or sorcery spell, you may sacrifice an artifact. If you do, copy that spell and you may choose new targets for the copy.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 124,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Molten-Core Maestro",
+    "cost": "{1}{R}",
+    "text": "Menace\nOpus — Whenever you cast an instant or sorcery spell, put a +1/+1 counter on this creature. If five or more mana was spent to cast that spell, add an amount of {R} equal to this creature's power.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 125,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Pigment Wrangler",
+    "cost": "{4}{R}",
+    "text": "Flying\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 126,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Striking Palette",
+      "cost": "{R}",
+      "text": "When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Pigment Wrangler // Striking Palette"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Horse",
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Rearing Embermare",
+    "cost": "{4}{R}",
+    "text": "Reach, haste",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 127,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "reach",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Rubble Rouser",
+    "cost": "{2}{R}",
+    "text": "When this creature enters, you may discard a card. If you do, draw a card.\n{T}, Exile a card from your graveyard: Add {R}. When you do, this creature deals 1 damage to each opponent.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 128,
+    "power": 1,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Seize the Spoils",
+    "cost": "{2}{R}",
+    "text": "As an additional cost to cast this spell, discard a card.\nDraw two cards and create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 129,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Steal the Show",
+    "cost": "{2}{R}",
+    "text": "Choose one or both —\n• Target player discards any number of cards, then draws that many cards.\n• Steal the Show deals damage equal to the number of instant and sorcery cards in your graveyard to target creature or planeswalker.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 130,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Strife Scholar",
+    "cost": "{2}{R}",
+    "text": "Ward—Pay 2 life.\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 131,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Awaken the Ages",
+      "cost": "{5}{R}",
+      "text": "Create two 2/2 red and white Spirit creature tokens.",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Strife Scholar // Awaken the Ages"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Tablet of Discovery",
+    "cost": "{2}{R}",
+    "text": "When this artifact enters, mill a card. You may play that card this turn. (To mill a card, put the top card of your library into your graveyard.)\n{T}: Add {R}.\n{T}: Add {R}{R}. Spend this mana only to cast instant and sorcery spells.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 132,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Tackle Artist",
+    "cost": "{3}{R}",
+    "text": "Trample\nOpus — Whenever you cast an instant or sorcery spell, put a +1/+1 counter on this creature. If five or more mana was spent to cast that spell, put two +1/+1 counters on this creature instead.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 133,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Thunderdrum Soloist",
+    "cost": "{1}{R}",
+    "text": "Reach\nOpus — Whenever you cast an instant or sorcery spell, this creature deals 1 damage to each opponent. If five or more mana was spent to cast that spell, this creature deals 3 damage to each opponent instead.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 134,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Tome Blast",
+    "cost": "{1}{R}",
+    "text": "Tome Blast deals 2 damage to any target.\nFlashback {4}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 135,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Unsubtle Mockery",
+    "cost": "{2}{R}",
+    "text": "Unsubtle Mockery deals 4 damage to target creature. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 136,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Giant",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Zealous Lorecaster",
+    "cost": "{5}{R}",
+    "text": "When this creature enters, return target instant or sorcery card from your graveyard to your hand.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 137,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wurm"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Aberrant Manawurm",
+    "cost": "{3}{G}",
+    "text": "Trample\nWhenever you cast an instant or sorcery spell, this creature gets +X/+0 until end of turn, where X is the amount of mana spent to cast that spell.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 138,
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Additive Evolution",
+    "cost": "{3}{G}{G}",
+    "text": "When this enchantment enters, create a 0/0 green and blue Fractal creature token. Put three +1/+1 counters on it.\nAt the beginning of combat on your turn, put a +1/+1 counter on target creature you control. It gains vigilance until end of turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 139,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Turtle",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Ambitious Augmenter",
+    "cost": "{G}",
+    "text": "Increment (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)\nWhen this creature dies, if it had one or more counters on it, create a 0/0 green and blue Fractal creature token, then put this creature's counters on that token.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 140,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Burrog Barrage",
+    "cost": "{1}{G}",
+    "text": "Target creature you control gets +1/+0 until end of turn if you've cast another instant or sorcery spell this turn. Then it deals damage equal to its power to up to one target creature an opponent controls.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 141,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Chelonian Tackle",
+    "cost": "{2}{G}",
+    "text": "Target creature you control gets +0/+10 until end of turn. Then it fights up to one target creature an opponent controls. (Each deals damage equal to its power to the other.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 142,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Comforting Counsel",
+    "cost": "{1}{G}",
+    "text": "Whenever you gain life, put a growth counter on this enchantment.\nAs long as there are five or more growth counters on this enchantment, creatures you control get +3/+3.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 143,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Efflorescence",
+    "cost": "{2}{G}",
+    "text": "Put two +1/+1 counters on target creature.\nInfusion — If you gained life this turn, that creature also gains trample and indestructible until end of turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 144,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Emeritus of Abundance",
+    "cost": "{2}{G}",
+    "text": "Vigilance\nThis creature enters prepared.\nWhenever this creature attacks, if you control eight or more lands, this creature becomes prepared.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 145,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Regrowth",
+      "cost": "{1}{G}",
+      "text": "Return target card from your graveyard to your hand.",
+      "set": "SOS",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Emeritus of Abundance // Regrowth"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Emil, Vastlands Roamer",
+    "cost": "{2}{G}",
+    "text": "Creatures you control with +1/+1 counters on them have trample.\n{4}{G}, {T}: Create a 0/0 green and blue Fractal creature token. Put X +1/+1 counters on it, where X is the number of differently named lands you control.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 146,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Environmental Scientist",
+    "cost": "{1}{G}",
+    "text": "When this creature enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 147,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Follow the Lumarets",
+    "cost": "{1}{G}",
+    "text": "Infusion — Look at the top four cards of your library. You may reveal a creature or land card from among them and put it into your hand. If you gained life this turn, you may instead reveal two creature and/or land cards from among them and put them into your hand. Put the rest on the bottom of your library in a random order.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 148,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [
+      "Lesson"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Germination Practicum",
+    "cost": "{3}{G}{G}",
+    "text": "Put two +1/+1 counters on each creature you control.\nParadigm (Then exile this spell. After you first resolve a spell with this name, you may cast a copy of it from exile without paying its mana cost at the beginning of each of your first main phases.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 149,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Glorious Decay",
+    "cost": "{1}{G}",
+    "text": "Choose one —\n• Destroy target artifact.\n• Glorious Decay deals 4 damage to target creature with flying.\n• Exile target card from a graveyard. Draw a card.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 150,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Giraffe"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Hungry Graffalon",
+    "cost": "{3}{G}",
+    "text": "Reach\nIncrement (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 151,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Infirmary Healer",
+    "cost": "{1}{G}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 152,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Stream of Life",
+      "cost": "{X}{G}",
+      "text": "Target player gains X life.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Infirmary Healer // Stream of Life"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Lumaret's Favor",
+    "cost": "{1}{G}",
+    "text": "Infusion — When you cast this spell, copy it if you gained life this turn. You may choose new targets for the copy.\nTarget creature gets +2/+4 until end of turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 153,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dryad",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Mindful Biomancer",
+    "cost": "{1}{G}",
+    "text": "When this creature enters, you gain 1 life.\n{2}{G}: This creature gets +2/+2 until end of turn. Activate only once each turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 154,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Salamander"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Noxious Newt",
+    "cost": "{1}{G}",
+    "text": "Deathtouch\n{T}: Add {G}.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 155,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Oracle's Restoration",
+    "cost": "{G}",
+    "text": "Target creature you control gets +1/+1 until end of turn. You draw a card and gain 1 life.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 156,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Sloth"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Pestbrood Sloth",
+    "cost": "{3}{G}",
+    "text": "Reach\nWhen this creature dies, create two 1/1 black and green Pest creature tokens with \"Whenever this token attacks, you gain 1 life.\"",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 157,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Planar Engineering",
+    "cost": "{3}{G}",
+    "text": "Sacrifice two lands. Search your library for four basic land cards, put them onto the battlefield tapped, then shuffle.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 158,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Badger",
+      "Pest"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Shopkeeper's Bane",
+    "cost": "{2}{G}",
+    "text": "Trample\nWhenever this creature attacks, you gain 2 life.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 159,
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Slumbering Trudge",
+    "cost": "{X}{G}",
+    "text": "This creature enters with a number of stun counters on it equal to three minus X. If X is 2 or less, it enters tapped. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 160,
+    "power": 6,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Snarl Song",
+    "cost": "{5}{G}",
+    "text": "Converge — Create two 0/0 green and blue Fractal creature tokens. Put X +1/+1 counters on each of them and you gain X life, where X is the number of colors of mana spent to cast this spell.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 161,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Studious First-Year",
+    "cost": "{G}",
+    "text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 162,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Rampant Growth",
+      "cost": "{1}{G}",
+      "text": "Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+      "set": "SOS",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Studious First-Year // Rampant Growth"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Troll",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Tenured Concocter",
+    "cost": "{4}{G}",
+    "text": "Vigilance\nWhenever this creature becomes the target of a spell or ability an opponent controls, you may draw a card.\nInfusion — This creature gets +2/+0 as long as you gained life this turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 163,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Thornfist Striker",
+    "cost": "{2}{G}",
+    "text": "Ward {1} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)\nInfusion — Creatures you control get +1/+0 and have trample as long as you gained life this turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 164,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Topiary Lecturer",
+    "cost": "{2}{G}",
+    "text": "Increment (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)\n{T}: Add an amount of {G} equal to this creature's power.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 165,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Vastlands Scavenger",
+    "cost": "{1}{G}{G}",
+    "text": "Deathtouch\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 166,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch"
+    ],
+    "prepare": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Bind to Life",
+      "cost": "{4}{G}",
+      "text": "Mill seven cards. Then put a creature card from among them onto the battlefield.",
+      "set": "SOS",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Vastlands Scavenger // Bind to Life"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Wild Hypothesis",
+    "cost": "{X}{G}",
+    "text": "Create a 0/0 green and blue Fractal creature token. Put X +1/+1 counters on it.\nSurveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 167,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Wildgrowth Archaic",
+    "cost": "{2/G}{2/G}",
+    "text": "Reach, trample\nConverge — This creature enters with a +1/+1 counter on it for each color of mana spent to cast it.\nWhenever you cast a creature spell, that creature enters with X additional +1/+1 counters on it, where X is the number of colors of mana spent to cast it.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 168,
+    "power": 0,
+    "toughness": 0,
+    "keywords": [
+      "reach",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Zimone's Experiment",
+    "cost": "{3}{G}",
+    "text": "Look at the top five cards of your library. You may reveal up to two creature and/or land cards from among them, then put the rest on the bottom of your library in a random order. Put all land cards revealed this way onto the battlefield tapped and put all creature cards revealed this way into your hand.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 169,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Bard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W",
+      "B"
+    ],
+    "name": "Abigale, Poet Laureate",
+    "cost": "{1}{W}{B}",
+    "text": "Flying\nWhenever you cast a creature spell, Abigale becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 170,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W",
+        "B"
+      ],
+      "name": "Heroic Stanza",
+      "cost": "{1}{W/B}",
+      "text": "Put a +1/+1 counter on target creature.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Abigale, Poet Laureate // Heroic Stanza"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Abstract Paintmage",
+    "cost": "{U}{U/R}{R}",
+    "text": "At the beginning of your first main phase, add {U}{R}. Spend this mana only to cast instant and sorcery spells.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 171,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Applied Geometry",
+    "cost": "{2}{G}{U}",
+    "text": "Create a token that's a copy of target non-Aura permanent you control, except it's a 0/0 Fractal creature in addition to its other types. Put six +1/+1 counters on it.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 172,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Ark of Hunger",
+    "cost": "{2}{R}{W}",
+    "text": "Whenever one or more cards leave your graveyard, this artifact deals 1 damage to each opponent and you gain 1 life.\n{T}: Mill a card. You may play that card this turn.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 173,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Sorcerer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Aziza, Mage Tower Captain",
+    "cost": "{R}{W}",
+    "text": "Whenever you cast an instant or sorcery spell, you may tap three untapped creatures you control. If you do, copy that spell. You may choose new targets for the copy.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 174,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog",
+      "Druid"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Berta, Wise Extrapolator",
+    "cost": "{2}{G}{U}",
+    "text": "Increment (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)\nWhenever one or more +1/+1 counters are put on Berta, add one mana of any color.\n{X}, {T}: Create a 0/0 green and blue Fractal creature token and put X +1/+1 counters on it.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 175,
+    "power": 1,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Pest"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Blech, Loafing Pest",
+    "cost": "{1}{B}{G}",
+    "text": "Whenever you gain life, put a +1/+1 counter on each Pest, Bat, Insect, Snake, and Spider you control.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 176,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Frog"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Bogwater Lumaret",
+    "cost": "{B}{G}",
+    "text": "Whenever this creature or another creature you control enters, you gain 1 life.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 177,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Borrowed Knowledge",
+    "cost": "{2}{R}{W}",
+    "text": "Choose one —\n• Discard your hand, then draw cards equal to the number of cards in target opponent's hand.\n• Discard your hand, then draw cards equal to the number of cards discarded this way.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 178,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Cauldron of Essence",
+    "cost": "{1}{B}{G}",
+    "text": "Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.\n{1}{B}{G}, {T}, Sacrifice a creature: Return target creature card from your graveyard to the battlefield. Activate only as a sorcery.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 179,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Horse"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Colorstorm Stallion",
+    "cost": "{1}{U}{R}",
+    "text": "Ward {1}, haste\nOpus — Whenever you cast an instant or sorcery spell, this creature gets +1/+1 until end of turn. If five or more mana was spent to cast that spell, create a token that's a copy of this creature.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 180,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Colossus of the Blood Age",
+    "cost": "{4}{R}{W}",
+    "text": "When this creature enters, it deals 3 damage to each opponent and you gain 3 life.\nWhen this creature dies, discard any number of cards, then draw that many cards plus one.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 181,
+    "power": 6,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kor",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Conciliator's Duelist",
+    "cost": "{W}{W}{B}{B}",
+    "text": "When this creature enters, draw a card. Each player loses 1 life.\nRepartee — Whenever you cast an instant or sorcery spell that targets a creature, exile up to one target creature. Return that card to the battlefield under its owner's control at the beginning of the next end step.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 182,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Cuboid Colony",
+    "cost": "{G}{U}",
+    "text": "Flash\nFlying, trample\nIncrement (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 183,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flash",
+      "flying",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Dina's Guidance",
+    "cost": "{1}{B}{G}",
+    "text": "Search your library for a creature card, reveal it, put it into your hand or graveyard, then shuffle.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 184,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Bird"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Elemental Mascot",
+    "cost": "{1}{U}{R}",
+    "text": "Flying, vigilance\nOpus — Whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn. If five or more mana was spent to cast that spell, exile the top card of your library. You may play that card until the end of your next turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 185,
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Embrace the Paradox",
+    "cost": "{3}{G}{U}",
+    "text": "Draw three cards. You may put a land card from your hand onto the battlefield tapped.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 186,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dryad",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Essenceknit Scholar",
+    "cost": "{B}{B/G}{G}",
+    "text": "When this creature enters, create a 1/1 black and green Pest creature token with \"Whenever this token attacks, you gain 1 life.\"\nAt the beginning of your end step, if a creature died under your control this turn, draw a card.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 187,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Fix What's Broken",
+    "cost": "{2}{W}{B}",
+    "text": "As an additional cost to cast this spell, pay X life.\nReturn each artifact and creature card with mana value X from your graveyard to the battlefield.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 188,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fractal",
+      "Elk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Fractal Mascot",
+    "cost": "{4}{G}{U}",
+    "text": "Trample\nWhen this creature enters, tap target creature an opponent controls. Put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 189,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Fractal Tender",
+    "cost": "{3}{G}{U}",
+    "text": "Ward {2}\nIncrement (Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +1/+1 counter on this creature.)\nAt the beginning of each end step, if you put a counter on this creature this turn, create a 0/0 green and blue Fractal creature token and put three +1/+1 counters on it.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 190,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fractal",
+      "Crab"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Geometer's Arthropod",
+    "cost": "{G}{U}",
+    "text": "Whenever you cast a spell with {X} in its mana cost, look at the top X cards of your library. Put one of them into your hand and the rest on the bottom of your library in a random order.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 191,
+    "power": 1,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Grapple with Death",
+    "cost": "{1}{B}{G}",
+    "text": "Destroy target artifact or creature. You gain 1 life.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 192,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Growth Curve",
+    "cost": "{G}{U}",
+    "text": "Put a +1/+1 counter on target creature you control, then double the number of +1/+1 counters on that creature.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 193,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Hardened Academic",
+    "cost": "{R}{W}",
+    "text": "Flying, haste\nDiscard a card: This creature gains lifelink until end of turn.\nWhenever one or more cards leave your graveyard, put a +1/+1 counter on target creature you control.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 194,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Imperious Inkmage",
+    "cost": "{1}{W}{B}",
+    "text": "Vigilance\nWhen this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 195,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Inkling",
+      "Cat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Inkling Mascot",
+    "cost": "{W}{B}",
+    "text": "Repartee — Whenever you cast an instant or sorcery spell that targets a creature, this creature gains flying until end of turn. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 196,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Killian's Confidence",
+    "cost": "{W}{B}",
+    "text": "Target creature gets +1/+1 until end of turn. Draw a card.\nWhenever one or more creatures you control deal combat damage to a player, you may pay {W/B}. If you do, return this card from your graveyard to your hand.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 197,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Cleric"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W",
+      "R"
+    ],
+    "name": "Kirol, History Buff",
+    "cost": "{R}{W}",
+    "text": "Whenever one or more cards leave your graveyard, Kirol becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 198,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W",
+        "R"
+      ],
+      "name": "Pack a Punch",
+      "cost": "{1}{R}{W}",
+      "text": "Mill a card. Put two +1/+1 counters on target creature. It gains trample until end of turn.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Kirol, History Buff // Pack a Punch"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Lluwen, Exchange Student",
+    "cost": "{2}{B}{G}",
+    "text": "Lluwen enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nExile a creature card from your graveyard: Lluwen becomes prepared. Activate only as a sorcery.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 199,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B",
+        "G"
+      ],
+      "name": "Pest Friend",
+      "cost": "{B/G}",
+      "text": "Create a 1/1 black and green Pest creature token with \"Whenever this token attacks, you gain 1 life.\"",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Lluwen, Exchange Student // Pest Friend"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Lorehold Charm",
+    "cost": "{R}{W}",
+    "text": "Choose one —\n• Each opponent sacrifices a nontoken artifact of their choice.\n• Return target artifact or creature card with mana value 2 or less from your graveyard to the battlefield.\n• Creatures you control get +1/+1 and gain trample until end of turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 200,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Lorehold, the Historian",
+    "cost": "{3}{R}{W}",
+    "text": "Flying, haste\nEach instant and sorcery card in your hand has miracle {2}. (You may cast a card for its miracle cost when you draw it if it's the first card you drew this turn.)\nAt the beginning of each opponent's upkeep, you may discard a card. If you do, draw a card.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 201,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Mind into Matter",
+    "cost": "{X}{G}{U}",
+    "text": "Draw X cards. Then you may put a permanent card with mana value X or less from your hand onto the battlefield tapped.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 202,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Mind Roots",
+    "cost": "{1}{B}{G}",
+    "text": "Target player discards two cards. Put up to one land card discarded this way onto the battlefield tapped under your control.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 203,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Molten Note",
+    "cost": "{X}{R}{W}",
+    "text": "Molten Note deals damage to target creature equal to the amount of mana spent to cast this spell. Untap all creatures you control.\nFlashback {6}{R}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 204,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Moment of Reckoning",
+    "cost": "{3}{W}{W}{B}{B}",
+    "text": "Choose up to four. You may choose the same mode more than once.\n• Destroy target nonland permanent.\n• Return target nonland permanent card from your graveyard to the battlefield.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 205,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Nita, Forum Conciliator",
+    "cost": "{1}{W}{B}",
+    "text": "Whenever you cast a spell you don't own, put a +1/+1 counter on each creature you control.\n{2}, Sacrifice another creature: Exile target instant or sorcery card from an opponent's graveyard. You may cast it this turn, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead. Activate only as a sorcery.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 206,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Treefolk",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Old-Growth Educator",
+    "cost": "{2}{B}{G}",
+    "text": "Reach, vigilance\nInfusion — When this creature enters, put two +1/+1 counters on it if you gained life this turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 207,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Paradox Surveyor",
+    "cost": "{G}{G/U}{U}",
+    "text": "Reach\nWhen this creature enters, look at the top five cards of your library. You may reveal a land card or a card with {X} in its mana cost from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 208,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Pest",
+      "Ape"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Pest Mascot",
+    "cost": "{1}{B}{G}",
+    "text": "Trample\nWhenever you gain life, put a +1/+1 counter on this creature.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 209,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Practiced Scrollsmith",
+    "cost": "{R}{R/W}{W}",
+    "text": "First strike\nWhen this creature enters, exile target noncreature, nonland card from your graveyard. Until the end of your next turn, you may cast that card.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 210,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "first_strike"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Prismari Charm",
+    "cost": "{U}{R}",
+    "text": "Choose one —\n• Surveil 2, then draw a card.\n• Prismari Charm deals 1 damage to each of one or two targets.\n• Return target nonland permanent to its owner's hand.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 211,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Prismari, the Inspiration",
+    "cost": "{5}{U}{R}",
+    "text": "Flying\nWard—Pay 5 life.\nInstant and sorcery spells you cast have storm. (Whenever you cast an instant or sorcery spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 212,
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Proctor's Gaze",
+    "cost": "{2}{G}{U}",
+    "text": "Return up to one target nonland permanent to its owner's hand. Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 213,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Dellian"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Professor Dellian Fel",
+    "cost": "{2}{B}{G}",
+    "text": "[+2]: You gain 3 life.\n[0]: You draw a card and lose 1 life.\n[−3]: Destroy target creature.\n[−6]: You get an emblem with \"Whenever you gain life, target opponent loses that much life.\"",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 214,
+    "loyalty": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Fractal"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Pterafractyl",
+    "cost": "{X}{G}{U}",
+    "text": "Flying\nThis creature enters with X +1/+1 counters on it.\nWhen this creature enters, you gain 2 life.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 215,
+    "power": 1,
+    "toughness": 0,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Pursue the Past",
+    "cost": "{R}{W}",
+    "text": "You gain 2 life. You may discard a card. If you do, draw two cards.\nFlashback {2}{R}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 216,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Quandrix Charm",
+    "cost": "{G}{U}",
+    "text": "Choose one —\n• Counter target spell unless its controller pays {2}.\n• Destroy target enchantment.\n• Target creature has base power and toughness 5/5 until end of turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 217,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Quandrix, the Proof",
+    "cost": "{4}{G}{U}",
+    "text": "Flying, trample\nCascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.)\nInstant and sorcery spells you cast from your hand have cascade.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 218,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "flying",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Rapturous Moment",
+    "cost": "{4}{U}{R}",
+    "text": "Draw three cards, then discard two cards. Add {U}{U}{R}{R}{R}.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 219,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Render Speechless",
+    "cost": "{2}{W}{B}",
+    "text": "Target opponent reveals their hand. You choose a nonland card from it. That player discards that card.\nPut two +1/+1 counters on up to one target creature.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 220,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Resonating Lute",
+    "cost": "{2}{U}{R}",
+    "text": "Lands you control have \"{T}: Add two mana of any one color. Spend this mana only to cast instant and sorcery spells.\"\n{T}: Draw a card. Activate only if you have seven or more cards in your hand.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 221,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Root Manipulation",
+    "cost": "{3}{B}{G}",
+    "text": "Until end of turn, creatures you control get +2/+2 and gain menace and \"Whenever this creature attacks, you gain 1 life.\" (A creature with menace can't be blocked except by two or more creatures.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 222,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Sorcerer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "R"
+    ],
+    "name": "Sanar, Unfinished Genius",
+    "cost": "{U}{R}",
+    "text": "Sanar enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n{T}: Create a Treasure token. Activate only if you've cast an instant or sorcery spell this turn.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 223,
+    "power": 0,
+    "toughness": 4,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U",
+        "R"
+      ],
+      "name": "Wild Idea",
+      "cost": "{3}{U}{R}",
+      "text": "Search your library for an instant or sorcery card, reveal it, put it into your hand, then shuffle.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Sanar, Unfinished Genius // Wild Idea"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Scolding Administrator",
+    "cost": "{W}{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nRepartee — Whenever you cast an instant or sorcery spell that targets a creature, put a +1/+1 counter on this creature.\nWhen this creature dies, if it had counters on it, put those counters on up to one target creature.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 224,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Silverquill Charm",
+    "cost": "{W}{B}",
+    "text": "Choose one —\n• Put two +1/+1 counters on target creature.\n• Exile target creature with power 2 or less.\n• Each opponent loses 3 life and you gain 3 life.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 225,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Silverquill, the Disputant",
+    "cost": "{2}{W}{B}",
+    "text": "Flying, vigilance\nEach instant and sorcery spell you cast has casualty 1. (As you cast that spell, you may sacrifice a creature with power 1 or greater. When you do, copy the spell and you may choose new targets for the copy.)",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 226,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Snooping Page",
+    "cost": "{1}{W}{B}",
+    "text": "Repartee — Whenever you cast an instant or sorcery spell that targets a creature, this creature can't be blocked this turn.\nWhenever this creature deals combat damage to a player, you draw a card and lose 1 life.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 227,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Social Snub",
+    "cost": "{1}{W}{B}",
+    "text": "When you cast this spell while you control a creature, you may copy this spell.\nEach player sacrifices a creature of their choice. Each opponent loses 1 life and you gain 1 life.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 228,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Whale"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Spectacular Skywhale",
+    "cost": "{2}{U}{R}",
+    "text": "Flying\nOpus — Whenever you cast an instant or sorcery spell, this creature gets +3/+0 until end of turn. If five or more mana was spent to cast that spell, put three +1/+1 counters on this creature instead.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 229,
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Ox"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Spirit Mascot",
+    "cost": "{R}{W}",
+    "text": "Whenever one or more cards leave your graveyard, put a +1/+1 counter on this creature.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 230,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Splatter Technique",
+    "cost": "{1}{U}{U}{R}{R}",
+    "text": "Choose one —\n• Draw four cards.\n• Splatter Technique deals 4 damage to each creature and planeswalker.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 231,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Sorcerer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Stadium Tidalmage",
+    "cost": "{2}{U}{R}",
+    "text": "Whenever this creature enters or attacks, you may draw a card. If you do, discard a card.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 232,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Sloth",
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Startled Relic Sloth",
+    "cost": "{2}{R}{W}",
+    "text": "Trample, lifelink\nAt the beginning of combat on your turn, exile up to one target card from a graveyard.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 233,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "trample",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rhino",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Stirring Honormancer",
+    "cost": "{2}{W}{W/B}{B}",
+    "text": "When this creature enters, look at the top X cards of your library, where X is the number of creatures you control. Put one of those cards into your hand and the rest into your graveyard.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 234,
+    "power": 4,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Stress Dream",
+    "cost": "{3}{U}{R}",
+    "text": "Stress Dream deals 5 damage to up to one target creature. Look at the top two cards of your library. Put one of those cards into your hand and the other on the bottom of your library.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 235,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Suspend Aggression",
+    "cost": "{1}{R}{W}",
+    "text": "Exile target nonland permanent and the top card of your library. For each of those cards, its owner may play it until the end of their next turn.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 236,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Gorgon",
+      "Wizard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "G"
+    ],
+    "name": "Tam, Observant Sequencer",
+    "cost": "{2}{G}{U}",
+    "text": "Landfall — Whenever a land you control enters, Tam becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 237,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [],
+    "prepare": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U",
+        "G"
+      ],
+      "name": "Deep Sight",
+      "cost": "{G}{U}",
+      "text": "You draw a card and gain 1 life.",
+      "set": "SOS",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Tam, Observant Sequencer // Deep Sight"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Skeleton",
+      "Pest"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Teacher's Pest",
+    "cost": "{B}{G}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever this creature attacks, you gain 1 life.\n{B}{G}: Return this card from your graveyard to the battlefield tapped.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 238,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Traumatic Critique",
+    "cost": "{X}{U}{R}",
+    "text": "Traumatic Critique deals X damage to any target. Draw two cards, then discard a card.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 239,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Vibrant Outburst",
+    "cost": "{U}{R}",
+    "text": "Vibrant Outburst deals 3 damage to any target. Tap up to one target creature.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 240,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Vicious Rivalry",
+    "cost": "{2}{B}{G}",
+    "text": "As an additional cost to cast this spell, pay X life.\nDestroy all artifacts and creatures with mana value X or less.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 241,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Visionary's Dance",
+    "cost": "{5}{U}{R}",
+    "text": "Create two 3/3 blue and red Elemental creature tokens with flying.\n{2}, Discard this card: Look at the top two cards of your library. Put one of them into your hand and the other into your graveyard.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 242,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Wilt in the Heat",
+    "cost": "{2}{R}{W}",
+    "text": "This spell costs {2} less to cast if one or more cards left your graveyard this turn.\nWilt in the Heat deals 5 damage to target creature. If that creature would die this turn, exile it instead.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 243,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Witherbloom Charm",
+    "cost": "{B}{G}",
+    "text": "Choose one —\n• You may sacrifice a permanent. If you do, draw two cards.\n• You gain 5 life.\n• Destroy target nonland permanent with mana value 2 or less.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 244,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Witherbloom, the Balancer",
+    "cost": "{6}{B}{G}",
+    "text": "Affinity for creatures (This spell costs {1} less to cast for each creature you control.)\nFlying, deathtouch\nInstant and sorcery spells you cast have affinity for creatures.",
+    "set": "SOS",
+    "rarity": "M",
+    "number": 245,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Bard",
+      "Sorcerer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Zaffai and the Tempests",
+    "cost": "{5}{U}{R}",
+    "text": "Once during each of your turns, you may cast an instant or sorcery spell from your hand without paying its mana cost.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 246,
+    "power": 5,
+    "toughness": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Biblioplex Tomekeeper",
+    "cost": "{4}",
+    "text": "When this creature enters, choose up to one —\n• Target creature becomes prepared. (Only creatures with prepare spells can become prepared.)\n• Target creature becomes unprepared.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 247,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Book"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Diary of Dreams",
+    "cost": "{2}",
+    "text": "Whenever you cast an instant or sorcery spell, put a page counter on this artifact.\n{5}, {T}: Draw a card. This ability costs {1} less to activate for each page counter on this artifact.",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 248,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Mage Tower Referee",
+    "cost": "{2}",
+    "text": "Whenever you cast a multicolored spell, put a +1/+1 counter on this creature.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 249,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Page, Loose Leaf",
+    "cost": "{2}",
+    "text": "{T}: Add {C}.\nGrandeur — Discard another card named Page, Loose Leaf: Reveal cards from the top of your library until you reveal an instant or sorcery card. Put that card into your hand and the rest on the bottom of your library in a random order.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 250,
+    "power": 0,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Potioner's Trove",
+    "cost": "{3}",
+    "text": "{T}: Add one mana of any color.\n{T}: You gain 2 life. Activate only if you've cast an instant or sorcery spell this turn.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 251,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Strixhaven Skycoach",
+    "cost": "{3}",
+    "text": "Flying\nWhen this Vehicle enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 252,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Deathcap Glade",
+    "cost": "",
+    "text": "This land enters tapped unless you control two or more other lands.\n{T}: Add {B} or {G}.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 253,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Dreamroot Cascade",
+    "cost": "",
+    "text": "This land enters tapped unless you control two or more other lands.\n{T}: Add {G} or {U}.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 254,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Fields of Strife",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {R} or {W}.\n{2}{R}{W}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 255,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Forum of Amity",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {W} or {B}.\n{2}{W}{B}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 256,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Great Hall of the Biblioplex",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{T}, Pay 1 life: Add one mana of any color. Spend this mana only to cast an instant or sorcery spell.\n{5}: If this land isn't a creature, it becomes a 2/4 Wizard creature with \"Whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn.\" It's still a land.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 257,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Paradox Gardens",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {G} or {U}.\n{2}{G}{U}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 258,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Petrified Hamlet",
+    "cost": "",
+    "text": "When this land enters, choose a land card name.\nActivated abilities of sources with the chosen name can't be activated unless they're mana abilities.\nLands with the chosen name have \"{T}: Add {C}.\"\n{T}: Add {C}.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 259,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Shattered Sanctum",
+    "cost": "",
+    "text": "This land enters tapped unless you control two or more other lands.\n{T}: Add {W} or {B}.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 260,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Skycoach Waypoint",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{3}, {T}: Target creature becomes prepared. (Only creatures with prepare spells can become prepared.)",
+    "set": "SOS",
+    "rarity": "U",
+    "number": 261,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Spectacle Summit",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {U} or {R}.\n{2}{U}{R}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 262,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Stormcarved Coast",
+    "cost": "",
+    "text": "This land enters tapped unless you control two or more other lands.\n{T}: Add {U} or {R}.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 263,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sundown Pass",
+    "cost": "",
+    "text": "This land enters tapped unless you control two or more other lands.\n{T}: Add {R} or {W}.",
+    "set": "SOS",
+    "rarity": "R",
+    "number": 264,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Terramorphic Expanse",
+    "cost": "",
+    "text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 265,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Titan's Grave",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {B} or {G}.\n{2}{B}{G}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SOS",
+    "rarity": "C",
+    "number": 266,
+    "keywords": []
+  }
+]

@@ -1,3 +1,6 @@
+import {campusRefresh} from './campus-zones';
+import {campusCraftOptions} from './campus-casting';
+import {campusTriggerAbility} from './campus-support';
 import {forageOptions} from './meadow-costs';
 import {meadowRefresh} from './meadow';
 import {meadowTriggerAbility} from './meadow-support';
@@ -48,6 +51,7 @@ export function checkSBA(g: GameState): void {
     let changed = false;
     refreshFrontierCopies(g);
     foundationRefresh(g);
+    campusRefresh(g);
     meadowRefresh(g);
     for(const host of g.battlefield){for(const pid of [0,1]as PID[]){const roles=g.battlefield.filter(id=>g.cards[id].attachedTo===host&&g.cards[id].controller===pid&&g.cards[id].def.subtypes?.includes('Role'));if(roles.length>1){for(const id of roles.slice(0,-1))moveCard(g,g.cards[id],'graveyard');changed=true;}}}
     const losers = g.players.filter(p=>!frontierStatic(g,p.id,'fdn:cantLose').length&&(p.foundationLost||p.life<=0&&!frontierStatic(g,p.id,'dsk:grimoire').length||p.drewFromEmpty||(p.poison??0)>=10));
@@ -150,7 +154,8 @@ function* flushTriggers(g: GameState): SubFlow {
   const list = g.pending.splice(0);
   const ordered = [...list.filter((t) => t.controller === g.active), ...list.filter((t) => t.controller !== g.active)];
   for (const t of ordered) {
-    let ab = meadowTriggerAbility(g,g.cards[t.source],t.ability,t.ev);
+    let ab = campusTriggerAbility(g,g.cards[t.source],meadowTriggerAbility(g,g.cards[t.source],t.ability,t.ev));
+    if(ab.campusAbilityTarget){const items=g.stack.filter(s=>s.kind!=='spell'&&!s.manaAbility);const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇至多一個反擊異能的目標',options:['不選目標',...items.map(s=>s.text)],count:1,purpose:'trigger'};const index=r.type==='modes'?r.picks[0]??0:0;ab={...ab,effects:index&&items[index-1]?[{e:'frontier',action:'lci:81',n:items[index-1].sid}]:[]};}
     const src = g.cards[t.source];
     if(ab.mshDynamic==='wrecking'){ab={...ab,chooseN:Math.min(4,src.castX??0)};if(!ab.chooseN)continue;}
     let foundationMode:number|undefined;
@@ -388,7 +393,7 @@ function* resolveTopItem(g: GameState): SubFlow {
     } else {
       yield* runEffects(g, ctx, item.effects);
       if(src.zone==='stack'&&src.frontierMarks?.lilahPlot){moveCard(g,src,'exile');src.plottedTurn=g.turn;delete src.frontierMarks.lilahPlot;}
-      if(src.zone==='stack'){const dream=src.castOrigin==='hand'&&g.battlefield.some(id=>g.cards[id].controller===item.controller&&g.cards[id].def.id==='goliath-daydreamer'&&abilitiesOf(g,g.cards[id]).length);moveCard(g,src,dream||src.finExileOnResolve?'exile':'graveyard');src.finExileOnResolve=undefined;if(dream)src.eclDream=true;}
+      if(src.zone==='stack'){const dream=src.castOrigin==='hand'&&g.battlefield.some(id=>g.cards[id].controller===item.controller&&g.cards[id].def.id==='goliath-daydreamer'&&abilitiesOf(g,g.cards[id]).length);moveCard(g,src,dream||src.finExileOnResolve||src.frontierMarks?.cpRebound?'exile':'graveyard');src.finExileOnResolve=undefined;if(dream)src.eclDream=true;}
     }
   } else {
     if (item.cond && !checkCond(g, item.cond, item.controller, item.cardId, legal, item.ev)) return;
@@ -460,6 +465,8 @@ export function* priorityStep(g: GameState): SubFlow {
           return answer.type==='choose'?answer.ids:[];
         };
         if(c&&ab&&canActivate(g,p,c,r.ability)){
+          if(ab.cost.craft&&r.costCards===undefined){const ids=campusCraftOptions(g,p,c,ab);r.costCards=yield*chooseCost('選擇製作時放逐的素材',ids,ab.cost.craftCount??1,c.def.meadow?.craftAny?ids.length:ab.cost.craftCount??1);}
+          if(ab.campusExileArtifacts&&r.costCards===undefined)r.costCards=yield*chooseCost('放逐一個或更多其他神器',g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===p&&g.cards[id].def.types.includes('Artifact')),1,g.battlefield.length);
           if(ab.bdExile&&r.costCards===undefined)r.costCards=yield*chooseCost('選擇要放逐的墳墓場牌',g.players[p].graveyard.filter(id=>id!==c.id&&matches(g,ab.bdExile!.filter,g.cards[id],p)),ab.bdExile.n??0,ab.bdExile.any?g.players[p].graveyard.length:ab.bdExile.n??0);
           if(ab.bdSacAny&&r.costCards===undefined)r.costCards=yield*chooseCost('犧牲一個或更多永久物',g.battlefield.filter(id=>g.cards[id].controller===p&&matches(g,ab.bdSacAny,g.cards[id],p)),1,g.battlefield.length);
           if(ab.bdForage&&r.costCards===undefined){const cost=forageOptions(g,p);r.costCards=yield*chooseCost('掘食：選一個食物或三張墳墓場牌',cost.ids,cost.n,cost.max);}
@@ -606,7 +613,9 @@ function* turn(g: GameState): SubFlow {
   if(extra!==undefined)g.active=extra;
   else if(g.normalTurnAfterExtra!==undefined){g.active=g.normalTurnAfterExtra;g.normalTurnAfterExtra=undefined;}
   else g.active=g.turn===1?g.firstPlayer:other(g.active);
+  if((g.players[g.active].campusSkipTurns??0)>0){g.players[g.active].campusSkipTurns!--;g.turn--;return;}
   const a = g.active;
+  campusRefresh(g);
   meadowRefresh(g);
   if(g.playerControl && a===g.playerControl.player && g.turn>=g.playerControl.starts)g.playerControl.ends=g.turn;
   const pl = g.players[a];
@@ -664,10 +673,11 @@ function* turn(g: GameState): SubFlow {
   }
   // 重置
   g.phase = 'untap';
+  const cpTappedBefore=g.battlefield.filter(id=>g.cards[id].controller===a&&g.cards[id].tapped);
   for (const id of g.battlefield) {
     const c = g.cards[id];
     if(c.def.id==="benders-waterskin") c.tapped=false;
-    if (c.controller !== a) continue;
+    if (c.controller !== a){if(c.tapped&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='lci:opponentUntap')&&!stats(g,c).noUntap){if(c.stun>0)c.stun--;else c.tapped=false;}continue;}
     c.sick = false;
     if(c.frontierMarks?.bdExertBy===a+1&&(c.frontierMarks.bdExertTurn??g.turn)<g.turn){delete c.frontierMarks.bdExertBy;delete c.frontierMarks.bdExertTurn;continue;}
     if(c.tapped&&c.def.id==='hedge-whisperer'){const r:Response=yield{type:'yesno',player:a,prompt:'保持 Hedge Whisperer 橫置？'};if(r.type==='yesno'&&r.yes)continue;}
@@ -679,6 +689,7 @@ function* turn(g: GameState): SubFlow {
   for(const id of g.battlefield){const c=g.cards[id],hedge=c.mkmMarks?.hedge;if(hedge!==undefined&&(!g.cards[hedge]?.tapped||g.cards[hedge].zone!=='battlefield')){if(c.tlaOriginalDef){c.def=c.tlaOriginalDef;c.tlaOriginalDef=undefined;}delete c.mkmMarks!.hedge;}}
   g.version++;
   for(const id of g.battlefield){const c=g.cards[id];if(c.controller!==a&&isCreature(c)&&frontierStatic(g,c.controller,'dsk:otherUntap').length&&!stats(g,c).noUntap){if(c.stun>0)c.stun--;else c.tapped=false;}}
+  const cpUntapped=cpTappedBefore.filter(id=>!g.cards[id].tapped).length;if(cpUntapped)emit(g,{type:'frontier',action:'cpUntap',card:-1,player:a,amount:cpUntapped});
   // 維持
   phases:{
   g.phase = 'upkeep';

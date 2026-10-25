@@ -1,9 +1,11 @@
+import {campusPermission,campusExtraCosts} from './campus-casting';
 import {meadowExtraCosts,validForage,payForage,festivalCast} from './meadow-costs';
 import { frontierStatic, frontierFlags } from "./frontier-support";
 import { isCreature, isLand, stats } from "./state";
 import { moveCard, tapCard, sacrifice,loseLife } from "./zones";
 import type { Card, CastAlt, GameState, PID, PriorityAction } from "./types";
 export function foundationPermission(g: GameState, pid: PID, c: Card): boolean {
+  if(campusPermission(g,pid,c))return true;
   const f = frontierFlags(g, pid),
     own = c.owner === pid;
   if (
@@ -48,6 +50,7 @@ export function foundationPermission(g: GameState, pid: PID, c: Card): boolean {
   );
 }
 export function foundationExtraCosts(g: GameState, pid: PID, c: Card, alt?:CastAlt) {
+  const campus=campusExtraCosts(g,pid,c,alt);if(campus)return campus;
   const meadow=meadowExtraCosts(g,pid,c,alt);if(meadow)return meadow;
   const f = c.def.foundation,
     p = g.players[pid],
@@ -125,6 +128,7 @@ export function foundationPayExtras(
       }
       if (cost.kind === "bounce") moveCard(g, x, "hand");
       if (cost.kind === "tap") tapCard(g, x);
+      if (cost.kind === "sac") sacrifice(g,x);
       if (cost.kind === "reveal") {
         (c.frontierMarks ??= {}).chosenPower = stats(g, x).p;
         (c.frontierMarks ??= {}).chosenCreature =

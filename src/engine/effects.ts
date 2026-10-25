@@ -1,3 +1,5 @@
+import {frontierStatic} from './frontier-support';
+import {campusEffect} from './campus';
 import {meadowEffect,meadowCounter} from './meadow';
 import {foundationEffect} from './foundation';
 import {otjEffect} from './otj';
@@ -66,6 +68,8 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
+ lastDiscover?:number;
+
  bdCounters?:Record<string,number>;
  bdSac?:{power:number;mana:number;vehicle:boolean};
  mode?:number;sacToughness?:number;
@@ -442,7 +446,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'copyCreature': {
       for(const c of resolveRef(g,ctx,ef.what).cards){const copiable=copiableDefinition(c),def={...copiable,supertypes:ef.nonLegendary||ef.p!==undefined&&!ef.preserveLegendary?copiable.supertypes?.filter(s=>s!=='Legendary'):copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const tokens=yield*makeEclTokenBatch(g,ctx.controller,def,1);for(const t of tokens){if(ef.temp){g.eot.push({card:t.id,p:0,t:0,kw:['haste']});(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});}ctx.created=t.id;}ctx.createdList=tokens.map(t=>t.id);}return;
     }
-    case 'frontier':if(/^(blb|dft):/.test(ef.action)){yield*meadowEffect(g,ctx,ef);return;}if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
+    case 'frontier':if(/^(lci|sos):/.test(ef.action)){yield*campusEffect(g,ctx,ef);return;}if(/^(blb|dft):/.test(ef.action)){yield*meadowEffect(g,ctx,ef);return;}if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
     case 'msh':yield* mshEffect(g,ctx,ef);return;
     case 'mkm':yield* mkmEffect(g,ctx,ef);return;
     case 'fin':yield* finEffect(g,ctx,ef);return;
@@ -587,7 +591,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
           moveCard(g, g.cards[id], 'graveyard');
           log(g, `搜尋 ${cardName(g.cards[id])} 置入墳墓場`, me);
         } else if (ef.to === 'battlefield') {
-          enterBattlefield(g, g.cards[id], me);
+          enterBattlefield(g, g.cards[id], me,!!ef.tapped);
           log(g, `搜尋 ${cardName(g.cards[id])} 放進戰場`, me);
         } else if (ef.to === 'top') {
           // 展示後洗牌，再放到牌庫頂
@@ -719,6 +723,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const item = ev && ev.type === 'cast' ? (g.stack.find((it) => it.kind === 'spell' && it.cardId === ev.card)??ev.bdSpell) : undefined;
       if (!item) break;
       const orig = g.cards[item.cardId];
+      if(orig.def.meadow?.cantCopy)break;
       const copiedDef=item.alt==='adventure'||item.alt==='back'?castDef(orig.def,item.alt):orig.def;
       const cp = newCard(g, copiedDef, me, true);
       cp.evokePaid=orig.evokePaid;cp.mkmEvidence=orig.mkmEvidence;cp.mshTeamwork=orig.mshTeamwork;
@@ -974,7 +979,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const id of picked) {
         if (toBf) {
           log(g, `將 ${cardName(g.cards[id])} 放進戰場`, me);
-          enterBattlefield(g, g.cards[id], me);
+          enterBattlefield(g, g.cards[id], me,!!ef.tapped);
         } else moveCard(g, g.cards[id], 'hand');
       }
       const rest=top.filter(id=>!picked.includes(id));
@@ -1534,17 +1539,20 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'explore': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
+        for(const _ of frontierStatic(g,c.controller,'lci:exploreScry'))yield*runEffects(g,{...ctx,controller:c.controller},[{e:'scry',n:1}]);
         const lib = g.players[c.controller].library;
-        if (!lib.length) continue;
+        if (!lib.length){emit(g,{type:'frontier',action:'explore',card:c.id,player:c.controller,amount:1});continue;}
         const top = g.cards[lib[0]];
         log(g, `${cardName(c)} 探險：展示 ${cardName(top)}`, c.controller);
         if (isLand(top)) {
           moveCard(g, top, 'hand');
+          emit(g,{type:'frontier',action:'exploreLand',card:c.id,player:c.controller,other:top.id,amount:1});
           continue;
         }
         if (isCreature(c)) putCounters(g, c, 1);
         const gy = yield* choose(g, c.controller, `探險：要把 ${cardName(top)} 置入墳墓場嗎？（不選則留在牌庫頂）`, [top.id], 0, 1, 'surveilGy', true);
         if (gy.length) moveCard(g, top, 'graveyard');
+        emit(g,{type:'frontier',action:'exploreNonland',card:c.id,player:c.controller,other:top.id,amount:1});
       }
       g.version++;
       break;

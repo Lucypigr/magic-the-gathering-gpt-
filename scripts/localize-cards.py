@@ -28,7 +28,7 @@ phrase_re=re.compile(r'(?<![A-Za-z])(?:'+'|'.join(re.escape(p)for p in sorted(ph
 known_names={c.get('name','')for c in cards}
 unknown=collections.Counter()
 named_overrides=json.loads((ROOT/'scripts/localization/cards.json').read_text())
-sourced_rules=json.loads((ROOT/'scripts/localization/blb-dft-rules.json').read_text())
+sourced_rules={**json.loads((ROOT/'scripts/localization/blb-dft-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/lci-sos-rules.json').read_text())}
 room_translations=json.loads((ROOT/'scripts/localization/rooms.json').read_text())
 room_reminder='房間：你可以施放任一半邊，該門於戰場上解鎖。你也可以於巫術時機支付尚未解鎖之門的法術力費用來解鎖該門。'
 for card in json.loads((ROOT/'src/data/sets/dsk-catalog.json').read_text()):

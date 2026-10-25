@@ -1,0 +1,6535 @@
+[
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Abuelo's Awakening",
+    "cost": "{X}{3}{W}",
+    "text": "Return target artifact or non-Aura enchantment card from your graveyard to the battlefield with X additional +1/+1 counters on it. It's a 1/1 Spirit creature with flying in addition to its other types.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Acrobatic Leap",
+    "cost": "{W}",
+    "text": "Target creature gets +1/+3 and gains flying until end of turn. Untap it.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Adaptive Gemguard",
+    "cost": "{3}{W}",
+    "text": "Tap two untapped artifacts and/or creatures you control: Put a +1/+1 counter on this creature. Activate only as a sorcery.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 3,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Attentive Sunscribe",
+    "cost": "{1}{W}",
+    "text": "Whenever this creature becomes tapped, scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 4,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Bat Colony",
+    "cost": "{2}{W}",
+    "text": "When this enchantment enters, create a 1/1 black Bat creature token with flying for each mana from a Cave spent to cast it.\nWhenever a Cave you control enters, put a +1/+1 counter on target creature you control.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Clay-Fired Bricks",
+    "cost": "{1}{W}",
+    "text": "When this artifact enters, search your library for a basic Plains card, reveal it, put it into your hand, then shuffle. You gain 2 life.\nCraft with artifact {5}{W}{W} ({5}{W}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 6,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Cosmium Kiln",
+      "cost": "",
+      "text": "When this artifact enters, create two 1/1 colorless Gnome artifact creature tokens.\nCreatures you control get +1/+1.",
+      "set": "LCI",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Clay-Fired Bricks // Cosmium Kiln"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Cosmium Blast",
+    "cost": "{1}{W}",
+    "text": "Cosmium Blast deals 4 damage to target attacking or blocking creature.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dauntless Dismantler",
+    "cost": "{1}{W}",
+    "text": "Artifacts your opponents control enter tapped.\n{X}{X}{W}, Sacrifice this creature: Destroy each artifact with mana value X.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 8,
+    "power": 1,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Deconstruction Hammer",
+    "cost": "{W}",
+    "text": "Equipped creature gets +1/+1 and has \"{3}, {T}, Sacrifice Deconstruction Hammer: Destroy target artifact or enchantment.\"\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 9,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dusk Rose Reliquary",
+    "cost": "{W}",
+    "text": "As an additional cost to cast this spell, sacrifice an artifact or creature.\nWard {2}\nWhen this artifact enters, exile target artifact or creature an opponent controls until this artifact leaves the battlefield.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 10,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Advisor"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Envoy of Okinec Ahau",
+    "cost": "{2}{W}",
+    "text": "{4}{W}: Create a 1/1 colorless Gnome artifact creature token.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 11,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Fabrication Foundry",
+    "cost": "{1}{W}",
+    "text": "{T}: Add {W}. Spend this mana only to cast an artifact spell or activate an ability of an artifact source.\n{2}{W}, {T}, Exile one or more other artifacts you control with total mana value X: Return target artifact card with mana value X or less from your graveyard to the battlefield. Activate only as a sorcery.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 12,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Family Reunion",
+    "cost": "{1}{W}",
+    "text": "Choose one —\n• Creatures you control get +1/+1 until end of turn.\n• Creatures you control gain hexproof until end of turn. (They can't be the targets of spells or abilities your opponents control.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 13,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Get Lost",
+    "cost": "{1}{W}",
+    "text": "Destroy target creature, enchantment, or planeswalker. Its controller creates two Map tokens. (They're artifacts with \"{1}, {T}, Sacrifice this token: Target creature you control explores. Activate only as a sorcery.\")",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 14,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Glorifier of Suffering",
+    "cost": "{2}{W}",
+    "text": "When this creature enters, you may sacrifice another creature or artifact. When you do, put a +1/+1 counter on each of up to two target creatures.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 15,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Angel"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Guardian of the Great Door",
+    "cost": "{W}{W}",
+    "text": "As an additional cost to cast this spell, tap four untapped artifacts, creatures, and/or lands you control.\nFlying",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 16,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Helping Hand",
+    "cost": "{W}",
+    "text": "Return target creature card with mana value 3 or less from your graveyard to the battlefield tapped.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 17,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Ironpaw Aspirant",
+    "cost": "{1}{W}",
+    "text": "When this creature enters, put a +1/+1 counter on target creature.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 18,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Kinjalli's Dawnrunner",
+    "cost": "{2}{W}",
+    "text": "Double strike\nWhen this creature enters, it explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 19,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "double_strike"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Kutzil's Flanker",
+    "cost": "{2}{W}",
+    "text": "Flash\nWhen this creature enters, choose one —\n• Put a +1/+1 counter on this creature for each creature that left the battlefield under your control this turn.\n• You gain 2 life and scry 2.\n• Exile target player's graveyard.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 20,
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Malamet War Scribe",
+    "cost": "{3}{W}{W}",
+    "text": "When this creature enters, creatures you control get +2/+1 until end of turn.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 21,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Market Gnome",
+    "cost": "{W}",
+    "text": "When this creature dies, you gain 1 life and draw a card.\nWhen this creature is exiled from the battlefield while you're activating a craft ability, you gain 1 life and draw a card.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 22,
+    "power": 0,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Might of the Ancestors",
+    "cost": "{2}{W}",
+    "text": "At the beginning of combat on your turn, target creature you control gets +2/+0 and gains vigilance until end of turn.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 23,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Miner's Guidewing",
+    "cost": "{W}",
+    "text": "Flying, vigilance\nWhen this creature dies, target creature you control explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on that creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 24,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Mischievous Pup",
+    "cost": "{2}{W}",
+    "text": "Flash (You may cast this spell any time you could cast an instant.)\nWhen this creature enters, return up to one other target permanent you control to its owner's hand.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 25,
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Ojer Taq, Deepest Foundation",
+    "cost": "{4}{W}{W}",
+    "text": "Vigilance\nIf one or more creature tokens would be created under your control, three times that many of those tokens are created instead.\nWhen Ojer Taq dies, return it to the battlefield tapped and transformed under its owner's control.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 26,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "vigilance"
+    ],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [],
+      "name": "Temple of Civilization",
+      "cost": "",
+      "text": "(Transforms from Ojer Taq, Deepest Foundation.)\n{T}: Add {W}.\n{2}{W}, {T}: Transform this land. Activate only if you attacked with three or more creatures this turn and only as a sorcery.",
+      "set": "LCI",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Ojer Taq, Deepest Foundation // Temple of Civilization"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Oltec Archaeologists",
+    "cost": "{4}{W}",
+    "text": "When this creature enters, choose one —\n• Return target artifact card from your graveyard to your hand.\n• Scry 3. (Look at the top three cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 27,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Oltec Cloud Guard",
+    "cost": "{3}{W}",
+    "text": "Flying\nWhen this creature enters, create a 1/1 colorless Gnome artifact creature token.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 28,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Oteclan Landmark",
+    "cost": "{W}",
+    "text": "When this artifact enters, scry 2.\nCraft with artifact {2}{W} ({2}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 29,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Creature"
+      ],
+      "subtypes": [
+        "Golem"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Oteclan Levitator",
+      "cost": "",
+      "text": "Flying\nWhenever this creature attacks, target attacking creature without flying gains flying until end of turn.",
+      "set": "LCI",
+      "rarity": "C",
+      "power": 1,
+      "toughness": 4,
+      "keywords": [
+        "flying"
+      ]
+    },
+    "imageName": "Oteclan Landmark // Oteclan Levitator"
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Petrify",
+    "cost": "{1}{W}",
+    "text": "Enchant artifact or creature\nEnchanted permanent can't attack or block, and its activated abilities can't be activated.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 30,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Quicksand Whirlpool",
+    "cost": "{5}{W}",
+    "text": "This spell costs {3} less to cast if it targets a tapped creature.\nExile target creature.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 31,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Angel"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Resplendent Angel",
+    "cost": "{1}{W}{W}",
+    "text": "Flying\nAt the beginning of each end step, if you gained 5 or more life this turn, create a 4/4 white Angel creature token with flying and vigilance.\n{3}{W}{W}{W}: Until end of turn, this creature gets +2/+2 and gains lifelink.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 32,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Ruin-Lurker Bat",
+    "cost": "{W}",
+    "text": "Flying, lifelink\nAt the beginning of your end step, if you descended this turn, scry 1. (You descended if a permanent card was put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 33,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Sanguine Evangelist",
+    "cost": "{2}{W}",
+    "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nWhen this creature enters or dies, create a 1/1 black Bat creature token with flying.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 34,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Soaring Sandwing",
+    "cost": "{4}{W}{W}",
+    "text": "Flying\nWhen this creature enters, you gain 3 life.\nPlainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 35,
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Spring-Loaded Sawblades",
+    "cost": "{1}{W}",
+    "text": "Flash\nWhen this artifact enters, it deals 5 damage to target tapped creature an opponent controls.\nCraft with artifact {3}{W} ({3}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 36,
+    "keywords": [
+      "flash"
+    ],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [
+        "Vehicle"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Bladewheel Chariot",
+      "cost": "",
+      "text": "Tap two other untapped artifacts you control: This Vehicle becomes an artifact creature until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "set": "LCI",
+      "rarity": "U",
+      "power": 5,
+      "toughness": 5,
+      "keywords": []
+    },
+    "imageName": "Spring-Loaded Sawblades // Bladewheel Chariot"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Thousand Moons Crackshot",
+    "cost": "{1}{W}",
+    "text": "Whenever this creature attacks, you may pay {2}{W}. When you do, tap target creature.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 37,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Thousand Moons Infantry",
+    "cost": "{2}{W}",
+    "text": "Untap this creature during each other player's untap step.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 38,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Thousand Moons Smithy",
+    "cost": "{2}{W}{W}",
+    "text": "When Thousand Moons Smithy enters, create a white Gnome Soldier artifact creature token with \"This token's power and toughness are each equal to the number of artifacts and/or creatures you control.\"\nAt the beginning of your first main phase, you may tap five untapped artifacts and/or creatures you control. If you do, transform Thousand Moons Smithy.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 39,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [],
+      "name": "Barracks of the Thousand",
+      "cost": "",
+      "text": "(Transforms from Thousand Moons Smithy.)\n{T}: Add {W}.\nWhenever you cast an artifact or creature spell using mana produced by Barracks of the Thousand, create a white Gnome Soldier artifact creature token with \"This token's power and toughness are each equal to the number of artifacts and/or creatures you control.\"",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Thousand Moons Smithy // Barracks of the Thousand"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Tinker's Tote",
+    "cost": "{2}{W}",
+    "text": "When this artifact enters, create two 1/1 colorless Gnome artifact creature tokens.\n{W}, Sacrifice this artifact: You gain 3 life.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 40,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Unstable Glyphbridge",
+    "cost": "{3}{W}{W}",
+    "text": "When this artifact enters, if you cast it, for each player, choose a creature with power 2 or less that player controls. Then destroy all creatures except creatures chosen this way.\nCraft with artifact {3}{W}{W} ({3}{W}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 41,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Creature"
+      ],
+      "subtypes": [
+        "Golem"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Sandswirl Wanderglyph",
+      "cost": "",
+      "text": "Flying\nWhenever an opponent casts a spell during their turn, they can't attack you or planeswalkers you control this turn.\nEach opponent who attacked you or a planeswalker you control this turn can't cast spells.",
+      "set": "LCI",
+      "rarity": "R",
+      "power": 5,
+      "toughness": 3,
+      "keywords": [
+        "flying"
+      ]
+    },
+    "imageName": "Unstable Glyphbridge // Sandswirl Wanderglyph"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Vanguard of the Rose",
+    "cost": "{1}{W}",
+    "text": "{1}, Sacrifice another creature or artifact: This creature gains indestructible until end of turn. Tap it.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 42,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Warden of the Inner Sky",
+    "cost": "{W}",
+    "text": "As long as this creature has three or more counters on it, it has flying and vigilance.\nTap three untapped artifacts and/or creatures you control: Put a +1/+1 counter on this creature. Scry 1. Activate only as a sorcery.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 43,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Akal Pakal, First Among Equals",
+    "cost": "{2}{U}",
+    "text": "At the beginning of each player's end step, if an artifact entered the battlefield under your control this turn, look at the top two cards of your library. Put one of them into your hand and the other into your graveyard.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 44,
+    "power": 1,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Ancestral Reminiscence",
+    "cost": "{3}{U}",
+    "text": "Draw three cards, then discard a card.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 45,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Brackish Blunder",
+    "cost": "{1}{U}",
+    "text": "Return target creature to its owner's hand. If it was tapped, create a Map token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Target creature you control explores. Activate only as a sorcery.\")",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 46,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Braided Net",
+    "cost": "{2}{U}",
+    "text": "This artifact enters with three net counters on it.\n{T}, Remove a net counter from this artifact: Tap another target nonland permanent. Its activated abilities can't be activated for as long as it remains tapped.\nCraft with artifact {1}{U}",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 47,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Braided Quipu",
+      "cost": "",
+      "text": "{3}{U}, {T}: Draw a card for each artifact you control, then put this artifact into its owner's library third from the top.",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Braided Net // Braided Quipu"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Chart a Course",
+    "cost": "{1}{U}",
+    "text": "Draw two cards. Then discard a card unless you attacked this turn.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 48,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Cogwork Wrestler",
+    "cost": "{U}",
+    "text": "Flash\nWhen this creature enters, target creature an opponent controls gets -2/-0 until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 49,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Confounding Riddle",
+    "cost": "{2}{U}",
+    "text": "Choose one —\n• Look at the top four cards of your library. Put one of them into your hand and the rest into your graveyard.\n• Counter target spell unless its controller pays {4}.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 50,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Advisor"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Council of Echoes",
+    "cost": "{4}{U}{U}",
+    "text": "Flying\nDescend 4 — When this creature enters, if there are four or more permanent cards in your graveyard, return up to one target nonland permanent other than this creature to its owner's hand.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 51,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Deeproot Pilgrimage",
+    "cost": "{1}{U}",
+    "text": "Whenever one or more nontoken Merfolk you control become tapped, create a 1/1 blue Merfolk creature token with hexproof.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 52,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Didact Echo",
+    "cost": "{4}{U}",
+    "text": "When this creature enters, draw a card.\nDescend 4 — This creature has flying as long as there are four or more permanent cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 53,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Eaten by Piranhas",
+    "cost": "{1}{U}",
+    "text": "Flash (You may cast this spell any time you could cast an instant.)\nEnchant creature\nEnchanted creature loses all abilities and is a black Skeleton creature with base power and toughness 1/1. (It loses all other colors, card types, and creature types.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 54,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "The Enigma Jewel",
+    "cost": "{U}",
+    "text": "The Enigma Jewel enters tapped.\n{T}: Add {C}{C}. Spend this mana only to activate abilities.\nCraft with four or more nonlands with activated abilities {8}{U} ({8}{U}, Exile this artifact, Exile the four or more from among other permanents you control and/or cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 55,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "U"
+      ],
+      "name": "Locus of Enlightenment",
+      "cost": "",
+      "text": "Locus of Enlightenment has each activated ability of the exiled cards used to craft it. You may activate each of those abilities only once each turn.\nWhenever you activate an ability that isn't a mana ability, copy it. You may choose new targets for the copy.",
+      "set": "LCI",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "The Enigma Jewel // Locus of Enlightenment"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "The Everflowing Well",
+    "cost": "{2}{U}",
+    "text": "When The Everflowing Well enters, mill two cards, then draw two cards.\nDescend 8 — At the beginning of your upkeep, if there are eight or more permanent cards in your graveyard, transform The Everflowing Well.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 56,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [],
+      "name": "The Myriad Pools",
+      "cost": "",
+      "text": "(Transforms from The Everflowing Well.)\n{T}: Add {U}.\nWhenever you cast a permanent spell using mana produced by The Myriad Pools, up to one other target permanent you control becomes a copy of that spell until end of turn.",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "The Everflowing Well // The Myriad Pools"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Salamander",
+      "Wurm"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Frilled Cave-Wurm",
+    "cost": "{3}{U}",
+    "text": "Descend 4 — This creature gets +2/+0 as long as there are four or more permanent cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 57,
+    "power": 2,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nautilus"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Hermitic Nautilus",
+    "cost": "{1}{U}",
+    "text": "Vigilance\n{1}{U}: This creature gets +3/-3 until end of turn.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 58,
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Hurl into History",
+    "cost": "{3}{U}{U}",
+    "text": "Counter target artifact or creature spell. Discover X, where X is that spell's mana value. (Exile cards from the top of your library until you exile a nonland card with that mana value or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 59,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Inverted Iceberg",
+    "cost": "{1}{U}",
+    "text": "When this artifact enters, mill a card, then draw a card. (To mill a card, put the top card of your library into your graveyard.)\nCraft with artifact {4}{U}{U} ({4}{U}{U}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 60,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Creature"
+      ],
+      "subtypes": [
+        "Golem"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Iceberg Titan",
+      "cost": "",
+      "text": "Whenever this creature attacks, you may tap or untap target artifact or creature.",
+      "set": "LCI",
+      "rarity": "C",
+      "power": 6,
+      "toughness": 6,
+      "keywords": []
+    },
+    "imageName": "Inverted Iceberg // Iceberg Titan"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Kitesail Larcenist",
+    "cost": "{2}{U}",
+    "text": "Flying, ward {1}\nWhen this creature enters, for each player, choose up to one other target artifact or creature that player controls. For as long as this creature remains on the battlefield, the chosen permanents become Treasure artifacts with \"{T}, Sacrifice this artifact: Add one mana of any color\" and lose all other abilities.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 61,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Lodestone Needle",
+    "cost": "{1}{U}",
+    "text": "Flash\nWhen this artifact enters, tap up to one target artifact or creature and put two stun counters on it.\nCraft with artifact {2}{U} ({2}{U}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 62,
+    "keywords": [
+      "flash"
+    ],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Guidestone Compass",
+      "cost": "",
+      "text": "{1}, {T}: Target creature you control explores. Activate only as a sorcery. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on that creature, then put the card back or put it into your graveyard.)",
+      "set": "LCI",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Lodestone Needle // Guidestone Compass"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Siren",
+      "Pirate"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Malcolm, Alluring Scoundrel",
+    "cost": "{1}{U}",
+    "text": "Flash\nFlying\nWhenever Malcolm deals combat damage to a player, put a chorus counter on it. Draw a card, then discard a card. If there are four or more chorus counters on Malcolm, you may cast the discarded card without paying its mana cost.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 63,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flash",
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Marauding Brinefang",
+    "cost": "{5}{U}{U}",
+    "text": "Ward {3} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {3}.)\nIslandcycling {2} ({2}, Discard this card: Search your library for an Island card, reveal it, put it into your hand, then shuffle.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 64,
+    "power": 6,
+    "toughness": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Merfolk Cave-Diver",
+    "cost": "{2}{U}",
+    "text": "Whenever a creature you control explores, this creature gets +1/+0 until end of turn and can't be blocked this turn.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 65,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Siren",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Oaken Siren",
+    "cost": "{1}{U}",
+    "text": "Flying, vigilance\n{T}: Add {U}. Spend this mana only to cast an artifact spell or activate an ability of an artifact source.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 66,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Ojer Pakpatiq, Deepest Epoch",
+    "cost": "{2}{U}{U}",
+    "text": "Flying\nWhenever you cast an instant spell from your hand, it gains rebound. (Exile it as it resolves. At the beginning of your next upkeep, you may cast it from exile without paying its mana cost.)\nWhen Ojer Pakpatiq dies, return it to the battlefield tapped and transformed under its owner's control with three time counters on it.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 67,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [],
+      "name": "Temple of Cyclical Time",
+      "cost": "",
+      "text": "(Transforms from Ojer Pakpatiq, Deepest Epoch.)\n{T}: Add {U}. Remove a time counter from this land.\n{2}{U}, {T}: Transform this land. Activate only if it has no time counters on it and only as a sorcery.",
+      "set": "LCI",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Ojer Pakpatiq, Deepest Epoch // Temple of Cyclical Time"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Orazca Puzzle-Door",
+    "cost": "{U}",
+    "text": "{1}, {T}, Sacrifice this artifact: Look at the top two cards of your library. Put one of those cards into your hand and the other into your graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 68,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Out of Air",
+    "cost": "{2}{U}{U}",
+    "text": "This spell costs {2} less to cast if it targets a creature spell.\nCounter target spell.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 69,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Pirate Hat",
+    "cost": "{1}{U}",
+    "text": "Equipped creature gets +1/+1 and has \"Whenever this creature attacks, draw a card, then discard a card.\"\nEquip Pirate {1}\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 70,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Relic's Roar",
+    "cost": "{U}",
+    "text": "Until end of turn, target artifact or creature becomes a Dinosaur artifact creature with base power and toughness 4/3 in addition to its other types.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 71,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "River Herald Scout",
+    "cost": "{1}{U}",
+    "text": "When this creature enters, it explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 72,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Sage of Days",
+    "cost": "{2}{U}",
+    "text": "When this creature enters, look at the top three cards of your library. You may put one of those cards back on top of your library. Put the rest into your graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 73,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Self-Reflection",
+    "cost": "{4}{U}{U}",
+    "text": "Create a token that's a copy of target creature you control.\nFlashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 74,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Shipwreck Sentry",
+    "cost": "{1}{U}",
+    "text": "Defender\nAs long as an artifact entered the battlefield under your control this turn, this creature can attack as though it didn't have defender.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 75,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "defender"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Sinuous Benthisaur",
+    "cost": "{5}{U}",
+    "text": "When this creature enters, look at the top X cards of your library, where X is the number of Caves you control plus the number of Cave cards in your graveyard. Put two of those cards into your hand and the rest on the bottom of your library in a random order.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 76,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Song of Stupefaction",
+    "cost": "{1}{U}",
+    "text": "Enchant creature or Vehicle\nWhen this Aura enters, you may mill two cards. (You may put the top two cards of your library into your graveyard.)\nFathomless descent — Enchanted permanent gets -X/-0, where X is the number of permanent cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 77,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Siren",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Spyglass Siren",
+    "cost": "{U}",
+    "text": "Flying\nWhen this creature enters, create a Map token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Target creature you control explores. Activate only as a sorcery.\")",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 78,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Staunch Crewmate",
+    "cost": "{1}{U}",
+    "text": "When this creature enters, look at the top four cards of your library. You may reveal an artifact or Pirate card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 79,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Subterranean Schooner",
+    "cost": "{1}{U}",
+    "text": "Whenever this Vehicle attacks, target creature that crewed it this turn explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on that creature, then put the card back or put it into your graveyard.)\nCrew 1",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 80,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Tishana's Tidebinder",
+    "cost": "{2}{U}",
+    "text": "Flash\nWhen this creature enters, counter up to one target activated or triggered ability. If an ability of an artifact, creature, or planeswalker is countered this way, that permanent loses all abilities for as long as this creature remains on the battlefield. (Mana abilities can't be targeted.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 81,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Unlucky Drop",
+    "cost": "{3}{U}",
+    "text": "Target artifact or creature's owner puts it on their choice of the top or bottom of their library.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 82,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Waterlogged Hulk",
+    "cost": "{U}",
+    "text": "{T}: Mill a card. (Put the top card of your library into your graveyard.)\nCraft with Island {3}{U} ({3}{U}, Exile this artifact, Exile an Island you control or an Island card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 83,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [
+        "Vehicle"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Watertight Gondola",
+      "cost": "",
+      "text": "Vigilance\nDescend 8 — This Vehicle can't be blocked as long as there are eight or more permanent cards in your graveyard.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "set": "LCI",
+      "rarity": "U",
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "vigilance"
+      ]
+    },
+    "imageName": "Waterlogged Hulk // Watertight Gondola"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Waterwind Scout",
+    "cost": "{2}{U}",
+    "text": "Flying\nWhen this creature enters, create a Map token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Target creature you control explores. Activate only as a sorcery.\")",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 84,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Waylaying Pirates",
+    "cost": "{3}{U}",
+    "text": "When this creature enters, if you control an artifact, tap target artifact or creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 85,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Zoetic Glyph",
+    "cost": "{2}{U}",
+    "text": "Enchant artifact\nEnchanted artifact is a Golem creature with base power and toughness 5/4 in addition to its other types.\nWhen this Aura is put into a graveyard from the battlefield, discover 3.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 86,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Abyssal Gorestalker",
+    "cost": "{4}{B}{B}",
+    "text": "When this creature enters, each player sacrifices two creatures of their choice.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 87,
+    "power": 6,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bat",
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Aclazotz, Deepest Betrayal",
+    "cost": "{3}{B}{B}",
+    "text": "Flying, lifelink\nWhenever Aclazotz attacks, each opponent discards a card. For each opponent who can't, you draw a card.\nWhenever an opponent discards a land card, create a 1/1 black Bat creature token with flying.\nWhen Aclazotz dies, return it to the battlefield tapped and transformed under its owner's control.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 88,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [],
+      "name": "Temple of the Dead",
+      "cost": "",
+      "text": "(Transforms from Aclazotz, Deepest Betrayal.)\n{T}: Add {B}.\n{2}{B}, {T}: Transform this land. Activate only if a player has one or fewer cards in hand and only as a sorcery.",
+      "set": "LCI",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Aclazotz, Deepest Betrayal // Temple of the Dead"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Acolyte of Aclazotz",
+    "cost": "{2}{B}",
+    "text": "{T}, Sacrifice another creature or artifact: Each opponent loses 1 life and you gain 1 life.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 89,
+    "power": 1,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Another Chance",
+    "cost": "{2}{B}",
+    "text": "You may mill two cards. Then return up to two creature cards from your graveyard to your hand. (To mill two cards, put the top two cards of your library into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 90,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Bitter Triumph",
+    "cost": "{1}{B}",
+    "text": "As an additional cost to cast this spell, discard a card or pay 3 life.\nDestroy target creature or planeswalker.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 91,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Demon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Bloodletter of Aclazotz",
+    "cost": "{1}{B}{B}{B}",
+    "text": "Flying\nIf an opponent would lose life during your turn, they lose twice that much life instead. (Damage causes loss of life.)",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 92,
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Bloodthorn Flail",
+    "cost": "{B}",
+    "text": "Equipped creature gets +2/+1.\nEquip—Pay {3} or discard a card.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 93,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Demon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Bringer of the Last Gift",
+    "cost": "{6}{B}{B}",
+    "text": "Flying\nWhen this creature enters, if you cast it, each player sacrifices all other creatures they control. Then each player returns all creature cards from their graveyard that weren't put there this way to the battlefield.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 94,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fungus"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Broodrage Mycoid",
+    "cost": "{3}{B}",
+    "text": "At the beginning of your end step, if you descended this turn, create a 1/1 black Fungus creature token with \"This token can't block.\" (You descended if a permanent card was put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 95,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Canonized in Blood",
+    "cost": "{1}{B}",
+    "text": "At the beginning of your end step, if you descended this turn, put a +1/+1 counter on target creature you control. (You descended if a permanent card was put into your graveyard from anywhere.)\n{5}{B}{B}, Sacrifice this enchantment: Create a 4/3 white and black Vampire Demon creature token with flying.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 96,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast",
+      "Horror",
+      "Spirit"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Chupacabra Echo",
+    "cost": "{2}{B}{B}",
+    "text": "Fathomless descent — When this creature enters, target creature an opponent controls gets -X/-X until end of turn, where X is the number of permanent cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 97,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Corpses of the Lost",
+    "cost": "{2}{B}",
+    "text": "Skeletons you control get +1/+0 and have haste.\nWhen this enchantment enters, create a 2/2 black Skeleton Pirate creature token.\nAt the beginning of your end step, if you descended this turn, you may pay 1 life. If you do, return this enchantment to its owner's hand. (You descended if a permanent card was put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 98,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Dead Weight",
+    "cost": "{B}",
+    "text": "Enchant creature\nEnchanted creature gets -2/-2.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 99,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fungus"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Deathcap Marionette",
+    "cost": "{1}{B}",
+    "text": "Deathtouch\nWhen this creature enters, you may mill two cards. (You may put the top two cards of your library into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 100,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Deep Goblin Skulltaker",
+    "cost": "{2}{B}",
+    "text": "Menace\nAt the beginning of your end step, if you descended this turn, put a +1/+1 counter on this creature. (You descended if a permanent card was put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 101,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Deep-Cavern Bat",
+    "cost": "{1}{B}",
+    "text": "Flying, lifelink\nWhen this creature enters, look at target opponent's hand. You may exile a nonland card from it until this creature leaves the battlefield.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 102,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Defossilize",
+    "cost": "{4}{B}",
+    "text": "Return target creature card from your graveyard to the battlefield. That creature explores, then it explores again. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on that creature, then put the card back or put it into your graveyard. Then repeat this process.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 103,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Spirit"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Echo of Dusk",
+    "cost": "{1}{B}",
+    "text": "Descend 4 — As long as there are four or more permanent cards in your graveyard, this creature gets +1/+1 and has lifelink.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 104,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Fanatical Offering",
+    "cost": "{1}{B}",
+    "text": "As an additional cost to cast this spell, sacrifice an artifact or creature.\nDraw two cards and create a Map token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Target creature you control explores. Activate only as a sorcery.\")",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 105,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Fungal Fortitude",
+    "cost": "{1}{B}",
+    "text": "Flash\nEnchant creature\nEnchanted creature gets +2/+0.\nWhen enchanted creature dies, return it to the battlefield tapped under its owner's control.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 106,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Leech"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Gargantuan Leech",
+    "cost": "{7}{B}",
+    "text": "This spell costs {1} less to cast for each Cave you control and each Cave card in your graveyard.\nLifelink",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 107,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Grasping Shadows",
+    "cost": "{3}{B}",
+    "text": "Whenever a creature you control attacks alone, it gains deathtouch and lifelink until end of turn. Put a dread counter on this enchantment. Then if there are three or more dread counters on it, transform it.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 108,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [
+        "Cave"
+      ],
+      "supertypes": [],
+      "colors": [],
+      "name": "Shadows' Lair",
+      "cost": "",
+      "text": "(Transforms from Grasping Shadows.)\n{T}: Add {B}.\n{B}, {T}, Remove a dread counter from this land: You draw a card and you lose 1 life.",
+      "set": "LCI",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Grasping Shadows // Shadows' Lair"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Greedy Freebooter",
+    "cost": "{B}",
+    "text": "When this creature dies, scry 1 and create a Treasure token. (To scry 1, look at the top card of your library. You may put that card on the bottom. A Treasure token is an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 109,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Join the Dead",
+    "cost": "{1}{B}{B}",
+    "text": "Target creature gets -5/-5 until end of turn.\nDescend 4 — That creature gets -10/-10 until end of turn instead if there are four or more permanent cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 110,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Malicious Eclipse",
+    "cost": "{1}{B}{B}",
+    "text": "All creatures get -2/-2 until end of turn. If a creature an opponent controls would die this turn, exile it instead.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 111,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Mephitic Draught",
+    "cost": "{1}{B}",
+    "text": "When this artifact enters or is put into a graveyard from the battlefield, you draw a card and you lose 1 life.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 112,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Preacher of the Schism",
+    "cost": "{2}{B}",
+    "text": "Deathtouch\nWhenever this creature attacks the player with the most life or tied for most life, create a 1/1 white Vampire creature token with lifelink.\nWhenever this creature attacks while you have the most life or are tied for most life, you draw a card and you lose 1 life.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 113,
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Horror"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Primordial Gnawer",
+    "cost": "{4}{B}",
+    "text": "When this creature dies, discover 3. (Exile cards from the top of your library until you exile a nonland card with mana value 3 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 114,
+    "power": 5,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Queen's Bay Paladin",
+    "cost": "{3}{B}{B}",
+    "text": "Whenever this creature enters or attacks, return up to one target Vampire card from your graveyard to the battlefield with a finality counter on it. You lose life equal to its mana value. (If a creature with a finality counter on it would die, exile it instead.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 115,
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Rampaging Spiketail",
+    "cost": "{4}{B}{B}",
+    "text": "When this creature enters, target creature you control gets +2/+0 and gains indestructible until end of turn.\nSwampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 116,
+    "power": 5,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Ray of Ruin",
+    "cost": "{4}{B}",
+    "text": "Exile target creature, Vehicle, or nonbasic land. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 117,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Screaming Phantom",
+    "cost": "{2}{B}",
+    "text": "Flying\nWhenever this creature attacks, mill a card. (Put the top card of your library into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 118,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fungus",
+      "Snail"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Skullcap Snail",
+    "cost": "{1}{B}",
+    "text": "When this creature enters, target opponent exiles a card from their hand.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 119,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Soulcoil Viper",
+    "cost": "{2}{B}",
+    "text": "{B}, {T}, Sacrifice this creature: Return target creature card from your graveyard to the battlefield with a finality counter on it. Activate only as a sorcery. (If a creature with a finality counter on it would die, exile it instead.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 120,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Souls of the Lost",
+    "cost": "{1}{B}",
+    "text": "As an additional cost to cast this spell, discard a card or sacrifice a permanent.\nFathomless descent — Souls of the Lost's power is equal to the number of permanent cards in your graveyard and its toughness is equal to that number plus 1.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 121,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 0,
+    "toughnessText": "*+1",
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Stalactite Stalker",
+    "cost": "{B}",
+    "text": "Menace\nAt the beginning of your end step, if you descended this turn, put a +1/+1 counter on this creature. (You descended if a permanent card was put into your graveyard from anywhere.)\n{2}{B}, Sacrifice this creature: Target creature gets -X/-X until end of turn, where X is this creature's power.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 122,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Horror"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Starving Revenant",
+    "cost": "{2}{B}{B}",
+    "text": "When this creature enters, surveil 2. Then for each card you put on top of your library, you draw a card and you lose 3 life.\nDescend 8 — Whenever you draw a card, if there are eight or more permanent cards in your graveyard, target opponent loses 1 life and you gain 1 life.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 123,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Horror"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Stinging Cave Crawler",
+    "cost": "{2}{B}",
+    "text": "Deathtouch\nDescend 4 — Whenever this creature attacks, if there are four or more permanent cards in your graveyard, you draw a card and you lose 1 life.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 124,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fungus",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Synapse Necromage",
+    "cost": "{2}{B}",
+    "text": "When this creature dies, create two 1/1 black Fungus creature tokens with \"This token can't block.\"",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 125,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Book"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Tarrian's Journal",
+    "cost": "{1}{B}",
+    "text": "{T}, Sacrifice another artifact or creature: Draw a card. Activate only as a sorcery.\n{2}, {T}, Discard your hand: Transform Tarrian's Journal.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 126,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [
+        "Cave"
+      ],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [],
+      "name": "The Tomb of Aclazotz",
+      "cost": "",
+      "text": "(Transforms from Tarrian's Journal.)\n{T}: Add {B}.\n{T}: You may cast a creature spell from your graveyard this turn. If you do, it enters with a finality counter on it and is a Vampire in addition to its other types. (If a creature with a finality counter on it would die, exile it instead.)",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Tarrian's Journal // The Tomb of Aclazotz"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Terror Tide",
+    "cost": "{2}{B}{B}",
+    "text": "Fathomless descent — All creatures get -X/-X until end of turn, where X is the number of permanent cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 127,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Tithing Blade",
+    "cost": "{1}{B}",
+    "text": "When this artifact enters, each opponent sacrifices a creature of their choice.\nCraft with creature {4}{B} ({4}{B}, Exile this artifact, Exile a creature you control or a creature card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 128,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Consuming Sepulcher",
+      "cost": "",
+      "text": "At the beginning of your upkeep, each opponent loses 1 life and you gain 1 life.",
+      "set": "LCI",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Tithing Blade // Consuming Sepulcher"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Visage of Dread",
+    "cost": "{1}{B}",
+    "text": "When this artifact enters, target opponent reveals their hand. You choose an artifact or creature card from it. That player discards that card.\nCraft with two creatures {5}{B} ({5}{B}, Exile this artifact, Exile the two from among creatures you control and/or creature cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 129,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Dinosaur",
+        "Skeleton",
+        "Horror"
+      ],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Dread Osseosaur",
+      "cost": "",
+      "text": "Menace\nWhenever this creature enters or attacks, you may mill two cards. (You may put the top two cards of your library into your graveyard.)",
+      "set": "LCI",
+      "rarity": "U",
+      "power": 5,
+      "toughness": 4,
+      "keywords": [
+        "menace"
+      ]
+    },
+    "imageName": "Visage of Dread // Dread Osseosaur"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Vito's Inquisitor",
+    "cost": "{3}{B}",
+    "text": "{B}, Sacrifice another creature or artifact: Put a +1/+1 counter on this creature. It gains menace until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 130,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Abrade",
+    "cost": "{1}{R}",
+    "text": "Choose one —\n• Abrade deals 3 damage to target creature.\n• Destroy target artifact.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 131,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Ancestors' Aid",
+    "cost": "{1}{R}",
+    "text": "Target creature gets +2/+0 and gains first strike until end of turn.\nCreate a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 132,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Belligerent Yearling",
+    "cost": "{1}{R}",
+    "text": "Trample\nWhenever another Dinosaur you control enters, you may have this creature's base power become equal to that creature's power until end of turn.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 133,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Bonehoard Dracosaur",
+    "cost": "{3}{R}{R}",
+    "text": "Flying, first strike\nAt the beginning of your upkeep, exile the top two cards of your library. You may play them this turn. If you exiled a land card this way, create a 3/1 red Dinosaur creature token. If you exiled a nonland card this way, create a Treasure token.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 134,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "first_strike"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Brass's Tunnel-Grinder",
+    "cost": "{2}{R}",
+    "text": "When Brass's Tunnel-Grinder enters, discard any number of cards, then draw that many cards plus one.\nAt the beginning of your end step, if you descended this turn, put a bore counter on Brass's Tunnel-Grinder. Then if there are three or more bore counters on it, remove those counters and transform it. (You descended if a permanent card was put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 135,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [
+        "Cave"
+      ],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [],
+      "name": "Tecutlan, the Searing Rift",
+      "cost": "",
+      "text": "(Transforms from Brass's Tunnel-Grinder.)\n{T}: Add {R}.\nWhenever you cast a permanent spell using mana produced by Tecutlan, discover X, where X is that spell's mana value.",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Brass's Tunnel-Grinder // Tecutlan, the Searing Rift"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Brazen Blademaster",
+    "cost": "{2}{R}",
+    "text": "Whenever this creature attacks while you control two or more artifacts, it gets +2/+1 until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 136,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Pirate"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Breeches, Eager Pillager",
+    "cost": "{2}{R}",
+    "text": "First strike\nWhenever a Pirate you control attacks, choose one that hasn't been chosen this turn —\n• Create a Treasure token.\n• Target creature can't block this turn.\n• Exile the top card of your library. You may play it this turn.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 137,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "first_strike"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Burning Sun Cavalry",
+    "cost": "{1}{R}",
+    "text": "Whenever this creature attacks or blocks while you control a Dinosaur, this creature gets +1/+1 until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 138,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Calamitous Cave-In",
+    "cost": "{3}{R}",
+    "text": "Calamitous Cave-In deals X damage to each creature and each planeswalker, where X is the number of Caves you control plus the number of Cave cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 139,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Child of the Volcano",
+    "cost": "{3}{R}",
+    "text": "Trample\nAt the beginning of your end step, if you descended this turn, put a +1/+1 counter on this creature. (You descended if a permanent card was put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 140,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Curator of Sun's Creation",
+    "cost": "{3}{R}",
+    "text": "Whenever you discover, discover again for the same value. This ability triggers only once each turn.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 141,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Daring Discovery",
+    "cost": "{4}{R}",
+    "text": "Up to three target creatures can't block this turn.\nDiscover 4. (Exile cards from the top of your library until you exile a nonland card with mana value 4 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 142,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Diamond Pick-Axe",
+    "cost": "{R}",
+    "text": "Indestructible (Effects that say \"destroy\" don't destroy this Equipment.)\nEquipped creature gets +1/+1 and has \"Whenever this creature attacks, create a Treasure token.\" (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nEquip {2}",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 143,
+    "keywords": [
+      "indestructible"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Dinotomaton",
+    "cost": "{3}{R}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature enters, target creature you control gains menace until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 144,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Dire Flail",
+    "cost": "{R}",
+    "text": "Equipped creature gets +2/+0.\nEquip {1}\nCraft with artifact {3}{R}{R} ({3}{R}{R}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 145,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [
+        "Equipment"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Dire Blunderbuss",
+      "cost": "",
+      "text": "Equipped creature gets +3/+0 and has \"Whenever this creature attacks, you may sacrifice an artifact other than Dire Blunderbuss. When you do, this creature deals damage equal to its power to target creature.\"\nEquip {1}",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Dire Flail // Dire Blunderbuss"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Dowsing Device",
+    "cost": "{1}{R}",
+    "text": "Whenever this artifact or another artifact you control enters, up to one target creature you control gets +1/+0 and gains haste until end of turn. Then transform this artifact if you control four or more artifacts.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 146,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [
+        "Cave"
+      ],
+      "supertypes": [],
+      "colors": [],
+      "name": "Geode Grotto",
+      "cost": "",
+      "text": "(Transforms from Dowsing Device.)\n{T}: Add {R}.\n{2}{R}, {T}: Until end of turn, target creature gains haste and gets +X/+0, where X is the number of artifacts you control. Activate only as a sorcery.",
+      "set": "LCI",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Dowsing Device // Geode Grotto"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Dreadmaw's Ire",
+    "cost": "{R}",
+    "text": "Until end of turn, target attacking creature gets +2/+2 and gains trample and \"Whenever this creature deals combat damage to a player, destroy target artifact that player controls.\"",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 147,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Enterprising Scallywag",
+    "cost": "{1}{R}",
+    "text": "At the beginning of your end step, if you descended this turn, create a Treasure token. (You descended if a permanent card was put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 148,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Etali's Favor",
+    "cost": "{2}{R}",
+    "text": "Enchant creature you control\nWhen this Aura enters, discover 3. (Exile cards from the top of your library until you exile a nonland card with mana value 3 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)\nEnchanted creature gets +1/+1 and has trample.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 149,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Geological Appraiser",
+    "cost": "{2}{R}{R}",
+    "text": "When this creature enters, if you cast it, discover 3. (Exile cards from the top of your library until you exile a nonland card with mana value 3 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 150,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Goblin Tomb Raider",
+    "cost": "{R}",
+    "text": "As long as you control an artifact, this creature gets +1/+0 and has haste.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 151,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Goldfury Strider",
+    "cost": "{4}{R}",
+    "text": "Trample\nTap two untapped artifacts and/or creatures you control: Target creature gets +2/+0 until end of turn. Activate only as a sorcery.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 152,
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Hit the Mother Lode",
+    "cost": "{4}{R}{R}{R}",
+    "text": "Discover 10. If the discovered card's mana value is less than 10, create a number of tapped Treasure tokens equal to the difference. (To discover 10, exile cards from the top of your library until you exile a nonland card with mana value 10 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 153,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Hotfoot Gnome",
+    "cost": "{2}{R}",
+    "text": "Haste\n{T}: Another target creature gains haste until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 154,
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Idol of the Deep King",
+    "cost": "{2}{R}",
+    "text": "Flash\nWhen this artifact enters, it deals 2 damage to any target.\nCraft with artifact {2}{R} ({2}{R}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 155,
+    "keywords": [
+      "flash"
+    ],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [
+        "Equipment"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Sovereign's Macuahuitl",
+      "cost": "",
+      "text": "When this Equipment enters, attach it to target creature you control.\nEquipped creature gets +2/+0.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "set": "LCI",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Idol of the Deep King // Sovereign's Macuahuitl"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Inti, Seneschal of the Sun",
+    "cost": "{1}{R}",
+    "text": "Whenever you attack, you may discard a card. When you do, put a +1/+1 counter on target attacking creature. It gains trample until end of turn.\nWhenever you discard one or more cards, exile the top card of your library. You may play that card until your next end step.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 156,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Magmatic Galleon",
+    "cost": "{3}{R}{R}",
+    "text": "When this Vehicle enters, it deals 5 damage to target creature an opponent controls.\nWhenever one or more creatures your opponents control are dealt excess noncombat damage, create a Treasure token.\nCrew 2",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 157,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Ojer Axonil, Deepest Might",
+    "cost": "{2}{R}{R}",
+    "text": "Trample\nIf a red source you control would deal an amount of noncombat damage less than Ojer Axonil's power to an opponent, that source deals damage equal to Ojer Axonil's power instead.\nWhen Ojer Axonil dies, return it to the battlefield tapped and transformed under its owner's control.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 158,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [],
+      "name": "Temple of Power",
+      "cost": "",
+      "text": "(Transforms from Ojer Axonil, Deepest Might.)\n{T}: Add {R}.\n{2}{R}, {T}: Transform this land. Activate only if red sources you controlled dealt 4 or more noncombat damage this turn and only as a sorcery.",
+      "set": "LCI",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Ojer Axonil, Deepest Might // Temple of Power"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Panicked Altisaur",
+    "cost": "{4}{R}",
+    "text": "Reach\n{T}: This creature deals 2 damage to each opponent.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 159,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Plundering Pirate",
+    "cost": "{2}{R}",
+    "text": "When this creature enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 160,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Poetic Ingenuity",
+    "cost": "{2}{R}",
+    "text": "Whenever one or more Dinosaurs you control attack, create that many Treasure tokens.\nWhenever you cast an artifact spell, create a 3/1 red Dinosaur creature token. This ability triggers only once each turn.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 161,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Rampaging Ceratops",
+    "cost": "{4}{R}",
+    "text": "This creature can't be blocked except by three or more creatures.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 162,
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Rumbling Rockslide",
+    "cost": "{3}{R}",
+    "text": "Rumbling Rockslide deals damage to target creature equal to the number of lands you control.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 163,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Saheeli's Lattice",
+    "cost": "{1}{R}",
+    "text": "When this artifact enters, you may discard a card. If you do, draw two cards.\nCraft with one or more Dinosaurs {4}{R} ({4}{R}, Exile this artifact, Exile one or more Dinosaurs you control and/or Dinosaur cards from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 164,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Creature"
+      ],
+      "subtypes": [
+        "Dinosaur"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Mastercraft Raptor",
+      "cost": "",
+      "text": "Mastercraft Raptor's power is equal to the total power of the exiled cards used to craft it.",
+      "set": "LCI",
+      "rarity": "U",
+      "power": 0,
+      "powerText": "*",
+      "toughness": 4,
+      "keywords": []
+    },
+    "imageName": "Saheeli's Lattice // Mastercraft Raptor"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Scytheclaw Raptor",
+    "cost": "{2}{R}",
+    "text": "Whenever a player casts a spell, if it's not their turn, this creature deals 4 damage to them.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 165,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Seismic Monstrosaur",
+    "cost": "{4}{R}{R}",
+    "text": "Trample\n{2}{R}, Sacrifice a land: Draw a card.\nMountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 166,
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Sunfire Torch",
+    "cost": "{R}",
+    "text": "Equipped creature gets +1/+0 and has \"Whenever this creature attacks, you may sacrifice Sunfire Torch. When you do, this creature deals 2 damage to any target.\"\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 167,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Sunshot Militia",
+    "cost": "{1}{R}",
+    "text": "Tap two untapped artifacts and/or creatures you control: This creature deals 1 damage to each opponent. Activate only as a sorcery.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 168,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Tectonic Hazard",
+    "cost": "{R}",
+    "text": "Tectonic Hazard deals 1 damage to each opponent and each creature they control.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 169,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Triumphant Chomp",
+    "cost": "{R}",
+    "text": "Triumphant Chomp deals damage to target creature equal to 2 or the greatest power among Dinosaurs you control, whichever is greater.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 170,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Trumpeting Carnosaur",
+    "cost": "{4}{R}{R}",
+    "text": "Trample\nWhen this creature enters, discover 5.\n{2}{R}, Discard this card: It deals 3 damage to target creature or planeswalker.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 171,
+    "power": 7,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Volatile Wanderglyph",
+    "cost": "{1}{R}",
+    "text": "Whenever this creature becomes tapped, you may discard a card. If you do, draw a card.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 172,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Zoyowa's Justice",
+    "cost": "{1}{R}",
+    "text": "The owner of target artifact or creature with mana value 1 or greater shuffles it into their library. Then that player discovers X, where X is its mana value. (They exile cards from the top of their library until they exile a nonland card with that mana value or less. They cast it without paying its mana cost or put it into their hand. They put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 173,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Armored Kincaller",
+    "cost": "{2}{G}",
+    "text": "When this creature enters, you may reveal a Dinosaur card from your hand. If you do or if you control another Dinosaur, you gain 3 life.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 174,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Capybara"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Basking Capybara",
+    "cost": "{1}{G}",
+    "text": "Descend 4 — This creature gets +3/+0 as long as there are four or more permanent cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 175,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Turtle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Bedrock Tortoise",
+    "cost": "{3}{G}",
+    "text": "During your turn, creatures you control have hexproof.\nEach creature you control with toughness greater than its power assigns combat damage equal to its toughness rather than its power.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 176,
+    "power": 0,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Cavern Stomper",
+    "cost": "{4}{G}{G}",
+    "text": "When this creature enters, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)\n{3}{G}: This creature can't be blocked by creatures with power 2 or less this turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 177,
+    "power": 7,
+    "toughness": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Cenote Scout",
+    "cost": "{G}",
+    "text": "When this creature enters, it explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 178,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Raccoon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Coati Scavenger",
+    "cost": "{2}{G}",
+    "text": "Descend 4 — When this creature enters, if there are four or more permanent cards in your graveyard, return target permanent card from your graveyard to your hand.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 179,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Colossadactyl",
+    "cost": "{2}{G}{G}",
+    "text": "Reach, trample",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 180,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "reach",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Cosmium Confluence",
+    "cost": "{4}{G}",
+    "text": "Choose three. You may choose the same mode more than once.\n• Search your library for a Cave card, put it onto the battlefield tapped, then shuffle.\n• Put three +1/+1 counters on a Cave you control. It becomes a 0/0 Elemental creature with haste. It's still a land.\n• Destroy target enchantment.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 181,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Disturbed Slumber",
+    "cost": "{1}{G}",
+    "text": "Until end of turn, target land you control becomes a 4/4 Dinosaur creature with reach and haste. It's still a land. It must be blocked this turn if able.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 182,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Earthshaker Dreadmaw",
+    "cost": "{4}{G}{G}",
+    "text": "Trample\nWhen this creature enters, draw a card for each other Dinosaur you control.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 183,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Explorer's Cache",
+    "cost": "{1}{G}",
+    "text": "This artifact enters with two +1/+1 counters on it.\nWhenever a creature you control with a +1/+1 counter on it dies, put a +1/+1 counter on this artifact.\n{T}: Move a +1/+1 counter from this artifact onto target creature. Activate only as a sorcery.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 184,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Dinosaur"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Ghalta, Stampede Tyrant",
+    "cost": "{5}{G}{G}{G}",
+    "text": "Trample\nWhen Ghalta enters, put any number of creature cards from your hand onto the battlefield.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 185,
+    "power": 12,
+    "toughness": 12,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Glimpse the Core",
+    "cost": "{1}{G}",
+    "text": "Choose one —\n• Search your library for a basic Forest card, put that card onto the battlefield tapped, then shuffle.\n• Return target Cave card from your graveyard to the battlefield tapped.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 186,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Glowcap Lantern",
+    "cost": "{G}",
+    "text": "Equipped creature has \"You may look at the top card of your library any time\" and \"Whenever this creature attacks, it explores.\" (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on that creature, then put the card back or put it into your graveyard.)\nEquip {2}",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 187,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Growing Rites of Itlimoc",
+    "cost": "{2}{G}",
+    "text": "When Growing Rites of Itlimoc enters, look at the top four cards of your library. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\nAt the beginning of your end step, if you control four or more creatures, transform Growing Rites of Itlimoc.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 188,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [],
+      "name": "Itlimoc, Cradle of the Sun",
+      "cost": "",
+      "text": "(Transforms from Growing Rites of Itlimoc.)\n{T}: Add {G}.\n{T}: Add {G} for each creature you control.",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Growing Rites of Itlimoc // Itlimoc, Cradle of the Sun"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Bard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Huatli, Poet of Unity",
+    "cost": "{2}{G}",
+    "text": "When Huatli enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{3}{R/W}{R/W}: Exile Huatli, then return her to the battlefield transformed under her owner's control. Activate only as a sorcery.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 189,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Enchantment"
+      ],
+      "subtypes": [
+        "Saga"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G",
+        "R",
+        "W"
+      ],
+      "name": "Roar of the Fifth People",
+      "cost": "",
+      "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI — Create two 3/3 green Dinosaur creature tokens.\nII — This Saga gains \"Creatures you control have '{T}: Add {R}, {G}, or {W}.'\"\nIII — Search your library for a Dinosaur card, reveal it, put it into your hand, then shuffle.\nIV — Dinosaurs you control gain double strike and trample until end of turn.",
+      "set": "LCI",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Huatli, Poet of Unity // Roar of the Fifth People"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Huatli's Final Strike",
+    "cost": "{2}{G}",
+    "text": "Target creature you control gets +1/+0 until end of turn. It deals damage equal to its power to target creature an opponent controls.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 190,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Hulking Raptor",
+    "cost": "{2}{G}{G}",
+    "text": "Ward {2}\nAt the beginning of your first main phase, add {G}{G}.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 191,
+    "power": 5,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "In the Presence of Ages",
+    "cost": "{2}{G}",
+    "text": "Reveal the top four cards of your library. You may put a creature card and/or a land card from among them into your hand. Put the rest into your graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 192,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Intrepid Paleontologist",
+    "cost": "{1}{G}",
+    "text": "{T}: Add one mana of any color.\n{2}: Exile target card from a graveyard.\nYou may cast Dinosaur creature spells from among cards you own exiled with this creature. If you cast a spell this way, that creature enters with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 193,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Ixalli's Lorekeeper",
+    "cost": "{G}",
+    "text": "{T}: Add one mana of any color. Spend this mana only to cast a Dinosaur spell or activate an ability of a Dinosaur source.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 194,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Jade Seedstones",
+    "cost": "{3}{G}",
+    "text": "When this artifact enters, distribute three +1/+1 counters among one, two, or three target creatures you control.\nCraft with creature {5}{G}{G} ({5}{G}{G}, Exile this artifact, Exile a creature you control or a creature card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 195,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Creature"
+      ],
+      "subtypes": [
+        "Golem"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Jadeheart Attendant",
+      "cost": "",
+      "text": "When this creature enters, you gain life equal to the mana value of the exiled card used to craft it.",
+      "set": "LCI",
+      "rarity": "U",
+      "power": 7,
+      "toughness": 7,
+      "keywords": []
+    },
+    "imageName": "Jade Seedstones // Jadeheart Attendant"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Jadelight Spelunker",
+    "cost": "{X}{G}",
+    "text": "When this creature enters, it explores X times. (To have it explore, reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on that creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 196,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Kaslem's Stonetree",
+    "cost": "{2}{G}",
+    "text": "When this artifact enters, look at the top six cards of your library. You may put a land card from among them onto the battlefield tapped. Put the rest on the bottom in a random order.\nCraft with Cave {5}{G} ({5}{G}, Exile this artifact, Exile a Cave you control or a Cave card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 197,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Creature"
+      ],
+      "subtypes": [
+        "Golem"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Kaslem's Strider",
+      "cost": "",
+      "text": "",
+      "set": "LCI",
+      "rarity": "C",
+      "power": 5,
+      "toughness": 5,
+      "keywords": []
+    },
+    "imageName": "Kaslem's Stonetree // Kaslem's Strider"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Malamet Battle Glyph",
+    "cost": "{G}",
+    "text": "Choose target creature you control and target creature you don't control. If the creature you control entered this turn, put a +1/+1 counter on it. Then those creatures fight each other.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 198,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Malamet Brawler",
+    "cost": "{1}{G}",
+    "text": "Whenever this creature attacks, target attacking creature gains trample until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 199,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Malamet Scythe",
+    "cost": "{2}{G}",
+    "text": "Flash\nWhen this Equipment enters, attach it to target creature you control.\nEquipped creature gets +2/+2.\nEquip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 200,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Malamet Veteran",
+    "cost": "{4}{G}",
+    "text": "Trample\nDescend 4 — Whenever this creature attacks, if there are four or more permanent cards in your graveyard, put a +1/+1 counter on target creature.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 201,
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Mineshaft Spider",
+    "cost": "{3}{G}",
+    "text": "Reach\nWhen this creature enters, you may mill two cards. (You may put the top two cards of your library into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 202,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Nurturing Bristleback",
+    "cost": "{5}{G}{G}",
+    "text": "When this creature enters, create a 3/3 green Dinosaur creature token.\nForestcycling {2} ({2}, Discard this card: Search your library for a Forest card, reveal it, put it into your hand, then shuffle.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 203,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Ojer Kaslem, Deepest Growth",
+    "cost": "{3}{G}{G}",
+    "text": "Trample\nWhenever Ojer Kaslem deals combat damage to a player, reveal that many cards from the top of your library. You may put a creature card and/or a land card from among them onto the battlefield. Put the rest on the bottom in a random order.\nWhen Ojer Kaslem dies, return it to the battlefield tapped and transformed under its owner's control.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 204,
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [],
+      "name": "Temple of Cultivation",
+      "cost": "",
+      "text": "(Transforms from Ojer Kaslem, Deepest Growth.)\n{T}: Add {G}.\n{2}{G}, {T}: Transform this land. Activate only if you control ten or more permanents and only as a sorcery.",
+      "set": "LCI",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Ojer Kaslem, Deepest Growth // Temple of Cultivation"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Over the Edge",
+    "cost": "{1}{G}",
+    "text": "Choose one —\n• Destroy target artifact or enchantment.\n• Target creature you control explores, then it explores again. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on that creature, then put the card back or put it into your graveyard. Then repeat this process.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 205,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Pathfinding Axejaw",
+    "cost": "{3}{G}",
+    "text": "When this creature enters, it explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 206,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Frog"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Poison Dart Frog",
+    "cost": "{1}{G}",
+    "text": "Reach\n{T}: Add one mana of any color.\n{2}: This creature gains deathtouch until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 207,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Pugnacious Hammerskull",
+    "cost": "{2}{G}",
+    "text": "Whenever this creature attacks while you don't control another Dinosaur, put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 208,
+    "power": 6,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "River Herald Guide",
+    "cost": "{2}{G}",
+    "text": "Vigilance\nWhen this creature enters, it explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 209,
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Seeker of Sunlight",
+    "cost": "{G}",
+    "text": "{2}{G}: This creature explores. Activate only as a sorcery. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 210,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Warrior",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Sentinel of the Nameless City",
+    "cost": "{2}{G}",
+    "text": "Vigilance\nWhenever this creature enters or attacks, create a Map token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Target creature you control explores. Activate only as a sorcery.\")",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 211,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "The Skullspore Nexus",
+    "cost": "{6}{G}{G}",
+    "text": "This spell costs {X} less to cast, where X is the greatest power among creatures you control.\nWhenever one or more nontoken creatures you control die, create a green Fungus Dinosaur creature token with base power and toughness each equal to the total power of those creatures.\n{2}, {T}: Double target creature's power until end of turn.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 212,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Spelunking",
+    "cost": "{2}{G}",
+    "text": "When this enchantment enters, draw a card, then you may put a land card from your hand onto the battlefield. If you put a Cave onto the battlefield this way, you gain 4 life.\nLands you control enter untapped.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 213,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Staggering Size",
+    "cost": "{1}{G}",
+    "text": "Target creature gets +3/+3 and gains trample until end of turn.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 214,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fungus",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Tendril of the Mycotyrant",
+    "cost": "{1}{G}",
+    "text": "{5}{G}{G}: Put seven +1/+1 counters on target noncreature land you control. It becomes a 0/0 Fungus creature with haste. It's still a land.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 215,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Thrashing Brontodon",
+    "cost": "{1}{G}{G}",
+    "text": "{1}, Sacrifice this creature: Destroy target artifact or enchantment.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 216,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Twists and Turns",
+    "cost": "{G}",
+    "text": "If a creature you control would explore, instead you scry 1, then that creature explores.\nWhen this enchantment enters, target creature you control explores.\nWhen a land you control enters, if you control seven or more lands, transform this enchantment.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 217,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [
+        "Cave"
+      ],
+      "supertypes": [],
+      "colors": [],
+      "name": "Mycoid Maze",
+      "cost": "",
+      "text": "(Transforms from Twists and Turns.)\n{T}: Add {G}.\n{3}{G}, {T}: Look at the top four cards of your library. You may reveal a creature card from among them and put that card into your hand. Put the rest on the bottom of your library in a random order.",
+      "set": "LCI",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Twists and Turns // Mycoid Maze"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Walk with the Ancestors",
+    "cost": "{4}{G}",
+    "text": "Return up to one target permanent card from your graveyard to your hand. Discover 4. (Exile cards from the top of your library until you exile a nonland card with mana value 4 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 218,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Abuelo, Ancestral Echo",
+    "cost": "{1}{W}{U}",
+    "text": "Flying, ward {2}\n{1}{W}{U}: Exile another target creature or artifact you control. Return it to the battlefield under its owner's control at the beginning of the next end step.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 219,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fungus"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Akawalli, the Seething Tower",
+    "cost": "{1}{B}{G}",
+    "text": "Descend 4 — As long as there are four or more permanent cards in your graveyard, Akawalli gets +2/+2 and has trample.\nDescend 8 — As long as there are eight or more permanent cards in your graveyard, Akawalli gets an additional +2/+2 and can't be blocked by more than one creature.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 220,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Scout"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Amalia Benavides Aguirre",
+    "cost": "{W}{B}",
+    "text": "Ward—Pay 3 life.\nWhenever you gain life, Amalia Benavides Aguirre explores. Then destroy all other creatures if its power is exactly 20. (To have this creature explore, reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 221,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "The Ancient One",
+    "cost": "{U}{B}",
+    "text": "Descend 8 — The Ancient One can't attack or block unless there are eight or more permanent cards in your graveyard.\n{2}{U}{B}: Draw a card, then discard a card. When you discard a card this way, target player mills cards equal to its mana value.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 222,
+    "power": 8,
+    "toughness": 8,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Anim Pakal, Thousandth Moon",
+    "cost": "{1}{R}{W}",
+    "text": "Whenever you attack with one or more non-Gnome creatures, put a +1/+1 counter on Anim Pakal, then create X 1/1 colorless Gnome artifact creature tokens that are tapped and attacking, where X is the number of +1/+1 counters on Anim Pakal.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 223,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Knight"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Bartolomé del Presidio",
+    "cost": "{W}{B}",
+    "text": "Sacrifice another creature or artifact: Put a +1/+1 counter on Bartolomé del Presidio.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 224,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "The Belligerent",
+    "cost": "{2}{U}{R}",
+    "text": "Whenever The Belligerent attacks, create a Treasure token. Until end of turn, you may look at the top card of your library any time, and you may play lands and cast spells from the top of your library.\nCrew 3",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 225,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Caparocti Sunborn",
+    "cost": "{2}{R}{W}",
+    "text": "Whenever Caparocti Sunborn attacks, you may tap two untapped artifacts and/or creatures you control. If you do, discover 3. (Exile cards from the top of your library until you exile a nonland card with mana value 3 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 226,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pirate"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Captain Storm, Cosmium Raider",
+    "cost": "{U}{R}",
+    "text": "Whenever an artifact you control enters, put a +1/+1 counter on target Pirate you control.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 227,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Spirit"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Deepfathom Echo",
+    "cost": "{2}{G}{U}",
+    "text": "At the beginning of combat on your turn, this creature explores. Then you may have it become a copy of another creature you control until end of turn. (To have this creature explore, reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 228,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Avatar"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R",
+      "W"
+    ],
+    "name": "Gishath, Sun's Avatar",
+    "cost": "{5}{R}{G}{W}",
+    "text": "Vigilance, trample, haste\nWhenever Gishath deals combat damage to a player, reveal that many cards from the top of your library. Put any number of Dinosaur creature cards from among them onto the battlefield and the rest on the bottom of your library in a random order.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 229,
+    "power": 7,
+    "toughness": 6,
+    "keywords": [
+      "vigilance",
+      "trample",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Itzquinth, Firstborn of Gishath",
+    "cost": "{R}{G}",
+    "text": "Haste\nWhen Itzquinth enters, you may pay {2}. When you do, target Dinosaur you control deals damage equal to its power to another target creature.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 230,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Faerie",
+      "Scout"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Kellan, Daring Traveler",
+    "cost": "{1}{W}",
+    "text": "Whenever Kellan attacks, reveal the top card of your library. If it's a creature card with mana value 3 or less, put it into your hand. Otherwise, you may put it into your graveyard.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 231,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Journey On",
+      "cost": "{G}",
+      "text": "Create X Map tokens, where X is one plus the number of opponents who control an artifact. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Kellan, Daring Traveler // Journey On"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Kutzil, Malamet Exemplar",
+    "cost": "{1}{G}{W}",
+    "text": "Your opponents can't cast spells during your turn.\nWhenever one or more creatures you control each with power greater than its base power deals combat damage to a player, draw a card.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 232,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Master's Guide-Mural",
+    "cost": "{3}{W}{U}",
+    "text": "When this artifact enters, create a 4/4 white and blue Golem artifact creature token.\nCraft with artifact {4}{W}{W}{U} ({4}{W}{W}{U}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 233,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "U",
+        "W"
+      ],
+      "name": "Master's Manufactory",
+      "cost": "",
+      "text": "{T}: Create a 4/4 white and blue Golem artifact creature token. Activate only if this artifact or another artifact entered the battlefield under your control this turn.",
+      "set": "LCI",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Master's Guide-Mural // Master's Manufactory"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Molten Collapse",
+    "cost": "{B}{R}",
+    "text": "Choose one. If you descended this turn, you may choose both instead. (You descended if a permanent card was put into your graveyard from anywhere.)\n• Destroy target creature or planeswalker.\n• Destroy target noncreature, nonland permanent with mana value 1 or less.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 234,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elder",
+      "Fungus"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "The Mycotyrant",
+    "cost": "{1}{B}{G}",
+    "text": "Trample\nThe Mycotyrant's power and toughness are each equal to the number of creatures you control that are Fungi and/or Saprolings.\nAt the beginning of your end step, create X 1/1 black Fungus creature tokens with \"This token can't block,\" where X is the number of times you descended this turn. (You descend each time a permanent card is put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 235,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 0,
+    "toughnessText": "*",
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Scout"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Nicanzil, Current Conductor",
+    "cost": "{G}{U}",
+    "text": "Whenever a creature you control explores a land card, you may put a land card from your hand onto the battlefield tapped.\nWhenever a creature you control explores a nonland card, put a +1/+1 counter on Nicanzil.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 236,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Palani's Hatcher",
+    "cost": "{3}{R}{G}",
+    "text": "Other Dinosaurs you control have haste.\nWhen this creature enters, create two 0/1 green Dinosaur Egg creature tokens.\nAt the beginning of combat on your turn, if you control one or more Eggs, sacrifice an Egg, then create a 3/3 green Dinosaur creature token.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 237,
+    "power": 5,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Quintorius"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Quintorius Kand",
+    "cost": "{3}{R}{W}",
+    "text": "Whenever you cast a spell from exile, Quintorius Kand deals 2 damage to each opponent and you gain 2 life.\n[+1]: Create a 3/2 red and white Spirit creature token.\n[−3]: Discover 4.\n[−6]: Exile any number of target cards from your graveyard. Add {R} for each card exiled this way. You may play those cards this turn.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 238,
+    "loyalty": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Saheeli, the Sun's Brilliance",
+    "cost": "{U}{R}",
+    "text": "{U}{R}, {T}: Create a token that's a copy of another target creature or artifact you control, except it's an artifact in addition to its other types. It gains haste. Sacrifice it at the beginning of the next end step.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 239,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Sovereign Okinec Ahau",
+    "cost": "{2}{G}{W}",
+    "text": "Ward {2}\nWhenever Sovereign Okinec Ahau attacks, for each creature you control with power greater than that creature's base power, put a number of +1/+1 counters on that creature equal to the difference.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 240,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Squirming Emergence",
+    "cost": "{1}{B}{G}",
+    "text": "Fathomless descent — Return to the battlefield target nonland permanent card in your graveyard with mana value less than or equal to the number of permanent cards in your graveyard.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 241,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Skeleton",
+      "Horror"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Uchbenbak, the Great Mistake",
+    "cost": "{3}{U}{B}",
+    "text": "Vigilance, menace\nDescend 8 — {4}{U}{B}: Return this card from your graveyard to the battlefield with a finality counter on it. Activate only if there are eight or more permanent cards in your graveyard and only as a sorcery. (If a creature with a finality counter on it would die, exile it instead.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 242,
+    "power": 6,
+    "toughness": 4,
+    "keywords": [
+      "vigilance",
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Demon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Vito, Fanatic of Aclazotz",
+    "cost": "{2}{W}{B}",
+    "text": "Flying\nWhenever you sacrifice another permanent, you gain 2 life if this is the first time this ability has resolved this turn. If it's the second time, each opponent loses 2 life. If it's the third time, create a 4/3 white and black Vampire Demon creature token with flying.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 243,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Wail of the Forgotten",
+    "cost": "{U}{B}",
+    "text": "Descend 8 — Choose one. If there are eight or more permanent cards in your graveyard as you cast this spell, choose one or more instead.\n• Return target nonland permanent to its owner's hand.\n• Target opponent discards a card.\n• Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 244,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Warlock"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Zoyowa Lava-Tongue",
+    "cost": "{B}{R}",
+    "text": "Deathtouch\nAt the beginning of your end step, if you descended this turn, each opponent may discard a card or sacrifice a permanent of their choice. Zoyowa deals 3 damage to each opponent who didn't. (You descended if a permanent card was put into your graveyard from anywhere.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 245,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Treasure"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Buried Treasure",
+    "cost": "{2}",
+    "text": "{T}, Sacrifice this artifact: Add one mana of any color.\n{5}, Exile this card from your graveyard: Discover 5. Activate only as a sorcery. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 246,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Careening Mine Cart",
+    "cost": "{3}",
+    "text": "Whenever this Vehicle attacks, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 247,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Cartographer's Companion",
+    "cost": "{3}",
+    "text": "When this creature enters, create a Map token. (It's an artifact with \"{1}, {T}, Sacrifice this token: Target creature you control explores. Activate only as a sorcery.\")",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 248,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Chimil, the Inner Sun",
+    "cost": "{6}",
+    "text": "Spells you control can't be countered.\nAt the beginning of your end step, discover 5. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 249,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Compass Gnome",
+    "cost": "{2}",
+    "text": "When this creature enters, you may search your library for a basic land card or Cave card, reveal it, then shuffle and put that card on top.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 250,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Contested Game Ball",
+    "cost": "{2}",
+    "text": "Whenever you're dealt combat damage, the attacking player gains control of this artifact and untaps it.\n{2}, {T}: Draw a card and put a point counter on this artifact. Then if it has five or more point counters on it, sacrifice it and create a Treasure token.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 251,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Digsite Conservator",
+    "cost": "{2}",
+    "text": "Sacrifice this creature: Exile up to four target cards from a single graveyard. Activate only as a sorcery.\nWhen this creature dies, you may pay {4}. If you do, discover 4. (Exile cards from the top of your library until you exile a nonland card with mana value 4 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 252,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Disruptor Wanderglyph",
+    "cost": "{4}",
+    "text": "Whenever this creature attacks, exile target card from an opponent's graveyard.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 253,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hoverstone Pilgrim",
+    "cost": "{5}",
+    "text": "Flying\nWard {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\n{2}: Put target card from a graveyard on the bottom of its owner's library.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 254,
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hunter's Blowgun",
+    "cost": "{1}",
+    "text": "Equipped creature gets +1/+1.\nEquipped creature has deathtouch during your turn. Otherwise, it has reach.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 255,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Matzalantli, the Great Door",
+    "cost": "{3}",
+    "text": "{T}: Draw a card, then discard a card.\n{4}, {T}: Transform Matzalantli. Activate only if there are four or more permanent types among cards in your graveyard. (Artifact, battle, creature, enchantment, land, and planeswalker are permanent types.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 256,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [],
+      "name": "The Core",
+      "cost": "",
+      "text": "(Transforms from Matzalantli.)\nFathomless descent — {T}: Add X mana of any one color, where X is the number of permanent cards in your graveyard.",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Matzalantli, the Great Door // The Core"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "The Millennium Calendar",
+    "cost": "{1}",
+    "text": "Whenever you untap one or more permanents during your untap step, put that many time counters on The Millennium Calendar.\n{2}, {T}: Double the number of time counters on The Millennium Calendar.\nWhen there are 1,000 or more time counters on The Millennium Calendar, sacrifice it and each opponent loses 1,000 life.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 257,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Roaming Throne",
+    "cost": "{4}",
+    "text": "Ward {2}\nAs this creature enters, choose a creature type.\nThis creature is the chosen type in addition to its other types.\nIf a triggered ability of another creature you control of the chosen type triggers, it triggers an additional time.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 258,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Runaway Boulder",
+    "cost": "{6}",
+    "text": "Flash\nWhen this artifact enters, it deals 6 damage to target creature an opponent controls.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 259,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Scampering Surveyor",
+    "cost": "{4}",
+    "text": "When this creature enters, search your library for a basic land card or Cave card, put it onto the battlefield tapped, then shuffle.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 260,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sorcerous Spyglass",
+    "cost": "{2}",
+    "text": "As this artifact enters, look at an opponent's hand, then choose any card name.\nActivated abilities of sources with the chosen name can't be activated unless they're mana abilities.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 261,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sunbird Standard",
+    "cost": "{3}",
+    "text": "{T}: Add one mana of any color.\nCraft with one or more {5} ({5}, Exile this artifact, Exile one or more other permanents you control and/or cards from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 262,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Artifact",
+        "Creature"
+      ],
+      "subtypes": [
+        "Bird",
+        "Construct"
+      ],
+      "supertypes": [],
+      "colors": [],
+      "name": "Sunbird Effigy",
+      "cost": "",
+      "text": "Flying, vigilance, haste\nSunbird Effigy's power and toughness are each equal to the number of colors among the exiled cards used to craft it.\n{T}: For each color among the exiled cards used to craft this creature, add one mana of that color.",
+      "set": "LCI",
+      "rarity": "U",
+      "power": 0,
+      "powerText": "*",
+      "toughness": 0,
+      "toughnessText": "*",
+      "keywords": [
+        "flying",
+        "vigilance",
+        "haste"
+      ]
+    },
+    "imageName": "Sunbird Standard // Sunbird Effigy"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Swashbuckler's Whip",
+    "cost": "{1}",
+    "text": "Equipped creature has reach, \"{2}, {T}: Tap target artifact or creature,\" and \"{8}, {T}: Discover 10.\" (Exile cards from the top of your library until you exile a nonland card with mana value 10 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)\nEquip {1}",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 263,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Tarrian's Soulcleaver",
+    "cost": "{1}",
+    "text": "Equipped creature has vigilance.\nWhenever another artifact or creature is put into a graveyard from the battlefield, put a +1/+1 counter on equipped creature.\nEquip {2}",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 264,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Threefold Thunderhulk",
+    "cost": "{7}",
+    "text": "This creature enters with three +1/+1 counters on it.\nWhenever this creature enters or attacks, create a number of 1/1 colorless Gnome artifact creature tokens equal to its power.\n{2}, Sacrifice another artifact: Put a +1/+1 counter on this creature.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 265,
+    "power": 0,
+    "toughness": 0,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Throne of the Grim Captain",
+    "cost": "{2}",
+    "text": "{T}: Mill two cards.\nCraft with a Dinosaur, a Merfolk, a Pirate, and a Vampire {4} ({4}, Exile this artifact, Exile the four from among permanents you control and/or cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 266,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Skeleton",
+        "Spirit",
+        "Pirate"
+      ],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "B"
+      ],
+      "name": "The Grim Captain",
+      "cost": "",
+      "text": "Menace, trample, lifelink, hexproof\nWhenever The Grim Captain attacks, each opponent sacrifices a nonland permanent of their choice. Then you may put an exiled creature card used to craft The Grim Captain onto the battlefield under your control tapped and attacking.",
+      "set": "LCI",
+      "rarity": "R",
+      "power": 7,
+      "toughness": 7,
+      "keywords": [
+        "menace",
+        "trample",
+        "lifelink",
+        "hexproof"
+      ]
+    },
+    "imageName": "Throne of the Grim Captain // The Grim Captain"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Treasure Map",
+    "cost": "{2}",
+    "text": "{1}, {T}: Scry 1. Put a landmark counter on this artifact. Then if there are three or more landmark counters on it, remove those counters, transform this artifact, and create three Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 267,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Land"
+      ],
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [],
+      "name": "Treasure Cove",
+      "cost": "",
+      "text": "(Transforms from Treasure Map.)\n{T}: Add {C}.\n{T}, Sacrifice a Treasure: Draw a card.",
+      "set": "LCI",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Treasure Map // Treasure Cove"
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Captivating Cave",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color.\n{4}, {T}, Sacrifice this land: Put two +1/+1 counters on target creature. Activate only as a sorcery.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 268,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Cavern of Souls",
+    "cost": "",
+    "text": "As this land enters, choose a creature type.\n{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a creature spell of the chosen type, and that spell can't be countered.",
+    "set": "LCI",
+    "rarity": "M",
+    "number": 269,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Cavernous Maw",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{2}: This land becomes a 3/3 Elemental creature until end of turn. It's still a Cave land. Activate only if the number of other Caves you control plus the number of Cave cards in your graveyard is three or greater.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 270,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Echoing Deeps",
+    "cost": "",
+    "text": "You may have this land enter tapped as a copy of any land card in a graveyard, except it's a Cave in addition to its other types.\n{T}: Add {C}.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 271,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Forgotten Monument",
+    "cost": "",
+    "text": "{T}: Add {C}.\nOther Caves you control have \"{T}, Pay 1 life: Add one mana of any color.\"",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 272,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hidden Cataract",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {U}.\n{4}{U}, {T}, Sacrifice this land: Discover 4. Activate only as a sorcery. (Exile cards from the top of your library until you exile a nonland card with mana value 4 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 273,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hidden Courtyard",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {W}.\n{4}{W}, {T}, Sacrifice this land: Discover 4. Activate only as a sorcery. (Exile cards from the top of your library until you exile a nonland card with mana value 4 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 274,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hidden Necropolis",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {B}.\n{4}{B}, {T}, Sacrifice this land: Discover 4. Activate only as a sorcery. (Exile cards from the top of your library until you exile a nonland card with mana value 4 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 275,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hidden Nursery",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {G}.\n{4}{G}, {T}, Sacrifice this land: Discover 4. Activate only as a sorcery. (Exile cards from the top of your library until you exile a nonland card with mana value 4 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 276,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hidden Volcano",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {R}.\n{4}{R}, {T}, Sacrifice this land: Discover 4. Activate only as a sorcery. (Exile cards from the top of your library until you exile a nonland card with mana value 4 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 277,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Pit of Offerings",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, exile up to three target cards from graveyards.\n{T}: Add {C}.\n{T}: Add one mana of any of the exiled cards' colors.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 278,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Promising Vein",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{1}, {T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "set": "LCI",
+    "rarity": "C",
+    "number": 279,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Restless Anchorage",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {W} or {U}.\n{1}{W}{U}: Until end of turn, this land becomes a 2/3 white and blue Bird creature with flying. It's still a land.\nWhenever this land attacks, create a Map token.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 280,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Restless Prairie",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {G} or {W}.\n{2}{G}{W}: This land becomes a 3/3 green and white Llama creature until end of turn. It's still a land.\nWhenever this land attacks, other creatures you control get +1/+1 until end of turn.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 281,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Restless Reef",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {U} or {B}.\n{2}{U}{B}: Until end of turn, this land becomes a 4/4 blue and black Shark creature with deathtouch. It's still a land.\nWhenever this land attacks, target player mills four cards.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 282,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Restless Ridgeline",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {R} or {G}.\n{2}{R}{G}: This land becomes a 3/4 red and green Dinosaur creature until end of turn. It's still a land.\nWhenever this land attacks, another target attacking creature gets +2/+0 until end of turn. Untap that creature.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 283,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Restless Vents",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {B} or {R}.\n{1}{B}{R}: Until end of turn, this land becomes a 2/3 black and red Insect creature with menace. It's still a land.\nWhenever this land attacks, you may discard a card. If you do, draw a card.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 284,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sunken Citadel",
+    "cost": "",
+    "text": "This land enters tapped. As it enters, choose a color.\n{T}: Add one mana of the chosen color.\n{T}: Add two mana of the chosen color. Spend this mana only to activate abilities of land sources.",
+    "set": "LCI",
+    "rarity": "R",
+    "number": 285,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Cave"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Volatile Fault",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{1}, {T}, Sacrifice this land: Destroy target nonbasic land an opponent controls. That player may search their library for a basic land card, put it onto the battlefield, then shuffle. You create a Treasure token.",
+    "set": "LCI",
+    "rarity": "U",
+    "number": 286,
+    "keywords": []
+  }
+]

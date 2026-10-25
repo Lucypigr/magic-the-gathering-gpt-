@@ -41,8 +41,8 @@ describe("FDN and DSK printed cards and mechanics", () => {
     for (const row of [...fdn, ...dsk]) {
       const c = CARDS.find((c) => c.id === slug(row.name));
       expect(c, row.name).toBeDefined();
-      // Newer Oracle snapshots use 'this creature' in place of self names.
-      const selfText=(text:string)=>text.replaceAll(row.name,'SELF').replace(/this (?:creature|enchantment|artifact|Vehicle|permanent|Aura|spell|land)/gi,'SELF').replace(/As it enters/g,'As SELF enters').replace(/\s+/g,' ');
+      // Oracle snapshots may rename self references and omit optional reminder text.
+      const selfText=(text:string)=>text.replaceAll(row.name,'SELF').replace(/this (?:creature|enchantment|artifact|Vehicle|permanent|Aura|spell|land)/gi,'SELF').replace(/As it enters/g,'As SELF enters').replace(/\s*\([^()]*\)/g,'').replace(/\s+/g,' ');
       expect(selfText(c!.text), row.name).toBe(selfText(row.text));
       expect(c!.cost, row.name).toBe(row.cost);
       expect(c!.power, row.name).toBe(row.power);

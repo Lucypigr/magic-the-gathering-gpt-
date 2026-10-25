@@ -117,8 +117,8 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
     used.add(b);
     valid.push([b, a]);
   }
-  for(const a of attackers(g).filter(c=>(['raphael-ninja-destroyer','vinebred-brawler'].includes(c.def.id)||c.frontierMarks?.mustBlocked===g.turn||abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='dsk:mustBlocked')||c.finMarks?.mustBlock===g.turn||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='the-masamune'))&&!abilitiesSuppressed(g,c))){
-    const st=stats(g,a),minimum=a.def.id==='relentless-x-atm092'?3:st.kw.has('menace')?2:1;
+  for(const a of attackers(g).filter(c=>(['raphael-ninja-destroyer','vinebred-brawler'].includes(c.def.id)||c.frontierMarks?.mustBlocked===g.turn||c.frontierMarks?.cpMustBlocked===g.turn||abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='dsk:mustBlocked')||c.finMarks?.mustBlock===g.turn||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='the-masamune'))&&!abilitiesSuppressed(g,c))){
+    const st=stats(g,a),minimum=a.def.id==='relentless-x-atm092'||a.frontierMarks?.cpBlockThree===g.turn||abilitiesOf(g,a).some(a=>a.kind==='static'&&a.frontier==='lci:blockThree')?3:st.kw.has('menace')?2:1;
     if(st.onlyOneBlocker&&minimum>1)continue;
     const assigned=valid.filter(([,id])=>id===a.id);
     if(assigned.length>=minimum)continue;
@@ -130,7 +130,7 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
   for(const id of g.battlefield){const b=g.cards[id];if(b.controller!==pid||valid.some(([id])=>id===b.id))continue;const w=g.cards[b.mkmMarks?.blockWolf??-1];const target=w?.attacking&&canBlock(g,b,w)?w:b.mkmMarks?.mustAttackBlock===g.turn?attackers(g).find(a=>canBlock(g,b,a)):undefined;if(target)valid.push([b.id,target.id]);}
   // 威懾：只被一個生物阻擋的攻擊無效
   const countFor = (a: number) => valid.filter(([, x]) => x === a).length;
-  valid = valid.filter(([, a]) => !(g.cards[a].def.id==='relentless-x-atm092'?countFor(a)<3:stats(g,g.cards[a]).kw.has('menace')&&countFor(a)<2));
+  valid = valid.filter(([, a]) => !(g.cards[a].def.id==='relentless-x-atm092'||g.cards[a].frontierMarks?.cpBlockThree===g.turn||abilitiesOf(g,g.cards[a]).some(a=>a.kind==='static'&&a.frontier==='lci:blockThree')?countFor(a)<3:stats(g,g.cards[a]).kw.has('menace')&&countFor(a)<2));
   valid = valid.filter(([,a],i) => !stats(g,g.cards[a]).onlyOneBlocker || valid.findIndex(([,id])=>id===a)===i);
   const tax=frontierStatic(g,(1-pid) as PID,'archangelTax').filter(c=>c.attacking).length;if(tax&&valid.length&&!payCost(g,pid,parseCost('{'+tax*valid.length+'}')))return [];
   for (const [b, a] of valid) {

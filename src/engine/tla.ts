@@ -1,3 +1,4 @@
+import {campusTargets} from './campus-casting';
 import {beholdOptions,canReceiveCounters} from './ecl-support';
 // Shared choices for TLA cards that cannot be expressed as a fixed effect list.
 import { canPayCost, maxXFor, frontierStackChoices,castDef,castDuringResolution, castTargetSpecs, payCost, spellEffects } from './actions';
@@ -56,9 +57,9 @@ export function* freeCast(g: GameState, ctx: Ctx, c: Card, free=true,alt?:import
     const r:Response=yield {type:'mode',player:ctx.controller,source:c.id,prompt:'選擇施放模式',options:legal.map(i=>modes[i].text),count:1,purpose:'trigger'};
     mode=legal[r.type==='modes'?(r.picks[0]??0):0];
   }
-  if(!free&&parseCost(view.cost).x){const max=maxXFor(g,ctx.controller,c,mode,alt)??0;const r:Response=yield{type:'mode',player:ctx.controller,prompt:'選擇X',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};extra.x=r.type==='modes'?r.picks[0]??0:0;}
+  if(!free&&alt!=='campusMiracle'&&parseCost(view.cost).x){const max=maxXFor(g,ctx.controller,c,mode,alt)??0;const r:Response=yield{type:'mode',player:ctx.controller,prompt:'選擇X',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};extra.x=r.type==='modes'?r.picks[0]??0:0;}
   if(view.ecl?.variableTargets){const cap=view.frontier?.distribute==='X'?extra.x??0:view.frontier?.distribute??g.battlefield.length;const count=Math.min(cap,g.battlefield.filter(id=>isCreature(g.cards[id])&&(view.frontier?.variableTargets!=='own'||g.cards[id].controller===ctx.controller)).length);const r:Response=yield {type:'mode',player:ctx.controller,prompt:'選擇目標生物數量',options:Array.from({length:count+1},(_,i)=>String(i)),count:1,purpose:'count'};mode=r.type==='modes'?r.picks[0]??0:0;}
-  const specs = castTargetSpecs(view,mode);
+  const specs = campusTargets(g,ctx.controller,c,view,castTargetSpecs(view,mode),mode);
   let targets: Ctx['targets'] = [];
   if (specs.length) {
     const r: Response = yield {type:'targets',player:ctx.controller,source:c.id,specs,text:view.text,effects:spellEffects(view,mode)};

@@ -1,0 +1,1781 @@
+{
+  "7": {
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 4,
+          "to": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "inCombat": true
+          }
+        }
+      ]
+    }
+  },
+  "11": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{4}{W}"
+        },
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-gnome-11-"
+          }
+        ],
+        "label": "派出一個1/1無色的侏儒衍生生物"
+      }
+    ]
+  },
+  "13": {
+    "spell": {
+      "modes": [
+        {
+          "text": "由你操控的生物得+1/+1直到回合結束",
+          "effects": [
+            {
+              "e": "pump",
+              "what": {
+                "all": {
+                  "type": "Creature",
+                  "ctrl": "you"
+                }
+              },
+              "p": 1,
+              "t": 1
+            }
+          ]
+        },
+        {
+          "text": "由你操控的生物獲得辟邪異能直到回合結束",
+          "effects": [
+            {
+              "e": "pump",
+              "what": {
+                "all": {
+                  "type": "Creature",
+                  "ctrl": "you"
+                }
+              },
+              "p": 0,
+              "t": 0,
+              "kw": [
+                "hexproof"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      }
+    ]
+  },
+  "19": {
+    "keywords": [
+      "double_strike"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "explore",
+            "what": "self"
+          }
+        ]
+      }
+    ]
+  },
+  "21": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": {
+              "all": {
+                "type": "Creature",
+                "ctrl": "you"
+              }
+            },
+            "p": 2,
+            "t": 1
+          }
+        ]
+      }
+    ]
+  },
+  "23": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "combatStart",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 2,
+            "t": 0,
+            "kw": [
+              "vigilance"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "24": {
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "explore",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "28": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-gnome-11-"
+          }
+        ]
+      }
+    ]
+  },
+  "29": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{W}",
+          "craft": {
+            "type": "Artifact"
+          }
+        },
+        "effects": [
+          {
+            "e": "returnTransformed"
+          }
+        ],
+        "label": "工藝：轉化",
+        "sorcery": true
+      },
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "scry",
+            "n": 2
+          }
+        ]
+      }
+    ],
+    "back": {
+      "set": "LCI",
+      "rarity": "C",
+      "name": "Oteclan Levitator",
+      "cost": "",
+      "types": [
+        "Artifact",
+        "Creature"
+      ],
+      "subtypes": [
+        "Golem"
+      ],
+      "power": 1,
+      "toughness": 4,
+      "keywords": [
+        "flying"
+      ],
+      "abilities": [
+        {
+          "kind": "trigger",
+          "on": "attacks",
+          "effects": [
+            {
+              "e": "pump",
+              "what": "T0",
+              "p": 0,
+              "t": 0,
+              "kw": [
+                "flying"
+              ]
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "attacking": true,
+                "nonKw": "flying"
+              }
+            }
+          ]
+        }
+      ],
+      "text": "Flying\nWhenever this creature attacks, target attacking creature without flying gains flying until end of turn.",
+      "id": "oteclan-landmark-back",
+      "supertypes": [],
+      "colors": [
+        "W"
+      ]
+    },
+    "imageName": "Oteclan Landmark // Oteclan Levitator"
+  },
+  "33": {
+    "keywords": [
+      "flying",
+      "lifelink"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "endStep",
+        "effects": [
+          {
+            "e": "scry",
+            "n": 1
+          }
+        ],
+        "cond": {
+          "c": "descended"
+        }
+      }
+    ]
+  },
+  "35": {
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Plains"
+      }
+    },
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 3
+          }
+        ]
+      }
+    ]
+  },
+  "40": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-gnome-11-",
+            "n": 2
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{W}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "gain",
+            "n": 3
+          }
+        ],
+        "label": "你獲得3點生命"
+      }
+    ]
+  },
+  "45": {
+    "spell": {
+      "effects": [
+        {
+          "e": "draw",
+          "n": 3
+        },
+        {
+          "e": "discard",
+          "n": 1,
+          "who": "you"
+        }
+      ]
+    }
+  },
+  "49": {
+    "keywords": [
+      "flash"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": -2,
+            "t": 0
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "opp"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "50": {
+    "spell": {
+      "modes": [
+        {
+          "text": "檢視你牌庫頂的四張牌。將其中一張置於你手",
+          "effects": [
+            {
+              "e": "dig",
+              "n": 4,
+              "take": 1,
+              "rest": "graveyard"
+            }
+          ]
+        },
+        {
+          "text": "反擊目標咒語，除非其操控者支付{4}",
+          "effects": [
+            {
+              "e": "counterUnless",
+              "what": "T0",
+              "pay": 4
+            }
+          ],
+          "targets": [
+            {
+              "kind": "spell"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "57": {
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "gyCount",
+            "filter": {
+              "nonType": [
+                "Instant",
+                "Sorcery"
+              ]
+            },
+            "n": 4
+          },
+          "grant": {
+            "p": 2,
+            "t": 0
+          }
+        }
+      }
+    ]
+  },
+  "58": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}{U}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 3,
+            "t": -3
+          }
+        ],
+        "label": "此生物得+3/-3直到回合結束"
+      }
+    ]
+  },
+  "64": {
+    "ward": 3,
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Island"
+      }
+    }
+  },
+  "72": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "explore",
+            "what": "self"
+          }
+        ]
+      }
+    ]
+  },
+  "78": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-map"
+          }
+        ]
+      }
+    ]
+  },
+  "84": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-map"
+          }
+        ]
+      }
+    ]
+  },
+  "96": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "endStep",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "cond": {
+          "c": "descended"
+        },
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{5}{B}{B}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-vampire-demon-43-bw-flying"
+          }
+        ],
+        "label": "派出一個4/3白色與黑色，具有飛行異"
+      }
+    ]
+  },
+  "99": {
+    "aura": {
+      "target": {
+        "kind": "creature",
+        "prompt": "選擇要結附的生物"
+      },
+      "grant": {
+        "p": -2,
+        "t": -2
+      }
+    }
+  },
+  "100": {
+    "keywords": [
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "mill",
+            "n": 2
+          }
+        ],
+        "may": "磨兩張牌？"
+      }
+    ]
+  },
+  "101": {
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "endStep",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ],
+        "cond": {
+          "c": "descended"
+        }
+      }
+    ]
+  },
+  "104": {
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "gyCount",
+            "filter": {
+              "nonType": [
+                "Instant",
+                "Sorcery"
+              ]
+            },
+            "n": 4
+          },
+          "grant": {
+            "p": 1,
+            "t": 1,
+            "kw": [
+              "lifelink"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "109": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "scry",
+            "n": 1
+          },
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ]
+      }
+    ]
+  },
+  "116": {
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Swamp"
+      }
+    },
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 2,
+            "t": 0,
+            "kw": [
+              "indestructible"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "118": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "mill",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "124": {
+    "keywords": [
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          },
+          {
+            "e": "lose",
+            "n": 1,
+            "who": "you"
+          }
+        ],
+        "cond": {
+          "c": "gyCount",
+          "filter": {
+            "nonType": [
+              "Instant",
+              "Sorcery"
+            ]
+          },
+          "n": 4
+        }
+      }
+    ]
+  },
+  "128": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{4}{B}",
+          "craft": {
+            "type": "Creature"
+          }
+        },
+        "effects": [
+          {
+            "e": "returnTransformed"
+          }
+        ],
+        "label": "工藝：轉化",
+        "sorcery": true
+      },
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "edict",
+            "who": "opp",
+            "filter": {
+              "type": "Creature"
+            }
+          }
+        ]
+      }
+    ],
+    "back": {
+      "set": "LCI",
+      "rarity": "C",
+      "name": "Consuming Sepulcher",
+      "cost": "",
+      "types": [
+        "Artifact"
+      ],
+      "abilities": [
+        {
+          "kind": "trigger",
+          "on": "upkeep",
+          "effects": [
+            {
+              "e": "lose",
+              "n": 1,
+              "who": "opp"
+            },
+            {
+              "e": "gain",
+              "n": 1
+            }
+          ]
+        }
+      ],
+      "text": "At the beginning of your upkeep, each opponent loses 1 life and you gain 1 life.",
+      "id": "tithing-blade-back",
+      "subtypes": [],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ]
+    },
+    "imageName": "Tithing Blade // Consuming Sepulcher"
+  },
+  "131": {
+    "spell": {
+      "modes": [
+        {
+          "text": "對目標生物造成3點傷害",
+          "effects": [
+            {
+              "e": "damage",
+              "n": 3,
+              "to": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature"
+            }
+          ]
+        },
+        {
+          "text": "消滅目標神器",
+          "effects": [
+            {
+              "e": "destroy",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "permanent",
+              "filter": {
+                "type": "Artifact"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "132": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 2,
+          "t": 0,
+          "kw": [
+            "first_strike"
+          ]
+        },
+        {
+          "e": "token",
+          "token": "tok-treasure"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "140": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "endStep",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ],
+        "cond": {
+          "c": "descended"
+        }
+      }
+    ]
+  },
+  "144": {
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "menace"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "148": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "endStep",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ],
+        "cond": {
+          "c": "descended"
+        }
+      }
+    ]
+  },
+  "151": {
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "controls",
+            "filter": {
+              "type": "Artifact"
+            }
+          },
+          "grant": {
+            "p": 1,
+            "t": 0,
+            "kw": [
+              "haste"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "155": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{R}",
+          "craft": {
+            "type": "Artifact"
+          }
+        },
+        "effects": [
+          {
+            "e": "returnTransformed"
+          }
+        ],
+        "label": "工藝：轉化",
+        "sorcery": true
+      },
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "damage",
+            "n": 2,
+            "to": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "any"
+          }
+        ]
+      }
+    ],
+    "keywords": [
+      "flash"
+    ],
+    "back": {
+      "set": "LCI",
+      "rarity": "C",
+      "name": "Sovereign's Macuahuitl",
+      "cost": "",
+      "types": [
+        "Artifact"
+      ],
+      "subtypes": [
+        "Equipment"
+      ],
+      "equip": {
+        "cost": "{2}",
+        "grant": {
+          "p": 2,
+          "t": 0
+        }
+      },
+      "abilities": [
+        {
+          "kind": "trigger",
+          "on": "etb",
+          "effects": [
+            {
+              "e": "attach",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "ctrl": "you"
+              }
+            }
+          ]
+        }
+      ],
+      "text": "When this Equipment enters, attach it to target creature you control.\nEquipped creature gets +2/+0.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "id": "idol-of-the-deep-king-back",
+      "supertypes": [],
+      "colors": [
+        "R"
+      ]
+    },
+    "imageName": "Idol of the Deep King // Sovereign's Macuahuitl"
+  },
+  "159": {
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "damage",
+            "n": 2,
+            "to": "opp"
+          }
+        ],
+        "label": "此生物對每位對手各造成2點傷害"
+      }
+    ]
+  },
+  "160": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ]
+      }
+    ]
+  },
+  "166": {
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Mountain"
+      }
+    },
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{R}",
+          "sacOther": {
+            "type": "Land"
+          }
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌"
+      }
+    ]
+  },
+  "175": {
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "gyCount",
+            "filter": {
+              "nonType": [
+                "Instant",
+                "Sorcery"
+              ]
+            },
+            "n": 4
+          },
+          "grant": {
+            "p": 3,
+            "t": 0
+          }
+        }
+      }
+    ]
+  },
+  "178": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "explore",
+            "what": "self"
+          }
+        ]
+      }
+    ]
+  },
+  "180": {
+    "keywords": [
+      "reach",
+      "trample"
+    ]
+  },
+  "199": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "trample"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "attacking": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "200": {
+    "equip": {
+      "cost": "{4}",
+      "grant": {
+        "p": 2,
+        "t": 2
+      }
+    },
+    "keywords": [
+      "flash"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "attach",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "201": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "cond": {
+          "c": "gyCount",
+          "filter": {
+            "nonType": [
+              "Instant",
+              "Sorcery"
+            ]
+          },
+          "n": 4
+        },
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      }
+    ]
+  },
+  "202": {
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "mill",
+            "n": 2
+          }
+        ],
+        "may": "磨兩張牌？"
+      }
+    ]
+  },
+  "203": {
+    "cycling": {
+      "cost": "{2}",
+      "search": {
+        "type": "Land",
+        "sub": "Forest"
+      }
+    },
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-dinosaur-33-g"
+          }
+        ]
+      }
+    ]
+  },
+  "206": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "explore",
+            "what": "self"
+          }
+        ]
+      }
+    ]
+  },
+  "207": {
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "deathtouch"
+            ]
+          }
+        ],
+        "label": "此生物獲得死觸異能直到回合結束"
+      }
+    ],
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ]
+  },
+  "209": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "explore",
+            "what": "self"
+          }
+        ]
+      }
+    ]
+  },
+  "210": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{G}"
+        },
+        "effects": [
+          {
+            "e": "explore",
+            "what": "self"
+          }
+        ],
+        "label": "此生物探險（展示你牌庫頂的牌；是地就",
+        "sorcery": true
+      }
+    ]
+  },
+  "211": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-map"
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-map"
+          }
+        ]
+      }
+    ]
+  },
+  "214": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 3,
+          "t": 3,
+          "kw": [
+            "trample"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "216": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "destroy",
+            "what": "T0"
+          }
+        ],
+        "label": "消滅目標神器或結界",
+        "targets": [
+          {
+            "kind": "permanent",
+            "filter": {
+              "type": [
+                "Artifact",
+                "Enchantment"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "247": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 3
+          }
+        ],
+        "label": "駕駛1"
+      }
+    ]
+  },
+  "248": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-map"
+          }
+        ]
+      }
+    ]
+  },
+  "259": {
+    "cycling": {
+      "cost": "{2}"
+    },
+    "keywords": [
+      "flash"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "damage",
+            "n": 6,
+            "to": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "opp"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "268": {
+    "filterMana": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{4}",
+          "tap": true,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 2
+          }
+        ],
+        "label": "在目標生物上放置兩個+1/+1指示物",
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ],
+        "sorcery": true
+      }
+    ],
+    "produces": [
+      "C"
+    ]
+  },
+  "279": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "tap": true,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "battlefield",
+            "tapped": true
+          }
+        ],
+        "label": "從你的牌庫中搜尋一張基本地牌，將它橫"
+      }
+    ],
+    "produces": [
+      "C"
+    ]
+  },
+  "280": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}{W}{U}"
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 2,
+            "t": 3,
+            "kw": [
+              "flying"
+            ],
+            "subtypes": [
+              "Bird"
+            ],
+            "colors": [
+              "W",
+              "U"
+            ]
+          }
+        ],
+        "label": "成為2/3生物"
+      },
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-map"
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "W",
+      "U"
+    ]
+  },
+  "281": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{G}{W}"
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 3,
+            "subtypes": [
+              "Llama"
+            ],
+            "colors": [
+              "G",
+              "W"
+            ]
+          }
+        ],
+        "label": "成為3/3生物"
+      },
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": {
+              "all": {
+                "type": "Creature",
+                "ctrl": "you",
+                "other": true
+              }
+            },
+            "p": 1,
+            "t": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "G",
+      "W"
+    ]
+  },
+  "282": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{U}{B}"
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 4,
+            "t": 4,
+            "kw": [
+              "deathtouch"
+            ],
+            "subtypes": [
+              "Shark"
+            ],
+            "colors": [
+              "U",
+              "B"
+            ]
+          }
+        ],
+        "label": "成為4/4生物"
+      },
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "mill",
+            "n": 4,
+            "who": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "player"
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "U",
+      "B"
+    ]
+  },
+  "283": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{R}{G}"
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 4,
+            "subtypes": [
+              "Dinosaur"
+            ],
+            "colors": [
+              "R",
+              "G"
+            ]
+          }
+        ],
+        "label": "成為3/4生物"
+      },
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 2,
+            "t": 0
+          },
+          {
+            "e": "untap",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "attacking": true
+            },
+            "notSelf": true
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "R",
+      "G"
+    ]
+  }
+}

@@ -11,7 +11,7 @@ import type {
   Amt,
   Mode,
 } from "../../engine/types";
-export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK", catalog: any[], auto: object) {
+export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS", catalog: any[], auto: object) {
   const patches = new Map<number, Partial<CardDef>>(
     Object.entries(auto).map(([n, p]) => [Number(n), p]),
   );
@@ -70,6 +70,20 @@ export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK", catalog: any[], 
         id: slug(row.name),
         text: row.text,
       } as unknown as CardDef;
+      if(code==='LCI'||code==='SOS'){
+       const ward=row.text.match(/Ward \{(\d+)\}/);if(ward)c.ward=Number(ward[1]);
+       const fb=row.text.match(/Flashback ((?:\{[^}]+\})+)/);if(fb)c.flashback=fb[1];
+       if(/(?:This creature|[A-Z][^\n]+) enters prepared[.\n]/.test(row.text))c.etbPrepared=true;
+       for(const key of ['back','prepare','adventure']as const)if(row[key]){c[key]={...row[key],...c[key],text:row[key].text}as any;if(key==='back'){c.back!.id=slug(row.name)+'-back';c.back!.set=code;}}
+       if(row.text.includes('Increment ('))c.abilities=[...(c.abilities??[]),{kind:'trigger',on:'frontierEvent',frontierEvent:'sos:increment',effects:[{e:'counters',what:'self',n:1}]}];
+       if(row.text.includes('Paradigm (')){c.meadow={...c.meadow,paradigm:true};if(c.spell?.effects)c.spell.effects=[...c.spell.effects,{e:'frontier',action:'sos:paradigm'}];if(c.spell?.modes)c.spell.modes=c.spell.modes.map(m=>({...m,effects:[...m.effects,{e:'frontier',action:'sos:paradigm'}]}));}
+       for(const ab of c.abilities??[])if(ab.kind==='activated'&&ab.cost.craft)ab.effects=ab.effects.map(e=>e.e==='returnTransformed'?{e:'frontier',action:'lci:craftReturn'}:e);
+       if(c.meadow?.campusWardLife)c.wardLife=Number(c.meadow.campusWardLife);
+       if(c.meadow?.campusVariable)c.ecl={...c.ecl,variableTargets:'creature'};
+       const fixGrave=(value:any):any=>Array.isArray(value)?value.map(fixGrave):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([k,v])=>[k,k==='what'&&v==='self'?'selfAny':fixGrave(v)])):value;
+       for(const ab of c.abilities??[])if(ab.kind==='activated'&&ab.fromGraveyard)ab.effects=fixGrave(ab.effects);
+
+     }
       if(row.text.includes("This spell can't be countered."))c.uncounterable=true;
       const impending=row.text.match(/Impending (\d+)—((?:\{[^}]+\})+)/);if(impending)c.impending={n:Number(impending[1]),cost:impending[2]};
       if(code==='FDN'||code==='DSK')for(const ab of c.abilities??[]){if(ab.kind!=='trigger')continue;const lines=row.text.split('\n').filter((line:string)=>/^Whenever /.test(line));if(ab.on==='allyDies'&&lines.some((line:string)=>/you control dies/.test(line)&&(!/\b(?:another|other)\b/.test(line)||/(?:this creature|this permanent|another creature) or another/.test(line))))ab.includeSelf=true;}

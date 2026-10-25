@@ -161,7 +161,7 @@ export function cloneGame(g: GameState): GameState {
   const cards: Record<number, Card> = {};
   for (const k in g.cards) {
     const c = g.cards[k];
-    cards[k] = { ...c,frontierMarks:c.frontierMarks?{...c.frontierMarks}:undefined,meadowLinked:c.meadowLinked?.slice(),lastKeywords:c.lastKeywords?.slice(),finMarks:c.finMarks?{...c.finMarks}:undefined,finLinked:c.finLinked?.slice(), manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
+    cards[k] = { ...c,frontierMarks:c.frontierMarks?{...c.frontierMarks}:undefined,meadowLinked:c.meadowLinked?.slice(),campusLinked:c.campusLinked?.map(x=>({...x})),lastKeywords:c.lastKeywords?.slice(),finMarks:c.finMarks?{...c.finMarks}:undefined,finLinked:c.finLinked?.slice(), manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
   }
   const cp = (p: Player): Player => ({
     ...p,frontierFlags:p.frontierFlags?{...p.frontierFlags}:undefined,finFlags:p.finFlags?{...p.finFlags}:undefined,eclEntries:p.eclEntries?.slice(),eclMaralenUsed:p.eclMaralenUsed?.slice(),eclRestrictedMana:p.eclRestrictedMana?.map(m=>({...m})),
@@ -173,7 +173,7 @@ export function cloneGame(g: GameState): GameState {
     retainedRed:p.retainedRed?.slice(),spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
-    ...g,meadowDelayed:g.meadowDelayed?.map(d=>({...d,ids:d.ids?.slice()})),eclEntryQueue:g.eclEntryQueue?.map(e=>({...e})),lastManaPayment:g.lastManaPayment?.slice(),
+    ...g,campusParadigms:g.campusParadigms?.map(x=>({...x})),campusDelayed:g.campusDelayed?.map(x=>({...x})),meadowDelayed:g.meadowDelayed?.map(d=>({...d,ids:d.ids?.slice()})),eclEntryQueue:g.eclEntryQueue?.map(e=>({...e})),lastManaPayment:g.lastManaPayment?.slice(),
     cards,
     players: [cp(g.players[0]), cp(g.players[1])],
     battlefield: g.battlefield.slice(),
@@ -206,7 +206,7 @@ export function log(g: GameState, text: string, player?: PID, kind: LogEntry['ki
 
 /** Copy effects copy earlier copy effects, while ignoring counters and later power/type changes. */
 export function copiableDefinition(c:Card):CardDef {
-  const base=c.copyLayer??c.meadowTypeDef??c.baseDef??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.def;
+  const base=c.copyLayer??c.campusTypeDef??c.campusOriginalDef??c.meadowTypeDef??c.baseDef??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.def;
   return {...base,...(!c.copyLayer&&c.front?{copyFront:c.front}:{})};
 }
 
@@ -267,6 +267,7 @@ export interface Stats {
 /** 這張永久物是否因為光環而失去所有異能 */
 export function abilitiesSuppressed(g: GameState, c: Card): boolean {
   if(c.mshMarks?.waspSource!==undefined&&g.battlefield.some(id=>(g.cards[id].tmtLinkKey??id)===c.mshMarks?.waspSource))return true;
+  if(c.frontierMarks?.cpDisableSource!==undefined){const s=g.cards[c.frontierMarks.cpDisableSource];if(s?.zone==='battlefield'&&s.objectVersion===c.frontierMarks.cpDisableVersion)return true;}
   if(c.eclLoseAbilities||c.zone==='battlefield'&&g.eot.some(e=>e.card===c.id&&e.loseAbilities))return true;
   if (!g.loseAbilities || c.zone !== 'battlefield') return false;
   if (c.loseAbilitiesTurn === g.turn) return true;
@@ -320,8 +321,8 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   if (!ignoreEot) {
     for (const e of g.eot) {
       if (e.card === c.id && e.base) {
-        st.p = e.base.p;
-        st.t = e.base.t;
+        if(e.base.p!==undefined)st.p=e.base.p;
+        if(e.base.t!==undefined)st.t=e.base.t;
       }
     }
   }
@@ -711,4 +712,4 @@ export function etbTriggersSuppressed(g: GameState): boolean {
   return false;
 }
 
-export function uncounterableSpells(g:GameState,pid:PID){if(frontierStatic(g,pid,'fdn:spellUncounterable').length)return true;return g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.ecl==='squelcher'));}
+export function uncounterableSpells(g:GameState,pid:PID){if(frontierStatic(g,pid,'fdn:spellUncounterable').length||frontierStatic(g,pid,'lci:uncounterable').length)return true;return g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.ecl==='squelcher'));}

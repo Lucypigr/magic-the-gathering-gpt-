@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "sets": {
+    "LCI": {
+      "printed": 286,
+      "available": 286,
+      "pending": [],
+      "faces": 36
+    },
+    "SOS": {
+      "printed": 266,
+      "available": 266,
+      "pending": [],
+      "faces": 36
+    }
+  }
+}

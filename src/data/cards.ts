@@ -1,3 +1,5 @@
+import {completeLci} from './sets/lci-extra';
+import {completeSos} from './sets/sos-extra';
 import {supplementBlbDft} from './sets/blb-dft-verified';
 import {completeFdn} from './sets/fdn-extra';
 import {completeDsk} from './sets/dsk-extra';
@@ -716,6 +718,8 @@ completeOtj();
 completeFdn();
 completeDsk();
 supplementBlbDft();
+completeLci();
+completeSos();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

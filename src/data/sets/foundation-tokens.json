@@ -774,5 +774,147 @@
     "power": 3,
     "toughness": 3,
     "text": ""
+  },
+  {
+    "id": "tok-g-gnome-11-",
+    "name": "Gnome",
+    "colors": [],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Gnome"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-vampire-demon-43-bw-flying",
+    "name": "Vampire Demon",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Demon"
+    ],
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-dinosaur-33-g",
+    "name": "Dinosaur",
+    "colors": [
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "text": ""
+  },
+  {
+    "id": "tok-g-golem-44-uw",
+    "name": "Golem",
+    "colors": [
+      "W",
+      "U"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "power": 4,
+    "toughness": 4,
+    "text": ""
+  },
+  {
+    "id": "tok-g-spirit-22-rw",
+    "name": "Spirit",
+    "colors": [
+      "R",
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "text": ""
+  },
+  {
+    "id": "tok-g-inkling-11-bw-flying",
+    "name": "Inkling",
+    "colors": [
+      "W",
+      "B"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Inkling"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-elemental-33-ru-flying",
+    "name": "Elemental",
+    "colors": [
+      "U",
+      "R"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-fractal-00-gu",
+    "name": "Fractal",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fractal"
+    ],
+    "power": 0,
+    "toughness": 0,
+    "text": ""
   }
 ]
