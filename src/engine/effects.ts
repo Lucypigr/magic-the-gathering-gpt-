@@ -1,3 +1,4 @@
+import {orbitEffect} from './orbit';
 import {frontierStatic} from './frontier-support';
 import {campusEffect} from './campus';
 import {meadowEffect,meadowCounter} from './meadow';
@@ -446,7 +447,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'copyCreature': {
       for(const c of resolveRef(g,ctx,ef.what).cards){const copiable=copiableDefinition(c),def={...copiable,supertypes:ef.nonLegendary||ef.p!==undefined&&!ef.preserveLegendary?copiable.supertypes?.filter(s=>s!=='Legendary'):copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const tokens=yield*makeEclTokenBatch(g,ctx.controller,def,1);for(const t of tokens){if(ef.temp){g.eot.push({card:t.id,p:0,t:0,kw:['haste']});(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});}ctx.created=t.id;}ctx.createdList=tokens.map(t=>t.id);}return;
     }
-    case 'frontier':if(/^(lci|sos):/.test(ef.action)){yield*campusEffect(g,ctx,ef);return;}if(/^(blb|dft):/.test(ef.action)){yield*meadowEffect(g,ctx,ef);return;}if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
+    case 'frontier':if(/^(eoe|tdm):/.test(ef.action)){yield*orbitEffect(g,ctx,ef);return;}if(/^(lci|sos):/.test(ef.action)){yield*campusEffect(g,ctx,ef);return;}if(/^(blb|dft):/.test(ef.action)){yield*meadowEffect(g,ctx,ef);return;}if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
     case 'msh':yield* mshEffect(g,ctx,ef);return;
     case 'mkm':yield* mkmEffect(g,ctx,ef);return;
     case 'fin':yield* finEffect(g,ctx,ef);return;
@@ -893,15 +894,11 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       }
       break;
     case 'endure': {
-      const n = amount(g, ctx, ef.n);
-      if (src && src.zone === 'battlefield') {
-        putCounters(g, src, n);
-        log(g, `${cardName(src)} 堅忍 ${n}`, me);
-      } else {
-        const t = createToken(g, 'tok-spirit-endure', me);
-        t.counters = n;
-        log(g, `堅忍 ${n}：派出 ${n}/${n} 精怪`, me);
-      }
+      const n = Math.max(0,amount(g, ctx, ef.n));
+      const canCounter=src?.zone==='battlefield'&&(ctx.sourceLinkKey===undefined||src.tmtLinkKey===ctx.sourceLinkKey);
+      const response:Response=yield{type:'mode',player:me,prompt:'續戰：選擇放置指示物或派出精怪',options:canCounter?['放置+1/+1指示物','派出白色精怪']:['派出白色精怪'],count:1,purpose:'trigger'};
+      if(canCounter&&(response.type!=='modes'||(response.picks[0]??0)===0))putCounters(g,src,n);
+      else yield*makeEclTokenBatch(g,me,{id:'tok-spirit-endure',name:'Spirit',set:'TOK',rarity:'T',token:true,types:['Creature'],subtypes:['Spirit'],colors:['W'],power:n,toughness:n,text:''},1);
       g.version++;
       break;
     }

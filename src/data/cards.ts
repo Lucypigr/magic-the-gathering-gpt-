@@ -1,3 +1,4 @@
+import {supplementEoe,supplementTdm} from './sets/orbit-extra';
 import {completeLci} from './sets/lci-extra';
 import {completeSos} from './sets/sos-extra';
 import {supplementBlbDft} from './sets/blb-dft-verified';
@@ -720,6 +721,8 @@ completeDsk();
 supplementBlbDft();
 completeLci();
 completeSos();
+supplementEoe();
+supplementTdm();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

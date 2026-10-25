@@ -1,3 +1,4 @@
+import {finishOmen} from './orbit';
 import {campusRefresh} from './campus-zones';
 import {campusCraftOptions} from './campus-casting';
 import {campusTriggerAbility} from './campus-support';
@@ -342,8 +343,8 @@ function* resolveTopItem(g: GameState): SubFlow {
         enterBattlefieldBack(g, src, item.controller);
         log(g, `${cardName(src)} 轉化後進入戰場`, item.controller);
       } else if (src.zone === 'stack') {
-        moveCard(g, src, def.mkm?.split?'graveyard':'exile');
-        if (item.alt === 'adventure'&&!def.mkm?.split) {
+        if(item.alt==='adventure'&&def.meadow?.orbitOmen)finishOmen(g,src);else moveCard(g, src, def.mkm?.split?'graveyard':'exile');
+        if (item.alt === 'adventure'&&!def.mkm?.split&&!def.meadow?.orbitOmen) {
           src.onAdventure = true;if(src.frontierMarks?.lilahPlot){src.plottedTurn=g.turn;delete src.frontierMarks.lilahPlot;}
           log(g, `${cardName(src)} 踏上冒險（之後可以從放逐區施放）`, item.controller);
         }

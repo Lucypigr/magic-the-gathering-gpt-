@@ -1,0 +1,5414 @@
+[
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Eldrazi"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Anticausal Vestige",
+    "cost": "{6}",
+    "text": "When this creature leaves the battlefield, draw a card, then you may put a permanent card with mana value less than or equal to the number of lands you control from your hand onto the battlefield tapped.\nWarp {4} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 1,
+    "power": 7,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Tezzeret"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Tezzeret, Cruel Captain",
+    "cost": "{3}",
+    "text": "Whenever an artifact you control enters, put a loyalty counter on Tezzeret.\n[0]: Untap target artifact or creature. If it's an artifact creature, put a +1/+1 counter on it.\n[−3]: Search your library for an artifact card with mana value 1 or less, reveal it, put it into your hand, then shuffle.\n[−7]: You get an emblem with \"At the beginning of combat on your turn, put three +1/+1 counters on target artifact you control. If it's not a creature, it becomes a 0/0 Robot artifact creature.\"",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 2,
+    "loyalty": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Drix",
+      "Assassin"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "All-Fates Stalker",
+    "cost": "{3}{W}",
+    "text": "When this creature enters, exile up to one target non-Assassin creature until this creature leaves the battlefield.\nWarp {1}{W} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 3,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Angel",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Astelli Reclaimer",
+    "cost": "{3}{W}{W}",
+    "text": "Flying\nWhen this creature enters, return target noncreature, nonland permanent card with mana value X or less from your graveyard to the battlefield, where X is the amount of mana spent to cast this creature.\nWarp {2}{W}",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 4,
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Auxiliary Boosters",
+    "cost": "{4}{W}",
+    "text": "When this Equipment enters, create a 2/2 colorless Robot artifact creature token and attach this Equipment to it.\nEquipped creature gets +1/+2 and has flying.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Banishing Light",
+    "cost": "{2}{W}",
+    "text": "When this enchantment enters, exile target nonland permanent an opponent controls until this enchantment leaves the battlefield.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Beyond the Quiet",
+    "cost": "{3}{W}{W}",
+    "text": "Exile all creatures and Spacecraft.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Brightspear Zealot",
+    "cost": "{2}{W}",
+    "text": "Vigilance\nThis creature gets +2/+0 as long as you've cast two or more spells this turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 8,
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Cosmogrand Zenith",
+    "cost": "{2}{W}",
+    "text": "Whenever you cast your second spell each turn, choose one —\n• Create two 1/1 white Human Soldier creature tokens.\n• Put a +1/+1 counter on each creature you control.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 9,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dawnstrike Vanguard",
+    "cost": "{5}{W}",
+    "text": "Lifelink\nAt the beginning of your end step, if you control two or more tapped creatures, put a +1/+1 counter on each creature you control other than this creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 10,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dockworker Drone",
+    "cost": "{1}{W}",
+    "text": "This creature enters with a +1/+1 counter on it.\nWhen this creature dies, put its counters on target creature you control.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 11,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dual-Sun Adepts",
+    "cost": "{2}{W}",
+    "text": "Double strike\n{5}: Creatures you control get +1/+1 until end of turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 12,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "double_strike"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dual-Sun Technique",
+    "cost": "{1}{W}",
+    "text": "Target creature you control gains double strike until end of turn. If it has a +1/+1 counter on it, draw a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 13,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Emergency Eject",
+    "cost": "{2}{W}",
+    "text": "Destroy target nonland permanent. Its controller creates a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 14,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Angel",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Exalted Sunborn",
+    "cost": "{3}{W}{W}",
+    "text": "Flying, lifelink\nIf one or more tokens would be created under your control, twice that many of those tokens are created instead.\nWarp {1}{W} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 15,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Exosuit Savior",
+    "cost": "{2}{W}",
+    "text": "Flying\nWhen this creature enters, return up to one other target permanent you control to its owner's hand.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 16,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Flight-Deck Coordinator",
+    "cost": "{2}{W}",
+    "text": "At the beginning of your end step, if you control two or more tapped creatures, you gain 2 life.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 17,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Focus Fire",
+    "cost": "{W}",
+    "text": "Focus Fire deals X damage to target attacking or blocking creature, where X is 2 plus the number of creatures and/or Spacecraft you control.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 18,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Haliya, Guided by Light",
+    "cost": "{2}{W}",
+    "text": "Whenever Haliya or another creature or artifact you control enters, you gain 1 life.\nAt the beginning of your end step, draw a card if you've gained 3 or more life this turn.\nWarp {W} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 19,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Hardlight Containment",
+    "cost": "{W}",
+    "text": "Enchant artifact you control\nWhen this Aura enters, exile target creature an opponent controls until this Aura leaves the battlefield.\nEnchanted permanent has ward {1}.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 20,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Honor",
+    "cost": "{W}",
+    "text": "Put a +1/+1 counter on target creature.\nDraw a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 21,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Honored Knight-Captain",
+    "cost": "{1}{W}",
+    "text": "When this creature enters, create a 1/1 white Human Soldier creature token.\n{4}{W}{W}, Sacrifice this creature: Search your library for an Equipment card, put it onto the battlefield, then shuffle.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 22,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Knight Luminary",
+    "cost": "{3}{W}",
+    "text": "When this creature enters, create a 1/1 white Human Soldier creature token.\nWarp {1}{W} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 23,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Angel",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Lightstall Inquisitor",
+    "cost": "{W}",
+    "text": "Vigilance\nWhen this creature enters, each opponent exiles a card from their hand and may play that card for as long as it remains exiled. Each spell cast this way costs {1} more to cast. Each land played this way enters tapped.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 24,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Lumen-Class Frigate",
+    "cost": "{1}{W}",
+    "text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 12+.)\n2+ | Other creatures you control get +1/+1.\n12+ | Flying, lifelink",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 25,
+    "power": 3,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Luxknight Breacher",
+    "cost": "{3}{W}",
+    "text": "This creature enters with a +1/+1 counter on it for each other creature and/or artifact you control.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 26,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Pinnacle Starcage",
+    "cost": "{1}{W}{W}",
+    "text": "When this artifact enters, exile all artifacts and creatures with mana value 2 or less until this artifact leaves the battlefield.\n{6}{W}{W}: Put each card exiled with this artifact into its owner's graveyard, then create a 2/2 colorless Robot artifact creature token for each card put into a graveyard this way. Sacrifice this artifact.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 27,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Pulsar Squadron Ace",
+    "cost": "{1}{W}",
+    "text": "When this creature enters, look at the top five cards of your library. You may reveal a Spacecraft card from among them and put it into your hand. Put the rest on the bottom of your library in a random order. If you didn't put a card into your hand this way, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 28,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Radiant Strike",
+    "cost": "{3}{W}",
+    "text": "Destroy target artifact or tapped creature. You gain 3 life.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 29,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Rayblade Trooper",
+    "cost": "{2}{W}",
+    "text": "When this creature enters, put a +1/+1 counter on target creature you control.\nWhenever a nontoken creature you control with a +1/+1 counter on it dies, create a 1/1 white Human Soldier creature token.\nWarp {1}{W} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 30,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Reroute Systems",
+    "cost": "{W}",
+    "text": "Choose one —\n• Target artifact or creature gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)\n• Reroute Systems deals 2 damage to target tapped creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 31,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Rescue Skiff",
+    "cost": "{5}{W}",
+    "text": "When this Spacecraft enters, return target creature or enchantment card from your graveyard to the battlefield.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 10+.)\n10+ | Flying",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 32,
+    "power": 5,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Scout for Survivors",
+    "cost": "{2}{W}",
+    "text": "Return up to three target creature cards with total mana value 3 or less from your graveyard to the battlefield. Put a +1/+1 counter on each of them.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 33,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Seam Rip",
+    "cost": "{W}",
+    "text": "When this enchantment enters, exile target nonland permanent an opponent controls with mana value 2 or less until this enchantment leaves the battlefield.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 34,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "The Seriema",
+    "cost": "{1}{W}{W}",
+    "text": "When The Seriema enters, search your library for a legendary creature card, reveal it, put it into your hand, then shuffle.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 7+.)\n7+ | Flying\nOther tapped legendary creatures you control have indestructible.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 35,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Squire's Lightblade",
+    "cost": "{W}",
+    "text": "Flash\nWhen this Equipment enters, attach it to target creature you control. That creature gains first strike until end of turn.\nEquipped creature gets +1/+0.\nEquip {3}",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 36,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Angel"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Starfield Shepherd",
+    "cost": "{3}{W}{W}",
+    "text": "Flying\nWhen this creature enters, search your library for a basic Plains card or a creature card with mana value 1 or less, reveal it, put it into your hand, then shuffle.\nWarp {1}{W} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 37,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Starfighter Pilot",
+    "cost": "{1}{W}",
+    "text": "Whenever this creature becomes tapped, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 38,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Starport Security",
+    "cost": "{W}",
+    "text": "{3}{W}, {T}: Tap another target creature. This ability costs {2} less to activate if you control a creature with a +1/+1 counter on it.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 39,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Sunstar Chaplain",
+    "cost": "{1}{W}",
+    "text": "At the beginning of your end step, if you control two or more tapped creatures, put a +1/+1 counter on target creature you control.\n{2}, Remove a +1/+1 counter from a creature you control: Tap target artifact or creature.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 40,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Sunstar Expansionist",
+    "cost": "{1}{W}",
+    "text": "When this creature enters, if an opponent controls more lands than you, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")\nLandfall — Whenever a land you control enters, this creature gets +1/+0 until end of turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 41,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Sunstar Lightsmith",
+    "cost": "{3}{W}",
+    "text": "Whenever you cast your second spell each turn, put a +1/+1 counter on this creature and draw a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 42,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Wedgelight Rammer",
+    "cost": "{3}{W}",
+    "text": "When this Spacecraft enters, create a 2/2 colorless Robot artifact creature token.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 9+.)\n9+ | Flying, first strike",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 43,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Drix",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Weftblade Enhancer",
+    "cost": "{5}{W}",
+    "text": "When this creature enters, put a +1/+1 counter on each of up to two target creatures.\nWarp {2}{W} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 44,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Zealous Display",
+    "cost": "{2}{W}",
+    "text": "Creatures you control get +2/+0 until end of turn. If it's not your turn, untap those creatures.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 45,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Annul",
+    "cost": "{U}",
+    "text": "Counter target artifact or enchantment spell.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 46,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Atomic Microsizer",
+    "cost": "{U}",
+    "text": "Equipped creature gets +1/+0.\nWhenever equipped creature attacks, choose up to one target creature. That creature can't be blocked this turn and has base power and toughness 1/1 until end of turn.\nEquip {2}",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 47,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Cerebral Download",
+    "cost": "{4}{U}",
+    "text": "Surveil X, where X is the number of artifacts you control. Then draw three cards. (To surveil X, look at the top X cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 48,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Jellyfish",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Cloudsculpt Technician",
+    "cost": "{2}{U}",
+    "text": "Flying\nAs long as you control an artifact, this creature gets +1/+0.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 49,
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Codecracker Hound",
+    "cost": "{2}{U}",
+    "text": "When this creature enters, look at the top two cards of your library. Put one into your hand and the other into your graveyard.\nWarp {2}{U} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 50,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Consult the Star Charts",
+    "cost": "{1}{U}",
+    "text": "Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.)\nLook at the top X cards of your library, where X is the number of lands you control. Put one of those cards into your hand. If this spell was kicked, put two of those cards into your hand instead. Put the rest on the bottom of your library in a random order.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 51,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Cryogen Relic",
+    "cost": "{1}{U}",
+    "text": "When this artifact enters or leaves the battlefield, draw a card.\n{1}{U}, Sacrifice this artifact: Put a stun counter on up to one target tapped creature. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 52,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Cryoshatter",
+    "cost": "{U}",
+    "text": "Enchant creature\nEnchanted creature gets -5/-0.\nWhen enchanted creature becomes tapped or is dealt damage, destroy it.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 53,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Desculpting Blast",
+    "cost": "{1}{U}",
+    "text": "Return target nonland permanent to its owner's hand. If it was attacking, create a 1/1 colorless Drone artifact creature token with flying and \"This token can block only creatures with flying.\"",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 54,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Divert Disaster",
+    "cost": "{1}{U}",
+    "text": "Counter target spell unless its controller pays {2}. If they do, you create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 55,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Emissary Escort",
+    "cost": "{1}{U}",
+    "text": "This creature gets +X/+0, where X is the greatest mana value among other artifacts you control.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 56,
+    "power": 0,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Gigastorm Titan",
+    "cost": "{4}{U}",
+    "text": "This spell costs {3} less to cast if you've cast another spell this turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 57,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Jellyfish",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Illvoi Galeblade",
+    "cost": "{U}",
+    "text": "Flash\nFlying\n{2}, Sacrifice this creature: Draw a card.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 58,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flash",
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Jellyfish",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Illvoi Infiltrator",
+    "cost": "{2}{U}",
+    "text": "This creature can't be blocked if you've cast two or more spells this turn.\nWhenever this creature deals combat damage to a player, draw a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 59,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Illvoi Light Jammer",
+    "cost": "{1}{U}",
+    "text": "Flash\nWhen this Equipment enters, attach it to target creature you control. That creature gains hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)\nEquipped creature gets +1/+2.\nEquip {3}",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 60,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Jellyfish",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Illvoi Operative",
+    "cost": "{1}{U}",
+    "text": "Whenever you cast your second spell each turn, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 61,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Lost in Space",
+    "cost": "{3}{U}",
+    "text": "Target artifact or creature's owner puts it on their choice of the top or bottom of their library. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 62,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mechan Assembler",
+    "cost": "{4}{U}",
+    "text": "Whenever another artifact you control enters, create a 2/2 colorless Robot artifact creature token. This ability triggers only once each turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 63,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mechan Navigator",
+    "cost": "{1}{U}",
+    "text": "Whenever this creature becomes tapped, draw a card, then discard a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 64,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mechan Shieldmate",
+    "cost": "{1}{U}",
+    "text": "Defender\nAs long as an artifact entered the battlefield under your control this turn, this creature can attack as though it didn't have defender.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 65,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "defender"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Jellyfish"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mechanozoa",
+    "cost": "{4}{U}{U}",
+    "text": "When this creature enters, tap target artifact or creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nWarp {2}{U} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 66,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mental Modulation",
+    "cost": "{1}{U}",
+    "text": "This spell costs {1} less to cast during your turn.\nTap target artifact or creature.\nDraw a card.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 67,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Jellyfish",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Mm'menon, the Right Hand",
+    "cost": "{3}{U}{U}",
+    "text": "Flying\nYou may look at the top card of your library any time.\nYou may cast artifact spells from the top of your library.\nArtifacts you control have \"{T}: Add {U}. Spend this mana only to cast a spell from anywhere other than your hand.\"",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 68,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Moonlit Meditation",
+    "cost": "{2}{U}",
+    "text": "Enchant artifact or creature you control\nThe first time you would create one or more tokens each turn, you may instead create that many tokens that are copies of enchanted permanent.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 69,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mouth of the Storm",
+    "cost": "{6}{U}",
+    "text": "Flying\nWard {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nWhen this creature enters, creatures your opponents control get -3/-0 until your next turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 70,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Nanoform Sentinel",
+    "cost": "{2}{U}",
+    "text": "Whenever this creature becomes tapped, untap another target permanent. This ability triggers only once each turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 71,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Sphinx"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Quantum Riddler",
+    "cost": "{3}{U}{U}",
+    "text": "Flying\nWhen this creature enters, draw a card.\nAs long as you have one or fewer cards in hand, if you would draw one or more cards, you draw that many cards plus one instead.\nWarp {1}{U}",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 72,
+    "power": 4,
+    "toughness": 6,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Scour for Scrap",
+    "cost": "{3}{U}",
+    "text": "Choose one or both —\n• Search your library for an artifact card, reveal it, put it into your hand, then shuffle.\n• Return target artifact card from your graveyard to your hand.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 73,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Selfcraft Mechan",
+    "cost": "{3}{U}",
+    "text": "When this creature enters, you may sacrifice an artifact. When you do, put a +1/+1 counter on target creature and draw a card.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 74,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Jellyfish",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Sinister Cryologist",
+    "cost": "{2}{U}",
+    "text": "When this creature enters, target creature an opponent controls gets -3/-0 until end of turn.\nWarp {U} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 75,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Specimen Freighter",
+    "cost": "{5}{U}",
+    "text": "When this Spacecraft enters, return up to two target non-Spacecraft creatures to their owners' hands.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 9+.)\n9+ | Flying\nWhenever this Spacecraft attacks, defending player mills four cards.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 76,
+    "power": 4,
+    "toughness": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Whale"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Starbreach Whale",
+    "cost": "{4}{U}",
+    "text": "Flying\nWhen this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\nWarp {1}{U} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 77,
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Starfield Vocalist",
+    "cost": "{3}{U}",
+    "text": "If a permanent entering the battlefield causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time.\nWarp {1}{U} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 78,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Leviathan"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Starwinder",
+    "cost": "{5}{U}{U}",
+    "text": "Whenever a creature you control deals combat damage to a player, you may draw that many cards.\nWarp {2}{U}{U} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 79,
+    "power": 7,
+    "toughness": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Steelswarm Operator",
+    "cost": "{1}{U}",
+    "text": "Flying\n{T}: Add {U}. Spend this mana only to cast an artifact spell.\n{T}: Add {U}{U}. Spend this mana only to activate abilities of artifact sources.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 80,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Synthesizer Labship",
+    "cost": "{U}",
+    "text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 9+.)\n2+ | At the beginning of combat on your turn, up to one other target artifact you control becomes an artifact creature with base power and toughness 2/2 and gains flying until end of turn.\n9+ | Flying, vigilance",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 81,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Tractor Beam",
+    "cost": "{2}{U}{U}",
+    "text": "Enchant creature or Spacecraft\nWhen this Aura enters, tap enchanted permanent.\nYou control enchanted permanent.\nEnchanted permanent doesn't untap during its controller's untap step.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 82,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Unravel",
+    "cost": "{1}{U}{U}",
+    "text": "Counter target spell. If the amount of mana spent to cast that spell was less than its mana value, you draw a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 83,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Jellyfish",
+      "Scientist"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Uthros Psionicist",
+    "cost": "{2}{U}",
+    "text": "The second spell you cast each turn costs {2} less to cast.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 84,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Uthros Scanship",
+    "cost": "{3}{U}",
+    "text": "When this Spacecraft enters, draw two cards, then discard a card.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\n8+ | Flying",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 85,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Weftwalking",
+    "cost": "{4}{U}{U}",
+    "text": "When this enchantment enters, if you cast it, shuffle your hand and graveyard into your library, then draw seven cards.\nThe first spell each player casts during each of their turns may be cast without paying its mana cost.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 86,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Alpharael, Stonechosen",
+    "cost": "{3}{B}{B}",
+    "text": "Ward—Discard a card at random.\nVoid — Whenever Alpharael attacks, if a nonland permanent left the battlefield this turn or a spell was warped this turn, defending player loses half their life, rounded up.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 87,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Archenemy's Charm",
+    "cost": "{B}{B}{B}",
+    "text": "Choose one —\n• Exile target creature or planeswalker.\n• Return one or two target creature and/or planeswalker cards from your graveyard to your hand.\n• Put two +1/+1 counters on target creature you control. It gains lifelink until end of turn.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 88,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Beamsaw Prospector",
+    "cost": "{1}{B}",
+    "text": "When this creature dies, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 89,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Assassin"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Blade of the Swarm",
+    "cost": "{3}{B}",
+    "text": "When this creature enters, choose one —\n• Put two +1/+1 counters on this creature.\n• Put target exiled card with warp on the bottom of its owner's library.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 90,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Chorale of the Void",
+    "cost": "{3}{B}",
+    "text": "Enchant creature you control\nWhenever enchanted creature attacks, put target creature card from defending player's graveyard onto the battlefield under your control tapped and attacking.\nVoid — At the beginning of your end step, sacrifice this Aura unless a nonland permanent left the battlefield this turn or a spell was warped this turn.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 91,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Horror"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Comet Crawler",
+    "cost": "{2}{B}",
+    "text": "Lifelink\nWhenever this creature attacks, you may sacrifice another creature or artifact. If you do, this creature gets +2/+0 until end of turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 92,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Dark Endurance",
+    "cost": "{1}{B}",
+    "text": "This spell costs {1} less to cast if it targets a blocking creature.\nTarget creature gets +2/+0 and gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 93,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Decode Transmissions",
+    "cost": "{2}{B}",
+    "text": "You draw two cards and lose 2 life.\nVoid — If a nonland permanent left the battlefield this turn or a spell was warped this turn, instead you draw two cards and each opponent loses 2 life.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 94,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Depressurize",
+    "cost": "{1}{B}",
+    "text": "Target creature gets -3/-0 until end of turn. Then if that creature's power is 0 or less, destroy it.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 95,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Dubious Delicacy",
+    "cost": "{2}{B}",
+    "text": "Flash\nWhen this artifact enters, up to one target creature gets -3/-3 until end of turn.\n{2}, {T}, Sacrifice this artifact: You gain 3 life.\n{2}, {T}, Sacrifice this artifact: Target opponent loses 3 life.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 96,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Elegy Acolyte",
+    "cost": "{2}{B}{B}",
+    "text": "Lifelink\nWhenever one or more creatures you control deal combat damage to a player, you draw a card and lose 1 life.\nVoid — At the beginning of your end step, if a nonland permanent left the battlefield this turn or a spell was warped this turn, create a 2/2 colorless Robot artifact creature token.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 97,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Embrace Oblivion",
+    "cost": "{B}",
+    "text": "As an additional cost to cast this spell, sacrifice an artifact or creature.\nDestroy target creature or Spacecraft.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 98,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Entropic Battlecruiser",
+    "cost": "{3}{B}",
+    "text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\n1+ | Whenever an opponent discards a card, they lose 3 life.\n8+ | Flying, deathtouch\nWhenever this Spacecraft attacks, each opponent discards a card. Each opponent who can't loses 3 life.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 99,
+    "power": 3,
+    "toughness": 10,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Faller's Faithful",
+    "cost": "{2}{B}",
+    "text": "When this creature enters, destroy up to one other target creature. If that creature wasn't dealt damage this turn, its controller draws two cards.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 100,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Fell Gravship",
+    "cost": "{2}{B}",
+    "text": "When this Spacecraft enters, mill three cards, then return a creature or Spacecraft card from your graveyard to your hand.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\n8+ | Flying, lifelink",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 101,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Gravblade Heavy",
+    "cost": "{3}{B}",
+    "text": "As long as you control an artifact, this creature gets +1/+0 and has deathtouch.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 102,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Gravkill",
+    "cost": "{3}{B}",
+    "text": "Exile target creature or Spacecraft.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 103,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Gravpack Monoist",
+    "cost": "{2}{B}",
+    "text": "Flying\nWhen this creature dies, create a tapped 2/2 colorless Robot artifact creature token.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 104,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Assassin"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Hullcarver",
+    "cost": "{B}",
+    "text": "Deathtouch",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 105,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Hylderblade",
+    "cost": "{B}",
+    "text": "Equipped creature gets +3/+1.\nVoid — At the beginning of your end step, if a nonland permanent left the battlefield this turn or a spell was warped this turn, attach this Equipment to target creature you control.\nEquip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 106,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Hymn of the Faller",
+    "cost": "{1}{B}",
+    "text": "Surveil 1, then you draw a card and lose 1 life. (To surveil 1, look at the top card of your library. You may put it into your graveyard.)\nVoid — If a nonland permanent left the battlefield this turn or a spell was warped this turn, draw another card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 107,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Horror"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Insatiable Skittermaw",
+    "cost": "{2}{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nVoid — At the beginning of your end step, if a nonland permanent left the battlefield this turn or a spell was warped this turn, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 108,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Lightless Evangel",
+    "cost": "{1}{B}",
+    "text": "Whenever you sacrifice another creature or artifact, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 109,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Nautilus"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Monoist Circuit-Feeder",
+    "cost": "{4}{B}{B}",
+    "text": "Flying\nWhen this creature enters, until end of turn, target creature you control gets +X/+0 and target creature an opponent controls gets -0/-X, where X is the number of artifacts you control.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 110,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Monoist Sentry",
+    "cost": "{B}",
+    "text": "Defender",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 111,
+    "power": 4,
+    "toughness": 1,
+    "keywords": [
+      "defender"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Horror"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Perigee Beckoner",
+    "cost": "{4}{B}",
+    "text": "When this creature enters, until end of turn, another target creature you control gets +2/+0 and gains \"When this creature dies, return it to the battlefield tapped under its owner's control.\"\nWarp {1}{B} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 112,
+    "power": 4,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Requiem Monolith",
+    "cost": "{2}{B}",
+    "text": "{T}: Until end of turn, target creature gains \"Whenever this creature is dealt damage, you draw that many cards and lose that much life.\" That creature's controller may have this artifact deal 1 damage to it. Activate only as a sorcery.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 113,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Scrounge for Eternity",
+    "cost": "{2}{B}",
+    "text": "As an additional cost to cast this spell, sacrifice an artifact or creature.\nReturn target creature or Spacecraft card with mana value 5 or less from your graveyard to the battlefield. Then create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 114,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Sothera, the Supervoid",
+    "cost": "{2}{B}{B}",
+    "text": "Whenever a creature you control dies, each opponent chooses a creature they control and exiles it.\nAt the beginning of your end step, if a player controls no creatures, sacrifice Sothera, then put a creature card exiled with it onto the battlefield under your control with two additional +1/+1 counters on it.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 115,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Sunset Saboteur",
+    "cost": "{1}{B}",
+    "text": "Menace\nWard—Discard a card.\nWhenever this creature attacks, put a +1/+1 counter on target creature an opponent controls.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 116,
+    "power": 4,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Susurian Dirgecraft",
+    "cost": "{4}{B}",
+    "text": "When this Spacecraft enters, each opponent sacrifices a nontoken creature of their choice.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 7+.)\n7+ | Flying",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 117,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Susurian Voidborn",
+    "cost": "{2}{B}",
+    "text": "Whenever this creature or another creature or artifact you control dies, target opponent loses 1 life and you gain 1 life.\nWarp {B} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 118,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Swarm Culler",
+    "cost": "{3}{B}",
+    "text": "Flying\nWhenever this creature becomes tapped, you may sacrifice another creature or artifact. If you do, draw a card.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 119,
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Temporal Intervention",
+    "cost": "{2}{B}",
+    "text": "Void — This spell costs {2} less to cast if a nonland permanent left the battlefield this turn or a spell was warped this turn.\nTarget opponent reveals their hand. You choose a nonland card from it. That player discards that card.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 120,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Drix",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Timeline Culler",
+    "cost": "{B}{B}",
+    "text": "Haste\nYou may cast this card from your graveyard using its warp ability.\nWarp—{B}, Pay 2 life. (You may cast this card from your hand or graveyard for its warp cost. If you do, exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 121,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Tragic Trajectory",
+    "cost": "{B}",
+    "text": "Target creature gets -2/-2 until end of turn.\nVoid — That creature gets -10/-10 until end of turn instead if a nonland permanent left the battlefield this turn or a spell was warped this turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 122,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Umbral Collar Zealot",
+    "cost": "{1}{B}",
+    "text": "Sacrifice another creature or artifact: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 123,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Virus Beetle",
+    "cost": "{1}{B}",
+    "text": "When this creature enters, each opponent discards a card.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 124,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Voidforged Titan",
+    "cost": "{4}{B}",
+    "text": "Void — At the beginning of your end step, if a nonland permanent left the battlefield this turn or a spell was warped this turn, you draw a card and lose 1 life.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 125,
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Vote Out",
+    "cost": "{3}{B}",
+    "text": "Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.)\nDestroy target creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 126,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Xu-Ifit, Osteoharmonist",
+    "cost": "{1}{B}{B}",
+    "text": "{T}: Return target creature card from your graveyard to the battlefield. It's a Skeleton in addition to its other types and has no abilities. Activate only as a sorcery.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 127,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Zero Point Ballad",
+    "cost": "{X}{B}",
+    "text": "Destroy all creatures with toughness X or less. You lose X life. If X is 6 or more, return a creature card put into a graveyard this way to the battlefield under your control.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 128,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Bombard",
+    "cost": "{2}{R}",
+    "text": "Bombard deals 4 damage to target creature.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 129,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Cut Propulsion",
+    "cost": "{2}{R}",
+    "text": "Target creature deals damage to itself equal to its power. If that creature has flying, it deals twice that much damage to itself instead.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 130,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Debris Field Crusher",
+    "cost": "{4}{R}",
+    "text": "When this Spacecraft enters, it deals 3 damage to any target.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\n8+ | Flying\n{1}{R}: This Spacecraft gets +2/+0 until end of turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 131,
+    "power": 1,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Devastating Onslaught",
+    "cost": "{X}{X}{R}",
+    "text": "Create X tokens that are copies of target artifact or creature you control. Those tokens gain haste until end of turn. Sacrifice them at the beginning of the next end step.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 132,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Drill Too Deep",
+    "cost": "{1}{R}",
+    "text": "Choose one —\n• Put five charge counters on target Spacecraft or Planet you control.\n• Destroy target artifact.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 133,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Frontline War-Rager",
+    "cost": "{2}{R}",
+    "text": "At the beginning of your end step, if you control two or more tapped creatures, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 134,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Full Bore",
+    "cost": "{R}",
+    "text": "Target creature you control gets +3/+2 until end of turn. If that creature was cast for its warp cost, it also gains trample and haste until end of turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 135,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Galvanizing Sawship",
+    "cost": "{5}{R}",
+    "text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 3+.)\n3+ | Flying, haste",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 136,
+    "power": 6,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Invasive Maneuvers",
+    "cost": "{1}{R}",
+    "text": "Invasive Maneuvers deals 3 damage to target creature. It deals 5 damage instead if you control a Spacecraft.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 137,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Kav Landseeker",
+    "cost": "{3}{R}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature enters, create a Lander token. At the beginning of the end step on your next turn, sacrifice that token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 138,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Kavaron Harrier",
+    "cost": "{R}",
+    "text": "Whenever this creature attacks, you may pay {2}. If you do, create a 2/2 colorless Robot artifact creature token that's tapped and attacking. Sacrifice that token at end of combat.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 139,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Kavaron Skywarden",
+    "cost": "{4}{R}",
+    "text": "Reach\nVoid — At the beginning of your end step, if a nonland permanent left the battlefield this turn or a spell was warped this turn, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 140,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Kavaron Turbodrone",
+    "cost": "{2}{R}",
+    "text": "{T}: Target creature you control gets +1/+1 and gains haste until end of turn. Activate only as a sorcery.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 141,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Lithobraking",
+    "cost": "{2}{R}",
+    "text": "Create a Lander token. Then you may sacrifice an artifact. When you do, Lithobraking deals 2 damage to each creature. (A Lander token is an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 142,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Melded Moxite",
+    "cost": "{1}{R}",
+    "text": "When this artifact enters, you may discard a card. If you do, draw two cards.\n{3}, Sacrifice this artifact: Create a tapped 2/2 colorless Robot artifact creature token.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 143,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Memorial Team Leader",
+    "cost": "{3}{R}",
+    "text": "During your turn, other creatures you control get +1/+0.\nWarp {1}{R} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 144,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Memorial Vault",
+    "cost": "{3}{R}",
+    "text": "{T}, Sacrifice another artifact: Exile the top X cards of your library, where X is one plus the mana value of the sacrificed artifact. You may play those cards this turn.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 145,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Molecular Modifier",
+    "cost": "{2}{R}",
+    "text": "At the beginning of combat on your turn, target creature you control gets +1/+0 and gains first strike until end of turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 146,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Nebula Dragon",
+    "cost": "{6}{R}",
+    "text": "Flying\nWhen this creature enters, it deals 3 damage to any target.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 147,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Nova Hellkite",
+    "cost": "{3}{R}{R}",
+    "text": "Flying, haste\nWhen this creature enters, it deals 1 damage to target creature an opponent controls.\nWarp {2}{R} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 148,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Orbital Plunge",
+    "cost": "{3}{R}",
+    "text": "Orbital Plunge deals 6 damage to target creature. If excess damage was dealt this way, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 149,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Pangolin"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Oreplate Pangolin",
+    "cost": "{1}{R}",
+    "text": "Whenever another artifact you control enters, you may pay {1}. If you do, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 150,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Pain for All",
+    "cost": "{2}{R}",
+    "text": "Enchant creature you control\nWhen this Aura enters, enchanted creature deals damage equal to its power to any other target.\nWhenever enchanted creature is dealt damage, it deals that much damage to each opponent.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 151,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Plasma Bolt",
+    "cost": "{R}",
+    "text": "Plasma Bolt deals 2 damage to any target.\nVoid — Plasma Bolt deals 3 damage instead if a nonland permanent left the battlefield this turn or a spell was warped this turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 152,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Possibility Technician",
+    "cost": "{2}{R}",
+    "text": "Whenever this creature or another Kavu you control enters, exile the top card of your library. For as long as that card remains exiled, you may play it if you control a Kavu.\nWarp {1}{R} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 153,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Cat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Red Tiger Mechan",
+    "cost": "{3}{R}",
+    "text": "Haste\nWarp {1}{R} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 154,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Remnant Elemental",
+    "cost": "{1}{R}",
+    "text": "Reach\nLandfall — Whenever a land you control enters, this creature gets +2/+0 until end of turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 155,
+    "power": 0,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Rig for War",
+    "cost": "{1}{R}",
+    "text": "Target creature gets +3/+0 and gains reach and first strike until end of turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 156,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Roving Actuator",
+    "cost": "{3}{R}",
+    "text": "Void — When this creature enters, if a nonland permanent left the battlefield this turn or a spell was warped this turn, exile up to one target instant or sorcery card with mana value 2 or less from your graveyard. Copy it. You may cast the copy without paying its mana cost.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 157,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Ruinous Rampage",
+    "cost": "{1}{R}{R}",
+    "text": "Choose one —\n• Ruinous Rampage deals 3 damage to each opponent.\n• Exile all artifacts with mana value 3 or less.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 158,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Rust Harvester",
+    "cost": "{R}",
+    "text": "Menace\n{2}, {T}, Exile an artifact card from your graveyard: Put a +1/+1 counter on this creature, then it deals damage equal to its power to any target.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 159,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Slagdrill Scrapper",
+    "cost": "{R}",
+    "text": "{2}, {T}, Sacrifice another artifact or land: Draw a card.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 160,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Systems Override",
+    "cost": "{2}{R}",
+    "text": "Gain control of target artifact or creature until end of turn. Untap that permanent. It gains haste until end of turn. If it's a Spacecraft, put ten charge counters on it. If you do, remove ten charge counters from it at the beginning of the next end step.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 161,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Pilot"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Tannuk, Steadfast Second",
+    "cost": "{2}{R}{R}",
+    "text": "Other creatures you control have haste.\nArtifact cards and red creature cards in your hand have warp {2}{R}. (You may cast a card from your hand for its warp cost. Exile that permanent at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 162,
+    "power": 3,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Terminal Velocity",
+    "cost": "{4}{R}{R}",
+    "text": "You may put an artifact or creature card from your hand onto the battlefield. That permanent gains haste, \"When this permanent leaves the battlefield, it deals damage equal to its mana value to each creature,\" and \"At the beginning of your end step, sacrifice this permanent.\"",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 163,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Terrapact Intimidator",
+    "cost": "{1}{R}",
+    "text": "When this creature enters, target opponent may have you create two Lander tokens. If they don't, put two +1/+1 counters on this creature. (A Lander token is an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 164,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Territorial Bruntar",
+    "cost": "{4}{R}{R}",
+    "text": "Reach\nLandfall — Whenever a land you control enters, exile cards from the top of your library until you exile a nonland card. You may cast that card this turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 165,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Vaultguard Trooper",
+    "cost": "{4}{R}",
+    "text": "At the beginning of your end step, if you control two or more tapped creatures, you may discard your hand. If you do, draw two cards.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 166,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Warmaker Gunship",
+    "cost": "{2}{R}",
+    "text": "When this Spacecraft enters, it deals damage equal to the number of artifacts you control to target creature an opponent controls.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 6+.)\n6+ | Flying",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 167,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Weapons Manufacturing",
+    "cost": "{1}{R}",
+    "text": "Whenever a nontoken artifact you control enters, create a colorless artifact token named Munitions with \"When this token leaves the battlefield, it deals 2 damage to any target.\"",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 168,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Drix",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Weftstalker Ardent",
+    "cost": "{2}{R}",
+    "text": "Whenever another creature or artifact you control enters, this creature deals 1 damage to each opponent.\nWarp {R} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 169,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Zookeeper Mechan",
+    "cost": "{1}{R}",
+    "text": "{T}: Add {R}.\n{6}{R}: Target creature you control gets +4/+0 until end of turn. Activate only as a sorcery.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 170,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Atmospheric Greenhouse",
+    "cost": "{4}{G}",
+    "text": "When this Spacecraft enters, put a +1/+1 counter on each creature you control.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\n8+ | Flying, trample",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 171,
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Bioengineered Future",
+    "cost": "{1}{G}{G}",
+    "text": "When this enchantment enters, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")\nEach creature you control enters with an additional +1/+1 counter on it for each land that entered the battlefield under your control this turn.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 172,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Biosynthic Burst",
+    "cost": "{1}{G}",
+    "text": "Put a +1/+1 counter on target creature you control. It gains reach, trample, and indestructible until end of turn. Untap it. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 173,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Scorpion"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Blooming Stinger",
+    "cost": "{1}{G}",
+    "text": "Deathtouch\nWhen this creature enters, another target creature you control gains deathtouch until end of turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 174,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Broodguard Elite",
+    "cost": "{X}{G}{G}",
+    "text": "This creature enters with X +1/+1 counters on it.\nWhen this creature leaves the battlefield, put its counters on target creature you control.\nWarp {X}{G} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 175,
+    "power": 0,
+    "toughness": 0,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Close Encounter",
+    "cost": "{1}{G}",
+    "text": "As an additional cost to cast this spell, choose a creature you control or a warped creature card you own in exile.\nClose Encounter deals damage equal to the power of the chosen creature or card to target creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 176,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Diplomatic Relations",
+    "cost": "{2}{G}",
+    "text": "Target creature you control gets +1/+0 and gains vigilance until end of turn. It deals damage equal to its power to target creature an opponent controls.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 177,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Drix",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Drix Fatemaker",
+    "cost": "{3}{G}",
+    "text": "When this creature enters, put a +1/+1 counter on target creature.\nEach creature you control with a +1/+1 counter on it has trample.\nWarp {1}{G} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 178,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Edge Rover",
+    "cost": "{G}",
+    "text": "Reach\nWhen this creature dies, each player creates a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 179,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Eumidian Terrabotanist",
+    "cost": "{1}{G}",
+    "text": "Landfall — Whenever a land you control enters, you gain 1 life.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 180,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Eusocial Engineering",
+    "cost": "{3}{G}{G}",
+    "text": "Landfall — Whenever a land you control enters, create a 2/2 colorless Robot artifact creature token.\nWarp {1}{G} (You may cast this card from your hand for its warp cost. Exile this enchantment at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 181,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Leviathan"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Famished Worldsire",
+    "cost": "{5}{G}{G}{G}",
+    "text": "Ward {3}\nDevour land 3 (As this creature enters, you may sacrifice any number of lands. It enters with three times that many +1/+1 counters on it.)\nWhen this creature enters, look at the top X cards of your library, where X is this creature's power. Put any number of land cards from among them onto the battlefield tapped, then shuffle.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 182,
+    "power": 0,
+    "toughness": 0,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Frenzied Baloth",
+    "cost": "{G}{G}",
+    "text": "This spell can't be countered.\nTrample, haste\nCreature spells you control can't be countered.\nCombat damage can't be prevented.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 183,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "trample",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fungus",
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Fungal Colossus",
+    "cost": "{6}{G}",
+    "text": "This spell costs {X} less to cast, where X is the number of differently named lands you control.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 184,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Galactic Wayfarer",
+    "cost": "{2}{G}",
+    "text": "When this creature enters, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 185,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Insect"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Gene Pollinator",
+    "cost": "{G}",
+    "text": "{T}, Tap an untapped permanent you control: Add one mana of any color.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 186,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Wurm"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Germinating Wurm",
+    "cost": "{4}{G}",
+    "text": "When this creature enters, you gain 2 life.\nWarp {1}{G} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 187,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Leviathan"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Glacier Godmaw",
+    "cost": "{5}{G}{G}",
+    "text": "Trample\nWhen this creature enters, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")\nLandfall — Whenever a land you control enters, creatures you control get +1/+1 and gain vigilance and haste until end of turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 188,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Harmonious Grovestrider",
+    "cost": "{3}{G}{G}",
+    "text": "Ward {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nHarmonious Grovestrider's power and toughness are each equal to the number of lands you control.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 189,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 0,
+    "toughnessText": "*",
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mite"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Hemosymbic Mite",
+    "cost": "{G}",
+    "text": "Whenever this creature becomes tapped, another target creature you control gets +X/+X until end of turn, where X is this creature's power.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 190,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Icecave Crasher",
+    "cost": "{3}{G}",
+    "text": "Trample\nLandfall — Whenever a land you control enters, this creature gets +1/+0 until end of turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 191,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Icetill Explorer",
+    "cost": "{2}{G}{G}",
+    "text": "You may play an additional land on each of your turns.\nYou may play lands from your graveyard.\nLandfall — Whenever a land you control enters, mill a card.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 192,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Intrepid Tenderfoot",
+    "cost": "{1}{G}",
+    "text": "{3}: Put a +1/+1 counter on this creature. Activate only as a sorcery.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 193,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Larval Scoutlander",
+    "cost": "{2}{G}",
+    "text": "When this Spacecraft enters, you may sacrifice a land or Lander. If you do, search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 7+.)\n7+ | Flying",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 194,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Lashwhip Predator",
+    "cost": "{4}{G}{G}",
+    "text": "This spell costs {2} less to cast if your opponents control three or more creatures.\nReach",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 195,
+    "power": 5,
+    "toughness": 7,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Loading Zone",
+    "cost": "{3}{G}",
+    "text": "If one or more counters would be put on a creature, Spacecraft, or Planet you control, twice that many of each of those kinds of counters are put on it instead.\nWarp {G} (You may cast this card from your hand for its warp cost. Exile this enchantment at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 196,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Meltstrider Eulogist",
+    "cost": "{2}{G}",
+    "text": "Whenever a creature you control with a +1/+1 counter on it dies, draw a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 197,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Meltstrider's Gear",
+    "cost": "{G}",
+    "text": "When this Equipment enters, attach it to target creature you control.\nEquipped creature gets +2/+1 and has reach.\nEquip {5} ({5}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 198,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Meltstrider's Resolve",
+    "cost": "{G}",
+    "text": "Enchant creature you control\nWhen this Aura enters, enchanted creature fights up to one target creature an opponent controls. (Each deals damage equal to its power to the other.)\nEnchanted creature gets +0/+2 and can't be blocked by more than one creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 199,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Mightform Harmonizer",
+    "cost": "{2}{G}{G}",
+    "text": "Landfall — Whenever a land you control enters, double the power of target creature you control until end of turn.\nWarp {2}{G} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 200,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Plant",
+      "Wurm"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Ouroboroid",
+    "cost": "{2}{G}{G}",
+    "text": "At the beginning of combat on your turn, put X +1/+1 counters on each creature you control, where X is this creature's power.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 201,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Pull Through the Weft",
+    "cost": "{3}{G}{G}",
+    "text": "Return up to two target nonland permanent cards from your graveyard to your hand, then return up to two target land cards from your graveyard to the battlefield tapped.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 202,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Sami's Curiosity",
+    "cost": "{G}",
+    "text": "You gain 2 life. Create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 203,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Scientist"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Seedship Agrarian",
+    "cost": "{3}{G}",
+    "text": "Whenever this creature becomes tapped, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")\nLandfall — Whenever a land you control enters, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 204,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Seedship Impact",
+    "cost": "{1}{G}",
+    "text": "Destroy target artifact or enchantment. If its mana value was 2 or less, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 205,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Shattered Wings",
+    "cost": "{2}{G}",
+    "text": "Destroy target artifact, enchantment, or creature with flying. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 206,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Skystinger",
+    "cost": "{2}{G}",
+    "text": "Reach\nWhenever this creature blocks a creature with flying, this creature gets +5/+0 until end of turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 207,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Sledge-Class Seedship",
+    "cost": "{2}{G}",
+    "text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 7+.)\n7+ | Flying\nWhenever this Spacecraft attacks, you may put a creature card from your hand onto the battlefield.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 208,
+    "power": 4,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Tapestry Warden",
+    "cost": "{3}{G}",
+    "text": "Vigilance\nEach creature you control with toughness greater than its power assigns combat damage equal to its toughness rather than its power.\nEach creature you control with toughness greater than its power stations permanents using its toughness rather than its power.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 209,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Terrasymbiosis",
+    "cost": "{2}{G}",
+    "text": "Whenever you put one or more +1/+1 counters on a creature you control, you may draw that many cards. Do this only once each turn.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 210,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Thawbringer",
+    "cost": "{2}{G}",
+    "text": "When this creature enters or dies, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 211,
+    "power": 4,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Alpharael, Dreaming Acolyte",
+    "cost": "{1}{U}{B}",
+    "text": "When Alpharael enters, draw two cards. Then discard two cards unless you discard an artifact card.\nDuring your turn, Alpharael has deathtouch.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 212,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Biomechan Engineer",
+    "cost": "{G}{U}",
+    "text": "When this creature enters, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")\n{8}: Draw two cards and create a 2/2 colorless Robot artifact creature token.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 213,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Scientist"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Biotech Specialist",
+    "cost": "{R}{G}",
+    "text": "When this creature enters, create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")\nWhenever you sacrifice an artifact, this creature deals 2 damage to target opponent.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 214,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Lhurgoyf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Cosmogoyf",
+    "cost": "{B}{G}",
+    "text": "Cosmogoyf's power is equal to the number of cards you own in exile and its toughness is equal to that number plus 1.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 215,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 0,
+    "toughnessText": "1+*",
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Dyadrine, Synthesis Amalgam",
+    "cost": "{X}{G}{W}",
+    "text": "Trample\nDyadrine enters with a number of +1/+1 counters on it equal to the amount of mana spent to cast it.\nWhenever you attack, you may remove a +1/+1 counter from each of two creatures you control. If you do, draw a card and create a 2/2 colorless Robot artifact creature token.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 216,
+    "power": 0,
+    "toughness": 1,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Genemorph Imago",
+    "cost": "{G}{U}",
+    "text": "Flying\nLandfall — Whenever a land you control enters, target creature has base power and toughness 3/3 until end of turn. If you control six or more lands, that creature has base power and toughness 6/6 until end of turn instead.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 217,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Haliya, Ascendant Cadet",
+    "cost": "{2}{G}{W}{W}",
+    "text": "Whenever Haliya enters or attacks, put a +1/+1 counter on target creature you control.\nWhenever one or more creatures you control with +1/+1 counters on them deal combat damage to a player, draw a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 218,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G",
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Infinite Guideline Station",
+    "cost": "{W}{U}{B}{R}{G}",
+    "text": "When Infinite Guideline Station enters, create a tapped 2/2 colorless Robot artifact creature token for each multicolored permanent you control.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 12+.)\n12+ | Flying\nWhenever Infinite Guideline Station attacks, draw a card for each multicolored permanent you control.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 219,
+    "power": 7,
+    "toughness": 15,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Interceptor Mechan",
+    "cost": "{2}{B}{R}",
+    "text": "Flying\nWhen this creature enters, return target artifact or creature card from your graveyard to your hand.\nVoid — At the beginning of your end step, if a nonland permanent left the battlefield this turn or a spell was warped this turn, put a +1/+1 counter on this creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 220,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Jellyfish",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Mm'menon, Uthros Exile",
+    "cost": "{1}{U}{R}",
+    "text": "Flying\nWhenever an artifact you control enters, put a +1/+1 counter on target creature.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 221,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Mutinous Massacre",
+    "cost": "{3}{B}{B}{R}{R}",
+    "text": "Choose odd or even. Destroy each creature with mana value of the chosen quality. Then gain control of all creatures until end of turn. Untap them. They gain haste until end of turn. (Zero is even.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 222,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Pinnacle Emissary",
+    "cost": "{1}{U}{R}",
+    "text": "Whenever you cast an artifact spell, create a 1/1 colorless Drone artifact creature token with flying and \"This token can block only creatures with flying.\"\nWarp {U/R} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 223,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lobster",
+      "Citizen"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Ragost, Deft Gastronaut",
+    "cost": "{R}{W}",
+    "text": "Artifacts you control are Foods in addition to their other types and have \"{2}, {T}, Sacrifice this artifact: You gain 3 life.\"\n{1}, {T}, Sacrifice a Food: Ragost deals 3 damage to each opponent.\nAt the beginning of each end step, if you gained life this turn, untap Ragost.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 224,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Sami, Ship's Engineer",
+    "cost": "{2}{R}{W}",
+    "text": "At the beginning of your end step, if you control two or more tapped creatures, create a tapped 2/2 colorless Robot artifact creature token.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 225,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer",
+      "Rogue"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Sami, Wildcat Captain",
+    "cost": "{4}{R}{W}",
+    "text": "Double strike, vigilance\nSpells you cast have affinity for artifacts. (They cost {1} less to cast for each artifact you control.)",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 226,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "double_strike",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Seedship Broodtender",
+    "cost": "{B}{G}",
+    "text": "When this creature enters, mill three cards. (Put the top three cards of your library into your graveyard.)\n{3}{B}{G}, Sacrifice this creature: Return target creature or Spacecraft card from your graveyard to the battlefield. Activate only as a sorcery.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 227,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Singularity Rupture",
+    "cost": "{3}{U}{B}{B}",
+    "text": "Destroy all creatures, then any number of target players each mill half their library, rounded down.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 228,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Space-Time Anomaly",
+    "cost": "{2}{W}{U}",
+    "text": "Target player mills cards equal to your life total.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 229,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Station Monitor",
+    "cost": "{W}{U}",
+    "text": "Whenever you cast your second spell each turn, create a 1/1 colorless Drone artifact creature token with flying and \"This token can block only creatures with flying.\"",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 230,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Syr Vondam, Sunstar Exemplar",
+    "cost": "{W}{B}",
+    "text": "Vigilance, menace\nWhenever another creature you control dies or is put into exile, put a +1/+1 counter on Syr Vondam and you gain 1 life.\nWhen Syr Vondam dies or is put into exile while its power is 4 or greater, destroy up to one target nonland permanent.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 231,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance",
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Syr Vondam, the Lucent",
+    "cost": "{2}{W}{B}{B}",
+    "text": "Deathtouch, lifelink\nWhenever Syr Vondam enters or attacks, other creatures you control get +1/+0 and gain deathtouch until end of turn.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 232,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kavu",
+      "Pilot"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Tannuk, Memorial Ensign",
+    "cost": "{1}{R}{G}",
+    "text": "Landfall — Whenever a land you control enters, Tannuk deals 1 damage to each opponent. If this is the second time this ability has resolved this turn, draw a card.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 233,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "All-Fates Scroll",
+    "cost": "{3}",
+    "text": "{T}: Add one mana of any color.\n{7}, {T}, Sacrifice this artifact: Draw X cards, where X is the number of differently named lands you control.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 234,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Giant"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Bygone Colossus",
+    "cost": "{9}",
+    "text": "Warp {3} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 235,
+    "power": 9,
+    "toughness": 9,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Chrome Companion",
+    "cost": "{2}",
+    "text": "Whenever this creature becomes tapped, you gain 1 life.\n{2}, {T}: Put target card from a graveyard on the bottom of its owner's library.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 236,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Dauntless Scrapbot",
+    "cost": "{3}",
+    "text": "When this creature enters, exile each opponent's graveyard. Create a Lander token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 237,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Dawnsire, Sunstar Dreadnought",
+    "cost": "{5}",
+    "text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 20+.)\n10+ | Whenever you attack, Dawnsire deals 100 damage to up to one target creature or planeswalker.\n20+ | Flying",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 238,
+    "power": 20,
+    "toughness": 20,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "The Dominion Bracelet",
+    "cost": "{2}",
+    "text": "Equipped creature gets +1/+1 and has \"{15}, Exile The Dominion Bracelet: You control target opponent during their next turn. This ability costs {X} less to activate, where X is this creature's power. Activate only as a sorcery.\" (You see all cards that player could see and make all decisions for them.)\nEquip {1}",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 239,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "The Endstone",
+    "cost": "{7}",
+    "text": "Whenever you play a land or cast a spell, draw a card.\nAt the beginning of your end step, your life total becomes half your starting life total, rounded up.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 240,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "The Eternity Elevator",
+    "cost": "{5}",
+    "text": "{T}: Add {C}{C}{C}.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery.)\n20+ | {T}: Add X mana of any one color, where X is the number of charge counters on The Eternity Elevator.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 241,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Extinguisher Battleship",
+    "cost": "{8}",
+    "text": "When this Spacecraft enters, destroy target noncreature permanent. Then this Spacecraft deals 4 damage to each creature.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 5+.)\n5+ | Flying, trample",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 242,
+    "power": 10,
+    "toughness": 10,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Nutrient Block",
+    "cost": "{1}",
+    "text": "Indestructible (Effects that say \"destroy\" don't destroy this artifact.)\n{2}, {T}, Sacrifice this artifact: You gain 3 life.\nWhen this artifact is put into a graveyard from the battlefield, draw a card.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 243,
+    "keywords": [
+      "indestructible"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Pinnacle Kill-Ship",
+    "cost": "{7}",
+    "text": "When this Spacecraft enters, it deals 10 damage to up to one target creature.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 7+.)\n7+ | Flying",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 244,
+    "power": 7,
+    "toughness": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Survey Mechan",
+    "cost": "{4}",
+    "text": "Flying\nHexproof (This creature can't be the target of spells or abilities your opponents control.)\n{10}, Sacrifice this creature: It deals 3 damage to any target. Target player draws three cards and gains 3 life. This ability costs {X} less to activate, where X is the number of differently named lands you control.",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 245,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "hexproof"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Thaumaton Torpedo",
+    "cost": "{1}",
+    "text": "{6}, {T}, Sacrifice this artifact: Destroy target nonland permanent. This ability costs {3} less to activate if you attacked with a Spacecraft this turn.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 246,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Thrumming Hivepool",
+    "cost": "{6}",
+    "text": "Affinity for Slivers (This spell costs {1} less to cast for each Sliver you control.)\nSlivers you control have double strike and haste.\nAt the beginning of your upkeep, create two 1/1 colorless Sliver creature tokens.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 247,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Assassin"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Virulent Silencer",
+    "cost": "{3}",
+    "text": "Whenever a nontoken artifact creature you control deals combat damage to a player, that player gets two poison counters. (A player with ten or more poison counters loses the game.)",
+    "set": "EOE",
+    "rarity": "U",
+    "number": 248,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Spacecraft"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Wurmwall Sweeper",
+    "cost": "{2}",
+    "text": "When this Spacecraft enters, surveil 2.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 4+.)\n4+ | Flying",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 249,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Planet"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Adagia, Windswept Bastion",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {W}.\nStation (Tap another creature you control: Put charge counters equal to its power on this Planet. Station only as a sorcery.)\n12+ | {3}{W}, {T}: Create a token that's a copy of target artifact or enchantment you control, except it's legendary. Activate only as a sorcery.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 250,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Forest",
+      "Island"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Breeding Pool",
+    "cost": "",
+    "text": "({T}: Add {G} or {U}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 251,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Command Bridge",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, sacrifice it unless you tap an untapped permanent you control.\n{T}: Add one mana of any color.",
+    "set": "EOE",
+    "rarity": "C",
+    "number": 252,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Planet"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Evendo, Waking Haven",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {G}.\nStation (Tap another creature you control: Put charge counters equal to its power on this Planet. Station only as a sorcery.)\n12+ | {G}, {T}: Add {G} for each creature you control.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 253,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Plains",
+      "Swamp"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Godless Shrine",
+    "cost": "",
+    "text": "({T}: Add {W} or {B}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 254,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Planet"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Kavaron, Memorial World",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {R}.\nStation (Tap another creature you control: Put charge counters equal to its power on this Planet. Station only as a sorcery.)\n12+ | {1}{R}, {T}, Sacrifice a land: Create a 2/2 colorless Robot artifact creature token, then creatures you control get +1/+0 and gain haste until end of turn.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 255,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Mountain",
+      "Plains"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sacred Foundry",
+    "cost": "",
+    "text": "({T}: Add {R} or {W}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 256,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Secluded Starforge",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{2}, {T}, Tap X untapped artifacts you control: Target creature gets +X/+0 until end of turn. Activate only as a sorcery.\n{5}, {T}: Create a 2/2 colorless Robot artifact creature token.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 257,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Mountain",
+      "Forest"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Stomping Ground",
+    "cost": "",
+    "text": "({T}: Add {R} or {G}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 258,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Planet"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Susur Secundi, Void Altar",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {B}.\nStation (Tap another creature you control: Put charge counters equal to its power on this Planet. Station only as a sorcery.)\n12+ | {1}{B}, {T}, Pay 2 life, Sacrifice a creature: Draw cards equal to the sacrificed creature's power. Activate only as a sorcery.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 259,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Planet"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Uthros, Titanic Godcore",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {U}.\nStation (Tap another creature you control: Put charge counters equal to its power on this Planet. Station only as a sorcery.)\n12+ | {U}, {T}: Add {U} for each artifact you control.",
+    "set": "EOE",
+    "rarity": "M",
+    "number": 260,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Island",
+      "Swamp"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Watery Grave",
+    "cost": "",
+    "text": "({T}: Add {U} or {B}.)\nAs this land enters, you may pay 2 life. If you don't, it enters tapped.",
+    "set": "EOE",
+    "rarity": "R",
+    "number": 261,
+    "keywords": []
+  }
+]

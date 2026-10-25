@@ -1,0 +1,5869 @@
+[
+  {
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Ugin"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Ugin, Eye of the Storms",
+    "cost": "{7}",
+    "text": "When you cast this spell, exile up to one target permanent that's one or more colors.\nWhenever you cast a colorless spell, exile up to one target permanent that's one or more colors.\n[+2]: You gain 3 life and draw a card.\n[0]: Add {C}{C}{C}.\n[−11]: Search your library for any number of colorless nonland cards, exile them, then shuffle. Until end of turn, you may cast those cards without paying their mana costs.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 1,
+    "loyalty": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Soldier"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Anafenza, Unyielding Lineage",
+    "cost": "{2}{W}",
+    "text": "Flash\nFirst strike\nWhenever another nontoken creature you control dies, Anafenza endures 2. (Put two +1/+1 counters on it or create a 2/2 white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 2,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flash",
+      "first_strike"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Arashin Sunshield",
+    "cost": "{3}{W}",
+    "text": "When this creature enters, exile up to two target cards from a single graveyard.\n{W}, {T}: Tap target creature.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 3,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Bearer of Glory",
+    "cost": "{1}{W}",
+    "text": "During your turn, this creature has first strike.\n{4}{W}: Creatures you control get +1/+1 until end of turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 4,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Clarion Conqueror",
+    "cost": "{2}{W}",
+    "text": "Flying\nActivated abilities of artifacts, creatures, and planeswalkers can't be activated.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 5,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Coordinated Maneuver",
+    "cost": "{1}{W}",
+    "text": "Choose one —\n• Coordinated Maneuver deals damage equal to the number of creatures you control to target creature or planeswalker.\n• Destroy target enchantment.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ox"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dalkovan Packbeasts",
+    "cost": "{2}{W}",
+    "text": "Vigilance\nMobilize 3 (Whenever this creature attacks, create three tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 7,
+    "power": 0,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Descendant of Storms",
+    "cost": "{W}",
+    "text": "Whenever this creature attacks, you may pay {1}{W}. If you do, it endures 1. (Put a +1/+1 counter on it or create a 1/1 white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 8,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dragonback Lancer",
+    "cost": "{3}{W}",
+    "text": "Flying\nMobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 9,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Duty Beyond Death",
+    "cost": "{1}{W}",
+    "text": "As an additional cost to cast this spell, sacrifice a creature.\nCreatures you control gain indestructible until end of turn. Put a +1/+1 counter on each creature you control. (Damage and effects that say \"destroy\" don't destroy those creatures.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 10,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Elspeth"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Elspeth, Storm Slayer",
+    "cost": "{3}{W}{W}",
+    "text": "If one or more tokens would be created under your control, twice that many of those tokens are created instead.\n[+1]: Create a 1/1 white Soldier creature token.\n[0]: Put a +1/+1 counter on each creature you control. Those creatures gain flying until your next turn.\n[−3]: Destroy target creature an opponent controls with mana value 3 or greater.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 11,
+    "loyalty": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Fortress Kin-Guard",
+    "cost": "{1}{W}",
+    "text": "When this creature enters, it endures 1. (Put a +1/+1 counter on it or create a 1/1 white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 12,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Furious Forebear",
+    "cost": "{1}{W}",
+    "text": "Whenever a creature you control dies while this card is in your graveyard, you may pay {1}{W}. If you do, return this card from your graveyard to your hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 13,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Lightfoot Technique",
+    "cost": "{1}{W}",
+    "text": "Put a +1/+1 counter on target creature. It gains flying and indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 14,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Loxodon Battle Priest",
+    "cost": "{4}{W}",
+    "text": "At the beginning of combat on your turn, put a +1/+1 counter on another target creature you control.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 15,
+    "power": 3,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Mardu Devotee",
+    "cost": "{W}",
+    "text": "When this creature enters, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)\n{1}: Add {R}, {W}, or {B}. Activate only once each turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 16,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Osseous Exhale",
+    "cost": "{1}{W}",
+    "text": "As an additional cost to cast this spell, you may behold a Dragon. (You may choose a Dragon you control or reveal a Dragon card from your hand.)\nOsseous Exhale deals 5 damage to target attacking or blocking creature. If a Dragon was beheld, you gain 2 life.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 17,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Poised Practitioner",
+    "cost": "{2}{W}",
+    "text": "Flurry — Whenever you cast your second spell each turn, put a +1/+1 counter on this creature. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 18,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Rally the Monastery",
+    "cost": "{3}{W}",
+    "text": "This spell costs {2} less to cast if you've cast another spell this turn.\nChoose one —\n• Create two 1/1 white Monk creature tokens with prowess.\n• Up to two target creatures you control each get +2/+2 until end of turn.\n• Destroy target creature with power 4 or greater.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 19,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Rebellious Strike",
+    "cost": "{1}{W}",
+    "text": "Target creature gets +3/+0 until end of turn.\nDraw a card.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 20,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Riling Dawnbreaker",
+    "cost": "{4}{W}",
+    "text": "Flying, vigilance\nAt the beginning of combat on your turn, another target creature you control gets +1/+0 until end of turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 21,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Signaling Roar",
+      "cost": "{1}{W}",
+      "text": "Create a 2/2 white Soldier creature token. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Riling Dawnbreaker // Signaling Roar"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Sage of the Skies",
+    "cost": "{2}{W}",
+    "text": "When you cast this spell, if you've cast another spell this turn, copy this spell. (The copy becomes a token.)\nFlying, lifelink",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 22,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Salt Road Packbeast",
+    "cost": "{5}{W}",
+    "text": "Affinity for creatures (This spell costs {1} less to cast for each creature you control.)\nWhen this creature enters, draw a card.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 23,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Smile at Death",
+    "cost": "{3}{W}{W}",
+    "text": "At the beginning of your upkeep, return up to two target creature cards with power 2 or less from your graveyard to the battlefield. Put a +1/+1 counter on each of those creatures.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 24,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Starry-Eyed Skyrider",
+    "cost": "{2}{W}",
+    "text": "Flying\nWhenever this creature attacks, another target creature you control gains flying until end of turn.\nAttacking tokens you control have flying.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 25,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Static Snare",
+    "cost": "{4}{W}",
+    "text": "Flash\nThis spell costs {1} less to cast for each attacking creature.\nWhen this enchantment enters, exile target artifact or creature an opponent controls until this enchantment leaves the battlefield.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 26,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Stormbeacon Blade",
+    "cost": "{1}{W}",
+    "text": "Equipped creature gets +3/+0.\nWhenever equipped creature attacks, draw a card if you control three or more attacking creatures.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 27,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Stormplain Detainment",
+    "cost": "{2}{W}",
+    "text": "When this enchantment enters, exile target nonland permanent an opponent controls until this enchantment leaves the battlefield.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 28,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kirin"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Sunpearl Kirin",
+    "cost": "{1}{W}",
+    "text": "Flash\nFlying\nWhen this creature enters, return up to one other target nonland permanent you control to its owner's hand. If it was a token, draw a card.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 29,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flash",
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Teeming Dragonstorm",
+    "cost": "{3}{W}",
+    "text": "When this enchantment enters, create two 2/2 white Soldier creature tokens.\nWhen a Dragon you control enters, return this enchantment to its owner's hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 30,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Tempest Hawk",
+    "cost": "{2}{W}",
+    "text": "Flying\nWhenever this creature deals combat damage to a player, you may search your library for a card named Tempest Hawk, reveal it, put it into your hand, then shuffle.\nA deck can have any number of cards named Tempest Hawk.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 31,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "United Battlefront",
+    "cost": "{3}{W}",
+    "text": "Look at the top seven cards of your library. Put up to two noncreature, nonland permanent cards with mana value 3 or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 32,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Voice of Victory",
+    "cost": "{1}{W}",
+    "text": "Mobilize 2 (Whenever this creature attacks, create two tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.)\nYour opponents can't cast spells during your turn.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 33,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Wayspeaker Bodyguard",
+    "cost": "{3}{W}",
+    "text": "When this creature enters, return target nonland permanent card with mana value 2 or less from your graveyard to your hand.\nFlurry — Whenever you cast your second spell each turn, tap target creature an opponent controls.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 34,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Aegis Sculptor",
+    "cost": "{3}{U}",
+    "text": "Flying\nWard {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nAt the beginning of your upkeep, you may exile two cards from your graveyard. If you do, put a +1/+1 counter on this creature.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 35,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Agent of Kotis",
+    "cost": "{1}{U}",
+    "text": "Renew — {3}{U}, Exile this card from your graveyard: Put two +1/+1 counters on target creature. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 36,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Turtle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Ambling Stormshell",
+    "cost": "{3}{U}{U}",
+    "text": "Ward {2}\nWhenever this creature attacks, put three stun counters on it and draw three cards. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nWhenever you cast a Turtle spell, untap this creature.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 37,
+    "power": 5,
+    "toughness": 9,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Bewildering Blizzard",
+    "cost": "{4}{U}{U}",
+    "text": "Draw three cards. Creatures your opponents control get -3/-0 until end of turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 38,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Constrictor Sage",
+    "cost": "{4}{U}",
+    "text": "When this creature enters, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nRenew — {2}{U}, Exile this card from your graveyard: Tap target creature an opponent controls and put a stun counter on it. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 39,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Dirgur Island Dragon",
+    "cost": "{5}{U}",
+    "text": "Flying\nWard {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 40,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Skimming Strike",
+      "cost": "{1}{U}",
+      "text": "Tap up to one target creature. Draw a card. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Dirgur Island Dragon // Skimming Strike"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Dispelling Exhale",
+    "cost": "{1}{U}",
+    "text": "As an additional cost to cast this spell, you may behold a Dragon. (You may choose a Dragon you control or reveal a Dragon card from your hand.)\nCounter target spell unless its controller pays {2}. If a Dragon was beheld, counter that spell unless its controller pays {4} instead.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 41,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Dragonologist",
+    "cost": "{2}{U}",
+    "text": "When this creature enters, look at the top six cards of your library. You may reveal an instant, sorcery, or Dragon card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.\nUntapped Dragons you control have hexproof.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 42,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Dragonstorm Forecaster",
+    "cost": "{U}",
+    "text": "{2}, {T}: Search your library for a card named Dragonstorm Globe or Boulderborn Dragon, reveal it, put it into your hand, then shuffle.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 43,
+    "power": 0,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Essence Anchor",
+    "cost": "{2}{U}",
+    "text": "At the beginning of your upkeep, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{T}: Create a 2/2 black Zombie Druid creature token. Activate only during your turn and only if a card left your graveyard this turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 44,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Focus the Mind",
+    "cost": "{4}{U}",
+    "text": "This spell costs {2} less to cast if you've cast another spell this turn.\nDraw three cards, then discard a card.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 45,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Fresh Start",
+    "cost": "{1}{U}",
+    "text": "Flash\nEnchant creature\nEnchanted creature gets -5/-0 and loses all abilities.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 46,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Highspire Bell-Ringer",
+    "cost": "{2}{U}",
+    "text": "Flying\nThe second spell you cast each turn costs {1} less to cast.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 47,
+    "power": 1,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Humbling Elder",
+    "cost": "{U}",
+    "text": "Flash\nWhen this creature enters, target creature an opponent controls gets -2/-0 until end of turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 48,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Serpent"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Iceridge Serpent",
+    "cost": "{4}{U}",
+    "text": "When this creature enters, return target creature an opponent controls to its owner's hand.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 49,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Kishla Trawlers",
+    "cost": "{2}{U}",
+    "text": "When this creature enters, you may exile a creature card from your graveyard. When you do, return target instant or sorcery card from your graveyard to your hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 50,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Marang River Regent",
+    "cost": "{4}{U}{U}",
+    "text": "Flying\nWhen this creature enters, return up to two other target nonland permanents to their owners' hands.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 51,
+    "power": 6,
+    "toughness": 7,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Coil and Catch",
+      "cost": "{3}{U}",
+      "text": "Draw three cards, then discard a card. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Marang River Regent // Coil and Catch"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake",
+      "Shapeshifter"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Naga Fleshcrafter",
+    "cost": "{3}{U}",
+    "text": "You may have this creature enter as a copy of any creature on the battlefield.\nRenew — {2}{U}, Exile this card from your graveyard: Put a +1/+1 counter on target nonlegendary creature you control. Each other creature you control becomes a copy of that creature until end of turn. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 52,
+    "power": 0,
+    "toughness": 0,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Ringing Strike Mastery",
+    "cost": "{U}",
+    "text": "Enchant creature\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nEnchanted creature has \"{5}: Untap this creature.\"",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 53,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Riverwalk Technique",
+    "cost": "{3}{U}",
+    "text": "Choose one —\n• The owner of target nonland permanent puts it on their choice of the top or bottom of their library.\n• Counter target noncreature spell.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 54,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Roiling Dragonstorm",
+    "cost": "{1}{U}",
+    "text": "When this enchantment enters, draw two cards, then discard a card.\nWhen a Dragon you control enters, return this enchantment to its owner's hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 55,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Advisor"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Sibsig Appraiser",
+    "cost": "{2}{U}",
+    "text": "When this creature enters, look at the top two cards of your library. Put one of them into your hand and the other into your graveyard.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 56,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Elk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Snowmelt Stag",
+    "cost": "{3}{U}",
+    "text": "Vigilance\nDuring your turn, this creature has base power and toughness 5/2.\n{5}{U}{U}: This creature can't be blocked this turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 57,
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Spectral Denial",
+    "cost": "{X}{U}",
+    "text": "This spell costs {1} less to cast for each creature you control with power 4 or greater.\nCounter target spell unless its controller pays {X}.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 58,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Stillness in Motion",
+    "cost": "{1}{U}",
+    "text": "At the beginning of your upkeep, mill three cards. Then if your library has no cards in it, exile this enchantment and put five cards from your graveyard on top of your library in any order.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 59,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Taigam, Master Opportunist",
+    "cost": "{1}{U}",
+    "text": "Flurry — Whenever you cast your second spell each turn, copy it, then exile the spell you cast with four time counters on it. If it doesn't have suspend, it gains suspend. (At the beginning of its owner's upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it's a creature, it has haste.)",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 60,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Temur Devotee",
+    "cost": "{1}{U}",
+    "text": "Defender\n{1}: Add {G}, {U}, or {R}. Activate only once each turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 61,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "defender"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Unending Whisper",
+    "cost": "{U}",
+    "text": "Draw a card.\nHarmonize {5}{U} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 62,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Ureni's Rebuff",
+    "cost": "{1}{U}",
+    "text": "Return target creature to its owner's hand.\nHarmonize {5}{U} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 63,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Veteran Ice Climber",
+    "cost": "{1}{U}",
+    "text": "Vigilance\nThis creature can't be blocked.\nWhenever this creature attacks, up to one target player mills cards equal to this creature's power. (They put that many cards from the top of their library into their graveyard.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 64,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Wingblade Disciple",
+    "cost": "{2}{U}",
+    "text": "Flying\nFlurry — Whenever you cast your second spell each turn, create a 1/1 white Bird creature token with flying.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 65,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Wingspan Stride",
+    "cost": "{U}",
+    "text": "Enchant creature\nEnchanted creature gets +1/+1 and has flying.\n{2}{U}: Return this Aura to its owner's hand.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 66,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Winternight Stories",
+    "cost": "{2}{U}",
+    "text": "Draw three cards. Then discard two cards unless you discard a creature card.\nHarmonize {4}{U} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 67,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Abzan Devotee",
+    "cost": "{1}{B}",
+    "text": "{1}: Add {W}, {B}, or {G}. Activate only once each turn.\n{2}{B}: Return this card from your graveyard to your hand.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 68,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Crocodile"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Adorned Crocodile",
+    "cost": "{4}{B}",
+    "text": "When this creature dies, create a 2/2 black Zombie Druid creature token.\nRenew — {B}, Exile this card from your graveyard: Put a +1/+1 counter on target creature. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 69,
+    "power": 5,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Aggressive Negotiations",
+    "cost": "{2}{B}",
+    "text": "Target opponent reveals their hand. You choose a nonland card from it and exile that card. Put a +1/+1 counter on up to one target creature you control.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 70,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Monkey"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Alchemist's Assistant",
+    "cost": "{1}{B}",
+    "text": "Lifelink\nRenew — {1}{B}, Exile this card from your graveyard: Put a lifelink counter on target creature. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 71,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Alesha's Legacy",
+    "cost": "{1}{B}",
+    "text": "Target creature you control gains deathtouch and indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 72,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Avenger of the Fallen",
+    "cost": "{2}{B}",
+    "text": "Deathtouch\nMobilize X, where X is the number of creature cards in your graveyard. (Whenever this creature attacks, create X tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 73,
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Caustic Exhale",
+    "cost": "{B}",
+    "text": "As an additional cost to cast this spell, behold a Dragon or pay {1}. (To behold a Dragon, choose a Dragon you control or reveal a Dragon card from your hand.)\nTarget creature gets -3/-3 until end of turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 74,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Corroding Dragonstorm",
+    "cost": "{1}{B}",
+    "text": "When this enchantment enters, each opponent loses 2 life and you gain 2 life. Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\nWhen a Dragon you control enters, return this enchantment to its owner's hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 75,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Cruel Truths",
+    "cost": "{3}{B}",
+    "text": "Surveil 2, then draw two cards. You lose 2 life. (To surveil 2, look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 76,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Delta Bloodflies",
+    "cost": "{1}{B}",
+    "text": "Flying\nWhenever this creature attacks, if you control a creature with a counter on it, each opponent loses 1 life.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 77,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Desperate Measures",
+    "cost": "{B}",
+    "text": "Target creature gets +1/-1 until end of turn. When it dies under your control this turn, draw two cards.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 78,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Dragon's Prey",
+    "cost": "{2}{B}",
+    "text": "This spell costs {2} more to cast if it targets a Dragon.\nDestroy target creature.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 79,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Feral Deathgorger",
+    "cost": "{5}{B}",
+    "text": "Flying, deathtouch\nWhen this creature enters, exile up to two target cards from a single graveyard.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 80,
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "deathtouch"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Dusk Sight",
+      "cost": "{1}{B}",
+      "text": "Put a +1/+1 counter on up to one target creature. Draw a card. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Feral Deathgorger // Dusk Sight"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Gurmag Rakshasa",
+    "cost": "{4}{B}{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature enters, target creature an opponent controls gets -2/-2 until end of turn and target creature you control gets +2/+2 until end of turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 81,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Hundred-Battle Veteran",
+    "cost": "{3}{B}",
+    "text": "As long as there are three or more different kinds of counters among creatures you control, this creature gets +2/+4.\nYou may cast this card from your graveyard. If you do, it enters with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 82,
+    "power": 4,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Kin-Tree Nurturer",
+    "cost": "{2}{B}",
+    "text": "Lifelink\nWhen this creature enters, it endures 1. (Put a +1/+1 counter on it or create a 1/1 white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 83,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Krumar Initiate",
+    "cost": "{1}{B}",
+    "text": "{X}{B}, {T}, Pay X life: This creature endures X. Activate only as a sorcery. (Put X +1/+1 counters on it or create an X/X white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 84,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Nightblade Brigade",
+    "cost": "{2}{B}",
+    "text": "Deathtouch\nMobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)\nWhen this creature enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 85,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Qarsi Revenant",
+    "cost": "{1}{B}{B}",
+    "text": "Flying, deathtouch, lifelink\nRenew — {2}{B}, Exile this card from your graveyard: Put a flying counter, a deathtouch counter, and a lifelink counter on target creature. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 86,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "deathtouch",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Rot-Curse Rakshasa",
+    "cost": "{1}{B}",
+    "text": "Trample\nDecayed (This creature can't block. When it attacks, sacrifice it at end of combat.)\nRenew — {X}{B}{B}, Exile this card from your graveyard: Put a decayed counter on each of X target creatures. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 87,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Salt Road Skirmish",
+    "cost": "{3}{B}",
+    "text": "Destroy target creature. Create two 1/1 red Warrior creature tokens. They gain haste until end of turn. Sacrifice them at the beginning of the next end step.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 88,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Sandskitter Outrider",
+    "cost": "{3}{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature enters, it endures 2. (Put two +1/+1 counters on it or create a 2/2 white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 89,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Scavenger Regent",
+    "cost": "{3}{B}",
+    "text": "Flying\nWard—Discard a card.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 90,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Exude Toxin",
+      "cost": "{X}{B}{B}",
+      "text": "Each non-Dragon creature gets -X/-X until end of turn. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Scavenger Regent // Exude Toxin"
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "The Sibsig Ceremony",
+    "cost": "{B}{B}{B}",
+    "text": "Creature spells you cast cost {2} less to cast.\nWhenever a creature you control enters, if you cast it, destroy that creature, then create a 2/2 black Zombie Druid creature token.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 91,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Snake",
+      "Warlock"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Sidisi, Regent of the Mire",
+    "cost": "{1}{B}",
+    "text": "{T}, Sacrifice a creature you control with mana value X other than Sidisi: Return target creature card with mana value X plus 1 from your graveyard to the battlefield. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 92,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Sinkhole Surveyor",
+    "cost": "{1}{B}",
+    "text": "Flying\nWhenever this creature attacks, you lose 1 life and this creature endures 1. (Put a +1/+1 counter on it or create a 1/1 white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 93,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Strategic Betrayal",
+    "cost": "{1}{B}",
+    "text": "Target opponent exiles a creature they control and their graveyard.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 94,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Unburied Earthcarver",
+    "cost": "{1}{B}",
+    "text": "{2}, Sacrifice another creature: Put a +1/+1 counter on this creature.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 95,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Unrooted Ancestor",
+    "cost": "{2}{B}",
+    "text": "Flash\n{1}, Sacrifice another creature: This creature gains indestructible until end of turn. Tap it. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 96,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Venerated Stormsinger",
+    "cost": "{3}{B}",
+    "text": "Mobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)\nWhenever this creature or another creature you control dies, each opponent loses 1 life and you gain 1 life.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 97,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Wail of War",
+    "cost": "{2}{B}",
+    "text": "Choose one —\n• Creatures target opponent controls get -1/-1 until end of turn.\n• Return up to two target creature cards from your graveyard to your hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 98,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Worthy Cost",
+    "cost": "{B}",
+    "text": "As an additional cost to cast this spell, sacrifice a creature.\nExile target creature or planeswalker.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 99,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Yathan Tombguard",
+    "cost": "{2}{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever a creature you control with a counter on it deals combat damage to a player, you draw a card and you lose 1 life.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 100,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Breaching Dragonstorm",
+    "cost": "{4}{R}",
+    "text": "When this enchantment enters, exile cards from the top of your library until you exile a nonland card. You may cast it without paying its mana cost if that spell's mana value is 8 or less. If you don't, put that card into your hand.\nWhen a Dragon you control enters, return this enchantment to its owner's hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 101,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Channeled Dragonfire",
+    "cost": "{R}",
+    "text": "Channeled Dragonfire deals 2 damage to any target.\nHarmonize {5}{R}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 102,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Cori-Steel Cutter",
+    "cost": "{1}{R}",
+    "text": "Equipped creature gets +1/+1 and has trample and haste.\nFlurry — Whenever you cast your second spell each turn, create a 1/1 white Monk creature token with prowess. You may attach this Equipment to it. (Whenever you cast a noncreature spell, the token gets +1/+1 until end of turn.)\nEquip {1}{R}",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 103,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Devoted Duelist",
+    "cost": "{1}{R}",
+    "text": "Haste\nFlurry — Whenever you cast your second spell each turn, this creature deals 1 damage to each opponent.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 104,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Dracogenesis",
+    "cost": "{6}{R}{R}",
+    "text": "You may cast Dragon spells without paying their mana costs.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 105,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Equilibrium Adept",
+    "cost": "{3}{R}",
+    "text": "When this creature enters, exile the top card of your library. Until the end of your next turn, you may play that card.\nFlurry — Whenever you cast your second spell each turn, this creature gains double strike until end of turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 106,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Fire-Rim Form",
+    "cost": "{1}{R}",
+    "text": "Flash\nEnchant creature\nWhen this Aura enters, enchanted creature gains first strike until end of turn.\nEnchanted creature gets +2/+0.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 107,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Fleeting Effigy",
+    "cost": "{R}",
+    "text": "Haste\nAt the beginning of your end step, return this creature to its owner's hand. (Return it only if it's on the battlefield.)\n{2}{R}: This creature gets +2/+0 until end of turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 108,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Iridescent Tiger",
+    "cost": "{4}{R}",
+    "text": "When this creature enters, if you cast it, add {W}{U}{B}{R}{G}.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 109,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Jeskai Devotee",
+    "cost": "{1}{R}",
+    "text": "Flurry — Whenever you cast your second spell each turn, this creature gets +1/+1 until end of turn.\n{1}: Add {U}, {R}, or {W}. Activate only once each turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 110,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Magmatic Hellkite",
+    "cost": "{2}{R}{R}",
+    "text": "Flying\nWhen this creature enters, destroy target nonbasic land an opponent controls. Its controller searches their library for a basic land card, puts it onto the battlefield tapped with a stun counter on it, then shuffles. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 111,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Meticulous Artisan",
+    "cost": "{3}{R}",
+    "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen this creature enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 112,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "prowess"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Molten Exhale",
+    "cost": "{1}{R}",
+    "text": "You may cast this spell as though it had flash if you behold a Dragon as an additional cost to cast it. (To behold a Dragon, choose a Dragon you control or reveal a Dragon card from your hand.)\nMolten Exhale deals 4 damage to target creature or planeswalker.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 113,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Narset's Rebuke",
+    "cost": "{4}{R}",
+    "text": "Narset's Rebuke deals 5 damage to target creature. Add {U}{R}{W}. If that creature would die this turn, exile it instead.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 114,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Overwhelming Surge",
+    "cost": "{2}{R}",
+    "text": "Choose one or both —\n• Overwhelming Surge deals 3 damage to target creature.\n• Destroy target noncreature artifact.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 115,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Rescue Leopard",
+    "cost": "{2}{R}",
+    "text": "Whenever this creature becomes tapped, you may discard a card. If you do, draw a card.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 116,
+    "power": 4,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Reverberating Summons",
+    "cost": "{1}{R}",
+    "text": "At the beginning of each combat, if you've cast two or more spells this turn, this enchantment becomes a 3/3 Monk creature with haste in addition to its other types until end of turn.\n{1}{R}, Discard your hand, Sacrifice this enchantment: Draw two cards.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 117,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Sarkhan, Dragon Ascendant",
+    "cost": "{1}{R}",
+    "text": "When Sarkhan enters, you may behold a Dragon. If you do, create a Treasure token. (To behold a Dragon, choose a Dragon you control or reveal a Dragon card from your hand.)\nWhenever a Dragon you control enters, put a +1/+1 counter on Sarkhan. Until end of turn, Sarkhan becomes a Dragon in addition to his other types and gains flying.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 118,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Seize Opportunity",
+    "cost": "{2}{R}",
+    "text": "Choose one —\n• Exile the top two cards of your library. Until the end of your next turn, you may play those cards.\n• Up to two target creatures each get +2/+1 until end of turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 119,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Shock Brigade",
+    "cost": "{1}{R}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nMobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 120,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Archer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Shocking Sharpshooter",
+    "cost": "{1}{R}",
+    "text": "Reach\nWhenever another creature you control enters, this creature deals 1 damage to target opponent.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 121,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Stadium Headliner",
+    "cost": "{R}",
+    "text": "Mobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)\n{1}{R}, Sacrifice this creature: It deals damage equal to the number of creatures you control to target creature.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 122,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Stormscale Scion",
+    "cost": "{4}{R}{R}",
+    "text": "Flying\nOther Dragons you control get +1/+1.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. Copies become tokens.)",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 123,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Stormshriek Feral",
+    "cost": "{4}{R}",
+    "text": "Flying, haste\n{1}{R}: This creature gets +1/+0 until end of turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 124,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "haste"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Flush Out",
+      "cost": "{1}{R}",
+      "text": "Discard a card. If you do, draw two cards. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Stormshriek Feral // Flush Out"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Yeti"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Summit Intimidator",
+    "cost": "{3}{R}",
+    "text": "Reach\nWhen this creature enters, target creature can't block this turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 125,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Sunset Strikemaster",
+    "cost": "{1}{R}",
+    "text": "{T}: Add {R}.\n{2}{R}, {T}, Sacrifice this creature: It deals 6 damage to target creature with flying.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 126,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Wizard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Tersa Lightshatter",
+    "cost": "{2}{R}",
+    "text": "Haste\nWhen Tersa Lightshatter enters, discard up to two cards, then draw that many cards.\nWhenever Tersa Lightshatter attacks, if there are seven or more cards in your graveyard, exile a card at random from your graveyard. You may play that card this turn.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 127,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Twin Bolt",
+    "cost": "{1}{R}",
+    "text": "Twin Bolt deals 2 damage divided as you choose among one or two targets.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 128,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Underfoot Underdogs",
+    "cost": "{2}{R}",
+    "text": "When this creature enters, create a 1/1 red Goblin creature token.\n{1}, {T}: Target creature you control with power 2 or less can't be blocked this turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 129,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ogre",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Unsparing Boltcaster",
+    "cost": "{2}{R}",
+    "text": "When this creature enters, it deals 5 damage to target creature an opponent controls that was dealt damage this turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 130,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "War Effort",
+    "cost": "{3}{R}",
+    "text": "Creatures you control get +1/+0.\nWhenever you attack, create a 1/1 red Warrior creature token that's tapped and attacking. Sacrifice it at the beginning of the next end step.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 131,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Wild Ride",
+    "cost": "{R}",
+    "text": "Target creature gets +3/+0 and gains haste until end of turn.\nHarmonize {4}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 132,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Zurgo's Vanguard",
+    "cost": "{2}{R}",
+    "text": "Mobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)\nZurgo's Vanguard's power is equal to the number of creatures you control.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 133,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Ainok Wayfarer",
+    "cost": "{1}{G}",
+    "text": "When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature. (To mill three cards, put the top three cards of your library into your graveyard.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 134,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Attuned Hunter",
+    "cost": "{2}{G}",
+    "text": "Trample\nWhenever one or more cards leave your graveyard during your turn, put a +1/+1 counter on this creature.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 135,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Bloomvine Regent",
+    "cost": "{3}{G}{G}",
+    "text": "Flying\nWhenever this creature or another Dragon you control enters, you gain 3 life.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 136,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Claim Territory",
+      "cost": "{2}{G}",
+      "text": "Search your library for up to two basic Forest cards, reveal them, put one onto the battlefield tapped and the other into your hand, then shuffle. (Also shuffle this card.)",
+      "set": "TDM",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Bloomvine Regent // Claim Territory"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Champion of Dusan",
+    "cost": "{2}{G}",
+    "text": "Trample\nRenew — {1}{G}, Exile this card from your graveyard: Put a +1/+1 counter and a trample counter on target creature. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 137,
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Craterhoof Behemoth",
+    "cost": "{5}{G}{G}{G}",
+    "text": "Haste\nWhen this creature enters, creatures you control gain trample and get +X/+X until end of turn, where X is the number of creatures you control.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 138,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Archer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Dragon Sniper",
+    "cost": "{G}",
+    "text": "Reach, vigilance, deathtouch",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 139,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "reach",
+      "vigilance",
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Dragonbroods' Relic",
+    "cost": "{1}{G}",
+    "text": "{T}, Tap an untapped creature you control: Add one mana of any color.\n{3}{W}{U}{B}{R}{G}, Sacrifice this artifact: Create a 4/4 Dragon creature token named Reliquary Dragon that's all colors. It has flying, lifelink, and \"When this token enters, it deals 3 damage to any target.\" Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 140,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Dusyut Earthcarver",
+    "cost": "{5}{G}",
+    "text": "Reach\nWhen this creature enters, it endures 3. (Put three +1/+1 counters on it or create a 3/3 white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 141,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Encroaching Dragonstorm",
+    "cost": "{3}{G}",
+    "text": "When this enchantment enters, search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.\nWhen a Dragon you control enters, return this enchantment to its owner's hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 142,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Formation Breaker",
+    "cost": "{1}{G}",
+    "text": "Creatures with power less than this creature's power can't block it.\nAs long as you control a creature with a counter on it, this creature gets +1/+2.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 143,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Herd Heirloom",
+    "cost": "{1}{G}",
+    "text": "{T}: Add one mana of any color. Spend this mana only to cast a creature spell.\n{T}: Until end of turn, target creature you control with power 4 or greater gains trample and \"Whenever this creature deals combat damage to a player, draw a card.\"",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 144,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Heritage Reclamation",
+    "cost": "{1}{G}",
+    "text": "Choose one —\n• Destroy target artifact.\n• Destroy target enchantment.\n• Exile up to one target card from a graveyard. Draw a card.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 145,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Inspirited Vanguard",
+    "cost": "{4}{G}",
+    "text": "Whenever this creature enters or attacks, it endures 2. (Put two +1/+1 counters on it or create a 2/2 white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 146,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Knockout Maneuver",
+    "cost": "{2}{G}",
+    "text": "Put a +1/+1 counter on target creature you control, then it deals damage equal to its power to target creature an opponent controls.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 147,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Krotiq Nestguard",
+    "cost": "{2}{G}",
+    "text": "Defender\n{2}{G}: This creature can attack this turn as though it didn't have defender.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 148,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "defender"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Lasyd Prowler",
+    "cost": "{2}{G}{G}",
+    "text": "When this creature enters, you may mill cards equal to the number of lands you control.\nRenew — {1}{G}, Exile this card from your graveyard: Put X +1/+1 counters on target creature, where X is the number of land cards in your graveyard. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 149,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Nature's Rhythm",
+    "cost": "{X}{G}{G}",
+    "text": "Search your library for a creature card with mana value X or less, put it onto the battlefield, then shuffle.\nHarmonize {X}{G}{G}{G}{G} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by an amount of generic mana equal to its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 150,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Piercing Exhale",
+    "cost": "{1}{G}",
+    "text": "As an additional cost to cast this spell, you may behold a Dragon. (You may choose a Dragon you control or reveal a Dragon card from your hand.)\nTarget creature you control deals damage equal to its power to target creature or planeswalker. If a Dragon was beheld, surveil 2.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 151,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Rainveil Rejuvenator",
+    "cost": "{3}{G}",
+    "text": "When this creature enters, you may mill three cards. (You may put the top three cards of your library into your graveyard.)\n{T}: Add an amount of {G} equal to this creature's power.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 152,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Rite of Renewal",
+    "cost": "{3}{G}",
+    "text": "Return up to two target permanent cards from your graveyard to your hand. Target player shuffles up to four target cards from their graveyard into their library. Exile Rite of Renewal.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 153,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Roamer's Routine",
+    "cost": "{2}{G}",
+    "text": "Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nHarmonize {4}{G} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 154,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Sage of the Fang",
+    "cost": "{2}{G}",
+    "text": "When this creature enters, put a +1/+1 counter on target creature.\nRenew — {3}{G}, Exile this card from your graveyard: Put a +1/+1 counter on target creature, then double the number of +1/+1 counters on that creature. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 155,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Sagu Pummeler",
+    "cost": "{3}{G}",
+    "text": "Reach\nRenew — {4}{G}, Exile this card from your graveyard: Put two +1/+1 counters and a reach counter on target creature. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 156,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Sagu Wildling",
+    "cost": "{4}{G}",
+    "text": "Flying\nWhen this creature enters, you gain 3 life.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 157,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Roost Seek",
+      "cost": "{G}",
+      "text": "Search your library for a basic land card, reveal it, put it into your hand, then shuffle. (Also shuffle this card.)",
+      "set": "TDM",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Sagu Wildling // Roost Seek"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Sarkhan's Resolve",
+    "cost": "{1}{G}",
+    "text": "Choose one —\n• Target creature gets +3/+3 until end of turn.\n• Destroy target creature with flying.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 158,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Snakeskin Veil",
+    "cost": "{G}",
+    "text": "Put a +1/+1 counter on target creature you control. It gains hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 159,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Snake",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Sultai Devotee",
+    "cost": "{1}{G}",
+    "text": "Deathtouch\n{1}: Add {B}, {G}, or {U}. Activate only once each turn.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 160,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Surrak, Elusive Hunter",
+    "cost": "{2}{G}",
+    "text": "This spell can't be countered.\nTrample\nWhenever a creature you control or a creature spell you control becomes the target of a spell or ability an opponent controls, draw a card.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 161,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Synchronized Charge",
+    "cost": "{1}{G}",
+    "text": "Distribute two +1/+1 counters among one or two target creatures you control. Creatures you control with counters on them gain vigilance and trample until end of turn.\nHarmonize {4}{G} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 162,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Trade Route Envoy",
+    "cost": "{3}{G}",
+    "text": "When this creature enters, draw a card if you control a creature with a counter on it. If you don't draw a card this way, put a +1/+1 counter on this creature.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 163,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Traveling Botanist",
+    "cost": "{1}{G}",
+    "text": "Whenever this creature becomes tapped, look at the top card of your library. If it's a land card, you may reveal it and put it into your hand. If you don't put the card into your hand, you may put it into your graveyard.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 164,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Undergrowth Leopard",
+    "cost": "{1}{G}",
+    "text": "Vigilance\n{1}, Sacrifice this creature: Destroy target artifact or enchantment.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 165,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Hydra"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Warden of the Grove",
+    "cost": "{2}{G}",
+    "text": "At the beginning of your end step, put a +1/+1 counter on this creature.\nWhenever another nontoken creature you control enters, it endures X, where X is the number of counters on this creature. (Put X +1/+1 counters on the creature that entered or create an X/X white Spirit creature token.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 166,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "All-Out Assault",
+    "cost": "{2}{R}{W}{B}",
+    "text": "Creatures you control get +1/+1 and have deathtouch.\nWhen this enchantment enters, if it's your main phase, there is an additional combat phase after this phase followed by an additional main phase. When you next attack this turn, untap each creature you control.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 167,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Armament Dragon",
+    "cost": "{3}{W}{B}{G}",
+    "text": "Flying\nWhen this creature enters, distribute three +1/+1 counters among one, two, or three target creatures you control.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 168,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Auroral Procession",
+    "cost": "{G}{U}",
+    "text": "Return target card from your graveyard to your hand.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 169,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Awaken the Honored Dead",
+    "cost": "{B}{G}{U}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Destroy target nonland permanent.\nII — Mill three cards.\nIII — You may discard a card. When you do, return target creature or land card from your graveyard to your hand.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 170,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Barrensteppe Siege",
+    "cost": "{2}{W}{B}",
+    "text": "As this enchantment enters, choose Abzan or Mardu.\n• Abzan — At the beginning of your end step, put a +1/+1 counter on each creature you control.\n• Mardu — At the beginning of your end step, if a creature died under your control this turn, each opponent sacrifices a creature of their choice.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 171,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Betor, Kin to All",
+    "cost": "{2}{W}{B}{G}",
+    "text": "Flying\nAt the beginning of your end step, if creatures you control have total toughness 10 or greater, draw a card. Then if creatures you control have total toughness 20 or greater, untap each creature you control. Then if creatures you control have total toughness 40 or greater, each opponent loses half their life, rounded up.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 172,
+    "power": 5,
+    "toughness": 7,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Bone-Cairn Butcher",
+    "cost": "{1}{R}{W}{B}",
+    "text": "Mobilize 2 (Whenever this creature attacks, create two tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.)\nAttacking tokens you control have deathtouch.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 173,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Call the Spirit Dragons",
+    "cost": "{W}{U}{B}{R}{G}",
+    "text": "Dragons you control have indestructible.\nAt the beginning of your upkeep, for each color, put a +1/+1 counter on a Dragon you control of that color. If you put +1/+1 counters on five Dragons this way, you win the game.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 174,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Cori Mountain Stalwart",
+    "cost": "{1}{R}{W}",
+    "text": "Flurry — Whenever you cast your second spell each turn, this creature deals 2 damage to each opponent and you gain 2 life.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 175,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Death Begets Life",
+    "cost": "{5}{B}{G}{U}",
+    "text": "Destroy all creatures and enchantments. Draw a card for each permanent destroyed this way.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 176,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Defibrillating Current",
+    "cost": "{2/R}{2/W}{2/B}",
+    "text": "Defibrillating Current deals 4 damage to target creature or planeswalker and you gain 2 life.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 177,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Disruptive Stormbrood",
+    "cost": "{4}{G}",
+    "text": "Flying\nWhen this creature enters, destroy up to one target artifact or enchantment.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 178,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Petty Revenge",
+      "cost": "{1}{B}",
+      "text": "Destroy target creature with power 3 or less. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Disruptive Stormbrood // Petty Revenge"
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Dragonback Assault",
+    "cost": "{3}{G}{U}{R}",
+    "text": "When this enchantment enters, it deals 3 damage to each creature and each planeswalker.\nLandfall — Whenever a land you control enters, create a 4/4 red Dragon creature token with flying.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 179,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Dragonclaw Strike",
+    "cost": "{2/G}{2/U}{2/R}",
+    "text": "Double the power and toughness of target creature you control until end of turn. Then it fights up to one target creature an opponent controls. (Each deals damage equal to its power to the other.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 180,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Effortless Master",
+    "cost": "{2}{U}{R}",
+    "text": "Vigilance\nMenace (This creature can't be blocked except by two or more creatures.)\nThis creature enters with two +1/+1 counters on it if you've cast two or more spells this turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 181,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "vigilance",
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Eshki Dragonclaw",
+    "cost": "{1}{G}{U}{R}",
+    "text": "Vigilance, trample, ward {1}\nAt the beginning of combat on your turn, if you've cast both a creature spell and a noncreature spell this turn, draw a card and put two +1/+1 counters on Eshki Dragonclaw.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 182,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Fangkeeper's Familiar",
+    "cost": "{1}{B}{G}{U}",
+    "text": "Flash\nWhen this creature enters, choose one —\n• You gain 3 life and surveil 3. (Look at the top three cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\n• Destroy target enchantment.\n• Counter target creature spell.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 183,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Felothar, Dawn of the Abzan",
+    "cost": "{W}{B}{G}",
+    "text": "Trample\nWhenever Felothar enters or attacks, you may sacrifice a nonland permanent. When you do, put a +1/+1 counter on each creature you control.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 184,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Flamehold Grappler",
+    "cost": "{U}{R}{W}",
+    "text": "First strike\nWhen this creature enters, copy the next spell you cast this turn when you cast it. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 185,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "first_strike"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Frontline Rush",
+    "cost": "{R}{W}",
+    "text": "Choose one —\n• Create two 1/1 red Goblin creature tokens.\n• Target creature gets +X/+X until end of turn, where X is the number of creatures you control.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 186,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Frostcliff Siege",
+    "cost": "{1}{U}{R}",
+    "text": "As this enchantment enters, choose Jeskai or Temur.\n• Jeskai — Whenever one or more creatures you control deal combat damage to a player, draw a card.\n• Temur — Creatures you control get +1/+0 and have trample and haste.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 187,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Glacial Dragonhunt",
+    "cost": "{U}{R}",
+    "text": "Draw a card, then you may discard a card. When you discard a nonland card this way, Glacial Dragonhunt deals 3 damage to target creature.\nHarmonize {4}{U}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 188,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Glacierwood Siege",
+    "cost": "{1}{G}{U}",
+    "text": "As this enchantment enters, choose Temur or Sultai.\n• Temur — Whenever you cast an instant or sorcery spell, target player mills four cards.\n• Sultai — You may play lands from your graveyard.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 189,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Gurmag Nightwatch",
+    "cost": "{2/B}{2/G}{2/U}",
+    "text": "When this creature enters, look at the top three cards of your library. You may put one of those cards back on top of your library. Put the rest into your graveyard.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 190,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Hardened Tactician",
+    "cost": "{1}{W}{B}",
+    "text": "{1}, Sacrifice a token: Draw a card.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 191,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Hollowmurk Siege",
+    "cost": "{B}{G}",
+    "text": "As this enchantment enters, choose Sultai or Abzan.\n• Sultai — Whenever a counter is put on a creature you control, draw a card. This ability triggers only once each turn.\n• Abzan — Whenever you attack, put a +1/+1 counter on target attacking creature. It gains menace until end of turn.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 192,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Warlock"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Host of the Hereafter",
+    "cost": "{2}{B}{G}",
+    "text": "This creature enters with two +1/+1 counters on it.\nWhenever this creature or another creature you control dies, if it had counters on it, put its counters on up to one target creature you control.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 193,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Inevitable Defeat",
+    "cost": "{1}{R}{W}{B}",
+    "text": "This spell can't be countered.\nExile target nonland permanent. Its controller loses 3 life and you gain 3 life.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 194,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Monk"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Jeskai Brushmaster",
+    "cost": "{1}{U}{R}{W}",
+    "text": "Double strike\nProwess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 195,
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "double_strike",
+      "prowess"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Jeskai Revelation",
+    "cost": "{4}{U}{R}{W}",
+    "text": "Return target spell or permanent to its owner's hand. Jeskai Revelation deals 4 damage to any target. Create two 1/1 white Monk creature tokens with prowess. Draw two cards. You gain 4 life.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 196,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Jeskai Shrinekeeper",
+    "cost": "{2}{U}{R}{W}",
+    "text": "Flying, haste\nWhenever this creature deals combat damage to a player, you gain 1 life and draw a card.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 197,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Karakyk Guardian",
+    "cost": "{3}{G}{U}{R}",
+    "text": "Flying, vigilance, trample\nThis creature has hexproof as long as it hasn't dealt damage yet. (It can't be the target of spells or abilities your opponents control.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 198,
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "vigilance",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Kheru Goldkeeper",
+    "cost": "{1}{B}{G}{U}",
+    "text": "Flying\nWhenever one or more cards leave your graveyard during your turn, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nRenew — {2}{B}{G}{U}, Exile this card from your graveyard: Put two +1/+1 counters and a flying counter on target creature. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 199,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Kin-Tree Severance",
+    "cost": "{2/W}{2/B}{2/G}",
+    "text": "Exile target permanent with mana value 3 or greater.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 200,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Kishla Skimmer",
+    "cost": "{G}{U}",
+    "text": "Flying\nWhenever a card leaves your graveyard during your turn, draw a card. This ability triggers only once each turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 201,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Kotis, the Fangkeeper",
+    "cost": "{1}{B}{G}{U}",
+    "text": "Indestructible\nWhenever Kotis deals combat damage to a player, exile the top X cards of their library, where X is the amount of damage dealt. You may cast any number of spells with mana value X or less from among them without paying their mana costs.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 202,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "indestructible"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Lie in Wait",
+    "cost": "{B}{G}{U}",
+    "text": "Return target creature card from your graveyard to your hand. Lie in Wait deals damage equal to that card's power to target creature.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 203,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Lotuslight Dancers",
+    "cost": "{2}{B}{G}{U}",
+    "text": "Lifelink\nWhen this creature enters, search your library for a black card, a green card, and a blue card. Put those cards into your graveyard, then shuffle.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 204,
+    "power": 3,
+    "toughness": 6,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Mammoth Bellow",
+    "cost": "{2}{G}{U}{R}",
+    "text": "Create a 5/5 green Elephant creature token.\nHarmonize {5}{G}{U}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 205,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Mardu Siegebreaker",
+    "cost": "{1}{R}{W}{B}",
+    "text": "Deathtouch, haste\nWhen this creature enters, exile up to one other target creature you control until this creature leaves the battlefield.\nWhenever this creature attacks, for each opponent, create a tapped token that's a copy of the exiled card attacking that opponent. At the beginning of your next end step, sacrifice those tokens.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 206,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Marshal of the Lost",
+    "cost": "{2}{W}{B}",
+    "text": "Deathtouch\nWhenever you attack, target creature gets +X/+X until end of turn, where X is the number of attacking creatures.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 207,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Monastery Messenger",
+    "cost": "{2/U}{2/R}{2/W}",
+    "text": "Flying, vigilance\nWhen this creature enters, put up to one target noncreature, nonland card from your graveyard on top of your library.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 208,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Monk"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Narset, Jeskai Waymaster",
+    "cost": "{U}{R}{W}",
+    "text": "At the beginning of your end step, you may discard your hand. If you do, draw cards equal to the number of spells you've cast this turn.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 209,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Neriv, Heart of the Storm",
+    "cost": "{1}{R}{W}{B}",
+    "text": "Flying\nIf a creature you control that entered this turn would deal damage, it deals twice that much damage instead.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 210,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "New Way Forward",
+    "cost": "{2}{U}{R}{W}",
+    "text": "The next time a source of your choice would deal damage to you this turn, prevent that damage. When damage is prevented this way, New Way Forward deals that much damage to that source's controller and you draw that many cards.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 211,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Perennation",
+    "cost": "{3}{W}{B}{G}",
+    "text": "Return target permanent card from your graveyard to the battlefield with a hexproof counter and an indestructible counter on it.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 212,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Purging Stormbrood",
+    "cost": "{4}{B}",
+    "text": "Flying\nWard—Pay 2 life.\nWhen this creature enters, remove all counters from up to one target creature.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 213,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Absorb Essence",
+      "cost": "{1}{W}",
+      "text": "Target creature gets +2/+2 and gains lifelink and hexproof until end of turn. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Purging Stormbrood // Absorb Essence"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Rakshasa's Bargain",
+    "cost": "{2/B}{2/G}{2/U}",
+    "text": "Look at the top four cards of your library. Put two of them into your hand and the rest into your graveyard.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 214,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Rediscover the Way",
+    "cost": "{U}{R}{W}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II — Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.\nIII — Whenever you cast a noncreature spell this turn, target creature you control gains double strike until end of turn.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 215,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Reigning Victor",
+    "cost": "{2/R}{2/W}{2/B}",
+    "text": "Mobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)\nWhen this creature enters, target creature gets +1/+0 and gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 216,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Reputable Merchant",
+    "cost": "{2/W}{2/B}{2/G}",
+    "text": "When this creature enters or dies, put a +1/+1 counter on target creature you control.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 217,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Revival of the Ancestors",
+    "cost": "{1}{W}{B}{G}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Create three 1/1 white Spirit creature tokens.\nII — Distribute three +1/+1 counters among one, two, or three target creatures you control.\nIII — Creatures you control gain trample and lifelink until end of turn.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 218,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Riverwheel Sweep",
+    "cost": "{2/U}{2/R}{2/W}",
+    "text": "Tap target creature. Put three stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nExile the top two cards of your library. Choose one of them. Until the end of your next turn, you may play that card.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 219,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Roar of Endless Song",
+    "cost": "{2}{G}{U}{R}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II — Create a 5/5 green Elephant creature token.\nIII — Double the power and toughness of each creature you control until end of turn.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 220,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Runescale Stormbrood",
+    "cost": "{3}{R}",
+    "text": "Flying\nWhenever you cast a noncreature spell or a Dragon spell, this creature gets +2/+0 until end of turn.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 221,
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Chilling Screech",
+      "cost": "{1}{U}",
+      "text": "Counter target spell with mana value 2 or less. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Runescale Stormbrood // Chilling Screech"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Djinn",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Severance Priest",
+    "cost": "{W}{B}{G}",
+    "text": "Deathtouch\nWhen this creature enters, target opponent reveals their hand. You may choose a nonland card from it. If you do, exile that card.\nWhen this creature leaves the battlefield, the exiled card's owner creates an X/X white Spirit creature token, where X is the mana value of the exiled card.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 222,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Shiko, Paragon of the Way",
+    "cost": "{2}{U}{R}{W}",
+    "text": "Flying, vigilance\nWhen Shiko enters, exile target nonland card with mana value 3 or less from your graveyard. Copy it, then you may cast the copy without paying its mana cost. (A copy of a permanent spell becomes a token.)",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 223,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rhino"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Skirmish Rhino",
+    "cost": "{W}{B}{G}",
+    "text": "Trample\nWhen this creature enters, each opponent loses 2 life and you gain 2 life.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 224,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Songcrafter Mage",
+    "cost": "{G}{U}{R}",
+    "text": "Flash\nWhen this creature enters, target instant or sorcery card in your graveyard gains harmonize until end of turn. Its harmonize cost is equal to its mana cost. (You may cast that card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile the spell.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 225,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Sonic Shrieker",
+    "cost": "{2}{R}{W}{B}",
+    "text": "Flying\nWhen this creature enters, it deals 2 damage to any target and you gain 2 life. If a player is dealt damage this way, they discard a card.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 226,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Stalwart Successor",
+    "cost": "{1}{B}{G}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever one or more counters are put on a creature you control, if it's the first time counters have been put on that creature this turn, put a +1/+1 counter on that creature.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 227,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Temur Battlecrier",
+    "cost": "{G}{U}{R}",
+    "text": "During your turn, spells you cast cost {1} less to cast for each creature you control with power 4 or greater.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 228,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Temur Tawnyback",
+    "cost": "{2/G}{2/U}{2/R}",
+    "text": "When this creature enters, draw a card, then discard a card.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 229,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Teval, Arbiter of Virtue",
+    "cost": "{2}{B}{G}{U}",
+    "text": "Flying, lifelink\nSpells you cast have delve. (Each card you exile from your graveyard while casting those spells pays for {1}.)\nWhenever you cast a spell, you lose life equal to its mana value.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 230,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "flying",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Thunder of Unity",
+    "cost": "{R}{W}{B}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — You draw two cards and you lose 2 life.\nII, III — Whenever a creature you control enters this turn, each opponent loses 1 life and you gain 1 life.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 231,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Twinmaw Stormbrood",
+    "cost": "{5}{W}",
+    "text": "Flying\nWhen this creature enters, you gain 5 life.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 232,
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Charring Bite",
+      "cost": "{1}{R}",
+      "text": "Charring Bite deals 5 damage to target creature without flying. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Twinmaw Stormbrood // Charring Bite"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "name": "Ureni, the Song Unending",
+    "cost": "{5}{G}{U}{R}",
+    "text": "Flying, protection from white and from black\nWhen Ureni enters, it deals X damage divided as you choose among any number of target creatures and/or planeswalkers your opponents control, where X is the number of lands you control.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 233,
+    "power": 10,
+    "toughness": 10,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Whirlwing Stormbrood",
+    "cost": "{4}{U}",
+    "text": "Flash\nFlying\nYou may cast sorcery spells and Dragon spells as though they had flash.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 234,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flash",
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Dynamic Soar",
+      "cost": "{2}{G}",
+      "text": "Put three +1/+1 counters on target creature you control. (Then shuffle this card into its owner's library.)",
+      "set": "TDM",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Whirlwing Stormbrood // Dynamic Soar"
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Windcrag Siege",
+    "cost": "{1}{R}{W}",
+    "text": "As this enchantment enters, choose Mardu or Jeskai.\n• Mardu — If a creature attacking causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time.\n• Jeskai — At the beginning of your upkeep, create a 1/1 red Goblin creature token. It gains lifelink and haste until end of turn.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 235,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G",
+      "W"
+    ],
+    "name": "Yathan Roadwatcher",
+    "cost": "{1}{W}{B}{G}",
+    "text": "When this creature enters, if you cast it, mill four cards. When you do, return target creature card with mana value 3 or less from your graveyard to the battlefield.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 236,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Orc",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R",
+      "W"
+    ],
+    "name": "Zurgo, Thunder's Decree",
+    "cost": "{R}{W}{B}",
+    "text": "Mobilize 2 (Whenever this creature attacks, create two tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.)\nDuring your end step, Warrior tokens you control have \"This token can't be sacrificed.\"",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 237,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Abzan Monument",
+    "cost": "{2}",
+    "text": "When this artifact enters, search your library for a basic Plains, Swamp, or Forest card, reveal it, put it into your hand, then shuffle.\n{1}{W}{B}{G}, {T}, Sacrifice this artifact: Create an X/X white Spirit creature token, where X is the greatest toughness among creatures you control. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 238,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Boulderborn Dragon",
+    "cost": "{5}",
+    "text": "Flying, vigilance\nWhenever this creature attacks, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 239,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Dragonfire Blade",
+    "cost": "{1}",
+    "text": "Equipped creature gets +2/+2 and has hexproof from monocolored.\nEquip {4}. This ability costs {1} less to activate for each color of the creature it targets.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 240,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Dragonstorm Globe",
+    "cost": "{3}",
+    "text": "Each Dragon you control enters with an additional +1/+1 counter on it.\n{T}: Add one mana of any color.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 241,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Chimera"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Embermouth Sentinel",
+    "cost": "{2}",
+    "text": "When this creature enters, you may search your library for a basic land card, reveal it, then shuffle and put that card on top. If you control a Dragon, put that card onto the battlefield tapped instead.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 242,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Ape",
+      "Snake"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Jade-Cast Sentinel",
+    "cost": "{4}",
+    "text": "Reach\n{2}, {T}: Put target card from a graveyard on the bottom of its owner's library.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 243,
+    "power": 1,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Jeskai Monument",
+    "cost": "{2}",
+    "text": "When this artifact enters, search your library for a basic Island, Mountain, or Plains card, reveal it, put it into your hand, then shuffle.\n{1}{U}{R}{W}, {T}, Sacrifice this artifact: Create two 1/1 white Bird creature tokens with flying. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 244,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Mardu Monument",
+    "cost": "{2}",
+    "text": "When this artifact enters, search your library for a basic Mountain, Plains, or Swamp card, reveal it, put it into your hand, then shuffle.\n{2}{R}{W}{B}, {T}, Sacrifice this artifact: Create three 1/1 red Warrior creature tokens. They gain menace and haste until end of turn. Activate only as a sorcery. (A creature with menace can't be blocked except by two or more creatures.)",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 245,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Mox Jasper",
+    "cost": "{0}",
+    "text": "{T}: Add one mana of any color. Activate only if you control a Dragon.",
+    "set": "TDM",
+    "rarity": "M",
+    "number": 246,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sultai Monument",
+    "cost": "{2}",
+    "text": "When this artifact enters, search your library for a basic Swamp, Forest, or Island card, reveal it, put it into your hand, then shuffle.\n{2}{B}{G}{U}, {T}, Sacrifice this artifact: Create two 2/2 black Zombie Druid creature tokens. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 247,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Temur Monument",
+    "cost": "{2}",
+    "text": "When this artifact enters, search your library for a basic Forest, Island, or Mountain card, reveal it, put it into your hand, then shuffle.\n{3}{G}{U}{R}, {T}, Sacrifice this artifact: Create a 5/5 green Elephant creature token. Activate only as a sorcery.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 248,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Golem"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Watcher of the Wayside",
+    "cost": "{3}",
+    "text": "When this creature enters, target player mills two cards. You gain 2 life. (To mill two cards, a player puts the top two cards of their library into their graveyard.)",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 249,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Bloodfell Caves",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {B} or {R}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 250,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Blossoming Sands",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {G} or {W}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 251,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Cori Mountain Monastery",
+    "cost": "",
+    "text": "This land enters tapped unless you control a Plains or an Island.\n{T}: Add {R}.\n{3}{R}, {T}: Exile the top card of your library. Until the end of your next turn, you may play that card.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 252,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Dalkovan Encampment",
+    "cost": "",
+    "text": "This land enters tapped unless you control a Swamp or a Mountain.\n{T}: Add {W}.\n{2}{W}, {T}: Whenever you attack this turn, create two 1/1 red Warrior creature tokens that are tapped and attacking. Sacrifice them at the beginning of the next end step.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 253,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Dismal Backwater",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {B}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 254,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Evolving Wilds",
+    "cost": "",
+    "text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 255,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Frontier Bivouac",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {G}, {U}, or {R}.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 256,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Great Arashin City",
+    "cost": "",
+    "text": "This land enters tapped unless you control a Forest or a Plains.\n{T}: Add {B}.\n{1}{B}, {T}, Exile a creature card from your graveyard: Create a 1/1 white Spirit creature token.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 257,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Jungle Hollow",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {B} or {G}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 258,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Kishla Village",
+    "cost": "",
+    "text": "This land enters tapped unless you control an Island or a Swamp.\n{T}: Add {G}.\n{3}{G}, {T}: Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 259,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Maelstrom of the Spirit Dragon",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a Dragon spell or an Omen spell.\n{4}, {T}, Sacrifice this land: Search your library for a Dragon card, reveal it, put it into your hand, then shuffle.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 260,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Mistrise Village",
+    "cost": "",
+    "text": "This land enters tapped unless you control a Mountain or a Forest.\n{T}: Add {U}.\n{U}, {T}: The next spell you cast this turn can't be countered.",
+    "set": "TDM",
+    "rarity": "R",
+    "number": 261,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Mystic Monastery",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {U}, {R}, or {W}.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 262,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Nomad Outpost",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {R}, {W}, or {B}.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 263,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Opulent Palace",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {B}, {G}, or {U}.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 264,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Rugged Highlands",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {G}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 265,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sandsteppe Citadel",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {W}, {B}, or {G}.",
+    "set": "TDM",
+    "rarity": "U",
+    "number": 266,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Scoured Barrens",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {B}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 267,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Swiftwater Cliffs",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {R}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 268,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Thornwood Falls",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {G} or {U}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 269,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Tranquil Cove",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {U}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 270,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Wind-Scarred Crag",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {W}.",
+    "set": "TDM",
+    "rarity": "C",
+    "number": 271,
+    "keywords": []
+  }
+]

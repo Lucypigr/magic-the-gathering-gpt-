@@ -1,0 +1,1604 @@
+{
+  "4": {
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "yourTurn"
+          },
+          "grant": {
+            "kw": [
+              "first_strike"
+            ]
+          }
+        }
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{4}{W}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": {
+              "all": {
+                "type": "Creature",
+                "ctrl": "you"
+              }
+            },
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "label": "由你操控的生物得+1/+1直到回合結"
+      }
+    ]
+  },
+  "7": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-warrior-r11",
+            "n": 3,
+            "tapped": true,
+            "attacking": true,
+            "temp": true
+          }
+        ]
+      }
+    ]
+  },
+  "9": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-warrior-r11",
+            "n": 1,
+            "tapped": true,
+            "attacking": true,
+            "temp": true
+          }
+        ]
+      }
+    ]
+  },
+  "12": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "endure",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "14": {
+    "spell": {
+      "effects": [
+        {
+          "e": "counters",
+          "what": "T0",
+          "n": 1
+        },
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 0,
+          "t": 0,
+          "kw": [
+            "flying",
+            "indestructible"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "15": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "combatStart",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            },
+            "notSelf": true
+          }
+        ]
+      }
+    ]
+  },
+  "18": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "castAny",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          },
+          {
+            "e": "scry",
+            "n": 1
+          }
+        ],
+        "cond": {
+          "c": "secondSpell"
+        }
+      }
+    ]
+  },
+  "20": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 3,
+          "t": 0
+        },
+        {
+          "e": "draw",
+          "n": 1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "21": {
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "combatStart",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 0
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            },
+            "notSelf": true
+          }
+        ]
+      }
+    ],
+    "adventure": {
+      "name": "Signaling Roar",
+      "cost": "{1}{W}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Create a 2/2 white Soldier creature token. (Then shuffle this card into its owner's library.)",
+      "spell": {
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-soldier-22-w"
+          }
+        ]
+      },
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "set": "TDM",
+      "rarity": "C"
+    },
+    "imageName": "Riling Dawnbreaker // Signaling Roar"
+  },
+  "23": {
+    "costReduce": {
+      "perCount": {
+        "type": "Creature"
+      }
+    },
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "36": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}{U}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 2
+          }
+        ],
+        "label": "在目標生物上放置兩個+1/+1指示物",
+        "fromGraveyard": true,
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ],
+        "sorcery": true
+      }
+    ]
+  },
+  "38": {
+    "spell": {
+      "effects": [
+        {
+          "e": "draw",
+          "n": 3
+        },
+        {
+          "e": "pump",
+          "what": {
+            "all": {
+              "type": "Creature",
+              "ctrl": "opp"
+            }
+          },
+          "p": -3,
+          "t": 0
+        }
+      ]
+    }
+  },
+  "40": {
+    "ward": 2,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "name": "Skimming Strike",
+      "cost": "{1}{U}",
+      "types": [
+        "Instant"
+      ],
+      "text": "Tap up to one target creature. Draw a card. (Then shuffle this card into its owner's library.)",
+      "spell": {
+        "effects": [
+          {
+            "e": "tap",
+            "what": "T0"
+          },
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "optional": true
+          }
+        ]
+      },
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "set": "TDM",
+      "rarity": "C"
+    },
+    "imageName": "Dirgur Island Dragon // Skimming Strike"
+  },
+  "48": {
+    "keywords": [
+      "flash"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": -2,
+            "t": 0
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "opp"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "49": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "bounce",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "opp"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "62": {
+    "harmonize": "{5}{U}",
+    "spell": {
+      "effects": [
+        {
+          "e": "draw",
+          "n": 1
+        }
+      ]
+    }
+  },
+  "63": {
+    "harmonize": "{5}{U}",
+    "spell": {
+      "effects": [
+        {
+          "e": "bounce",
+          "what": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "65": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "castAny",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-bird-11-w-flying"
+          }
+        ],
+        "cond": {
+          "c": "secondSpell"
+        }
+      }
+    ]
+  },
+  "69": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-zombie-druid-22-b"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{B}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "label": "在目標生物上放置一個+1/+1指示物",
+        "fromGraveyard": true,
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ],
+        "sorcery": true
+      }
+    ]
+  },
+  "72": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 0,
+          "t": 0,
+          "kw": [
+            "deathtouch",
+            "indestructible"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "you"
+          }
+        }
+      ]
+    }
+  },
+  "76": {
+    "spell": {
+      "effects": [
+        {
+          "e": "surveil",
+          "n": 2
+        },
+        {
+          "e": "draw",
+          "n": 2
+        },
+        {
+          "e": "lose",
+          "n": 2,
+          "who": "you"
+        }
+      ]
+    }
+  },
+  "83": {
+    "keywords": [
+      "lifelink"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "endure",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "85": {
+    "keywords": [
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-warrior-r11",
+            "n": 1,
+            "tapped": true,
+            "attacking": true,
+            "temp": true
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "89": {
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "endure",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "95": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}",
+          "sacOther": {
+            "type": "Creature",
+            "other": true
+          }
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ],
+        "label": "在此生物上放置一個+1/+1指示物"
+      }
+    ]
+  },
+  "102": {
+    "harmonize": "{5}{R}{R}",
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 2,
+          "to": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "any"
+        }
+      ]
+    }
+  },
+  "104": {
+    "keywords": [
+      "haste"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "castAny",
+        "effects": [
+          {
+            "e": "damage",
+            "n": 1,
+            "to": "opp"
+          }
+        ],
+        "cond": {
+          "c": "secondSpell"
+        }
+      }
+    ]
+  },
+  "112": {
+    "keywords": [
+      "prowess"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ]
+      }
+    ]
+  },
+  "120": {
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-warrior-r11",
+            "n": 1,
+            "tapped": true,
+            "attacking": true,
+            "temp": true
+          }
+        ]
+      }
+    ]
+  },
+  "121": {
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "allyEtb",
+        "effects": [
+          {
+            "e": "damage",
+            "n": 1,
+            "to": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "opponent"
+          }
+        ]
+      }
+    ]
+  },
+  "129": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-goblin-11-r"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "unblockable"
+            ]
+          }
+        ],
+        "label": "目標由你操控的力量為2或更少的生物本",
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you",
+              "powMax": 2
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "132": {
+    "harmonize": "{4}{R}",
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 3,
+          "t": 0,
+          "kw": [
+            "haste"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "139": {
+    "keywords": [
+      "reach",
+      "vigilance",
+      "deathtouch"
+    ]
+  },
+  "141": {
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "endure",
+            "n": 3
+          }
+        ]
+      }
+    ]
+  },
+  "146": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "endure",
+            "n": 2
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "endure",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "154": {
+    "harmonize": "{4}{G}",
+    "spell": {
+      "effects": [
+        {
+          "e": "searchLand",
+          "to": "battlefield",
+          "tapped": true
+        }
+      ]
+    }
+  },
+  "157": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 3
+          }
+        ]
+      }
+    ],
+    "adventure": {
+      "name": "Roost Seek",
+      "cost": "{G}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Search your library for a basic land card, reveal it, put it into your hand, then shuffle. (Also shuffle this card.)",
+      "spell": {
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "hand"
+          }
+        ]
+      },
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "set": "TDM",
+      "rarity": "C"
+    },
+    "imageName": "Sagu Wildling // Roost Seek"
+  },
+  "158": {
+    "spell": {
+      "modes": [
+        {
+          "text": "目標生物得+3/+3直到回合結束",
+          "effects": [
+            {
+              "e": "pump",
+              "what": "T0",
+              "p": 3,
+              "t": 3
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature"
+            }
+          ]
+        },
+        {
+          "text": "消滅目標具飛行異能的生物",
+          "effects": [
+            {
+              "e": "destroy",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "kw": "flying"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "159": {
+    "spell": {
+      "effects": [
+        {
+          "e": "counters",
+          "what": "T0",
+          "n": 1
+        },
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 0,
+          "t": 0,
+          "kw": [
+            "hexproof"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "you"
+          }
+        }
+      ]
+    }
+  },
+  "165": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "destroy",
+            "what": "T0"
+          }
+        ],
+        "label": "消滅目標神器或結界",
+        "targets": [
+          {
+            "kind": "permanent",
+            "filter": {
+              "type": [
+                "Artifact",
+                "Enchantment"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "178": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "destroy",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "permanent",
+            "filter": {
+              "type": [
+                "Artifact",
+                "Enchantment"
+              ]
+            },
+            "optional": true
+          }
+        ]
+      }
+    ],
+    "adventure": {
+      "name": "Petty Revenge",
+      "cost": "{1}{B}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Destroy target creature with power 3 or less. (Then shuffle this card into its owner's library.)",
+      "spell": {
+        "effects": [
+          {
+            "e": "destroy",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "powMax": 3
+            }
+          }
+        ]
+      },
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "set": "TDM",
+      "rarity": "U"
+    },
+    "imageName": "Disruptive Stormbrood // Petty Revenge"
+  },
+  "191": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "sacOther": {
+            "token": true
+          }
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌"
+      }
+    ]
+  },
+  "195": {
+    "keywords": [
+      "double_strike",
+      "prowess"
+    ]
+  },
+  "197": {
+    "keywords": [
+      "flying",
+      "haste"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "combatDamagePlayer",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          },
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "205": {
+    "harmonize": "{5}{G}{U}{R}",
+    "spell": {
+      "effects": [
+        {
+          "e": "token",
+          "token": "tok-g-elephant-55-g"
+        }
+      ]
+    }
+  },
+  "214": {
+    "spell": {
+      "effects": [
+        {
+          "e": "dig",
+          "n": 4,
+          "take": 2,
+          "rest": "graveyard"
+        }
+      ]
+    }
+  },
+  "216": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-warrior-r11",
+            "n": 1,
+            "tapped": true,
+            "attacking": true,
+            "temp": true
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 0,
+            "kw": [
+              "indestructible"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      }
+    ]
+  },
+  "217": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "224": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 2,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "229": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          },
+          {
+            "e": "discard",
+            "n": 1,
+            "who": "you"
+          }
+        ]
+      }
+    ]
+  },
+  "232": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 5
+          }
+        ]
+      }
+    ],
+    "adventure": {
+      "name": "Charring Bite",
+      "cost": "{1}{R}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Charring Bite deals 5 damage to target creature without flying. (Then shuffle this card into its owner's library.)",
+      "spell": {
+        "effects": [
+          {
+            "e": "damage",
+            "n": 5,
+            "to": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "nonKw": "flying"
+            }
+          }
+        ]
+      },
+      "subtypes": [
+        "Omen"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "set": "TDM",
+      "rarity": "U"
+    },
+    "imageName": "Twinmaw Stormbrood // Charring Bite"
+  },
+  "239": {
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "249": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "mill",
+            "n": 2,
+            "who": "T0"
+          },
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ],
+        "targets": [
+          {
+            "kind": "player"
+          }
+        ]
+      }
+    ]
+  },
+  "250": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "B",
+      "R"
+    ]
+  },
+  "251": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "G",
+      "W"
+    ]
+  },
+  "254": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "U",
+      "B"
+    ]
+  },
+  "255": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "battlefield",
+            "tapped": true
+          }
+        ],
+        "label": "從你的牌庫中搜尋一張基本地牌，將它橫"
+      }
+    ]
+  },
+  "256": {
+    "etbTapped": true,
+    "produces": [
+      "G",
+      "U",
+      "R"
+    ]
+  },
+  "258": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "B",
+      "G"
+    ]
+  },
+  "259": {
+    "etbTappedUnless": {
+      "c": "controls",
+      "filter": {
+        "type": "Land",
+        "sub": [
+          "Island",
+          "Swamp"
+        ]
+      }
+    },
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}{G}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 2
+          }
+        ],
+        "label": "刺探2"
+      }
+    ],
+    "produces": [
+      "G"
+    ]
+  },
+  "262": {
+    "etbTapped": true,
+    "produces": [
+      "U",
+      "R",
+      "W"
+    ]
+  },
+  "263": {
+    "etbTapped": true,
+    "produces": [
+      "R",
+      "W",
+      "B"
+    ]
+  },
+  "264": {
+    "etbTapped": true,
+    "produces": [
+      "B",
+      "G",
+      "U"
+    ]
+  },
+  "265": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "R",
+      "G"
+    ]
+  },
+  "266": {
+    "etbTapped": true,
+    "produces": [
+      "W",
+      "B",
+      "G"
+    ]
+  },
+  "267": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "W",
+      "B"
+    ]
+  },
+  "268": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "U",
+      "R"
+    ]
+  },
+  "269": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "G",
+      "U"
+    ]
+  },
+  "270": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "W",
+      "U"
+    ]
+  },
+  "271": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "R",
+      "W"
+    ]
+  }
+}

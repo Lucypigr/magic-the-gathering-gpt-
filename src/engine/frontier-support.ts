@@ -1,3 +1,4 @@
+import {orbitCondition,orbitAmount,orbitTrigger,orbitBaseStats} from './orbit';
 import {campusAmount,campusCondition,campusTrigger,campusObserve,campusBaseStats,campusStats,campusGrantedAbilities} from './campus-support';
 import {meadowAmount,meadowCondition,meadowTrigger,meadowObserve,meadowBaseStats,meadowStats,meadowGrantedAbilities} from './meadow-support';
 import {foundationAmount,foundationCondition,foundationTrigger,foundationObserve,foundationBaseStats,foundationStats,foundationGrantedAbilities} from './foundation-support';
@@ -69,6 +70,7 @@ export function frontierAmount(
   x = 0,
   ev?: GameEvent,
 ) {
+  if(/^(eoe|tdm):/.test(key))return orbitAmount(g,pid,key);
   if(/^(lci|sos):/.test(key))return campusAmount(g,pid,source,key,x,ev);
   if(/^(blb|dft):/.test(key))return meadowAmount(g,pid,source,key,ev);
   if(/^(fdn|dsk):/.test(key))return foundationAmount(g,pid,source,key,ev);
@@ -112,6 +114,7 @@ export function frontierCondition(
   source: number,
   ev?:GameEvent,
 ) {
+  if(/^(eoe|tdm):/.test(c.action))return orbitCondition(g,c.action,pid,source,ev);
   if(/^(lci|sos):/.test(c.action))return campusCondition(g,c.action,pid,source,ev);
   if(/^(blb|dft):/.test(c.action))return meadowCondition(g,c.action,pid,source,ev);
   if(/^(fdn|dsk):/.test(c.action))return foundationCondition(g,c.action,pid,source);
@@ -148,6 +151,7 @@ export function frontierTrigger(
   a: TriggeredAbility,
   ev: GameEvent,
 ) {
+  if(/^(eoe|tdm):/.test(a.frontierEvent??''))return orbitTrigger(g,c,a,ev);
   if(/^(lci|sos):/.test(a.frontierEvent??''))return campusTrigger(g,c,a,ev);
   if(/^(blb|dft):/.test(a.frontierEvent??''))return meadowTrigger(g,c,a,ev);
   if(/^(fdn|dsk):/.test(a.frontierEvent??''))return foundationTrigger(g,c,a,ev);
@@ -332,6 +336,7 @@ export function frontierBaseStats(
   foundationBaseStats(g,c,st);
   meadowBaseStats(g,c,st);
   campusBaseStats(g,c,st);
+  orbitBaseStats(g,c,st);
   if (!abilitiesSuppressed(g, c)) {
     if (c.def.id === "regal-bunnicorn")
       st.p = st.t = g.battlefield.filter(

@@ -916,5 +916,155 @@
     "power": 0,
     "toughness": 0,
     "text": ""
+  },
+  {
+    "id": "tok-g-human-soldier-11-w",
+    "name": "Human Soldier",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-robot-22-",
+    "name": "Robot",
+    "colors": [],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "text": ""
+  },
+  {
+    "id": "tok-g-monk-11-w-prowess",
+    "name": "Monk",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Monk"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "prowess"
+    ],
+    "text": "勇行"
+  },
+  {
+    "id": "tok-g-soldier-22-w",
+    "name": "Soldier",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Soldier"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "text": ""
+  },
+  {
+    "id": "tok-g-zombie-druid-22-b",
+    "name": "Zombie Druid",
+    "colors": [
+      "B"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Druid"
+    ],
+    "power": 2,
+    "toughness": 2,
+    "text": ""
+  },
+  {
+    "id": "tok-g-bird-11-w-flying",
+    "name": "Bird",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-warrior-11-r",
+    "name": "Warrior",
+    "colors": [
+      "R"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Warrior"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
+  },
+  {
+    "id": "tok-g-elephant-55-g",
+    "name": "Elephant",
+    "colors": [
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant"
+    ],
+    "power": 5,
+    "toughness": 5,
+    "text": ""
+  },
+  {
+    "id": "tok-g-spirit-11-w",
+    "name": "Spirit",
+    "colors": [
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
   }
 ]

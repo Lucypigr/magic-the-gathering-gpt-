@@ -82,6 +82,7 @@ export const SUB_ZH: Record<string, string> = {
   Artificer: '工匠',
   Assassin: '刺客',
   Avatar: '化身',
+  Omen: '預兆',
   Badger: '獾',
   Bard: '詩人',
   Bat: '蝙蝠',

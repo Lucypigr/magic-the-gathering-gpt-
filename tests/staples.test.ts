@@ -1,6 +1,7 @@
+import {inHand,resolve,lands} from './helpers';
 import { describe, expect, it } from 'vitest';
 import '../src/data';
-import { canPlayLand, payCost } from '../src/engine/actions';
+import { canPlayLand, payCost,performAction } from '../src/engine/actions';
 import { runEffects } from '../src/engine/effects';
 import { parseCost } from '../src/engine/mana';
 import { getDef } from '../src/engine/registry';
@@ -95,13 +96,15 @@ describe('職業牌組常用卡', () => {
     expect(b.zone).toBe('library');
   });
 
-  it('星圖諮詢：檢視的張數等於你的地數', () => {
-    const g = mk();
-    const src = put(g, 0, 'plains');
-    put(g, 0, 'island');
-    const hand = g.players[0].hand.length;
-    run(g, src, getDef('consult-the-star-charts').spell!.modes![1].effects);
-    expect(g.players[0].hand.length).toBe(hand + 2);
+  it('星圖諮詢：依地數檢視，實際支付增幅後可抓兩張', () => {
+    for(const kicked of [false,true]){
+      const g=mk(),n=kicked?4:2;lands(g,0,'island',n);
+      const c=inHand(g,0,'consult-the-star-charts'),hand=g.players[0].hand.length;
+      expect(performAction(g,0,{type:'cast',card:c.id,alt:kicked?'kicked':undefined,targets:[]})).toBeNull();
+      let shown=0;
+      resolve(g,d=>{if(d.type==='choose'&&d.purpose==='dig'){shown=d.options.length;return{type:'choose',ids:d.options.slice(0,d.max)};}});
+      expect(shown).toBe(n);expect(g.players[0].hand.length).toBe(hand-1+(kicked?2:1));
+    }
   });
 
   it('咒語陷阱：只能反擊法術力值為2的咒語', () => {

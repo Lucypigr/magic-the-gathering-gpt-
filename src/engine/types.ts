@@ -1258,6 +1258,7 @@ export interface EotEffect extends Grant {
 
 /** 延遲觸發：本回合內，事件發生時觸發 */
 export interface DelayedTrigger {
+  targets?: TargetSpec[];
   frontierDynamic?:'players'|'creaturesX';frontierPlayer?:PID;frontierEvent?:string;mshEvent?:string;finEvent?:string;
   alone?: boolean;
   persistent?: boolean;

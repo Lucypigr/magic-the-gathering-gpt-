@@ -11,7 +11,7 @@ import type {
   Amt,
   Mode,
 } from "../../engine/types";
-export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS", catalog: any[], auto: object) {
+export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS" | "EOE" | "TDM", catalog: any[], auto: object) {
   const patches = new Map<number, Partial<CardDef>>(
     Object.entries(auto).map(([n, p]) => [Number(n), p]),
   );
@@ -59,11 +59,17 @@ export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS", 
       : {}),
     ...extra,
   });
-  const complete = () => {
+  const complete = (partial = false) => {
     for (const row of catalog) {
       const patch = patches.get(row.number);
-      if (!patch) throw Error(code + " missing " + row.number + " " + row.name);
+      if (!patch) { if(partial) continue; throw Error(code + " missing " + row.number + " " + row.name); }
       const old = defs.find((c) => c.id === slug(row.name));
+      // Partial batches must preserve the established definition of shared reprints.
+      if(partial&&old&&old.set!==code){
+        const list=(REPRINTS[code]??=[]);
+        if(!list.some(([id])=>id===old.id))list.push([old.id,row.rarity]);
+        continue;
+      }
       const c = {
         ...row,
         ...patch,
@@ -84,6 +90,12 @@ export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS", 
        for(const ab of c.abilities??[])if(ab.kind==='activated'&&ab.fromGraveyard)ab.effects=fixGrave(ab.effects);
 
      }
+      if(code==='EOE'||code==='TDM'){
+       const ward=row.text.match(/Ward \{(\d+)\}/);if(ward)c.ward=Number(ward[1]);
+       const warp=row.text.match(/^Warp ((?:\{[^}]+\})+)/m);if(warp)c.warp=warp[1];
+       const harmonize=row.text.match(/^Harmonize ((?:\{[^}]+\})+)/m);if(harmonize)c.harmonize=harmonize[1];
+       if(row.adventure)c.meadow={...c.meadow,orbitOmen:true};
+      }
       if(row.text.includes("This spell can't be countered."))c.uncounterable=true;
       const impending=row.text.match(/Impending (\d+)—((?:\{[^}]+\})+)/);if(impending)c.impending={n:Number(impending[1]),cost:impending[2]};
       if(code==='FDN'||code==='DSK')for(const ab of c.abilities??[]){if(ab.kind!=='trigger')continue;const lines=row.text.split('\n').filter((line:string)=>/^Whenever /.test(line));if(ab.on==='allyDies'&&lines.some((line:string)=>/you control dies/.test(line)&&(!/\b(?:another|other)\b/.test(line)||/(?:this creature|this permanent|another creature) or another/.test(line))))ab.includeSelf=true;}

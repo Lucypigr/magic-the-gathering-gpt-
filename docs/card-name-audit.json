@@ -1,15 +1,15 @@
 {
-  "cards": 4733,
-  "collectibleCards": 4728,
-  "tokens": 276,
-  "additionalFaces": 202,
-  "totalRows": 5211,
-  "uniqueEnglishNames": 5087,
-  "translatedRows": 5211,
+  "cards": 4788,
+  "collectibleCards": 4783,
+  "tokens": 287,
+  "additionalFaces": 206,
+  "totalRows": 5281,
+  "uniqueEnglishNames": 5146,
+  "translatedRows": 5281,
   "unresolved": [],
   "counts": {
-    "published": 1913,
-    "database": 3295,
+    "published": 1924,
+    "database": 3354,
     "terminology": 3
   },
   "bySet": {
@@ -63,10 +63,10 @@
       "terminology": 0
     },
     "EOE": {
-      "cards": 111,
-      "translated": 111,
+      "cards": 138,
+      "translated": 138,
       "published": 8,
-      "database": 103,
+      "database": 130,
       "terminology": 0
     },
     "FIN": {
@@ -77,10 +77,10 @@
       "terminology": 0
     },
     "TDM": {
-      "cards": 122,
-      "translated": 122,
+      "cards": 150,
+      "translated": 150,
       "published": 6,
-      "database": 116,
+      "database": 144,
       "terminology": 0
     },
     "DFT": {

@@ -232,7 +232,7 @@ export function emit(g: GameState, ev: GameEvent): void {
   if(ev.type==='step'&&ev.step==='endStep')for(const c of Object.values(g.cards))if(c.eclCast?.mode==='nextEnd')c.eclCast=undefined;
   const foundationIgnoreWard=ev.type==='targeted'&&isCreature(g.cards[ev.card])&&g.cards[ev.card].controller!==ev.by&&!!frontierStatic(g,ev.by,'dsk:ignoreHexproofWard').length;
   if(ev.type==='targeted'&&ev.stackSid!==undefined&&!foundationIgnoreWard){const c=g.cards[ev.card];if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
-    const costs:number[]=[];if((c.def.set==='ECL'||c.def.set==='FDN'||c.def.set==='DSK'||c.def.set==='BLB'||c.def.set==='SOS'||c.def.set==='DFT'||c.def.set==='LCI')&&c.def.wardLife&&c.def.id!=='ovika-enigma-goliath')costs.push(c.def.wardLife);
+    const costs:number[]=[];if((c.def.set==='ECL'||c.def.set==='FDN'||c.def.set==='DSK'||c.def.set==='BLB'||c.def.set==='SOS'||c.def.set==='DFT'||c.def.set==='LCI'||c.def.set==='TDM'||c.def.set==='EOE')&&c.def.wardLife&&c.def.id!=='ovika-enigma-goliath')costs.push(c.def.wardLife);
     if(isCreature(c))for(const id of g.battlefield){const source=g.cards[id];if(id!==c.id&&source.controller===c.controller&&abilitiesOf(g,source).some(a=>a.kind==='static'&&a.ecl==='squelcher'))costs.push(2);}
     for(const cost of costs)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-23,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'ecl',action:'wardLife',n:ev.stackSid,value:cost}]}});
   }}
@@ -262,7 +262,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     if(c?.def.meadow?.wardManaLife&&c.controller!==ev.by&&!abilitiesSuppressed(g,c))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-242,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'dft:wardManaLife',n:ev.stackSid}]}});
     if(c?.def.meadow?.wardFood&&c.controller!==ev.by&&!abilitiesSuppressed(g,c))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-207,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'blb:wardFood',n:ev.stackSid}]}});
     if(c?.def.id==='gisa-the-hellraiser'&&c.controller!==ev.by&&!abilitiesSuppressed(g,c))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-101,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'otj:gisaWard',n:ev.stackSid}]}});
-    if(!foundationIgnoreWard&&c?.def.id!=='ovika-enigma-goliath'&&c?.def.id!=='gisa-the-hellraiser'&&(c?.def.set==='FDN'||c?.def.set==='DSK'||c?.def.set==='WOE'||c?.def.set==='OTJ'||c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN'||c?.def.set==='MKM'||c?.def.set==='MSH'||c?.def.set==='BLB'||c?.def.set==='DFT')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
+    if(!foundationIgnoreWard&&c?.def.id!=='ovika-enigma-goliath'&&c?.def.id!=='gisa-the-hellraiser'&&(c?.def.set==='FDN'||c?.def.set==='DSK'||c?.def.set==='WOE'||c?.def.set==='OTJ'||c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN'||c?.def.set==='MKM'||c?.def.set==='MSH'||c?.def.set==='BLB'||c?.def.set==='DFT'||c?.def.set==='EOE'||c?.def.set==='TDM')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
       const extra=g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)).length:0);},0);
       for(let i=0;i<(1+extra);i++)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-3,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:c.def.ward}]}});
     }
@@ -344,7 +344,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     for (const d of [...g.delayed]) {
       const src = g.cards[d.source];
       if (!src) continue;
-      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, filter:d.filter, alone:d.alone,frontierEvent:d.frontierEvent,frontierPlayer:d.frontierPlayer,finEvent:d.finEvent,mshEvent:d.mshEvent };
+      const ab: TriggeredAbility = { kind: 'trigger', on: d.on, effects: d.effects, targets:d.targets, filter:d.filter, alone:d.alone,frontierEvent:d.frontierEvent,frontierPlayer:d.frontierPlayer,finEvent:d.finEvent,mshEvent:d.mshEvent };
       // 延遲觸發的控制者是建立它的玩家，不一定是來源目前的控制者
       const probe = src.controller === d.controller ? src : { ...src, controller: d.controller };
       if (!triggerMatches(g, probe, ab, ev)) continue;
@@ -599,7 +599,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   c.tmtLinkKey=g.nextSid++;
   c.wasCast=origin==='stack'&&c.castOrigin!==undefined;
   if(origin!=='stack'){c.sneakTurn=undefined;c.sneakFromGy=undefined;}
-  c.counters = finCounters+(c.def.etbCounters ?? 0)+(c.def.etbCountersX?(c.castX??0):0)-(c.eclEnterMinus??0);c.eclEnterMinus=undefined;
+  c.counters = (c.def.meadow?.orbitEtbOthers?g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===controller&&g.cards[id].def.types.some(t=>t==='Creature'||t==='Artifact')).length:0)+finCounters+(c.def.etbCounters ?? 0)+(c.def.etbCountersX?(c.castX??0):0)-(c.eclEnterMinus??0);c.eclEnterMinus=undefined;
   if(c.finMarks){delete c.finMarks.enterCounters;delete c.finMarks.enterFinality;}
   if(finFinality)c.finality=true;
   if(c.def.frontier?.dustAnimus&&g.battlefield.filter(id=>g.cards[id].controller===controller&&isLand(g.cards[id])&&!g.cards[id].tapped).length>=5){c.counters+=2;(c.eclCounters??={}).lifelink=1;}

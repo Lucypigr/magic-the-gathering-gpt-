@@ -1,0 +1,3 @@
+import type {CardDef} from '../../engine/types';
+const token=(id:string,name:string,colors:CardDef['colors'],power:number,toughness:number,subtypes:string[],keywords:CardDef['keywords']=[]):CardDef=>({id:'tok-or-'+id,name,set:'TOK',rarity:'T',token:true,types:['Creature'],colors,power,toughness,subtypes,keywords,text:''});
+export const ORBIT_TOKENS=[token('soldier22','Soldier',['W'],2,2,['Soldier']),token('monk','Monk',['W'],1,1,['Monk'],['prowess']),token('dragon','Dragon',['R'],4,4,['Dragon'],['flying'])];

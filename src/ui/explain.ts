@@ -139,7 +139,7 @@ export function symbolNotes(def: CardDef): SymbolNote[] {
   return out;
 }
 
-export type LineKind = 'keyword' | 'mana' | 'activated' | 'triggered' | 'static' | 'spell' | 'modes' | 'mode' | 'adventure' | 'flashback';
+export type LineKind = 'keyword' | 'mana' | 'activated' | 'triggered' | 'static' | 'spell' | 'modes' | 'mode' | 'adventure' | 'omen' | 'flashback';
 
 export const LINE_KIND_ZH: Record<LineKind, string> = {
   keyword: '關鍵字異能',
@@ -151,6 +151,7 @@ export const LINE_KIND_ZH: Record<LineKind, string> = {
   modes: '模式咒語',
   mode: '選項',
   adventure: '冒險',
+  omen: '預兆',
   flashback: '返照',
 };
 
@@ -277,8 +278,8 @@ export function lineNotes(def: CardDef): LineNote[] {
     out.push({ kind: 'static', text: line, desc: '只要這張牌在戰場上就一直有效，不需要任何操作。' });
   }
   if(def.adventure&&!out.some(l=>l.kind==='adventure'))out.push({
-    kind:'adventure',text:def.adventure.text,cost:def.adventure.cost,effect:def.adventure.text,
-    desc:`你可以施放冒險「${displayName(def.adventure)}」。結算後放逐此牌，之後可以從放逐區施放本體。`,
+    kind:def.meadow?.orbitOmen?'omen':'adventure',text:def.adventure.text,cost:def.adventure.cost,effect:def.adventure.text,
+    desc:def.meadow?.orbitOmen?`你可以施放預兆「${displayName(def.adventure)}」。結算後將此牌洗回其擁有者的牌庫。若被反擊，則進入墳墓場。`:`你可以施放冒險「${displayName(def.adventure)}」。結算後放逐此牌，之後可以從放逐區施放本體。`,
   });
   return out;
 }
