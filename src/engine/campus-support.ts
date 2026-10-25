@@ -137,7 +137,7 @@ export function campusObserve(g:GameState,e:GameEvent){
  if(e.type==='youAttack')frontierFlags(g,e.player).cpAttackers=(frontierFlags(g,e.player).cpAttackers??0)+e.attackers.length;
  if(e.type==='cast'){
   const c=g.cards[e.card],p=e.player,inst=c.def.types.some(t=>t==='Instant'||t==='Sorcery');
-  
+
   if(inst&&frontierFlags(g,p).cpNextCopy){frontierFlags(g,p).cpNextCopy--;queue(c,'sos:copyCast',0,e);}
   if(inst&&frontierStatic(g,p,'sos:storm').length){const n=Math.max(0,g.players[0].spellsThisTurn+g.players[1].spellsThisTurn-1);if(n)queue(c,'sos:stormCopies',n,e);}
   if((c.def.id==='quandrix-the-proof'||inst&&c.castOrigin==='hand'&&frontierStatic(g,p,'sos:cascade').length))queue(c,'sos:cascade',manaValue(c.def),e);
