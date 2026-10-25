@@ -27,7 +27,6 @@ import {
   isCreature,
   isPermanentDef,
   log,
-  newCard,
   other,
   randInt,
   show,
@@ -339,6 +338,7 @@ function* resolveTopItem(g: GameState): SubFlow {
         }
       }
     } else if (isPermanentDef(def)) {
+      src.offspringPaid=item.alt==='offspring';
       if(item.x!==undefined)src.castX=item.x;
       if (def.aura) {
         const t = legal[0];
@@ -376,13 +376,7 @@ function* resolveTopItem(g: GameState): SubFlow {
         if (def.etbCountersX && item.x) putCounters(g, src, item.x);
         log(g, `${cardName(src)} 進入戰場`, item.controller);
         if (item.alt === 'warp') src.exileAtEnd = true;
-        if (item.alt === 'offspring') {
-          // 子嗣：派出一個 1/1 的衍生物複製
-          const t = newCard(g, { ...def, power: 1, toughness: 1 }, item.controller, true);
-          t.zone = 'exile';
-          enterBattlefield(g, t, item.controller);
-          log(g, `子嗣：派出 1/1 的 ${cardName(t)} 衍生物`, item.controller);
-        }
+
       }
     } else {
       yield* runEffects(g, ctx, item.effects);

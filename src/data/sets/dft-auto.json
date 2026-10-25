@@ -1,0 +1,1858 @@
+{
+  "1": {
+    "keywords": [
+      "flying",
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 3
+          }
+        ],
+        "label": "駕駛1"
+      }
+    ]
+  },
+  "4": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 1,
+            "t": 2,
+            "kw": [
+              "flying"
+            ]
+          }
+        ],
+        "cond": {
+          "c": "saddled"
+        }
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 3
+        },
+        "effects": [
+          {
+            "e": "saddle"
+          }
+        ],
+        "sorcery": true,
+        "label": "騎乘3"
+      }
+    ]
+  },
+  "5": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "untap",
+            "what": "self"
+          },
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ],
+        "cond": {
+          "c": "saddled"
+        }
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "saddle"
+          }
+        ],
+        "sorcery": true,
+        "label": "騎乘1"
+      }
+    ]
+  },
+  "6": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-thopter-11--flying"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 5,
+            "t": 4
+          }
+        ],
+        "label": "駕駛1"
+      }
+    ]
+  },
+  "18": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "yourTurn"
+          },
+          "grant": {
+            "kw": [
+              "first_strike"
+            ]
+          }
+        }
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}"
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌",
+        "fromGraveyard": true,
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ]
+  },
+  "19": {
+    "cycling": {
+      "cost": "{2}"
+    },
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 2,
+          "t": 2
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "22": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-servo-11-"
+          }
+        ]
+      },
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "maxSpeed"
+          },
+          "grant": {
+            "p": 1,
+            "t": 0
+          }
+        }
+      }
+    ]
+  },
+  "30": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "scry",
+            "n": 2
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 2
+          }
+        ],
+        "label": "駕駛1"
+      }
+    ]
+  },
+  "31": {},
+  "32": {
+    "startEngines": true,
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "maxSpeed"
+          },
+          "grant": {
+            "p": 0,
+            "t": 1,
+            "kw": [
+              "vigilance"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "40": {},
+  "41": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{U}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "counterUnless",
+            "what": "T0",
+            "pay": 3
+          }
+        ],
+        "label": "反擊目標瞬間或法術咒語，除非其操控者",
+        "targets": [
+          {
+            "kind": "spell",
+            "filter": {
+              "type": [
+                "Instant",
+                "Sorcery"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "43": {
+    "costReduce": {
+      "perCount": {
+        "type": "Artifact"
+      }
+    },
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{5}{U}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "unblockable"
+            ]
+          }
+        ],
+        "label": "此生物本回合不能被阻擋"
+      }
+    ]
+  },
+  "44": {
+    "startEngines": true,
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}"
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌",
+        "fromGraveyard": true,
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ]
+  },
+  "47": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 2
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 3
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 2
+          }
+        ],
+        "label": "駕駛3"
+      }
+    ]
+  },
+  "48": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}{U}"
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          },
+          {
+            "e": "discard",
+            "n": 1,
+            "who": "you"
+          },
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ],
+        "label": "竭力：抓一張牌，然後棄一張牌。在此生",
+        "oncePerGame": true
+      }
+    ]
+  },
+  "49": {
+    "costReduce": {
+      "perCount": {
+        "type": "Artifact"
+      }
+    },
+    "keywords": [
+      "flying"
+    ]
+  },
+  "53": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-thopter-11--flying"
+          }
+        ]
+      }
+    ]
+  },
+  "61": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{4}{U}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 2
+          }
+        ],
+        "label": "竭力：在此生物上放置兩個+1/+1指",
+        "oncePerGame": true
+      }
+    ]
+  },
+  "64": {
+    "spell": {
+      "effects": [
+        {
+          "e": "counterUnless",
+          "what": "T0",
+          "pay": 2
+        }
+      ],
+      "targets": [
+        {
+          "kind": "spell",
+          "filter": {
+            "nonType": "Creature"
+          }
+        }
+      ]
+    }
+  },
+  "68": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "drawSecond",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-thopter-11--flying"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 2
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 4,
+            "t": 4
+          }
+        ],
+        "label": "駕駛2"
+      }
+    ]
+  },
+  "84": {
+    "keywords": [
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{5}{B}"
+        },
+        "effects": [
+          {
+            "e": "lose",
+            "n": 2,
+            "who": "opp"
+          }
+        ],
+        "label": "每位對手失去2點生命"
+      }
+    ]
+  },
+  "88": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": -2,
+            "t": -2
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "opp"
+            }
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{B}",
+          "tap": true,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 2
+          }
+        ],
+        "label": "刺探2"
+      }
+    ]
+  },
+  "93": {},
+  "95": {
+    "cycling": {
+      "cost": "{B}"
+    },
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": -1,
+          "t": -1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "96": {
+    "spell": {
+      "effects": [
+        {
+          "e": "counters",
+          "what": "T0",
+          "n": 1
+        },
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 0,
+          "t": 0,
+          "kw": [
+            "deathtouch",
+            "indestructible"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "98": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "label": "此生物得+1/+1直到回合結束"
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}"
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌",
+        "fromGraveyard": true,
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ]
+  },
+  "101": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "discard",
+            "n": 1,
+            "who": "opp"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 2
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 4,
+            "t": 3
+          }
+        ],
+        "label": "駕駛2"
+      }
+    ]
+  },
+  "102": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "endStep",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-zombie-22-b"
+          }
+        ],
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ]
+  },
+  "107": {
+    "startEngines": true,
+    "keywords": [
+      "flying",
+      "haste"
+    ],
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "maxSpeed"
+          },
+          "grant": {
+            "kw": [
+              "lifelink"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "108": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": -6,
+          "t": -6
+        },
+        {
+          "e": "gain",
+          "n": 2
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "110": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "111": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{B}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ],
+        "label": "刺探1"
+      }
+    ]
+  },
+  "114": {
+    "keywords": [
+      "flash"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 2,
+            "t": 0,
+            "kw": [
+              "trample"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 1
+          }
+        ],
+        "label": "駕駛1"
+      }
+    ]
+  },
+  "115": {
+    "startEngines": true,
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 1,
+            "t": 0
+          }
+        ],
+        "label": "此生物得+1/+0直到回合結束"
+      },
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "maxSpeed"
+          },
+          "grant": {
+            "kw": [
+              "double_strike"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "117": {
+    "cycling": {
+      "cost": "{R}"
+    },
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 3
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 6,
+            "t": 3
+          }
+        ],
+        "label": "駕駛3"
+      }
+    ]
+  },
+  "122": {
+    "keywords": [
+      "flying",
+      "haste"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "damage",
+            "n": 2,
+            "to": "T0"
+          }
+        ],
+        "cond": {
+          "c": "saddled"
+        },
+        "targets": [
+          {
+            "kind": "any"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 3
+        },
+        "effects": [
+          {
+            "e": "saddle"
+          }
+        ],
+        "sorcery": true,
+        "label": "騎乘3"
+      }
+    ]
+  },
+  "126": {
+    "cycling": {
+      "cost": "{2}"
+    },
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 2,
+          "to": {
+            "all": {
+              "type": "Creature"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "130": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ],
+        "cond": {
+          "c": "saddled"
+        }
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "saddle"
+          }
+        ],
+        "sorcery": true,
+        "label": "騎乘1"
+      }
+    ]
+  },
+  "131": {
+    "startEngines": true,
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}"
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌",
+        "fromGraveyard": true,
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ]
+  },
+  "136": {
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 3,
+          "to": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "any"
+        }
+      ]
+    }
+  },
+  "140": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{R}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          },
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "double_strike"
+            ]
+          }
+        ],
+        "label": "竭力：在此生物上放置一個+1/+1指",
+        "oncePerGame": true
+      }
+    ]
+  },
+  "141": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": {
+            "x": true
+          },
+          "t": 0,
+          "kw": [
+            "first_strike"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "142": {
+    "keywords": [
+      "haste"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}{R}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 2
+          }
+        ],
+        "label": "竭力：在此生物上放置兩個+1/+1指",
+        "oncePerGame": true
+      }
+    ]
+  },
+  "146": {
+    "cycling": {
+      "cost": "{R}"
+    },
+    "spell": {
+      "effects": [
+        {
+          "e": "destroy",
+          "what": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "permanent",
+          "filter": {
+            "type": "Artifact"
+          }
+        }
+      ]
+    }
+  },
+  "149": {},
+  "152": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 2,
+            "t": 2
+          }
+        ],
+        "cond": {
+          "c": "saddled"
+        }
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "saddle"
+          }
+        ],
+        "sorcery": true,
+        "label": "騎乘1"
+      }
+    ]
+  },
+  "155": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 4,
+          "t": 4,
+          "kw": [
+            "trample"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "164": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{G}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "trample"
+            ]
+          }
+        ],
+        "label": "目標生物獲得踐踏異能直到回合結束",
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}{G}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 3
+          }
+        ],
+        "label": "竭力：在此生物上放置三個+1/+1指",
+        "oncePerGame": true
+      }
+    ]
+  },
+  "165": {
+    "keywords": [
+      "reach",
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{6}{G}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 3
+          }
+        ],
+        "label": "竭力：在此生物上放置三個+1/+1指",
+        "oncePerGame": true
+      }
+    ]
+  },
+  "166": {},
+  "167": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}"
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌",
+        "fromGraveyard": true,
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ]
+  },
+  "170": {
+    "cycling": {
+      "cost": "{2}"
+    },
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 4
+          }
+        ]
+      }
+    ]
+  },
+  "177": {
+    "abilities": [
+      {
+        "kind": "static",
+        "anthem": {
+          "filter": {
+            "sub": "Dinosaur",
+            "ctrl": "you",
+            "other": true
+          },
+          "grant": {
+            "p": 1,
+            "t": 1
+          }
+        }
+      }
+    ]
+  },
+  "181": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}{G}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          },
+          {
+            "e": "token",
+            "token": "tok-g-elephant-33-g"
+          }
+        ],
+        "label": "竭力：在此生物上放置一個+1/+1指",
+        "oncePerGame": true
+      }
+    ]
+  },
+  "182": {},
+  "184": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 2
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 4,
+            "t": 2
+          }
+        ],
+        "label": "駕駛2"
+      }
+    ],
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ]
+  },
+  "185": {
+    "keywords": [
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 0,
+            "t": 3
+          }
+        ],
+        "cond": {
+          "c": "saddled"
+        }
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 2
+        },
+        "effects": [
+          {
+            "e": "saddle"
+          }
+        ],
+        "sorcery": true,
+        "label": "騎乘2"
+      }
+    ]
+  },
+  "190": {
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "youAttack",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          },
+          {
+            "e": "discard",
+            "n": 1,
+            "who": "you"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 1
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 3,
+            "t": 3
+          }
+        ],
+        "label": "駕駛1"
+      }
+    ]
+  },
+  "192": {
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 5,
+          "to": "T0"
+        },
+        {
+          "e": "draw",
+          "n": 1
+        },
+        {
+          "e": "discard",
+          "n": 1,
+          "who": "you"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "permanent",
+          "filter": {
+            "type": [
+              "Creature",
+              "Planeswalker"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "199": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 3,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 3
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 2
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 6,
+            "t": 6
+          }
+        ],
+        "label": "駕駛2"
+      }
+    ]
+  },
+  "201": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-zombie-22-b"
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "allyDies",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 1,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ],
+        "includeSelf": true,
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ]
+  },
+  "232": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          },
+          {
+            "e": "token",
+            "token": "tok-g-thopter-11--flying"
+          }
+        ],
+        "label": "竭力：在此生物上放置一個+1/+1指",
+        "oncePerGame": true
+      }
+    ]
+  },
+  "243": {
+    "cycling": {
+      "cost": "{2}"
+    },
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "crew": 2
+        },
+        "effects": [
+          {
+            "e": "animate",
+            "what": "self",
+            "p": 4,
+            "t": 4
+          }
+        ],
+        "label": "駕駛2"
+      }
+    ]
+  },
+  "244": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 2
+          },
+          {
+            "e": "discard",
+            "n": 1,
+            "who": "you"
+          }
+        ],
+        "label": "抓兩張牌，然後棄一張牌",
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ],
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ]
+  },
+  "246": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "maxSpeed"
+          },
+          "grant": {
+            "p": 1,
+            "t": 2
+          }
+        }
+      }
+    ]
+  },
+  "248": {
+    "startEngines": true,
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "haste"
+            ]
+          }
+        ],
+        "label": "目標生物獲得敏捷異能直到回合結束",
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ],
+        "cond": {
+          "c": "maxSpeed"
+        }
+      }
+    ],
+    "produces": [
+      "C"
+    ]
+  },
+  "251": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "B",
+      "R"
+    ]
+  },
+  "252": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "G",
+      "W"
+    ]
+  },
+  "254": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "U",
+      "B"
+    ]
+  },
+  "256": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "B",
+      "G"
+    ]
+  },
+  "258": {
+    "etbTapped": true,
+    "cycling": {
+      "cost": "{3}"
+    },
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ]
+  },
+  "262": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "R",
+      "G"
+    ]
+  },
+  "263": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "W",
+      "B"
+    ]
+  },
+  "265": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "U",
+      "R"
+    ]
+  },
+  "266": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "G",
+      "U"
+    ]
+  },
+  "267": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "W",
+      "U"
+    ]
+  },
+  "271": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "R",
+      "W"
+    ]
+  }
+}

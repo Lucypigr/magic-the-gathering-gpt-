@@ -229,7 +229,7 @@ export function emit(g: GameState, ev: GameEvent): void {
   if(ev.type==='step'&&ev.step==='endStep')for(const c of Object.values(g.cards))if(c.eclCast?.mode==='nextEnd')c.eclCast=undefined;
   const foundationIgnoreWard=ev.type==='targeted'&&isCreature(g.cards[ev.card])&&g.cards[ev.card].controller!==ev.by&&!!frontierStatic(g,ev.by,'dsk:ignoreHexproofWard').length;
   if(ev.type==='targeted'&&ev.stackSid!==undefined&&!foundationIgnoreWard){const c=g.cards[ev.card];if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
-    const costs:number[]=[];if((c.def.set==='ECL'||c.def.set==='FDN'||c.def.set==='DSK')&&c.def.wardLife&&c.def.id!=='ovika-enigma-goliath')costs.push(c.def.wardLife);
+    const costs:number[]=[];if((c.def.set==='ECL'||c.def.set==='FDN'||c.def.set==='DSK'||c.def.set==='BLB'||c.def.set==='DFT')&&c.def.wardLife&&c.def.id!=='ovika-enigma-goliath')costs.push(c.def.wardLife);
     if(isCreature(c))for(const id of g.battlefield){const source=g.cards[id];if(id!==c.id&&source.controller===c.controller&&abilitiesOf(g,source).some(a=>a.kind==='static'&&a.ecl==='squelcher'))costs.push(2);}
     for(const cost of costs)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-23,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'ecl',action:'wardLife',n:ev.stackSid,value:cost}]}});
   }}
@@ -255,7 +255,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)&&(c.def.id==='vein-ripper'||c.def.id==='axebane-ferox'))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-71,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'mkm',action:'ward',n:ev.stackSid}]}});
     if(c&&!foundationIgnoreWard&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){if(c.def.id==='ovika-enigma-goliath'||c.def.id==='valgavoth-terror-eater'||c.def.set==='DSK'&&c.def.wardDiscard)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-124,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'fdn:wardSpecial',n:ev.stackSid}]}});}
     if(c?.def.id==='gisa-the-hellraiser'&&c.controller!==ev.by&&!abilitiesSuppressed(g,c))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-101,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'otj:gisaWard',n:ev.stackSid}]}});
-    if(!foundationIgnoreWard&&c?.def.id!=='ovika-enigma-goliath'&&c?.def.id!=='gisa-the-hellraiser'&&(c?.def.set==='FDN'||c?.def.set==='DSK'||c?.def.set==='WOE'||c?.def.set==='OTJ'||c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN'||c?.def.set==='MKM'||c?.def.set==='MSH')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
+    if(!foundationIgnoreWard&&c?.def.id!=='ovika-enigma-goliath'&&c?.def.id!=='gisa-the-hellraiser'&&(c?.def.set==='FDN'||c?.def.set==='DSK'||c?.def.set==='WOE'||c?.def.set==='OTJ'||c?.def.set==='TMT'||c?.def.set==='ECL'||c?.def.set==='FIN'||c?.def.set==='MKM'||c?.def.set==='MSH'||c?.def.set==='BLB'||c?.def.set==='DFT')&&c.def.ward&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){
       const extra=g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)).length:0);},0);
       for(let i=0;i<(1+extra);i++)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-3,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'tmt',action:'ward',n:ev.stackSid,amount:c.def.ward}]}});
     }
@@ -284,7 +284,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     const finExtra=g.battlefield.reduce((n,sid)=>{const source=g.cards[sid];if(source.controller!==c.controller)return n;for(const a of abilitiesOf(g,source))if(a.kind==='static'){if(a.fin==='masamune'&&ev.type==='dies'){const host=g.cards[source.attachedTo??-1];if(host&&host.controller===c.controller&&(host.id===c.id||c.def.types.includes('Emblem')&&c.owner===host.controller))n++;}if(a.fin==='cloudDouble'&&g.battlefield.some(id=>g.cards[id].attachedTo===source.id&&g.cards[id].def.equip)&&(c.id===source.id||c.attachedTo===source.id))n++;if(a.fin==='travelingDouble'&&ev.type==='etb'&&g.cards[ev.card].controller===source.controller&&(isLand(g.cards[ev.card])||matches(g,{sub:'Bird'},g.cards[ev.card],source.controller)))n++;}return n;},0);
     const extraTriggers=frontierStatic(g,c.controller,'dsk:doubleTriggers').length+(isCreature(c)&&matches(g,{legendary:true},c,c.controller)?frontierStatic(g,c.controller,'annieDouble').length:0)+(ev.type==='etb'?frontierStatic(g,c.controller,'knowledgeDouble').length:0)+(isCreature(c)&&stats(g,c).p<=2?mkmStatic(g,c.controller,'delney').length:0)+finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
-      for(let i=0;i<(1+extraTriggers);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
+      for(let i=0;i<(1+extraTriggers)*Math.max(1,stats(g,c).prowessCount??1);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
     const fire = c.grantedFirebend?.turn === g.turn ? c.grantedFirebend.n : c.def.firebending;
     if (fire !== undefined && ev.type === 'attacks' && ev.card === c.id && !abilitiesSuppressed(g,c)) for(let i=0;i<(1+extraTriggers);i++) g.pending.push({ source:c.id, controller:c.controller, abilityIndex:-2, ev, ability:{kind:'trigger',on:'attacks',effects:[{e:'firebend',n:fire}]} });
@@ -553,7 +553,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
     return;
   }
   const origin=c.zone;
-  if(origin!=='stack'){c.kicked=false;c.impendingPaid=false;c.manaPaid=undefined;c.evokePaid=undefined;c.eclBeheld=undefined;c.eclBeholdType=undefined;}
+  if(origin!=='stack'){c.offspringPaid=false;c.kicked=false;c.impendingPaid=false;c.manaPaid=undefined;c.evokePaid=undefined;c.eclBeheld=undefined;c.eclBeholdType=undefined;}
   if(origin!=='battlefield')c.objectVersion=(c.objectVersion??0)+1;
   let t = tapped || !!c.def.etbTapped;
   if (isLand(c) && !c.def.supertypes?.includes('Basic') && g.battlefield.some(id => abilitiesOf(g,g.cards[id]).some(a => a.kind === 'static' && a.allNonbasicTapped))) t = true;

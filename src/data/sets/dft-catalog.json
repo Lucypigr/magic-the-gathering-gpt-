@@ -1,0 +1,5652 @@
+[
+  {
+    "name": "Air Response Unit",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{2}{W}",
+    "text": "Flying, vigilance\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 1,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Alacrian Armory",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}",
+    "text": "Creatures you control get +0/+1 and have vigilance.\nAt the beginning of combat on your turn, choose up to one target Mount or Vehicle you control. Until end of turn, that permanent becomes saddled if it's a Mount and becomes an artifact creature if it's a Vehicle.",
+    "number": 2,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Basri, Tomorrow's Champion",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "cost": "{W}",
+    "text": "{W}, {T}, Exert Basri: Create a 1/1 white Cat creature token with lifelink. (An exerted creature won't untap during your next untap step.)\nCycling {2}{W} ({2}{W}, Discard this card: Draw a card.)\nWhen you cycle this card, Cats you control gain hexproof and indestructible until end of turn.",
+    "number": 3,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Brightfield Glider",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Possum",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{W}",
+    "text": "Vigilance\nWhenever this creature attacks while saddled, it gets +1/+2 and gains flying until end of turn.\nSaddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 4,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Brightfield Mustang",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Horse",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}",
+    "text": "Whenever this creature attacks while saddled, untap it and put a +1/+1 counter on it.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 5,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Broadcast Rambler",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{4}{W}",
+    "text": "When this Vehicle enters, create a 1/1 colorless Thopter artifact creature token with flying.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 6,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Bulwark Ox",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ox",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "Whenever this creature attacks while saddled, put a +1/+1 counter on target creature.\nSacrifice this creature: Creatures you control with counters on them gain hexproof and indestructible until end of turn.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 7,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Canyon Vaulter",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Kor",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "Whenever this creature saddles a Mount or crews a Vehicle during your main phase, that Mount or Vehicle gains flying until end of turn.",
+    "number": 8,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Cloudspire Captain",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{2}{W}",
+    "text": "Mounts and Vehicles you control get +1/+1.\nThis creature saddles Mounts and crews Vehicles as though its power were 2 greater.",
+    "number": 9,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Collision Course",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "Choose one —\n• Collision Course deals X damage to target creature, where X is the number of permanents you control that are creatures and/or Vehicles.\n• Destroy target artifact.",
+    "number": 10,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Daring Mechanic",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{2}{W}",
+    "text": "{3}{W}: Put a +1/+1 counter on target Mount or Vehicle.",
+    "number": 11,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Detention Chariot",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{4}{W}{W}",
+    "text": "When this Vehicle enters, exile target artifact or creature an opponent controls until this Vehicle leaves the battlefield.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)\nCycling {W} ({W}, Discard this card: Draw a card.)",
+    "number": 12,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 6,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "name": "Gallant Strike",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "Destroy target creature with toughness 4 or greater.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 13,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Gloryheath Lynx",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "Lifelink\nWhenever this creature attacks while saddled, search your library for a basic Plains card, reveal it, put it into your hand, then shuffle.\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 14,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "name": "Guardian Sunmare",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Horse",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}{W}",
+    "text": "Ward {2}\nWhenever this creature attacks while saddled, search your library for a nonland permanent card with mana value 3 or less, put it onto the battlefield, then shuffle.\nSaddle 4",
+    "number": 15,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Guidelight Synergist",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}",
+    "text": "Flying\nThis creature gets +1/+0 for each artifact you control.",
+    "number": 16,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 0,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Interface Ace",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "This creature saddles Mounts and crews Vehicles using its toughness rather than its power.\nWhenever this creature becomes tapped during your turn, untap it. This ability triggers only once each turn.",
+    "number": 17,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 0,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Leonin Surveyor",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nDuring your turn, this creature has first strike.\nMax speed — {3}, Exile this card from your graveyard: Draw a card.",
+    "number": 18,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Lightshield Parry",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{W}",
+    "text": "Target creature gets +2/+2 until end of turn.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 19,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Lightwheel Enhancements",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{W}",
+    "text": "Enchant creature or Vehicle\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nEnchanted permanent gets +1/+1 and has vigilance.\nMax speed — You may cast this card from your graveyard.",
+    "number": 20,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Lotusguard Disciple",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{2}{W}",
+    "text": "Flying\nWhen this creature enters, target creature or Vehicle gains lifelink and indestructible until end of turn.",
+    "number": 21,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Nesting Bot",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{W}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this creature dies, create a 1/1 colorless Servo artifact creature token.\nMax speed — This creature gets +1/+0.",
+    "number": 22,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Perilous Snare",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{2}{W}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this artifact enters, exile target nonland permanent an opponent controls until this artifact leaves the battlefield.\nMax speed — {T}: Put a +1/+1 counter on target creature or Vehicle you control. Activate only as a sorcery.",
+    "number": 23,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Pride of the Road",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Cat",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}",
+    "text": "Vigilance\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — At the beginning of combat on your turn, target creature or Vehicle you control gains double strike until end of turn.",
+    "number": 24,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Ride's End",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{4}{W}",
+    "text": "This spell costs {3} less to cast if it targets a tapped permanent.\nExile target creature or Vehicle.",
+    "number": 25,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Roadside Assistance",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{2}{W}",
+    "text": "Enchant creature or Vehicle\nWhen this Aura enters, create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\"\nEnchanted permanent gets +1/+1 and has lifelink.",
+    "number": 26,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Salvation Engine",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{4}{W}",
+    "text": "Other artifact creatures you control get +2/+2.\nWhenever this Vehicle attacks, return up to one target artifact card from your graveyard to the battlefield.\nCrew 6",
+    "number": 27,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 6,
+    "toughness": 10,
+    "keywords": []
+  },
+  {
+    "name": "Skyseer's Chariot",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "Flying\nAs this Vehicle enters, choose a nonland card name.\nActivated abilities of sources with the chosen name cost {2} more to activate.\nCrew 2",
+    "number": 28,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Spectacular Pileup",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}{W}",
+    "text": "All creatures and Vehicles lose indestructible until end of turn, then destroy all creatures and Vehicles.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 29,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Spotcycle Scouter",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "When this Vehicle enters, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 30,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Sundial, Dawn Tyrant",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "cost": "{1}{W}",
+    "text": "",
+    "number": 31,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Swiftwing Assailant",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}",
+    "text": "Flying\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — This creature gets +0/+1 and has vigilance.",
+    "number": 32,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Tune Up",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}",
+    "text": "Return target artifact card from your graveyard to the battlefield. If it's a Vehicle, it becomes an artifact creature.",
+    "number": 33,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Unswerving Sloth",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Sloth",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{3}{W}{W}",
+    "text": "Whenever this creature attacks while saddled, it gains indestructible until end of turn. Untap all creatures you control.\nSaddle 4 (Tap any number of other creatures you control with total power 4 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 34,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Valor's Flagship",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "cost": "{4}{W}{W}{W}",
+    "text": "Flying, first strike, lifelink\nCrew 3\nCycling {X}{2}{W} ({X}{2}{W}, Discard this card: Draw a card.)\nWhen you cycle this card, create X 1/1 colorless Pilot creature tokens with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\"",
+    "number": 35,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "first_strike",
+      "flying",
+      "lifelink"
+    ]
+  },
+  {
+    "name": "Voyager Glidecar",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{W}",
+    "text": "When this Vehicle enters, scry 1.\nTap three other untapped creatures you control: Until end of turn, this Vehicle becomes an artifact creature and gains flying. Put a +1/+1 counter on it.\nCrew 1",
+    "number": 36,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Voyager Quickwelder",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "cost": "{2}{W}",
+    "text": "Artifact spells you cast cost {1} less to cast.",
+    "number": 37,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Aether Syphon",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}{U}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{2}, {T}: Draw a card.\nMax speed — Whenever you draw a card, each opponent mills two cards. (Each opponent puts the top two cards of their library into their graveyard.)",
+    "number": 38,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Bounce Off",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{U}",
+    "text": "Return target creature or Vehicle to its owner's hand.",
+    "number": 39,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Caelorna, Coral Tyrant",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Octopus"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "",
+    "number": 40,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 0,
+    "toughness": 8,
+    "keywords": []
+  },
+  {
+    "name": "Diversion Unit",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "Flying\n{U}, Sacrifice this creature: Counter target instant or sorcery spell unless its controller pays {3}.",
+    "number": 41,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Flood the Engine",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "Enchant creature or Vehicle\nWhen this Aura enters, tap enchanted permanent.\nEnchanted permanent loses all abilities and doesn't untap during its controller's untap step.",
+    "number": 42,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Gearseeker Serpent",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Serpent"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{5}{U}{U}",
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\n{5}{U}: This creature can't be blocked this turn.",
+    "number": 43,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 5,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "name": "Glitch Ghost Surveyor",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spirit",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "Flying\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — {3}, Exile this card from your graveyard: Draw a card.",
+    "number": 44,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Guidelight Optimizer",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "{T}: Add {U}. Spend this mana only to cast an artifact spell or activate an ability.",
+    "number": 45,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Howler's Heavy",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Seal",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{3}{U}",
+    "text": "Cycling {1}{U} ({1}{U}, Discard this card: Draw a card.)\nWhen you cycle this card, target creature or Vehicle an opponent controls gets -3/-0 until end of turn.",
+    "number": 46,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Hulldrifter",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{3}{U}{U}",
+    "text": "Flying\nWhen this Vehicle enters, draw two cards.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 47,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Keen Buccaneer",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Octopus",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "Vigilance\nExhaust — {1}{U}: Draw a card, then discard a card. Put a +1/+1 counter on this creature. (Activate each exhaust ability only once.)",
+    "number": 48,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Memory Guardian",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{4}{U}",
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nFlying",
+    "number": 49,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Midnight Mangler",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "During turns other than yours, this Vehicle is an artifact creature.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 50,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Mindspring Merfolk",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Merfolk",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{U}",
+    "text": "Exhaust — {X}{U}{U}, {T}: Draw X cards. Put a +1/+1 counter on each Merfolk creature you control. (Activate each exhaust ability only once.)",
+    "number": 51,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Mu Yanling, Wind Rider",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard",
+      "Pilot"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}{U}",
+    "text": "When Mu Yanling enters, create a 3/2 colorless Vehicle artifact token with crew 1.\nVehicles you control have flying.\nWhenever one or more creatures you control with flying deal combat damage to a player, draw a card.",
+    "number": 52,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Nimble Thopterist",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vedalken",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{3}{U}",
+    "text": "When this creature enters, create a 1/1 colorless Thopter artifact creature token with flying.",
+    "number": 53,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Possession Engine",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{3}{U}{U}",
+    "text": "When this Vehicle enters, gain control of target creature an opponent controls for as long as you control this Vehicle. That creature can't attack or block for as long as you control this Vehicle.\nCrew 3",
+    "number": 54,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Rangers' Refueler",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "Whenever you activate an exhaust ability, draw a card.\nExhaust — {4}: This Vehicle becomes an artifact creature. Put a +1/+1 counter on it. (Activate each exhaust ability only once.)\nCrew 2",
+    "number": 55,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Repurposing Bay",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "{2}, {T}, Sacrifice another artifact: Search your library for an artifact card with mana value equal to 1 plus the sacrificed artifact's mana value, put that card onto the battlefield, then shuffle. Activate only as a sorcery.",
+    "number": 56,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Riverchurn Monument",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "{1}, {T}: Any number of target players each mill two cards. (Each of them puts the top two cards of their library into their graveyard.)\nExhaust — {2}{U}{U}, {T}: Any number of target players each mill cards equal to the number of cards in their graveyard. (Activate each exhaust ability only once.)",
+    "number": 57,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Roadside Blowout",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "This spell costs {2} less to cast if it targets a permanent with mana value 1.\nReturn target creature or Vehicle an opponent controls to its owner's hand.\nDraw a card.",
+    "number": 58,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Sabotage Strategist",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vedalken",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}{U}",
+    "text": "Flying, vigilance\nWhenever one or more creatures attack you, those creatures get -1/-0 until end of turn.\nExhaust — {5}{U}{U}: Put three +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+    "number": 59,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Scrounging Skyray",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "Flying\nWhenever you discard one or more cards, put that many +1/+1 counters on this creature.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 60,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Skystreak Engineer",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "Flying\nExhaust — {4}{U}: Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+    "number": 61,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Slick Imitator",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ooze"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — {1}, Sacrifice this creature: Copy target spell you control. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+    "number": 62,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Spectral Interference",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "Counter target artifact or creature spell unless its controller pays {4}.",
+    "number": 63,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Spell Pierce",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{U}",
+    "text": "Counter target noncreature spell unless its controller pays {2}.",
+    "number": 64,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Spikeshell Harrier",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Turtle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{4}{U}",
+    "text": "When this creature enters, return target creature or Vehicle an opponent controls to its owner's hand. If that opponent's speed is greater than each other player's speed, reduce that opponent's speed by 1. This effect can't reduce their speed below 1.",
+    "number": 65,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Stall Out",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "Tap target creature or Vehicle, then put three stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 66,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Stock Up",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "Look at the top five cards of your library. Put two of them into your hand and the rest on the bottom of your library in any order.",
+    "number": 67,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Thopter Fabricator",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "Flying\nWhenever you draw your second card each turn, create a 1/1 colorless Thopter artifact creature token with flying.\nCrew 2",
+    "number": 68,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Trade the Helm",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{4}{U}",
+    "text": "Exchange control of target artifact or creature you control and target artifact or creature an opponent controls.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 69,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Transit Mage",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "When this creature enters, you may search your library for an artifact card with mana value 4 or 5, reveal it, put it into your hand, then shuffle.",
+    "number": 70,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Trip Up",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{3}{U}",
+    "text": "Target nonland permanent's owner puts it on their choice of the top or bottom of their library.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 71,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Unstoppable Plan",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{2}{U}",
+    "text": "At the beginning of your end step, untap all nonland permanents you control.",
+    "number": 72,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Vnwxt, Verbose Host",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Homunculus"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "cost": "{1}{U}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nYou have no maximum hand size.\nMax speed — If you would draw a card, draw two cards instead.",
+    "number": 73,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 0,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Waxen Shapethief",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shapeshifter"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "cost": "{3}{U}",
+    "text": "Flash\nYou may have this creature enter as a copy of an artifact or creature you control.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 74,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 0,
+    "toughness": 0,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "name": "Ancient Vendetta",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{3}{B}",
+    "text": "Choose a card name. Search target opponent's graveyard, hand, and library for up to four cards with that name and exile them. Then that player shuffles.",
+    "number": 75,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Back on Track",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{4}{B}",
+    "text": "Return target creature or Vehicle card from your graveyard to the battlefield. Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\"",
+    "number": 76,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Bloodghast",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Spirit"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{B}{B}",
+    "text": "This creature can't block.\nThis creature has haste as long as an opponent has 10 or less life.\nLandfall — Whenever a land you control enters, you may return this card from your graveyard to the battlefield.",
+    "number": 77,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Carrion Cruiser",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{2}{B}",
+    "text": "When this Vehicle enters, mill two cards. Then return a creature or Vehicle card from your graveyard to your hand. (To mill two cards, put the top two cards of your library into your graveyard.)\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 78,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Chitin Gravestalker",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{5}{B}",
+    "text": "This spell costs {1} less to cast for each artifact and/or creature card in your graveyard.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 79,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Cryptcaller Chariot",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{3}{B}",
+    "text": "Menace\nWhenever you discard one or more cards, create that many tapped 2/2 black Zombie creature tokens.\nCrew 2",
+    "number": 80,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "name": "Cursecloth Wrappings",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{2}{B}{B}",
+    "text": "Zombies you control get +1/+1.\n{T}: Target creature card in your graveyard gains embalm until end of turn. The embalm cost is equal to its mana cost. (Exile that card and pay its embalm cost: Create a token that's a copy of it, except it's a white Zombie in addition to its other types and has no mana cost. Embalm only as a sorcery.)",
+    "number": 81,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Deathless Pilot",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{1}{B}",
+    "text": "This creature saddles Mounts and crews Vehicles as though its power were 2 greater.\n{3}{B}: Return this card from your graveyard to your hand.",
+    "number": 82,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Demonic Junker",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{6}{B}",
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nWhen this Vehicle enters, for each player, destroy up to one target creature that player controls. If a creature you controlled was destroyed this way, put two +1/+1 counters on this Vehicle.\nCrew 2",
+    "number": 83,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Engine Rat",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Rat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{B}",
+    "text": "Deathtouch\n{5}{B}: Each opponent loses 2 life.",
+    "number": 84,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "name": "Gas Guzzler",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{B}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nThis creature enters tapped.\nMax speed — {B}, Sacrifice another creature or Vehicle: Draw a card.",
+    "number": 85,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Gastal Raider",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{2}{B}",
+    "text": "Start your engines!\nWhen this creature enters, target opponent reveals their hand. You choose an instant or sorcery card from it. That player discards that card.\nMax speed — This creature gets +1/+1 and has menace.",
+    "number": 86,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Gonti, Night Minister",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Aetherborn",
+      "Rogue"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "cost": "{2}{B}{B}",
+    "text": "Whenever a player casts a spell they don't own, that player creates a Treasure token.\nWhenever a creature deals combat damage to one of your opponents, its controller looks at the top card of that opponent's library and exiles it face down. They may play that card for as long as it remains exiled. Mana of any type can be spent to cast a spell this way.",
+    "number": 87,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Grim Bauble",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{B}",
+    "text": "When this artifact enters, target creature an opponent controls gets -2/-2 until end of turn.\n{2}{B}, {T}, Sacrifice this artifact: Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "number": 88,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Grim Javelineer",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{2}{B}",
+    "text": "Whenever you attack, target attacking creature gets +1/+0 until end of turn. When that creature dies this turn, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+    "number": 89,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Hellish Sideswipe",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{B}",
+    "text": "As an additional cost to cast this spell, sacrifice an artifact or creature.\nDestroy target creature or Vehicle. If the sacrificed permanent was a Vehicle, draw a card.",
+    "number": 90,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Hour of Victory",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{2}{B}",
+    "text": "Start your engines!\nWhen this enchantment enters, create a 2/2 black Zombie creature token.\nMax speed — {1}{B}, Sacrifice this enchantment: Search your library for a card, put it into your hand, then shuffle. Activate only as a sorcery.",
+    "number": 91,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Intimidation Tactics",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{B}",
+    "text": "Target opponent reveals their hand. You choose an artifact or creature card from it. Exile that card.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "number": 92,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Kalakscion, Hunger Tyrant",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Crocodile"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "cost": "{1}{B}{B}",
+    "text": "",
+    "number": 93,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 7,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "The Last Ride",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "cost": "{B}",
+    "text": "The Last Ride gets -X/-X, where X is your life total.\n{2}{B}, Pay 2 life: Draw a card.\nCrew 2",
+    "number": 94,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 13,
+    "toughness": 13,
+    "keywords": []
+  },
+  {
+    "name": "Locust Spray",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{B}",
+    "text": "Target creature gets -1/-1 until end of turn.\nCycling {B} ({B}, Discard this card: Draw a card.)",
+    "number": 95,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Maximum Overdrive",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{1}{B}",
+    "text": "Put a +1/+1 counter on target creature. It gains deathtouch and indestructible until end of turn.",
+    "number": 96,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Momentum Breaker",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{1}{B}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this enchantment enters, each opponent sacrifices a creature or Vehicle of their choice. Each opponent who can't discards a card.\n{2}, Sacrifice this enchantment: You gain life equal to your speed.",
+    "number": 97,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Mutant Surveyor",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{2}{B}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{2}: This creature gets +1/+1 until end of turn.\nMax speed — {3}, Exile this card from your graveyard: Draw a card.",
+    "number": 98,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Pactdoll Terror",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{3}{B}",
+    "text": "Whenever this creature or another artifact you control enters, each opponent loses 1 life and you gain 1 life.",
+    "number": 99,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Quag Feast",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{1}{B}",
+    "text": "Choose target creature, planeswalker, or Vehicle. Mill two cards, then destroy the chosen permanent if its mana value is less than or equal to the number of cards in your graveyard.",
+    "number": 100,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Ripclaw Wrangler",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{3}{B}",
+    "text": "When this Vehicle enters, each opponent discards a card.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 101,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Risen Necroregent",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Cat",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{4}{B}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — At the beginning of your end step, create a 2/2 black Zombie creature token.",
+    "number": 102,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Risky Shortcut",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{2}{B}",
+    "text": "Draw two cards. Each player loses 2 life.",
+    "number": 103,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Shefet Archfiend",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{5}{B}{B}",
+    "text": "Flying\nWhen this creature enters, all other creatures get -2/-2 until end of turn.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 104,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "The Speed Demon",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Demon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "cost": "{3}{B}{B}",
+    "text": "Flying, trample\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nAt the beginning of your end step, you draw X cards and lose X life, where X is your speed.",
+    "number": 105,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "trample"
+    ]
+  },
+  {
+    "name": "Spin Out",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{1}{B}{B}",
+    "text": "Destroy target creature or Vehicle.",
+    "number": 106,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Streaking Oilgorger",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{4}{B}",
+    "text": "Flying, haste\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — This creature has lifelink.",
+    "number": 107,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "haste"
+    ]
+  },
+  {
+    "name": "Syphon Fuel",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{4}{B}",
+    "text": "Target creature gets -6/-6 until end of turn. You gain 2 life.",
+    "number": 108,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Wickerfolk Indomitable",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{3}{B}",
+    "text": "You may cast this card from your graveyard by paying 2 life and sacrificing an artifact or creature in addition to paying its other costs.",
+    "number": 109,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Wreckage Wickerfolk",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Scarecrow"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{1}{B}",
+    "text": "Flying\nWhen this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "number": 110,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Wretched Doll",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Toy"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "cost": "{1}{B}",
+    "text": "{B}, {T}: Surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+    "number": 111,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Adrenaline Jockey",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Minotaur",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "Whenever a player casts a spell, if it's not their turn, this creature deals 4 damage to them.\nWhenever you activate an exhaust ability, put a +1/+1 counter on this creature.",
+    "number": 112,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Boommobile",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}{R}",
+    "text": "When this Vehicle enters, add four mana of any one color. Spend this mana only to activate abilities.\nExhaust — {X}{2}{R}: This Vehicle deals X damage to any target. Put a +1/+1 counter on this Vehicle. (Activate each exhaust ability only once.)\nCrew 2",
+    "number": 113,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Burner Rocket",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Flash\nWhen this Vehicle enters, target creature you control gets +2/+0 and gains trample until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 114,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "name": "Burnout Bashtronaut",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{R}",
+    "text": "Menace\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{2}: This creature gets +1/+0 until end of turn.\nMax speed — This creature has double strike.",
+    "number": 115,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "name": "Chandra, Spark Hunter",
+    "types": [
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Chandra"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "cost": "{3}{R}",
+    "text": "At the beginning of combat on your turn, choose up to one target Vehicle you control. Until end of turn, it becomes an artifact creature and gains haste.\n[+2]: You may sacrifice an artifact or discard a card. If you do, draw a card.\n[0]: Create a 3/2 colorless Vehicle artifact token with crew 1.\n[−7]: You get an emblem with \"Whenever an artifact you control enters, this emblem deals 3 damage to any target.\"",
+    "number": 116,
+    "set": "DFT",
+    "rarity": "M",
+    "loyalty": 4,
+    "keywords": []
+  },
+  {
+    "name": "Clamorous Ironclad",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{3}{R}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)\nCycling {R} ({R}, Discard this card: Draw a card.)",
+    "number": 117,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 6,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "name": "Count on Luck",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{R}{R}{R}",
+    "text": "At the beginning of your upkeep, exile the top card of your library. You may play that card this turn.",
+    "number": 118,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Crash and Burn",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{3}{R}",
+    "text": "Choose one —\n• Destroy target Vehicle.\n• Crash and Burn deals 6 damage to target creature or planeswalker.",
+    "number": 119,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Daretti, Rocketeer Engineer",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Artificer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "cost": "{4}{R}",
+    "text": "Daretti's power is equal to the greatest mana value among artifacts you control.\nWhenever Daretti enters or attacks, choose target artifact card in your graveyard. You may sacrifice an artifact. If you do, return the chosen card to the battlefield.",
+    "number": 120,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 0,
+    "powerText": "*",
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Draconautics Engineer",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Exhaust — {R}: Other creatures you control gain haste until end of turn. Put a +1/+1 counter on this creature. (Activate each exhaust ability only once.)\nExhaust — {3}{R}: Create a 4/4 red Dinosaur Dragon creature token with flying.",
+    "number": 121,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Dracosaur Auxiliary",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Dragon",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{4}{R}{R}",
+    "text": "Flying, haste\nWhenever this creature attacks while saddled, it deals 2 damage to any target.\nSaddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 122,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying",
+      "haste"
+    ]
+  },
+  {
+    "name": "Dynamite Diver",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{R}",
+    "text": "This creature saddles Mounts and crews Vehicles as though its power were 2 greater.\nWhen this creature dies, it deals 1 damage to any target.",
+    "number": 123,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Endrider Catalyzer",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — {T}: Add {R}{R}.",
+    "number": 124,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Endrider Spikespitter",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{3}{R}",
+    "text": "Reach\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — At the beginning of your upkeep, exile the top card of your library. You may play that card this turn.",
+    "number": 125,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "name": "Fuel the Flames",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "Fuel the Flames deals 2 damage to each creature.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 126,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Full Throttle",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{4}{R}{R}",
+    "text": "After this main phase, there are two additional combat phases.\nAt the beginning of each combat this turn, untap all creatures that attacked this turn.",
+    "number": 127,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Gastal Blockbuster",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Berserker"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "When this creature enters, you may sacrifice a creature or Vehicle. When you do, destroy target artifact an opponent controls.",
+    "number": 128,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Gastal Thrillroller",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "Trample, haste\nWhen this Vehicle enters, it becomes an artifact creature until end of turn.\nCrew 2\n{2}{R}, Discard a card: Return this card from your graveyard to the battlefield with a finality counter on it. Activate only as a sorcery.",
+    "number": 129,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "haste",
+      "trample"
+    ]
+  },
+  {
+    "name": "Gilded Ghoda",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Horse",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Whenever this creature attacks while saddled, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 130,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Goblin Surveyor",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "Trample\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — {3}, Exile this card from your graveyard: Draw a card.",
+    "number": 131,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "name": "Greasewrench Goblin",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{R}",
+    "text": "Exhaust — {2}{R}: Discard up to two cards, then draw that many cards. Put a +1/+1 counter on this creature. (Activate each exhaust ability only once.)",
+    "number": 132,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Hazoret, Godseeker",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Indestructible, haste\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{1}, {T}: Target creature with power 2 or less can't be blocked this turn.\nHazoret can't attack or block unless you have max speed.",
+    "number": 133,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 5,
+    "toughness": 3,
+    "keywords": [
+      "haste",
+      "indestructible"
+    ]
+  },
+  {
+    "name": "Howlsquad Heavy",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Mercenary"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "Start your engines!\nOther Goblins you control have haste.\nAt the beginning of combat on your turn, create a 1/1 red Goblin creature token. That token attacks this combat if able.\nMax speed — {T}: Add {R} for each Goblin you control.",
+    "number": 134,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Kickoff Celebrations",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this enchantment enters, you may discard a card. If you do, draw two cards.\nMax speed — Sacrifice this enchantment: Creatures and Vehicles you control gain haste until end of turn.",
+    "number": 135,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Lightning Strike",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Lightning Strike deals 3 damage to any target.",
+    "number": 136,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Magmakin Artillerist",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "Whenever you discard one or more cards, this creature deals that much damage to each opponent.\nCycling {1}{R} ({1}{R}, Discard this card: Draw a card.)\nWhen you cycle this card, it deals 1 damage to each opponent.",
+    "number": 137,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Marauding Mako",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shark",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{R}",
+    "text": "Whenever you discard one or more cards, put that many +1/+1 counters on this creature.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 138,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Outpace Oblivion",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this enchantment enters, it deals 5 damage to up to one target creature or planeswalker.\n{2}, Sacrifice this enchantment: It deals 2 damage to each player who doesn't have max speed.",
+    "number": 139,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Pacesetter Paragon",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{2}{R}",
+    "text": "Exhaust — {2}{R}: Put a +1/+1 counter on this creature. It gains double strike until end of turn. (Activate each exhaust ability only once.)",
+    "number": 140,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Pedal to the Metal",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{X}{R}",
+    "text": "Target creature gets +X/+0 and gains first strike until end of turn.",
+    "number": 141,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Prowcatcher Specialist",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Haste\nExhaust — {3}{R}: Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+    "number": 142,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "name": "Push the Limit",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{5}{R}{R}",
+    "text": "Return all Mount and Vehicle cards from your graveyard to the battlefield. Sacrifice them at the beginning of the next end step.\nVehicles you control become artifact creatures until end of turn. Creatures you control gain haste until end of turn.",
+    "number": 143,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Reckless Velocitaur",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Minotaur",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{3}{R}",
+    "text": "Whenever this creature saddles a Mount or crews a Vehicle during your main phase, that Mount or Vehicle gets +2/+0 and gains trample until end of turn.",
+    "number": 144,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Road Rage",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{R}",
+    "text": "Road Rage deals X damage to target creature or planeswalker, where X is 2 plus the number of Mounts and Vehicles you control.",
+    "number": 145,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Skycrash",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "Destroy target artifact.\nCycling {R} ({R}, Discard this card: Draw a card.)",
+    "number": 146,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Spire Mechcycle",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{4}{R}",
+    "text": "Haste\nExhaust — Tap another untapped Mount or Vehicle you control: This Vehicle becomes an artifact creature. Put a +1/+1 counter on it for each Mount and/or Vehicle you control other than this Vehicle. (Activate each exhaust ability only once.)\nCrew 2",
+    "number": 147,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "name": "Thunderhead Gunner",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shark",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "cost": "{4}{R}",
+    "text": "Reach\nDiscard a card: Draw a card. Activate only as a sorcery and only once each turn.",
+    "number": 148,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "name": "Tyrox, Saurid Tyrant",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "cost": "{1}{R}",
+    "text": "",
+    "number": 149,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 4,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Afterburner Expert",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "Exhaust — {2}{G}{G}: Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)\nWhenever you activate an exhaust ability, return this card from your graveyard to the battlefield.",
+    "number": 150,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 4,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Agonasaur Rex",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{3}{G}{G}",
+    "text": "Trample\nCycling {2}{G} ({2}{G}, Discard this card: Draw a card.)\nWhen you cycle this card, put two +1/+1 counters on up to one target creature or Vehicle. It gains trample and indestructible until end of turn.",
+    "number": 151,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 8,
+    "toughness": 8,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "name": "Alacrian Jaguar",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{4}{G}",
+    "text": "Vigilance\nWhenever this creature attacks while saddled, it gets +2/+2 until end of turn.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 152,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Autarch Mammoth",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{4}{G}{G}",
+    "text": "When this creature enters and whenever it attacks while saddled, create a 3/3 green Elephant creature token.\nSaddle 5 (Tap any number of other creatures you control with total power 5 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 153,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Beastrider Vanguard",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}",
+    "text": "{4}{G}: Look at the top three cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+    "number": 154,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Bestow Greatness",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "Target creature gets +4/+4 and gains trample until end of turn.",
+    "number": 155,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Broken Wings",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "Destroy target artifact, enchantment, or creature with flying.",
+    "number": 156,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Defend the Rider",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{G}",
+    "text": "Choose one —\n• Target permanent you control gains hexproof and indestructible until end of turn.\n• Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\"",
+    "number": 157,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "District Mascot",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{G}",
+    "text": "This creature enters with a +1/+1 counter on it.\n{1}{G}, Remove two +1/+1 counters from this creature: Destroy target artifact.\nWhenever this creature attacks while saddled, put a +1/+1 counter on it.\nSaddle 1",
+    "number": 158,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 0,
+    "toughness": 0,
+    "keywords": []
+  },
+  {
+    "name": "Dredger's Insight",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}",
+    "text": "Whenever one or more artifact and/or creature cards leave your graveyard, you gain 1 life.\nWhen this enchantment enters, mill four cards. You may put an artifact, creature, or land card from among the milled cards into your hand. (To mill four cards, put the top four cards of your library into your graveyard.)",
+    "number": 159,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Earthrumbler",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{4}{G}",
+    "text": "Vigilance, trample\nExile an artifact or creature card from your graveyard: This Vehicle becomes an artifact creature until end of turn.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 160,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 7,
+    "toughness": 6,
+    "keywords": [
+      "trample",
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Elvish Refueler",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "During your turn, as long as you haven't activated an exhaust ability this turn, you may activate exhaust abilities as though they haven't been activated.\nExhaust — {1}{G}: Put a +1/+1 counter on this creature. (Activate each exhaust ability only once.)",
+    "number": 161,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Fang Guardian",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ape",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{3}{G}",
+    "text": "Flash\nWhen this creature enters, another target creature or Vehicle you control gets +2/+2 until end of turn.",
+    "number": 162,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "name": "Fang-Druid Summoner",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ape",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{3}{G}",
+    "text": "Reach\nWhen this creature enters, you may search your library and/or graveyard for a creature card with no abilities, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+    "number": 163,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "name": "Greenbelt Guardian",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}",
+    "text": "{G}: Target creature gains trample until end of turn.\nExhaust — {3}{G}: Put three +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+    "number": 164,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Hazard of the Dunes",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wurm"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{3}{G}",
+    "text": "Reach, trample\nExhaust — {6}{G}: Put three +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+    "number": 165,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "reach",
+      "trample"
+    ]
+  },
+  {
+    "name": "Jibbirik Omnivore",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}",
+    "text": "",
+    "number": 166,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Loxodon Surveyor",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elephant",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — {3}, Exile this card from your graveyard: Draw a card.",
+    "number": 167,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Lumbering Worldwagon",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "This Vehicle's power is equal to the number of lands you control.\nWhenever this Vehicle enters or attacks, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nCrew 4",
+    "number": 168,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 0,
+    "powerText": "*",
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "March of the World Ooze",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{3}{G}{G}{G}",
+    "text": "Creatures you control have base power and toughness 6/6 and are Oozes in addition to their other types.\nWhenever an opponent casts a spell, if it's not their turn, you create a 3/3 green Elephant creature token.",
+    "number": 169,
+    "set": "DFT",
+    "rarity": "M",
+    "keywords": []
+  },
+  {
+    "name": "Migrating Ketradon",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{4}{G}{G}",
+    "text": "Reach\nWhen this creature enters, you gain 4 life.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 170,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "name": "Molt Tender",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{G}",
+    "text": "{T}: Mill a card. (Put the top card of your library into your graveyard.)\n{T}, Exile a card from your graveyard: Add one mana of any color.",
+    "number": 171,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Ooze Patrol",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ooze"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{3}{G}",
+    "text": "When this creature enters, mill two cards, then put a +1/+1 counter on this creature for each artifact and/or creature card in your graveyard. (To mill two cards, put the top two cards of your library into your graveyard.)",
+    "number": 172,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Oviya, Automech Artisan",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "cost": "{3}{G}",
+    "text": "Each creature that's attacking one of your opponents has trample.\n{G}, {T}: You may put a creature or Vehicle card from your hand onto the battlefield. If you put an artifact onto the battlefield this way, put two +1/+1 counters on it.",
+    "number": 173,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Plow Through",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{G}",
+    "text": "Choose one —\n• Target creature you control fights target creature an opponent controls. (Each deals damage equal to its power to the other.)\n• Destroy target Vehicle.",
+    "number": 174,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Point the Way",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{G}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{3}{G}, Sacrifice this enchantment: Search your library for up to X basic land cards, where X is your speed. Put those cards onto the battlefield tapped, then shuffle.",
+    "number": 175,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Pothole Mole",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mole"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "When this creature enters, mill three cards, then you may return a land card from your graveyard to your hand. (To mill three cards, put the top three cards of your library into your graveyard.)",
+    "number": 176,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Regal Imperiosaur",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}{G}",
+    "text": "Other Dinosaurs you control get +1/+1.",
+    "number": 177,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Rise from the Wreck",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "Return up to one target creature card, up to one target Mount card, up to one target Vehicle card, and up to one target creature card with no abilities from your graveyard to your hand.",
+    "number": 178,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Run Over",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}",
+    "text": "This spell costs {1} less to cast if it targets a Mount or Vehicle you control.\nTarget creature you control deals damage equal to its power to target creature an opponent controls.",
+    "number": 179,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Silken Strength",
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}",
+    "text": "Flash\nEnchant creature or Vehicle\nWhen this Aura enters, untap enchanted permanent.\nEnchanted permanent gets +1/+2 and has reach.",
+    "number": 180,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "name": "Stampeding Scurryfoot",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mouse"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{G}",
+    "text": "Exhaust — {3}{G}: Put a +1/+1 counter on this creature. Create a 3/3 green Elephant creature token. (Activate each exhaust ability only once.)",
+    "number": 181,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Terrian, World Tyrant",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Ooze"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}{G}{G}",
+    "text": "",
+    "number": 182,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 9,
+    "toughness": 7,
+    "keywords": []
+  },
+  {
+    "name": "Thunderous Velocipede",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}{G}",
+    "text": "Trample\nEach other Vehicle and creature you control enters with an additional +1/+1 counter on it if its mana value is 4 or less. Otherwise, it enters with three additional +1/+1 counters on it.\nCrew 3",
+    "number": 183,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "name": "Veloheart Bike",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{2}{G}",
+    "text": "When this Vehicle enters, you gain 2 life.\n{T}: Add one mana of any color.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 184,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 4,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Venomsac Lagac",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Mount"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{1}{G}",
+    "text": "Deathtouch\nWhenever this creature attacks while saddled, it gets +0/+3 until end of turn.\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 185,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "name": "Webstrike Elite",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Archer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "cost": "{G}{G}",
+    "text": "Reach\nCycling {X}{G}{G} ({X}{G}{G}, Discard this card: Draw a card.)\nWhen you cycle this card, destroy up to one target artifact or enchantment with mana value X.",
+    "number": 186,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "name": "Aatchik, Emerald Radian",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Druid"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "cost": "{3}{B}{B}{G}",
+    "text": "When Aatchik enters, create a 1/1 green Insect creature token for each artifact and/or creature card in your graveyard.\nWhenever another Insect you control dies, put a +1/+1 counter on Aatchik. Each opponent loses 1 life.",
+    "number": 187,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Apocalypse Runner",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "cost": "{2}{B}{R}",
+    "text": "{T}: Target creature you control with power 2 or less gains lifelink until end of turn and can't be blocked this turn.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 188,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 6,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Boom Scholar",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Advisor"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "cost": "{1}{R}{G}",
+    "text": "Exhaust abilities of other permanents you control cost {2} less to activate.\nExhaust — {4}{R}{G}: Creatures and Vehicles you control gain trample until end of turn. Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+    "number": 189,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Boosted Sloop",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "cost": "{1}{U}{R}",
+    "text": "Menace\nWhenever you attack, draw a card, then discard a card.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 190,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "name": "Brightglass Gearhulk",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "cost": "{G}{G}{W}{W}",
+    "text": "First strike, trample\nWhen this creature enters, you may search your library for up to two artifact, creature, and/or enchantment cards with mana value 1 or less, reveal them, put them into your hand, then shuffle.",
+    "number": 191,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "first_strike",
+      "trample"
+    ]
+  },
+  {
+    "name": "Broadside Barrage",
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "cost": "{1}{U}{R}",
+    "text": "Broadside Barrage deals 5 damage to target creature or planeswalker. Draw a card, then discard a card.",
+    "number": 192,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Broodheart Engine",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "cost": "{B}{G}",
+    "text": "At the beginning of your upkeep, surveil 1.\n{2}{B}{G}, {T}, Sacrifice this artifact: Return target creature or Vehicle card from your graveyard to the battlefield. Activate only as a sorcery.",
+    "number": 193,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Captain Howler, Sea Scourge",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Shark",
+      "Pirate"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "cost": "{2}{U}{R}",
+    "text": "Ward—{2}, Pay 2 life.\nWhenever you discard one or more cards, target creature gets +2/+0 until end of turn for each card discarded this way. Whenever that creature deals combat damage to a player this turn, you draw a card.",
+    "number": 194,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Caradora, Heart of Alacria",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "cost": "{2}{G}{W}",
+    "text": "When Caradora enters, you may search your library for a Mount or Vehicle card, reveal it, put it into your hand, then shuffle.\nIf one or more +1/+1 counters would be put on a creature or Vehicle you control, that many plus one +1/+1 counters are put on it instead.",
+    "number": 195,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 4,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Cloudspire Coordinator",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "cost": "{R}{W}",
+    "text": "When this creature enters, scry 2.\n{T}: Create X 1/1 colorless Pilot creature tokens, where X is the number of Mounts and/or Vehicles that entered the battlefield under your control this turn. The tokens have \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\"",
+    "number": 196,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Cloudspire Skycycle",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "cost": "{2}{R}{W}",
+    "text": "Flying\nWhen this Vehicle enters, distribute two +1/+1 counters among one or two other target Vehicles and/or creatures you control.\nCrew 1",
+    "number": 197,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Coalstoke Gearhulk",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "cost": "{1}{B}{B}{R}{R}",
+    "text": "Menace, deathtouch\nWhen this creature enters, put target creature card with mana value 4 or less from a graveyard onto the battlefield under your control with a finality counter on it. That creature gains menace, deathtouch, and haste. At the beginning of your next end step, exile that creature.",
+    "number": 198,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch",
+      "menace"
+    ]
+  },
+  {
+    "name": "Debris Beetle",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "cost": "{2}{B}{G}",
+    "text": "Trample\nWhen this Vehicle enters, each opponent loses 3 life and you gain 3 life.\nCrew 2",
+    "number": 199,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "name": "Dune Drifter",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "cost": "{X}{W}{B}",
+    "text": "When this Vehicle enters, return target artifact or creature card with mana value X or less from your graveyard to the battlefield.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 200,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Embalmed Ascendant",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "cost": "{1}{W}{B}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this creature enters, create a 2/2 black Zombie creature token.\nMax speed — Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.",
+    "number": 201,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Explosive Getaway",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "cost": "{3}{R}{W}",
+    "text": "Exile up to one target artifact or creature. Return it to the battlefield under its owner's control at the beginning of the next end step.\nExplosive Getaway deals 4 damage to each creature.",
+    "number": 202,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Far Fortune, End Boss",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "cost": "{2}{B}{R}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhenever you attack, Far Fortune deals 1 damage to each opponent.\nMax speed — If a source you control would deal damage to an opponent or a permanent an opponent controls, it deals that much damage plus 1 instead.",
+    "number": 203,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 4,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Fearless Swashbuckler",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Fish",
+      "Pirate"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "cost": "{1}{U}{R}",
+    "text": "Haste\nVehicles you control have haste.\nWhenever you attack, if a Pirate and a Vehicle attacked this combat, draw three cards, then discard two cards.",
+    "number": 204,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "name": "Gastal Thrillseeker",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Berserker"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "cost": "{B}{R}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this creature enters, it deals 1 damage to target opponent and you gain 1 life.\nMax speed — This creature has deathtouch and haste.",
+    "number": 205,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Guidelight Pathmaker",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "cost": "{4}{W}{U}",
+    "text": "Vigilance\nWhen this Vehicle enters, you may search your library for an artifact card and reveal it. Put it onto the battlefield if its mana value is 2 or less. Otherwise, put it into your hand. If you search your library this way, shuffle.\nCrew 2",
+    "number": 206,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Haunt the Network",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "cost": "{3}{U}{B}",
+    "text": "Choose target opponent. Create two 1/1 colorless Thopter artifact creature tokens with flying. Then the chosen player loses X life and you gain X life, where X is the number of artifacts you control.",
+    "number": 207,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Haunted Hellride",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "cost": "{1}{U}{B}",
+    "text": "Whenever you attack, target creature you control gets +1/+0 and gains deathtouch until end of turn. Untap it.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 208,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Ketramose, the New Dawn",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "cost": "{1}{W}{B}",
+    "text": "Menace, lifelink, indestructible\nKetramose can't attack or block unless there are seven or more cards in exile.\nWhenever one or more cards are put into exile from graveyards and/or the battlefield during your turn, you draw a card and lose 1 life.",
+    "number": 209,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "indestructible",
+      "lifelink",
+      "menace"
+    ]
+  },
+  {
+    "name": "Kolodin, Triumph Caster",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "cost": "{R}{W}",
+    "text": "Mounts and Vehicles you control have haste.\nWhenever a Mount you control enters, it becomes saddled until end of turn.\nWhenever a Vehicle you control enters, it becomes an artifact creature until end of turn.",
+    "number": 210,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Lagorin, Soul of Alacria",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast",
+      "Mount"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "cost": "{G}{W}",
+    "text": "Flying\nWhenever Lagorin attacks while saddled, put a +1/+1 counter on each of up to two target Mounts and/or Vehicles.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+    "number": 211,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Loot, the Pathfinder",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Beast",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R",
+      "U"
+    ],
+    "cost": "{2}{G}{U}{R}",
+    "text": "Double strike, vigilance, haste\nExhaust — {G}, {T}: Add three mana of any one color. (Activate each exhaust ability only once.)\nExhaust — {U}, {T}: Draw three cards.\nExhaust — {R}, {T}: Loot deals 3 damage to any target.",
+    "number": 212,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 2,
+    "toughness": 4,
+    "keywords": [
+      "double_strike",
+      "haste",
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Mendicant Core, Guidelight",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "cost": "{W}{U}",
+    "text": "Mendicant Core's power is equal to the number of artifacts you control.\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — Whenever you cast an artifact spell, you may pay {1}. If you do, copy it. (The copy becomes a token.)",
+    "number": 213,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 0,
+    "powerText": "*",
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Mimeoplasm, Revered One",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Ooze"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "cost": "{X}{B}{G}{U}",
+    "text": "As Mimeoplasm enters, exile up to X creature cards from your graveyard. It enters with three +1/+1 counters on it for each creature card exiled this way.\n{2}: Mimeoplasm becomes a copy of target creature card exiled with it, except it's 0/0 and has this ability.",
+    "number": 214,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 0,
+    "toughness": 0,
+    "keywords": []
+  },
+  {
+    "name": "Oildeep Gearhulk",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "cost": "{U}{U}{B}{B}",
+    "text": "Lifelink, ward {1}\nWhen this creature enters, look at target player's hand. You may choose a card from it. If you do, that player discards that card, then draws a card.",
+    "number": 215,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "name": "Pyrewood Gearhulk",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "cost": "{2}{R}{R}{G}{G}",
+    "text": "Vigilance, menace\nWhen this creature enters, other creatures you control get +2/+2 and gain vigilance and menace until end of turn. Damage can't be prevented this turn.",
+    "number": 216,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 7,
+    "toughness": 7,
+    "keywords": [
+      "menace",
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Rangers' Aetherhive",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "cost": "{1}{G}{U}",
+    "text": "Vigilance\nWhenever you activate an exhaust ability, create a 1/1 colorless Thopter artifact creature token with flying.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "number": 217,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Redshift, Rocketeer Chief",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Pilot"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "cost": "{R}{G}",
+    "text": "Vigilance\n{T}: Add X mana of any one color, where X is Redshift's power. Spend this mana only to activate abilities.\nExhaust — {10}{R}{G}: Put any number of permanent cards from your hand onto the battlefield. (Activate each exhaust ability only once.)",
+    "number": 218,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Riptide Gearhulk",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "cost": "{1}{W}{W}{U}{U}",
+    "text": "Double strike\nProwess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen this creature enters, for each opponent, put up to one target nonland permanent that player controls into its owner's library third from the top.",
+    "number": 219,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "double_strike",
+      "prowess"
+    ]
+  },
+  {
+    "name": "Rocketeer Boostbuggy",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "cost": "{R}{G}",
+    "text": "Whenever this Vehicle attacks, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nExhaust — {3}: This Vehicle becomes an artifact creature. Put a +1/+1 counter on it. (Activate each exhaust ability only once.)\nCrew 1",
+    "number": 220,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Sab-Sunen, Luxa Embodied",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "God"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "cost": "{3}{G}{U}",
+    "text": "Reach, trample, indestructible\nSab-Sunen can't attack or block unless it has an even number of counters on it. (Zero is even.)\nAt the beginning of your first main phase, put a +1/+1 counter on Sab-Sunen. Then if it has an odd number of counters on it, draw two cards.",
+    "number": 221,
+    "set": "DFT",
+    "rarity": "M",
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "indestructible",
+      "reach",
+      "trample"
+    ]
+  },
+  {
+    "name": "Samut, the Driving Force",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Cleric"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R",
+      "W"
+    ],
+    "cost": "{3}{R}{G}{W}",
+    "text": "First strike, vigilance, haste\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nOther creatures you control get +X/+0, where X is your speed.\nNoncreature spells you cast cost {X} less to cast, where X is your speed.",
+    "number": 222,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "first_strike",
+      "haste",
+      "vigilance"
+    ]
+  },
+  {
+    "name": "Sita Varma, Masked Racer",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "cost": "{G}{U}",
+    "text": "Exhaust — {X}{G}{G}{U}: Put X +1/+1 counters on Sita Varma. Then you may have the base power and toughness of each other creature you control become equal to Sita Varma's power until end of turn. (Activate each exhaust ability only once.)",
+    "number": 223,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "name": "Skyserpent Seeker",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Snake"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "cost": "{G}{U}",
+    "text": "Flying, deathtouch\nExhaust — {4}: Reveal cards from the top of your library until you reveal two land cards. Put those land cards onto the battlefield tapped and the rest on the bottom of your library in a random order. Put a +1/+1 counter on this creature. (Activate each exhaust ability only once.)",
+    "number": 224,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "deathtouch",
+      "flying"
+    ]
+  },
+  {
+    "name": "Thundering Broodwagon",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "cost": "{2}{B}{B}{G}{G}",
+    "text": "Reach, menace\nWhen this Vehicle enters, destroy target nonland permanent an opponent controls with mana value 4 or less.\nCrew 3\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 225,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "menace",
+      "reach"
+    ]
+  },
+  {
+    "name": "Veteran Beastrider",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "cost": "{1}{G}{W}",
+    "text": "At the beginning of your end step, untap each creature you control.\n{2}{G}{W}: Creatures you control get +1/+1 until end of turn.",
+    "number": 226,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Voyage Home",
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "cost": "{5}{W}{U}",
+    "text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nYou draw three cards and gain 3 life.",
+    "number": 227,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Winter, Cursed Rider",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warlock"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "cost": "{U}{B}",
+    "text": "Ward—Pay 2 life.\nArtifacts you control have \"Ward—Pay 2 life.\"\nExhaust — {2}{U}{B}, {T}, Exile X artifact cards from your graveyard: Each other nonartifact creature gets -X/-X until end of turn. (Activate each exhaust ability only once.)",
+    "number": 228,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Zahur, Glory's Past",
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Cat",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "cost": "{W}{B}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nSacrifice another creature: Surveil 1. Activate only once each turn.\nMax speed — Whenever a nontoken creature you control dies, create a tapped 2/2 black Zombie creature token.",
+    "number": 229,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Aetherjacket",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Thopter"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{3}",
+    "text": "Flying, vigilance\n{2}, {T}, Sacrifice this creature: Destroy another target artifact. Activate only as a sorcery.",
+    "number": 230,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "name": "The Aetherspark",
+    "types": [
+      "Artifact",
+      "Planeswalker"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "cost": "{4}",
+    "text": "As long as The Aetherspark is attached to a creature, The Aetherspark can't be attacked and has \"Whenever equipped creature deals combat damage during your turn, put that many loyalty counters on The Aetherspark.\"\n[+1]: Attach The Aetherspark to up to one target creature you control. Put a +1/+1 counter on that creature.\n[−5]: Draw two cards.\n[−10]: Add ten mana of any one color.",
+    "number": 231,
+    "set": "DFT",
+    "rarity": "M",
+    "loyalty": 4,
+    "keywords": []
+  },
+  {
+    "name": "Camera Launcher",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{3}",
+    "text": "Exhaust — {3}: Put a +1/+1 counter on this creature. Create a 1/1 colorless Thopter artifact creature token with flying. (Activate each exhaust ability only once.)",
+    "number": 232,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "name": "Guidelight Matrix",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{2}",
+    "text": "When this artifact enters, draw a card.\n{2}, {T}: Target Mount you control becomes saddled until end of turn. Activate only as a sorcery.\n{2}, {T}: Target Vehicle you control becomes an artifact creature until end of turn.",
+    "number": 233,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Lifecraft Engine",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{3}",
+    "text": "As this Vehicle enters, choose a creature type.\nVehicle creatures you control are the chosen creature type in addition to their other types.\nEach creature you control of the chosen type other than this Vehicle gets +1/+1.\nCrew 3",
+    "number": 234,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Marketback Walker",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{X}{X}",
+    "text": "This creature enters with X +1/+1 counters on it.\n{4}: Put a +1/+1 counter on this creature.\nWhen this creature dies, draw a card for each +1/+1 counter on it.",
+    "number": 235,
+    "set": "DFT",
+    "rarity": "R",
+    "power": 0,
+    "toughness": 0,
+    "keywords": []
+  },
+  {
+    "name": "Marshals' Pathcruiser",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{3}",
+    "text": "When this Vehicle enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nExhaust — {W}{U}{B}{R}{G}: This Vehicle becomes an artifact creature. Put two +1/+1 counters on it. (Activate each exhaust ability only once.)\nCrew 5",
+    "number": 236,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 6,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "name": "Monument to Endurance",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{3}",
+    "text": "Whenever you discard a card, choose one that hasn't been chosen this turn —\n• Draw a card.\n• Create a Treasure token.\n• Each opponent loses 3 life.",
+    "number": 237,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Pit Automaton",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{2}",
+    "text": "Defender\n{T}: Add {C}{C}. Spend this mana only to activate abilities.\n{2}, {T}: When you next activate an exhaust ability that isn't a mana ability this turn, copy it. You may choose new targets for the copy.",
+    "number": 238,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 0,
+    "toughness": 4,
+    "keywords": [
+      "defender"
+    ]
+  },
+  {
+    "name": "Racers' Scoreboard",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{4}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this artifact enters, draw two cards, then discard a card.\nMax speed — Spells you cast cost {1} less to cast.",
+    "number": 239,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Radiant Lotus",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{6}",
+    "text": "{T}, Sacrifice one or more artifacts: Choose a color. Target player adds three mana of the chosen color for each artifact sacrificed this way. (Activate only as an instant.)",
+    "number": 240,
+    "set": "DFT",
+    "rarity": "M",
+    "keywords": []
+  },
+  {
+    "name": "Rover Blades",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment",
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{3}",
+    "text": "Double strike\nEquipped creature has double strike.\nEquip {4}\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn. Creatures can't be attached to other permanents.)",
+    "number": 241,
+    "set": "DFT",
+    "rarity": "U",
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "double_strike"
+    ]
+  },
+  {
+    "name": "Scrap Compactor",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{1}",
+    "text": "{3}, {T}, Sacrifice this artifact: It deals 3 damage to target creature.\n{6}, {T}, Sacrifice this artifact: Destroy target creature or Vehicle.",
+    "number": 242,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Skybox Ferry",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{5}",
+    "text": "Flying\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 243,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "name": "Starting Column",
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{3}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{T}: Add one mana of any color.\nMax speed — {T}, Sacrifice this artifact: Draw two cards, then discard a card.",
+    "number": 244,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Ticket Tortoise",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Turtle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{2}",
+    "text": "Defender\nWhen this creature enters, if an opponent controls more lands than you, you create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "number": 245,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "defender"
+    ]
+  },
+  {
+    "name": "Walking Sarcophagus",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Zombie",
+      "Cat"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{2}",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed — This creature gets +1/+2.",
+    "number": 246,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "name": "Wreck Remover",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "cost": "{4}",
+    "text": "Whenever this creature enters or attacks, exile up to one target card from a graveyard. You gain 1 life.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "number": 247,
+    "set": "DFT",
+    "rarity": "C",
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "name": "Amonkhet Raceway",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{T}: Add {C}.\nMax speed — {T}: Target creature gains haste until end of turn.",
+    "number": 248,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Avishkar Raceway",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{T}: Add {C}.\nMax speed — {3}, {T}, Discard a card: Draw a card.",
+    "number": 249,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Bleachbone Verge",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "{T}: Add {B}.\n{T}: Add {W}. Activate only if you control a Plains or a Swamp.",
+    "number": 250,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Bloodfell Caves",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {B} or {R}.",
+    "number": 251,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Blossoming Sands",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {G} or {W}.",
+    "number": 252,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Country Roads",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped unless you control a Mount or Vehicle.\n{T}: Add {W}.\n{1}{W}, {T}, Sacrifice this land: Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\" Activate only as a sorcery.",
+    "number": 253,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Dismal Backwater",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {B}.",
+    "number": 254,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Foul Roads",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped unless you control a Mount or Vehicle.\n{T}: Add {B}.\n{1}{B}, {T}, Sacrifice this land: Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\" Activate only as a sorcery.",
+    "number": 255,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Jungle Hollow",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {B} or {G}.",
+    "number": 256,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Muraganda Raceway",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{T}: Add {C}.\nMax speed — {T}: Add {C}{C}.",
+    "number": 257,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Night Market",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped. As it enters, choose a color.\n{T}: Add one mana of the chosen color.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+    "number": 258,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Reef Roads",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped unless you control a Mount or Vehicle.\n{T}: Add {U}.\n{1}{U}, {T}, Sacrifice this land: Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\" Activate only as a sorcery.",
+    "number": 259,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Riverpyre Verge",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "{T}: Add {R}.\n{T}: Add {U}. Activate only if you control an Island or a Mountain.",
+    "number": 260,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Rocky Roads",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped unless you control a Mount or Vehicle.\n{T}: Add {R}.\n{1}{R}, {T}, Sacrifice this land: Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\" Activate only as a sorcery.",
+    "number": 261,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Rugged Highlands",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {G}.",
+    "number": 262,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Scoured Barrens",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {B}.",
+    "number": 263,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Sunbillow Verge",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "{T}: Add {W}.\n{T}: Add {R}. Activate only if you control a Mountain or a Plains.",
+    "number": 264,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Swiftwater Cliffs",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {R}.",
+    "number": 265,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Thornwood Falls",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {G} or {U}.",
+    "number": 266,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Tranquil Cove",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {U}.",
+    "number": 267,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  },
+  {
+    "name": "Wastewood Verge",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "{T}: Add {G}.\n{T}: Add {B}. Activate only if you control a Swamp or a Forest.",
+    "number": 268,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Wild Roads",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped unless you control a Mount or Vehicle.\n{T}: Add {G}.\n{1}{G}, {T}, Sacrifice this land: Create a 1/1 colorless Pilot creature token with \"This token saddles Mounts and crews Vehicles as though its power were 2 greater.\" Activate only as a sorcery.",
+    "number": 269,
+    "set": "DFT",
+    "rarity": "U",
+    "keywords": []
+  },
+  {
+    "name": "Willowrush Verge",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "{T}: Add {U}.\n{T}: Add {G}. Activate only if you control a Forest or an Island.",
+    "number": 270,
+    "set": "DFT",
+    "rarity": "R",
+    "keywords": []
+  },
+  {
+    "name": "Wind-Scarred Crag",
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {W}.",
+    "number": 271,
+    "set": "DFT",
+    "rarity": "C",
+    "keywords": []
+  }
+]

@@ -1,0 +1,1532 @@
+{
+  "3": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "label": "目標生物得+1/+1直到回合結束",
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ],
+        "sorcery": true
+      }
+    ]
+  },
+  "4": {
+    "keywords": [
+      "first_strike",
+      "lifelink"
+    ]
+  },
+  "13": {
+    "aura": {
+      "target": {
+        "kind": "creature",
+        "prompt": "選擇要結附的生物"
+      },
+      "grant": {
+        "p": 1,
+        "t": 0,
+        "kw": [
+          "flying"
+        ]
+      }
+    },
+    "keywords": [
+      "flash"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "16": {
+    "spell": {
+      "effects": [
+        {
+          "e": "token",
+          "token": "tok-g-rabbit-11-w",
+          "n": 3
+        }
+      ]
+    }
+  },
+  "17": {
+    "offspring": "{1}",
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "20": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "allyEtb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "22": {
+    "keywords": [
+      "flash"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "targeted",
+        "effects": [
+          {
+            "e": "tap",
+            "what": "T0"
+          }
+        ],
+        "oncePerTurn": true,
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "opp"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "23": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "targeted",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 0,
+            "t": 2
+          }
+        ],
+        "oncePerTurn": true
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}",
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "destroy",
+            "what": "T0"
+          }
+        ],
+        "label": "消滅目標神器或結界",
+        "targets": [
+          {
+            "kind": "permanent",
+            "filter": {
+              "type": [
+                "Artifact",
+                "Enchantment"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "25": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you",
+              "nonKw": "flying"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "31": {
+    "keywords": [
+      "flying",
+      "double_strike",
+      "vigilance"
+    ]
+  },
+  "35": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "untap",
+            "what": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "permanent",
+            "filter": {
+              "nonType": "Land"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "37": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}{W}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": {
+              "all": {
+                "type": "Creature",
+                "ctrl": "you"
+              }
+            },
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "label": "由你操控的生物得+1/+1直到回合結"
+      }
+    ]
+  },
+  "42": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          },
+          {
+            "e": "discard",
+            "n": 1,
+            "who": "you"
+          }
+        ]
+      }
+    ]
+  },
+  "50": {
+    "offspring": "{3}",
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "flying"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "52": {
+    "spell": {
+      "modes": [
+        {
+          "text": "不送禮",
+          "effects": [
+            {
+              "e": "bounce",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "ctrl": "opp"
+              }
+            }
+          ]
+        },
+        {
+          "text": "送禮",
+          "effects": [
+            {
+              "e": "token",
+              "token": "tok-g-fish-11-u",
+              "who": "opp",
+              "tapped": true
+            },
+            {
+              "e": "bounce",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "permanent",
+              "filter": {
+                "nonType": "Land",
+                "ctrl": "opp"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "56": {
+    "keywords": [
+      "prowess"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "58": {
+    "spell": {
+      "modes": [
+        {
+          "text": "不送禮",
+          "effects": [
+            {
+              "e": "counter",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "spell",
+              "filter": {
+                "type": "Creature"
+              }
+            }
+          ]
+        },
+        {
+          "text": "送禮",
+          "effects": [
+            {
+              "e": "draw",
+              "n": 1,
+              "who": "opp"
+            },
+            {
+              "e": "counter",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "spell"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "65": {
+    "keywords": [
+      "flash",
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "hexproof"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "72": {
+    "spell": {
+      "modes": [
+        {
+          "text": "反擊目標咒語",
+          "effects": [
+            {
+              "e": "counter",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "spell"
+            }
+          ]
+        },
+        {
+          "text": "刺探2，然後抓兩張牌",
+          "effects": [
+            {
+              "e": "surveil",
+              "n": 2
+            },
+            {
+              "e": "draw",
+              "n": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "82": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 1,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "89": {
+    "keywords": [
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "mill",
+            "n": 2
+          }
+        ],
+        "may": "磨兩張牌？"
+      }
+    ]
+  },
+  "91": {
+    "spell": {
+      "effects": [
+        {
+          "e": "surveil",
+          "n": 2
+        },
+        {
+          "e": "draw",
+          "n": 2
+        },
+        {
+          "e": "lose",
+          "n": 2,
+          "who": "you"
+        }
+      ]
+    }
+  },
+  "95": {
+    "spell": {
+      "effects": [
+        {
+          "e": "destroy",
+          "what": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "96": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 2,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "99": {
+    "offspring": "{2}",
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "landfall",
+        "effects": [
+          {
+            "e": "damage",
+            "n": 1,
+            "to": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "opponent"
+          }
+        ]
+      }
+    ]
+  },
+  "106": {
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{1}{B}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "label": "此生物得+1/+1直到回合結束"
+      }
+    ]
+  },
+  "109": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": -2,
+          "t": -2
+        },
+        {
+          "e": "token",
+          "token": "tok-food"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "113": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "combatStart",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 1,
+            "who": "opp"
+          },
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true,
+          "life": 2,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 2
+          }
+        ],
+        "label": "抓兩張牌",
+        "sorcery": true
+      }
+    ]
+  },
+  "116": {
+    "offspring": "{2}{B}",
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "grant": {
+            "cantBlock": true
+          }
+        }
+      },
+      {
+        "kind": "trigger",
+        "on": "lifegain",
+        "effects": [
+          {
+            "e": "lose",
+            "n": 1,
+            "who": "opp"
+          }
+        ]
+      }
+    ],
+    "keywords": [
+      "flying"
+    ]
+  },
+  "131": {
+    "offspring": "{2}",
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "castNoncreature",
+        "effects": [
+          {
+            "e": "damage",
+            "n": 1,
+            "to": "opp"
+          }
+        ]
+      }
+    ]
+  },
+  "142": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "damage",
+            "n": 1,
+            "to": "T0"
+          }
+        ],
+        "label": "此生物對目標對手造成1點傷害",
+        "targets": [
+          {
+            "kind": "opponent"
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "castNoncreature",
+        "effects": [
+          {
+            "e": "untap",
+            "what": "self"
+          }
+        ]
+      }
+    ]
+  },
+  "145": {
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 1,
+          "to": "T0"
+        },
+        {
+          "e": "draw",
+          "n": 1
+        }
+      ],
+      "targets": [
+        {
+          "kind": "any"
+        }
+      ]
+    }
+  },
+  "146": {
+    "keywords": [
+      "reach",
+      "trample",
+      "haste"
+    ]
+  },
+  "148": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "haste"
+            ]
+          }
+        ],
+        "label": "目標由你操控的生物獲得敏捷異能直到回",
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ],
+        "sorcery": true
+      }
+    ]
+  },
+  "153": {
+    "offspring": "{2}",
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "damage",
+            "n": 1,
+            "to": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "player"
+          }
+        ]
+      }
+    ]
+  },
+  "159": {
+    "spell": {
+      "modes": [
+        {
+          "text": "不送禮",
+          "effects": [
+            {
+              "e": "pump",
+              "what": {
+                "all": {
+                  "type": "Creature",
+                  "ctrl": "you"
+                }
+              },
+              "p": 2,
+              "t": 0
+            }
+          ]
+        },
+        {
+          "text": "送禮",
+          "effects": [
+            {
+              "e": "token",
+              "token": "tok-food",
+              "who": "opp"
+            },
+            {
+              "e": "pump",
+              "what": {
+                "all": {
+                  "type": "Creature",
+                  "ctrl": "you"
+                }
+              },
+              "p": 2,
+              "t": 0
+            },
+            {
+              "e": "pump",
+              "what": "T0",
+              "p": 0,
+              "t": 0,
+              "kw": [
+                "first_strike"
+              ]
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "ctrl": "you"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "173": {
+    "keywords": [
+      "flash",
+      "reach",
+      "vigilance",
+      "trample"
+    ]
+  },
+  "185": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 3,
+          "t": 3,
+          "kw": [
+            "trample",
+            "hexproof",
+            "indestructible"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "you"
+          }
+        }
+      ]
+    }
+  },
+  "186": {
+    "spell": {
+      "modes": [
+        {
+          "text": "消滅目標具飛行異能的生物",
+          "effects": [
+            {
+              "e": "destroy",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "kw": "flying"
+              }
+            }
+          ]
+        },
+        {
+          "text": "消滅目標結界",
+          "effects": [
+            {
+              "e": "destroy",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "permanent",
+              "filter": {
+                "type": "Enchantment"
+              }
+            }
+          ]
+        },
+        {
+          "text": "抓一張牌。派出一個食物衍生物",
+          "effects": [
+            {
+              "e": "draw",
+              "n": 1
+            },
+            {
+              "e": "token",
+              "token": "tok-food"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "196": {
+    "offspring": "{2}",
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ],
+        "label": "在此生物上放置一個+1/+1指示物"
+      }
+    ],
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ]
+  },
+  "198": {
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ]
+  },
+  "216": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-rabbit-11-w",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  },
+  "225": {
+    "abilities": [
+      {
+        "kind": "static",
+        "self": {
+          "cond": {
+            "c": "gyCount",
+            "filter": {},
+            "n": 7
+          },
+          "grant": {
+            "p": 3,
+            "t": 0
+          }
+        }
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}{U/B}"
+        },
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ],
+        "label": "刺探1"
+      }
+    ]
+  },
+  "226": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "229": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "231": {
+    "keywords": [
+      "vigilance",
+      "haste"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "targeted",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ],
+        "oncePerTurn": true
+      }
+    ]
+  },
+  "232": {
+    "keywords": [
+      "flying"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you",
+              "nonKw": "flying"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "235": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "castNoncreature",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "236": {
+    "keywords": [
+      "menace"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "bounce",
+            "what": "T0"
+          }
+        ],
+        "cond": {
+          "c": "gyCount",
+          "filter": {},
+          "n": 7
+        },
+        "targets": [
+          {
+            "kind": "permanent",
+            "filter": {
+              "nonType": "Land"
+            },
+            "optional": true
+          }
+        ]
+      }
+    ]
+  },
+  "237": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "targeted",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 1,
+            "t": 0,
+            "kw": [
+              "first_strike"
+            ]
+          },
+          {
+            "e": "scry",
+            "n": 1
+          }
+        ],
+        "oncePerTurn": true
+      }
+    ]
+  },
+  "238": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-food"
+          }
+        ]
+      },
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-food"
+          }
+        ]
+      }
+    ]
+  },
+  "244": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-food"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{5}",
+          "tap": true,
+          "sacSelf": true
+        },
+        "effects": [
+          {
+            "e": "destroy",
+            "what": "T0"
+          }
+        ],
+        "label": "消滅目標非地永久物",
+        "targets": [
+          {
+            "kind": "permanent",
+            "filter": {
+              "nonType": "Land"
+            }
+          }
+        ],
+        "sorcery": true
+      }
+    ]
+  },
+  "248": {
+    "equip": {
+      "cost": "{1}",
+      "grant": {
+        "p": 1,
+        "t": 1,
+        "kw": [
+          "reach",
+          "vigilance"
+        ]
+      }
+    }
+  },
+  "253": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}",
+          "tap": true,
+          "sacOther": {
+            "token": true
+          }
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ],
+        "label": "抓一張牌"
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}",
+          "tap": true,
+          "life": 1
+        },
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-g-fish-11-u"
+          }
+        ],
+        "label": "派出一個1/1藍色的魚衍生生物"
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{4}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ],
+        "label": "派出一個珍寶衍生物"
+      }
+    ],
+    "produces": [
+      "C"
+    ]
+  },
+  "254": {
+    "filterMana": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "surveil",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "C"
+    ]
+  },
+  "261": {
+    "etbTapped": true,
+    "produces": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ]
+  },
+  "379": {
+    "abilities": [
+      {
+        "kind": "static",
+        "anthem": {
+          "filter": {
+            "type": "Creature",
+            "ctrl": "you",
+            "other": true
+          },
+          "grant": {
+            "kw": [
+              "prowess"
+            ]
+          }
+        }
+      },
+      {
+        "kind": "trigger",
+        "on": "castNoncreature",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "unblockable"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            }
+          }
+        ]
+      }
+    ],
+    "keywords": [
+      "prowess"
+    ]
+  },
+  "389": {
+    "spell": {
+      "effects": [
+        {
+          "e": "draw",
+          "n": {
+            "x": true
+          }
+        }
+      ]
+    }
+  },
+  "391": {
+    "spell": {
+      "effects": [
+        {
+          "e": "damage",
+          "n": 4,
+          "to": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "any"
+        }
+      ]
+    }
+  },
+  "393": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 3,
+          "t": 3
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "394": {
+    "spell": {
+      "effects": [
+        {
+          "e": "bite",
+          "a": "T0",
+          "b": "T1"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "you"
+          }
+        },
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "opp"
+          }
+        }
+      ]
+    }
+  },
+  "395": {
+    "equip": {
+      "cost": "{3}",
+      "grant": {
+        "p": 2,
+        "t": 0,
+        "kw": [
+          "first_strike",
+          "vigilance",
+          "trample",
+          "haste"
+        ]
+      }
+    }
+  },
+  "396": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "G",
+      "W"
+    ]
+  },
+  "397": {
+    "etbTapped": true,
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "produces": [
+      "U",
+      "R"
+    ]
+  }
+}

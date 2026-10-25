@@ -1,3 +1,4 @@
+import {supplementBlbDft} from './sets/blb-dft-verified';
 import {completeFdn} from './sets/fdn-extra';
 import {completeDsk} from './sets/dsk-extra';
 import {completeOtj} from './sets/otj-extra';
@@ -714,6 +715,7 @@ completeWoe();
 completeOtj();
 completeFdn();
 completeDsk();
+supplementBlbDft();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

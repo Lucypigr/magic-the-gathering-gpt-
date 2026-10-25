@@ -352,7 +352,7 @@ export type Effect =
   | { e: 'tla'; action: string; n?: Amt; what?: Ref }
   | { e: 'grant'; untilNext?:boolean; what: Ref; grant: Grant; permanent?: boolean }
   | { e: 'waterbend'; n: number; then: Effect[]; else?: Effect[] }
-  | { e: 'copyCreature'; what: Ref; p?: number; t?: number; sub?: string; temp?: boolean; nonLegendary?: boolean }
+  | { e: 'copyCreature'; what: Ref; preserveLegendary?: boolean; p?: number; t?: number; sub?: string; temp?: boolean; nonLegendary?: boolean }
 
   | { e: 'damage'; n: Amt; to: Ref; noLifeGain?: boolean; from?: Ref }
   | { e: 'draw'; n: Amt; who?: Ref }
@@ -692,7 +692,7 @@ export interface ActivatedAbility {
   /** 忠誠異能的費用是 −X（X 由玩家選擇，不超過目前的忠誠） */
   xLoyalty?: boolean;
   oncePerTurn?: boolean;
-  /** 竭力：每場遊戲只能起動一次 */
+  /** 竭絕：每個永久物只能起動一次，離場後重新進場會重設 */
   oncePerGame?: boolean;
   /** 強化：每場遊戲只能起動一次；此永久物本回合才進場時，費用減去其法術力費用 */
   powerUp?: boolean;
@@ -946,6 +946,7 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+ offspringPaid?:boolean;
  foundationNamed?:string;kicked?:boolean;impendingPaid?:boolean;impendingTime?:number;roomUnlocked?:number;attachedToPlayer?:PID;foundationAuraOriginal?:CardDef;hiddenExile?:boolean;
   castFace?:CardDef;
   frontierMarks?:Record<string,number>;frontierBargained?:boolean;frontierTaken?:number;frontierTakenTurn?:number;

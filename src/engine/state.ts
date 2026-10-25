@@ -254,6 +254,7 @@ export interface Stats {
   p: number;
   t: number;
   kw: Set<Keyword>;
+  prowessCount?: number;
   cantAttack: boolean;
   cantBlock: boolean;
   ignoreDefender?: boolean;
@@ -277,7 +278,7 @@ export function abilitiesSuppressed(g: GameState, c: Card): boolean {
 
 /** 永久物目前實際擁有的異能（失去所有異能時為空） */
 export function abilitiesOf(g: GameState, c: Card): Ability[] {
-  return abilitiesSuppressed(g, c) ? [] : [...(c.def.abilities ?? []), ...(c.copiedAbilities ?? []), ...(c.temporaryAbilities?.turn===g.turn?c.temporaryAbilities.abilities:[])];
+  return abilitiesSuppressed(g, c) ? [] : [...(c.def.abilities ?? []), ...(c.def.offspring&&c.offspringPaid?[{kind:'trigger' as const,on:'etb' as const,effects:[{e:'copyCreature' as const,what:'selfAny' as const,p:1,t:1,preserveLegendary:true}]}]:[]), ...(c.copiedAbilities ?? []), ...(c.temporaryAbilities?.turn===g.turn?c.temporaryAbilities.abilities:[])];
 }
 
 function hasSerum(g: GameState, c: Card): boolean {
@@ -301,6 +302,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     p: d.power ?? 0,
     t: d.toughness ?? 0,
     kw: new Set<Keyword>(lost ? [] : d.keywords ?? []),
+    prowessCount: lost ? 0 : (d.keywords??[]).filter(k=>k==='prowess').length,
     cantAttack: false,
     cantBlock: false,
   };
@@ -331,7 +333,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   const apply = (gr: Grant) => {
     st.p += gr.p ?? 0;
     st.t += gr.t ?? 0;
-    if (gr.kw) for (const k of gr.kw) st.kw.add(k);
+    if (gr.kw) for (const k of gr.kw) {st.kw.add(k);if(k==='prowess')st.prowessCount=(st.prowessCount??0)+1;}
     if (gr.cantAttack) st.cantAttack = true;
     if (gr.cantBlock) st.cantBlock = true;
     if (gr.ignoreDefender) st.ignoreDefender = true;
@@ -339,7 +341,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     if (gr.noUntap) st.noUntap = true;
     if (gr.damageAbs) st.damageAbs = true;
     if (gr.onlyOneBlocker) st.onlyOneBlocker = true;
-    for (const kw of gr.removeKw ?? []) st.kw.delete(kw);
+    for (const kw of gr.removeKw ?? []) {st.kw.delete(kw);if(kw==='prowess')st.prowessCount=0;}
   };
   for (const grant of c.permanentGrants ?? []) apply(grant);
   for (const sid of g.battlefield) {

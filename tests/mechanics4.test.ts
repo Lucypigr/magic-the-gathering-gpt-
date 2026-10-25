@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import '../src/data';
+import { settleAll } from './helpers';
 import { activatedAbilities, canActivate, castOptionsFor, performAction } from '../src/engine/actions';
 import { resolveTop } from '../src/engine/flow';
 import { getDef } from '../src/engine/registry';
@@ -69,6 +70,8 @@ describe('折躍、子嗣、召集、騷亂、和聲、強化、懷疑', () => {
     expect(performAction(g, 0, { type: 'cast', card: c.id, targets: [], alt: 'offspring' })).toBeNull();
     expect(untapped(g)).toBe(0);
     resolve(g);
+    expect(g.battlefield.some(id=>g.cards[id].token&&g.cards[id].def.name==='Intrepid Rabbit')).toBe(false);
+    settleAll(g);
     const copy = g.battlefield.map((id) => g.cards[id]).find((x) => x.token && x.def.name === 'Intrepid Rabbit');
     expect(copy).toBeTruthy();
     expect(stats(g, copy!).p).toBe(1);
