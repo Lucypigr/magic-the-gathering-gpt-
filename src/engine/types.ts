@@ -614,6 +614,7 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+ orbitMinCharge?:number;
  campusAbilityTarget?:boolean;campusConvergeTargets?:boolean;campusLifeTargets?:boolean;
 
  foundationDoor?:0|1;foundationModes?:'pact'|'hallcreeper';foundationDistribution?:number;foundationVariableTargets?:number;oncePerGame?:boolean;
@@ -671,6 +672,7 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+ orbitStation?:boolean;
  campusEquipmentSac?:number;campusLocusKey?:number;campusExileArtifacts?:boolean;campusDiscardHand?:boolean;campusVariable?:'players';campusPageDiscount?:boolean;
 
  bdExhaust?:boolean;bdExert?:boolean;bdExile?:{filter:Filter;n?:number;any?:boolean};bdSacAny?:Filter;bdInstantOnly?:boolean;
@@ -955,6 +957,7 @@ export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 
 
 export interface Card {
  campusLinked?:{id:number;version:number;def:CardDef;power:number;token?:boolean}[];
+ orbitTypeDef?:CardDef;orbitAppliedDef?:CardDef;orbitPowerHistory?:Record<number,number>;
  campusOriginalDef?:CardDef;campusTypeDef?:CardDef;
 
  finalityCount?:number;
@@ -1220,6 +1223,7 @@ export interface StackItem {
   frontierStackSids?:number[];distribution?:number[];
   sourceType?:string;
   sourceLinkKey?: number;
+  orbitStation?:{card:number;version:number};
   sneakPaid?:boolean;
   targetVersions?: (number|undefined)[];
   sid: number;
@@ -1361,6 +1365,7 @@ export interface Show {
 }
 
 export interface GameState {
+  orbitHasStation?:boolean;orbitHasRinging?:boolean;
  campusParadigms?:{name:string;player:PID;card:number;version:number}[];
  campusDelayed?:{kind:string;player:PID;source:number;n:number;turn:number}[];
 

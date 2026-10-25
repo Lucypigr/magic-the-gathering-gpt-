@@ -457,6 +457,40 @@
     "stage": 5,
     "released": "2024-11-15"
   },
+  "abzan devotee": {
+    "name": "阿布贊信徒",
+    "sourceName": "Abzan Devotee",
+    "originalChinese": "阿布赞信徒",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24189,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "3d02ee2f-b7bd-40b0-b9be-2420991b2be0",
+    "faceOracleId": "1dd9d182-272b-585c-b980-b17f93e77c64",
+    "set": "TDM",
+    "number": "68",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
+  "abzan monument": {
+    "name": "阿布贊紀念碑",
+    "sourceName": "Abzan Monument",
+    "originalChinese": "阿布赞纪念碑",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24251,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "93563b7b-5685-4832-b164-0701dbf3cf18",
+    "faceOracleId": "b50ef47f-776b-5def-83c6-1638620e3d0c",
+    "set": "TDM",
+    "number": "238",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "academic ascent": {
     "name": "學業飛昇",
     "sourceName": "Academic Ascent",
@@ -541,6 +575,23 @@
     "number": "1",
     "stage": 5,
     "released": "2026-03-06"
+  },
+  "adagia, windswept bastion": {
+    "name": "風拂稜星阿達吉亞",
+    "sourceName": "Adagia, Windswept Bastion",
+    "originalChinese": "风拂棱星阿达吉亚",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24561,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "70d35dbd-1d91-4a2a-a643-6870d168f4f5",
+    "faceOracleId": "5eb30bc7-37fc-5bc5-868e-64cc392dd5b1",
+    "set": "EOE",
+    "number": "250",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "adaptive gemguard": {
     "name": "適境衛石械",
@@ -694,6 +745,23 @@
     "number": "72",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "aegis sculptor": {
+    "name": "塑盾師",
+    "sourceName": "Aegis Sculptor",
+    "originalChinese": "塑盾师",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24217,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "3a75c56a-bdf7-490d-aa41-51d5eb8be46c",
+    "faceOracleId": "f479b270-e092-538c-b7d0-a2f1991565fa",
+    "set": "TDM",
+    "number": "35",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "aerial doombot": {
     "name": "飛空毀滅機器人",
@@ -1033,6 +1101,23 @@
     "stage": 5,
     "released": "2026-06-26"
   },
+  "aggressive negotiations": {
+    "name": "激進協商",
+    "sourceName": "Aggressive Negotiations",
+    "originalChinese": "激进协商",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24186,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "c469133e-174d-476b-b135-bbf15e415e72",
+    "faceOracleId": "846308f0-0166-55c6-8301-98e9dde54c73",
+    "set": "TDM",
+    "number": "70",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "agna qel'a": {
     "name": "阿格納奎拉",
     "sourceName": "Agna Qel'a",
@@ -1083,6 +1168,23 @@
     "number": "87",
     "stage": 5,
     "released": "2025-06-13"
+  },
+  "ainok wayfarer": {
+    "name": "犬人旅者",
+    "sourceName": "Ainok Wayfarer",
+    "originalChinese": "犬人旅者",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24373,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "8134f3fd-197a-4b44-a370-311cc955dea3",
+    "faceOracleId": "aa5710c0-82a4-5554-95b1-aad0c00a28cb",
+    "set": "TDM",
+    "number": "134",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "air nomad legacy": {
     "name": "氣和族遺產",
@@ -2860,6 +2962,23 @@
     "stage": 5,
     "released": "2026-06-26"
   },
+  "atmospheric greenhouse": {
+    "name": "氣動溫室艦",
+    "sourceName": "Atmospheric Greenhouse",
+    "originalChinese": "气动温室舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24647,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "52c6afc6-aff1-46a8-b1ea-b183facec1ae",
+    "faceOracleId": "c75146c7-9a2b-5c92-8682-d8ca59780ae1",
+    "set": "EOE",
+    "number": "171",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "attack-in-the-box": {
     "name": "奪命驚奇箱",
     "sourceName": "Attack-in-the-Box",
@@ -2928,6 +3047,23 @@
     "stage": 5,
     "released": "2026-06-26"
   },
+  "attuned hunter": {
+    "name": "同調獵人",
+    "sourceName": "Attuned Hunter",
+    "originalChinese": "同调猎人",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24372,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "f652c593-e8fa-42ff-a8b4-206556b273de",
+    "faceOracleId": "3068ce52-2785-54df-ad4a-e490e7f03cfd",
+    "set": "TDM",
+    "number": "135",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "aunt may": {
     "name": "梅嬸",
     "sourceName": "Aunt May",
@@ -2993,6 +3129,23 @@
     "number": "40",
     "stage": 5,
     "released": "2026-01-23"
+  },
+  "auroral procession": {
+    "name": "極光行列",
+    "sourceName": "Auroral Procession",
+    "originalChinese": "极光行列",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19602,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "15e97e48-2d96-4727-9632-7d69f3ef2914",
+    "faceOracleId": "d57f32bd-5e8e-53e3-9461-a743940c3e0f",
+    "set": "ATDM",
+    "number": "20",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "autarch mammoth": {
     "name": "領頭長毛象",
@@ -7851,6 +8004,23 @@
     "stage": 5,
     "released": "2026-04-24"
   },
+  "caustic exhale": {
+    "name": "腐蝕吐息",
+    "sourceName": "Caustic Exhale",
+    "originalChinese": "腐蚀吐息",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24178,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "c4023e1f-26e3-4225-98d0-3d33f6654616",
+    "faceOracleId": "a5e64a6e-13c4-5108-9e25-2fecbf846fdf",
+    "set": "TDM",
+    "number": "74",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "cautious survivor": {
     "name": "謹慎求生者",
     "sourceName": "Cautious Survivor",
@@ -8062,6 +8232,23 @@
     "number": "128",
     "stage": 5,
     "released": "2024-09-27"
+  },
+  "champion of dusan": {
+    "name": "獨繕賽鬥士",
+    "sourceName": "Champion of Dusan",
+    "originalChinese": "独缮赛斗士",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24368,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "0a427652-9745-4802-8c8f-5ae29a29b496",
+    "faceOracleId": "513c31ce-4821-5b4b-b0cc-86f9d3a9247a",
+    "set": "TDM",
+    "number": "137",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "champion of the clachan": {
     "name": "小村冠勇",
@@ -9969,6 +10156,23 @@
     "stage": 5,
     "released": "2025-04-11"
   },
+  "cori-steel cutter": {
+    "name": "科黎鋼介刀",
+    "sourceName": "Cori-Steel Cutter",
+    "originalChinese": "科黎钢介刀",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24417,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "46b1a169-bc32-47bf-b379-fa0c3d13878f",
+    "faceOracleId": "dac61d76-509b-56a0-83fc-3c8118406c50",
+    "set": "TDM",
+    "number": "103",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "cornered by black mages": {
     "name": "黑魔法師之困",
     "sourceName": "Cornered by Black Mages",
@@ -11697,6 +11901,23 @@
     "stage": 5,
     "released": "2026-01-23"
   },
+  "dawnsire, sunstar dreadnought": {
+    "name": "輝星無畏艦曙君號",
+    "sourceName": "Dawnsire, Sunstar Dreadnought",
+    "originalChinese": "辉星无畏舰曙君号",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24574,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "afc9436b-8cad-4916-929d-ff33a37b42d5",
+    "faceOracleId": "fddd17e6-c278-594c-96fd-cedad8091b9c",
+    "set": "EOE",
+    "number": "238",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "dawnstrike vanguard": {
     "name": "晨擊先鋒",
     "sourceName": "Dawnstrike Vanguard",
@@ -11942,6 +12163,23 @@
     "number": "199",
     "stage": 5,
     "released": "2025-02-14"
+  },
+  "debris field crusher": {
+    "name": "碎片帶清除艦",
+    "sourceName": "Debris Field Crusher",
+    "originalChinese": "碎片带清除舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24726,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "db0894e1-2644-48d4-8de4-8cc43e940bc1",
+    "faceOracleId": "764488b7-e7ca-5f29-b0c7-fcf1a250178c",
+    "set": "EOE",
+    "number": "131",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "decadent dragon": {
     "name": "享樂巨龍",
@@ -14033,6 +14271,23 @@
     "stage": 5,
     "released": "2025-04-11"
   },
+  "dragonstorm globe": {
+    "name": "龍襲暴示球",
+    "sourceName": "Dragonstorm Globe",
+    "originalChinese": "龙袭暴示球",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24248,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "f6de5bd7-7704-4a0c-a27a-9e565e49f5e9",
+    "faceOracleId": "4e2668bf-3f53-5095-9624-ef8db2bf3caa",
+    "set": "TDM",
+    "number": "241",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "dragoon's lance": {
     "name": "龍騎士的長槍",
     "sourceName": "Dragoon's Lance",
@@ -14455,6 +14710,23 @@
     "number": "200",
     "stage": 5,
     "released": "2025-02-14"
+  },
+  "dusk sight": {
+    "name": "幽暗視覺",
+    "sourceName": "Dusk Sight",
+    "originalChinese": "幽暗视觉",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24167,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "1722f814-2d4e-4d59-9b74-10ef8e89def9",
+    "faceOracleId": "2118d23b-bb38-5060-9c45-21d3a1da97aa",
+    "set": "TDM",
+    "number": "80",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "duskmourn's domination": {
     "name": "受控暮悲邸",
@@ -15791,6 +16063,23 @@
     "stage": 5,
     "released": "2024-08-02"
   },
+  "embermouth sentinel": {
+    "name": "燼口哨衛",
+    "sourceName": "Embermouth Sentinel",
+    "originalChinese": "烬口哨卫",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24247,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "b5208c2c-b839-42f6-8717-ee4bbaf1385b",
+    "faceOracleId": "8a7bdb25-4ac5-588f-825a-294871f3228f",
+    "set": "TDM",
+    "number": "242",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "embrace oblivion": {
     "name": "直面虛空",
     "sourceName": "Embrace Oblivion",
@@ -16045,6 +16334,23 @@
     "number": "46",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "encroaching dragonstorm": {
+    "name": "侵地龍襲暴",
+    "sourceName": "Encroaching Dragonstorm",
+    "originalChinese": "侵地龙袭暴",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24364,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "1e95c273-7fec-4f8d-8be9-e21ad4b93717",
+    "faceOracleId": "cf1568a2-3cf0-5749-94af-3ff01bb920a8",
+    "set": "TDM",
+    "number": "142",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "encumbered reejerey": {
     "name": "積重理騎士",
@@ -16352,6 +16658,23 @@
     "stage": 5,
     "released": "2024-09-27"
   },
+  "entropic battlecruiser": {
+    "name": "熵能戰巡艦",
+    "sourceName": "Entropic Battlecruiser",
+    "originalChinese": "熵能战巡舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24479,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "90c5ea2b-d004-4219-b60c-d51bc1a5ee6b",
+    "faceOracleId": "92ab0e8c-820f-55d4-8fe5-118d9215cc4f",
+    "set": "EOE",
+    "number": "99",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "entrust the spark": {
     "name": "託付火花",
     "sourceName": "Entrust the Spark",
@@ -16505,6 +16828,23 @@
     "stage": 5,
     "released": "2025-06-13"
   },
+  "essence anchor": {
+    "name": "菁華定錨",
+    "sourceName": "Essence Anchor",
+    "originalChinese": "菁华定锚",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24207,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "e28a3f0e-40bd-4293-b5eb-ec9d185c1e1c",
+    "faceOracleId": "2ff875d5-9a8c-57f3-a94c-3194d09b1e9f",
+    "set": "TDM",
+    "number": "44",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "essence burn": {
     "name": "焚燬菁華",
     "sourceName": "Essence Burn",
@@ -16655,6 +16995,23 @@
     "faceOracleId": "cb2aaccf-fb6e-5d5e-900b-ecf6ad3ab814",
     "set": "EOE",
     "number": "181",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
+  "evendo, waking haven": {
+    "name": "甦醒庇星埃文多",
+    "sourceName": "Evendo, Waking Haven",
+    "originalChinese": "苏醒庇星埃文多",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24558,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "83161d59-2520-4741-9328-e2a4a8b5d5bc",
+    "faceOracleId": "dff2f1c4-38e3-50b2-a831-f4313930dc17",
+    "set": "EOE",
+    "number": "253",
     "stage": 5,
     "released": "2025-08-01"
   },
@@ -16947,6 +17304,23 @@
     "stage": 5,
     "released": "2026-10-02"
   },
+  "extinguisher battleship": {
+    "name": "滅絕戰艦",
+    "sourceName": "Extinguisher Battleship",
+    "originalChinese": "灭绝战舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24569,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "cce3dcc3-57bb-4b95-8b70-337c67bb3c4e",
+    "faceOracleId": "f50bfe64-f8a6-5e24-8348-c8270e9a8920",
+    "set": "EOE",
+    "number": "242",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "extrapolate the impossible": {
     "name": "外尋解方",
     "sourceName": "Extrapolate the Impossible",
@@ -16980,6 +17354,23 @@
     "set": "NCC",
     "number": "126",
     "released": "2022-04-29"
+  },
+  "exude toxin": {
+    "name": "毒氣四溢",
+    "sourceName": "Exude Toxin",
+    "originalChinese": "毒气四溢",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24155,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "7e97a242-0bac-4f18-9228-e98ecca36254",
+    "faceOracleId": "c9a29119-8091-514d-a30b-4539daa00908",
+    "set": "TDM",
+    "number": "90",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "eye of jace": {
     "name": "傑斯之眼",
@@ -17845,6 +18236,23 @@
     "stage": 5,
     "released": "2024-08-02"
   },
+  "fell gravship": {
+    "name": "極惡重力船",
+    "sourceName": "Fell Gravship",
+    "originalChinese": "极恶重力船",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24083,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "1a82be68-3b74-4dfc-9068-3abea61db709",
+    "faceOracleId": "13f1d73c-76d4-5bc7-9c38-017a6556771d",
+    "set": "EOE",
+    "number": "101",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "fell horseman": {
     "name": "極惡騎士",
     "sourceName": "Fell Horseman",
@@ -17893,6 +18301,23 @@
     "faceOracleId": "05cf18dd-9fec-52be-950c-a7dffa383114",
     "set": "TDM",
     "number": "184",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
+  "feral deathgorger": {
+    "name": "野性噬屍龍",
+    "sourceName": "Feral Deathgorger",
+    "originalChinese": "野性噬尸龙",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24168,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "1722f814-2d4e-4d59-9b74-10ef8e89def9",
+    "faceOracleId": "f4c0e883-d372-5d70-8646-5cd7c63bcf36",
+    "set": "TDM",
+    "number": "80",
     "stage": 5,
     "released": "2025-04-11"
   },
@@ -18942,6 +19367,23 @@
     "number": "14",
     "stage": 5,
     "released": "2024-08-02"
+  },
+  "flush out": {
+    "name": "暗中衝出",
+    "sourceName": "Flush Out",
+    "originalChinese": "暗中冲出",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24385,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "e24916ff-7566-4f27-8e31-732311a4a88c",
+    "faceOracleId": "71633ee6-c6b7-5cbc-a0e3-697176294ed9",
+    "set": "TDM",
+    "number": "124",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "focus fire": {
     "name": "集中火力",
@@ -20220,6 +20662,23 @@
     "set": "WOE",
     "number": "52",
     "released": "2023-09-08"
+  },
+  "galvanizing sawship": {
+    "name": "激電旋鋸艦",
+    "sourceName": "Galvanizing Sawship",
+    "originalChinese": "激电旋锯舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24718,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "dfe8f77a-cc26-438b-92ae-2ca7a91f813b",
+    "faceOracleId": "d7fa468d-f475-5c23-b176-19e36d9b6ac6",
+    "set": "EOE",
+    "number": "136",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "gandalf, goblins' bane": {
     "name": "半獸人剋星甘道夫",
@@ -23226,6 +23685,23 @@
     "stage": 5,
     "released": "2026-08-14"
   },
+  "gurmag nightwatch": {
+    "name": "谷爾瑪夜巡衛",
+    "sourceName": "Gurmag Nightwatch",
+    "originalChinese": "谷尔玛夜巡卫",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24304,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "fde50a0d-9bc6-45f4-873e-3de81a513fac",
+    "faceOracleId": "2bc92a5d-676d-5261-be2f-7b825a280de2",
+    "set": "TDM",
+    "number": "190",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "gurmag rakshasa": {
     "name": "谷爾瑪羅剎",
     "sourceName": "Gurmag Rakshasa",
@@ -24340,6 +24816,23 @@
     "stage": 5,
     "released": "2026-06-26"
   },
+  "heritage reclamation": {
+    "name": "復還原貌",
+    "sourceName": "Heritage Reclamation",
+    "originalChinese": "复还原貌",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24362,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "09955b4b-6052-4c27-8b63-9548482b3c5c",
+    "faceOracleId": "682afca3-5534-519b-856b-0822a8b37b25",
+    "set": "TDM",
+    "number": "145",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "hermitic herbalist": {
     "name": "隱居草藥師",
     "sourceName": "Hermitic Herbalist",
@@ -24728,6 +25221,23 @@
     "number": "61",
     "stage": 5,
     "released": "2024-11-15"
+  },
+  "highspire bell-ringer": {
+    "name": "峰頂司鍾",
+    "sourceName": "Highspire Bell-Ringer",
+    "originalChinese": "峰顶司钟",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28935,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "6d2d250b-cdce-4075-8724-b52ad31664fb",
+    "faceOracleId": "e1c555a1-0045-578c-9f63-2e5cc14a4916",
+    "set": "TDM",
+    "number": "47",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "hill gigas": {
     "name": "山嶺巨人",
@@ -26317,6 +26827,23 @@
     "stage": 5,
     "released": "2026-10-02"
   },
+  "infinite guideline station": {
+    "name": "永繼導引基地",
+    "sourceName": "Infinite Guideline Station",
+    "originalChinese": "永继导引基地",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24597,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "cda39514-86c9-483e-8d95-fd08138ce33a",
+    "faceOracleId": "db5d0cee-dfd2-5c9a-94ea-b2688192c63e",
+    "set": "EOE",
+    "number": "219",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "infirmary healer": {
     "name": "醫務室治療師",
     "sourceName": "Infirmary Healer",
@@ -27607,6 +28134,40 @@
     "stage": 5,
     "released": "2025-04-11"
   },
+  "jeskai devotee": {
+    "name": "潔斯凱信徒",
+    "sourceName": "Jeskai Devotee",
+    "originalChinese": "洁斯凯信徒",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24404,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "6dcdd313-6df7-4d44-a4cb-0346a4fdb4e1",
+    "faceOracleId": "910e7d04-96a9-5826-a288-6da496643bef",
+    "set": "TDM",
+    "number": "110",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
+  "jeskai monument": {
+    "name": "潔斯凱紀念碑",
+    "sourceName": "Jeskai Monument",
+    "originalChinese": "洁斯凯纪念碑",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24245,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "0b2b7d04-73f3-43f6-86e0-fa00cbbc6469",
+    "faceOracleId": "ef1cc09c-4ccb-5610-822d-ee1f30f14d1c",
+    "set": "TDM",
+    "number": "244",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "jeskai revelation": {
     "name": "潔斯凱啟示",
     "sourceName": "Jeskai Revelation",
@@ -28403,6 +28964,23 @@
     "stage": 5,
     "released": "2025-08-01"
   },
+  "kavaron, memorial world": {
+    "name": "紀念故星卡傅隆",
+    "sourceName": "Kavaron, Memorial World",
+    "originalChinese": "纪念故星卡傅隆",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24557,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "4fa826ca-d361-4391-ad0d-989ebcfa4a91",
+    "faceOracleId": "e2994eab-7737-525f-8fb5-43376d13cb81",
+    "set": "EOE",
+    "number": "255",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "keen buccaneer": {
     "name": "敏銳海賊",
     "sourceName": "Keen Buccaneer",
@@ -28963,6 +29541,23 @@
     "stage": 5,
     "released": "2026-04-24"
   },
+  "kishla skimmer": {
+    "name": "濟奇拉掠空鳥",
+    "sourceName": "Kishla Skimmer",
+    "originalChinese": "济奇拉掠空鸟",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24293,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "a3275d80-112b-4839-a014-e44ef48d2e6b",
+    "faceOracleId": "f25f6b0e-db46-5067-9090-d3303e9e97b8",
+    "set": "TDM",
+    "number": "201",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "kishla village": {
     "name": "濟奇拉村莊",
     "sourceName": "Kishla Village",
@@ -29517,6 +30112,23 @@
     "stage": 5,
     "released": "2026-06-26"
   },
+  "krotiq nestguard": {
+    "name": "庫提蟲巢衛",
+    "sourceName": "Krotiq Nestguard",
+    "originalChinese": "库提虫巢卫",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24359,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "33117d34-ea70-4566-92a3-5dec9bfe529a",
+    "faceOracleId": "720950fc-9131-53f0-9a1e-7230b2b7fd9a",
+    "set": "TDM",
+    "number": "148",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "kuja, genome sorcerer": {
     "name": "基因組術士庫加",
     "sourceName": "Kuja, Genome Sorcerer",
@@ -29857,6 +30469,23 @@
     "stage": 5,
     "released": "2026-08-14"
   },
+  "larval scoutlander": {
+    "name": "幼蟲偵地艦",
+    "sourceName": "Larval Scoutlander",
+    "originalChinese": "幼虫侦地舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24626,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "b3f3d55c-a3f6-441b-a380-60c0734dc514",
+    "faceOracleId": "760dd8b7-691e-59dd-88a5-84b465d0c112",
+    "set": "EOE",
+    "number": "194",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "lashwhip predator": {
     "name": "枝鞭掠食獸",
     "sourceName": "Lashwhip Predator",
@@ -29907,6 +30536,23 @@
     "number": "149",
     "stage": 5,
     "released": "2026-01-23"
+  },
+  "lasyd prowler": {
+    "name": "萊希遊掠者",
+    "sourceName": "Lasyd Prowler",
+    "originalChinese": "莱希游掠者",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24358,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "f780d6f6-540b-4773-8a48-e56e95c2d39e",
+    "faceOracleId": "b4188928-ccd0-554a-a5d3-dc853f3bcb1d",
+    "set": "TDM",
+    "number": "149",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "lathril, blade of the elves": {
     "name": "妖精之刃拉席莉",
@@ -31401,6 +32047,23 @@
     "stage": 5,
     "released": "2025-02-14"
   },
+  "lumen-class frigate": {
+    "name": "光明級護衛艦",
+    "sourceName": "Lumen-Class Frigate",
+    "originalChinese": "光明级护卫舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24562,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "3aa0cda4-fb2d-4fd4-84f6-482089a85547",
+    "faceOracleId": "6ea5c0d0-d80f-5bda-bcdf-26ac97a5112b",
+    "set": "EOE",
+    "number": "25",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "luminollusk": {
     "name": "滑光怪",
     "sourceName": "Luminollusk",
@@ -32314,6 +32977,40 @@
     "number": "169",
     "stage": 5,
     "released": "2025-02-14"
+  },
+  "mardu devotee": {
+    "name": "瑪爾都信徒",
+    "sourceName": "Mardu Devotee",
+    "originalChinese": "玛尔都信徒",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24347,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "24ee57b5-a505-4264-97ca-8b8dfb12298e",
+    "faceOracleId": "63eda7e4-44ac-55ce-af9c-868e6ba60a1e",
+    "set": "TDM",
+    "number": "16",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
+  "mardu monument": {
+    "name": "瑪爾都紀念碑",
+    "sourceName": "Mardu Monument",
+    "originalChinese": "玛尔都纪念碑",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24244,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "5f662383-1684-4bd3-be05-e696d301e26c",
+    "faceOracleId": "2a9f1ef9-d6da-5969-bfc3-ec67de7e8434",
+    "set": "TDM",
+    "number": "245",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "marina vendrell": {
     "name": "瑪麗娜樊卓爾",
@@ -35017,6 +35714,23 @@
     "number": "T1",
     "released": "2018-06-22"
   },
+  "mox jasper": {
+    "name": "碧玉瑪珂",
+    "sourceName": "Mox Jasper",
+    "originalChinese": "碧玉玛珂",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 23772,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "a25d4439-de07-4352-ba66-7a4d5447dcd2",
+    "faceOracleId": "55d9953e-ede3-5a3a-a876-218c75afc3cd",
+    "set": "ATDM",
+    "number": "28",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "ms. marvel, kamala khan": {
     "name": "驚奇少女卡瑪拉·克汗",
     "sourceName": "Ms. Marvel, Kamala Khan",
@@ -37087,6 +37801,23 @@
     "number": "40",
     "released": "2025-09-23"
   },
+  "osseous exhale": {
+    "name": "白骨吐息",
+    "sourceName": "Osseous Exhale",
+    "originalChinese": "白骨吐息",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24329,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "8d84a706-080c-4fb2-b1b9-3dbb3294fb7b",
+    "faceOracleId": "0f533b72-5ec1-5d20-910e-9999e487366b",
+    "set": "TDM",
+    "number": "17",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "osseous sticktwister": {
     "name": "縛骨扭木妖",
     "sourceName": "Osseous Sticktwister",
@@ -38449,6 +39180,23 @@
     "number": "232",
     "released": "2023-09-08"
   },
+  "piercing exhale": {
+    "name": "穿刺吐息",
+    "sourceName": "Piercing Exhale",
+    "originalChinese": "穿刺吐息",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24355,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "ea96fe35-88ed-432b-a495-08e787d23d0b",
+    "faceOracleId": "26c93b4c-4fa2-5ff1-84ae-730d4c090bde",
+    "set": "TDM",
+    "number": "151",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "piggy bank": {
     "name": "儲錢小豬",
     "sourceName": "Piggy Bank",
@@ -38549,6 +39297,23 @@
     "number": "107",
     "stage": 5,
     "released": "2026-08-14"
+  },
+  "pinnacle kill-ship": {
+    "name": "天頂盟殺生船",
+    "sourceName": "Pinnacle Kill-Ship",
+    "originalChinese": "天顶盟杀生船",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24567,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "ad556aee-3dbf-4c8b-9f3a-31947e26c6f5",
+    "faceOracleId": "04d72e0e-e830-5540-90cf-7c3a7c7a1308",
+    "set": "EOE",
+    "number": "244",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "pinnacle starcage": {
     "name": "天頂盟星籠",
@@ -40887,6 +41652,23 @@
     "stage": 5,
     "released": "2026-01-23"
   },
+  "rainveil rejuvenator": {
+    "name": "雨幕回春師",
+    "sourceName": "Rainveil Rejuvenator",
+    "originalChinese": "雨幕回春师",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24354,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "6ccf72ee-a86a-4b13-9e76-e308d0d28523",
+    "faceOracleId": "0b4fcb4d-f4e9-57ba-ba17-0403259bc468",
+    "set": "TDM",
+    "number": "152",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "raise the past": {
     "name": "召起過往",
     "sourceName": "Raise the Past",
@@ -40971,6 +41753,23 @@
     "number": "30",
     "stage": 5,
     "released": "2024-08-02"
+  },
+  "rally the monastery": {
+    "name": "集結寺院",
+    "sourceName": "Rally the Monastery",
+    "originalChinese": "集结寺院",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24305,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "3f6101a5-3038-45b0-8302-b2e4127b9510",
+    "faceOracleId": "bff50e90-220a-5a1e-b696-f0c9125a1897",
+    "set": "TDM",
+    "number": "19",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "rampaging soulrager": {
     "name": "莽闖怒靈妖",
@@ -42348,6 +43147,40 @@
     "stage": 5,
     "released": "2026-10-02"
   },
+  "rescue leopard": {
+    "name": "救援獵豹",
+    "sourceName": "Rescue Leopard",
+    "originalChinese": "救援猎豹",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18307,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "d70ad04a-b940-4bb1-bcdc-408166e91723",
+    "faceOracleId": "d9fc1998-3e66-5514-ac4e-9736c5133fc3",
+    "set": "TDM",
+    "number": "116",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
+  "rescue skiff": {
+    "name": "救援飛船",
+    "sourceName": "Rescue Skiff",
+    "originalChinese": "救援飞船",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24546,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "112aaaf0-3301-4f79-9640-d36c75a0fb30",
+    "faceOracleId": "4142a918-2f21-52c6-b45f-6286be38d2b8",
+    "set": "EOE",
+    "number": "32",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "resentful revelation": {
     "name": "慨憤真相",
     "sourceName": "Resentful Revelation",
@@ -42897,6 +43730,23 @@
     "number": "269",
     "stage": 5,
     "released": "2025-06-13"
+  },
+  "ringing strike mastery": {
+    "name": "鳴震指",
+    "sourceName": "Ringing Strike Mastery",
+    "originalChinese": "鸣震指",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24205,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "334ffdc4-9fe6-4a7f-bf5d-bcd88adab715",
+    "faceOracleId": "c0c03731-51e9-50ba-ad0e-a23b79753776",
+    "set": "TDM",
+    "number": "53",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "rinoa heartilly": {
     "name": "莉諾雅·哈提利",
@@ -44301,6 +45151,23 @@
     "stage": 5,
     "released": "2026-01-23"
   },
+  "sage of the fang": {
+    "name": "龍牙智者",
+    "sourceName": "Sage of the Fang",
+    "originalChinese": "龙牙智者",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24351,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "d6eb2bfc-1e86-4e36-9d48-12de16955b98",
+    "faceOracleId": "e78404a7-f62c-50cd-aa07-dfc06da1b7f9",
+    "set": "TDM",
+    "number": "155",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "sage of the skies": {
     "name": "蒼穹智者",
     "sourceName": "Sage of the Skies",
@@ -44334,6 +45201,23 @@
     "number": "5",
     "stage": 5,
     "released": "2025-06-13"
+  },
+  "sagu pummeler": {
+    "name": "薩谷猛擊獸",
+    "sourceName": "Sagu Pummeler",
+    "originalChinese": "萨谷猛击兽",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18303,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "00f1d167-c143-471d-bd52-da2a65d087c4",
+    "faceOracleId": "56baedc8-38d8-5e10-bddc-6f0ff2875f10",
+    "set": "TDM",
+    "number": "156",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "sagu wildling": {
     "name": "薩谷野生龍",
@@ -45113,6 +45997,23 @@
     "number": "98",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "scavenger regent": {
+    "name": "食腐龍侯",
+    "sourceName": "Scavenger Regent",
+    "originalChinese": "食腐龙侯",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24154,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "7e97a242-0bac-4f18-9228-e98ecca36254",
+    "faceOracleId": "73c82c4c-f667-5bef-b312-1d5b2b56465e",
+    "set": "TDM",
+    "number": "90",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "scavenger's talent": {
     "name": "拾荒客才能",
@@ -47626,6 +48527,23 @@
     "stage": 5,
     "released": "2024-09-27"
   },
+  "sledge-class seedship": {
+    "name": "飛錘級殖種船",
+    "sourceName": "Sledge-Class Seedship",
+    "originalChinese": "飞锤级殖种船",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24609,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "bcd086ce-de5c-4b34-92a1-ece22055e479",
+    "faceOracleId": "500e6429-96f8-5cbb-9201-d7872155a538",
+    "set": "EOE",
+    "number": "208",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "sleep magic": {
     "name": "催眠魔法",
     "sourceName": "Sleep Magic",
@@ -47796,6 +48714,23 @@
     "stage": 5,
     "released": "2026-08-14"
   },
+  "smile at death": {
+    "name": "蔑死輪迴",
+    "sourceName": "Smile at Death",
+    "originalChinese": "蔑死轮回",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24250,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "9228f04c-506f-4453-a335-e66876b8ce8d",
+    "faceOracleId": "0a99b894-b3b1-561d-89b9-59fa58068fab",
+    "set": "TDM",
+    "number": "24",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "smoky lounge": {
     "name": "煙繚憩間",
     "sourceName": "Smoky Lounge",
@@ -47922,6 +48857,23 @@
     "number": "33",
     "stage": 5,
     "released": "2025-06-13"
+  },
+  "snowmelt stag": {
+    "name": "融雪雄鹿",
+    "sourceName": "Snowmelt Stag",
+    "originalChinese": "融雪雄鹿",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24201,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "b25ccb64-e114-4d54-a07a-c8cd4560b511",
+    "faceOracleId": "d4f91ea1-bb3c-5916-a3e7-ed96a6c79002",
+    "set": "TDM",
+    "number": "57",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "soaring stoneglider": {
     "name": "翱翔馭石僧",
@@ -48498,6 +49450,23 @@
     "stage": 5,
     "released": "2025-11-21"
   },
+  "specimen freighter": {
+    "name": "樣本貨艦",
+    "sourceName": "Specimen Freighter",
+    "originalChinese": "样本货舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24505,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "fb84b94c-dc8c-4182-9b96-abd092b20981",
+    "faceOracleId": "5704718c-e790-5346-b6eb-c83d96191f6a",
+    "set": "EOE",
+    "number": "76",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "spectacle summit": {
     "name": "奇景山峰",
     "sourceName": "Spectacle Summit",
@@ -48578,6 +49547,23 @@
     "set": "OM1",
     "number": "19",
     "released": "2025-09-23"
+  },
+  "spectral denial": {
+    "name": "魂魅拒斥",
+    "sourceName": "Spectral Denial",
+    "originalChinese": "魂魅拒斥",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24200,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "f8536726-993b-4100-918c-e3c7177d4c65",
+    "faceOracleId": "ff26c89d-67d6-532f-9ebd-c63ed86e528c",
+    "set": "TDM",
+    "number": "58",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "spectral interference": {
     "name": "幽靈干預",
@@ -50560,6 +51546,23 @@
     "stage": 5,
     "released": "2026-06-26"
   },
+  "stormbeacon blade": {
+    "name": "集霆刀",
+    "sourceName": "Stormbeacon Blade",
+    "originalChinese": "集霆刀",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24226,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "f4b3ee43-fc01-425f-8322-29bf6d16cb3f",
+    "faceOracleId": "1bac934b-9df2-5dba-850f-9d1335d5fc1e",
+    "set": "TDM",
+    "number": "27",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "stormcatch mentor": {
     "name": "捕風導師",
     "sourceName": "Stormcatch Mentor",
@@ -50625,6 +51628,23 @@
     "faceOracleId": "20e54221-1f1a-5199-8470-7658870a9cae",
     "set": "TDM",
     "number": "28",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
+  "stormshriek feral": {
+    "name": "鳴霆狂野龍",
+    "sourceName": "Stormshriek Feral",
+    "originalChinese": "鸣霆狂野龙",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24384,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "e24916ff-7566-4f27-8e31-732311a4a88c",
+    "faceOracleId": "8baeecfa-c001-5a88-8ffa-d501f2067fdc",
+    "set": "TDM",
+    "number": "124",
     "stage": 5,
     "released": "2025-04-11"
   },
@@ -50978,6 +51998,23 @@
     "faceOracleId": "df64e660-8e05-583b-932f-301fd558e5bc",
     "set": "TDM",
     "number": "160",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
+  "sultai monument": {
+    "name": "蘇勒臺紀念碑",
+    "sourceName": "Sultai Monument",
+    "originalChinese": "苏勒台纪念碑",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24243,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "9db71b76-eda7-49dd-af5a-3de18acb8ccb",
+    "faceOracleId": "058d9da9-95b8-56a3-91f0-f129067acf64",
+    "set": "TDM",
+    "number": "247",
     "stage": 5,
     "released": "2025-04-11"
   },
@@ -52038,6 +53075,40 @@
     "stage": 5,
     "released": "2026-04-24"
   },
+  "susur secundi, void altar": {
+    "name": "空洞祭星蘇述塞孔",
+    "sourceName": "Susur Secundi, Void Altar",
+    "originalChinese": "空洞祭星苏述塞孔",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24555,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "50d6cadc-07e4-479e-90f4-e3a20f769bab",
+    "faceOracleId": "520ef92c-b793-5e5f-a9b7-d91cec3ecd44",
+    "set": "EOE",
+    "number": "259",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
+  "susurian dirgecraft": {
+    "name": "蘇述黎輓歌艦",
+    "sourceName": "Susurian Dirgecraft",
+    "originalChinese": "苏述黎挽歌舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24747,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "f1d826d1-d2da-46ce-b1db-81393c88d865",
+    "faceOracleId": "94fb45c7-18e5-566e-9942-2d742ec3f03e",
+    "set": "EOE",
+    "number": "117",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "susurian voidborn": {
     "name": "蘇述黎洞生者",
     "sourceName": "Susurian Voidborn",
@@ -52256,6 +53327,23 @@
     "number": "113",
     "stage": 5,
     "released": "2024-11-15"
+  },
+  "synthesizer labship": {
+    "name": "合成實驗船",
+    "sourceName": "Synthesizer Labship",
+    "originalChinese": "合成实验船",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24497,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "a37314cf-bbbd-4003-b94d-0e6e60edfc15",
+    "faceOracleId": "73626751-8d7b-5661-a9c2-ce35d29af332",
+    "set": "EOE",
+    "number": "81",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "syphon fuel": {
     "name": "吸取燃料",
@@ -52765,6 +53853,23 @@
     "number": "238",
     "released": "2023-09-08"
   },
+  "tempest hawk": {
+    "name": "暴風翔鷹",
+    "sourceName": "Tempest Hawk",
+    "originalChinese": "暴风翔鹰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24221,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "7423b3b9-56eb-4cf2-8ada-135918219c4b",
+    "faceOracleId": "e1413758-71d5-5c59-af3b-93ecbde6f6c0",
+    "set": "TDM",
+    "number": "31",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "temple of civilization": {
     "name": "文明殿堂",
     "sourceName": "Temple of Civilization",
@@ -52832,6 +53937,40 @@
     "set": "LCI",
     "number": "317",
     "released": "2023-11-17"
+  },
+  "temur devotee": {
+    "name": "鐵木爾信徒",
+    "sourceName": "Temur Devotee",
+    "originalChinese": "铁木尔信徒",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18249,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "e444f072-ce24-4fd1-99eb-d20d12bc119a",
+    "faceOracleId": "5cfc1197-ca26-59c9-825f-86f475b6c470",
+    "set": "TDM",
+    "number": "61",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
+  "temur monument": {
+    "name": "鐵木爾紀念碑",
+    "sourceName": "Temur Monument",
+    "originalChinese": "铁木尔纪念碑",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24242,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "5464d5ae-5be5-4e52-b9d0-ddce48fd93b3",
+    "faceOracleId": "f9c029cb-2fe7-5633-89b2-7905f26cc8ec",
+    "set": "TDM",
+    "number": "248",
+    "stage": 5,
+    "released": "2025-04-11"
   },
   "temur tawnyback": {
     "name": "鐵木爾褐毛獸",
@@ -53559,6 +54698,23 @@
     "set": "LCI",
     "number": "55",
     "released": "2023-11-17"
+  },
+  "the eternity elevator": {
+    "name": "虛空天梯",
+    "sourceName": "The Eternity Elevator",
+    "originalChinese": "虚空天梯",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24570,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "11323af4-b8b8-4ca9-932f-377c7fd77dea",
+    "faceOracleId": "d2e10b96-c04c-56a4-8919-8e955773d9a6",
+    "set": "EOE",
+    "number": "241",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "the everflowing well": {
     "name": "汩汩湧井",
@@ -54357,6 +55513,23 @@
     "number": "35",
     "stage": 5,
     "released": "2026-06-26"
+  },
+  "the seriema": {
+    "name": "瑟黎瑪號",
+    "sourceName": "The Seriema",
+    "originalChinese": "瑟黎玛号",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24543,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "a6bcec1f-f515-4e63-9e84-8eb04cc582ff",
+    "faceOracleId": "b48811d7-8e59-5390-9c86-e42a289b00b7",
+    "set": "EOE",
+    "number": "35",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "the serpent society": {
     "name": "毒蛇幫",
@@ -56380,6 +57553,23 @@
     "stage": 5,
     "released": "2025-06-13"
   },
+  "traveling botanist": {
+    "name": "遊歷植物學家",
+    "sourceName": "Traveling Botanist",
+    "originalChinese": "游历植物学家",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24342,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "14934ab0-41ab-44f8-bb28-2b0457eb6f5f",
+    "faceOracleId": "db516680-c166-5e93-a229-8d374092ab3c",
+    "set": "TDM",
+    "number": "164",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "traveling chocobo": {
     "name": "旅行陸行鳥",
     "sourceName": "Traveling Chocobo",
@@ -57124,6 +58314,23 @@
     "number": "157",
     "stage": 5,
     "released": "2025-11-21"
+  },
+  "twin bolt": {
+    "name": "雙矢擊",
+    "sourceName": "Twin Bolt",
+    "originalChinese": "双矢击",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 114874,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "61048f40-0e8c-44af-81a5-a34b6f1adea2",
+    "multiverseId": "417151",
+    "set": "CN2",
+    "number": "173",
+    "released": "2016-08-26"
   },
   "twinblade blessing": {
     "name": "雙刃加持",
@@ -58424,6 +59631,23 @@
     "number": "63",
     "stage": 5,
     "released": "2025-04-11"
+  },
+  "uthros scanship": {
+    "name": "烏索斯掃描艦",
+    "sourceName": "Uthros Scanship",
+    "originalChinese": "乌索斯扫描舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24492,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "7b4c37dc-8cb0-4870-929e-11c2a45952a2",
+    "faceOracleId": "7c242597-4932-5c20-93ac-3dc2562f4a60",
+    "set": "EOE",
+    "number": "85",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "uthros, titanic godcore": {
     "name": "碩神核星烏索斯",
@@ -60485,6 +61709,23 @@
     "stage": 5,
     "released": "2025-11-21"
   },
+  "war effort": {
+    "name": "動員備戰",
+    "sourceName": "War Effort",
+    "originalChinese": "动员备战",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24376,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "d9bc6841-9f71-46af-ac1f-a01caee290c1",
+    "faceOracleId": "33555eb5-f8e4-581b-8867-b22388e5e828",
+    "set": "TDM",
+    "number": "131",
+    "stage": 5,
+    "released": "2025-04-11"
+  },
   "war machine, legacy of iron": {
     "name": "鋼鐵俠繼承者戰爭機器",
     "sourceName": "War Machine, Legacy of Iron",
@@ -60586,6 +61827,23 @@
     "number": "140",
     "stage": 5,
     "released": "2026-08-14"
+  },
+  "warmaker gunship": {
+    "name": "開戰炮艦",
+    "sourceName": "Warmaker Gunship",
+    "originalChinese": "开战炮舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24654,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "c947171b-ed9e-4b83-af45-bd595a8d84ee",
+    "faceOracleId": "ec80151d-4d4a-5212-8b76-f6bc380bbe4a",
+    "set": "EOE",
+    "number": "167",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "warped space": {
     "name": "扭曲空間",
@@ -61295,6 +62553,23 @@
     "number": "186",
     "stage": 5,
     "released": "2025-02-14"
+  },
+  "wedgelight rammer": {
+    "name": "楔光衝擊艦",
+    "sourceName": "Wedgelight Rammer",
+    "originalChinese": "楔光冲击舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24756,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "03259ab0-caa8-4620-b070-127e2c712252",
+    "faceOracleId": "67a0e0f6-e7a4-5547-95ae-de6ae8bd378c",
+    "set": "EOE",
+    "number": "43",
+    "stage": 5,
+    "released": "2025-08-01"
   },
   "weftblade enhancer": {
     "name": "星絲刃增能師",
@@ -62645,6 +63920,23 @@
     "stage": 5,
     "released": "2025-02-14"
   },
+  "wurmwall sweeper": {
+    "name": "亞龍壁開路艦",
+    "sourceName": "Wurmwall Sweeper",
+    "originalChinese": "亚龙壁开路舰",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24563,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "320ed2ec-ef06-41fb-ac8a-72579f11544c",
+    "faceOracleId": "253bb056-3ad8-5416-a7bd-da20fc3d1942",
+    "set": "EOE",
+    "number": "249",
+    "stage": 5,
+    "released": "2025-08-01"
+  },
   "xande, dark mage": {
     "name": "黑暗魔法師贊德",
     "sourceName": "Xande, Dark Mage",
@@ -63508,5 +64800,22 @@
     "number": "77",
     "stage": 5,
     "released": "2024-11-15"
+  },
+  "zurgo's vanguard": {
+    "name": "珠高的先鋒",
+    "sourceName": "Zurgo's Vanguard",
+    "originalChinese": "珠高的先锋",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24374,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "d6fdfd94-cef5-482c-83ed-11c5ba40abe9",
+    "faceOracleId": "d7bba8a6-e972-5b91-8a41-3cfa8cef1bfb",
+    "set": "TDM",
+    "number": "133",
+    "stage": 5,
+    "released": "2025-04-11"
   }
 }

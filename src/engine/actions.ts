@@ -387,21 +387,28 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
   if(alt==='flashback'&&c.frontierMarks?.freeFlashback===g.turn)return parseCost('');
   if (alt === 'free'||alt==='campusFree') {
     const cost = parseCost('');
-    if (targets) cost.generic += wardTax(g, pid, targets);
+    if(c.def.meadow?.orbitDragonTargetTax&&targets?.some(t=>t&&'c'in t&&g.cards[t.c].def.subtypes?.includes('Dragon')))cost.generic+=Number(c.def.meadow.orbitDragonTargetTax);
+  if(c.def.meadow?.orbitFerociousDiscount)cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])&&stats(g,g.cards[id]).p>=4).length);
+  if (targets) cost.generic += wardTax(g, pid, targets);
     return cost;
   }
   if (alt === 'disguise') {
     const cost = parseCost('{3}');
     cost.generic=Math.max(0,cost.generic-(mkmFlags(g,pid).faceDownDiscount??0));
-    if (targets) cost.generic += wardTax(g, pid, targets);
+    if(c.def.meadow?.orbitDragonTargetTax&&targets?.some(t=>t&&'c'in t&&g.cards[t.c].def.subtypes?.includes('Dragon')))cost.generic+=Number(c.def.meadow.orbitDragonTargetTax);
+  if(c.def.meadow?.orbitFerociousDiscount)cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])&&stats(g,g.cards[id]).p>=4).length);
+  if (targets) cost.generic += wardTax(g, pid, targets);
     return cost;
   }
   if (alt === 'plotted') {
     const cost = parseCost(c.foretellTurn!==undefined ? c.def.foretell : '');
-    if (targets) cost.generic += wardTax(g, pid, targets);
+    if(c.def.meadow?.orbitDragonTargetTax&&targets?.some(t=>t&&'c'in t&&g.cards[t.c].def.subtypes?.includes('Dragon')))cost.generic+=Number(c.def.meadow.orbitDragonTargetTax);
+  if(c.def.meadow?.orbitFerociousDiscount)cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])&&stats(g,g.cards[id]).p>=4).length);
+  if (targets) cost.generic += wardTax(g, pid, targets);
     return cost;
   }
   let cost = alt==='campusMiracle'?parseCost('{2}'):c.eclCast?.free&&eclPermission(g,pid,c)?parseCost(''):parseCost(c.airbent ? '{2}' : def.spell?.modes?.[mode ?? 0]?.cost ?? def.cost);
+  if(c.def.meadow?.orbitDragonTargetTax&&targets?.some(t=>t&&'c'in t&&g.cards[t.c].def.subtypes?.includes('Dragon')))cost.generic+=Number(c.def.meadow.orbitDragonTargetTax);
   campusCost(g,pid,c,def,cost,targets,alt);
   if(c.def.ecl?.behold?.tax&&!canBehold(g,pid,c,alt))cost.generic+=c.def.ecl.behold.tax;
   if(['rime-chill','wildvine-pummeler'].includes(def.id))cost.generic=Math.max(0,cost.generic-vividColors(g,pid).length);
@@ -494,6 +501,7 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
   if(alt==='evidence'&&def.id==='bite-down-on-crime')cost.generic=Math.max(0,cost.generic-2);
   if(def.id==='the-pride-of-hull-clade')cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])).reduce((n,id)=>n+Math.max(0,stats(g,g.cards[id]).t),0));
   if(def.subtypes?.includes('Case')&&mkmStatic(g,pid,'caseMana').length){const total=cost.generic+cost.W+cost.U+cost.B+cost.R+cost.G+cost.C+(cost.hyb?.length??0);cost={...parseCost(''),generic:total};}
+  if(c.def.meadow?.orbitFerociousDiscount)cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])&&stats(g,g.cards[id]).p>=4).length);
   if (targets) cost.generic += wardTax(g, pid, targets);
   return cost;
 }
@@ -527,7 +535,7 @@ export function wardDiscardCount(g: GameState, pid: PID, targets: (TargetRef | n
   for (const t of targets) {
     if (!t || !('c' in t)) continue;
     const tc = g.cards[t.c];
-    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.wardDiscard&&tc.def.set!=='FDN'&&tc.def.set!=='DSK'&&tc.def.set!=='BLB'&&tc.def.set!=='SOS' && !abilitiesSuppressed(g, tc)) n++;
+    if (tc && tc.zone === 'battlefield' && tc.controller !== pid && tc.def.wardDiscard&&tc.def.set!=='FDN'&&tc.def.set!=='DSK'&&tc.def.set!=='BLB'&&tc.def.set!=='SOS'&&tc.def.set!=='EOE'&&tc.def.set!=='TDM' && !abilitiesSuppressed(g, tc)) n++;
   }
   return n;
 }
@@ -1351,6 +1359,7 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   const tapIds=ab.bdTapMana?(a.tapCards??[]):ab.cost.tapN?(a.tapCards??tapNChoices(g,pid,{...ab.cost.tapN.filter,...(ab.cost.tap?{other:true}:{})},ab.cost.tapN.n,c.id)??[]):[];
   if(ab.bdTapMana&&(new Set(tapIds).size!==tapIds.length||tapIds.length>4||tapIds.some(id=>!g.battlefield.includes(id)||g.cards[id].controller!==pid||g.cards[id].tapped||id===c.id&&!!ab.cost.tap||!isCreature(g.cards[id]))))return '橫置生物費用不合法';
   if(ab.cost.tapN&&(tapIds.length!==ab.cost.tapN.n||new Set(tapIds).size!==tapIds.length||tapIds.some(id=>{const x=g.cards[id];return !x||x.zone!=='battlefield'||x.controller!==pid||x.tapped||(ab.cost.tap&&id===c.id)||!matches(g,ab.cost.tapN!.filter,x,pid,c.id);})))return '橫置費用不合法';
+  const orbitStation=ab.orbitStation&&tapIds.length?{card:tapIds[0],version:g.cards[tapIds[0]].objectVersion??0}:undefined;
   const kirol=ab.effects.some(e=>e.e==='ecl'&&e.action==='kirol');
   const kirolTarget=kirol?g.stack.find(s=>s.sid===a.stackTargetSid&&s.kind==='trigger'&&s.controller===pid):undefined;
   if(kirol&&!kirolTarget)return '請選擇你的觸發異能';
@@ -1419,6 +1428,7 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   }
   payWardDiscard(g, pid, wardDiscardCount(g, pid, targets));
   payWardSac(g, pid, wardSacCount(g, pid, targets), c.id);
+  if(orbitStation){const body=g.cards[orbitStation.card];(body.orbitPowerHistory??={})[orbitStation.version]=stats(g,body).p;}
   if (ab.cost.tap) tapCard(g,c);
   if (ab.cost.tapN||ab.bdTapMana) {
     for (const id of tapIds) {
@@ -1458,7 +1468,7 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   }
   g.stack.push({
     sid: g.nextSid++,
-    kind: 'activated',bdCounters,bdSac:sacCard?{power:stats(g,sacCard).p,mana:manaValue(sacCard.def),vehicle:matches(g,{sub:'Vehicle'},sacCard,pid)}:undefined,distribution:a.distribution??(ab.foundationDistribution&&targets.length?targets.map((_,i)=>i?1:ab.foundationDistribution!-targets.length+1):undefined),
+    kind: 'activated',orbitStation,bdCounters,bdSac:sacCard?{power:stats(g,sacCard).p,mana:manaValue(sacCard.def),vehicle:matches(g,{sub:'Vehicle'},sacCard,pid)}:undefined,distribution:a.distribution??(ab.foundationDistribution&&targets.length?targets.map((_,i)=>i?1:ab.foundationDistribution!-targets.length+1):undefined),
     controller: pid,
     cardId: c.id,
     targets,

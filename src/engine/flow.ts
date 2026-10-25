@@ -1,3 +1,4 @@
+import {orbitRefresh} from './orbit-station';
 import {finishOmen} from './orbit';
 import {campusRefresh} from './campus-zones';
 import {campusCraftOptions} from './campus-casting';
@@ -54,6 +55,7 @@ export function checkSBA(g: GameState): void {
     foundationRefresh(g);
     campusRefresh(g);
     meadowRefresh(g);
+    orbitRefresh(g);
     for(const host of g.battlefield){for(const pid of [0,1]as PID[]){const roles=g.battlefield.filter(id=>g.cards[id].attachedTo===host&&g.cards[id].controller===pid&&g.cards[id].def.subtypes?.includes('Role'));if(roles.length>1){for(const id of roles.slice(0,-1))moveCard(g,g.cards[id],'graveyard');changed=true;}}}
     const losers = g.players.filter(p=>!frontierStatic(g,p.id,'fdn:cantLose').length&&(p.foundationLost||p.life<=0&&!frontierStatic(g,p.id,'dsk:grimoire').length||p.drewFromEmpty||(p.poison??0)>=10));
     if (losers.length) {
@@ -326,6 +328,7 @@ function* resolveTopItem(g: GameState): SubFlow {
     lkiPower: item.lkiPower,
     sourceType:item.sourceType,
     sourceLinkKey:item.sourceLinkKey,
+    orbitStation:item.orbitStation,
     sneakPaid:item.sneakPaid,
     bdSac:item.bdSac,
     bdCounters:item.bdCounters,
@@ -722,7 +725,7 @@ function* turn(g: GameState): SubFlow {
   g.phase = 'end';
   for (const id of [...g.battlefield]) {
     const c = g.cards[id];
-    if (c.sacAtEnd) sacrifice(g, c);
+    if (c.sacAtEnd) continue; // The end-step event queues the delayed sacrifice.
     else if (c.exileAtEndFinal && c.zone === 'battlefield') {
       log(g, `${cardName(c)} 被放逐`, c.controller);
       moveCard(g, c, 'exile');
@@ -764,6 +767,7 @@ function* turn(g: GameState): SubFlow {
     // 暫時成為生物的地恢復原狀
     if (c.baseDef&&c.mshCopyUntil===undefined&&!c.frontierMarks?.permanentAnimation&&(c.frontierMarks?.animationUntilTurn??0)<=g.turn) {
       c.def = c.baseDef;
+      c.orbitTypeDef=undefined;c.orbitAppliedDef=undefined;
       c.meadowTypeDef=undefined;
       c.baseDef = undefined;
       c.copyLayer=undefined;

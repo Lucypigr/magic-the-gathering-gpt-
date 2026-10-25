@@ -17,7 +17,7 @@ export function meadowCounter(g:GameState,c:Card,kind:string,n=1,actor:PID=c.con
  n*=2**(frontierStatic(g,c.controller,'fdn:doubleCounters').length+frontierStatic(g,actor,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length);
  if(kind==='loyalty')c.loyalty=(c.loyalty??0)+n;else if(kind==='stun')c.stun+=n;else if(kind==='charge'){
   // Older sets use the generic counter field for charge counters.
-  if(['FDN','DSK','TLA','TMT','ECL','FIN','BLB','DFT'].includes(c.def.set))c.charge=(c.charge??0)+n;else c.counters+=n;
+  if(['FDN','DSK','TLA','TMT','ECL','FIN','BLB','DFT','EOE','TDM'].includes(c.def.set))c.charge=(c.charge??0)+n;else c.counters+=n;
  }else if(kind==='lore')c.lore=(c.lore??0)+n;else if(kind==='hexproof')c.hexproofCounters=(c.hexproofCounters??0)+n;else if(kind==='finality'){c.finalityCount=(c.finality?Math.max(1,c.finalityCount??1):0)+n;c.finality=true;}else(c.eclCounters??={})[kind]=(c.eclCounters?.[kind]??0)+n;
  emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n,counterKind:kind});if(kind==='loyalty')emit(g,{type:'loyaltyPlaced',card:c.id,controller:c.controller,amount:n});
 }

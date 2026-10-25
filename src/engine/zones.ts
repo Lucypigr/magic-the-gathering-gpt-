@@ -1,3 +1,4 @@
+import {orbitRefresh} from './orbit-station';
 import {campusEntry,campusRefresh} from './campus-zones';
 import {meadowRefresh} from './meadow';
 import {meadowWard,meadowNoPrevent,innkeeperMultiplier} from './meadow-support';
@@ -220,6 +221,9 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 }
 
 export function emit(g: GameState, ev: GameEvent): void {
+  if(ev.type==='counterPlaced')orbitRefresh(g);
+  if(ev.type==='step'&&ev.step==='endStep')for(const id of g.battlefield){const c=g.cards[id];if(!c.sacAtEnd)continue;c.sacAtEnd=undefined;g.pending.push({source:id,controller:(c.frontierMarks?.orbitTempController?c.frontierMarks.orbitTempController-1:c.controller) as PID,sourceLinkKey:c.tmtLinkKey,abilityIndex:-341,ev,ability:{kind:'trigger',on:'eachEndStep',effects:[{e:'frontier',action:'tdm:tempSac'}]}});}
+
   mkmObserve(g,ev);
   mshObserve(g,ev);
   frontierObserve(g,ev);
@@ -257,7 +261,7 @@ export function emit(g: GameState, ev: GameEvent): void {
 
     if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)&&['the-serpent-society','titania-rugged-rumbler'].includes(c.def.id))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-72,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'msh',action:'ward',n:ev.stackSid}]}});
     if(c&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)&&(c.def.id==='vein-ripper'||c.def.id==='axebane-ferox'))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-71,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'mkm',action:'ward',n:ev.stackSid}]}});
-    if(c&&!foundationIgnoreWard&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){if(c.def.id==='ovika-enigma-goliath'||c.def.id==='valgavoth-terror-eater'||(c.def.set==='DSK'||c.def.set==='BLB'||c.def.set==='SOS')&&c.def.wardDiscard)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-124,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'fdn:wardSpecial',n:ev.stackSid}]}});}
+    if(c&&!foundationIgnoreWard&&c.controller!==ev.by&&!abilitiesSuppressed(g,c)){if(c.def.id==='ovika-enigma-goliath'||c.def.id==='valgavoth-terror-eater'||(c.def.set==='DSK'||c.def.set==='BLB'||c.def.set==='SOS'||c.def.set==='EOE'||c.def.set==='TDM')&&c.def.wardDiscard)g.pending.push({source:c.id,controller:c.controller,abilityIndex:-124,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'fdn:wardSpecial',n:ev.stackSid}]}});}
     if(c&&c.def.types.includes('Artifact')&&c.controller!==ev.by)for(const winter of frontierStatic(g,c.controller,'dft:artifactWardLife')){void winter;g.pending.push({source:c.id,controller:c.controller,abilityIndex:-241,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'ecl',action:'wardLife',n:ev.stackSid,value:2}]}});}
     if(c?.def.meadow?.wardManaLife&&c.controller!==ev.by&&!abilitiesSuppressed(g,c))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-242,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'dft:wardManaLife',n:ev.stackSid}]}});
     if(c?.def.meadow?.wardFood&&c.controller!==ev.by&&!abilitiesSuppressed(g,c))g.pending.push({source:c.id,controller:c.controller,abilityIndex:-207,ev,ability:{kind:'trigger',on:'targeted',effects:[{e:'frontier',action:'blb:wardFood',n:ev.stackSid}]}});
@@ -307,6 +311,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     for (let i = 0; i < abs.length; i++) {
       const ab = abs[i];
       if (ab.kind !== 'trigger') continue;
+      if(ab.orbitMinCharge&&(c.charge??0)<ab.orbitMinCharge)continue;
       if (!triggerMatches(g, c, ab, ev)) continue;
       if(ab.oncePerGame&&c.exhausted?.includes(2000+i))continue;
       if (ab.oncePerTurn && c.usedThisTurn.includes(i)) continue;
@@ -374,6 +379,7 @@ export function removeFromZone(g: GameState, c: Card): void {
 }
 
 function resetPermanentState(c: Card): void {
+ if(c.orbitTypeDef){c.def=c.orbitTypeDef;c.orbitTypeDef=undefined;c.orbitAppliedDef=undefined;}
  if(c.campusOriginalDef){c.def=c.campusOriginalDef;c.campusOriginalDef=undefined;}
  if(c.campusTypeDef){c.def=c.campusTypeDef;c.campusTypeDef=undefined;}
  if(c.foundationAuraOriginal){c.def=c.foundationAuraOriginal;c.foundationAuraOriginal=undefined;}
@@ -454,6 +460,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   if(to==='graveyard'&&c.zone==='battlefield'&&isCreature(c)&&!c.token){const crystal=c.finMarks?.deathCrystal?g.cards[c.finMarks.deathCrystal]:finStatic(g,other(c.controller),'darkness')[0];if(crystal){to='exile';(crystal.finLinked??=[]).push(c.id);gainLife(g,crystal.controller,2);}}
   if(c.zone==='stack'&&to!=='stack')c.finExileOnResolve=undefined;
   const wasOnBf = c.zone === 'battlefield';
+  if(wasOnBf&&c.orbitPowerHistory?.[c.objectVersion??0]!==undefined)c.orbitPowerHistory[c.objectVersion??0]=stats(g,c).p;
   const from = c.zone;
   if(wasOnBf)c.eclType=undefined;
   c.eclCast=undefined;c.eclLinked=undefined;c.eclDream=undefined;c.spellWitherTurn=undefined;
@@ -544,6 +551,8 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   refreshTlaPermanents(g);
   campusRefresh(g);
   meadowRefresh(g);
+  if(c.def.abilities?.some(a=>a.kind==='static'&&a.frontier==='tdm:ringing'))g.orbitHasRinging=true;
+  orbitRefresh(g,c);
 }
 
 function returnLinked(g: GameState, sourceId: number): void {
@@ -619,6 +628,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   if(c.def.meadow?.lostLifeEntry&&g.players[other(controller)].lifeLostThisTurn>0)c.counters++;
   if(isCreature(c)&&g.players[other(controller)].lifeLostThisTurn>0)c.counters+=frontierStatic(g,controller,'blb:gev').filter(s=>s.id!==c.id).length;
   if(isCreature(c)||c.def.subtypes?.includes('Vehicle'))c.counters+=(manaValue(c.def)<=4?1:3)*frontierStatic(g,controller,'dft:entryCounters').filter(s=>s.id!==c.id).length;
+  if(c.def.subtypes?.includes('Dragon'))c.counters+=frontierStatic(g,controller,'tdm:dragonEntryCounter').length;
   if(c.counters>0&&(isCreature(c)||c.def.subtypes?.includes('Vehicle')))c.counters+=frontierStatic(g,controller,'dft:counterPlus').length;
   if(c.def.id==='weather-maker')c.charge=0;
   if(c.def.types.includes('Artifact'))g.players[controller].artifactEnteredThisTurn=true;
@@ -652,6 +662,8 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   refreshTlaPermanents(g);
   campusRefresh(g);
   meadowRefresh(g);
+  if(c.def.abilities?.some(a=>a.kind==='static'&&a.frontier==='tdm:ringing'))g.orbitHasRinging=true;
+  orbitRefresh(g,c);
   const enterCounters: [string, number][] = [
     [c.counters < 0 ? 'minus' : '+1/+1', Math.abs(c.counters)],
     ['hexproof', c.hexproofCounters ?? 0], ['finality', Number(!!c.finality)], ['loyalty', c.loyalty ?? 0],

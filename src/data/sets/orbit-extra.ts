@@ -1,3 +1,5 @@
+import {addTdmCards} from './orbit-tdm-more';
+import {addStationCards} from './orbit-station-data';
 // Verified additions only. The complete source catalogs also track the remaining cards.
 import eoe from './eoe-catalog.json';
 import tdm from './tdm-catalog.json';
@@ -14,7 +16,8 @@ const flurry=(effects:Effect[],targets?:TargetSpec[]):Ability=>({kind:'trigger',
 const dragonBounce=()=>trig('allyEtb',[{e:'bounce',what:'self'}],{filter:{sub:'Dragon'}});
 const ownPermanent=spec('permanent',{ctrl:'you'});
 const permanent=spec('permanent',{nonType:'Land'});
-const {d,a,s,modes,E,C:rawC,N,event:rawEvent,patches,complete}=setBuilder('EOE',eoe,eoeAuto);
+const eoeBuilder=setBuilder('EOE',eoe,eoeAuto);
+const {d,a,s,modes,E,C:rawC,N,event:rawEvent,patches,complete}=eoeBuilder;
 const C=(key:string)=>rawC('eoe:'+key);
 const event=(key:string,effects:Effect[],extra:Partial<TriggeredAbility>={})=>rawEvent('eoe:'+key,effects,extra);
 a(3,[etb([{e:'exileLinked',what:'T0'}],{targets:[{...spec('creature',{nonSub:'Assassin'}),optional:true}]})]);
@@ -73,12 +76,13 @@ a(174,[etb([pump('T0',0,0,['deathtouch'])],{targets:[{...MY_CR,notSelf:true}]})]
 s(177,[pump('T0',1,0,['vigilance']),{e:'damage',from:'T0',to:'T1',n:{power:'T0'}}],[MY_CR,OPP_CR]);
 a(178,[etb([cnt('T0')],{targets:[CR]}),anthem({ctrl:'you',type:'Creature',plusCounters:true},{kw:['trample']})]);
 a(179,[trig('dies',[{e:'token',token:'tok-lander',who:'you'},{e:'token',token:'tok-lander',who:'opp'}])]);
-d(189,{power:0,toughness:0,abilities:[{kind:'static',frontier:'eoe:landSize'}]});
+d(189,{power:0,toughness:0,meadow:{orbitSize:'lands'},abilities:[]});
 a(190,[event('tappedSelf',[pump('T0',{power:'self'},{power:'self'})],{targets:[{...MY_CR,notSelf:true}]})]);
 a(195,[]);d(195,{costReduce:{mana:'{2}',cond:C('oppThree')}});
 a(197,[trig('allyDies',[draw],{includeSelf:true,cond:C('diedPlus')})]);
 a(200,[trig('landfall',[E('doublePower')],{targets:[MY_CR]})]);
 // Explicitly retain the printed source keywords instead of conditional keyword summaries.
+addStationCards(eoeBuilder);
 export const supplementEoe=()=>complete(true);
 
 const t=setBuilder('TDM',tdm,tdmAuto),td=t.d,ta=t.a,ts=t.s,tm=t.modes;
@@ -99,7 +103,7 @@ ta(42,[etb([{e:'dig',n:6,take:1,optional:true,filter:{or:[{type:['Instant','Sorc
 ta(43,[act({mana:'{2}',tap:true},[{e:'tutor',filter:{or:[{name:'Dragonstorm Globe'},{name:'Boulderborn Dragon'}]}}],'搜尋龍牌或龍臨儀')]);
 ts(45,[{e:'draw',n:3},{e:'discard',n:1,who:'you'}]);td(45,{costReduce:{mana:'{2}',cond:C2('castBefore')}});
 td(46,{aura:{target:CR,grant:{p:-5,loseAbilities:true}}});
-ta(51,[etb([{e:'bounce',what:'T0'},{e:'bounce',what:'T1'}],{targets:[{...permanent,notSelf:true,optional:true},{...permanent,notSelf:true,optional:true,differentFrom:0}]})]);t.adv(51,[{e:'draw',n:3},{e:'discard',n:1,who:'you'}]);
+ta(51,[etb([E2('bounceTargets')],{targets:[{...permanent,notSelf:true,optional:true},{...permanent,notSelf:true,optional:true,differentFrom:0}]})]);t.adv(51,[{e:'draw',n:3},{e:'discard',n:1,who:'you'}]);
 tm(54,[{text:'放回牌庫頂或底',effects:[{e:'topOrBottom',what:'T0'}],targets:[permanent]},{text:'反擊非生物咒語',effects:[{e:'counter',what:'T0'}],targets:[spec('spell',{nonType:'Creature'})]}]);
 ta(55,[etb([{e:'draw',n:2},{e:'discard',n:1,who:'you'}]),dragonBounce()]);
 ta(56,[etb([{e:'dig',n:2,take:1,rest:'graveyard'}])]);
@@ -136,6 +140,7 @@ t.saga(220,[chapter([token('tok-g-elephant-55-g')]),chapter([token('tok-g-elepha
 ta(221,[trig('castAny',[pump('self',2,0)],{filter:{or:[{nonType:'Creature'},{sub:'Dragon'}]}})]);t.adv(221,[{e:'counter',what:'T0'}],[spec('spell',{mvMax:2})]);
 ta(234,[{kind:'static',frontier:'tdm:dragonSorceryFlash'}]);t.adv(234,[cnt('T0',3)],[MY_CR]);
 ta(243,[act({mana:'{2}',tap:true},[E2('toBottom')],'置於牌庫底',{targets:[spec('gyCard')]})]);
+addTdmCards(t);
 // Generic mobilize uses the engine's next-end-step token sacrifice, not end of combat.
 for(const row of tdm){if(!t.patches.has(row.number))continue;const n=row.text.match(/Mobilize (\d+)/);if(n){const patch=t.patches.get(row.number)!;patch.abilities=[...(patch.abilities??[]).filter(ab=>!(ab.kind==='trigger'&&ab.on==='attacks'&&ab.effects.some(e=>e.e==='token'&&e.temp))),trig('attacks',[{e:'token',token:'tok-warrior-r11',n:Number(n[1]),tapped:true,attacking:true,temp:true}])];}}
 export const supplementTdm=()=>t.complete(true);

@@ -1,4 +1,5 @@
-import {orbitCondition,orbitAmount,orbitTrigger,orbitBaseStats} from './orbit';
+import {orbitStationStats} from './orbit-station';
+import {orbitCondition,orbitAmount,orbitTrigger,orbitBaseStats,orbitGrantedAbilities} from './orbit';
 import {campusAmount,campusCondition,campusTrigger,campusObserve,campusBaseStats,campusStats,campusGrantedAbilities} from './campus-support';
 import {meadowAmount,meadowCondition,meadowTrigger,meadowObserve,meadowBaseStats,meadowStats,meadowGrantedAbilities} from './meadow-support';
 import {foundationAmount,foundationCondition,foundationTrigger,foundationObserve,foundationBaseStats,foundationStats,foundationGrantedAbilities} from './foundation-support';
@@ -70,7 +71,7 @@ export function frontierAmount(
   x = 0,
   ev?: GameEvent,
 ) {
-  if(/^(eoe|tdm):/.test(key))return orbitAmount(g,pid,key);
+  if(/^(eoe|tdm):/.test(key))return orbitAmount(g,pid,key,source);
   if(/^(lci|sos):/.test(key))return campusAmount(g,pid,source,key,x,ev);
   if(/^(blb|dft):/.test(key))return meadowAmount(g,pid,source,key,ev);
   if(/^(fdn|dsk):/.test(key))return foundationAmount(g,pid,source,key,ev);
@@ -378,6 +379,7 @@ export function frontierStats(
   foundationStats(g,c,st);
   meadowStats(g,c,st);
   campusStats(g,c,st);
+  orbitStationStats(g,c,st);
   if (
     isCreature(c) &&
     frontierStatic(g, c.controller, "roseBase").some((s) => s.id !== c.id) &&
@@ -488,7 +490,7 @@ export function frontierGrantedAbilities(
   g: GameState,
   c: Card,
 ): import("./types").ActivatedAbility[] {
-  const out: import("./types").ActivatedAbility[] = [...foundationGrantedAbilities(g,c),...meadowGrantedAbilities(g,c),...campusGrantedAbilities(g,c)];
+  const out: import("./types").ActivatedAbility[] = [...orbitGrantedAbilities(g,c),...foundationGrantedAbilities(g,c),...meadowGrantedAbilities(g,c),...campusGrantedAbilities(g,c)];
   if (
     c.def.types.includes("Artifact") &&
     frontierStatic(g, c.controller, "foodFight").length

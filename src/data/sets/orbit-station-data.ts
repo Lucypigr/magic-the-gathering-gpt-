@@ -1,0 +1,44 @@
+import catalog from './eoe-catalog.json';
+import {setBuilder,spec,gy,mine,token,pump,cnt} from './frontier-dsl';
+import {act,etb,trig,ANY,OPP_CR} from '../dsl';
+import {anthem} from './meadow-dsl';
+import type {Keyword} from '../../engine/types';
+export function addStationCards(b:ReturnType<typeof setBuilder>){
+ const {d,a,E}=b,C=(key:string)=>b.C('eoe:'+key),N=(key:string)=>({frontier:'eoe:'+key});
+ const robot=(n:any=1)=>token('tok-g-robot-22-',n);
+ a(25,[anthem({ctrl:'you',type:'Creature',other:true},{p:1,t:1},C('charge:2'))]);
+ a(32,[etb([{e:'reanimate',what:'T0'}],{targets:[gy({type:['Creature','Enchantment']})]})]);
+ a(35,[etb([{e:'tutor',filter:{type:'Creature',legendary:true}}]),anthem({ctrl:'you',type:'Creature',legendary:true,tapped:true,other:true},{kw:['indestructible']},C('charge:7'))]);
+ a(43,[etb([robot()])]);
+ a(76,[etb([E('bounceTargets')],{targets:[{...spec('creature',{nonSub:'Spacecraft'}),optional:true},{...spec('creature',{nonSub:'Spacecraft'}),optional:true,differentFrom:0}]}),trig('attacks',[{e:'mill',who:'opp',n:4}])]);
+ a(81,[trig('combatStart',[{e:'animate',what:'T0',p:2,t:2,kw:['flying']}],{orbitMinCharge:2,targets:[{...spec('permanent',{ctrl:'you',type:'Artifact'}),notSelf:true,optional:true}]})]);
+ a(85,[etb([{e:'draw',n:2},{e:'discard',who:'you',n:1}])]);
+ a(99,[{kind:'trigger',on:'frontierEvent',frontierEvent:'eoe:opponentDiscard',orbitMinCharge:1,effects:[{e:'lose',who:'opp',n:3}]},trig('attacks',[E('discardOrLose3')])]);
+ a(101,[etb([{e:'mill',who:'you',n:3},E('recoverSpacecraft')])]);
+ a(117,[etb([{e:'sacPlayer',who:'opp',filter:{type:'Creature',token:false},n:1}])]);
+ a(131,[etb([{e:'damage',n:3,to:'T0'}],{targets:[ANY]}),act({mana:'{1}{R}'},[pump('self',2,0)],'強化星艦')]);
+ a(136,[]);
+ a(167,[etb([{e:'damage',n:{count:{ctrl:'you',type:'Artifact'}},to:'T0'}],{targets:[OPP_CR]})]);
+ a(171,[etb([cnt(mine)])]);
+ a(194,[etb([{e:'costThen',prompt:'犧牲地或登陸艇以搜尋至多兩張基本地？',cost:{sac:{or:[{type:'Land'},{sub:'Lander'}]}},then:[{e:'tutorMany',filter:{type:'Land',basic:true},n:2,to:'battlefield',tapped:true}]}])]);
+ a(208,[trig('attacks',[E('handCreature')])]);
+ a(219,[etb([{...robot(N('multicolor')),tapped:true}]),trig('attacks',[{e:'draw',n:N('multicolor')}])]);
+ a(238,[trig('youAttack',[{e:'damage',to:'T0',n:100}],{orbitMinCharge:10,targets:[{...spec('creatureOrPlaneswalker'),optional:true}]})]);
+ a(241,[act({tap:true},[{e:'addMana',mana:['C','C','C']}],'加入三點無色法術力',{manaAbility:true}),act({tap:true},[{e:'addManaOfChoice',n:N('charge')}],'依充電數加入同色法術力',{manaAbility:true,cond:C('charge:20')})]);
+ a(242,[etb([{e:'destroy',what:'T0'},{e:'damage',n:4,to:{all:{type:'Creature'}}}],{targets:[spec('permanent',{nonType:'Creature'})]})]);
+ a(244,[etb([{e:'damage',n:10,to:'T0'}],{targets:[{...spec('creature'),optional:true}]})]);
+ a(249,[etb([{e:'surveil',n:2}])]);
+ d(250,{etbTapped:true,produces:['W'],abilities:[act({mana:'{3}{W}',tap:true},[E('legendCopy')],'派出傳奇複製品',{sorcery:true,cond:C('charge:12'),targets:[spec('permanent',{ctrl:'you',type:['Artifact','Enchantment']})]})]});
+ d(253,{etbTapped:true,produces:['G'],abilities:[act({mana:'{G}',tap:true},[{e:'addMana',mana:['G'],n:{count:{ctrl:'you',type:'Creature'}}}],'依生物數加入綠色法術力',{cond:C('charge:12'),manaAbility:true})]});
+ d(255,{etbTapped:true,produces:['R'],abilities:[act({mana:'{1}{R}',tap:true,sacOther:{type:'Land'}},[robot(),pump(mine,1,0,['haste'])],'犧牲地：派出機器人並強化',{cond:C('charge:12')})]});
+ d(259,{etbTapped:true,produces:['B'],abilities:[act({mana:'{1}{B}',tap:true,life:2,sacOther:{type:'Creature'}},[E('sacPowerDraw')],'犧牲生物並依其力量抓牌',{sorcery:true,cond:C('charge:12')})]});
+ d(260,{etbTapped:true,produces:['U'],abilities:[act({mana:'{U}',tap:true},[{e:'addMana',mana:['U'],n:{count:{ctrl:'you',type:'Artifact'}}}],'依神器數加入藍色法術力',{cond:C('charge:12'),manaAbility:true})]});
+ const keywords:Record<string,Keyword>={flying:'flying',haste:'haste',lifelink:'lifelink',vigilance:'vigilance',trample:'trample',deathtouch:'deathtouch','first strike':'first_strike'};
+ for(const row of catalog){if(!row.text.includes('Station (')||!b.patches.has(row.number))continue;
+  const threshold=Number(row.text.match(/artifact creature at (\d+)\+/)?.[1]??0);
+  const line=threshold?row.text.split('\n').find(l=>l.startsWith(threshold+'+ | ')):undefined;
+  const kw=line?.split(' | ')[1].toLowerCase().split(', ').map(k=>keywords[k]).filter(Boolean)??[];
+  const patch=b.patches.get(row.number)!;
+  d(row.number,{meadow:{...patch.meadow,...(threshold?{orbitStationAt:threshold,orbitStationKeywords:kw.join(',')}:{})},abilities:[...(patch.abilities??[]),act({tapN:{filter:{type:'Creature',other:true},n:1}},[E('station')],'蓄勢：橫置另一個生物',{orbitStation:true,sorcery:true})]});
+ }
+}

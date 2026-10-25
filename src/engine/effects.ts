@@ -69,6 +69,7 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
+ orbitStation?:{card:number;version:number};
  lastDiscover?:number;
 
  bdCounters?:Record<string,number>;
@@ -491,7 +492,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'animate': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield' || c.baseDef) continue;
-        c.def=c.meadowTypeDef??c.def;c.meadowTypeDef=undefined;
+        c.def=c.orbitTypeDef??c.meadowTypeDef??c.def;c.orbitTypeDef=undefined;c.orbitAppliedDef=undefined;c.meadowTypeDef=undefined;
         c.baseDef = c.def;
         if(ef.permanent)(c.frontierMarks??={}).permanentAnimation=1;if(ef.untilNext)(c.frontierMarks??={}).animationUntilTurn=g.turn+2;
         c.def = {
@@ -914,7 +915,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const p of resolveRef(g, ctx, ef.who ?? 'you').players) {
         const host = ef.attachTo ? resolveRef(g, ctx, ef.attachTo).cards.find((c) => c.zone === 'battlefield' && isCreature(c)) : undefined;
         const created=yield* makeEclTokenBatch(g,p,ef.token,n,{tapped:ef.tapped,attacking:ef.attacking,attachTo:host?.id});
-        for(const t of created){if(ef.temp)t.sacAtEnd=true;ctx.created=t.id;(ctx.createdList??=[]).push(t.id);}
+        for(const t of created){if(ef.temp){t.sacAtEnd=true;(t.frontierMarks??={}).orbitTempController=p+1;}ctx.created=t.id;(ctx.createdList??=[]).push(t.id);}
         log(g, `派出 ${n} 個衍生物`, p);
       }
       break;
