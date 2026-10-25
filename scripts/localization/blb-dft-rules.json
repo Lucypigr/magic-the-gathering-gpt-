@@ -179,6 +179,26 @@
     "oracleId": "5d641bf6-0f93-4189-8dc1-ec7ea446dade",
     "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
   },
+  "Ral, Crackling Wit Emblem": {
+    "text": "你施放的瞬間和法術咒語具有風暴異能。",
+    "oracleText": "Instant and sorcery spells you cast have storm.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 16524,
+    "oracleId": "15c6a22f-6d7b-4446-976e-ed203a88691c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Cragflame": {
+    "text": "佩帶此武具的生物得+1/+1且具有警戒、踐踏與敏捷異能。\n佩帶{2}",
+    "oracleText": "Equipped creature gets +1/+1 and has vigilance, trample, and haste.\nEquip {2}",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 16526,
+    "oracleId": "dd4c59c6-a051-4909-ae28-bc0367db2d30",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
   "Brambleguard Captain": {
     "text": "在你回合的戰鬥開始時，目標由你操控的生物得+X/+0直到回合結束，X為此生物的力量。",
     "oracleText": "At the beginning of combat on your turn, target creature you control gets +X/+0 until end of turn, where X is this creature's power.",
@@ -377,6 +397,26 @@
     "sourceFile": "zhs_oracle.json",
     "sourceLine": 16972,
     "oracleId": "2f4ad084-2062-44c0-9975-15f100204531",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Pilot": {
+    "text": "此衍生物乘駕坐騎和搭載載具時視同其力量為原數值加2。",
+    "oracleText": "This token saddles Mounts and crews Vehicles as though its power were 2 greater.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17092,
+    "oracleId": "36a21469-6134-497d-9796-95454415a068",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Chandra, Spark Hunter Emblem": {
+    "text": "每當一個由你操控的神器進場時，此徽記對任意一個目標造成3點傷害。",
+    "oracleText": "Whenever an artifact you control enters, this emblem deals 3 damage to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17102,
+    "oracleId": "99267d28-b231-446f-b2cc-236d3ed1ed80",
     "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
   },
   "Intimidation Tactics": {
@@ -1037,6 +1077,16 @@
     "sourceFile": "zhs_oracle.json",
     "sourceLine": 22664,
     "oracleId": "54702a84-3125-41a7-a875-fe2ec870836d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Ral, Crackling Wit": {
+    "text": "每當你施放非生物咒語時，在拉爾上放置一個忠誠指示物。\n+1：派出一個1/1，藍紅雙色，具靈技異能的水獺衍生生物。\n-3：抓三張牌，然後棄兩張牌。\n-10：抓三張牌。你獲得具有以下異能的徽記～「你施放的瞬間和法術咒語具有風暴異能。」（每當你施放瞬間或法術咒語時，本回合於此咒語之前每施放過一個其他咒語，便將此咒語複製一次。）",
+    "oracleText": "Whenever you cast a noncreature spell, put a loyalty counter on Ral.\n[+1]: Create a 1/1 blue and red Otter creature token with prowess.\n[−3]: Draw three cards, then discard two cards.\n[−10]: Draw three cards. You get an emblem with \"Instant and sorcery spells you cast have storm.\" (Whenever you cast an instant or sorcery spell, copy it for each spell cast before it this turn.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 22665,
+    "oracleId": "3c970f43-17da-4187-a084-efd53b579067",
     "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
   },
   "Nettle Guard": {
@@ -3019,6 +3069,16 @@
     "oracleId": "a08580da-e5aa-424b-86bf-d4535f3480d1",
     "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
   },
+  "Chandra, Spark Hunter": {
+    "text": "在你回合的戰鬥開始時，選擇至多一個目標由你操控的載具。直到回合結束，它成為神器生物且獲得敏捷異能。\n+2：你可以犧牲一個神器或棄一張牌。如果你如此作，則抓一張牌。\n0：派出一個3/2無色，具搭載1的載具衍生神器。\n−7：你獲得具有以下異能的徽記～「每當一個由你操控的神器進場時，此徽記對任意一個目標造成3點傷害。」",
+    "oracleText": "At the beginning of combat on your turn, choose up to one target Vehicle you control. Until end of turn, it becomes an artifact creature and gains haste.\n[+2]: You may sacrifice an artifact or discard a card. If you do, draw a card.\n[0]: Create a 3/2 colorless Vehicle artifact token with crew 1.\n[−7]: You get an emblem with \"Whenever an artifact you control enters, this emblem deals 3 damage to any target.\"",
+    "source": "MTGso",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 23394,
+    "oracleId": "30bb01c1-9253-4251-80e7-fb8236b3d858",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
   "Burnout Bashtronaut": {
     "text": "威懾\n發動引擎！（如果你沒有速度，則從1開始。於你的每個回合中，當有對手失去生命時，此數值便會增加，但每回合限一次。速度極限為4。）\n{2}：此生物得+1/+0直到回合結束。\n速度極限～此生物具有連擊異能。",
     "oracleText": "Menace\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{2}: This creature gets +1/+0 until end of turn.\nMax speed — This creature has double strike.",
@@ -4237,6 +4297,16 @@
     "sourceFile": "zhs_oracle.json",
     "sourceLine": 23912,
     "oracleId": "b46bac37-5b45-4be5-93d0-76e48dbd9f74",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "The Aetherspark": {
+    "text": "只要乙太火花貼附在某生物上，乙太火花便不能被攻擊，且具有「每當佩帶此武具的生物於你的回合中造成戰鬥傷害時，在乙太火花上放置等量的忠誠指示物。」\n+1：將乙太火花貼附到至多一個目標由你操控的生物上。在該生物上放置一個+1/+1指示物。\n−5：抓兩張牌。\n−10：加十點任意顏色的單色法術力。",
+    "oracleText": "As long as The Aetherspark is attached to a creature, The Aetherspark can't be attacked and has \"Whenever equipped creature deals combat damage during your turn, put that many loyalty counters on The Aetherspark.\"\n[+1]: Attach The Aetherspark to up to one target creature you control. Put a +1/+1 counter on that creature.\n[−5]: Draw two cards.\n[−10]: Add ten mana of any one color.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 23913,
+    "oracleId": "483c747a-b602-4747-95bc-72c2c17ed509",
     "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
   },
   "Aetherjacket": {

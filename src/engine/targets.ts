@@ -1,3 +1,4 @@
+import {frontierFlags} from './frontier-support';
 import {frontierStatic} from './frontier-support';
 import {mshStatic} from './msh-support';
 import {manaValue} from './mana';
@@ -31,7 +32,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
   const f = spec.filter;
   const addPlayers = (onlyOpp: boolean) => {
     for (const pid of [0, 1] as PID[]) {
-      if(pid!==controller&&frontierStatic(g,pid,'fdn:playerHexproof').length)continue;
+      if(pid!==controller&&(frontierFlags(g,pid).bdHexproof||frontierStatic(g,pid,'fdn:playerHexproof').length))continue;
       if (onlyOpp && pid === controller) continue;
       if (f?.ctrl === 'opp' && pid === controller) continue;
       if (f?.ctrl === 'you' && pid !== controller) continue;
@@ -55,7 +56,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       addPlayers(false);
       break;
     case 'opponent':
-      if(!mshStatic(g,other(controller),'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,other(controller),'playerProtection').length)out.push({ p: other(controller) });
+      if(!mshStatic(g,other(controller),'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,other(controller),'playerProtection').length&&!frontierFlags(g,other(controller)).bdHexproof)out.push({ p: other(controller) });
       break;
     case 'permanentOrPlayer':addPerms(false);addPlayers(false);break;
     case 'creatureOrPlaneswalker':addPerms(true,true);break;
@@ -69,7 +70,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
     case 'any': {
       // 任意一個目標：生物、鵬洛客或玩家
       addPerms(true, true);
-      for (const pid of [0, 1] as PID[])if(pid===controller||!frontierStatic(g,pid,'fdn:playerHexproof').length&&!mshStatic(g,pid,'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,pid,'playerProtection').length)out.push({ p: pid });
+      for (const pid of [0, 1] as PID[])if(pid===controller||!frontierStatic(g,pid,'fdn:playerHexproof').length&&!mshStatic(g,pid,'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,pid,'playerProtection').length&&!frontierFlags(g,pid).bdHexproof)out.push({ p: pid });
       break;
     }
     case 'creatureOrGy':addPerms(true);for(const id of g.players.flatMap(p=>p.graveyard)){const c=g.cards[id];if(isCreature(c)&&id!==sourceId&&matches(g,f,c,controller,sourceId))out.push({c:id});}break;
@@ -121,7 +122,7 @@ export function isLegalTarget(
     const c = g.cards[t.c];
     if (!c) return false;
     const zoneOk =
-      spec.kind==='creatureOrGy'?(c.zone==='battlefield'||c.zone==='graveyard'):spec.kind === 'spell' ? c.zone === 'stack' : spec.kind === 'gyCard' ? c.zone === 'graveyard' : (spec.kind === 'spellOrCreature'||spec.kind==='spellOrPermanent') ? c.zone === 'stack' || c.zone === 'battlefield' : c.zone === 'battlefield';
+      spec.kind==='exileCard'?c.zone==='exile':spec.kind==='creatureOrGy'?(c.zone==='battlefield'||c.zone==='graveyard'):spec.kind === 'spell' ? c.zone === 'stack' : spec.kind === 'gyCard' ? c.zone === 'graveyard' : (spec.kind === 'spellOrCreature'||spec.kind==='spellOrPermanent') ? c.zone === 'stack' || c.zone === 'battlefield' : c.zone === 'battlefield';
     if (!zoneOk) return false;
   }
   return legalTargets(g, spec, controller, sourceId).some((x) => sameTarget(x, t));

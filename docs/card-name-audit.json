@@ -1,15 +1,15 @@
 {
-  "cards": 4180,
-  "collectibleCards": 4175,
-  "tokens": 238,
+  "cards": 4427,
+  "collectibleCards": 4422,
+  "tokens": 253,
   "additionalFaces": 173,
-  "totalRows": 4591,
-  "uniqueEnglishNames": 4493,
-  "translatedRows": 4591,
+  "totalRows": 4853,
+  "uniqueEnglishNames": 4748,
+  "translatedRows": 4853,
   "unresolved": [],
   "counts": {
-    "published": 1695,
-    "database": 2893,
+    "published": 1704,
+    "database": 3146,
     "terminology": 3
   },
   "bySet": {
@@ -84,10 +84,10 @@
       "terminology": 0
     },
     "DFT": {
-      "cards": 141,
-      "translated": 141,
-      "published": 2,
-      "database": 139,
+      "cards": 259,
+      "translated": 259,
+      "published": 3,
+      "database": 256,
       "terminology": 0
     },
     "DSK": {
@@ -98,10 +98,10 @@
       "terminology": 0
     },
     "BLB": {
-      "cards": 131,
-      "translated": 131,
-      "published": 8,
-      "database": 123,
+      "cards": 260,
+      "translated": 260,
+      "published": 9,
+      "database": 251,
       "terminology": 0
     },
     "OTJ": {

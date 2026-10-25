@@ -853,7 +853,7 @@ export function foundationRefresh(g: GameState) {
             (x) =>
               x.kind === "static" &&
               (x.frontier === "fdn:controlAura" ||
-                x.frontier === "dsk:controlAura"),
+                x.frontier === "dsk:controlAura" || x.frontier === "blb:controlAura"),
           ),
       )
       .at(-1);

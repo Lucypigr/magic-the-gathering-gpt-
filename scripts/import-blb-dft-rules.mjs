@@ -11,8 +11,9 @@ for await(const bytes of createReadStream(`${root}/${file}`))hash.update(bytes);
 if(hash.digest('hex')!==manifest.files[file])throw Error('Chinese rules source hash mismatch');
 const wanted=new Map();
 for(const code of ['blb','dft'])for(const c of JSON.parse(await readFile(`src/data/sets/${code}-catalog.json`,'utf8')))wanted.set(c.name,c);
+for(const c of JSON.parse(await readFile('/tmp/translation-cards.json','utf8')))if(c.id?.startsWith('tok-bd-')&&c.text)wanted.set(c.name,c);
 const traditional=Converter({from:'cn',to:'tw'}),result={},mismatches=[];
-const normalize=s=>(s??'').replace(/\\+n/g,'\n').replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
+const normalize=s=>(s??'').replace(/\[([+−-]?\d+)\](?=:)/g,'$1').replace(/\\+n/g,'\n').replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
 const ai=/gpt|chatgpt|gemini|claude|(?:^|[^a-z])ai(?:[^a-z]|$)/i;
 let line=0;
 for await(const raw of createInterface({input:createReadStream(`${root}/${file}`),crlfDelay:Infinity})){

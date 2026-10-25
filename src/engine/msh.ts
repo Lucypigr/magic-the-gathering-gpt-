@@ -1,3 +1,4 @@
+import {innkeeperMultiplier} from './meadow-support';
 import { canPayCost, payCost } from './actions';
 import { copiableDefinition, isCreature, isLand, matches, newCard, other, shuffleArr, stats } from './state';
 import { manaValue, parseCost } from './mana';
@@ -527,7 +528,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
       const t = ctx.targets[0];
       if (t && 'p' in t) {
         const pl = g.players[t.p];
-        if (pl.poison) pl.poison++;
+        if (pl.poison) pl.poison+=innkeeperMultiplier(g,ctx.controller);
       } else if (c) {
         const kinds = Object.entries(counterKinds(c)).filter(([, n]) => n > 0);
         for (const [kind] of kinds) {
@@ -836,7 +837,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
       let paid = false;
       if (src.def.id === 'the-serpent-society') {
         if (yield* yes(item.controller, '獲得五個毒指示物支付守護？')) {
-          g.players[item.controller].poison = (g.players[item.controller].poison ?? 0) + 5;
+          g.players[item.controller].poison = (g.players[item.controller].poison ?? 0) + 5*innkeeperMultiplier(g,ctx.controller);
           paid = true;
         }
       } else {

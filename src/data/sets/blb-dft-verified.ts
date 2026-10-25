@@ -1,3 +1,6 @@
+import {supplementDft} from './dft-remaining';
+import {supplementBlb} from './blb-remaining';
+import {patchBuilder} from './meadow-dsl';
 import blb from './blb-catalog.json';
 import dft from './dft-catalog.json';
 import blbAuto from './blb-auto.json';
@@ -5,7 +8,7 @@ import dftAuto from './dft-auto.json';
 import { add, defs, slug, act, etb, trig, CR, MY_CR, OPP_CR, OPP } from '../dsl';
 import { REPRINTS } from '../reprints';
 import { pump, cnt, draw, destroy, token, gy, mine, spec } from './frontier-dsl';
-import type { Ability, CardDef, Cond, Filter, Grant, Ref, TargetSpec } from '../../engine/types';
+import type { Ability, CardDef, Cond, Filter, Grant, Ref } from '../../engine/types';
 const all=(filter:Filter):Ref=>({all:filter});
 const self=(grant:Grant,cond?:Cond):Ability=>({kind:'static',self:{grant,cond}});
 const anthem=(filter:Filter,grant:Grant):Ability=>({kind:'static',anthem:{filter,grant}});
@@ -14,14 +17,7 @@ const vehicle=spec('permanent',{or:[{type:'Creature'},{sub:'Vehicle'}]});
 const mount=spec('permanent',{or:[{sub:'Mount'},{sub:'Vehicle'}]});
 const threshold:Cond={c:'gyCount',filter:{},n:7};
 const valiant=(effects:Parameters<typeof trig>[1])=>trig('targeted',effects,{oncePerTurn:true});
-function builder(auto:object){
- const patches=new Map<number,Partial<CardDef>>(Object.entries(auto).map(([n,p])=>[Number(n),p]));
- const d=(n:number,p:Partial<CardDef>)=>patches.set(n,{...patches.get(n),...p});
- const a=(n:number,abilities:Ability[])=>d(n,{abilities});
- const s=(n:number,effects:NonNullable<CardDef['spell']>['effects'],targets?:TargetSpec[])=>d(n,{spell:{effects,targets}});
- return {patches,d,a,s};
-}
-const B=builder(blbAuto),D=builder(dftAuto);
+const B=patchBuilder(blbAuto),D=patchBuilder(dftAuto);
 {
  const {d,a,s}=B;
  a(1,[etb([{e:'exileLinked',what:'T0'}],{targets:[spec('permanent',{nonType:'Land',ctrl:'opp'})]})]);
@@ -126,23 +122,30 @@ const B=builder(blbAuto),D=builder(dftAuto);
  a(242,[act({mana:'{3}',tap:true,sacSelf:true},[{e:'damage',n:3,to:'T0'}],'造成3點傷害',{targets:[CR]}),act({mana:'{6}',tap:true,sacSelf:true},[destroy],'消滅生物或載具',{targets:[vehicle]})]);
 
 }
+supplementBlb(B);
+supplementDft(D);
 export const VERIFIED_BLB_DFT={BLB:[...B.patches.keys()],DFT:[...D.patches.keys()]};
-/** Apply only fully implemented rows. Other printed cards remain explicitly pending. */
+/** Install the complete printed catalogs, preserving shared reprint identities. */
 export function supplementBlbDft(){
  for(const [code,catalog,patches] of [['BLB',blb,B.patches],['DFT',dft,D.patches]] as const){
   for(const row of catalog){
    const patch=patches.get(row.number);if(!patch)continue;
    const c={...row,...patch,id:slug(row.name),text:row.text} as unknown as CardDef;
+   if(code==='BLB'&&row.text.startsWith('Gift'))for(const mode of c.spell?.modes??[])if(mode.text==='送禮')mode.effects=[{e:'frontier',action:'blb:gift'},...mode.effects.slice(1)];
    const cycling=row.text.match(/^Cycling ((?:\{[^}]+\})+)/m);if(cycling)c.cycling={cost:cycling[1]};
    if(row.text.includes('Start your engines!'))c.startEngines=true;
    const offspring=row.text.match(/^Offspring ((?:\{[^}]+\})+)/m);if(offspring)c.offspring=offspring[1];
    const saddle=row.text.match(/^Saddle (\d+)/m);if(saddle&&!c.abilities?.some(a=>a.kind==='activated'&&a.effects.some(e=>e.e==='saddle')))c.abilities=[...(c.abilities??[]),act({crew:Number(saddle[1])},[{e:'saddle'}],'騎乘'+saddle[1],{sorcery:true})];
    const crew=row.text.match(/^Crew (\d+)/m);if(crew&&!c.abilities?.some(a=>a.kind==='activated'&&a.cost.crew))c.abilities=[...(c.abilities??[]),act({crew:Number(crew[1])},[{e:'animate',what:'self',p:c.power??0,t:c.toughness??0}],'搭載'+crew[1])];
+   if(code==='DFT'&&row.text.includes('Exhaust'))for(const a of c.abilities??[])if(a.kind==='activated'&&a.oncePerGame)a.bdExhaust=true;
    if(code==='DFT')for(const a of c.abilities??[])if(a.kind==='activated'&&a.oncePerGame)a.label=a.label.replace(/^竭力：/,'竭絕：');
+   if(c.meadow?.gift)c.abilities=[...(c.abilities??[]),{kind:'trigger',on:'etb',when:{c:'frontier',action:'blb:giftPromised'},effects:[{e:'frontier',action:'blb:gift'}]}];
+   for(const a of c.abilities??[])if(a.kind==='trigger'&&a.cond?.c==='classLevel'){const gate=a.cond;a.cond=undefined;a.when=a.when?{c:'and',conds:[a.when,gate]}:gate;}
    const old=defs.find(d=>d.id===c.id);
    if(old&&old.set!==code){
     c.set=old.set;const reprints=REPRINTS[code]??=[];if(!reprints.some(([id])=>id===c.id))reprints.push([c.id,c.rarity]);}
    if(old){for(const k of Object.keys(old))delete(old as any)[k];Object.assign(old,c);}else add(c);
   }
+  if(patches.size===catalog.length){const ids=new Set(catalog.map(c=>slug(c.name)));for(const c of defs)if(c.set===code&&!ids.has(c.id))c.boosterExcluded=true;REPRINTS[code]=(REPRINTS[code]??[]).filter(([id])=>ids.has(id));}
  }
 }

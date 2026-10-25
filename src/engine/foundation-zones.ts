@@ -1,7 +1,9 @@
+import {meadowNoPrevent} from './meadow-support';
 import { frontierStatic, frontierFlags } from "./frontier-support";
 import { abilitiesSuppressed, isCreature, other } from "./state";
 import type { Card, GameState, PID, TargetRef } from "./types";
 export function foundationGraveReplacement(g: GameState, c: Card) {
+  if(frontierStatic(g,c.owner,'blb:festival').length)return {to:'exile' as const};
   if (!c.token) {
     if (
       frontierStatic(g, other(c.owner), "dsk:opponentGraveExile").length ||
@@ -36,7 +38,7 @@ export function foundationDamage(
   combat: boolean,
 ): { n: number; mill?: number } {
   if (
-    combat &&
+    !meadowNoPrevent(g)&&combat &&
     src &&
     frontierStatic(g, src.controller, "fdn:preventCombatBoth").some(
       (c) => c.id === src.id,
@@ -64,13 +66,13 @@ export function foundationDamage(
     const c = g.cards[target.c];
     if (c) {
       if (
-        frontierStatic(g, c.controller, "fdn:protectionEverything").some(
+        !meadowNoPrevent(g)&&frontierStatic(g, c.controller, "fdn:protectionEverything").some(
           (x) => x.id === c.id,
         )
       )
         return { n: 0 };
       if (
-        combat &&
+        !meadowNoPrevent(g)&&combat &&
         (frontierStatic(g, c.controller, "fdn:preventCombatBoth").some(
           (x) => x.id === c.id,
         ) ||
@@ -82,7 +84,7 @@ export function foundationDamage(
       )
         return { n: 0 };
       if (
-        !combat &&
+        !meadowNoPrevent(g)&&!combat &&
         isCreature(c) &&
         frontierStatic(g, c.controller, "fdn:preventOtherNoncombat").some(
           (x) => x.id !== c.id,

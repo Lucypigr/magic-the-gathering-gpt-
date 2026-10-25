@@ -1,3 +1,4 @@
+import {innkeeperMultiplier} from './meadow-support';
 import {
   copiableDefinition,
   isCreature,
@@ -208,7 +209,7 @@ export function* foundationEffect(
       batchReturn(p.graveyard.filter((id) => isCreature(g.cards[id])));
       return;
     case "poison2":
-      g.players[opp].poison = (g.players[opp].poison ?? 0) + 2;
+      g.players[opp].poison = (g.players[opp].poison ?? 0) + 2*innkeeperMultiplier(g,ctx.controller);
       return;
     case "activeDraw":
       drawCards(g, g.active, 1);
@@ -1455,7 +1456,7 @@ export function* foundationEffect(
         break;
       }
       case "64": {
-        const n = ev && "amount" in ev ? ev.amount : 0,
+        const n = ev && "amount" in ev ? (ev.amount??0) : 0,
           ids = yield* pick(
             p.hand,
             "因失去生命棄牌",
@@ -1779,7 +1780,7 @@ export function* foundationEffect(
       case "157": {
         const t = ctx.targets[0];
         if (t) {
-          const n = ev?.type === "damaged" ? ev.amount : 0,
+          const n = ev?.type === "damaged" ? (ev.amount??0) : 0,
             dealt = dealDamage(g, src, pid, t, n);
           if ("p" in t && dealt > 0) g.players[t.p].foundationNoLifeGain = true;
         }
@@ -2051,7 +2052,7 @@ export function* foundationEffect(
       case "223": {
         const top = p.library.slice(
           0,
-          ev?.type === "combatDamage" ? ev.amount : 0,
+          ev?.type === "combatDamage" ? (ev.amount??0) : 0,
         );
         for (const id of top) moveCard(g, g.cards[id], "graveyard");
         const ids = yield* pick(

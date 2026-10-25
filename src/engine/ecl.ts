@@ -1,3 +1,4 @@
+import {meadowBeforeEntry} from './meadow';
 import {frontierStatic} from './frontier-support';
 import {mkmStatic} from './mkm-support';
 import { finStatic } from './fin-support';
@@ -90,7 +91,8 @@ export function* resolveEclEntries(g: GameState): SubFlow {
     if (!c) continue;
     let def = entry.enterAs,
       tapped = entry.tapped;
-    const choice = c.def.ecl?.asEnters;
+    let choice = c.def.ecl?.asEnters;
+    if(choice==='mockingbird'||choice==='waxen'||choice==='mimeoplasm'){def=yield*meadowBeforeEntry(g,{source:c.id,controller:entry.controller,targets:[],x:c.zone==='stack'?c.castX??0:0},c);if(def)choice=def.ecl?.asEnters;}
     if (choice === 'tribe' || choice === 'tribe8') c.eclType = yield* chooseEclType(g, entry.controller, choice === 'tribe8');
     if(choice==='talion'){const r:Response=yield{type:'mode',player:entry.controller,prompt:'選擇1至10',options:Array.from({length:10},(_,i)=>String(i+1)),count:1,purpose:'count'};(c.frontierMarks??={}).talion=1+(r.type==='modes'?r.picks[0]??0:0);}
     if(choice==='cardName'){const defs=allDefs().filter(d=>d.set!=='TOK');const answer:Response=yield{type:'mode',player:entry.controller,prompt:'對手手牌：'+g.players[other(entry.controller)].hand.map(id=>g.cards[id].def.name).join('、')+'；選擇一張牌名',options:defs.map(d=>d.name),count:1,purpose:'trigger'};c.foundationNamed=defs[answer.type==='modes'?answer.picks[0]??0:0]?.name;}

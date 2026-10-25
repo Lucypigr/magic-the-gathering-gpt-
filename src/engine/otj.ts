@@ -343,7 +343,7 @@ export function* otjEffect(
       break;
     }
     case "54": {
-      const n = ev && "amount" in ev ? ev.amount : 0,
+      const n = ev && "amount" in ev ? (ev.amount??0) : 0,
         top = p.library.slice(0, n),
         id = (yield* pick(
           top.filter((id) => !isLand(g.cards[id])),
@@ -1122,7 +1122,7 @@ export function* otjEffect(
     }
     case "222":
       g.frontierExtraUpkeeps =
-        (g.frontierExtraUpkeeps ?? 0) + (ev && "amount" in ev ? ev.amount : 0);
+        (g.frontierExtraUpkeeps ?? 0) + (ev && "amount" in ev ? (ev.amount??0) : 0);
       break;
     case "okoCopy":
       if (c && (yield* yes(pid, "Oko成為該生物的複製？"))) {

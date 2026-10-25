@@ -626,6 +626,7 @@ export interface TriggeredAbility {
   ownDiscard?: boolean;
   eachDiscard?: boolean;
   level?: number;
+  bdTargets?:string;
   kind: 'trigger';
   on: TriggerOn;
   /** 模式式觸發：先選擇模式再選目標（此時 effects 為空） */
@@ -668,6 +669,8 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+ bdExhaust?:boolean;bdExert?:boolean;bdExile?:{filter:Filter;n?:number;any?:boolean};bdSacAny?:Filter;bdInstantOnly?:boolean;
+ bdForage?:boolean;bdTapMana?:boolean;bdRemove?:string;
  roomDoor?:0|1;foundationDistribution?:number;foundationNinjutsu?:boolean;manaAbility?:boolean;
   frontierOwnTurnDiscount?:number;frontierRemoveLoot?:number;
   frontierMode?:number;
@@ -804,6 +807,7 @@ export interface SpellSpec {
 export interface RoomDoor {name:string;cost:string;text:string;abilities?:Ability[]}
 export interface CardDef {
  room?:{left:RoomDoor;right:RoomDoor}; impending?:{n:number;cost:string}; kicker?:string;
+ meadow?:Record<string,string|number|boolean|undefined>;
  foundation?:{revival?:number;raidCounter?:boolean;kickerCounters?:number;charge?:number;divinity?:boolean;zegana?:boolean;totalPowerDiscount?:boolean;leyline?:boolean;plaything?:boolean;morbidCounter?:boolean;exileCreatureCost?:boolean;returnPermanentCost?:boolean;exileGraveCost?:number;tapCastCost?:number;revealCreaturePower?:boolean;ninjutsu?:string;verge?:readonly string[];unlockPayment?:boolean};
   boosterExcluded?:boolean;
   frontier?:{tappedTargetDiscount?:number;flashExtra?:number;dustAnimus?:boolean;sheriffCounters?:boolean;morbidCounter?:boolean;freeCounters?:number;ownTargetDiscount?:number;variableTargets?:'own'|'graceful';distribute?:number|'X';bargain?:boolean;bargainDiscount?:number;flashMode?:number;attackerDiscount?:boolean;enterStun?:number;enterDeaths?:boolean;chooseMana?:boolean};
@@ -816,7 +820,7 @@ export interface CardDef {
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
-  ecl?: {variableTargets?:'creature';asEnters?:'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
+  ecl?: {variableTargets?:'creature';asEnters?:'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
   sneak?: string;
   combatPowerMin?: number;
   evadePowGte?: number;
@@ -946,6 +950,8 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+ finalityCount?:number;
+ meadowLinked?:number[];meadowTypeDef?:CardDef;lastKeywords?:Keyword[];lastWasFood?:boolean;
  offspringPaid?:boolean;
  foundationNamed?:string;kicked?:boolean;impendingPaid?:boolean;impendingTime?:number;roomUnlocked?:number;attachedToPlayer?:PID;foundationAuraOriginal?:CardDef;hiddenExile?:boolean;
   castFace?:CardDef;
@@ -981,7 +987,7 @@ export interface Card {
   temporaryAbilities?: {turn:number;abilities:Ability[]};
   colorProtections?: {turn:number;color:Color}[];
   hexproofCounters?: number;
-  lastCounterKinds?: {[kind:string]:number|boolean;plus: number; charge: number; stun: number; hexproof: number; finality: boolean; lore: number};
+  lastCounterKinds?: {[kind:string]:number|boolean;plus: number; charge: number; stun: number; hexproof: number; finality: boolean|number; lore: number};
   lastToughness?: number;
   countersBeforeLeaving?: number;
   classModesTurn?: {turn:number;modes:number[]};
@@ -1196,9 +1202,12 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
+ bdCounters?:Record<string,number>;
+ bdOffspringPaid?:boolean;bdGiftPaid?:boolean;
+ bdSac?:{power:number;mana:number;vehicle:boolean};
   frontierStackSids?:number[];distribution?:number[];
   sourceType?:string;
   sourceLinkKey?: number;
@@ -1272,7 +1281,7 @@ export type Phase =
 
 export type GameEvent =
  | {type:'draw';player:PID;card:number}
- | {type:'frontier';action:string;card:number;player:PID;other?:number;amount:number}
+ | {type:'frontier';action:string;card:number;player:PID;other?:number;amount:number;bdStack?:StackItem}
   | {type:'msh';action:string;player:PID;card:number;n?:number}
   | {type:'mkm';action:string;player:PID;card:number;n?:number}
   | {type:'combatPlayerOrWalker';source:number;controller:PID;amount:number}
@@ -1287,12 +1296,12 @@ export type GameEvent =
   | {type:'combatDamageAny';source:number;controller:PID;amount:number}
 
   | { type: 'etb'; card: number; controller: PID }
-  | { type: 'dies'; wasAttacking?:boolean; card: number; controller: PID; power: number; toughness?:number }
+  | { type: 'dies'; counterKinds?:Card['lastCounterKinds']; wasAttacking?:boolean; card: number; controller: PID; power: number; toughness?:number }
   | { type: 'attacks'; card: number }
   | { type: 'youAttack'; player: PID; attackers: number[] }
   | { type: 'blocks'; card: number }
   | { type: 'step'; step: 'main2' | 'upkeep' | 'endStep' | 'combatStart' | 'main1' | 'draw'; player: PID }
-  | { type: 'cast'; foundationCosts?:number[]; distribution?:number[];stackTargetSids?:number[];card: number; player: PID; opponentTurn: boolean }
+  | { type: 'cast'; bdSpell?:StackItem; foundationCosts?:number[]; distribution?:number[];stackTargetSids?:number[];card: number; player: PID; opponentTurn: boolean }
   | { type: 'lifegain'; player: PID; amount: number }
   | { type: 'lifeloss'; player: PID; amount: number }
   | { type: 'combatDamage'; source: number; player: PID; amount: number }
@@ -1307,7 +1316,7 @@ export type GameEvent =
   | { type: 'loyaltyPlaced'; card: number; controller: PID; amount: number }
   | { type: 'loyaltyActivated'; card: number; controller: PID; removed: number }
   | { type: 'noncombat'; player: PID; amount: number; sourceController: PID }
-  | { type: 'discard'; player: PID; card: number; batchPart?:boolean; batchSummary?:boolean }
+  | { type: 'discard'; player: PID; card: number; amount?:number; batchPart?:boolean; batchSummary?:boolean }
   | { type: 'counterPlaced'; card: number; controller: PID; amount: number; counterBatch?:number; counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export interface PendingTrigger {
@@ -1389,6 +1398,8 @@ export interface GameState {
   /** 上一個傷害效果造成的過量傷害（結算期間使用） */
   lastExcess?: number;
   /** 本回合的延遲觸發 */
+  meadowZoneBatch?:number;
+  meadowDelayed?:{id:number;source:number;controller:PID;kind:string;target?:number;version?:number;turn:number;ownEnd?:boolean;ids?:number[];queued?:boolean}[];
   delayed?: DelayedTrigger[];
   /** 場上有「失去所有異能」的光環（用來避免不必要的檢查） */
   loseAbilities?: boolean;

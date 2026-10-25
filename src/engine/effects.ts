@@ -1,4 +1,4 @@
-import {frontierStatic} from './frontier-support';
+import {meadowEffect,meadowCounter} from './meadow';
 import {foundationEffect} from './foundation';
 import {otjEffect} from './otj';
 import {woeEffect} from './woe';
@@ -66,6 +66,8 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
+ bdCounters?:Record<string,number>;
+ bdSac?:{power:number;mana:number;vehicle:boolean};
  mode?:number;sacToughness?:number;
   distribution?:number[];
   sourceType?:string;
@@ -206,7 +208,7 @@ export function amount(g: GameState, ctx: Ctx, a: Amt): number {
   if ('ev' in a) {
     const ev = ctx.ev;
     if(ev?.type==='dies')return ev.power;
-    if (ev && 'amount' in ev) return ev.amount;
+    if (ev && 'amount' in ev) return ev.amount??0;
     return 0;
   }
   if ('negOf' in a) return -amount(g, ctx, a.negOf);
@@ -280,7 +282,7 @@ function counteredZone(g: GameState, c: Card): 'graveyard' | 'exile' {
 
 export function* runEffects(g: GameState, ctx: Ctx, effects: Effect[]): SubFlow {
   g.eclEventGroup=g.nextSid++;
-  for (const ef of effects) yield* runEffect(g, ctx, ef);
+  for (const ef of effects){const previous=g.meadowZoneBatch;g.meadowZoneBatch=g.nextSid++;try{yield*runEffect(g,ctx,ef);}finally{g.meadowZoneBatch=previous;}}
 }
 
 function* choose(
@@ -440,7 +442,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'copyCreature': {
       for(const c of resolveRef(g,ctx,ef.what).cards){const copiable=copiableDefinition(c),def={...copiable,supertypes:ef.nonLegendary||ef.p!==undefined&&!ef.preserveLegendary?copiable.supertypes?.filter(s=>s!=='Legendary'):copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const tokens=yield*makeEclTokenBatch(g,ctx.controller,def,1);for(const t of tokens){if(ef.temp){g.eot.push({card:t.id,p:0,t:0,kw:['haste']});(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});}ctx.created=t.id;}ctx.createdList=tokens.map(t=>t.id);}return;
     }
-    case 'frontier':if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
+    case 'frontier':if(/^(blb|dft):/.test(ef.action)){yield*meadowEffect(g,ctx,ef);return;}if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
     case 'msh':yield* mshEffect(g,ctx,ef);return;
     case 'mkm':yield* mkmEffect(g,ctx,ef);return;
     case 'fin':yield* finEffect(g,ctx,ef);return;
@@ -459,8 +461,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
         const n=ef.n===undefined?1:amount(g,ctx,ef.n);
-        if(canReceiveCounters(g,c))c.stun += n;
-        if(n>0&&canReceiveCounters(g,c))emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n,counterKind:'stun'});
+        meadowCounter(g,c,'stun',n,me);
         tapCard(g,c,me);
       }
       g.version++;
@@ -485,6 +486,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'animate': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield' || c.baseDef) continue;
+        c.def=c.meadowTypeDef??c.def;c.meadowTypeDef=undefined;
         c.baseDef = c.def;
         if(ef.permanent)(c.frontierMarks??={}).permanentAnimation=1;if(ef.untilNext)(c.frontierMarks??={}).animationUntilTurn=g.turn+2;
         c.def = {
@@ -518,7 +520,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield' || !isCreature(c)) continue;
         let k = n;
-        if (n > 0) k = putCounters(g, c, n, counterBatch);
+        if (n > 0) k = putCounters(g, c, n, counterBatch,ctx.controller);
         else putMinusCounters(g,c,-n);
         log(g, k >= 0 ? `${cardName(c)} 得到 ${k} 個 +1/+1 指示物` : `${cardName(c)} 得到 ${-k} 個 -1/-1 指示物`, c.controller);
       }
@@ -714,7 +716,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'copySpell': {
       const ev = ctx.ev;
-      const item = ev && ev.type === 'cast' ? g.stack.find((it) => it.kind === 'spell' && it.cardId === ev.card) : undefined;
+      const item = ev && ev.type === 'cast' ? (g.stack.find((it) => it.kind === 'spell' && it.cardId === ev.card)??ev.bdSpell) : undefined;
       if (!item) break;
       const orig = g.cards[item.cardId];
       const copiedDef=item.alt==='adventure'||item.alt==='back'?castDef(orig.def,item.alt):orig.def;
@@ -731,7 +733,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
           if (!validateTargets(g, item.targetSpecs, chosen, me, cp.id)) targets = chosen;
         }
       }
-      g.stack.push({ ...item, sid: g.nextSid++, cardId: cp.id, controller: me, targets,targetVersions:targets.map(t=>t&&'c'in t?g.cards[t.c]?.objectVersion??0:undefined), alt: undefined, uncounterable: false });
+      g.stack.push({ ...item, bdOffspringPaid:item.alt==='offspring'||item.bdOffspringPaid,bdGiftPaid:item.alt==='gift'||item.bdGiftPaid,sid: g.nextSid++, cardId: cp.id, controller: me, targets,targetVersions:targets.map(t=>t&&'c'in t?g.cards[t.c]?.objectVersion??0:undefined), alt: undefined, uncounterable: false });
       log(g, `複製了 ${cardName(orig)}`, me, 'cast');
       g.version++;
       break;
@@ -1070,9 +1072,10 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'graveyard' || (ef.what==='selfAny' && ctx.sourceLinkKey!==undefined && c.tmtLinkKey!==ctx.sourceLinkKey)) continue;
         log(g, `${cardName(c)} 從墳墓場回到戰場`, me);
+        if(ef.finality)(c.finMarks??={}).enterFinality=1;
         enterBattlefield(g, c, ef.owner ? c.owner : me, !!ef.tapped);
         if (ef.counters) putCounters(g, c, ef.counters);
-        if (ef.finality) c.finality = true;
+
       }
       break;
     case 'reanimateAll': {
@@ -1128,10 +1131,8 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'chargeCounter':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
-        if(c.def.set==='FDN'||c.def.set==='DSK'||c.def.set==='TLA'||c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN') c.charge=(c.charge??0)+amount(g,ctx,ef.n)*2**frontierStatic(g,c.controller,'fdn:doubleCounters').length;
-        else c.counters += amount(g, ctx, ef.n);
-        log(g, `${cardName(c)} 上放置了充能指示物（${c.charge??c.counters}）`, c.controller);
-        if(amount(g,ctx,ef.n)>0)emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:amount(g,ctx,ef.n),counterKind:'charge'});
+        meadowCounter(g,c,'charge',amount(g,ctx,ef.n),me);
+        log(g, `${cardName(c)} 上的充能指示物：${c.charge??0}`,c.controller);
         if(c.def.id==='zhao-the-moon-slayer')refreshTlaPermanents(g);
       }
       g.version++;
@@ -1563,9 +1564,9 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const n = amount(g, ctx, ef.n);
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield' || !c.def.types.includes('Planeswalker')) continue;
-        c.loyalty = (c.loyalty ?? 0) + n;
+        if(n>0)meadowCounter(g,c,'loyalty',n,me);else c.loyalty=(c.loyalty??0)+n;
         log(g, `${cardName(c)} 的忠誠${n >= 0 ? '+' : ''}${n}（${c.loyalty}）`, c.controller);
-        if (n > 0) emit(g, { type: 'loyaltyPlaced', card: c.id, controller: c.controller, amount: n });
+
       }
       g.version++;
       break;

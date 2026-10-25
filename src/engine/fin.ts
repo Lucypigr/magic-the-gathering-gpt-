@@ -389,7 +389,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
       break;
     }
     case 'cecil': {
-      const n = ctx.ev && 'amount' in ctx.ev ? ctx.ev.amount : 0;
+      const n = ctx.ev && 'amount' in ctx.ev ? (ctx.ev.amount??0) : 0;
       loseLife(g, me, n);
       if (p.life <= 10) {
         src.tapped = false;
@@ -1135,7 +1135,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
       break;
     }
     case 'busterCast': {
-      const n = ctx.ev?.type === 'combatDamage' ? ctx.ev.amount : 0,
+      const n = ctx.ev?.type === 'combatDamage' ? (ctx.ev.amount??0) : 0,
         ids = p.hand.filter((id) => !isLand(g.cards[id]) && manaValue(g.cards[id].def) <= n);
       const [id] = yield* choose(g, me, '可免費施放傷害值以下手牌', ids);
       if (id !== undefined) yield* freeCast(g, ctx, g.cards[id]);

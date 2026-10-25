@@ -1,3 +1,4 @@
+import {innkeeperMultiplier} from './meadow-support';
 import { canPayCost, castDuringResolution, payCost } from './actions';
 import { copiableDefinition, isCreature, isLand, matches, newCard, other, shuffleArr, stats } from './state';
 import { manaValue, parseCost } from './mana';
@@ -450,7 +451,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
       break;
     }
     case 'poison':
-      g.players[opp].poison = (g.players[opp].poison ?? 0) + 2;
+      g.players[opp].poison = (g.players[opp].poison ?? 0) + 2*innkeeperMultiplier(g,ctx.controller);
       break;
     case '99': {
       const which = yield* mode(opp, '選擇支付或失去3生命', ['棄一張牌', '犧牲生物', '失去3生命']);

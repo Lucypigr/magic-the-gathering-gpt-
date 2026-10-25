@@ -1,3 +1,4 @@
+import {MEADOW_TOKENS} from './sets/meadow-tokens';
 import foundationTokens from './sets/foundation-tokens.json';
 import {completeFrontierTokens} from './sets/frontier-tokens';
 import type { CardDef } from '../engine/types';
@@ -7,6 +8,7 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+  ...MEADOW_TOKENS,
   T({"id": "tok-msh-wall", "name": "Wall", "types": ["Creature"], "subtypes": ["Wall"], "colors": [], "power": 0, "toughness": 4, "keywords": ["defender"], "text": ""}),
   T({"id": "tok-msh-void", "name": "The Void", "types": ["Creature"], "subtypes": ["Horror", "Villain"], "colors": ["B"], "power": 5, "toughness": 5, "keywords": ["flying", "indestructible"], "text": "", "supertypes": ["Legendary"], "abilities": [{"kind": "static", "msh": "mustAttack"}]}),
   T({"id": "tok-msh-leviathan", "name": "Leviathan", "types": ["Creature"], "subtypes": ["Leviathan"], "colors": ["U"], "power": 6, "toughness": 5, "keywords": ["hexproof"], "text": ""}),

@@ -9,7 +9,7 @@ export function counterKinds(c: Card): Record<string, number> {
     charge: c.charge ?? 0,
     stun: c.stun,
     hexproof: c.hexproofCounters ?? 0,
-    finality: Number(!!c.finality),
+    finality: c.finality?Math.max(1,c.finalityCount??1):0,
     lore: c.lore ?? 0,
     loyalty: c.loyalty ?? 0,
     ...c.eclCounters,
@@ -37,7 +37,7 @@ export function removeCounterKind(c: Card, kind: string, n = 1): boolean {
       c.hexproofCounters = (c.hexproofCounters ?? 0) - n;
       break;
     case 'finality':
-      c.finality = false;
+      c.finalityCount=Math.max(0,(c.finality?Math.max(1,c.finalityCount??1):0)-n);c.finality=c.finalityCount>0;
       break;
     case 'lore':
       c.lore = (c.lore ?? 0) - n;

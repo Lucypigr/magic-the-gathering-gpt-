@@ -1,3 +1,4 @@
+import {meadowAmount,meadowCondition,meadowTrigger,meadowObserve,meadowBaseStats,meadowStats,meadowGrantedAbilities} from './meadow-support';
 import {foundationAmount,foundationCondition,foundationTrigger,foundationObserve,foundationBaseStats,foundationStats,foundationGrantedAbilities} from './foundation-support';
 import {
   otjAmount,
@@ -67,6 +68,7 @@ export function frontierAmount(
   x = 0,
   ev?: GameEvent,
 ) {
+  if(/^(blb|dft):/.test(key))return meadowAmount(g,pid,source,key,ev);
   if(/^(fdn|dsk):/.test(key))return foundationAmount(g,pid,source,key,ev);
   const p = g.players[pid],
     s = g.cards[source];
@@ -106,7 +108,9 @@ export function frontierCondition(
   c: Extract<Cond, { c: "frontier" }>,
   pid: PID,
   source: number,
+  ev?:GameEvent,
 ) {
+  if(/^(blb|dft):/.test(c.action))return meadowCondition(g,c.action,pid,source,ev);
   if(/^(fdn|dsk):/.test(c.action))return foundationCondition(g,c.action,pid,source);
   switch (c.action) {
     case "exiledThisTurn":
@@ -141,6 +145,7 @@ export function frontierTrigger(
   a: TriggeredAbility,
   ev: GameEvent,
 ) {
+  if(/^(blb|dft):/.test(a.frontierEvent??''))return meadowTrigger(g,c,a,ev);
   if(/^(fdn|dsk):/.test(a.frontierEvent??''))return foundationTrigger(g,c,a,ev);
   const pid = c.controller,
     ec = "card" in ev ? g.cards[ev.card] : undefined;
@@ -277,6 +282,7 @@ export function frontierTrigger(
 export function frontierObserve(g: GameState, ev: GameEvent) {
   otjObserve(g, ev);
   foundationObserve(g,ev);
+  meadowObserve(g,ev);
   if (ev.type === "step" && ev.step === "endStep")
     for (const c of Object.values(g.cards))
       if (
@@ -319,6 +325,7 @@ export function frontierBaseStats(
 ) {
   otjBaseStats(g, c, st);
   foundationBaseStats(g,c,st);
+  meadowBaseStats(g,c,st);
   if (!abilitiesSuppressed(g, c)) {
     if (c.def.id === "regal-bunnicorn")
       st.p = st.t = g.battlefield.filter(
@@ -358,6 +365,7 @@ export function frontierStats(
 ) {
   otjStats(g, c, st);
   foundationStats(g,c,st);
+  meadowStats(g,c,st);
   if (
     isCreature(c) &&
     frontierStatic(g, c.controller, "roseBase").some((s) => s.id !== c.id) &&
@@ -424,6 +432,8 @@ export function frontierAbilityCost(
   ab: import("./types").ActivatedAbility,
   cost: import("./mana").ManaCost,
 ) {
+  if(ab.bdExhaust)cost.generic=Math.max(0,cost.generic-2*frontierStatic(g,c.controller,'dft:exhaustDiscount').filter(s=>s.id!==c.id).length);
+  cost.generic+=2*[...frontierStatic(g,0,'dft:namedAbilityTax'),...frontierStatic(g,1,'dft:namedAbilityTax')].filter(s=>s.foundationNamed===c.def.name||s.eclType===c.def.name).length;
   if (isCreature(c) && frontierStatic(g, c.controller, "cauldronMana").length) {
     cost.generic +=
       cost.W +
@@ -465,7 +475,7 @@ export function frontierGrantedAbilities(
   g: GameState,
   c: Card,
 ): import("./types").ActivatedAbility[] {
-  const out: import("./types").ActivatedAbility[] = foundationGrantedAbilities(g,c);
+  const out: import("./types").ActivatedAbility[] = [...foundationGrantedAbilities(g,c),...meadowGrantedAbilities(g,c)];
   if (
     c.def.types.includes("Artifact") &&
     frontierStatic(g, c.controller, "foodFight").length

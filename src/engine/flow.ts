@@ -1,3 +1,6 @@
+import {forageOptions} from './meadow-costs';
+import {meadowRefresh} from './meadow';
+import {meadowTriggerAbility} from './meadow-support';
 import {foundationExtraCosts} from './foundation-casting';
 import {frontierStatic} from './frontier-support';
 import {foundationRefresh} from './foundation-support';
@@ -35,7 +38,7 @@ import {
 } from './state';
 import { hasTargetsAvailable, isLegalTarget, legalTargets, validateTargets } from './targets';
 import type { Card, Effect, Flow, GameState, PID, Response, SubFlow, TargetRef, TargetSpec } from './types';
-import { addLore, discard, drawCards, emit, enterBattlefield, enterBattlefieldBack, moveCard, putCounters, putIntoGraveyard, sacrifice } from './zones';
+import { addLore, discard, drawCards, emit, enterBattlefield, enterBattlefieldBack, moveCard,  putIntoGraveyard, sacrifice } from './zones';
 
 // ------------------------------------------------------------
 // 狀態動作
@@ -45,6 +48,7 @@ export function checkSBA(g: GameState): void {
     let changed = false;
     refreshFrontierCopies(g);
     foundationRefresh(g);
+    meadowRefresh(g);
     for(const host of g.battlefield){for(const pid of [0,1]as PID[]){const roles=g.battlefield.filter(id=>g.cards[id].attachedTo===host&&g.cards[id].controller===pid&&g.cards[id].def.subtypes?.includes('Role'));if(roles.length>1){for(const id of roles.slice(0,-1))moveCard(g,g.cards[id],'graveyard');changed=true;}}}
     const losers = g.players.filter(p=>!frontierStatic(g,p.id,'fdn:cantLose').length&&(p.foundationLost||p.life<=0&&!frontierStatic(g,p.id,'dsk:grimoire').length||p.drewFromEmpty||(p.poison??0)>=10));
     if (losers.length) {
@@ -83,7 +87,7 @@ export function checkSBA(g: GameState): void {
         }
       } else if (c.def.equip && c.attachedTo != null) {
         const t = g.cards[c.attachedTo];
-        if (!t || t.zone !== 'battlefield' || !isCreature(t)) {
+        if (isCreature(c) || !t || t.zone !== 'battlefield' || !isCreature(t)) {
           c.attachedTo = null;
           changed = true;
         }
@@ -146,7 +150,7 @@ function* flushTriggers(g: GameState): SubFlow {
   const list = g.pending.splice(0);
   const ordered = [...list.filter((t) => t.controller === g.active), ...list.filter((t) => t.controller !== g.active)];
   for (const t of ordered) {
-    let ab = t.ability;
+    let ab = meadowTriggerAbility(g,g.cards[t.source],t.ability,t.ev);
     const src = g.cards[t.source];
     if(ab.mshDynamic==='wrecking'){ab={...ab,chooseN:Math.min(4,src.castX??0)};if(!ab.chooseN)continue;}
     let foundationMode:number|undefined;
@@ -317,6 +321,8 @@ function* resolveTopItem(g: GameState): SubFlow {
     sourceType:item.sourceType,
     sourceLinkKey:item.sourceLinkKey,
     sneakPaid:item.sneakPaid,
+    bdSac:item.bdSac,
+    bdCounters:item.bdCounters,
     x: item.x,
     distribution:item.distribution,
     mode:item.modeIndex,
@@ -338,7 +344,8 @@ function* resolveTopItem(g: GameState): SubFlow {
         }
       }
     } else if (isPermanentDef(def)) {
-      src.offspringPaid=item.alt==='offspring';
+      src.offspringPaid=item.alt==='offspring'||item.bdOffspringPaid;
+      (src.frontierMarks??={}).bdGift=Number(item.alt==='gift'||item.bdGiftPaid);
       if(item.x!==undefined)src.castX=item.x;
       if (def.aura) {
         const t = legal[0];
@@ -373,7 +380,7 @@ function* resolveTopItem(g: GameState): SubFlow {
         src.wasCast = true;
 
         if (item.x !== undefined) src.castX = item.x;
-        if (def.etbCountersX && item.x) putCounters(g, src, item.x);
+
         log(g, `${cardName(src)} 進入戰場`, item.controller);
         if (item.alt === 'warp') src.exileAtEnd = true;
 
@@ -445,7 +452,7 @@ export function* priorityStep(g: GameState): SubFlow {
         const n=c?.def.ecl?.blightX?(r.x??0):c?.def.spell?.modes?.[r.mode??0]?.blight??c?.def.addCost?.blight??0;
         if(n>0&&r.blightCard===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&canReceiveCounters(g,g.cards[id]));const answer:Response=yield {type:'choose',player:p,prompt:`選擇枯萎${n}的生物（不指定目標）`,options,min:1,max:1,purpose:'blight'};r.blightCard=answer.type==='choose'?answer.ids[0]:undefined;}
       }
-      if(r.type==='cast'&&r.foundationCosts===undefined){const cost=foundationExtraCosts(g,p,g.cards[r.card]);if(cost){const answer:Response=yield{type:'choose',player:p,prompt:cost.kind==='reveal'?'選擇手牌生物展示或你操控的生物':'選擇額外費用',options:cost.ids,min:cost.n,max:cost.n,purpose:'dig',reveal:cost.kind==='reveal'};r.foundationCosts=answer.type==='choose'?answer.ids:[];}}
+      if(r.type==='cast'&&r.foundationCosts===undefined){const cost=foundationExtraCosts(g,p,g.cards[r.card],r.alt);if(cost){const answer:Response=yield{type:'choose',player:p,prompt:cost.kind==='forage'?'掘食：選一個食物犧牲，或三張墳墓場牌放逐':cost.kind==='reveal'?'選擇手牌生物展示或你操控的生物':'選擇額外費用',options:cost.ids,min:cost.n,max:'max'in cost?cost.max:cost.n,purpose:'dig',reveal:cost.kind==='reveal'};r.foundationCosts=answer.type==='choose'?answer.ids:[];}}
       if(r.type==='activate'){
         const c=g.cards[r.card],ab=c?abilitiesFor(g,c)[r.ability]:undefined;
         const chooseCost = function*(prompt:string,options:number[],min:number,max:number):SubFlow<number[]>{
@@ -453,6 +460,10 @@ export function* priorityStep(g: GameState): SubFlow {
           return answer.type==='choose'?answer.ids:[];
         };
         if(c&&ab&&canActivate(g,p,c,r.ability)){
+          if(ab.bdExile&&r.costCards===undefined)r.costCards=yield*chooseCost('選擇要放逐的墳墓場牌',g.players[p].graveyard.filter(id=>id!==c.id&&matches(g,ab.bdExile!.filter,g.cards[id],p)),ab.bdExile.n??0,ab.bdExile.any?g.players[p].graveyard.length:ab.bdExile.n??0);
+          if(ab.bdSacAny&&r.costCards===undefined)r.costCards=yield*chooseCost('犧牲一個或更多永久物',g.battlefield.filter(id=>g.cards[id].controller===p&&matches(g,ab.bdSacAny,g.cards[id],p)),1,g.battlefield.length);
+          if(ab.bdForage&&r.costCards===undefined){const cost=forageOptions(g,p);r.costCards=yield*chooseCost('掘食：選一個食物或三張墳墓場牌',cost.ids,cost.n,cost.max);}
+          if(ab.bdTapMana&&r.tapCards===undefined)r.tapCards=yield*chooseCost('可橫置生物支付任意法力',g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===p&&isCreature(g.cards[id])&&!g.cards[id].tapped),0,4);
           if(ab.foundationDistribution&&!r.distribution){let left=ab.foundationDistribution;r.distribution=[];for(let i=0;i<r.targets.length;i++){const max=left-(r.targets.length-i-1);let n=max;if(i<r.targets.length-1){const answer:Response=yield{type:'mode',player:p,prompt:'分配給第'+(i+1)+'個目標的傷害',options:Array.from({length:max},(_,j)=>String(j+1)),count:1,purpose:'count'};n=1+(answer.type==='modes'?answer.picks[0]??0:0);}r.distribution.push(n);left-=n;}}
           if(ab.mshStack&&r.stackTargetSid===undefined){const items=g.stack.filter(s=>s.controller===p&&s.kind!=='spell'&&!s.manaAbility&&g.cards[s.cardId].def.types.includes(ab.mshStack==='artifact'?'Artifact':'Creature'));const rr:Response=yield{type:'mode',player:p,prompt:'選擇要複製的異能',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSid=items[rr.type==='modes'?rr.picks[0]??0:0]?.sid;}
           if(ab.finStack&&r.stackTargetSid===undefined){const items=finStackChoices(g,p,true);const rr:Response=yield{type:'mode',player:p,prompt:'選擇你的起動或觸發異能',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSid=items[rr.type==='modes'?rr.picks[0]??0:0]?.sid;}
@@ -596,6 +607,7 @@ function* turn(g: GameState): SubFlow {
   else if(g.normalTurnAfterExtra!==undefined){g.active=g.normalTurnAfterExtra;g.normalTurnAfterExtra=undefined;}
   else g.active=g.turn===1?g.firstPlayer:other(g.active);
   const a = g.active;
+  meadowRefresh(g);
   if(g.playerControl && a===g.playerControl.player && g.turn>=g.playerControl.starts)g.playerControl.ends=g.turn;
   const pl = g.players[a];
   for(const c of Object.values(g.cards))if(c.controller===a&&c.mshCopyUntil!==undefined&&c.mshCopyUntil<=g.turn){if(c.baseDef){c.def=c.baseDef;c.baseDef=undefined;c.copyLayer=undefined;}c.mshCopyUntil=undefined;}
@@ -657,6 +669,7 @@ function* turn(g: GameState): SubFlow {
     if(c.def.id==="benders-waterskin") c.tapped=false;
     if (c.controller !== a) continue;
     c.sick = false;
+    if(c.frontierMarks?.bdExertBy===a+1&&(c.frontierMarks.bdExertTurn??g.turn)<g.turn){delete c.frontierMarks.bdExertBy;delete c.frontierMarks.bdExertTurn;continue;}
     if(c.tapped&&c.def.id==='hedge-whisperer'){const r:Response=yield{type:'yesno',player:a,prompt:'保持 Hedge Whisperer 橫置？'};if(r.type==='yesno'&&r.yes)continue;}
     if (c.tapped && !stats(g, c).noUntap) {
       if (c.stun > 0) c.stun--;
@@ -692,6 +705,7 @@ function* turn(g: GameState): SubFlow {
   g.phase = 'main2';
   emit(g,{type:'step',step:'main2',player:g.active});
   yield* priorityStep(g);if(g.finEndTurn)break phases;
+  while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield*combatPhase(g);if(g.finEndTurn)break phases;g.landCombatOnly=false;}
   // 結束：動員之類的暫時衍生物在結束步驟開始時犧牲
   g.phase = 'end';
   for (const id of [...g.battlefield]) {
@@ -738,6 +752,7 @@ function* turn(g: GameState): SubFlow {
     // 暫時成為生物的地恢復原狀
     if (c.baseDef&&c.mshCopyUntil===undefined&&!c.frontierMarks?.permanentAnimation&&(c.frontierMarks?.animationUntilTurn??0)<=g.turn) {
       c.def = c.baseDef;
+      c.meadowTypeDef=undefined;
       c.baseDef = undefined;
       c.copyLayer=undefined;
     }

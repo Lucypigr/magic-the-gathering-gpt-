@@ -1,7 +1,8 @@
+import {meadowExtraCosts,validForage,payForage,festivalCast} from './meadow-costs';
 import { frontierStatic, frontierFlags } from "./frontier-support";
 import { isCreature, isLand, stats } from "./state";
-import { moveCard, tapCard } from "./zones";
-import type { Card, GameState, PID, PriorityAction } from "./types";
+import { moveCard, tapCard, sacrifice,loseLife } from "./zones";
+import type { Card, CastAlt, GameState, PID, PriorityAction } from "./types";
 export function foundationPermission(g: GameState, pid: PID, c: Card): boolean {
   const f = frontierFlags(g, pid),
     own = c.owner === pid;
@@ -46,7 +47,8 @@ export function foundationPermission(g: GameState, pid: PID, c: Card): boolean {
     )
   );
 }
-export function foundationExtraCosts(g: GameState, pid: PID, c: Card) {
+export function foundationExtraCosts(g: GameState, pid: PID, c: Card, alt?:CastAlt) {
+  const meadow=meadowExtraCosts(g,pid,c,alt);if(meadow)return meadow;
   const f = c.def.foundation,
     p = g.players[pid],
     battle = g.battlefield.filter((id) => g.cards[id].controller === pid);
@@ -90,9 +92,12 @@ export function foundationCastError(
   c: Card,
   a: Extract<PriorityAction, { type: "cast" }>,
 ): string | null {
-  const cost = foundationExtraCosts(g, pid, c);
+  const cost = foundationExtraCosts(g, pid, c,a.alt);
+  if(festivalCast(g,pid,c)&&g.players[pid].life<1)return '生命不足';
   if (!cost) return null;
-  const ids = a.foundationCosts ?? cost.ids.slice(0, cost.n);
+  const ids = a.foundationCosts ?? ('defaults'in cost?cost.defaults:cost.ids.slice(0,cost.n));
+  if(cost.kind==='forage')return validForage(g,pid,ids,c.id)?null:'請犧牲一個食物或放逐三張墳墓場牌';
+  if(cost.kind==='sacAny')return new Set(ids).size===ids.length&&ids.every(id=>cost.ids.includes(id))?null:'犧牲費用不合法';
   return ids.length !== cost.n ||
     new Set(ids).size !== ids.length ||
     ids.some((id) => !cost.ids.includes(id))
@@ -105,8 +110,11 @@ export function foundationPayExtras(
   c: Card,
   a: Extract<PriorityAction, { type: "cast" }>,
 ) {
-  const cost = foundationExtraCosts(g, pid, c);
-  if (cost)
+  const cost = foundationExtraCosts(g, pid, c,a.alt);
+  if(festivalCast(g,pid,c))loseLife(g,pid,1);
+  if(cost?.kind==='forage'){payForage(g,pid,a.foundationCosts??cost.defaults);if(c.zone==='graveyard')(c.finMarks??={}).enterFinality=1;}
+  if(cost?.kind==='sacAny')for(const id of a.foundationCosts??[])sacrifice(g,g.cards[id]);
+  if (cost&&cost.kind!=='forage'&&cost.kind!=='sacAny')
     for (const id of a.foundationCosts ?? cost.ids.slice(0, cost.n)) {
       const x = g.cards[id];
       if (cost.kind === "exile") {

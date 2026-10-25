@@ -47,7 +47,7 @@ export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
   if(!abilitiesSuppressed(g,attacker)&&attacker.def.evadeGreaterPower&&bs.p>as.p)return false;
   if((blocker.def.id==='tok-tla-spirit'&&!attacker.def.subtypes?.includes('Spirit'))||(attacker.def.id==='tok-tla-spirit'&&!blocker.def.subtypes?.includes('Spirit')))return false;
   if (as.kw.has('flying') && !bs.kw.has('flying') && !bs.kw.has('reach')) return false;
-  if (attacker.def.evadePowLte !== undefined && bs.p <= attacker.def.evadePowLte) return false;
+  if (!abilitiesSuppressed(g,attacker)&&attacker.def.evadePowLte !== undefined && bs.p <= attacker.def.evadePowLte) return false;
   return true;
 }
 
@@ -62,11 +62,11 @@ export function blockCandidates(g: GameState, pid: PID): Card[] {
 
 /** 可以被攻擊的鵬洛客（防守玩家操控的） */
 export function attackablePlaneswalkers(g: GameState, attacker: PID): Card[] {
-  return g.battlefield.map((id) => g.cards[id]).filter((c) => c.controller !== attacker && c.def.types.includes('Planeswalker') && !isCreature(c));
+  return g.battlefield.map((id) => g.cards[id]).filter((c) => c.controller !== attacker && c.def.types.includes('Planeswalker') && !(c.attachedTo!==null&&!abilitiesSuppressed(g,c)&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='dft:aetherspark')));
 }
 
 export function declareAttackers(g: GameState, pid: PID, ids: number[], targets?: Record<number, number>): Card[] {
-  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&((c.mkmMarks?.mustAttackBlock===g.turn)||(!abilitiesSuppressed(g,c)&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='fdn:mustAttack'))||(!abilitiesSuppressed(g,c)&&['red-herring','ares-god-of-war','tok-msh-void','tok-msh-alien'].includes(c.def.id)));});
+  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&((c.mkmMarks?.mustAttackBlock===g.turn)||(c.frontierMarks?.bdMustAttack===g.turn)||(!abilitiesSuppressed(g,c)&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='fdn:mustAttack'))||(!abilitiesSuppressed(g,c)&&['red-herring','ares-god-of-war','tok-msh-void','tok-msh-alien'].includes(c.def.id)));});
   const uniq = [...new Set([...ids,...forced])];
   const list = uniq.map((id) => g.cards[id]).filter((c) => c && c.controller === pid && canAttack(g, c));
   const tax=frontierStatic(g,(1-pid) as PID,'archangelTax').filter(c=>!c.tapped).length;
