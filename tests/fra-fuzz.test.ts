@@ -31,8 +31,8 @@ function deck(seed: number): string[] {
 }
 
 describe('FRA AI 互打', () => {
-  it('隨機 FRA 套牌都能正常打完', () => {
-    for (let seed = 1; seed <= 24; seed++) {
+  // Keep every deterministic game, with independent timing and failure reporting.
+  it.each(Array.from({length:24},(_,i)=>i+1))('隨機 FRA 套牌都能正常打完（seed %i）', (seed) => {
       const g = runHeadless(
         { name: 'A', deckName: 'A', deck: deck(seed * 11), isAI: true },
         { name: 'B', deckName: 'B', deck: deck(seed * 17 + 5), isAI: true },
@@ -40,6 +40,5 @@ describe('FRA AI 互打', () => {
         seed,
       );
       expect(g.winner, `seed ${seed}`).not.toBeNull();
-    }
   });
 });

@@ -42,11 +42,14 @@ export function campusActivationBlocked(g:GameState,c:Card,ab:ActivatedAbility){
  if(c.frontierMarks?.cpLockedTapped&&c.tapped)return true;
  if(ab.campusEquipmentSac!==undefined&&g.cards[ab.campusEquipmentSac]?.zone!=='battlefield')return true;
  const mana=ab.manaAbility||!ab.targets?.length&&ab.cost.loyalty===undefined&&ab.effects.every(e=>e.e==='addMana'||e.e==='addManaOfChoice');
- if(!mana&&g.battlefield.some(id=>{const s=g.cards[id];return abilitiesOf(g,s).some(a=>a.kind==='static'&&(a.frontier==='lci:spyglass'||a.frontier==='sos:hamlet'))&&s.foundationNamed===c.def.name;}))return true;
- if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='lci:disableAttached')))return true;
- return false;
+ for(const id of g.battlefield){const source=g.cards[id],abs=source.copiedAbilities?.length||source.temporaryAbilities?.turn===g.turn?abilitiesOf(g,source):source.def.abilities;
+  if(!mana&&source.foundationNamed===c.def.name&&abs?.some(a=>a.kind==='static'&&(a.frontier==='lci:spyglass'||a.frontier==='sos:hamlet'))&&abilitiesOf(g,source).length)return true;
+  if(source.attachedTo===c.id&&abs?.some(a=>a.kind==='static'&&a.frontier==='lci:disableAttached')&&abilitiesOf(g,source).length)return true;
+ }return false;
 }
 export function campusCastBlocked(g:GameState,p:PID){
- if(g.active!==p&&frontierStatic(g,g.active,'lci:noOpponentCastOwnTurn').length)return true;
- if(g.active===p&&frontierFlags(g,p).cpAttackers&&frontierStatic(g,(1-p)as PID,'lci:wanderglyph').length)return true;return false;
+ for(const id of g.battlefield){const source=g.cards[id];if(source.controller===p)continue;
+  const abs=source.copiedAbilities?.length||source.temporaryAbilities?.turn===g.turn?abilitiesOf(g,source):source.def.abilities??[];
+  for(const a of abs)if(a.kind==='static'&&((a.frontier==='lci:noOpponentCastOwnTurn'&&g.active!==p)||(a.frontier==='lci:wanderglyph'&&g.active===p&&frontierFlags(g,p).cpAttackers))&&abilitiesOf(g,source).length)return true;
+ }return false;
 }

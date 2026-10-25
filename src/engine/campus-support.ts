@@ -81,17 +81,22 @@ export function campusTriggerAbility(g:GameState,c:Card,a:TriggeredAbility):Trig
  if(a.campusLifeTargets)return {...a,targets:a.targets?.map(s=>({...s,filter:{...s.filter,mvMax:g.players[c.controller].lifeGainedThisTurn}}))};return a;
 }
 export function campusBaseStats(g:GameState,c:Card,s:import('./state').Stats){
- if(abilitiesSuppressed(g,c))return;
+ const has=(list:import('./types').Ability[]|undefined)=>list?.some(a=>a.kind==='static'&&a.frontier?.startsWith('lci:'));
+ if(!(has(c.def.abilities)||has(c.copiedAbilities)||has(c.temporaryAbilities?.turn===g.turn?c.temporaryAbilities.abilities:undefined))||abilitiesSuppressed(g,c))return;
  for(const a of abilitiesOf(g,c))if(a.kind==='static')switch(a.frontier){case 'lci:descentBody':s.p=campusDescent(g,c.controller);s.t=s.p+1;break;case 'lci:gnomeBody':s.p=s.t=own(g,c.controller).filter(c=>c.def.types.some(t=>t==='Artifact'||t==='Creature')).length;break;case 'lci:mycotyrant':s.p=s.t=own(g,c.controller).filter(c=>isCreature(c)&&c.def.subtypes?.some(t=>t==='Fungus'||t==='Saproling')).length;break;case 'lci:craftedPower':s.p=campusMaterials(g,c).reduce((n,c)=>n+stats(g,g.cards[c.id]).p,0);break;case 'lci:craftedColors':s.p=s.t=new Set(campusMaterials(g,c).flatMap(c=>g.cards[c.id].def.colors??[])).size;break;}
 }
 export function campusStats(g:GameState,c:Card,s:import('./state').Stats){
- if(isCreature(c)&&g.active===c.controller&&g.players[c.controller].spellsThisTurn&&frontierStatic(g,other(c.controller),'lci:wanderglyph').length)s.cantAttack=true;
- if(isCreature(c)){if(frontierStatic(g,c.controller,'lci:bedrock').length)if(s.t>s.p)s.damageByToughness=true;}
- for(const a of g.battlefield.map(id=>g.cards[id]))if(a.attachedTo===c.id&&!abilitiesSuppressed(g,a)){
-  if(abilitiesOf(g,a).some(x=>x.kind==='static'&&x.frontier==='lci:blowgun'))s.kw.add(g.active===c.controller?'deathtouch':'reach');
-  if(abilitiesOf(g,a).some(x=>x.kind==='static'&&x.frontier==='lci:descentAura'))s.p-=campusDescent(g,a.controller);
+ const creature=isCreature(c);
+ for(const id of g.battlefield){const source=g.cards[id];
+  const abs=source.copiedAbilities?.length||source.temporaryAbilities?.turn===g.turn?abilitiesOf(g,source):source.def.abilities??[];
+  for(const a of abs){if(a.kind!=='static'||!a.frontier?.startsWith('lci:'))continue;
+   const key=a.frontier;if(key!=='lci:wanderglyph'&&key!=='lci:bedrock'&&key!=='lci:blowgun'&&key!=='lci:descentAura')continue;
+   if(abilitiesSuppressed(g,source))continue;
+   if(key==='lci:wanderglyph'&&creature&&g.active===c.controller&&source.controller!==c.controller&&g.players[c.controller].spellsThisTurn)s.cantAttack=true;
+   if(key==='lci:bedrock'&&creature&&source.controller===c.controller&&s.t>s.p)s.damageByToughness=true;
+   if(source.attachedTo===c.id){if(key==='lci:blowgun')s.kw.add(g.active===c.controller?'deathtouch':'reach');if(key==='lci:descentAura')s.p-=campusDescent(g,source.controller);}
+  }
  }
- if(g.battlefield.some(id=>{const source=g.cards[id];return source.id!==c.id&&source.zone==='battlefield'&&c.frontierMarks?.cpDisableSource===id;})){s.kw.clear();}
 }
 export function campusGrantedAbilities(g:GameState,c:Card):ActivatedAbility[]{
  const out:ActivatedAbility[]=[],E=(action:string):any=>({e:'frontier',action});
