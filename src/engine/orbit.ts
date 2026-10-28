@@ -1,3 +1,5 @@
+import {orbitFinalEffect} from './orbit-final';
+import {finalCondition,finalAmount,finalTrigger,finalBaseStats,finalGranted,finalCanSac} from './orbit-final-support';
 import {colorsOf} from './mana';
 import {orbitStation} from './orbit-station';
 import {abilitiesSuppressed,copiableDefinition,isCreature,matches,other,stats,shuffleArr} from './state';
@@ -12,6 +14,7 @@ import {choose} from './tla';
 import {campusPermit} from './campus';
 import type {Card,CardDef,GameState,GameEvent,PID,TriggeredAbility,Effect,SubFlow,Color,ActivatedAbility} from './types';
 export function orbitCondition(g:GameState,key:string,p:PID,id:number,e?:GameEvent){
+ if(key.includes(':final:'))return finalCondition(g,key,p,id,e);
  const us=g.battlefield.map(id=>g.cards[id]).filter(c=>c.controller===p);
  switch(key.split(':')[1]){
  case 'beforeSecond':return g.players[p].spellsThisTurn===1;
@@ -29,6 +32,7 @@ export function orbitCondition(g:GameState,key:string,p:PID,id:number,e?:GameEve
  }
 }
 export function orbitTrigger(g:GameState,c:Card,a:TriggeredAbility,e:GameEvent){
+ if(a.frontierEvent?.includes(':final:'))return finalTrigger(g,c,a,e);
  const ec='card'in e?g.cards[e.card]:undefined;
  switch(a.frontierEvent?.split(':')[1]){
  case 'opponentDiscard':return e.type==='discard'&&e.player!==c.controller;
@@ -41,13 +45,15 @@ export function orbitTrigger(g:GameState,c:Card,a:TriggeredAbility,e:GameEvent){
  default:return campusTrigger(g,c,a,e);
  }
 }
-export function orbitAmount(g:GameState,p:PID,key:string,id?:number){
+export function orbitAmount(g:GameState,p:PID,key:string,id?:number,e?:import('./types').GameEvent){
+ if(key.includes(':final:'))return finalAmount(g,p,id??-1,key,e);
  if(key==='eoe:multicolor')return g.battlefield.filter(id=>g.cards[id].controller===p&&colorsOf(g.cards[id].def).length>1).length;
  if(key==='eoe:charge')return g.cards[id!].charge??0;
  if(key==='eoe:focusFire')return 2+g.battlefield.filter(id=>g.cards[id].controller===p&&matches(g,{or:[{type:'Creature'},{sub:'Spacecraft'}]},g.cards[id],p)).length;
  throw Error('Unsupported orbit amount '+key);
 }
 export function orbitBaseStats(g:GameState,c:Card,st:import('./state').Stats){
+ finalBaseStats(g,c,st);
  const size=c.def.meadow?.orbitSize;if(!size||abilitiesSuppressed(g,c))return;
  if(size==='turn52'&&g.active===c.controller){st.p=5;st.t=2;}
  if(size==='creatures')st.p=g.battlefield.filter(id=>g.cards[id].controller===c.controller&&isCreature(g.cards[id])).length;
@@ -55,12 +61,13 @@ export function orbitBaseStats(g:GameState,c:Card,st:import('./state').Stats){
 }
 export const orbitFlash=(g:GameState,p:PID,def:CardDef)=>!!(def.types.includes('Sorcery')||def.subtypes?.includes('Dragon'))&&frontierStatic(g,p,'tdm:dragonSorceryFlash').length>0;
 export function* orbitEffect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'}>):SubFlow{
+ if(ef.action.includes(':final:')){yield*orbitFinalEffect(g,ctx,ef);return;}
  const p=ctx.controller,c=g.cards[ctx.source],key=ef.action.split(':').slice(1).join(':'),victim=resolveRef(g,ctx,ef.what??'T0').cards[0];
  const effects=(list:Effect[])=>runEffects(g,ctx,list);
  if(key.startsWith('mana:')){const colors=key.slice(5).split('') as Color[];const pick=yield*meadowMode(p,'選擇法術力顏色',colors);(g.players[p].pool??=[]).push(colors[pick]??colors[0]);g.version++;return;}
  if(key.startsWith('counter:')){if(victim)meadowCounter(g,victim,key.slice(8),ef.n??1,p);return;}
  switch(key){
- case 'tempSac':if(c.zone==='battlefield'&&c.controller===p&&(ctx.sourceLinkKey===undefined||ctx.sourceLinkKey===c.tmtLinkKey))sacrifice(g,c);break;
+ case 'tempSac':if(c.zone==='battlefield'&&c.controller===p&&finalCanSac(g,c)&&(ctx.sourceLinkKey===undefined||ctx.sourceLinkKey===c.tmtLinkKey))sacrifice(g,c);break;
  case 'exileTargets':case 'bounceTargets':case 'recoverTargets':for(let i=0;i<ctx.targets.length;i++){const body=resolveRef(g,ctx,('T'+i) as 'T0').cards[0];if(!body)continue;if(key==='exileTargets')moveCard(g,body,'exile');else if(key==='bounceTargets'&&body.zone==='battlefield'||key==='recoverTargets'&&body.zone==='graveyard')moveCard(g,body,'hand');}break;
  case 'smileReturn':{const returned:Card[]=[];for(let i=0;i<ctx.targets.length;i++){const body=resolveRef(g,ctx,('T'+i) as 'T0').cards[0];if(body?.zone==='graveyard'){enterBattlefield(g,body,p);returned.push(body);}}for(const body of returned)if(body.zone==='battlefield')putCounters(g,body,1);break;}
  case 'station':orbitStation(g,ctx);break;
@@ -112,7 +119,8 @@ export function finishOmen(g:GameState,c:Card){moveCard(g,c,'library');shuffleAr
 
 function orbitGraveBatch(g:GameState,c:Card){const n=g.meadowZoneBatch??g.frontierEntryBatch??g.mshTokenGroup;if(n===undefined)return true;const m=c.frontierMarks??={};if(m.orbitGraveBatch===n)return false;m.orbitGraveBatch=n;return true;}
 export function orbitGrantedAbilities(g:GameState,c:Card):ActivatedAbility[]{
- if(!g.orbitHasRinging||c.zone!=='battlefield')return [];
+ const extra=finalGranted(g,c);
+ if(!g.orbitHasRinging||c.zone!=='battlefield')return extra;
  const sources=g.battlefield.map(id=>g.cards[id]).filter(a=>a.attachedTo===c.id&&a.def.abilities?.some(ab=>ab.kind==='static'&&ab.frontier==='tdm:ringing')&&!abilitiesSuppressed(g,a));
- return sources.map(()=>({kind:'activated',cost:{mana:'{5}'},effects:[{e:'untap',what:'self'}],label:'重置此生物'}));
+ return [...extra,...sources.map(():ActivatedAbility=>({kind:'activated',cost:{mana:'{5}'},effects:[{e:'untap',what:'self'}],label:'重置此生物'}))];
 }

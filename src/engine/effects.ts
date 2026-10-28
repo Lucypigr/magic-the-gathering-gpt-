@@ -1,3 +1,4 @@
+import {finalCanSac,finalStatic} from './orbit-final-support';
 import {orbitEffect} from './orbit';
 import {frontierStatic} from './frontier-support';
 import {campusEffect} from './campus';
@@ -69,7 +70,7 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
- orbitStation?:{card:number;version:number};
+ orbitStation?:{card:number;version:number};orbitChoice?:{card:number;version:number};orbitTappedCount?:number;
  lastDiscover?:number;
 
  bdCounters?:Record<string,number>;
@@ -726,7 +727,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       if (!item) break;
       const orig = g.cards[item.cardId];
       if(orig.def.meadow?.cantCopy)break;
-      const copiedDef=item.alt==='adventure'||item.alt==='back'?castDef(orig.def,item.alt):orig.def;
+      const copiedDef=item.alt==='adventure'||item.alt==='orbitFreeOmen'||item.alt==='back'?castDef(orig.def,item.alt):orig.def;
       const cp = newCard(g, copiedDef, me, true);
       cp.evokePaid=orig.evokePaid;cp.mkmEvidence=orig.mkmEvidence;cp.mshTeamwork=orig.mshTeamwork;
       cp.zone = 'stack';
@@ -1023,7 +1024,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'counter': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'stack') continue;
-        if (uncounterableSpells(g,c.controller)||c.def.uncounterable || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) {
+        if (uncounterableSpells(g,c.controller)||c.def.uncounterable || ((c.castFace??c.def).types.includes('Creature')&&!!finalStatic(g,c.controller,'creaturesUncounterable').length) || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) {
           log(g, `${cardName(c)} 不能被反擊`, c.controller);
           continue;
         }
@@ -1034,7 +1035,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'counterUnless': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
-        if (c.zone !== 'stack' || uncounterableSpells(g,c.controller)||c.def.uncounterable || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) continue;
+        if (c.zone !== 'stack' || uncounterableSpells(g,c.controller)||c.def.uncounterable || ((c.castFace??c.def).types.includes('Creature')&&!!finalStatic(g,c.controller,'creaturesUncounterable').length) || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) continue;
         const payer = c.controller;
         const cost = { ...parseCost(''), generic: ef.pay };
         let paid = false;
@@ -1399,7 +1400,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         for (const id of ids) sacrifice(g, g.cards[id]);
       }
       break;
-    case 'sacPlayer':{for(const who of resolveRef(g,ctx,ef.who).players){const ids=g.battlefield.filter(id=>g.cards[id].controller===who&&matches(g,ef.filter,g.cards[id],who));const n=amount(g,ctx,ef.n??1),picked=yield*choose(g,who,'犧牲永久物',ids,Math.min(n,ids.length),n,'sacrifice');for(const id of picked)sacrifice(g,g.cards[id]);}break;}
+    case 'sacPlayer':{for(const who of resolveRef(g,ctx,ef.who).players){const ids=g.battlefield.filter(id=>g.cards[id].controller===who&&finalCanSac(g,g.cards[id])&&matches(g,ef.filter,g.cards[id],who));const n=amount(g,ctx,ef.n??1),picked=yield*choose(g,who,'犧牲永久物',ids,Math.min(n,ids.length),n,'sacrifice');for(const id of picked)sacrifice(g,g.cards[id]);}break;}
     case 'sac':
       for (const c of resolveRef(g, ctx, ef.what).cards) sacrifice(g, c);
       break;
@@ -1446,7 +1447,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       if (cost.sac) {
         const opts = g.battlefield.filter((id) => {
           const c = g.cards[id];
-          return c.controller === me && matches(g, cost.sac, c, me, ctx.source);
+          return c.controller === me && finalCanSac(g,c) && matches(g, cost.sac, c, me, ctx.source);
         });
         const ids = yield* choose(g, me, ef.prompt, opts, 0, 1, 'sacrifice');
         if (ids.length) {

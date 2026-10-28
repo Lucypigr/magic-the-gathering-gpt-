@@ -1,3 +1,5 @@
+import {finalPermission,finalFree,finalCost,finalQuote,finalCanSac,finalStatic,finalActivationBlocked,finalAbilityCost,finalSilenced} from './orbit-final-support';
+import {orbitStationValue} from './orbit-station';
 import {orbitFlash} from './orbit';
 import {campusLink} from './campus';
 import {campusCost,campusTargets,campusFree,campusCraftOptions,campusCraftValid,campusActivationBlocked,campusCastBlocked} from './campus-casting';
@@ -70,6 +72,7 @@ export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = 
     if (c.controller !== pid || c.tapped || !c.def.produces || id === exclude) continue;
     if(c.def.id==='troyan-gutsy-explorer'&&(!forDef||forDef.eclAbilityPayment||manaValue(forDef)<5&&!(forDef.cost??'').includes('{X}')))continue;
     // 限定用途的法術力（例如只能用來施放鵬洛客咒語）
+    if(c.def.manaOnly==='creature'&&(!forDef||forDef.eclAbilityPayment||!forDef.types.includes('Creature')))continue;
     if(c.def.manaOnly==='angel'&&(!forDef||forDef.eclAbilityPayment||!forDef.subtypes?.includes('Angel')))continue;
     if(c.def.manaOnly==='enchantOrSpecial'&&(!forDef||!(forDef.eclAbilityPayment?forDef.faceUpPayment||forDef.foundation?.unlockPayment:forDef.types.includes('Enchantment'))))continue;
     if (c.def.manaOnly === 'planeswalker' && !forDef?.types.includes('Planeswalker')) continue;
@@ -99,7 +102,7 @@ export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = 
   (g.players[pid].retainedRed ?? []).forEach((m,i)=>out.push({id:-25000-i,produces:[m],isCreature:false,pool:true}));
   (g.players[pid].firePool ?? []).forEach((m,i)=>out.push({id:-30000-i,produces:[m],isCreature:false,pool:true}));
   for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&!c.tapped&&(isLand(c)||['elvish-archdruid','gilded-lotus','hedron-archive','overgrown-zealot'].includes(c.def.id)||c.def.id==='arc-reactor'||c.def.id==='troyan-gutsy-explorer'||c.def.id==='intrepid-stablemaster'||c.token&&c.def.types.includes('Artifact'))&&c.def.produces&&id!==exclude&&out.some(s=>s.id===id))landManaExtras(g,c,forDef).forEach((produces,k)=>out.push({id:-400000-id*1000-k,produces,isCreature:false,extra:true,...(produces.matches?{matchManaOf:id}:{}),...(produces.requires?{extraRequires:{id,mana:produces.requires}}:{})}));}
-  (g.players[pid].eclRestrictedMana??[]).forEach((m,i)=>{const ok=forDef&&(m.rule==='ability'?!!forDef.eclAbilityPayment:m.rule==='artifactAbility'?forDef.types.includes('Artifact'):m.rule==='campusSpell'?!forDef.eclAbilityPayment&&forDef.types.some(t=>t==='Instant'||t==='Sorcery'):m.rule==='campusLandAbility'?!!forDef.eclAbilityPayment&&forDef.types.includes('Land'):m.rule==='campusDinosaur'?forDef.subtypes?.includes('Dinosaur'):m.rule==='campusCavern'?!forDef.eclAbilityPayment&&forDef.types.includes('Creature')&&!!g.cards[m.source??-1]?.eclType&&matchesDefSubtype(forDef,g.cards[m.source??-1].eclType!):!forDef.eclAbilityPayment&&(m.rule==='creature'?forDef.types.includes('Creature'):m.rule==='bdHelga'?forDef.types.includes('Creature')&&(manaValue(forDef)>=4||(forDef.cost??'').includes('{X}')):m.rule==='elemental'?matchesDefSubtype(forDef,'Elemental'):m.rule==='mv4'?manaValue(forDef)>=4:m.rule==='tribe'?!!g.cards[m.source??-1]?.eclType&&matchesDefSubtype(forDef,g.cards[m.source??-1].eclType!):false));if(ok)out.push({id:-70000-i,produces:[m.mana],isCreature:false,pool:true});});
+  (g.players[pid].eclRestrictedMana??[]).forEach((m,i)=>{const ok=forDef&&(m.rule==='orbitartifact'?(!forDef.eclAbilityPayment&&forDef.types.includes('Artifact')):m.rule==='orbitartifactAbility'?(!!forDef.eclAbilityPayment&&forDef.types.includes('Artifact')):m.rule==='orbitoutside'?(!forDef.eclAbilityPayment&&!fromHand):m.rule==='orbitDragonOmen'?(!forDef.eclAbilityPayment&&!!forDef.subtypes?.some(t=>t==='Dragon'||t==='Omen')):m.rule==='ability'?!!forDef.eclAbilityPayment:m.rule==='artifactAbility'?forDef.types.includes('Artifact'):m.rule==='campusSpell'?!forDef.eclAbilityPayment&&forDef.types.some(t=>t==='Instant'||t==='Sorcery'):m.rule==='campusLandAbility'?!!forDef.eclAbilityPayment&&forDef.types.includes('Land'):m.rule==='campusDinosaur'?forDef.subtypes?.includes('Dinosaur'):m.rule==='campusCavern'?!forDef.eclAbilityPayment&&forDef.types.includes('Creature')&&!!g.cards[m.source??-1]?.eclType&&matchesDefSubtype(forDef,g.cards[m.source??-1].eclType!):!forDef.eclAbilityPayment&&(m.rule==='creature'?forDef.types.includes('Creature'):m.rule==='bdHelga'?forDef.types.includes('Creature')&&(manaValue(forDef)>=4||(forDef.cost??'').includes('{X}')):m.rule==='elemental'?matchesDefSubtype(forDef,'Elemental'):m.rule==='mv4'?manaValue(forDef)>=4:m.rule==='tribe'?!!g.cards[m.source??-1]?.eclType&&matchesDefSubtype(forDef,g.cards[m.source??-1].eclType!):false));if(ok)out.push({id:-70000-i,produces:[m.mana],isCreature:false,pool:true});});
   (g.players[pid].frontierMana??[]).forEach((m,i)=>{if(forDef&&!forDef.eclAbilityPayment&&(m.rule==='mountVehicle'?forDef.subtypes?.some(s=>s==='Mount'||s==='Vehicle'):manaValue(forDef)>=5||(forDef.cost??'').includes('{X}')))out.push({id:-84000-i,produces:[m.mana],isCreature:false,pool:true});});
   (g.players[pid].foundationPool??[]).forEach((m,i)=>{if(m.rule==='any'||forDef&&(forDef.foundation?.unlockPayment||!forDef.eclAbilityPayment&&forDef.subtypes?.includes('Room')))out.push({id:-85000-i,produces:[m.mana],isCreature:false,pool:true});});
   // 法術力池
@@ -216,6 +219,7 @@ const altCache = new WeakMap<CardDef, Partial<Record<CastAlt, CardDef>>>();
 
 /** 以冒險或返照施放時，這個咒語實際的特性（費用、類別、效果） */
 export function castDef(def: CardDef, alt?: CastAlt): CardDef {
+  if(alt==='orbitFreeOmen')return{...castDef(def,'adventure'),cost:''};
   if (!alt) return def;
   let m = altCache.get(def);
   if (!m) altCache.set(def, (m = {}));
@@ -252,14 +256,14 @@ export function castDef(def: CardDef, alt?: CastAlt): CardDef {
     d = def.back;
   } else if (alt === 'free') {
     d = { ...def, cost: '' };
-  } else if (alt === 'warp' && def.warp) {
-    d = { ...def, cost: def.warp };
+  } else if (alt === 'warp') {
+    d = { ...def, cost: def.warp??'{2}{R}' };
   } else if (alt === 'offspring' && def.offspring) {
     d = { ...def, cost: costToString(addCosts(parseCost(def.cost), parseCost(def.offspring))) };
   } else if (alt === 'mayhem' && def.mayhem) {
     d = { ...def, cost: def.mayhem };
-  } else if (alt === 'harmonize' && def.harmonize) {
-    d = { ...def, cost: def.harmonize };
+  } else if (alt === 'harmonize' && (def.harmonize||def.cost)) {
+    d = { ...def, cost: def.harmonize??def.cost };
   } else if (alt === 'prepared' && def.prepare) {
     const a = def.prepare;
     d = { id: def.id, name: a.name, zh: a.zh, set: def.set, rarity: def.rarity, cost: a.cost, types: a.types, spell: a.spell, text: a.text, imageName: def.imageName };
@@ -310,12 +314,12 @@ export function sneakAttackers(g:GameState,pid:PID):Card[]{return ['combat_block
 function ninjaGraveSneak(g:GameState,pid:PID):boolean{return g.battlefield.some(id=>{const c=g.cards[id];return c.controller===pid&&c.def.id==='ninja-teen'&&(c.classLevel??1)>=3&&!abilitiesSuppressed(g,c);});}
 function graveCastAllowed(g:GameState,pid:PID,c:Card):boolean{return g.active===pid&&g.battlefield.some(id=>{const s=g.cards[id];return s.controller===pid&&abilitiesOf(g,s).some(a=>a.kind==='static'&&a.graveCast&&matches(g,a.graveCast,c,pid,s.id));});}
 
-export function castAlts(g:GameState,pid:PID,c:Card):(CastAlt|undefined)[]{const alts=baseCastAlts(g,pid,c);if(c.zone==='graveyard'&&c.owner===pid&&c.def.meadow?.graveSacCast)alts.push('graveCost');if((c.def.meadow?.forageSpell||osteoCast(g,pid,c))&&validForage(g,pid,forageOptions(g,pid,c.id).defaults,c.id))alts.push('forage');if(!alts.length)return alts;if(c.zone==='hand'&&frontierStatic(g,pid,'dsk:mutationCost').length)alts.push('mutation');if(c.zone==='exile'&&!frontierFlags(g,pid).warpedUsed&&frontierStatic(g,pid,'dsk:warpedFree').length)alts.push('free');return alts;}
+export function castAlts(g:GameState,pid:PID,c:Card):(CastAlt|undefined)[]{const alts=baseCastAlts(g,pid,c);if(alts.length&&finalFree(g,pid,c)){alts.push('free');if(c.def.adventure&&g.active===pid&&g.players[pid].spellsThisTurn===0&&[...finalStatic(g,0,'firstSpellFree'),...finalStatic(g,1,'firstSpellFree')].length)alts.push('orbitFreeOmen');}if(c.zone==='graveyard'&&c.owner===pid&&c.def.meadow?.graveSacCast)alts.push('graveCost');if((c.def.meadow?.forageSpell||osteoCast(g,pid,c))&&validForage(g,pid,forageOptions(g,pid,c.id).defaults,c.id))alts.push('forage');if(!alts.length)return alts;if(c.zone==='hand'&&frontierStatic(g,pid,'dsk:mutationCost').length)alts.push('mutation');if(c.zone==='exile'&&!frontierFlags(g,pid).warpedUsed&&frontierStatic(g,pid,'dsk:warpedFree').length)alts.push('free');return alts;}
 function baseCastAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] {
   const def = c.def;
   if(festivalCast(g,pid,c))return [undefined];
   if(c.zone==='graveyard'&&c.owner===pid&&c.def.meadow?.graveMaxSpeed&&(g.players[pid].speed??0)>=4)return [undefined];
-  if(c.zone!=='hand'&&foundationPermission(g,pid,c))return def.room?['roomLeft','roomRight']:[undefined];
+  if(c.zone!=='hand'&&foundationPermission(g,pid,c)&&!c.def.meadow?.finalGraveWarp)return def.room?['roomLeft','roomRight']:[undefined];
   if(c.zone==='library'&&c.owner===pid&&!isLand(c)&&g.players[pid].library[0]===c.id&&frontierStatic(g,pid,'fblthpPlot').length)return ['plotTop'];
   if(c.zone==='graveyard'&&c.owner===pid&&(c.frontierMarks?.dreadUntil??-1)>=g.turn)return ['adventure'];
   if(c.zone==='library'&&frontierStatic(g,pid,'johannTopOnce').length&&frontierFlags(g,pid).johannTop)return [];
@@ -341,7 +345,7 @@ function baseCastAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] 
     if (def.disguise) base.push('disguise');
     if(!isLand(c)&&isCreature(c)&&mshFlags(g,pid).freeRG&&colorsOf(def).some(c=>c==='R'||c==='G'))base.push('free');
     if (!isLand(c) && freeCastAllowed(g, pid, c)) base.push('free');
-    if (def.warp) base.push('warp');
+    if (def.warp||finalStatic(g,pid,'grantWarp').length&&(def.types.includes('Artifact')||def.types.includes('Creature')&&colorsOf(def).includes('R'))) base.push('warp');
     if (def.offspring) base.push('offspring');
     if(def.meadow?.gift)base.push('gift');
     if(def.frontier?.bargain&&!def.spell?.modes)base.push('bargain');
@@ -360,12 +364,13 @@ function baseCastAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] 
   if (c.zone === 'exile' && c.owner === pid && c.warpExiled !== undefined && c.warpExiled < g.turn) return [undefined];
   if (c.zone === 'exile' && c.waterCastBy !== undefined && g.cards[c.waterCastBy]?.zone !== 'battlefield') return [];
   if (c.zone === 'exile' && c.linkedCast && c.linkedCast.by === pid && checkCond(g, c.linkedCast.cond, pid, undefined, [])) return [undefined];
+  if(c.zone==='graveyard'&&c.owner===pid&&c.def.meadow?.finalGraveWarp)return ['warp'];
   if (c.zone === 'graveyard' && c.owner === pid) {
     const out: (CastAlt|undefined)[] = [];
     if(isCreature(c)&&ninjaGraveSneak(g,pid)&&sneakAttackers(g,pid).length){out.push('sneak');if(def.sneak&&def.sneak!=='{3}{B}')out.push('sneakGranted');}
     if(graveCastAllowed(g,pid,c))out.push(undefined);
     if (def.flashback || c.tempFlashbackTurn === g.turn || (g.active===pid && g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.flashbackAll)) && def.types.some(t=>t==='Instant'||t==='Sorcery'))) out.push('flashback');
-    if (def.harmonize) out.push('harmonize');
+    if (def.harmonize||c.frontierMarks?.finalHarmonize===g.turn) out.push('harmonize');
     if (def.mayhem && c.discardedTurn === g.turn) out.push('mayhem');
     return out;
   }
@@ -376,7 +381,7 @@ export function modeCount(def: CardDef): number {
   return def.spell?.modes?.length ?? 1;
 }
 
-export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, targets?: (TargetRef | null)[], alt?: CastAlt, x = 0,extraCosts?:number[]): ManaCost {
+export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, targets?: (TargetRef | null)[], alt?: CastAlt, x = 0,extraCosts?:number[],harmonizeTapped?:number|null): ManaCost {
   const def = castDef(c.def, alt);
   if(c.waterCastBy!==undefined) return parseCost('');
   if(c.zone==='exile'&&foundationPermission(g,pid,c)&&frontierStatic(g,pid,'dsk:valgavothPlay').some(s=>c.frontierMarks?.valgavothLink===s.tmtLinkKey))return parseCost('');
@@ -385,8 +390,9 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
   if (alt === 'plotTop') return parseCost(def.cost);
   if(alt==='plot')return reduceCost(parseCost(def.cost),parseCost('{'+2*frontierStatic(g,pid,'aurlockDiscount').length+'}'));
   if(alt==='flashback'&&c.frontierMarks?.freeFlashback===g.turn)return parseCost('');
-  if (alt === 'free'||alt==='campusFree') {
+  if (alt === 'free'||alt==='campusFree'||alt==='orbitFreeOmen') {
     const cost = parseCost('');
+    finalCost(g,pid,c,def,cost,targets);
     if(c.def.meadow?.orbitDragonTargetTax&&targets?.some(t=>t&&'c'in t&&g.cards[t.c].def.subtypes?.includes('Dragon')))cost.generic+=Number(c.def.meadow.orbitDragonTargetTax);
   if(c.def.meadow?.orbitFerociousDiscount)cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])&&stats(g,g.cards[id]).p>=4).length);
   if (targets) cost.generic += wardTax(g, pid, targets);
@@ -410,6 +416,7 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
   let cost = alt==='campusMiracle'?parseCost('{2}'):c.eclCast?.free&&eclPermission(g,pid,c)?parseCost(''):parseCost(c.airbent ? '{2}' : def.spell?.modes?.[mode ?? 0]?.cost ?? def.cost);
   if(c.def.meadow?.orbitDragonTargetTax&&targets?.some(t=>t&&'c'in t&&g.cards[t.c].def.subtypes?.includes('Dragon')))cost.generic+=Number(c.def.meadow.orbitDragonTargetTax);
   campusCost(g,pid,c,def,cost,targets,alt);
+  finalCost(g,pid,c,def,cost,targets);
   if(c.def.ecl?.behold?.tax&&!canBehold(g,pid,c,alt))cost.generic+=c.def.ecl.behold.tax;
   if(['rime-chill','wildvine-pummeler'].includes(def.id))cost.generic=Math.max(0,cost.generic-vividColors(g,pid).length);
   if(def.id==='swat-away'&&g.battlefield.some(id=>g.cards[id].controller!==pid&&g.cards[id].attacking))cost.generic=Math.max(0,cost.generic-2);
@@ -495,7 +502,7 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
     }
   }
   if (alt === 'harmonize') {
-    const h = harmonizeTapper(g, pid);
+    const chosen=harmonizeTapped!==undefined&&harmonizeTapped!==null?g.cards[harmonizeTapped]:undefined;const h=harmonizeTapped===null?null:chosen?{id:chosen.id,p:Math.max(0,stats(g,chosen).p)}:harmonizeTapper(g,pid);
     if (h) cost = reduceCost(cost, { ...parseCost(''), generic: h.p });
   }
   if(alt==='evidence'&&def.id==='bite-down-on-crime')cost.generic=Math.max(0,cost.generic-2);
@@ -634,7 +641,12 @@ export function abilitiesFor(g: GameState, c: Card): ActivatedAbility[] {
   if (abilitiesSuppressed(g, c)) return foundationGrantedAbilities(g,c).filter(a=>a.roomDoor!==undefined);
   const base = activatedAbilities(c.def);
   const extra = [...grantedAbilities(g, c),...(c.copiedAbilities??[]).filter((a):a is ActivatedAbility=>a.kind==='activated')];
-  return (extra.length?[...base,...extra]:base).map(a=>a.effects.some(e=>e.e==='frontier'&&e.action==='dft:214')?{...a,targets:a.targets?.map(t=>({...t,filter:{...t.filter,ids:(c.meadowLinked??[]).filter(id=>g.cards[id].zone==='exile'&&g.cards[id].objectVersion===c.frontierMarks?.['bdMime:'+id])}}))}:a);
+  const expanded=(extra.length?[...base,...extra]:base).flatMap(ab=>{
+   if(ab.orbitSidisi){const values=[...new Set(g.battlefield.map(id=>g.cards[id]).filter(x=>x.id!==c.id&&x.controller===c.controller&&isCreature(x)&&finalCanSac(g,x)).map(x=>manaValue(x.def)))];return values.map(n=>({...ab,cost:{...ab.cost,sacOther:{...ab.cost.sacOther,mv:n}},targets:[{kind:'gyCard' as const,filter:{ctrl:'you' as const,type:'Creature' as const,mv:n+1}}],label:ab.label+'（犧牲法術力值'+n+'）'}));}
+   if(ab.orbitVariableTargets){const max=g.battlefield.filter(id=>isCreature(g.cards[id])).length;return Array.from({length:max+1},(_,n)=>({...ab,xMana:undefined,orbitFixedX:n,cost:{...ab.cost,mana:ab.cost.mana?.replace('{X}','{'+n+'}')},targets:Array.from({length:n},()=>({kind:'creature' as const})),label:ab.label+'（X='+n+'）'}));}
+   return[ab];
+  });
+  return expanded.map(a=>a.effects.some(e=>e.e==='frontier'&&e.action==='dft:214')?{...a,targets:a.targets?.map(t=>({...t,filter:{...t.filter,ids:(c.meadowLinked??[]).filter(id=>g.cards[id].zone==='exile'&&g.cards[id].objectVersion===c.frontierMarks?.['bdMime:'+id])}}))}:a);
 }
 
 /** 工藝的素材：優先用墳墓場的牌，其次是戰場上價值最低的永久物 */
@@ -649,7 +661,7 @@ export function craftMaterials(g: GameState, pid: PID, f: Filter, selfId: number
 function sacCandidates(g: GameState, pid: PID, f: Filter, sourceId?: number): Card[] {
   return g.battlefield
     .map((id) => g.cards[id])
-    .filter((c) => c.controller === pid && matches(g, f, c, pid, sourceId));
+    .filter((c) => c.controller === pid && finalCanSac(g,c)&&matches(g, f, c, pid, sourceId));
 }
 
 /**
@@ -744,6 +756,7 @@ export function canActivate(g: GameState, pid: PID, c: Card, idx: number): boole
   if(ab.bdRemove&&(c.eclCounters?.[ab.bdRemove]??0)<1)return false;
   if(ab.bdExile&&g.players[pid].graveyard.filter(id=>id!==c.id&&matches(g,ab.bdExile!.filter,g.cards[id],pid)).length<(ab.bdExile.n??0))return false;
   if(ab.bdSacAny&&!g.battlefield.some(id=>g.cards[id].controller===pid&&matches(g,ab.bdSacAny,g.cards[id],pid)))return false;
+  if(finalActivationBlocked(g,c,ab)||ab.cost.sacSelf&&!finalCanSac(g,c))return false;
   if (ab.cond && !checkCond(g, ab.cond, pid, c.id, [])) return false;
   if (ab.cost.crew !== undefined && crewChoice(g, pid, c, ab.cost.crew) == null) return false;
   if (ab.cost.tap) {
@@ -777,6 +790,7 @@ export function canActivate(g: GameState, pid: PID, c: Card, idx: number): boole
     }
     if (ab.powerUp && c.enteredTurn === g.turn) Object.assign(cost, reduceCost(cost, parseCost(c.def.cost)));
     if(ab.powerUp)cost.generic=Math.max(0,cost.generic-3*mshStatic(g,pid,'powerUpDiscount').filter(s=>s.id!==c.id&&isCreature(c)).length);
+  finalAbilityCost(g,c,ab,cost);
   frontierAbilityCost(g,c,ab,cost);if(ab.roomDoor!==undefined)cost.generic=Math.max(0,cost.generic-frontierStatic(g,pid,'dsk:unlockDiscount').length);
   cost.generic=Math.max(0,cost.generic-tokenAbilityReduction(g,c));
   if(c.def.types.includes('Artifact')&&mkmStatic(g,pid,'gadgetDiscount').length)cost.generic=Math.max(cost.W+cost.U+cost.B+cost.R+cost.G+cost.C+(cost.hyb?.length??0)>0?0:1,cost.generic-mkmStatic(g,pid,'gadgetDiscount').length);
@@ -834,7 +848,7 @@ export function castableCards(g: GameState, pid: PID): Card[] {
   }
   for (const id of p.graveyard) {
     const c = g.cards[id];
-    if (c.def.meadow?.graveSacCast||osteoCast(g,pid,c)||festivalCast(g,pid,c)||finGraveCast(g,pid,c)||graveCastAllowed(g,pid,c) || (isCreature(c)&&ninjaGraveSneak(g,pid)) || castAlts(g,pid,c).some(a=>a==='flashback'||a==='adventure') || c.def.harmonize || (c.def.mayhem && c.discardedTurn === g.turn)) out.push(c);
+    if (finalPermission(g,pid,c)||c.def.meadow?.graveSacCast||osteoCast(g,pid,c)||festivalCast(g,pid,c)||finGraveCast(g,pid,c)||graveCastAllowed(g,pid,c) || (isCreature(c)&&ninjaGraveSneak(g,pid)) || castAlts(g,pid,c).some(a=>a==='flashback'||a==='adventure'||a==='harmonize'||a==='warp') || c.def.harmonize || (c.def.mayhem && c.discardedTurn === g.turn)) out.push(c);
   }
   for (const id of p.exile) {
     const c = g.cards[id];
@@ -845,7 +859,7 @@ export function castableCards(g: GameState, pid: PID): Card[] {
   for (const q of g.players) {
     for (const id of q.exile) {
       const c = g.cards[id];
-      if (!out.includes(c)&&((c.linkedCast && c.linkedCast.by === pid && checkCond(g, c.linkedCast.cond, pid, undefined, []))||eclPermission(g,pid,c))) out.push(c);
+      if (!out.includes(c)&&((c.linkedCast && c.linkedCast.by === pid && checkCond(g, c.linkedCast.cond, pid, undefined, []))||eclPermission(g,pid,c)||finalPermission(g,pid,c))) out.push(c);
     }
   }
   return out;
@@ -871,7 +885,7 @@ export function castOptionsFor(g: GameState, pid: PID, c: Card): PlayOption[] {
 function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined): PlayOption[] {
   const def = castDef(c.def, alt);
   const out: PlayOption[] = [];
-  if(campusCastBlocked(g,pid))return out;
+  if(finalSilenced(g,pid)||campusCastBlocked(g,pid))return out;
   if(pid!==g.active&&mshStatic(g,g.active,'ownTurnSilence').length)return out;
   if (alt === 'cycle') {
     if (!canPayCost(g, pid, parseCost(def.cost))) return out;
@@ -911,7 +925,7 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
     if (msac && sacCandidates(g, pid, msac).length === 0) continue;
     const cost = spellCost(g, c, pid, mode, def.id==='fate-of-the-sun-cryst'?g.battlefield.filter(id=>isCreature(g.cards[id])&&g.cards[id].tapped).slice(0,1).map(c=>({c})):undefined, alt,def.id==='doppelgang'||def.meadow?.campusVariable==='graveSpellsX'?mode??0:0);
   const tapper = alt === 'harmonize' ? harmonizeTapper(g, pid)?.id : undefined;
-    if (!canPayCost(g, pid, cost, tapper, !!def.convoke, def, c.zone === 'hand' && !c.token, c.waterCastBy!==undefined ? manaValue(def) : def.spell?.modes?.[mode??0]?.waterbend ?? def.waterbend)) continue;
+    if (!canPayCost(g, pid, finalQuote(g,pid,c,cost), tapper, !!def.convoke, def, c.zone === 'hand' && !c.token, c.waterCastBy!==undefined ? manaValue(def) : def.spell?.modes?.[mode??0]?.waterbend ?? def.waterbend)) continue;
     const name = displayName(def);
     out.push({
       kind: 'cast',
@@ -1021,7 +1035,7 @@ export function performAction(g: GameState, pid: PID, a: PriorityAction): string
 
 function inCastableZone(g: GameState, pid: PID, c: Card, alt?: CastAlt): boolean {
   if(isLand(c)&&foundationPermission(g,pid,c))return true;
-  if (isLand(c)) return (alt==='adventure'&&castAlts(g,pid,c).includes(alt))||(c.zone==='graveyard'&&finGraveCast(g,pid,c))||(c.zone==='library'&&castAlts(g,pid,c).length>0) || (c.zone === 'hand' && c.owner === pid) || (c.zone === 'exile' && (c.onAdventure&&c.owner===pid||(c.playableTurn === g.turn && c.playableBy === pid)||eclPermission(g,pid,c)));
+  if (isLand(c)) return finalPermission(g,pid,c)||(alt==='adventure'&&castAlts(g,pid,c).includes(alt))||(c.zone==='graveyard'&&finGraveCast(g,pid,c))||(c.zone==='library'&&castAlts(g,pid,c).length>0) || (c.zone === 'hand' && c.owner === pid) || (c.zone === 'exile' && (c.onAdventure&&c.owner===pid||(c.playableTurn === g.turn && c.playableBy === pid)||eclPermission(g,pid,c)));
   return castAlts(g, pid, c).includes(alt);
 }
 
@@ -1041,7 +1055,8 @@ function doPlay(g: GameState, pid: PID, id: number): string | null {
   if(c.zone==='graveyard')foundationPayExtras(g,pid,c,{type:'cast',card:c.id,targets:[]});
   g.players[pid].landsPlayed++;
   log(g, `打出 ${cardName(c)}`, pid, 'cast');
-  enterBattlefield(g, c, pid);
+  const inquisitorLand=!!c.frontierMarks?.finalInquisitor;enterBattlefield(g, c, pid,inquisitorLand);
+  emit(g,{type:'frontier',action:'orbitLandPlayed',card:c.id,player:pid,amount:0});
   return null;
 }
 
@@ -1112,8 +1127,10 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if (c && alt === 'prepared') return doCastPrepared(g, pid, c, a);
   if(campusCastBlocked(g,pid))return '目前不能施放咒語';
   if(pid!==g.active&&mshStatic(g,g.active,'ownTurnSilence').length)return '對手回合中不能施放咒語';
+  if(finalSilenced(g,pid))return '本回合無法施放咒語';
   if (!c || (isLand(c)&&alt!=='adventure') || (!duringResolution && !inCastableZone(g, pid, c, alt))) return '無法施放這張牌';
   const def = castDef(c.def, alt);
+  if((alt==='free'||alt==='campusFree'||alt==='orbitFreeOmen'||c.eclCast?.free)&&a.x)return '免費施放時X必須為0';
   if ((alt === 'plotted' || (alt!=='sneak'&&alt!=='sneakGranted' && !instantSpeed(def) && !orbitFlash(g,pid,def) && !frontierStatic(g,pid,'fdn:allFlash').length && !(frontierStatic(g,pid,'blb:noncreatureFlash').length&&!def.types.includes('Creature')) && !mshCosmicFlash(g,pid) && !(def.flashCond && checkCond(g,def.flashCond,pid,c.id,[])))) && !sorceryTiming(g, pid) && !a.ignoreTiming) return '只能在你的主要階段且堆疊為空時施放';
   if(alt==='campusFree'&&!campusFree(g,pid,c))return '目前不能免費施放';
   if(c.def.meadow?.campusLifeX&&((a.x??0)<0||(a.x??0)>g.players[pid].life))return '生命不足';
@@ -1140,7 +1157,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   const sacF = alt==='bargain'?{or:[{type:'Artifact' as const},{type:'Enchantment' as const},{token:true}]}:(mode !== undefined ? def.spell?.modes?.[mode]?.sac : undefined) ?? def.addCost?.sac;
   if (sacF) {
     sacCard = a.sac != null ? g.cards[a.sac] : undefined;
-    if (!sacCard || sacCard.zone !== 'battlefield' || sacCard.controller !== pid || !matches(g, sacF, sacCard, pid))
+    if (!sacCard || sacCard.zone !== 'battlefield' || sacCard.controller !== pid || !finalCanSac(g,sacCard)||!matches(g, sacF, sacCard, pid))
       return '請選擇要犧牲的永久物';
   }
   const sneakReturn=(alt==='sneak'||alt==='sneakGranted')?(a.sac!==undefined?sneakAttackers(g,pid).find(c=>c.id===a.sac):sneakAttackers(g,pid)[0]):undefined;
@@ -1184,7 +1201,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if(noctisCost&&p.life<3)return '生命不足以支付Noctis費用';
   const allocationTotal=def.frontier?.distribute==='X'?x??0:def.frontier?.distribute;
   if(allocationTotal!==undefined){const n=targets.filter(Boolean).length;if((allocationTotal>0&&n===0)||(allocationTotal===0&&n!==0)||!a.distribution||a.distribution.length!==n||a.distribution.some(v=>!Number.isInteger(v)||v<1)||a.distribution.reduce((v,n)=>v+n,0)!==allocationTotal)return '指示物分配不合法';}
-  const cost = free ? parseCost('') : spellCost(g, c, pid, mode, targets, alt, x ?? 0,a.foundationCosts??[]);
+  const cost = free ? parseCost('') : spellCost(g, c, pid, mode, targets, alt, x ?? 0,a.foundationCosts??[],a.harmonizeTapped);
   if((free||permission?.free)&&def.spell?.modes?.[mode??0]?.cost)Object.assign(cost,reduceCost(parseCost(def.spell.modes[mode??0].cost),parseCost(def.cost)));
   if(needsBehold&&req.tax&&!beheld.length&&(free||permission?.free||canBehold(g,pid,c,alt)))cost.generic+=req.tax;
 
@@ -1199,8 +1216,16 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   const schemes=eclStatic(g,pid,'conspire'),groups=a.conspireTapped??[],conspireIds=groups.flat();
   if(groups.length&&(def.types.includes('Creature')||groups.length>schemes.length||new Set(conspireIds).size!==conspireIds.length||groups.some(ids=>ids.length!==2||ids.some(id=>{const b=g.cards[id];return !b||b.zone!=='battlefield'||b.controller!==pid||b.tapped||!isCreature(b)||!colorsOf(b.def).some(col=>colorsOf(def).includes(col));}))))return '共謀費用不合法';
   for(const id of [...conspireIds,...teamwork])g.cards[id].tapped=true;
-  const tapper = alt === 'harmonize' ? harmonizeTapper(g, pid) : null;
+  const ht=a.harmonizeTapped===undefined?harmonizeTapper(g,pid):a.harmonizeTapped===null?null:{id:a.harmonizeTapped,p:Math.max(0,stats(g,g.cards[a.harmonizeTapped]).p)};const tapper=alt==='harmonize'?ht:null;
+  if(tapper&&(!g.battlefield.includes(tapper.id)||g.cards[tapper.id].controller!==pid||!isCreature(g.cards[tapper.id])||g.cards[tapper.id].tapped))return '和聲橫置費用不合法';
   const foundationTap=foundationExtraCosts(g,pid,c,alt);const foundationTapIds=foundationTap?.kind==='tap'?a.foundationCosts??foundationTap.ids.slice(0,foundationTap.n):[];for(const id of foundationTapIds)g.cards[id].tapped=true;
+  const chosenPower=c.def.meadow?.finalChosenPowerCost?(a.orbitChosen!==undefined?g.cards[a.orbitChosen]:g.battlefield.map(id=>g.cards[id]).find(x=>x.controller===pid&&isCreature(x))??g.players[pid].exile.map(id=>g.cards[id]).find(x=>x.warpExiled!==undefined&&isCreature(x))):undefined;
+  if(c.def.meadow?.finalChosenPowerCost&&(!chosenPower||!(chosenPower.zone==='battlefield'&&chosenPower.controller===pid&&isCreature(chosenPower)||chosenPower.zone==='exile'&&chosenPower.owner===pid&&chosenPower.warpExiled!==undefined&&isCreature(chosenPower))))return '須選擇己方生物或已躍遷的生物牌';
+  if(c.def.meadow?.finalFlashBehold&&!sorceryTiming(g,pid)&&!beheld.length&&!a.ignoreTiming)return '以閃現時機施放必須展示龍';
+  if(c.def.meadow?.finalWarpLife&&alt==='warp'&&!frontierCanPayLife(g,pid,Number(c.def.meadow.finalWarpLife)))return '生命不足';
+  const delve=finalStatic(g,pid,'delveSpells').length?(a.orbitDelve??g.players[pid].graveyard.filter(id=>id!==c.id).slice(0,Math.max(0,cost.generic-wardTax(g,pid,targets)))):[];
+  if(new Set(delve).size!==delve.length||delve.some(id=>id===c.id||!g.players[pid].graveyard.includes(id))||delve.length>Math.max(0,cost.generic-wardTax(g,pid,targets)))return '探掘費用不合法';
+  cost.generic-=delve.length;
   const paid=payCost(g, pid, cost, tapper?.id, !!def.convoke, def, c.zone === 'hand' && !c.token, c.waterCastBy!==undefined ? manaValue(def) : def.spell?.modes?.[mode??0]?.waterbend ?? def.waterbend);
   for(const id of [...conspireIds,...teamwork,...foundationTapIds])g.cards[id].tapped=false;
   if(!paid)return `法術力不足（需要 ${costToString(cost)}）`;
@@ -1212,13 +1237,18 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   foundationPayExtras(g,pid,c,a);
   if(def.types.includes('Creature')&&def.subtypes?.includes('Dragon')&&foundationManaSources.some(id=>g.cards[id].def.id==='orb-of-dragonkind'))(c.frontierMarks??={}).orbHaste=1;
   c.mshTeamwork=alt==='teamwork';
+  for(const id of delve)moveCard(g,g.cards[id],'exile');
+  if(chosenPower)(chosenPower.orbitPowerHistory??={})[chosenPower.objectVersion??0]=stats(g,chosenPower).p;
+  if(c.def.meadow?.finalWarpLife&&alt==='warp')frontierPayLife(g,pid,Number(c.def.meadow.finalWarpLife));
+  (c.frontierMarks??={}).finalWarped=Number(alt==='warp');
+  if(c.zone==='graveyard'&&c.def.meadow?.finalGraveCast)c.frontierMarks.finalFromGrave=1;
   c.kicked=alt==='kicked';c.impendingPaid=alt==='impending';if(def.room)(c.frontierMarks??={}).castRoomDoor=alt==='roomRight'?1:0;
   c.frontierBargained=alt==='bargain'||!!(sacF&&c.def.text.startsWith('Bargain'));
   if(c.def.id==='faerie-fencing')(c.frontierMarks??={}).castFaerie=Number(g.battlefield.some(id=>g.cards[id].controller===pid&&matches(g,{sub:'Faerie'},g.cards[id],pid)));
   if(mshFlags(g,pid).freeRG&&isCreature(c)&&colorsOf(def).some(c=>c==='R'||c==='G'))mshFlags(g,pid).freeRG=0;
   for(const id of conspireIds)tapCard(g,g.cards[id]);
   if (tapper) {
-    g.cards[tapper.id].tapped = true;
+    tapCard(g,g.cards[tapper.id],pid);
     log(g, `和聲：橫置 ${cardName(g.cards[tapper.id])}，費用減少 {${tapper.p}}`, pid);
   }
   c.mkmEvidence=false;if(evidenceN&&evidenceIds)payEvidence(g,pid,c,evidenceIds);
@@ -1274,7 +1304,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   const modeText = mode !== undefined ? (def.ecl?.variableTargets?`（${mode}個目標）`:`（${def.spell!.modes![mode].text}）`) : '';
   g.stack.push({
     sid: g.nextSid++,
-    kind: 'spell',
+    kind: 'spell',orbitChoice:chosenPower?{card:chosenPower.id,version:chosenPower.objectVersion??0}:undefined,
     bdSac:sacCard?{power:stats(g,sacCard).p,mana:manaValue(sacCard.def),vehicle:matches(g,{sub:'Vehicle'},sacCard,pid)}:undefined,
     distribution:a.distribution?.slice(),
     frontierStackSids:frontierSids.slice(),
@@ -1330,7 +1360,7 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   let sacCard: Card | undefined;
   if (ab.cost.sacOther) {
     sacCard = a.sac != null ? g.cards[a.sac] : undefined;
-    if (!sacCard || sacCard.zone !== 'battlefield' || sacCard.controller !== pid || !matches(g, ab.cost.sacOther, sacCard, pid, c.id))
+    if (!sacCard || sacCard.zone !== 'battlefield' || sacCard.controller !== pid || !finalCanSac(g,sacCard)||!matches(g, ab.cost.sacOther, sacCard, pid, c.id))
       return '請選擇要犧牲的永久物';
   }
   if(c.def.id==='ronin-shadow-stalker'&&sacCard&&sacCard.attachedTo!==c.id)return '必須犧牲結附在Ronin上的武具';
@@ -1356,7 +1386,8 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   if(a.discard!==undefined&&ab.cost.discardFilter&&!matches(g,ab.cost.discardFilter,g.cards[a.discard],pid))return '棄牌類別不合法';
   if(ab.removeCounter?.any&&a.counterPayments){const counts:Record<string,number>={};for(const x of a.counterPayments)counts[x.kind]=(counts[x.kind]??0)+x.n;if(Object.values(counts).reduce((a,b)=>a+b,0)!==ab.removeCounter.n||Object.entries(counts).some(([k,n])=>n<0||(counterKinds(c)[k]??0)<n))return '移除指示物費用不合法';}
   if(ab.removeCounter?.any&&a.counterKind&&(counterKinds(c)[a.counterKind]??0)<ab.removeCounter.n)return '移除指示物費用不合法';
-  const tapIds=ab.bdTapMana?(a.tapCards??[]):ab.cost.tapN?(a.tapCards??tapNChoices(g,pid,{...ab.cost.tapN.filter,...(ab.cost.tap?{other:true}:{})},ab.cost.tapN.n,c.id)??[]):[];
+  const tapIds=ab.bdTapMana||ab.orbitTapArtifacts?(a.tapCards??[]):ab.cost.tapN?(a.tapCards??tapNChoices(g,pid,{...ab.cost.tapN.filter,...(ab.cost.tap?{other:true}:{})},ab.cost.tapN.n,c.id)??[]):[];
+  if(ab.orbitTapArtifacts&&(new Set(tapIds).size!==tapIds.length||tapIds.some(id=>id===c.id||!g.battlefield.includes(id)||g.cards[id].controller!==pid||g.cards[id].tapped||!g.cards[id].def.types.includes('Artifact'))))return '橫置神器費用不合法';
   if(ab.bdTapMana&&(new Set(tapIds).size!==tapIds.length||tapIds.length>4||tapIds.some(id=>!g.battlefield.includes(id)||g.cards[id].controller!==pid||g.cards[id].tapped||id===c.id&&!!ab.cost.tap||!isCreature(g.cards[id]))))return '橫置生物費用不合法';
   if(ab.cost.tapN&&(tapIds.length!==ab.cost.tapN.n||new Set(tapIds).size!==tapIds.length||tapIds.some(id=>{const x=g.cards[id];return !x||x.zone!=='battlefield'||x.controller!==pid||x.tapped||(ab.cost.tap&&id===c.id)||!matches(g,ab.cost.tapN!.filter,x,pid,c.id);})))return '橫置費用不合法';
   const orbitStation=ab.orbitStation&&tapIds.length?{card:tapIds[0],version:g.cards[tapIds[0]].objectVersion??0}:undefined;
@@ -1398,6 +1429,8 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   const evidenceIds=ab.evidence?evidencePayment(g,pid,ab.evidence,a.evidenceCards,c.zone==='graveyard'?c.id:undefined):[];
   if(!evidenceIds)return '蒐證費用不合法';
   const ninja=ab.foundationNinjutsu?sneakAttackers(g,pid).find(x=>x.id===(a.costCards?.[0]??sneakAttackers(g,pid)[0]?.id)):undefined;if(ab.foundationNinjutsu&&!ninja)return '需要收回未被阻擋的攻擊生物';
+  if(ab.orbitLifeX&&!frontierCanPayLife(g,pid,finX??0))return '生命不足';
+  finalAbilityCost(g,c,ab,cost,targets);
   const paid=payCost(g, pid, cost, ab.cost.tap ? c.id : undefined,false,{...c.def,eclAbilityPayment:true,foundation:{...c.def.foundation,unlockPayment:ab.roomDoor!==undefined},faceUpPayment:!!ab.special&&ab.roomDoor===undefined,fin:ab.isEquip?{...c.def.fin,equipment:'equipPayment'}:c.def.fin},false,ab.waterbend);
   for(const id of tapIds)g.cards[id].tapped=false;
   if(!paid)return '法術力不足';
@@ -1428,9 +1461,11 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   }
   payWardDiscard(g, pid, wardDiscardCount(g, pid, targets));
   payWardSac(g, pid, wardSacCount(g, pid, targets), c.id);
-  if(orbitStation){const body=g.cards[orbitStation.card];(body.orbitPowerHistory??={})[orbitStation.version]=stats(g,body).p;}
+  if(orbitStation){const body=g.cards[orbitStation.card];(body.orbitPowerHistory??={})[orbitStation.version]=stats(g,body).p;(body.orbitStationHistory??={})[orbitStation.version]=orbitStationValue(g,body);}
+  if(ab.orbitLifeX)frontierPayLife(g,pid,finX??0);
+  if(ab.orbitDominion!==undefined)moveCard(g,g.cards[ab.orbitDominion],'exile');
   if (ab.cost.tap) tapCard(g,c);
-  if (ab.cost.tapN||ab.bdTapMana) {
+  if (ab.cost.tapN||ab.bdTapMana||ab.orbitTapArtifacts) {
     for (const id of tapIds) {
       tapCard(g,g.cards[id]);
       log(g, `橫置 ${cardName(g.cards[id])}`, pid);
@@ -1468,7 +1503,7 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
   }
   g.stack.push({
     sid: g.nextSid++,
-    kind: 'activated',orbitStation,bdCounters,bdSac:sacCard?{power:stats(g,sacCard).p,mana:manaValue(sacCard.def),vehicle:matches(g,{sub:'Vehicle'},sacCard,pid)}:undefined,distribution:a.distribution??(ab.foundationDistribution&&targets.length?targets.map((_,i)=>i?1:ab.foundationDistribution!-targets.length+1):undefined),
+    kind: 'activated',orbitStation,orbitTappedCount:tapIds.length,bdCounters,bdSac:sacCard?{power:stats(g,sacCard).p,mana:manaValue(sacCard.def),vehicle:matches(g,{sub:'Vehicle'},sacCard,pid)}:undefined,distribution:a.distribution??(ab.foundationDistribution&&targets.length?targets.map((_,i)=>i?1:ab.foundationDistribution!-targets.length+1):undefined),
     controller: pid,
     cardId: c.id,
     targets,
@@ -1480,7 +1515,7 @@ function doActivate(g: GameState, pid: PID, a: Extract<PriorityAction, { type: '
     sourceLinkKey:c.tmtLinkKey,
     manaAbility: ab.manaAbility||!ab.targets?.length && ab.cost.loyalty===undefined && ab.effects.every(e=>(e.e==='msh'&&['112','187','baxterMana'].includes(e.action))||(e.e==='mkm'&&['235','cryptexMana','manaAny'].includes(e.action))||e.e==='addMana'||e.e==='addManaOfChoice'||(e.e==='fin'&&e.action==='viviMana')||(e.e==='ecl'&&['bloomMana','brigidMana','wickermawMana','flamebraiderMana'].includes(e.action))),
     lkiPower: lki,
-    ...(ab.xLoyalty ? { x: xLoy } : ab.xMana?{x:finX}:ab.bdExile?.any?{x:exileCards.length}:ab.bdSacAny?{x:sacAny.length}:{}),
+    ...(ab.orbitFixedX!==undefined?{x:ab.orbitFixedX}:ab.xLoyalty ? { x: xLoy } : ab.xMana?{x:finX}:ab.bdExile?.any?{x:exileCards.length}:ab.bdSacAny?{x:sacAny.length}:{}),
   });
   show(g, { kind: 'activated', player: pid, card: c.id, targets, text: ab.label });
   log(g, `起動 ${cardName(c)}：${ab.label}${describeTargets(g, targets)}`, pid, 'cast');

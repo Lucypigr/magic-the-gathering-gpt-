@@ -1,3 +1,4 @@
+import {finalRefresh,finalStatic,finalTriggerAbility} from './orbit-final-support';
 import {orbitRefresh} from './orbit-station';
 import {finishOmen} from './orbit';
 import {campusRefresh} from './campus-zones';
@@ -16,7 +17,7 @@ import {refreshFinLands} from './fin-support';
 import {colorsOf} from './mana';
 import {resolveEclEntries} from './ecl';
 import {beholdOptions,canReceiveCounters,counterKinds,vividColors} from './ecl-support';
-import { abilitiesFor, frontierStackChoices,castDef,canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
+import { abilitiesFor, frontierStackChoices,castDef,spellCost,canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
 import {
   attackCandidates,
   blockCandidates,
@@ -56,6 +57,7 @@ export function checkSBA(g: GameState): void {
     campusRefresh(g);
     meadowRefresh(g);
     orbitRefresh(g);
+    finalRefresh(g);
     for(const host of g.battlefield){for(const pid of [0,1]as PID[]){const roles=g.battlefield.filter(id=>g.cards[id].attachedTo===host&&g.cards[id].controller===pid&&g.cards[id].def.subtypes?.includes('Role'));if(roles.length>1){for(const id of roles.slice(0,-1))moveCard(g,g.cards[id],'graveyard');changed=true;}}}
     const losers = g.players.filter(p=>!frontierStatic(g,p.id,'fdn:cantLose').length&&(p.foundationLost||p.life<=0&&!frontierStatic(g,p.id,'dsk:grimoire').length||p.drewFromEmpty||(p.poison??0)>=10));
     if (losers.length) {
@@ -160,6 +162,8 @@ function* flushTriggers(g: GameState): SubFlow {
     let ab = campusTriggerAbility(g,g.cards[t.source],meadowTriggerAbility(g,g.cards[t.source],t.ability,t.ev));
     if(ab.campusAbilityTarget){const items=g.stack.filter(s=>s.kind!=='spell'&&!s.manaAbility);const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇至多一個反擊異能的目標',options:['不選目標',...items.map(s=>s.text)],count:1,purpose:'trigger'};const index=r.type==='modes'?r.picks[0]??0:0;ab={...ab,effects:index&&items[index-1]?[{e:'frontier',action:'lci:81',n:items[index-1].sid}]:[]};}
     const src = g.cards[t.source];
+    ab=finalTriggerAbility(g,src,ab);
+    if(ab.orbitDistribution){const counters=ab.orbitDistribution==='own3',total=counters?3:g.battlefield.filter(id=>g.cards[id].controller===t.controller&&g.cards[id].def.types.includes('Land')).length;const template:TargetSpec=counters?{kind:'creature',filter:{ctrl:'you'}}:{kind:'creatureOrPlaneswalker',filter:{ctrl:'opp'}};const max=Math.min(total,legalTargets(g,template,t.controller,t.source).length),min=counters&&max?1:0;if(counters&&!max)continue;const answer:Response=yield{type:'mode',player:t.controller,prompt:'選擇分配目標數量',options:Array.from({length:max-min+1},(_,i)=>String(i+min)),count:1,purpose:'count'};const n=min+(answer.type==='modes'?answer.picks[0]??0:0);let left=total;const effects:Effect[]=[];for(let i=0;i<n;i++){const limit=left-(n-i-1);let v=limit;if(i<n-1){const r:Response=yield{type:'mode',player:t.controller,prompt:'分配給第'+(i+1)+'個目標',options:Array.from({length:limit},(_,j)=>String(j+1)),count:1,purpose:'count'};v=1+(r.type==='modes'?r.picks[0]??0:0);}left-=v;effects.push(counters?{e:'counters',what:('T'+i)as 'T0',n:v}:{e:'damage',to:('T'+i)as 'T0',n:v});}ab={...ab,targets:Array.from({length:n},()=>template),effects};}
     if(ab.mshDynamic==='wrecking'){ab={...ab,chooseN:Math.min(4,src.castX??0)};if(!ab.chooseN)continue;}
     let foundationMode:number|undefined;
     if(ab.foundationModes){const pact=ab.foundationModes==='pact',used=src.chosenModes??=[],available=Array.from({length:pact?4:3},(_,i)=>i).filter(i=>!used.includes(i));if(!available.length)continue;let chosen=available[0];if(available.length>1){const answer:Response=yield {type:'mode',player:t.controller,prompt:'選擇尚未選過的模式',options:available.map(i=>(pact?['4傷害且獲得4生命','目標對手棄二張','抽二張','你輸掉遊戲']:['兩個+1/+1指示物','抽牌','成為另一生物複製'])[i]),count:1,purpose:'trigger'};chosen=available[answer.type==='modes'?answer.picks[0]??0:0];}src.chosenModes=[...used,chosen];foundationMode=chosen;ab={...ab,targets:pact?chosen===0?[{kind:'any'}]:chosen===1?[{kind:'player',filter:{ctrl:'opp'}}]:undefined:chosen===2?[{kind:'creature',filter:{ctrl:'you'},notSelf:true}]:undefined};}
@@ -329,6 +333,7 @@ function* resolveTopItem(g: GameState): SubFlow {
     sourceType:item.sourceType,
     sourceLinkKey:item.sourceLinkKey,
     orbitStation:item.orbitStation,
+    orbitChoice:item.orbitChoice,orbitTappedCount:item.orbitTappedCount,
     sneakPaid:item.sneakPaid,
     bdSac:item.bdSac,
     bdCounters:item.bdCounters,
@@ -339,15 +344,15 @@ function* resolveTopItem(g: GameState): SubFlow {
   };
   if (item.kind === 'spell') {
     const def = src.def;
-    if (item.alt === 'adventure' || item.alt === 'flashback' || (item.alt === 'harmonize' && !isPermanentDef(def))) {
+    if ((item.alt === 'adventure'||item.alt==='orbitFreeOmen') || item.alt === 'flashback' || (item.alt === 'harmonize' && !isPermanentDef(def))) {
       // 冒險：結算後放逐，之後可以施放本體；返照：結算後放逐
       yield* runEffects(g, ctx, item.effects);
       if (src.zone === 'stack' && item.alt === 'flashback' && def.flashbackTransform && def.back) {
         enterBattlefieldBack(g, src, item.controller);
         log(g, `${cardName(src)} 轉化後進入戰場`, item.controller);
       } else if (src.zone === 'stack') {
-        if(item.alt==='adventure'&&def.meadow?.orbitOmen)finishOmen(g,src);else moveCard(g, src, def.mkm?.split?'graveyard':'exile');
-        if (item.alt === 'adventure'&&!def.mkm?.split&&!def.meadow?.orbitOmen) {
+        if((item.alt==='adventure'||item.alt==='orbitFreeOmen')&&def.meadow?.orbitOmen)finishOmen(g,src);else moveCard(g, src, def.mkm?.split?'graveyard':'exile');
+        if ((item.alt === 'adventure'||item.alt==='orbitFreeOmen')&&!def.mkm?.split&&!def.meadow?.orbitOmen) {
           src.onAdventure = true;if(src.frontierMarks?.lilahPlot){src.plottedTurn=g.turn;delete src.frontierMarks.lilahPlot;}
           log(g, `${cardName(src)} 踏上冒險（之後可以從放逐區施放）`, item.controller);
         }
@@ -444,6 +449,9 @@ export function* priorityStep(g: GameState): SubFlow {
     } else {
       if(r.type==='cast'){
         const card=g.cards[r.card];
+        if(card?.def.meadow?.finalChosenPowerCost&&r.orbitChosen===undefined){const options=[...g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])),...g.players[p].exile.filter(id=>g.cards[id].warpExiled!==undefined&&isCreature(g.cards[id]))];const a:Response=yield{type:'choose',player:p,prompt:'選擇己方生物或已躍遷的生物牌',options,min:1,max:1,purpose:'dig'};r.orbitChosen=a.type==='choose'?a.ids[0]:undefined;}
+        if(card&&r.alt==='harmonize'&&r.harmonizeTapped===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&!g.cards[id].tapped);const a:Response=yield{type:'choose',player:p,prompt:'可橫置一個生物以減少和聲費用',options,min:0,max:1,purpose:'dig'};r.harmonizeTapped=a.type==='choose'?a.ids[0]??null:null;}
+        if(card&&finalStatic(g,p,'delveSpells').length&&r.orbitDelve===undefined){const options=g.players[p].graveyard.filter(id=>id!==card.id);const a:Response=yield{type:'choose',player:p,prompt:'可放逐墳墓場牌以探掘（每張減少一點通用法術力）',options,min:0,max:Math.min(options.length,spellCost(g,card,p,r.mode,r.targets,r.alt,r.x??0,r.foundationCosts,r.harmonizeTapped).generic),purpose:'dig'};r.orbitDelve=a.type==='choose'?a.ids:[];}
         const view=card?castDef(card.def,r.alt):undefined;
         const stackKinds=view?.spell?.modes?.[r.mode??0]?.frontierStackTargets??(view?.frontierStack?[view.frontierStack]:[]);
         if(stackKinds.length&&!r.stackTargetSids){r.stackTargetSids=r.stackTargetSid!==undefined?[r.stackTargetSid]:[];for(let i=r.stackTargetSids.length;i<stackKinds.length;i++){const items=frontierStackChoices(g,p,stackKinds[i]);if(!items.length)break;const answer:Response=yield{type:'mode',player:p,prompt:'選擇堆疊上的目標',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSids.push(items[answer.type==='modes'?answer.picks[0]??0:0].sid);}}
@@ -474,6 +482,7 @@ export function* priorityStep(g: GameState): SubFlow {
           if(ab.bdExile&&r.costCards===undefined)r.costCards=yield*chooseCost('選擇要放逐的墳墓場牌',g.players[p].graveyard.filter(id=>id!==c.id&&matches(g,ab.bdExile!.filter,g.cards[id],p)),ab.bdExile.n??0,ab.bdExile.any?g.players[p].graveyard.length:ab.bdExile.n??0);
           if(ab.bdSacAny&&r.costCards===undefined)r.costCards=yield*chooseCost('犧牲一個或更多永久物',g.battlefield.filter(id=>g.cards[id].controller===p&&matches(g,ab.bdSacAny,g.cards[id],p)),1,g.battlefield.length);
           if(ab.bdForage&&r.costCards===undefined){const cost=forageOptions(g,p);r.costCards=yield*chooseCost('掘食：選一個食物或三張墳墓場牌',cost.ids,cost.n,cost.max);}
+          if(ab.orbitTapArtifacts&&r.tapCards===undefined)r.tapCards=yield*chooseCost('可橫置任意數量神器以決定X',g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===p&&g.cards[id].def.types.includes('Artifact')&&!g.cards[id].tapped),0,g.battlefield.length);
           if(ab.bdTapMana&&r.tapCards===undefined)r.tapCards=yield*chooseCost('可橫置生物支付任意法力',g.battlefield.filter(id=>id!==c.id&&g.cards[id].controller===p&&isCreature(g.cards[id])&&!g.cards[id].tapped),0,4);
           if(ab.foundationDistribution&&!r.distribution){let left=ab.foundationDistribution;r.distribution=[];for(let i=0;i<r.targets.length;i++){const max=left-(r.targets.length-i-1);let n=max;if(i<r.targets.length-1){const answer:Response=yield{type:'mode',player:p,prompt:'分配給第'+(i+1)+'個目標的傷害',options:Array.from({length:max},(_,j)=>String(j+1)),count:1,purpose:'count'};n=1+(answer.type==='modes'?answer.picks[0]??0:0);}r.distribution.push(n);left-=n;}}
           if(ab.mshStack&&r.stackTargetSid===undefined){const items=g.stack.filter(s=>s.controller===p&&s.kind!=='spell'&&!s.manaAbility&&g.cards[s.cardId].def.types.includes(ab.mshStack==='artifact'?'Artifact':'Creature'));const rr:Response=yield{type:'mode',player:p,prompt:'選擇要複製的異能',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSid=items[rr.type==='modes'?rr.picks[0]??0:0]?.sid;}
@@ -712,15 +721,16 @@ function* turn(g: GameState): SubFlow {
     if (c.controller === a && c.def.saga) addLore(g, c, 1);
   }
   yield* priorityStep(g);if(g.finEndTurn)break phases;
+  while(g.extraCombat?.player===a&&g.extraCombat.mainPhases){const extra=g.extraCombat;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1,mainPhases:Math.max(0,(extra.mainPhases??0)-1)}:undefined;yield*combatPhase(g);if(g.finEndTurn)break phases;g.phase='main2';emit(g,{type:'step',step:'main2',player:a});yield*priorityStep(g);if(g.finEndTurn)break phases;}
   // 戰鬥
   yield* combatPhase(g);if(g.finEndTurn)break phases;
-  while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield* combatPhase(g);if(g.finEndTurn)break phases;g.landCombatOnly=false;}
+  while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield* combatPhase(g);if(g.finEndTurn)break phases;g.landCombatOnly=false;if(extra.mainPhases){g.phase='main2';emit(g,{type:'step',step:'main2',player:a});yield*priorityStep(g);if(g.finEndTurn)break phases;}}
   // 主要階段二
   for(const p of g.players) p.firePool=[];
   g.phase = 'main2';
   emit(g,{type:'step',step:'main2',player:g.active});
   yield* priorityStep(g);if(g.finEndTurn)break phases;
-  while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield*combatPhase(g);if(g.finEndTurn)break phases;g.landCombatOnly=false;}
+  while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield*combatPhase(g);if(g.finEndTurn)break phases;g.landCombatOnly=false;if(extra.mainPhases){g.phase='main2';emit(g,{type:'step',step:'main2',player:a});yield*priorityStep(g);if(g.finEndTurn)break phases;}}
   // 結束：動員之類的暫時衍生物在結束步驟開始時犧牲
   g.phase = 'end';
   for (const id of [...g.battlefield]) {

@@ -1,3 +1,4 @@
+import {finalCounterMultiplier} from './orbit-final-support';
 import {dftEffect} from './meadow-dft';
 import {abilitiesSuppressed,copiableDefinition,isCreature,isLand,matches,other,shuffleArr,stats} from './state';
 import {canPayCost,payCost} from './actions';
@@ -14,12 +15,12 @@ export function* meadowMode(p:PID,prompt:string,options:string[]):SubFlow<number
 export function meadowCounter(g:GameState,c:Card,kind:string,n=1,actor:PID=c.controller){
  if(c.zone!=='battlefield'||n<=0||!canReceiveCounters(g,c))return;
  if(kind==='+1/+1'){putCounters(g,c,n,undefined,actor);return;}
- n*=2**(frontierStatic(g,c.controller,'fdn:doubleCounters').length+frontierStatic(g,actor,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length);
+ n*=finalCounterMultiplier(g,c)*2**(frontierStatic(g,c.controller,'fdn:doubleCounters').length+frontierStatic(g,actor,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length);
  if(kind==='loyalty')c.loyalty=(c.loyalty??0)+n;else if(kind==='stun')c.stun+=n;else if(kind==='charge'){
   // Older sets use the generic counter field for charge counters.
   if(['FDN','DSK','TLA','TMT','ECL','FIN','BLB','DFT','EOE','TDM'].includes(c.def.set))c.charge=(c.charge??0)+n;else c.counters+=n;
  }else if(kind==='lore')c.lore=(c.lore??0)+n;else if(kind==='hexproof')c.hexproofCounters=(c.hexproofCounters??0)+n;else if(kind==='finality'){c.finalityCount=(c.finality?Math.max(1,c.finalityCount??1):0)+n;c.finality=true;}else(c.eclCounters??={})[kind]=(c.eclCounters?.[kind]??0)+n;
- emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n,counterKind:kind});if(kind==='loyalty')emit(g,{type:'loyaltyPlaced',card:c.id,controller:c.controller,amount:n});
+ emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n,actor,counterKind:kind});if(kind==='loyalty')emit(g,{type:'loyaltyPlaced',card:c.id,controller:c.controller,amount:n});
 }
 export function* meadowForage(g:GameState,p:PID):SubFlow<boolean>{
  const foods=g.battlefield.filter(id=>g.cards[id].controller===p&&matches(g,{sub:'Food'},g.cards[id],p)),grave=g.players[p].graveyard;

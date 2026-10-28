@@ -1,3 +1,4 @@
+import {finalStats,finalCanBlock,finalObserve} from './orbit-final-support';
 import {orbitStationStats} from './orbit-station';
 import {orbitCondition,orbitAmount,orbitTrigger,orbitBaseStats,orbitGrantedAbilities} from './orbit';
 import {campusAmount,campusCondition,campusTrigger,campusObserve,campusBaseStats,campusStats,campusGrantedAbilities} from './campus-support';
@@ -71,7 +72,7 @@ export function frontierAmount(
   x = 0,
   ev?: GameEvent,
 ) {
-  if(/^(eoe|tdm):/.test(key))return orbitAmount(g,pid,key,source);
+  if(/^(eoe|tdm):/.test(key))return orbitAmount(g,pid,key,source,ev);
   if(/^(lci|sos):/.test(key))return campusAmount(g,pid,source,key,x,ev);
   if(/^(blb|dft):/.test(key))return meadowAmount(g,pid,source,key,ev);
   if(/^(fdn|dsk):/.test(key))return foundationAmount(g,pid,source,key,ev);
@@ -293,6 +294,7 @@ export function frontierObserve(g: GameState, ev: GameEvent) {
   foundationObserve(g,ev);
   meadowObserve(g,ev);
   campusObserve(g,ev);
+  finalObserve(g,ev);
   if (ev.type === "step" && ev.step === "endStep")
     for (const c of Object.values(g.cards))
       if (
@@ -380,6 +382,7 @@ export function frontierStats(
   meadowStats(g,c,st);
   campusStats(g,c,st);
   orbitStationStats(g,c,st);
+  finalStats(g,c,st);
   if (
     isCreature(c) &&
     frontierStatic(g, c.controller, "roseBase").some((s) => s.id !== c.id) &&
@@ -418,6 +421,7 @@ export function frontierStats(
       ).length;
 }
 export function frontierCanBlock(g: GameState, b: Card, a: Card) {
+  if(!finalCanBlock(g,b,a))return false;
   if (
     frontierStatic(g, a.controller, "coyoteProtection").some(
       (s) => s.id === a.id,

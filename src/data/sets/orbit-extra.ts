@@ -1,3 +1,5 @@
+import {finishEoe} from './orbit-final-eoe';
+import {finishTdm} from './orbit-final-tdm';
 import {addTdmCards} from './orbit-tdm-more';
 import {addStationCards} from './orbit-station-data';
 // Verified additions only. The complete source catalogs also track the remaining cards.
@@ -83,7 +85,8 @@ a(197,[trig('allyDies',[draw],{includeSelf:true,cond:C('diedPlus')})]);
 a(200,[trig('landfall',[E('doublePower')],{targets:[MY_CR]})]);
 // Explicitly retain the printed source keywords instead of conditional keyword summaries.
 addStationCards(eoeBuilder);
-export const supplementEoe=()=>complete(true);
+finishEoe(eoeBuilder);
+export const supplementEoe=()=>complete();
 
 const t=setBuilder('TDM',tdm,tdmAuto),td=t.d,ta=t.a,ts=t.s,tm=t.modes;
 const E2=t.E,C2=(key:string)=>t.C('tdm:'+key);
@@ -141,7 +144,8 @@ ta(221,[trig('castAny',[pump('self',2,0)],{filter:{or:[{nonType:'Creature'},{sub
 ta(234,[{kind:'static',frontier:'tdm:dragonSorceryFlash'}]);t.adv(234,[cnt('T0',3)],[MY_CR]);
 ta(243,[act({mana:'{2}',tap:true},[E2('toBottom')],'置於牌庫底',{targets:[spec('gyCard')]})]);
 addTdmCards(t);
+finishTdm(t);
 // Generic mobilize uses the engine's next-end-step token sacrifice, not end of combat.
 for(const row of tdm){if(!t.patches.has(row.number))continue;const n=row.text.match(/Mobilize (\d+)/);if(n){const patch=t.patches.get(row.number)!;patch.abilities=[...(patch.abilities??[]).filter(ab=>!(ab.kind==='trigger'&&ab.on==='attacks'&&ab.effects.some(e=>e.e==='token'&&e.temp))),trig('attacks',[{e:'token',token:'tok-warrior-r11',n:Number(n[1]),tapped:true,attacking:true,temp:true}])];}}
-export const supplementTdm=()=>t.complete(true);
+export const supplementTdm=()=>t.complete();
 export const ORBIT_BATCH={EOE:[...patches.keys()],TDM:[...t.patches.keys()]};

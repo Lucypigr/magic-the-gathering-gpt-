@@ -58,7 +58,7 @@ describe('探險、動員、閃現', () => {
   it('動員：派出橫置且攻擊中的戰士，結束步驟犧牲', () => {
     const g = mk('plains');
     const v = put(g, 0, 'voice-of-victory');
-    const ab = getDef('voice-of-victory').abilities![0] as { effects: Effect[] };
+    const ab = getDef('voice-of-victory').abilities!.find(a=>a.kind==='trigger'&&a.on==='attacks')! as { effects: Effect[] };
     run(g, v, ab.effects);
     const warriors = g.battlefield.map((id) => g.cards[id]).filter((c) => c.def.id === 'tok-warrior-r11');
     expect(warriors).toHaveLength(2);

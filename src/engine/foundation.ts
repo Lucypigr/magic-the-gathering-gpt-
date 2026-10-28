@@ -5,6 +5,7 @@ import {
   isLand,
   matches,
   newCard,
+  randInt,
   other,
   shuffleArr,
   stats,
@@ -182,7 +183,7 @@ export function* foundationEffect(
       } else {
         const ids = g.players[who].hand;
         if (ids.length && (yield* yes(who, "棄一張牌支付守護？"))) {
-          const id = (yield* pick(ids, "棄牌", 1, 1, who))[0];
+          const id = src.def.meadow?.finalWardRandom?ids[randInt(g,ids.length)]:(yield* pick(ids, "棄牌", 1, 1, who))[0];
           discardMany(g, [g.cards[id]]);
           paid = true;
         }

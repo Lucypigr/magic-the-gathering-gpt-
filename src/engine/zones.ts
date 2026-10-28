@@ -1,4 +1,5 @@
-import {orbitRefresh} from './orbit-station';
+import {finalEntry,finalRefresh,finalCanSac,finalCounterMultiplier,finalExtraTriggers,finalStatic,finalProtected,finalPreventDamage} from './orbit-final-support';
+import {orbitRefresh,orbitStationValue} from './orbit-station';
 import {campusEntry,campusRefresh} from './campus-zones';
 import {meadowRefresh} from './meadow';
 import {meadowWard,meadowNoPrevent,innkeeperMultiplier} from './meadow-support';
@@ -165,6 +166,7 @@ function triggerMatches(g: GameState, c: Card, ab: TriggeredAbility, ev: GameEve
       return ev.type === 'loyaltyPlaced' && ev.controller === pov;
     case 'loyaltyActivated':
       return ev.type === 'loyaltyActivated' && ev.controller === pov && ev.removed >= (ab.minRemoved ?? 0) && (!ab.filter || matches(g, ab.filter, g.cards[ev.card], pov, c.id));
+    case 'endCombat':return ev.type==='fin'&&ev.action==='endCombat';
     case 'noncombatOpp':
       return ev.type === 'noncombat' && ev.player !== pov;
     case 'anyDiscard':
@@ -294,7 +296,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     const c = g.cards[id];
     const cpExtra=g.battlefield.filter(id=>{const throne=g.cards[id];return throne.id!==c.id&&throne.controller===c.controller&&isCreature(c)&&throne.eclType&&matches(g,{sub:throne.eclType},c,c.controller)&&abilitiesOf(g,throne).some(a=>a.kind==='static'&&a.frontier==='lci:throneDouble');}).length;
     const finExtra=cpExtra+g.battlefield.reduce((n,sid)=>{const source=g.cards[sid];if(source.controller!==c.controller)return n;for(const a of abilitiesOf(g,source))if(a.kind==='static'){if(a.fin==='masamune'&&ev.type==='dies'){const host=g.cards[source.attachedTo??-1];if(host&&host.controller===c.controller&&(host.id===c.id||c.def.types.includes('Emblem')&&c.owner===host.controller))n++;}if(a.fin==='cloudDouble'&&g.battlefield.some(id=>g.cards[id].attachedTo===source.id&&g.cards[id].def.equip)&&(c.id===source.id||c.attachedTo===source.id))n++;if(a.fin==='travelingDouble'&&ev.type==='etb'&&g.cards[ev.card].controller===source.controller&&(isLand(g.cards[ev.card])||matches(g,{sub:'Bird'},g.cards[ev.card],source.controller)))n++;}return n;},0);
-    const extraTriggers=frontierStatic(g,c.controller,'dsk:doubleTriggers').length+(isCreature(c)&&matches(g,{legendary:true},c,c.controller)?frontierStatic(g,c.controller,'annieDouble').length:0)+(ev.type==='etb'?frontierStatic(g,c.controller,'knowledgeDouble').length:0)+(isCreature(c)&&stats(g,c).p<=2?mkmStatic(g,c.controller,'delney').length:0)+finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
+    const extraTriggers=finalExtraTriggers(g,c,ev)+frontierStatic(g,c.controller,'dsk:doubleTriggers').length+(isCreature(c)&&matches(g,{legendary:true},c,c.controller)?frontierStatic(g,c.controller,'annieDouble').length:0)+(ev.type==='etb'?frontierStatic(g,c.controller,'knowledgeDouble').length:0)+(isCreature(c)&&stats(g,c).p<=2?mkmStatic(g,c.controller,'delney').length:0)+finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
       for(let i=0;i<(1+extraTriggers)*Math.max(1,stats(g,c).prowessCount??1);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
@@ -379,6 +381,7 @@ export function removeFromZone(g: GameState, c: Card): void {
 }
 
 function resetPermanentState(c: Card): void {
+ if(c.orbitFinalBase){c.def=c.orbitFinalBase;c.orbitFinalBase=undefined;c.orbitFinalApplied=undefined;}
  if(c.orbitTypeDef){c.def=c.orbitTypeDef;c.orbitTypeDef=undefined;c.orbitAppliedDef=undefined;}
  if(c.campusOriginalDef){c.def=c.campusOriginalDef;c.campusOriginalDef=undefined;}
  if(c.campusTypeDef){c.def=c.campusTypeDef;c.campusTypeDef=undefined;}
@@ -460,8 +463,10 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   if(to==='graveyard'&&c.zone==='battlefield'&&isCreature(c)&&!c.token){const crystal=c.finMarks?.deathCrystal?g.cards[c.finMarks.deathCrystal]:finStatic(g,other(c.controller),'darkness')[0];if(crystal){to='exile';(crystal.finLinked??=[]).push(c.id);gainLife(g,crystal.controller,2);}}
   if(c.zone==='stack'&&to!=='stack')c.finExileOnResolve=undefined;
   const wasOnBf = c.zone === 'battlefield';
-  if(wasOnBf&&c.orbitPowerHistory?.[c.objectVersion??0]!==undefined)c.orbitPowerHistory[c.objectVersion??0]=stats(g,c).p;
+  if(c.orbitPowerHistory?.[c.objectVersion??0]!==undefined)c.orbitPowerHistory[c.objectVersion??0]=stats(g,c).p;
+  if(wasOnBf&&c.orbitStationHistory?.[c.objectVersion??0]!==undefined)c.orbitStationHistory[c.objectVersion??0]=orbitStationValue(g,c);
   const from = c.zone;
+  if(wasOnBf&&to==='exile')emit(g,{type:'fin',action:'orbitExileBF',card:c.id,player:c.controller,amount:0});
   if(wasOnBf)c.eclType=undefined;
   c.eclCast=undefined;c.eclLinked=undefined;c.eclDream=undefined;c.spellWitherTurn=undefined;
   if(from!==to)c.objectVersion=(c.objectVersion??0)+1;
@@ -553,6 +558,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   meadowRefresh(g);
   if(c.def.abilities?.some(a=>a.kind==='static'&&a.frontier==='tdm:ringing'))g.orbitHasRinging=true;
   orbitRefresh(g,c);
+  finalRefresh(g);
 }
 
 function returnLinked(g: GameState, sourceId: number): void {
@@ -636,8 +642,9 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   if(c.def.id==='captain-america-super-soldier')mshCounter(g,c,'shield');
   foundationPrepareEntry(g,c,controller,origin);
   campusEntry(g,c,controller,origin);
+  finalEntry(g,c,controller);
   const bdDoubles=frontierStatic(g,controller,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length;
-  const fd=2**(frontierStatic(g,controller,'fdn:doubleCounters').length+bdDoubles);if(c.finality)c.finalityCount=fd;if(c.counters>0)c.counters*=fd;if(c.charge)c.charge*=fd;if(c.stun)c.stun*=fd;if(c.hexproofCounters)c.hexproofCounters*=fd;for(const key of Object.keys(c.eclCounters??{}))c.eclCounters![key]*=fd;if(c.impendingTime!==undefined)c.impendingTime=c.eclCounters?.time??c.impendingTime;
+  const fd=finalCounterMultiplier(g,c)*2**(frontierStatic(g,controller,'fdn:doubleCounters').length+bdDoubles);if(c.finality)c.finalityCount=fd;if(c.counters>0)c.counters*=fd;if(c.charge)c.charge*=fd;if(c.stun)c.stun*=fd;if(c.hexproofCounters)c.hexproofCounters*=fd;for(const key of Object.keys(c.eclCounters??{}))c.eclCounters![key]*=fd;if(c.impendingTime!==undefined)c.impendingTime=c.eclCounters?.time??c.impendingTime;
   if(c.counters>0)c.counters+=mshStatic(g,c.controller,'extraCounters').length;
   if(c.counters>0&&isCreature(c))c.counters*=2**finStatic(g,c.controller,'doubleCounters').length;
   if (c.counters > 0 && isCreature(c)) {
@@ -664,6 +671,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   meadowRefresh(g);
   if(c.def.abilities?.some(a=>a.kind==='static'&&a.frontier==='tdm:ringing'))g.orbitHasRinging=true;
   orbitRefresh(g,c);
+  finalRefresh(g);
   const enterCounters: [string, number][] = [
     [c.counters < 0 ? 'minus' : '+1/+1', Math.abs(c.counters)],
     ['hexproof', c.hexproofCounters ?? 0], ['finality', Number(!!c.finality)], ['loyalty', c.loyalty ?? 0],
@@ -689,7 +697,7 @@ export function addLore(g: GameState, c: Card, n: number): void {
     g.pending.push({
       source: c.id,
       controller: c.controller,
-      ability: { kind: 'trigger', on: 'etb', effects: ch.effects, targets: ch.targets,finDynamic:ch.finDynamic },
+      ability: { kind: 'trigger', on: 'etb', effects: ch.effects, targets: ch.targets,finDynamic:ch.finDynamic,orbitDistribution:ch.orbitDistribution },
       abilityIndex: 3000 + c.lore,
       ev: { type: 'etb', card: c.id, controller: c.controller },
     });
@@ -746,8 +754,9 @@ export function putCounters(g: GameState, c: Card, n: number, counterBatch?: num
   n*=2**(finStatic(g,c.controller,'doubleCounters').length+frontierStatic(g,c.controller,'fdn:doubleCounters').length+frontierStatic(g,actor,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length);
   n+=mshStatic(g,c.controller,'extraCounters').length;
   n+=frontierFlags(g,c.controller).prairiePlus??0;
+  n*=finalCounterMultiplier(g,c);
   c.counters += n;
-  emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: n, counterKind: '+1/+1', counterBatch });
+  emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: n, counterKind: '+1/+1', actor,counterBatch });
   return n;
 }
 
@@ -792,7 +801,7 @@ export function destroyCards(g: GameState, cards: Card[]): void {
 }
 
 export function sacrifice(g: GameState, c: Card): void {
-  if (c.zone !== 'battlefield') return;
+  if (c.zone !== 'battlefield'||!finalCanSac(g,c)) return;
   log(g, `犧牲 ${cardName(c)}`, c.controller);
   emit(g, { type: 'sacrifice', card: c.id, player: c.controller });
   putIntoGraveyard(g, [c]);
@@ -800,6 +809,7 @@ export function sacrifice(g: GameState, c: Card): void {
 
 export function drawCards(g: GameState, pid: PID, n: number): number {
   if(g.battlefield.some(id=>g.cards[id].def.id==='mornsong-aria'&&!abilitiesSuppressed(g,g.cards[id])))return 0;
+  if(g.orbitFinalGlobals&&g.players[pid].hand.length<=1)n+=finalStatic(g,pid,'riddlerDraw').length;
   n*=2**frontierStatic(g,pid,'dft:drawDouble').filter(c=>(g.players[pid].speed??0)>=4).length;
   const p = g.players[pid];
   let drawn = 0;
@@ -882,7 +892,7 @@ export function dealDamage(
   opts: { combat?: boolean; noLifeGain?: boolean; batchCombat?: boolean } = {},
 ): number {
   if (n <= 0) return 0;
-  const noPrevent=meadowNoPrevent(g);
+  const noPrevent=meadowNoPrevent(g)||!!opts.combat&&([...finalStatic(g,0,'combatNoPrevent'),...finalStatic(g,1,'combatNoPrevent')].length>0);
   if(!opts.combat&&src&&colorsOf(src.def).includes('R')&&'p'in target&&target.p!==srcController)for(const axonil of frontierStatic(g,srcController,'lci:axonil'))n=Math.max(n,stats(g,axonil).p);
   const cpVictim='c'in target?g.cards[target.c]:undefined,cpRemaining=cpVictim&&isCreature(cpVictim)?Math.max(0,stats(g,cpVictim).t-cpVictim.damage):Infinity;
   if(src&&matches(g,{sub:['Lizard','Mouse','Otter','Raccoon']},src,srcController))n+=frontierStatic(g,srcController,'blb:flamecaller').length;
@@ -927,6 +937,10 @@ export function dealDamage(
   if(src?.mkmMarks?.judith===g.turn){kws.add('deathtouch');kws.add('lifelink');}
   const srcName = src ? cardName(src) : '';
   if(opts.combat&&src&&!opts.batchCombat)emit(g,{type:'combatDamageAny',source:src.id,controller:srcController,amount:n});
+  if(src&&n>0){if(g.orbitFinalGlobals&&isCreature(src)&&src.enteredTurn===g.turn)n*=2**finalStatic(g,srcController,'newCreatureDouble').length;}
+  if(!noPrevent&&'c'in target&&src&&finalProtected(g,g.cards[target.c],colorsOf(src.castFace??src.def)))return 0;
+  if(!noPrevent&&'p'in target&&finalPreventDamage(g,src??undefined,srcController,target.p,n))return 0;
+  if(src&&n>0)(src.frontierMarks??={}).finalDealtEver=1;
   if ('p' in target) {
     const p = g.players[target.p];
     loseLife(g, target.p, n);
@@ -1004,4 +1018,4 @@ export function shuffleLibrary(g: GameState, pid: PID, shuffle: (arr: number[]) 
   shuffle(g.players[pid].library);
 }
 
-export function putMinusCounters(g:GameState,c:Card,n:number):number {if(n<=0||c.zone!=='battlefield'||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'))return 0;c.counters-=n;emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n,counterKind:'minus'});g.version++;return n;}
+export function putMinusCounters(g:GameState,c:Card,n:number):number {if(n<=0||c.zone!=='battlefield'||g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&g.cards[id].def.id==='blossombind'))return 0;n*=finalCounterMultiplier(g,c);c.counters-=n;emit(g,{type:'counterPlaced',card:c.id,controller:c.controller,amount:n,counterKind:'minus'});g.version++;return n;}

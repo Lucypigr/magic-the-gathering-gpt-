@@ -1,3 +1,4 @@
+import {finalProtected,finalMonoHexproof} from './orbit-final-support';
 import {frontierFlags} from './frontier-support';
 import {frontierStatic} from './frontier-support';
 import {mshStatic} from './msh-support';
@@ -12,6 +13,7 @@ import type { Card, GameState, PID, CardDef, TargetRef, TargetSpec } from './typ
 export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): boolean {
   const ks=hasKw(g,c,'protection_colors'),ko=hasKw(g,c,'protection_opponent');
   const source=sourceId!==undefined?g.cards[sourceId]:undefined;
+  if(source&&(finalProtected(g,c,colorsOf(source.castFace??source.def))||finalMonoHexproof(g,c,source,by)))return false;
   if(source&&frontierStatic(g,c.controller,'coyoteProtection').some(s=>s.id===c.id)&&matches(g,{sub:'Coyote'},source,by))return false;
   if(source&&ks&&colorsOf(source.def).length)return false;
   if(ko&&c.controller!==by)return false;
@@ -145,7 +147,7 @@ export function validateTargets(
     }
     if (!isLegalTarget(g, specs[i], t, controller, sourceId)) return '目標不合法';
     if(specs[i].differentFrom!==undefined&&sameTarget(ts[specs[i].differentFrom!]??null,t))return '必須選不同的目標';
-    const graveIndex=specs[i].sameGraveyardAs,graveTarget=graveIndex!==undefined?ts[graveIndex]:null;if(graveTarget&&'c'in graveTarget&&'c'in t&&g.cards[graveTarget.c].owner!==g.cards[t.c].owner)return '必須選同一墳墓場的牌';
+    const graveIndex=specs[i].sameGraveyardAs,graveTarget=graveIndex!==undefined?ts[graveIndex]:null;if(graveTarget&&'c'in graveTarget&&'c'in t&&g.cards[graveTarget.c].owner!==g.cards[t.c].owner)return '必須選同一墳墓場的牌';if(graveTarget&&'p'in graveTarget&&'c'in t&&graveTarget.p!==g.cards[t.c].owner)return '必須選指定玩家墳墓場的牌';
     const totalMax=specs[i].totalMvMax;if(totalMax!==undefined&&ts.reduce((n,t)=>n+(t&&'c'in t?manaValue(g.cards[t.c].def):0),0)>totalMax)return '目標總法力值超過限制';
     const sharedIndex=specs[i].sharesTypeWith;const shared=sharedIndex!==undefined?ts[sharedIndex]:null;
     if(shared&&'c'in shared&&'c'in t){const a=g.cards[shared.c],b=g.cards[t.c];if(!a.def.changeling&&!b.def.changeling&&!a.def.subtypes?.some(sub=>b.def.subtypes?.includes(sub)))return '目標必須共用生物類別';}

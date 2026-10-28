@@ -84,7 +84,7 @@ LCI 與 SOS 已補齊 286／266 個不同牌名，含另一面與準備咒語及
 | MSH | Marvel Super Heroes | 2026/06 |
 | HOB | The Hobbit | 2026/08 |
 
-TLA、TMT、ECL、FIN、MKM、MSH、WOE、OTJ、FDN、DSK、BLB、DFT、LCI 與 SOS 的完整清單已收錄；各系列計數範圍與驗證限制見 docs 內說明。EOE、SPM、TDM 與 HOB 仍待補齊。EOE 與 TDM 目前收錄 166／261 與 211／271；[補卡進度與驗證範圍](docs/eoe-tdm.md)。卡牌資料（名稱、費用、類別、力量／防禦力、稀有度、標準賽合法性與禁卡）取自 [Scryfall](https://scryfall.com/)。下一次輪替在 2027 年 2 月，屆時 WOE 到 DSK 會離開標準賽。
+TLA、TMT、ECL、FIN、MKM、MSH、WOE、OTJ、FDN、DSK、BLB、DFT、LCI、SOS、EOE 與 TDM 的完整清單已收錄；各系列計數範圍與驗證限制見 docs 內說明。SPM 與 HOB 仍待補齊。EOE 與 TDM 目前收錄 261／261 與 271／271；[補卡進度與驗證範圍](docs/eoe-tdm.md)。卡牌資料（名稱、費用、類別、力量／防禦力、稀有度、標準賽合法性與禁卡）取自 [Scryfall](https://scryfall.com/)。下一次輪替在 2027 年 2 月，屆時 WOE 到 DSK 會離開標準賽。
 
 ### 經典補充包（自由模式用）
 

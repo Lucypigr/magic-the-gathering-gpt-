@@ -54,6 +54,7 @@ export type Keyword =
 
 /** 篩選條件：用來描述「哪些物件」符合。ctrl 以能力控制者的視角判斷。 */
 export interface Filter {
+  orbitWarp?:boolean;
  mvMaxSourcePower?:boolean;
   outlaw?:boolean;notOutlaw?:boolean;enchanted?:boolean;alsoType?:CardType;frontierAdventure?:boolean;frontierSpellOrAdventure?:boolean;frontierNoTokenName?:boolean;frontierUniqueName?:boolean;attachedToSource?:boolean;
   mshWorthy?:boolean;
@@ -579,6 +580,7 @@ export type TriggerOn =
   /** 每當你起動忠誠異能時 */
   | 'loyaltyActivated'
   /** 每當有對手被造成非戰鬥傷害時 */
+  | 'endCombat'
   | 'noncombatOpp'
   /** 每當有玩家棄牌時 */
   | 'anyDiscard'
@@ -614,6 +616,7 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+ orbitDistribution?:'own3'|'ureni';orbitNotAttached?:boolean;
  orbitMinCharge?:number;
  campusAbilityTarget?:boolean;campusConvergeTargets?:boolean;campusLifeTargets?:boolean;
 
@@ -672,6 +675,7 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+ orbitTapArtifacts?:boolean;orbitLifeX?:boolean;orbitSidisi?:boolean;orbitNamedLandDiscount?:boolean;orbitSpacecraftAttackDiscount?:boolean;orbitCounterDiscount?:number;orbitDominion?:number;orbitVariableTargets?:boolean;orbitFixedX?:number;
  orbitStation?:boolean;
  campusEquipmentSac?:number;campusLocusKey?:number;campusExileArtifacts?:boolean;campusDiscardHand?:boolean;campusVariable?:'players';campusPageDiscount?:boolean;
 
@@ -812,6 +816,7 @@ export interface SpellSpec {
 
 export interface RoomDoor {name:string;cost:string;text:string;abilities?:Ability[]}
 export interface CardDef {
+  protectionColors?:Color[];
  room?:{left:RoomDoor;right:RoomDoor}; impending?:{n:number;cost:string}; kicker?:string;
  meadow?:Record<string,string|number|boolean|undefined>;
  foundation?:{revival?:number;raidCounter?:boolean;kickerCounters?:number;charge?:number;divinity?:boolean;zegana?:boolean;totalPowerDiscount?:boolean;leyline?:boolean;plaything?:boolean;morbidCounter?:boolean;exileCreatureCost?:boolean;returnPermanentCost?:boolean;exileGraveCost?:number;tapCastCost?:number;revealCreaturePower?:boolean;ninjutsu?:string;verge?:readonly string[];unlockPayment?:boolean};
@@ -826,7 +831,7 @@ export interface CardDef {
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
-  ecl?: {variableTargets?:'creature';asEnters?:'campusLandCopy'|'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
+  ecl?: {variableTargets?:'creature';asEnters?:'orbit'|'campusLandCopy'|'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
   sneak?: string;
   combatPowerMin?: number;
   evadePowGte?: number;
@@ -859,7 +864,7 @@ export interface CardDef {
   /** 產生有色法術力時要支付1點生命（{C} 不用） */
   painMana?: boolean;
   /** 產生的法術力只能用來施放某類咒語 */
-  manaOnly?: 'angel' | 'enchantOrSpecial' | 'planeswalker' | 'notFromHand' | 'artifactOrAbility' | 'notNonartifactSpell';
+  manaOnly?: 'creature' | 'angel' | 'enchantOrSpecial' | 'planeswalker' | 'notFromHand' | 'artifactOrAbility' | 'notNonartifactSpell';
   /** 冒險：同一張牌上的另一個瞬間或法術；施放後此牌放逐，之後可以從放逐區施放本體 */
   adventure?: { frontier?:CardDef['frontier'];ecl?:CardDef['ecl'];frontierStack?:string;name: string; zh?: string; cost: string; types: CardType[]; text: string; spell: SpellSpec };
   /** 準備：此生物附帶的咒語；已準備時可以施放它的複製（之後取消準備） */
@@ -942,7 +947,7 @@ export interface CardDef {
   /** 鵬洛客的起始忠誠 */
   loyalty?: number;
   /** 傳奇（Saga）：每一章的效果；進場時與你的抓牌步驟後各放一個傳奇指示物並觸發對應的章節 */
-  saga?: { chapters: { effects: Effect[]; targets?: TargetSpec[];finDynamic?:boolean }[] };
+  saga?: { chapters: { effects: Effect[]; targets?: TargetSpec[];finDynamic?:boolean;orbitDistribution?:'own3'|'ureni' }[] };
   /** 中文規則敘述 */
   text: string;
   /** 衍生物不會出現在補充包 */
@@ -957,7 +962,8 @@ export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 
 
 export interface Card {
  campusLinked?:{id:number;version:number;def:CardDef;power:number;token?:boolean}[];
- orbitTypeDef?:CardDef;orbitAppliedDef?:CardDef;orbitPowerHistory?:Record<number,number>;
+ orbitFinalBase?:CardDef;orbitFinalApplied?:CardDef;
+ orbitTypeDef?:CardDef;orbitAppliedDef?:CardDef;orbitPowerHistory?:Record<number,number>;orbitStationHistory?:Record<number,number>;
  campusOriginalDef?:CardDef;campusTypeDef?:CardDef;
 
  finalityCount?:number;
@@ -1214,7 +1220,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
  bdCounters?:Record<string,number>;
@@ -1223,7 +1229,7 @@ export interface StackItem {
   frontierStackSids?:number[];distribution?:number[];
   sourceType?:string;
   sourceLinkKey?: number;
-  orbitStation?:{card:number;version:number};
+  orbitStation?:{card:number;version:number};orbitChoice?:{card:number;version:number};orbitTappedCount?:number;
   sneakPaid?:boolean;
   targetVersions?: (number|undefined)[];
   sid: number;
@@ -1331,7 +1337,7 @@ export type GameEvent =
   | { type: 'loyaltyActivated'; card: number; controller: PID; removed: number }
   | { type: 'noncombat'; player: PID; amount: number; sourceController: PID }
   | { type: 'discard'; player: PID; card: number; amount?:number; batchPart?:boolean; batchSummary?:boolean }
-  | { type: 'counterPlaced'; card: number; controller: PID; amount: number; counterBatch?:number; counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
+  | { type: 'counterPlaced'; card: number; controller: PID; amount: number; counterBatch?:number; counterKind?:string;actor?:PID;orbitFirst?:boolean;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export interface PendingTrigger {
   sourceType?:string;
@@ -1365,6 +1371,7 @@ export interface Show {
 }
 
 export interface GameState {
+ orbitFinalActive?:boolean;orbitFinalGlobals?:boolean;orbitShields?:{player:PID;source:number;link?:number;spell:number;turn:number}[];
   orbitHasStation?:boolean;orbitHasRinging?:boolean;
  campusParadigms?:{name:string;player:PID;card:number;version:number}[];
  campusDelayed?:{kind:string;player:PID;source:number;n:number;turn:number}[];
@@ -1385,7 +1392,7 @@ export interface GameState {
 
   playerControl?: { controller: PID; player: PID; whole: boolean; starts: number; ends: number };
   extraTurns?: PID[];
-  extraCombat?: { player: PID; landOnly: boolean; count?: number };
+  extraCombat?: { player: PID; landOnly: boolean; count?: number; mainPhases?:number };
   landCombatOnly?: boolean;
 
   cards: Record<number, Card>;
@@ -1486,7 +1493,7 @@ export type ChoosePurpose =
 export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
-  | { type: 'cast'; foundationCosts?:number[]; distribution?:number[];stackTargetSids?:number[];card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
+  | { type: 'cast'; orbitChosen?:number;orbitDelve?:number[];harmonizeTapped?:number|null; foundationCosts?:number[]; distribution?:number[];stackTargetSids?:number[];card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
   | { type: 'activate'; distribution?:number[]; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export type Response =

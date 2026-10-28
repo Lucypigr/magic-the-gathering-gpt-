@@ -61,11 +61,11 @@ export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS" |
   });
   const complete = (partial = false) => {
     for (const row of catalog) {
-      const patch = patches.get(row.number);
-      if (!patch) { if(partial) continue; throw Error(code + " missing " + row.number + " " + row.name); }
       const old = defs.find((c) => c.id === slug(row.name));
+      const patch = patches.get(row.number);
+      if (!patch) { if(old&&(code==='EOE'||code==='TDM')){const list=(REPRINTS[code]??=[]);if(!list.some(([id])=>id===old.id))list.push([old.id,row.rarity]);continue;} if(partial) continue; throw Error(code + " missing " + row.number + " " + row.name); }
       // Partial batches must preserve the established definition of shared reprints.
-      if(partial&&old&&old.set!==code){
+      if((partial||code==='EOE'||code==='TDM')&&old&&old.set!==code){
         const list=(REPRINTS[code]??=[]);
         if(!list.some(([id])=>id===old.id))list.push([old.id,row.rarity]);
         continue;

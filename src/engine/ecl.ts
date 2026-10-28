@@ -1,3 +1,5 @@
+import {finalStatic} from './orbit-final-support';
+import {orbitBeforeEntry} from './orbit-final';
 import {campusBeforeEntry} from './campus-zones';
 import {meadowBeforeEntry} from './meadow';
 import {frontierStatic} from './frontier-support';
@@ -93,6 +95,7 @@ export function* resolveEclEntries(g: GameState): SubFlow {
     let def = entry.enterAs,
       tapped = entry.tapped;
     let choice = c.def.ecl?.asEnters;
+    if(choice==='orbit')def=yield*orbitBeforeEntry(g,c,entry.controller);
     if(choice==='campusLandCopy')def=yield*campusBeforeEntry(g,c,entry.controller);
     if(choice==='mockingbird'||choice==='waxen'||choice==='mimeoplasm'){def=yield*meadowBeforeEntry(g,{source:c.id,controller:entry.controller,targets:[],x:c.zone==='stack'?c.castX??0:0},c);if(def)choice=def.ecl?.asEnters;}
     if (choice === 'tribe' || choice === 'tribe8') c.eclType = yield* chooseEclType(g, entry.controller, choice === 'tribe8');
@@ -156,6 +159,7 @@ export function* makeEclTokenBatch(
   // Every Crown observes the same first creation event, including those not selected first.
   for (const c of crowns) c.eclUsage = { turn: g.turn, n: 1 };
   const pending = [
+    ...(first?finalStatic(g,pid,'meditationTokens'):[]).map(c=>({card:c,kind:'meditation' as const})),
     ...crowns.map((c) => ({ card: c, kind: 'crown' as const })),
     ...finStatic(g, pid, 'extraFrog').map((c) => ({ card: c, kind: 'frog' as const })),
     ...mkmStatic(g,pid,'extraClue').filter(c=>c.mkmSolved).map(c=>({card:c,kind:'clue' as const})),
@@ -181,7 +185,8 @@ export function* makeEclTokenBatch(
     }
     const selected = applicable[pick] ?? applicable[0];
     pending.splice(pending.indexOf(selected), 1);
-    if(selected.kind==='clue')groups.push({def:getDef('tok-clue'),n:1,primary:false});
+    if(selected.kind==='meditation'){const host=g.cards[selected.card.attachedTo??-1];if(host&&host.zone==='battlefield'&&(yield*yes(g,pid,'以所結附永久物的複製取代衍生物？')))for(const group of groups)group.def=copiable(host);}
+    else if(selected.kind==='clue')groups.push({def:getDef('tok-clue'),n:1,primary:false});
     else if (selected.kind === 'frog') groups.push({ def: getDef('tok-fin-frog'), n: 1, primary: false });
     else if (selected.kind === 'dragon') {
       for (const group of groups) if (group.def.types.includes('Artifact')) group.def = getDef('tok-fra-dragon');

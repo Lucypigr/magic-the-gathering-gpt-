@@ -449,6 +449,16 @@
     "oracleId": "0fad5713-c09c-43d3-9cc0-10c65aead488",
     "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
   },
+  "Tezzeret, Cruel Captain Emblem": {
+    "text": "在你回合的戰鬥開始時，在目標由你操控的神器上放置三個+1/+1指示物。若它不是生物，則其成為0/0機器人神器生物。",
+    "oracleText": "At the beginning of combat on your turn, put three +1/+1 counters on target artifact you control. If it's not a creature, it becomes a 0/0 Robot artifact creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18742,
+    "oracleId": "2434c126-8a2d-4242-9316-a497fc7770a8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
   "Mental Modulation": {
     "text": "於你的回合中，此咒語減少{1}來施放。\n橫置目標神器或生物。\n抓一張牌。",
     "oracleText": "This spell costs {1} less to cast during your turn.\nTap target artifact or creature.\nDraw a card.",
@@ -5387,6 +5397,16 @@
     "sourceFile": "zhs_oracle.json",
     "sourceLine": 24756,
     "oracleId": "03259ab0-caa8-4620-b070-127e2c712252",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Munitions": {
+    "text": "當此衍生物離開戰場時，它對任意一個目標造成2點傷害。",
+    "oracleText": "When this token leaves the battlefield, it deals 2 damage to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 27682,
+    "oracleId": "9d3d95f4-6b9d-463e-830f-aad3b2531c21",
     "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
   },
   "Highspire Bell-Ringer": {

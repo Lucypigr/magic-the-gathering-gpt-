@@ -161,7 +161,7 @@ export function cloneGame(g: GameState): GameState {
   const cards: Record<number, Card> = {};
   for (const k in g.cards) {
     const c = g.cards[k];
-    cards[k] = { ...c,orbitPowerHistory:c.orbitPowerHistory?{...c.orbitPowerHistory}:undefined,frontierMarks:c.frontierMarks?{...c.frontierMarks}:undefined,meadowLinked:c.meadowLinked?.slice(),campusLinked:c.campusLinked?.map(x=>({...x})),lastKeywords:c.lastKeywords?.slice(),finMarks:c.finMarks?{...c.finMarks}:undefined,finLinked:c.finLinked?.slice(), manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
+    cards[k] = { ...c,orbitStationHistory:c.orbitStationHistory?{...c.orbitStationHistory}:undefined,orbitPowerHistory:c.orbitPowerHistory?{...c.orbitPowerHistory}:undefined,frontierMarks:c.frontierMarks?{...c.frontierMarks}:undefined,meadowLinked:c.meadowLinked?.slice(),campusLinked:c.campusLinked?.map(x=>({...x})),lastKeywords:c.lastKeywords?.slice(),finMarks:c.finMarks?{...c.finMarks}:undefined,finLinked:c.finLinked?.slice(), manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
   }
   const cp = (p: Player): Player => ({
     ...p,frontierFlags:p.frontierFlags?{...p.frontierFlags}:undefined,finFlags:p.finFlags?{...p.finFlags}:undefined,eclEntries:p.eclEntries?.slice(),eclMaralenUsed:p.eclMaralenUsed?.slice(),eclRestrictedMana:p.eclRestrictedMana?.map(m=>({...m})),
@@ -180,7 +180,7 @@ export function cloneGame(g: GameState): GameState {
     stack: g.stack.map((s) => ({ ...s, targets: s.targets.slice() })),
     eot: g.eot.map((e) => ({ ...e })),
     pending: g.pending.slice(),
-    extraTurns:g.extraTurns?.slice(),playerControl:g.playerControl?{...g.playerControl}:undefined,extraCombat:g.extraCombat?{...g.extraCombat}:undefined,delayed:g.delayed?.map(d=>({...d})),
+    orbitShields:g.orbitShields?.map(s=>({...s})),extraTurns:g.extraTurns?.slice(),playerControl:g.playerControl?{...g.playerControl}:undefined,extraCombat:g.extraCombat?{...g.extraCombat}:undefined,delayed:g.delayed?.map(d=>({...d})),
     log: [],
     shows: [],
     sim: true,
@@ -206,7 +206,7 @@ export function log(g: GameState, text: string, player?: PID, kind: LogEntry['ki
 
 /** Copy effects copy earlier copy effects, while ignoring counters and later power/type changes. */
 export function copiableDefinition(c:Card):CardDef {
-  const base=c.copyLayer??c.campusTypeDef??c.campusOriginalDef??c.meadowTypeDef??c.baseDef??c.orbitTypeDef??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.def;
+  const base=c.copyLayer??c.campusTypeDef??c.campusOriginalDef??c.meadowTypeDef??c.baseDef??c.orbitTypeDef??c.orbitFinalBase??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.def;
   return {...base,...(!c.copyLayer&&c.front?{copyFront:c.front}:{})};
 }
 
@@ -483,6 +483,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   if (f.token !== undefined && c.token !== f.token) return false;
   if (f.enteredThisTurn !== undefined && (c.enteredTurn === g.turn) !== f.enteredThisTurn) return false;
   if (f.stunned && c.stun <= 0) return false;
+  if(f.orbitWarp&&!c.def.warp)return false;
   if (f.plusCounters !== undefined && c.counters > 0 !== f.plusCounters) return false;
   if (f.hasCounters !== undefined && (c.counters !== 0 || !!c.charge || !!c.stun || !!c.hexproofCounters || !!c.finality || !!c.lore || !!c.loyalty||Object.values(c.eclCounters??{}).some(n=>n>0)) !== f.hasCounters) return false;
   if (f.or && !f.or.some((x) => matches(g, x, c, pov, sourceId))) return false;
