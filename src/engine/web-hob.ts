@@ -350,7 +350,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             let attached = false;
             for (let i = 1; i < ctx.targets.length; i++) {
                 const c = target('T' + i as 'T0');
-                if (c?.zone === 'battlefield' && c.def.subtypes?.includes('Equipment')) {
+                if (c?.zone === 'battlefield' && c.def.subtypes?.includes('Equipment') && c.attachedTo !== body.id) {
                     c.attachedTo = body.id;
                     attached = true;
                 }
@@ -451,7 +451,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
         }
         case 'bolgDamage':
             if (t) {
-                const needed = Math.max(0, stats(g, t).t - t.damage), n = dealDamage(g, src, p, { c: t.id }, ef.n ?? 0), excess = Math.max(0, n - needed);
+                const remaining = Math.max(0, stats(g, t).t - t.damage), needed = stats(g, src).kw.has('deathtouch') ? Math.min(1, remaining) : remaining, n = dealDamage(g, src, p, { c: t.id }, ef.n ?? 0), excess = Math.max(0, n - needed);
                 if (excess)
                     yield* run([{ e: 'amass', n: excess }]);
             }

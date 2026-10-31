@@ -88,3 +88,65 @@ describe('complete SPM and HOB', () => {
     it('the Trolls return as an artifact without causing creature-entry triggers',()=>{const g=mk();put(g,0,'aunt-may');const c=put(g,0,slug('Tom, Bert, and William'));sacrifice(g,c);settleAll(g);expect(c.zone).toBe('battlefield');expect(c.def.types).toEqual(['Artifact']);expect(g.players[0].life).toBe(20);sacrifice(g,c);settleAll(g);expect(c.zone).toBe('graveyard');});
 
 });
+
+describe('SPM/HOB source-effect review regressions', () => {
+    it('Thorin does not retrigger damage when the Equipment is already attached there', () => {
+        const g = mk(), source = put(g, 0, 'thorin-mountain-king'), body = put(g, 0, 'city-pigeon'), eq = put(g, 0, 'short-bow');
+        eq.attachedTo = body.id;
+        run(g, source, [E('hob:final:114')], [{ c: body.id }, { c: eq.id }]);
+        expect(g.pending).toHaveLength(0);
+        eq.attachedTo = source.id;
+        run(g, source, [E('hob:final:114')], [{ c: body.id }, { c: eq.id }]);
+        expect(eq.attachedTo).toBe(body.id);
+        expect(g.pending).toHaveLength(1);
+    });
+    it('Rhino Rampage cannot trigger excess damage when damage is prevented', () => {
+        const g = mk(), source = put(g, 0, 'rhinos-rampage'), a = put(g, 0, 'armament-dragon'), b = put(g, 1, 'anti-venom-horrifying-healer');
+        run(g, source, [E('spm:final:141')], [{ c: a.id }, { c: b.id }]);
+        expect(b.damage).toBe(0);
+        expect(g.pending).toHaveLength(0);
+    });
+    it('Rhino Rampage uses actual damage and deathtouch to determine excess', () => {
+        const g = mk(), source = put(g, 0, 'rhinos-rampage'), a = put(g, 0, 'armament-dragon'), b = put(g, 1, 'armament-dragon');
+        a.permanentGrants = [{ p: 0, t: 0, kw: ['deathtouch'] }];
+        run(g, source, [E('spm:final:141')], [{ c: a.id }, { c: b.id }]);
+        expect(b.damage).toBe(stats(g, a).p);
+        expect(g.pending).toHaveLength(1);
+    });
+    it('Bolg amasses only excess damage after accounting for deathtouch', () => {
+        const g = mk(), source = put(g, 0, 'bolg-of-the-north'), victim = put(g, 1, 'armament-dragon');
+        source.permanentGrants = [{ p: 0, t: 0, kw: ['deathtouch'] }];
+        run(g, source, [{ e: 'frontier', action: 'hob:final:bolgDamage', n: 3 }], [{ c: victim.id }]);
+        const army = g.battlefield.map(id => g.cards[id]).find(c => c.def.subtypes?.includes('Army'));
+        expect(army?.counters).toBe(2);
+    });
+    it('Biotech Specialist sacrifice damage targets an opponent and can be responded to', () => {
+        const g = mk(), source = put(g, 0, 'biotech-specialist'), artifact = put(g, 0, 'hot-dog-cart');
+        sacrifice(g, artifact);
+        const trigger = g.pending.find(t => t.source === source.id);
+        expect(trigger?.ability.targets?.[0].kind).toBe('opponent');
+        expect(g.players[1].life).toBe(20);
+        settleAll(g);
+        expect(g.players[1].life).toBe(18);
+    });
+    it('Mister Negative exchange emits both life events and draws for actual life lost', () => {
+        const g = mk(), source = put(g, 0, 'mister-negative');
+        put(g, 0, 'the-master-of-lake-town');
+        g.players[0].life = 20; g.players[1].life = 15;
+        const hand = g.players[0].hand.length;
+        run(g, source, [E('spm:final:135')], [{ p: 1 }]);
+        expect(g.players.map(p => p.life)).toEqual([15, 20]);
+        expect(g.players[0].lifeLostThisTurn).toBe(5);
+        expect(g.players[1].lifeGainedThisTurn).toBe(5);
+        expect(g.players[0].hand).toHaveLength(hand + 5);
+        expect(g.pending.some(t => t.ev.type === 'lifeloss')).toBe(true);
+    });
+    it('Mister Negative cannot exchange life when the required gain is prohibited', () => {
+        const g = mk(), source = put(g, 0, 'mister-negative');
+        g.players[0].life = 20; g.players[1].life = 15; g.players[1].cantGainLife = true;
+        const hand = g.players[0].hand.length;
+        run(g, source, [E('spm:final:135')], [{ p: 1 }]);
+        expect(g.players.map(p => p.life)).toEqual([20, 15]);
+        expect(g.players[0].hand).toHaveLength(hand);
+    });
+});

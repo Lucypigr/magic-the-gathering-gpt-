@@ -2,7 +2,7 @@ import { webNoCounter } from './web-shire-support';
 import { finalContext, finalLook } from './orbit-final-common';
 import { webAddTypes, webForm, webCopy, webDig, webMillPick } from './web-shire';
 import { copiableDefinition, isCreature, shuffleArr, stats } from './state';
-import { moveCard, enterBattlefield, putCounters, drawCards, discardMany, sacrifice, tapCard, dealDamage, loseLife } from './zones';
+import { moveCard, enterBattlefield, putCounters, drawCards, discardMany, sacrifice, tapCard, dealDamage, loseLife, gainLife } from './zones';
 import { resolveRef, type Ctx } from './effects';
 import { freeCast } from './tla';
 import { frontierFlags } from './frontier-support';
@@ -327,12 +327,17 @@ export function* webSpmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             break;
         case '135':
             if (yield* yes('交換生命總量？')) {
-                const old = player.life, amount = g.players[them].life;
-                player.life = amount;
-                g.players[them].life = old;
-                if (old > amount) {
-                    player.lifeLostThisTurn += old - amount;
-                    drawCards(g, p, old - amount);
+                const old = player.life, amount = g.players[them].life, delta = amount - old;
+                if (delta !== 0) {
+                    const recipient = delta > 0 ? p : them, loser = delta > 0 ? them : p;
+                    const before = g.players[recipient].life;
+                    gainLife(g, recipient, Math.abs(delta));
+                    // An exchange cannot happen if either player cannot make the change.
+                    if (g.players[recipient].life === before)
+                        break;
+                    loseLife(g, loser, Math.abs(delta));
+                    if (player.life < old)
+                        drawCards(g, p, old - player.life);
                 }
             }
             break;
@@ -341,10 +346,12 @@ export function* webSpmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             break;
         case '141': {
             const a = target('T0'), b = target('T1');
-            if (a && b) {
-                const needed = Math.max(0, stats(g, b).t - b.damage), n = stats(g, a).p;
-                yield* run([{ e: 'fight', a: 'T0', b: 'T1' }]);
-                if (n > needed)
+            if (a?.zone === 'battlefield' && b?.zone === 'battlefield' && isCreature(a) && isCreature(b)) {
+                const sa = stats(g, a), sb = stats(g, b);
+                const needed = sa.kw.has('deathtouch') ? Math.min(1, Math.max(0, sb.t - b.damage)) : Math.max(0, sb.t - b.damage);
+                const dealt = dealDamage(g, a, a.controller, { c: b.id }, sa.p);
+                dealDamage(g, b, b.controller, { c: a.id }, sb.p);
+                if (dealt > needed)
                     reflex([{ e: 'destroy', what: 'T0' }], [{ kind: 'permanent', optional: true, filter: { type: 'Artifact', nonType: 'Creature', mvMax: 3 } }]);
             }
             break;

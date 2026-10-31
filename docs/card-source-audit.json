@@ -1,0 +1,1660 @@
+{
+  "sets": [
+    {
+      "set": "BLB",
+      "total": 274,
+      "found": 274
+    },
+    {
+      "set": "DFT",
+      "total": 271,
+      "found": 271
+    },
+    {
+      "set": "DSK",
+      "total": 271,
+      "found": 271
+    },
+    {
+      "set": "ECL",
+      "total": 268,
+      "found": 268
+    },
+    {
+      "set": "EOE",
+      "total": 261,
+      "found": 261
+    },
+    {
+      "set": "FDN",
+      "total": 512,
+      "found": 512
+    },
+    {
+      "set": "FIN",
+      "total": 306,
+      "found": 306
+    },
+    {
+      "set": "HOB",
+      "total": 188,
+      "found": 188
+    },
+    {
+      "set": "LCI",
+      "total": 286,
+      "found": 286
+    },
+    {
+      "set": "MKM",
+      "total": 271,
+      "found": 271
+    },
+    {
+      "set": "MSH",
+      "total": 276,
+      "found": 276
+    },
+    {
+      "set": "OTJ",
+      "total": 271,
+      "found": 271
+    },
+    {
+      "set": "SOS",
+      "total": 266,
+      "found": 266
+    },
+    {
+      "set": "SPM",
+      "total": 188,
+      "found": 188
+    },
+    {
+      "set": "TDM",
+      "total": 271,
+      "found": 271
+    },
+    {
+      "set": "TLA",
+      "total": 281,
+      "found": 281
+    },
+    {
+      "set": "TMT",
+      "total": 190,
+      "found": 190
+    },
+    {
+      "set": "WOE",
+      "total": 276,
+      "found": 276
+    }
+  ],
+  "printings": 4927,
+  "basicDifferences": [],
+  "localizedSummaries": [
+    {
+      "set": "TLA",
+      "name": "Aang's Journey",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Energybending",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Zuko's Exile",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Aang, the Last Airbender",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Aang's Iceberg",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Airbender Ascension",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Airbender's Reversal",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Airbending Lesson",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Appa, Loyal Sky Bison",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Appa, Steadfast Guardian",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Avatar Enthusiasts",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Avatar's Wrath",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Compassionate Healer",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Curious Farm Animals",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Destined Confrontation",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earth Kingdom Jailer",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earth Kingdom Protectors",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Enter the Avatar State",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fancy Footwork",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Gather the White Lotus",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Glider Kids",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Glider Staff",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Hakoda, Selfless Commander",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Invasion Reinforcements",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Jeong Jeong's Deserters",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Kyoshi Warriors",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Legend of Yangchen",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Master Piandao",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Momo, Friendly Flier",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Momo, Playful Pet",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Path to Redemption",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Rabaroo Troop",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Razor Rings",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sandbenders' Storm",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "South Pole Voyager",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Southern Air Temple",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Suki, Courageous Rescuer",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Team Avatar",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "United Front",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Vengeful Villagers",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Water Tribe Captain",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Water Tribe Rallier",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Yip Yip!",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Accumulate Wisdom",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Benevolent River Spirit",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Boomerang Basics",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Crashing Wave",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ember Island Production",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "First-Time Flyer",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Flexible Waterbender",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Forecasting Fortune Teller",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Geyser Leaper",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Giant Koi",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Gran-Gran",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Honest Work",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Iguana Parrot",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Invasion Submersible",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "It'll Quench Ya!",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Katara, Bending Prodigy",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Knowledge Seeker",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Legend of Kuruk",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Lost Days",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Master Pakku",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Mechanist, Aerial Artisan",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "North Pole Patrol",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Octopus Form",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Otter-Penguin",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Rowdy Snowballers",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Secret of Bloodbending",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Serpent of the Pass",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sokka's Haiku",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Spirit Oasis",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Spirit Water Revival",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Teo, Spirited Glider",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Tiger-Seal",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ty Lee, Chi Blocker",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Unagi of Kyoshi Island",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Wan Shi Tong, Librarian",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Waterbender Ascension",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Waterbending Lesson",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Waterbending Scroll",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Watery Grasp",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Yue, the Moon Spirit",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Azula Always Lies",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Azula, On the Hunt",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Beetle-Headed Merchants",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Boiling Rock Rioter",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Buzzard-Wasp Colony",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Callous Inspector",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Canyon Crawler",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Cat-Gator",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Corrupt Court Official",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Dai Li Indoctrination",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Day of Black Sun",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Deadly Precision",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Epic Downfall",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fatal Fissure",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Fire Nation Drill",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Nation Engineer",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Navy Trebuchet",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Foggy Swamp Hunters",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Foggy Swamp Visions",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Heartless Act",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Hog-Monkey",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Joo Dee, One of Many",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "June, Bounty Hunter",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Koh, the Face Stealer",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Lo and Li, Twin Tutors",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Mai, Scornful Striker",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Merchant of Many Hats",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Northern Air Temple",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Obsessive Pursuit",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ozai's Cruelty",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Phoenix Fleet Airship",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Pirate Peddlers",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Raven Eagle",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Rise of Sozin",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ruinous Waterbending",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sold Out",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Swampsnare Trap",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Tundra Tank",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Wolfbat",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Zuko's Conviction",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Boar-q-pine",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Bumi Bash",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Cave of Two Lovers",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Combustion Man",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Combustion Technique",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Crescent Island Temple",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Cunning Maneuver",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Deserter's Disciple",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fated Firepower",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Nation Attacks",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Nation Cadets",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Nation Raider",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Sages",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Firebender Ascension",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Firebending Lesson",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Firebending Student",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "How to Start a Riot",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Iroh's Demonstration",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Jeong Jeong, the Deserter",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Jet's Brainwashing",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Last Agni Kai",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Legend of Roku",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Mai, Jaded Edge",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Mongoose Lizard",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Price of Freedom",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ran and Shaw",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Redirect Lightning",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Rough Rhino Cavalry",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Solstice Revelations",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sozin's Comet",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Tiger-Dillo",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Treetop Freedom Fighters",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Twin Blades",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ty Lee, Artful Acrobat",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "War Balloon",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Wartime Protestors",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Yuyan Archers",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Zhao, the Moon Slayer",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Zuko, Exiled Prince",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Allies at Last",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Avatar Destiny",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Badgermole",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Badgermole Cub",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Boulder, Ready to Rumble",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Bumi, King of Three Trials",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Cycle of Renewal",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Diligent Zookeeper",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Earth King",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earth Kingdom General",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earth Rumble",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earthbender Ascension",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earthbending Lesson",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earthen Ally",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Elemental Teachings",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Flopsie, Bumi's Buddy",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Foggy Swamp Vinebender",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Great Divide Guide",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Haru, Hidden Talent",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Invasion Tactics",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Kyoshi Island Plaza",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Leaves from the Vine",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Legend of Kyoshi",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Origin of Metalbending",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ostrich-Horse",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Pillar Launch",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Raucous Audience",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Rebellious Captives",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Rockalanche",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Rocky Rebuke",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Saber-Tooth Moose-Lion",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Seismic Sense",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Shared Roots",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sparring Dummy",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Toph, the Blind Bandit",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "True Ancestry",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Turtle-Duck",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Unlucky Cabbage Merchant",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Walltop Sentries",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Aang, at the Crossroads",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Aang, Swift Savior",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Abandon Attachments",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Air Nomad Legacy",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Avatar Aang",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Azula, Cunning Usurper",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Beifong's Bounty Hunters",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Bitter Work",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Bumi, Unleashed",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Cat-Owl",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Cruel Administrator",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Dai Li Agents",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Dragonfly Swarm",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earth Kingdom Soldier",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earth King's Lieutenant",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earth Rumble Wrestlers",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Earth Village Ruffians",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Lord Azula",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Lord Zuko",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Foggy Swamp Spirit Keeper",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Guru Pathik",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Hama, the Bloodbender",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Hei Bai, Spirit of Balance",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Hermitic Herbalist",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Iroh, Grand Lotus",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Iroh, Tea Master",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Jet, Freedom Fighter",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Katara, the Fearless",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Katara, Water Tribe's Hope",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Lion-Turtle",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Long Feng, Grand Secretariat",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Messenger Hawk",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ozai, the Phoenix King",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Platypus-Bear",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Pretending Poxbearers",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Professor Zei, Anthropologist",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sandbender Scavengers",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sokka, Bold Boomeranger",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sokka, Lateral Strategist",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sokka, Tenacious Tactician",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Suki, Kyoshi Warrior",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sun Warriors",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Tolls of War",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Toph, Hardheaded Teacher",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Toph, the First Metalbender",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Uncle Iroh",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Vindictive Warden",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Wandering Musicians",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "White Lotus Reinforcements",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Zhao, Ruthless Admiral",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Zuko, Conflicted",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Barrels of Blasting Jelly",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Bender's Waterskin",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Nation Warship",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Kyoshi Battle Fan",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Meteor Sword",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Planetarium of Wan Shi Tong",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Trusty Boomerang",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "The Walls of Ba Sing Se",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "White Lotus Tile",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Abandoned Air Temple",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Agna Qel'a",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Airship Engine Room",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Ba Sing Se",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Boiling Rock Prison",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Fire Nation Palace",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Foggy Bottom Swamp",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Jasmine Dragon Tea Shop",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Kyoshi Village",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Meditation Pools",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Misty Palms Oasis",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "North Pole Gates",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Omashu City",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Realm of Koh",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Rumble Arena",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Secret Tunnel",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Serpent's Pass",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "Sun-Blessed Peak",
+      "definitionSet": "TLA"
+    },
+    {
+      "set": "TLA",
+      "name": "White Lotus Hideout",
+      "definitionSet": "TLA"
+    }
+  ],
+  "wordingDifferences": [
+    {
+      "set": "DSK",
+      "name": "Terramorphic Expanse",
+      "definitionSet": "SOS",
+      "field": "text",
+      "expected": "{T}, Sacrifice Terramorphic Expanse: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "actual": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle."
+    },
+    {
+      "set": "FDN",
+      "name": "Banishing Light",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "When Banishing Light enters, exile target nonland permanent an opponent controls until Banishing Light leaves the battlefield.",
+      "actual": "When this enchantment enters, exile target nonland permanent an opponent controls until this enchantment leaves the battlefield."
+    },
+    {
+      "set": "FDN",
+      "name": "Mischievous Pup",
+      "definitionSet": "LCI",
+      "field": "text",
+      "expected": "Flash\nWhen Mischievous Pup enters, return up to one other target permanent you control to its owner's hand.",
+      "actual": "Flash (You may cast this spell any time you could cast an instant.)\nWhen this creature enters, return up to one other target permanent you control to its owner's hand."
+    },
+    {
+      "set": "FDN",
+      "name": "Lightshell Duo",
+      "definitionSet": "BLB",
+      "field": "text",
+      "expected": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen Lightshell Duo enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+      "actual": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)"
+    },
+    {
+      "set": "FDN",
+      "name": "Bloodfell Caves",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Bloodfell Caves enters tapped.\nWhen Bloodfell Caves enters, you gain 1 life.\n{T}: Add {B} or {R}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {B} or {R}."
+    },
+    {
+      "set": "FDN",
+      "name": "Blossoming Sands",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Blossoming Sands enters tapped.\nWhen Blossoming Sands enters, you gain 1 life.\n{T}: Add {G} or {W}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {G} or {W}."
+    },
+    {
+      "set": "FDN",
+      "name": "Dismal Backwater",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Dismal Backwater enters tapped.\nWhen Dismal Backwater enters, you gain 1 life.\n{T}: Add {U} or {B}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {B}."
+    },
+    {
+      "set": "FDN",
+      "name": "Jungle Hollow",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Jungle Hollow enters tapped.\nWhen Jungle Hollow enters, you gain 1 life.\n{T}: Add {B} or {G}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {B} or {G}."
+    },
+    {
+      "set": "FDN",
+      "name": "Rugged Highlands",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Rugged Highlands enters tapped.\nWhen Rugged Highlands enters, you gain 1 life.\n{T}: Add {R} or {G}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {G}."
+    },
+    {
+      "set": "FDN",
+      "name": "Scoured Barrens",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Scoured Barrens enters tapped.\nWhen Scoured Barrens enters, you gain 1 life.\n{T}: Add {W} or {B}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {B}."
+    },
+    {
+      "set": "FDN",
+      "name": "Swiftwater Cliffs",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Swiftwater Cliffs enters tapped.\nWhen Swiftwater Cliffs enters, you gain 1 life.\n{T}: Add {U} or {R}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {U} or {R}."
+    },
+    {
+      "set": "FDN",
+      "name": "Thornwood Falls",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Thornwood Falls enters tapped.\nWhen Thornwood Falls enters, you gain 1 life.\n{T}: Add {G} or {U}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {G} or {U}."
+    },
+    {
+      "set": "FDN",
+      "name": "Tranquil Cove",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Tranquil Cove enters tapped.\nWhen Tranquil Cove enters, you gain 1 life.\n{T}: Add {W} or {U}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {W} or {U}."
+    },
+    {
+      "set": "FDN",
+      "name": "Wind-Scarred Crag",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Wind-Scarred Crag enters tapped.\nWhen Wind-Scarred Crag enters, you gain 1 life.\n{T}: Add {R} or {W}.",
+      "actual": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {W}."
+    },
+    {
+      "set": "FDN",
+      "name": "Eaten by Piranhas",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "Flash\nEnchant creature\nEnchanted creature loses all abilities and is a black Skeleton creature with base power and toughness 1/1. (It loses all other card types and creature types.)",
+      "actual": "Flash (You may cast this spell any time you could cast an instant.)\nEnchant creature\nEnchanted creature loses all abilities and is a black Skeleton creature with base power and toughness 1/1. (It loses all other colors, card types, and creature types.)"
+    },
+    {
+      "set": "FDN",
+      "name": "Thrashing Brontodon",
+      "definitionSet": "LCI",
+      "field": "text",
+      "expected": "{1}, Sacrifice Thrashing Brontodon: Destroy target artifact or enchantment.",
+      "actual": "{1}, Sacrifice this creature: Destroy target artifact or enchantment."
+    },
+    {
+      "set": "FDN",
+      "name": "Uncharted Haven",
+      "definitionSet": "BLB",
+      "field": "text",
+      "expected": "Uncharted Haven enters tapped.\nAs Uncharted Haven enters, choose a color.\n{T}: Add one mana of the chosen color.",
+      "actual": "This land enters tapped. As it enters, choose a color.\n{T}: Add one mana of the chosen color."
+    },
+    {
+      "set": "FDN",
+      "name": "Sorcerous Spyglass",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "As Sorcerous Spyglass enters, look at an opponent's hand, then choose any card name.\nActivated abilities of sources with the chosen name can't be activated unless they're mana abilities.",
+      "actual": "As this artifact enters, look at an opponent's hand, then choose any card name.\nActivated abilities of sources with the chosen name can't be activated unless they're mana abilities."
+    },
+    {
+      "set": "TDM",
+      "name": "Snakeskin Veil",
+      "definitionSet": "META",
+      "field": "text",
+      "expected": "Put a +1/+1 counter on target creature you control. It gains hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+      "actual": "Put a +1/+1 counter on target creature you control. It gains hexproof until end of turn."
+    },
+    {
+      "set": "TDM",
+      "name": "Evolving Wilds",
+      "definitionSet": "FDN",
+      "field": "text",
+      "expected": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "actual": "{T}, Sacrifice Evolving Wilds: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle."
+    }
+  ]
+}

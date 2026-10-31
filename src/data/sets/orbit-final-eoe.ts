@@ -140,5 +140,6 @@ export function finishEoe(builder: ReturnType<typeof setBuilder>) {
     for (const [n, colors] of [[251, ['G', 'U']], [254, ['W', 'B']], [256, ['R', 'W']], [258, ['R', 'G']], [261, ['U', 'B']]] as const)
         d(n, { produces: [...colors], ecl: { asEnters: 'shock' }, abilities: [] });
     d(252, { etbTapped: true, produces: ['W', 'U', 'B', 'R', 'G'], abilities: [etb([E('commandTap')])] });
-    d(257, { produces: ['C'], abilities: [act({ mana: '{2}', tap: true }, [E(257)], '橫置神器並強化生物', { sorcery: true, orbitTapArtifacts: true, targets: [CR] }), act({ mana: '{5}', tap: true }, [robot()], '派出機器人')] });
+    d(257, { produces: ['C'], abilities: [act({ mana: '{2}', tap: true }, [E(257)], '橫置神器並強化生物', { sorcery: true, orbitTapArtifacts: true, targets: [CR] }), act({ mana: '{5}', tap: true }, [robot()], '派出機器人')] });    a(214, [etb([token('tok-lander')]), trig('sacrifice', [{ e: 'damage', n: 2, to: 'T0' }], { filter: { type: 'Artifact', ctrl: 'you' }, targets: [spec('opponent')] })]);
+
 }
