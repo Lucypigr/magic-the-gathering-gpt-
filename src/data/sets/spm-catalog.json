@@ -1,0 +1,4311 @@
+[
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Symbiote",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Anti-Venom, Horrifying Healer",
+    "cost": "{W}{W}{W}{W}{W}",
+    "text": "When Anti-Venom enters, if he was cast, return target creature card from your graveyard to the battlefield.\nIf damage would be dealt to Anti-Venom, prevent that damage and put that many +1/+1 counters on him.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 1,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Arachne, Psionic Weaver",
+    "cost": "{2}{W}",
+    "text": "Web-slinging {W} (You may cast this spell for {W} if you also return a tapped creature you control to its owner's hand.)\nAs Arachne enters, look at an opponent's hand, then choose a card type other than creature.\nSpells of the chosen type cost {1} more to cast.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 2,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Aunt May",
+    "cost": "{W}",
+    "text": "Whenever another creature you control enters, you gain 1 life. If it's a Spider, put a +1/+1 counter on it.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 3,
+    "power": 0,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "City Pigeon",
+    "cost": "{W}",
+    "text": "Flying\nWhen this creature leaves the battlefield, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 4,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Costume Closet",
+    "cost": "{1}{W}",
+    "text": "This artifact enters with two +1/+1 counters on it.\n{T}: Move a +1/+1 counter from this artifact onto target creature you control. Activate only as a sorcery.\nWhenever a modified creature you control leaves the battlefield, put a +1/+1 counter on this artifact. (Equipment, Auras you control, and counters are modifications.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Daily Bugle Reporters",
+    "cost": "{3}{W}",
+    "text": "When this creature enters, choose one —\n• Puff Piece — Put a +1/+1 counter on each of up to two target creatures.\n• Investigative Journalism — Return target creature card with mana value 2 or less from your graveyard to your hand.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 6,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Flash Thompson, Spider-Fan",
+    "cost": "{1}{W}",
+    "text": "Flash\nWhen Flash Thompson enters, choose one or both —\n• Heckle — Tap target creature.\n• Hero Worship — Untap target creature.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 7,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Friendly Neighborhood",
+    "cost": "{3}{W}",
+    "text": "Enchant land\nWhen this Aura enters, create three 1/1 green and white Human Citizen creature tokens.\nEnchanted land has \"{1}, {T}: Target creature gets +1/+1 until end of turn for each creature you control. Activate only as a sorcery.\"",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 8,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Origin of Spider-Man",
+    "cost": "{1}{W}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Create a 2/1 green Spider creature token with reach.\nII — Put a +1/+1 counter on target creature you control. It becomes a legendary Spider Hero in addition to its other types.\nIII — Target creature you control gains double strike until end of turn.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 9,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Peter Parker",
+    "cost": "{1}{W}",
+    "text": "When Peter Parker enters, create a 2/1 green Spider creature token with reach.\n{1}{G}{W}{U}: Transform Peter Parker. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 10,
+    "power": 0,
+    "toughness": 1,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Spider",
+        "Human",
+        "Hero"
+      ],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "G",
+        "U",
+        "W"
+      ],
+      "name": "Amazing Spider-Man",
+      "cost": "{1}{G}{W}{U}",
+      "text": "Vigilance, reach\nEach legendary spell you cast that's one or more colors has web-slinging {G}{W}{U}. (You may cast a spell for its web-slinging cost if you also return a tapped creature you control to its owner's hand.)",
+      "set": "SPM",
+      "rarity": "M",
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "vigilance",
+        "reach"
+      ]
+    },
+    "imageName": "Peter Parker // Amazing Spider-Man",
+    "mdfc": true
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Rent Is Due",
+    "cost": "{W}",
+    "text": "At the beginning of your end step, you may tap two untapped creatures and/or Treasures you control. If you do, draw a card. Otherwise, sacrifice this enchantment.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 11,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Detective"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Selfless Police Captain",
+    "cost": "{1}{W}",
+    "text": "This creature enters with a +1/+1 counter on it.\nWhen this creature leaves the battlefield, put its +1/+1 counters on target creature you control.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 12,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Silver Sable, Mercenary Leader",
+    "cost": "{2}{W}",
+    "text": "When Silver Sable enters, put a +1/+1 counter on another target creature.\nWhenever Silver Sable attacks, target modified creature you control gains lifelink until end of turn. (Equipment, Auras you control, and counters are modifications.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 13,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Spectacular Spider-Man",
+    "cost": "{1}{W}",
+    "text": "Flash\n{1}: Spectacular Spider-Man gains flying until end of turn.\n{1}, Sacrifice Spectacular Spider-Man: Creatures you control gain hexproof and indestructible until end of turn.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 14,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Spectacular Tactics",
+    "cost": "{1}{W}",
+    "text": "Choose one —\n• Put a +1/+1 counter on target creature you control. It gains hexproof until end of turn.\n• Destroy target creature with power 4 or greater.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 15,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Spider-Man, Web-Slinger",
+    "cost": "{2}{W}",
+    "text": "Web-slinging {W} (You may cast this spell for {W} if you also return a tapped creature you control to its owner's hand.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 16,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Spider-UK",
+    "cost": "{3}{W}",
+    "text": "Web-slinging {2}{W} (You may cast this spell for {2}{W} if you also return a tapped creature you control to its owner's hand.)\nAt the beginning of your end step, if two or more creatures entered the battlefield under your control this turn, you draw a card and gain 2 life.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 17,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Starling, Aerial Ally",
+    "cost": "{4}{W}",
+    "text": "Flying\nWhen Starling enters, another target creature you control gains flying until end of turn.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 18,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Sudden Strike",
+    "cost": "{1}{W}",
+    "text": "Destroy target attacking or blocking creature.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 19,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Thwip!",
+    "cost": "{W}",
+    "text": "Target creature gets +2/+2 and gains flying until end of turn. If it's a Spider, you gain 2 life.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 20,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Web Up",
+    "cost": "{2}{W}",
+    "text": "When this enchantment enters, exile target nonland permanent an opponent controls until this enchantment leaves the battlefield.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 21,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Web-Shooters",
+    "cost": "{1}{W}",
+    "text": "Equipped creature gets +1/+1 and has reach and \"Whenever this creature attacks, tap target creature an opponent controls.\"\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 22,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Wild Pack Squad",
+    "cost": "{2}{W}",
+    "text": "At the beginning of combat on your turn, up to one target creature gains first strike and vigilance until end of turn.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 23,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "With Great Power . . .",
+    "cost": "{3}{W}",
+    "text": "Enchant creature you control\nEnchanted creature gets +2/+2 for each Aura and Equipment attached to it.\nAll damage that would be dealt to you is dealt to enchanted creature instead.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 24,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Amazing Acrobatics",
+    "cost": "{1}{U}{U}",
+    "text": "Choose one or both —\n• Counter target spell.\n• Tap one or two target creatures.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 25,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Beetle, Legacy Criminal",
+    "cost": "{3}{U}",
+    "text": "Flying\n{1}{U}, Exile this card from your graveyard: Put a +1/+1 counter on target creature. It gains flying until end of turn. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 26,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Shapeshifter",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Chameleon, Master of Disguise",
+    "cost": "{3}{U}",
+    "text": "You may have Chameleon enter as a copy of a creature you control, except his name is Chameleon, Master of Disguise.\nMayhem {2}{U} (You may cast this card from your graveyard for {2}{U} if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 27,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "The Clone Saga",
+    "cost": "{3}{U}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Surveil 3.\nII — When you next cast a creature spell this turn, copy it, except the copy isn't legendary.\nIII — Choose a card name. Whenever a creature with the chosen name deals combat damage to a player this turn, draw a card.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 28,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Doc Ock, Sinister Scientist",
+    "cost": "{4}{U}",
+    "text": "As long as there are eight or more cards in your graveyard, Doc Ock has base power and toughness 8/8.\nAs long as you control another Villain, Doc Ock has hexproof. (He can't be the target of spells or abilities your opponents control.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 29,
+    "power": 4,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Doc Ock's Henchmen",
+    "cost": "{2}{U}",
+    "text": "Flash\nWhenever this creature attacks, it connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 30,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Flying Octobot",
+    "cost": "{1}{U}",
+    "text": "Flying\nWhenever another Villain you control enters, put a +1/+1 counter on this creature. This ability triggers only once each turn.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 31,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Hide on the Ceiling",
+    "cost": "{X}{U}",
+    "text": "Exile X target artifacts and/or creatures. Return the exiled cards to the battlefield under their owners' control at the beginning of the next end step.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 32,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Hydro-Man, Fluid Felon",
+    "cost": "{U}{U}",
+    "text": "Whenever you cast a blue spell, if Hydro-Man is a creature, he gets +1/+1 until end of turn.\nAt the beginning of your end step, untap Hydro-Man. Until your next turn, he becomes a land and gains \"{T}: Add {U}.\" (He's not a creature during that time.)",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 33,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Impostor Syndrome",
+    "cost": "{4}{U}{U}",
+    "text": "Whenever a nontoken creature you control deals combat damage to a player, create a token that's a copy of it, except it isn't legendary.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 34,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Lady Octopus, Inspired Inventor",
+    "cost": "{U}",
+    "text": "Whenever you draw your first or second card each turn, put an ingenuity counter on Lady Octopus.\n{T}: You may cast an artifact spell from your hand with mana value less than or equal to the number of ingenuity counters on Lady Octopus without paying its mana cost.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 35,
+    "power": 0,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Madame Web, Clairvoyant",
+    "cost": "{4}{U}{U}",
+    "text": "You may look at the top card of your library any time.\nYou may cast Spider spells and noncreature spells from the top of your library.\nWhenever you attack, you may mill a card. (You may put the top card of your library into your graveyard.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 36,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Mysterio, Master of Illusion",
+    "cost": "{3}{U}",
+    "text": "When Mysterio enters, create a 3/3 blue Illusion Villain creature token for each nontoken Villain you control. Exile those tokens when Mysterio leaves the battlefield.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 37,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Illusion",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mysterio's Phantasm",
+    "cost": "{1}{U}",
+    "text": "Flying, vigilance\nWhenever this creature attacks, mill a card. (Put the top card of your library into your graveyard.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 38,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Norman Osborn",
+    "cost": "{1}{U}",
+    "text": "Norman Osborn can't be blocked.\nWhenever Norman Osborn deals combat damage to a player, he connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)\n{1}{U}{B}{R}: Transform Norman Osborn. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 39,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Goblin",
+        "Human",
+        "Villain"
+      ],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "B",
+        "R",
+        "U"
+      ],
+      "name": "Green Goblin",
+      "cost": "{1}{U}{B}{R}",
+      "text": "Flying, menace\nSpells you cast from your graveyard cost {2} less to cast.\nGoblin Formula — Each nonland card in your graveyard has mayhem. The mayhem cost is equal to its mana cost. (You may cast a card from your graveyard for its mayhem cost if you discarded it this turn. Timing rules still apply.)",
+      "set": "SPM",
+      "rarity": "M",
+      "power": 3,
+      "toughness": 3,
+      "keywords": [
+        "flying",
+        "menace"
+      ]
+    },
+    "imageName": "Norman Osborn // Green Goblin",
+    "mdfc": true
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Oscorp Research Team",
+    "cost": "{3}{U}",
+    "text": "{6}{U}: Draw two cards.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 40,
+    "power": 1,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Robotics Mastery",
+    "cost": "{4}{U}",
+    "text": "Flash\nEnchant creature\nWhen this Aura enters, create two 1/1 colorless Robot artifact creature tokens with flying.\nEnchanted creature gets +2/+2.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 41,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "School Daze",
+    "cost": "{3}{U}{U}",
+    "text": "Choose one —\n• Do Homework — Draw three cards.\n• Fight Crime — Counter target spell. Draw a card.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 42,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Secret Identity",
+    "cost": "{U}",
+    "text": "Choose one —\n• Conceal — Until end of turn, target creature you control becomes a Citizen with base power and toughness 1/1 and gains hexproof.\n• Reveal — Until end of turn, target creature you control becomes a Hero with base power and toughness 3/4 and gains flying and vigilance.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 43,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Avatar",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Spider-Byte, Web Warden",
+    "cost": "{2}{U}",
+    "text": "When Spider-Byte enters, return up to one target nonland permanent to its owner's hand.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 44,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Spider-Man No More",
+    "cost": "{1}{U}",
+    "text": "Enchant creature\nEnchanted creature is a Citizen with base power and toughness 1/1. It has defender and loses all other abilities. (It also loses all other creature types.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 45,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Spider-Sense",
+    "cost": "{1}{U}",
+    "text": "Web-slinging {U} (You may cast this spell for {U} if you also return a tapped creature you control to its owner's hand.)\nCounter target instant spell, sorcery spell, or triggered ability.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 46,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Unstable Experiment",
+    "cost": "{1}{U}",
+    "text": "Target player draws a card, then up to one target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 47,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Whoosh!",
+    "cost": "{1}{U}",
+    "text": "Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.)\nReturn target nonland permanent to its owner's hand. If this spell was kicked, draw a card.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 48,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Symbiote",
+      "Soldier",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Agent Venom",
+    "cost": "{2}{B}",
+    "text": "Flash\nMenace\nWhenever another nontoken creature you control dies, you draw a card and lose 1 life.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 49,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flash",
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Alien Symbiosis",
+    "cost": "{1}{B}",
+    "text": "Enchant creature\nEnchanted creature gets +1/+1, has menace, and is a Symbiote in addition to its other types.\nYou may cast this card from your graveyard by discarding a card in addition to paying its other costs.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 50,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Behold the Sinister Six!",
+    "cost": "{6}{B}",
+    "text": "Return up to six target creature cards with different names from your graveyard to the battlefield.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 51,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Black Cat, Cunning Thief",
+    "cost": "{3}{B}{B}",
+    "text": "When Black Cat enters, look at the top nine cards of target opponent's library, exile two of them face down, then put the rest on the bottom of their library in a random order. You may play the exiled cards for as long as they remain exiled. Mana of any type can be spent to cast spells this way.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 52,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Common Crook",
+    "cost": "{1}{B}",
+    "text": "When this creature dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 53,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "The Death of Gwen Stacy",
+    "cost": "{2}{B}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Destroy target creature.\nII — Each player may discard a card. Each player who doesn't loses 3 life.\nIII — Exile any number of target players' graveyards.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 54,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Hero",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Eddie Brock",
+    "cost": "{2}{B}",
+    "text": "When Eddie Brock enters, return target creature card with mana value 1 or less from your graveyard to the battlefield.\n{3}{B}{R}{G}: Transform Eddie Brock. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 55,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Symbiote",
+        "Hero",
+        "Villain"
+      ],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "B",
+        "G",
+        "R"
+      ],
+      "name": "Venom, Lethal Protector",
+      "cost": "{3}{B}{R}{G}",
+      "text": "Menace, trample, haste\nWhenever Venom attacks, you may sacrifice another creature. If you do, draw X cards, then you may put a permanent card with mana value X or less from your hand onto the battlefield, where X is the sacrificed creature's mana value.",
+      "set": "SPM",
+      "rarity": "M",
+      "power": 5,
+      "toughness": 5,
+      "keywords": [
+        "menace",
+        "trample",
+        "haste"
+      ]
+    },
+    "imageName": "Eddie Brock // Venom, Lethal Protector",
+    "mdfc": true
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Symbiote",
+      "Spider",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Gwenom, Remorseless",
+    "cost": "{3}{B}{B}",
+    "text": "Deathtouch, lifelink\nWhenever Gwenom attacks, until end of turn, you may look at the top card of your library any time and you may play cards from the top of your library. If you cast a spell this way, pay life equal to its mana value rather than pay its mana cost.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 56,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "deathtouch",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Inner Demons Gangsters",
+    "cost": "{3}{B}",
+    "text": "Discard a card: This creature gets +1/+0 and gains menace until end of turn. Activate only as a sorcery. (It can't be blocked except by two or more creatures.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 57,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Mercenary",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Merciless Enforcers",
+    "cost": "{1}{B}",
+    "text": "Lifelink\n{3}{B}: This creature deals 1 damage to each opponent.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 58,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Morlun, Devourer of Spiders",
+    "cost": "{X}{B}{B}",
+    "text": "Lifelink\nMorlun enters with X +1/+1 counters on him.\nWhen Morlun enters, he deals X damage to target opponent.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 59,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Parker Luck",
+    "cost": "{2}{B}",
+    "text": "At the beginning of your end step, two target players each reveal the top card of their library. They each lose life equal to the mana value of the card revealed by the other player. Then they each put the card they revealed into their hand.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 60,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Prison Break",
+    "cost": "{4}{B}",
+    "text": "Return target creature card from your graveyard to the battlefield with an additional +1/+1 counter on it.\nMayhem {3}{B} (You may cast this card from your graveyard for {3}{B} if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 61,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Risky Research",
+    "cost": "{2}{B}",
+    "text": "Surveil 2, then draw two cards. You lose 2 life. (To surveil 2, look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 62,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Sandman's Quicksand",
+    "cost": "{1}{B}{B}",
+    "text": "Mayhem {3}{B} (You may cast this card from your graveyard for {3}{B} if you discarded it this turn. Timing rules still apply.)\nAll creatures get -2/-2 until end of turn. If this spell's mayhem cost was paid, creatures your opponents control get -2/-2 until end of turn instead.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 63,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Scorpion",
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Scorpion, Seething Striker",
+    "cost": "{3}{B}",
+    "text": "Deathtouch\nAt the beginning of your end step, if a creature died this turn, target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 64,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Scorpion's Sting",
+    "cost": "{1}{B}",
+    "text": "Target creature gets -3/-3 until end of turn.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 65,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Infinity",
+      "Stone"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "The Soul Stone",
+    "cost": "{1}{B}",
+    "text": "Indestructible\n{T}: Add {B}.\n{6}{B}, {T}, Exile a creature you control: Harness The Soul Stone. (Once harnessed, its ∞ ability is active.)\n∞ — At the beginning of your upkeep, return target creature card from your graveyard to the battlefield.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 66,
+    "keywords": [
+      "indestructible"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Spider-Man Noir",
+    "cost": "{4}{B}",
+    "text": "Menace\nWhenever a creature you control attacks alone, put a +1/+1 counter on it. Then surveil X, where X is the number of counters on it. (Look at the top X cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 67,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "The Spot's Portal",
+    "cost": "{2}{B}",
+    "text": "Put target creature on the bottom of its owner's library. You lose 2 life unless you control a Villain.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 68,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Swarm, Being of Bees",
+    "cost": "{2}{B}",
+    "text": "Flash\nFlying\nMayhem {B} (You may cast this card from your graveyard for {B} if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 69,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flash",
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Tombstone, Career Criminal",
+    "cost": "{2}{B}",
+    "text": "When Tombstone enters, return target Villain card from your graveyard to your hand.\nVillain spells you cast cost {1} less to cast.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 70,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Symbiote",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Venom, Evil Unleashed",
+    "cost": "{4}{B}",
+    "text": "Deathtouch\n{2}{B}, Exile this card from your graveyard: Put two +1/+1 counters on target creature. It gains deathtouch until end of turn. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 71,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Symbiote",
+      "Cat",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Venomized Cat",
+    "cost": "{2}{B}",
+    "text": "Deathtouch\nWhen this creature enters, mill two cards. (Put the top two cards of your library into your graveyard.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 72,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Venom's Hunger",
+    "cost": "{4}{B}",
+    "text": "This spell costs {2} less to cast if you control a Villain.\nDestroy target creature. You gain 2 life.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 73,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Villainous Wrath",
+    "cost": "{3}{B}{B}",
+    "text": "Target opponent loses life equal to the number of creatures they control. Then destroy all creatures.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 74,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Angry Rabble",
+    "cost": "{1}{R}",
+    "text": "Trample\nWhenever you cast a spell with mana value 4 or greater, this creature deals 1 damage to each opponent.\n{5}{R}: Put two +1/+1 counters on this creature. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 75,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Electro, Assaulting Battery",
+    "cost": "{1}{R}{R}",
+    "text": "Flying\nYou don't lose unspent red mana as steps and phases end.\nWhenever you cast an instant or sorcery spell, add {R}.\nWhen Electro leaves the battlefield, you may pay {X}. When you do, he deals X damage to target player.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 76,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Electro's Bolt",
+    "cost": "{2}{R}",
+    "text": "Electro's Bolt deals 4 damage to target creature.\nMayhem {1}{R} (You may cast this card from your graveyard for {1}{R} if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 77,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Performer",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Gwen Stacy",
+    "cost": "{1}{R}",
+    "text": "When Gwen Stacy enters, exile the top card of your library. You may play that card for as long as you control this creature.\n{2}{U}{R}{W}: Transform Gwen Stacy. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 78,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Spider",
+        "Human",
+        "Hero"
+      ],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "R",
+        "U",
+        "W"
+      ],
+      "name": "Ghost-Spider",
+      "cost": "{2}{U}{R}{W}",
+      "text": "Flying, vigilance, haste\nWhenever you play a land from exile or cast a spell from exile, put a +1/+1 counter on Ghost-Spider.\nRemove two counters from Ghost-Spider: Exile the top card of your library. You may play that card this turn.",
+      "set": "SPM",
+      "rarity": "M",
+      "power": 4,
+      "toughness": 4,
+      "keywords": [
+        "flying",
+        "vigilance",
+        "haste"
+      ]
+    },
+    "imageName": "Gwen Stacy // Ghost-Spider",
+    "mdfc": true
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Heroes' Hangout",
+    "cost": "{R}",
+    "text": "Choose one —\n• Date Night — Exile the top two cards of your library. Choose one of them. Until the end of your next turn, you may play that card.\n• Patrol Night — One or two target creatures each get +1/+0 and gain first strike until end of turn.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 79,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Hobgoblin, Mantled Marauder",
+    "cost": "{1}{R}",
+    "text": "Flying, haste\nWhenever you discard a card, Hobgoblin gets +2/+0 until end of turn.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 80,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "J. Jonah Jameson",
+    "cost": "{2}{R}",
+    "text": "When J. Jonah Jameson enters, suspect up to one target creature. (A suspected creature has menace and can't block.)\nWhenever a creature you control with menace attacks, create a Treasure token.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 81,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Cat",
+      "Hero"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Masked Meower",
+    "cost": "{R}",
+    "text": "Haste\nDiscard a card, Sacrifice this creature: Draw a card.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 82,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Maximum Carnage",
+    "cost": "{4}{R}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Until your next turn, each creature attacks each combat if able and attacks a player other than you if able.\nII — Add {R}{R}{R}.\nIII — This Saga deals 5 damage to each opponent.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 83,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Molten Man, Inferno Incarnate",
+    "cost": "{2}{R}",
+    "text": "When Molten Man enters, search your library for a basic Mountain card, put it onto the battlefield tapped, then shuffle.\nMolten Man gets +1/+1 for each Mountain you control.\nWhen Molten Man leaves the battlefield, sacrifice a land.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 84,
+    "power": 0,
+    "toughness": 0,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Berserker",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Raging Goblinoids",
+    "cost": "{4}{R}",
+    "text": "Haste\nMayhem {2}{R} (You may cast this card from your graveyard for {2}{R} if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 85,
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Romantic Rendezvous",
+    "cost": "{1}{R}",
+    "text": "Discard a card, then draw two cards.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 86,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Shadow of the Goblin",
+    "cost": "{1}{R}",
+    "text": "Unreliable Visions — At the beginning of your first main phase, discard a card. If you do, draw a card.\nUndying Vengeance — Whenever you play a land or cast a spell from anywhere other than your hand, this enchantment deals 1 damage to each opponent.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 87,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Shock",
+    "cost": "{R}",
+    "text": "Shock deals 2 damage to any target.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 88,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Shocker, Unshakable",
+    "cost": "{4}{R}{R}",
+    "text": "During your turn, Shocker has first strike.\nVibro-Shock Gauntlets — When Shocker enters, he deals 2 damage to target creature and 2 damage to that creature's controller.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 89,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Spider-Gwen, Free Spirit",
+    "cost": "{2}{R}",
+    "text": "Reach\nWhenever Spider-Gwen becomes tapped, you may discard a card. If you do, draw a card.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 90,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Horror",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Spider-Islanders",
+    "cost": "{3}{R}",
+    "text": "Mayhem {1}{R} (You may cast this card from your graveyard for {1}{R} if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 91,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Spider-Punk",
+    "cost": "{1}{R}",
+    "text": "Riot (This creature enters with your choice of a +1/+1 counter or haste.)\nOther Spiders you control have riot.\nSpells and abilities can't be countered.\nDamage can't be prevented.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 92,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Spider-Verse",
+    "cost": "{3}{R}{R}",
+    "text": "The \"legend rule\" doesn't apply to Spiders you control.\nWhenever you cast a spell from anywhere other than your hand, you may copy it. If you do, you may choose new targets for the copy. If the copy is a permanent spell, it gains haste. Do this only once each turn.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 93,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Spinneret and Spiderling",
+    "cost": "{R}",
+    "text": "Whenever you attack with two or more Spiders, put a +1/+1 counter on Spinneret and Spiderling.\nWhenever Spinneret and Spiderling deals 4 or more damage, exile the top card of your library. Until the end of your next turn, you may play that card.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 94,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dinosaur",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Stegron the Dinosaur Man",
+    "cost": "{4}{R}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nDinosaur Formula — {1}{R}, Discard this card: Until end of turn, target creature you control gets +3/+1 and becomes a Dinosaur in addition to its other types.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 95,
+    "power": 5,
+    "toughness": 4,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Superior Foes of Spider-Man",
+    "cost": "{2}{R}",
+    "text": "Trample\nWhenever you cast a spell with mana value 4 or greater, you may exile the top card of your library. If you do, you may play that card until you exile another card with this creature.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 96,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Taxi Driver",
+    "cost": "{1}{R}",
+    "text": "{1}, {T}: Target creature gains haste until end of turn.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 97,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Wisecrack",
+    "cost": "{2}{R}",
+    "text": "Target creature deals damage equal to its power to itself. If that creature is attacking, Wisecrack deals 2 damage to that creature's controller.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 98,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Damage Control Crew",
+    "cost": "{3}{G}",
+    "text": "When this creature enters, choose one —\n• Repair — Return target card with mana value 4 or greater from your graveyard to your hand.\n• Impound — Exile target artifact or enchantment.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 99,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Ezekiel Sims, Spider-Totem",
+    "cost": "{4}{G}",
+    "text": "Reach\nAt the beginning of combat on your turn, target Spider you control gets +2/+2 until end of turn.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 100,
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Grow Extra Arms",
+    "cost": "{1}{G}",
+    "text": "This spell costs {1} less to cast if it targets a Spider.\nTarget creature gets +4/+4 until end of turn.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 101,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Guy in the Chair",
+    "cost": "{2}{G}",
+    "text": "{T}: Add one mana of any color.\nWeb Support — {2}{G}, {T}: Put a +1/+1 counter on target Spider. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 102,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Kapow!",
+    "cost": "{2}{G}",
+    "text": "Put a +1/+1 counter on target creature you control. It fights target creature an opponent controls. (Each deals damage equal to its power to the other.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 103,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Cat",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Kraven's Cats",
+    "cost": "{1}{G}",
+    "text": "{2}{G}: This creature gets +2/+2 until end of turn. Activate only once each turn.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 104,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Kraven's Last Hunt",
+    "cost": "{3}{G}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Mill five cards. When you do, this Saga deals damage equal to the greatest power among creature cards in your graveyard to target creature.\nII — Target creature you control gets +2/+2 until end of turn.\nIII — Return target creature card from your graveyard to your hand.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 105,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Lizard, Connors's Curse",
+    "cost": "{2}{G}{G}",
+    "text": "Trample\nLizard Formula — When Lizard, Connors's Curse enters, up to one other target creature loses all abilities and becomes a green Lizard creature with base power and toughness 4/4.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 106,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Lizard",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Lurking Lizards",
+    "cost": "{1}{G}",
+    "text": "Trample\nWhenever you cast a spell with mana value 4 or greater, put a +1/+1 counter on this creature.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 107,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Miles Morales",
+    "cost": "{1}{G}",
+    "text": "When Miles Morales enters, put a +1/+1 counter on each of up to two target creatures.\n{3}{R}{G}{W}: Transform Miles Morales. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 108,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [],
+    "back": {
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Spider",
+        "Human",
+        "Hero"
+      ],
+      "supertypes": [
+        "Legendary"
+      ],
+      "colors": [
+        "G",
+        "R",
+        "W"
+      ],
+      "name": "Ultimate Spider-Man",
+      "cost": "{3}{R}{G}{W}",
+      "text": "First strike, haste\nCamouflage — {2}: Put a +1/+1 counter on Ultimate Spider-Man. He gains hexproof and becomes colorless until end of turn.\nWhenever you attack, double the number of each kind of counter on each Spider and legendary creature you control.",
+      "set": "SPM",
+      "rarity": "M",
+      "power": 4,
+      "toughness": 3,
+      "keywords": [
+        "first_strike",
+        "haste"
+      ]
+    },
+    "imageName": "Miles Morales // Ultimate Spider-Man",
+    "mdfc": true
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Pictures of Spider-Man",
+    "cost": "{2}{G}",
+    "text": "When this artifact enters, look at the top five cards of your library. You may reveal up to two creature cards from among them and put them into your hand. Put the rest on the bottom of your library in a random order.\n{1}, {T}, Sacrifice this artifact: Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 109,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Performer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Professional Wrestler",
+    "cost": "{3}{G}",
+    "text": "When this creature enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nThis creature can't be blocked by more than one creature.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 110,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Radioactive Spider",
+    "cost": "{G}",
+    "text": "Reach, deathtouch\nFateful Bite — {2}, Sacrifice this creature: Search your library for a Spider Hero card, reveal it, put it into your hand, then shuffle. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 111,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "reach",
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Sand",
+      "Elemental",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Sandman, Shifting Scoundrel",
+    "cost": "{1}{G}{G}",
+    "text": "Sandman's power and toughness are each equal to the number of lands you control.\nSandman can't be blocked by creatures with power 2 or less.\n{3}{G}{G}: Return this card and target land card from your graveyard to the battlefield tapped.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 112,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 0,
+    "toughnessText": "*",
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Scout the City",
+    "cost": "{1}{G}",
+    "text": "Choose one —\n• Look Around — Mill three cards. You may put a permanent card from among them into your hand. You gain 3 life. (To mill three cards, put the top three cards of your library into your graveyard.)\n• Bring Down — Destroy target creature with flying.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 113,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Boar",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Spider-Ham, Peter Porker",
+    "cost": "{1}{G}",
+    "text": "When Spider-Ham enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nAnimal May-Ham — Other Spiders, Boars, Bats, Bears, Birds, Cats, Dogs, Frogs, Jackals, Lizards, Mice, Otters, Rabbits, Raccoons, Rats, Squirrels, Turtles, and Wolves you control get +1/+1.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 114,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Spider-Man, Brooklyn Visionary",
+    "cost": "{4}{G}",
+    "text": "Web-slinging {2}{G} (You may cast this spell for {2}{G} if you also return a tapped creature you control to its owner's hand.)\nWhen Spider-Man enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 115,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Dinosaur",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Spider-Rex, Daring Dino",
+    "cost": "{4}{G}{G}",
+    "text": "Reach, trample\nWard {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 116,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "reach",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Spiders-Man, Heroic Horde",
+    "cost": "{1}{G}",
+    "text": "Web-slinging {4}{G}{G} (You may cast this spell for {4}{G}{G} if you also return a tapped creature you control to its owner's hand.)\nWhen Spiders-Man enters, if they were cast using web-slinging, you gain 3 life and create two 2/1 green Spider creature tokens with reach.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 117,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Strength of Will",
+    "cost": "{1}{G}",
+    "text": "Until end of turn, target creature you control gains indestructible and \"Whenever this creature is dealt damage, put that many +1/+1 counters on it.\"",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 118,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Supportive Parents",
+    "cost": "{2}{G}",
+    "text": "Tap two untapped creatures you control: Add one mana of any color.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 119,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Terrific Team-Up",
+    "cost": "{3}{G}",
+    "text": "This spell costs {2} less to cast if you control a permanent with mana value 4 or greater.\nOne or two target creatures you control each get +1/+0 until end of turn. They each deal damage equal to their power to target creature an opponent controls.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 120,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Wall Crawl",
+    "cost": "{3}{G}",
+    "text": "When this enchantment enters, create a 2/1 green Spider creature token with reach, then you gain 1 life for each Spider you control.\nSpiders you control get +1/+1 and can't be blocked by creatures with defender.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 121,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Web of Life and Destiny",
+    "cost": "{6}{G}{G}",
+    "text": "Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.)\nAt the beginning of combat on your turn, look at the top five cards of your library. You may put a creature card from among them onto the battlefield. Put the rest on the bottom of your library in a random order.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 122,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Araña, Heart of the Spider",
+    "cost": "{1}{R}{W}",
+    "text": "Whenever you attack, put a +1/+1 counter on target attacking creature.\nWhenever a modified creature you control deals combat damage to a player, exile the top card of your library. You may play that card this turn. (Equipment, Auras you control, and counters are modifications.)",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 123,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Biorganic Carapace",
+    "cost": "{2}{W}{U}",
+    "text": "When this Equipment enters, attach it to target creature you control.\nEquipped creature gets +2/+2 and has \"Whenever this creature deals combat damage to a player, draw a card for each modified creature you control.\" (Equipment, Auras you control, and counters are modifications.)\nEquip {2}",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 124,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Symbiote",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Carnage, Crimson Chaos",
+    "cost": "{2}{B}{R}",
+    "text": "Trample\nWhen Carnage enters, return target creature card with mana value 3 or less from your graveyard to the battlefield. It gains \"This creature attacks each combat if able\" and \"When this creature deals combat damage to a player, sacrifice it.\"\nMayhem {B}{R}",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 125,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Cheering Crowd",
+    "cost": "{1}{R/G}",
+    "text": "At the beginning of each player's first main phase, that player may put a +1/+1 counter on this creature. If they do, they add {C} for each counter on it.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 126,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G",
+      "R",
+      "U",
+      "W"
+    ],
+    "name": "Cosmic Spider-Man",
+    "cost": "{W}{U}{B}{R}{G}",
+    "text": "Flying, first strike, trample, lifelink, haste\nAt the beginning of combat on your turn, other Spiders you control gain flying, first strike, trample, lifelink, and haste until end of turn.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 127,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying",
+      "first_strike",
+      "trample",
+      "lifelink",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Doctor Octopus, Master Planner",
+    "cost": "{5}{U}{B}",
+    "text": "Other Villains you control get +2/+2.\nYour maximum hand size is eight.\nAt the beginning of your end step, if you have fewer than eight cards in hand, draw cards equal to the difference.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 128,
+    "power": 4,
+    "toughness": 8,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Gallant Citizen",
+    "cost": "{G/W}{G/W}",
+    "text": "When this creature enters, draw a card.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 129,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Green Goblin, Revenant",
+    "cost": "{3}{B}{R}",
+    "text": "Flying, deathtouch\nWhenever Green Goblin attacks, discard a card. Then draw a card for each card you've discarded this turn.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 130,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Jackal, Genius Geneticist",
+    "cost": "{G}{U}",
+    "text": "Trample\nWhenever you cast a creature spell with mana value equal to Jackal's power, copy that spell, except the copy isn't legendary. Then put a +1/+1 counter on Jackal. (The copy becomes a token.)",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 131,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Kraven, Proud Predator",
+    "cost": "{1}{R}{G}",
+    "text": "Vigilance\nTop of the Food Chain — Kraven's power is equal to the greatest mana value among permanents you control.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 132,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Warrior",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Kraven the Hunter",
+    "cost": "{1}{B}{G}",
+    "text": "Trample\nWhenever a creature an opponent controls with the greatest power among creatures that player controls dies, draw a card and put a +1/+1 counter on Kraven the Hunter.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 133,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Performer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Mary Jane Watson",
+    "cost": "{1}{G/W}",
+    "text": "Whenever a Spider you control enters, draw a card. This ability triggers only once each turn.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 134,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "Mister Negative",
+    "cost": "{5}{W}{B}",
+    "text": "Vigilance, lifelink\nDarkforce Inversion — When Mister Negative enters, you may exchange life totals with target opponent. If you lost life this way, draw that many cards.",
+    "set": "SPM",
+    "rarity": "M",
+    "number": 135,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "vigilance",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Mob Lookout",
+    "cost": "{1}{U/B}",
+    "text": "When this creature enters, target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 136,
+    "power": 0,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Vampire",
+      "Scientist",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Morbius the Living Vampire",
+    "cost": "{2}{U}{B}",
+    "text": "Flying, vigilance, lifelink\n{U}{B}, Exile this card from your graveyard: Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 137,
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "flying",
+      "vigilance",
+      "lifelink"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Rogue",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Prowler, Clawed Thief",
+    "cost": "{1}{U}{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever another Villain you control enters, Prowler connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 138,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Pumpkin Bombardment",
+    "cost": "{B/R}",
+    "text": "As an additional cost to cast this spell, discard a card or pay {2}.\nPumpkin Bombardment deals 3 damage to target creature.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 139,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Rhino, Barreling Brute",
+    "cost": "{3}{R}{R}{G}{G}",
+    "text": "Vigilance, trample, haste\nWhenever Rhino attacks, if you've cast a spell with mana value 4 or greater this turn, draw a card.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 140,
+    "power": 6,
+    "toughness": 7,
+    "keywords": [
+      "vigilance",
+      "trample",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Rhino's Rampage",
+    "cost": "{R/G}",
+    "text": "Target creature you control gets +1/+0 until end of turn. It fights target creature an opponent controls. When excess damage is dealt to the creature an opponent controls this way, destroy up to one target noncreature artifact with mana value 3 or less.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 141,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Scarlet Spider, Ben Reilly",
+    "cost": "{1}{R}{G}",
+    "text": "Web-slinging {R}{G} (You may cast this spell for {R}{G} if you also return a tapped creature you control to its owner's hand.)\nTrample\nSensational Save — If Scarlet Spider was cast using web-slinging, he enters with X +1/+1 counters on him, where X is the mana value of the returned creature.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 142,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Scarlet Spider, Kaine",
+    "cost": "{B}{R}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen Scarlet Spider enters, you may discard a card. If you do, put a +1/+1 counter on him.\nMayhem {B/R} (You may cast this card from your graveyard for {B/R} if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 143,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Mutant",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Shriek, Treblemaker",
+    "cost": "{2}{B/R}",
+    "text": "At the beginning of your first main phase, you may discard a card. When you do, target creature can't block this turn.\nSonic Blast — Whenever a creature an opponent controls dies, Shriek deals 1 damage to that player.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 144,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Silk, Web Weaver",
+    "cost": "{2}{G}{W}",
+    "text": "Web-slinging {1}{G}{W} (You may cast this spell for {1}{G}{W} if you also return a tapped creature you control to its owner's hand.)\nWhenever you cast a creature spell, create a 1/1 green and white Human Citizen creature token.\n{3}{G}{W}: Creatures you control get +2/+2 and gain vigilance until end of turn.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 145,
+    "power": 3,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Skyward Spider",
+    "cost": "{W/U}{W/U}",
+    "text": "Ward {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nThis creature has flying as long as it's modified. (Equipment, Auras you control, and counters are modifications.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 146,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "SP//dr, Piloted by Peni",
+    "cost": "{3}{W}{U}",
+    "text": "Vigilance\nWhen SP//dr enters, put a +1/+1 counter on target creature.\nWhenever a modified creature you control deals combat damage to a player, draw a card. (Equipment, Auras you control, and counters are modifications.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 147,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Avatar"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "R"
+    ],
+    "name": "Spider Manifestation",
+    "cost": "{1}{R/G}",
+    "text": "Reach\n{T}: Add {R} or {G}.\nWhenever you cast a spell with mana value 4 or greater, untap this creature.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 148,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Spider-Girl, Legacy Hero",
+    "cost": "{G}{W}",
+    "text": "During your turn, Spider-Girl has flying.\nWhen Spider-Girl leaves the battlefield, create a 1/1 green and white Human Citizen creature token.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 149,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Spider-Man 2099",
+    "cost": "{U}{R}",
+    "text": "From the Future — You can't cast Spider-Man 2099 during your first, second, or third turns of the game.\nDouble strike, vigilance\nAt the beginning of your end step, if you've played a land or cast a spell this turn from anywhere other than your hand, Spider-Man 2099 deals damage equal to his power to any target.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 150,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "double_strike",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Spider-Man India",
+    "cost": "{3}{G}{W}",
+    "text": "Web-slinging {1}{G}{W} (You may cast this spell for {1}{G}{W} if you also return a tapped creature you control to its owner's hand.)\nPavitr's Sevā — Whenever you cast a creature spell, put a +1/+1 counter on target creature you control. It gains flying until end of turn.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 151,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Spider-Woman, Stunning Savior",
+    "cost": "{1}{W/U}",
+    "text": "Flying\nVenom Blast — Artifacts and creatures your opponents control enter tapped.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 152,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scientist",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "W"
+    ],
+    "name": "The Spot, Living Portal",
+    "cost": "{3}{W}{B}",
+    "text": "When The Spot enters, exile up to one target nonland permanent and up to one target nonland permanent card from a graveyard.\nWhen The Spot dies, put him on the bottom of his owner's library. If you do, return the exiled cards to their owners' hands.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 153,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Sun-Spider, Nimble Webber",
+    "cost": "{3}{W/U}",
+    "text": "During your turn, Sun-Spider has flying.\nWhen Sun-Spider enters, search your library for an Aura or Equipment card, reveal it, put it into your hand, then shuffle.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 154,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Human",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Superior Spider-Man",
+    "cost": "{2}{U}{B}",
+    "text": "Mind Swap — You may have Superior Spider-Man enter as a copy of any creature card in a graveyard, except his name is Superior Spider-Man and he's a 4/4 Spider Human Hero in addition to his other types. When you do, exile that card.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 155,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Symbiote",
+      "Spider",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Symbiote Spider-Man",
+    "cost": "{2}{U/B}",
+    "text": "Whenever this creature deals combat damage to a player, look at that many cards from the top of your library. Put one of them into your hand and the rest into your graveyard.\nFind New Host — {2}{U/B}, Exile this card from your graveyard: Put a +1/+1 counter on target creature you control. It gains this card's other abilities. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 156,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Ultimate Green Goblin",
+    "cost": "{1}{B/R}{B/R}",
+    "text": "At the beginning of your upkeep, discard a card, then create a Treasure token.\nMayhem {2}{B/R} (You may cast this card from your graveyard for {2}{B/R} if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 157,
+    "power": 5,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "U"
+    ],
+    "name": "Vulture, Scheming Scavenger",
+    "cost": "{5}{U/B}",
+    "text": "Flying\nWhenever Vulture attacks, other Villains you control gain flying until end of turn.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 158,
+    "power": 4,
+    "toughness": 6,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Hero"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "W"
+    ],
+    "name": "Web-Warriors",
+    "cost": "{4}{G/W}",
+    "text": "When this creature enters, put a +1/+1 counter on each other creature you control.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 159,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Detective",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Wraith, Vicious Vigilante",
+    "cost": "{1}{W}{U}",
+    "text": "Double strike\nFear Gas — Wraith can't be blocked.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 160,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "double_strike"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Food"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Bagel and Schmear",
+    "cost": "{1}",
+    "text": "Share — {W}, {T}, Sacrifice this artifact: Put a +1/+1 counter on up to one target creature. Draw a card. Activate only as a sorcery.\nNosh — {2}, {T}, Sacrifice this artifact: You gain 3 life and draw a card.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 161,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Doc Ock's Tentacles",
+    "cost": "{1}",
+    "text": "Whenever a creature you control with mana value 5 or greater enters, you may attach this Equipment to it.\nEquipped creature gets +4/+4.\nEquip {5}",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 162,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Eerie Gravestone",
+    "cost": "{2}",
+    "text": "When this artifact enters, draw a card.\n{1}{B}, Sacrifice this artifact: Mill four cards. You may put a creature card from among them into your hand. (To mill four cards, put the top four cards of your library into your graveyard.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 163,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hot Dog Cart",
+    "cost": "{3}",
+    "text": "When this artifact enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\n{T}: Add one mana of any color.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 164,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Interdimensional Web Watch",
+    "cost": "{4}",
+    "text": "When this artifact enters, exile the top two cards of your library. Until the end of your next turn, you may play those cards.\n{T}: Add two mana in any combination of colors. Spend this mana only to cast spells from exile.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 165,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Hero"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Iron Spider, Stark Upgrade",
+    "cost": "{3}",
+    "text": "Vigilance\n{T}: Put a +1/+1 counter on each artifact creature and/or Vehicle you control.\n{2}, Remove two +1/+1 counters from among artifacts you control: Draw a card.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 166,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Living Brain, Mechanical Marvel",
+    "cost": "{4}",
+    "text": "At the beginning of combat on your turn, target non-Equipment artifact you control becomes an artifact creature with base power and toughness 3/3 until end of turn. Untap it.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 167,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Robot",
+      "Villain"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Mechanical Mobster",
+    "cost": "{3}",
+    "text": "When this creature enters, exile up to one target card from a graveyard. Target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 168,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Construct"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "News Helicopter",
+    "cost": "{3}",
+    "text": "Flying\nWhen this creature enters, create a 1/1 green and white Human Citizen creature token.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 169,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Passenger Ferry",
+    "cost": "{3}",
+    "text": "Whenever this Vehicle attacks, you may pay {U}. When you do, another target attacking creature can't be blocked this turn.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 170,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Peter Parker's Camera",
+    "cost": "{1}",
+    "text": "This artifact enters with three film counters on it.\n{2}, {T}, Remove a film counter from this artifact: Copy target activated or triggered ability you control. You may choose new targets for the copy.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 171,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Rocket-Powered Goblin Glider",
+    "cost": "{3}",
+    "text": "When this Equipment enters, if it was cast from your graveyard, attach it to target creature you control.\nEquipped creature gets +2/+0 and has flying and haste.\nEquip {2}\nMayhem {2}",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 172,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider",
+      "Robot",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Spider-Bot",
+    "cost": "{2}",
+    "text": "Reach\nWhen this creature enters, you may search your library for a basic land card, reveal it, then shuffle and put that card on top.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 173,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Spider-Mobile",
+    "cost": "{3}",
+    "text": "Trample\nWhenever this Vehicle attacks or blocks, it gets +1/+1 until end of turn for each Spider you control.\nCrew 2",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 174,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Villain"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Spider-Slayer, Hatred Honed",
+    "cost": "{2}",
+    "text": "Whenever Spider-Slayer deals damage to a Spider, destroy that creature.\n{6}, Exile this card from your graveyard: Create two tapped 1/1 colorless Robot artifact creature tokens with flying.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 175,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Spider-Suit",
+    "cost": "{1}",
+    "text": "Equipped creature gets +2/+2 and is a Spider Hero in addition to its other types.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 176,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Steel Wrecking Ball",
+    "cost": "{5}",
+    "text": "When this artifact enters, it deals 5 damage to target creature.\n{1}{R}, Discard this card: Destroy target artifact.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 177,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Subway Train",
+    "cost": "{2}",
+    "text": "When this Vehicle enters, you may pay {G}. If you do, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 178,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Daily Bugle Building",
+    "cost": "",
+    "text": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color.\nSmear Campaign — {1}, {T}: Target legendary creature gains menace until end of turn. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "U",
+    "number": 179,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Multiversal Passage",
+    "cost": "",
+    "text": "As this land enters, choose a basic land type. Then you may pay 2 life. If you don't, it enters tapped.\nThis land is the chosen type.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 180,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Ominous Asylum",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {B} or {R}.\n{4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 181,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Oscorp Industries",
+    "cost": "",
+    "text": "This land enters tapped.\nWhen this land enters from a graveyard, you lose 2 life.\n{T}: Add {U}, {B}, or {R}.\nMayhem (You may play this card from your graveyard if you discarded it this turn. Timing rules still apply.)",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 182,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Savage Mansion",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {R} or {G}.\n{4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 183,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Sinister Hideout",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {U} or {B}.\n{4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 184,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Suburban Sanctuary",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {G} or {W}.\n{4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 185,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "University Campus",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {W} or {U}.\n{4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 186,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Urban Retreat",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {G}, {W}, or {U}.\n{2}, Return a tapped creature you control to its owner's hand: Put this card from your hand onto the battlefield. Activate only as a sorcery.",
+    "set": "SPM",
+    "rarity": "R",
+    "number": 187,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Vibrant Cityscape",
+    "cost": "",
+    "text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "set": "SPM",
+    "rarity": "C",
+    "number": 188,
+    "keywords": []
+  }
+]

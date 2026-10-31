@@ -1,0 +1,12 @@
+import spm from './spm-catalog.json';
+import hob from './hob-catalog.json';
+import spmAuto from './spm-auto.json';
+import hobAuto from './hob-auto.json';
+import { setBuilder } from './frontier-dsl';
+import { finishSpm } from './web-spm-data';
+import { finishHob } from './web-hob-data';
+const a = setBuilder('SPM', spm, spmAuto), b = setBuilder('HOB', hob, hobAuto);
+finishSpm(a);
+finishHob(b);
+export const completeSpm = () => a.complete();
+export const completeHob = () => b.complete();

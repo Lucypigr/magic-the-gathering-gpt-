@@ -1,3 +1,4 @@
+import {webEffect} from './web-shire';
 import {finalCanSac,finalStatic} from './orbit-final-support';
 import {orbitEffect} from './orbit';
 import {frontierStatic} from './frontier-support';
@@ -70,6 +71,7 @@ const COPY_SAC: TriggeredAbility = {
 const TYPE_ZH_E: Record<string, string> = { Creature: '生物', Planeswalker: '鵬洛客', Artifact: '神器', Enchantment: '結界', Instant: '瞬間', Sorcery: '法術' };
 
 export interface Ctx {
+ webGift?:boolean;
  orbitStation?:{card:number;version:number};orbitChoice?:{card:number;version:number};orbitTappedCount?:number;
  lastDiscover?:number;
 
@@ -449,7 +451,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'copyCreature': {
       for(const c of resolveRef(g,ctx,ef.what).cards){const copiable=copiableDefinition(c),def={...copiable,supertypes:ef.nonLegendary||ef.p!==undefined&&!ef.preserveLegendary?copiable.supertypes?.filter(s=>s!=='Legendary'):copiable.supertypes,...(ef.p!==undefined?{power:ef.p,toughness:ef.t}:{}),subtypes:[...(copiable.subtypes??[]),...(ef.sub?[ef.sub]:[])]};const tokens=yield*makeEclTokenBatch(g,ctx.controller,def,1);for(const t of tokens){if(ef.temp){g.eot.push({card:t.id,p:0,t:0,kw:['haste']});(g.delayed??=[]).push({source:t.id,controller:ctx.controller,on:'eachEndStep',once:true,persistent:true,effects:[{e:'tmt',action:'sacrificeSelf'}]});}ctx.created=t.id;}ctx.createdList=tokens.map(t=>t.id);}return;
     }
-    case 'frontier':if(/^(eoe|tdm):/.test(ef.action)){yield*orbitEffect(g,ctx,ef);return;}if(/^(lci|sos):/.test(ef.action)){yield*campusEffect(g,ctx,ef);return;}if(/^(blb|dft):/.test(ef.action)){yield*meadowEffect(g,ctx,ef);return;}if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
+    case 'frontier':if(/^(spm|hob):/.test(ef.action)){yield*webEffect(g,ctx,ef);return;}if(/^(eoe|tdm):/.test(ef.action)){yield*orbitEffect(g,ctx,ef);return;}if(/^(lci|sos):/.test(ef.action)){yield*campusEffect(g,ctx,ef);return;}if(/^(blb|dft):/.test(ef.action)){yield*meadowEffect(g,ctx,ef);return;}if(/^(fdn|dsk):/.test(ef.action)){yield*foundationEffect(g,ctx,ef);return;}if(ef.action.startsWith('woe:'))yield*woeEffect(g,ctx,ef);else yield*otjEffect(g,ctx,ef);return;
     case 'msh':yield* mshEffect(g,ctx,ef);return;
     case 'mkm':yield* mkmEffect(g,ctx,ef);return;
     case 'fin':yield* finEffect(g,ctx,ef);return;
@@ -534,8 +536,10 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     }
     case 'amass': {
-      let army = g.battlefield.map((id) => g.cards[id]).find((c) => c.controller === me && c.def.subtypes?.includes('Army'));
-      if (!army) army = createToken(g, 'tok-goblin-army', me);
+      let armies=g.battlefield.filter(id=>g.cards[id].controller===me&&g.cards[id].def.subtypes?.includes('Army'));
+      if(!armies.length){yield*makeEclTokenBatch(g,me,'tok-goblin-army',1);armies=g.battlefield.filter(id=>g.cards[id].controller===me&&g.cards[id].def.subtypes?.includes('Army'));}
+      if(!armies.length)break;const id=armies.length>1?(yield*choose(g,me,'選擇要集結的軍隊',armies,1,1,'dig'))[0]:armies[0],army=g.cards[id];
+      if(!army.def.subtypes?.includes('Goblin')){army.baseDef??=army.def;army.def={...army.def,subtypes:[...(army.def.subtypes??[]),'Goblin']};(army.frontierMarks??={}).permanentAnimation=1;}
       putCounters(g, army, ef.n);
       log(g, `集結鬼怪 ${ef.n}`, me);
       break;
@@ -580,7 +584,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const c = ids.length ? g.cards[ids[0]] : undefined;
       if (c) {
         discard(g, c);
-        if (!isLand(c)) createToken(g, 'tok-human-soldier', me);
+        if (!isLand(c))yield*makeEclTokenBatch(g,me,'tok-human-soldier',1);
       }
       break;
     }

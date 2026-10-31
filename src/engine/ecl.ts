@@ -1,3 +1,5 @@
+import {webBeforeEntry} from './web-shire';
+import {webStatic,webChooseRiot} from './web-shire-support';
 import {finalStatic} from './orbit-final-support';
 import {orbitBeforeEntry} from './orbit-final';
 import {campusBeforeEntry} from './campus-zones';
@@ -95,6 +97,7 @@ export function* resolveEclEntries(g: GameState): SubFlow {
     let def = entry.enterAs,
       tapped = entry.tapped;
     let choice = c.def.ecl?.asEnters;
+    if(choice==='web')def=yield*webBeforeEntry(g,c,entry.controller);
     if(choice==='orbit')def=yield*orbitBeforeEntry(g,c,entry.controller);
     if(choice==='campusLandCopy')def=yield*campusBeforeEntry(g,c,entry.controller);
     if(choice==='mockingbird'||choice==='waxen'||choice==='mimeoplasm'){def=yield*meadowBeforeEntry(g,{source:c.id,controller:entry.controller,targets:[],x:c.zone==='stack'?c.castX??0:0},c);if(def)choice=def.ecl?.asEnters;}
@@ -120,6 +123,7 @@ export function* resolveEclEntries(g: GameState): SubFlow {
         def = { ...base, changeling: true, ecl: undefined };
       }
     }
+    yield*webChooseRiot(g,c,entry.controller,def);
     c.eclPrepared = true;
     enterBattlefield(g, c, entry.controller, tapped, def);
     c.eclPrepared = false;
@@ -198,7 +202,7 @@ export function* makeEclTokenBatch(
   g.players[pid].tokensCreatedTurn = g.turn;
   const previousGroup=g.mshTokenGroup;g.mshTokenGroup=opts.batch??g.nextSid++;
   const out: Card[] = [];
-  for(const group of groups)group.n*=2**frontierStatic(g,pid,'fdn:doubleTokens').length*(group.def.types.includes('Creature')?3**frontierStatic(g,pid,'lci:tripleCreatureTokens').length:1);
+  for(const group of groups)group.n*=2**(frontierStatic(g,pid,'fdn:doubleTokens').length+webStatic(g,pid,'doubleTokens').length)*(group.def.types.includes('Creature')?3**frontierStatic(g,pid,'lci:tripleCreatureTokens').length:1);
   for (const group of groups)
     for (let i = 0; i < group.n; i++) {
       const c = newCard(g, group.def, pid, true);

@@ -1,0 +1,4305 @@
+[
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dog"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Long-Bodied Grey Dog",
+    "cost": "{3}",
+    "text": "Flash\nReach\nWhen this creature enters, create a tapped Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 1,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flash",
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Old Thrush",
+    "cost": "{2}",
+    "text": "Flying\nWhen this creature enters, you gain 2 life. You may search your library for a basic land card, reveal it, then shuffle and put that card on top.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 2,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Horse"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Troop of Ponies",
+    "cost": "{2}",
+    "text": "{2}, {T}, Sacrifice this creature: Search your library for up to two basic land cards, reveal them, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 3,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Citizen"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Belladonna Took",
+    "cost": "{1}{W}",
+    "text": "Whenever a token you control enters, you gain 1 life if this is the first time this ability has resolved this turn. If it's the second time, draw a card. If it's the third time, put a +1/+1 counter on each creature you control.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 4,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Bilbo's Gambit",
+    "cost": "{1}{W}",
+    "text": "Gift a Treasure (You may promise an opponent a gift as you cast this spell. If you do, they create a Treasure token before its other effects. It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nReturn target spell to its owner's hand. If the gift was promised, players can't cast spells this turn.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Scout"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Bofur, Reliable Guardian",
+    "cost": "{W}",
+    "text": "Lifelink",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 6,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "lifelink"
+    ],
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Concerted Care",
+      "cost": "{1}{W}",
+      "text": "Target artifact or creature you control gains hexproof and indestructible until end of turn. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Bofur, Reliable Guardian // Concerted Care"
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Celebrate the Mountain-king",
+    "cost": "{3}{W}",
+    "text": "When this enchantment enters, for each opponent, exile up to one target nonland permanent that player controls until this enchantment leaves the battlefield.\nWhen this enchantment enters, recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Dáin, Lord of the Iron Hills",
+    "cost": "{1}{W}",
+    "text": "Vigilance\nStoried (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nAs long as you have an enduring story, creatures can't attack you unless their controller pays {1} for each of those creatures.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 8,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dwarven Provisioner",
+    "cost": "{1}{W}",
+    "text": "{3}{W}: Creatures you control get +1/+1 until end of turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 9,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Dwarven Shortsword",
+    "cost": "{3}{W}",
+    "text": "When this Equipment enters, create a 2/2 red Dwarf creature token, then attach this Equipment to it.\nEquipped creature gets +1/+2.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 10,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Eagle of the Great Shelf",
+    "cost": "{4}{W}",
+    "text": "Flying\nWhenever this creature attacks, it gets +1/+1 until end of turn for each other creature you control.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 11,
+    "power": 2,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "The Eagles Are Coming!",
+    "cost": "{1}{W}",
+    "text": "Kicker {2}{W}{W} (You may pay an additional {2}{W}{W} as you cast this spell.)\nChoose target creature you own. If this spell was kicked, instead choose any number of target creatures you own. Return each chosen creature to your hand. At the beginning of the next upkeep, create a 4/4 white Bird Soldier creature token with flying for each creature returned to your hand this way.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 12,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Esgaroth Garrison",
+    "cost": "{4}{W}",
+    "text": "Esgaroth Garrison's power is equal to the number of creatures you control.\nWhen this creature enters, recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 13,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Scout"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Fíli the Pathfinder",
+    "cost": "{3}{W}",
+    "text": "Storied (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nAs long as you have an enduring story, creatures you control get +1/+1.\nWhenever Fíli or another nontoken Dwarf you control enters, create a 2/2 red Dwarf creature token.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 14,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Gleaming Splendor",
+    "cost": "{1}{W}",
+    "text": "Whenever an opponent draws their second card each turn, you create a Treasure token.\n{2}{W}: Two target players each draw a card.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 15,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Iron Hills Blacksmith",
+    "cost": "{1}{W}",
+    "text": "Double strike\nWhen this creature enters, create a colorless Equipment artifact token named Axe with \"Equipped creature gets +1/+0\" and equip {2}.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 16,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "double_strike"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Scout"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Kíli the Resourceful",
+    "cost": "{1}{W}",
+    "text": "Storied (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nAs long as you have an enduring story, you may pay {0} rather than pay the equip cost of the first equip ability you activate each turn.\nWhenever another Dwarf or Equipment you control enters, draw a card. This ability triggers only once each turn.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 17,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Lake-town Lookout",
+    "cost": "{W}",
+    "text": "When this creature dies, recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 18,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Artificer"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Lake-town Toymaker",
+    "cost": "{3}{W}",
+    "text": "At the beginning of combat on your turn, if you've drawn two or more cards this turn, another target creature you control gets +3/+0 and gains first strike until end of turn.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 19,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Magnificent End",
+    "cost": "{4}{W}",
+    "text": "This spell costs {3} less to cast if it targets a tapped creature.\nMagnificent End deals 5 damage to target creature.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 20,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Moment of Glory",
+    "cost": "{W}",
+    "text": "Put a +1/+1 counter on target creature you control. If this spell was cast from a graveyard, also put a +1/+1 counter on each other creature you control.\nFlashback {4}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 21,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "The Mountain-king's Return",
+    "cost": "{2}{W}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)\nII — Return target creature card with mana value 3 or less from your graveyard to the battlefield.\nIII — Put a +1/+1 counter on up to one target creature.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 22,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Bard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "Ori, Keeper of Songs",
+    "cost": "{2}{W}",
+    "text": "Storied (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nAs long as you have an enduring story, Ori gets +1/+0 and has vigilance.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 23,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "W"
+    ],
+    "name": "The Queen of Dale",
+    "cost": "{1}{W}",
+    "text": "Whenever an opponent casts their first noncreature spell each turn, you recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 24,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Roads Go Ever, Ever On",
+    "cost": "{1}{W}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI — Search your library for up to two basic Plains cards, exile them, then shuffle. You gain 2 life.\nII, III — Put a card exiled with this Saga into its owner's hand.\nIV — Whenever you attack this turn, target creature you control gets +1/+1 until end of turn for each Plains you control.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 25,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Settle the Wreckage",
+    "cost": "{2}{W}{W}",
+    "text": "Exile all attacking creatures target player controls. That player may search their library for that many basic land cards, put those cards onto the battlefield tapped, then shuffle.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 26,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Stone by Sunlight",
+    "cost": "{1}{W}",
+    "text": "Choose one —\n• Destroy target creature with power 4 or greater.\n• Until end of turn, target creature becomes an artifact in addition to its other types and gains indestructible. (Damage and effects that say \"destroy\" don't destroy it.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 27,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Thorin's Last Stand",
+    "cost": "{2}{W}{W}",
+    "text": "Choose one —\n• Creatures you control get +2/+1 until end of turn.\n• Destroy target artifact or enchantment. You gain 2 life.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 28,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "An Unexpected Party",
+    "cost": "{2}{W}{W}",
+    "text": "As this enchantment enters, choose a creature type.\nCreatures you control of the chosen type get +2/+2.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 29,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "At the Door",
+      "cost": "{X}{2}{W}",
+      "text": "Create X 2/2 red Dwarf creature tokens. (Then exile this card. You may cast the enchantment later from exile.)",
+      "set": "HOB",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "An Unexpected Party // At the Door"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Velvetwing Butterflies",
+    "cost": "{2}{W}",
+    "text": "Flying",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 30,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Gaze in Wonder",
+      "cost": "{1}{W}",
+      "text": "Tap one or two target creatures. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Velvetwing Butterflies // Gaze in Wonder"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Vow to Erebor",
+    "cost": "{1}{W}",
+    "text": "Untap target creature you control. It gets +2/+2 until end of turn. If it's a Dwarf, you may attach an Equipment you control to it.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 31,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Rogue"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Bilbo, Luckwearer",
+    "cost": "{1}{U}",
+    "text": "Bilbo can't be blocked.\nWhenever Bilbo deals combat damage to a player, draw a card, then discard a card.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 32,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Burglar's Plot",
+      "cost": "{4}{U}",
+      "text": "Exchange control of two target nonland permanents that share a card type. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Bilbo, Luckwearer // Burglar's Plot"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Rogue"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Bilbo, Thief in the Night",
+    "cost": "{1}{U}",
+    "text": "Spells you cast from anywhere other than your hand cost {1} less to cast.\nWhenever Bilbo attacks, you may cast an artifact, instant, or sorcery spell from your graveyard. If an instant or sorcery spell cast this way would be put into your graveyard, exile it instead.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 33,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Rogue"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Bilbo Baggins, Burglar",
+    "cost": "{2}{U}",
+    "text": "When Bilbo Baggins enters, draw a card.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 34,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Take a Glance",
+      "cost": "{U}",
+      "text": "Scry 2. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Bilbo Baggins, Burglar // Take a Glance"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Confusticate and Bebother",
+    "cost": "{2}{U}",
+    "text": "Choose one —\n• Counter target spell unless its controller pays {4}.\n• Draw two cards, then discard a card.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 35,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Elrond, Moon-Reader",
+    "cost": "{2}{U}",
+    "text": "Whenever you activate an ability of a creature, draw a card. This ability triggers only once each turn.\n{5}{U}{U}: Exile up to two other target nonland permanents you control. Return those cards to the battlefield under their owner's control at the beginning of the next end step.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 36,
+    "power": 3,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Pilot"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Elven Raft-Steerer",
+    "cost": "{2}{U}",
+    "text": "Landfall — Whenever a land you control enters, choose one —\n• Tap target creature an opponent controls.\n• Untap target creature you control.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 37,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Elvenking's Harper",
+    "cost": "{1}{U}",
+    "text": "{4}{U}: Target creature can't be blocked this turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 38,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Enchanted River's Grasp",
+    "cost": "{2}{U}",
+    "text": "Enchant creature\nWhen this Aura enters, tap enchanted creature and remove all counters from it.\nEnchanted creature loses all abilities and doesn't untap during its controller's untap step.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 39,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Fateful Discovery",
+    "cost": "{3}{U}{U}",
+    "text": "Whenever an artifact you control enters, draw a card.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 40,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Wizard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "Gandalf, Wandering Wizard",
+    "cost": "{4}{U}",
+    "text": "Ward {3} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {3}.)\n{6}: Gandalf's owner shuffles him into their library and draws three cards.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 41,
+    "power": 4,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Vehicle"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Great Gilded Boat",
+    "cost": "{2}{U}",
+    "text": "Whenever you attack, recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 42,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Lakeshore Apothecary",
+    "cost": "{1}{U}",
+    "text": "Vigilance\nWhenever you draw your second card each turn, put a +1/+1 counter on this creature.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 43,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Lake-town Mariners",
+    "cost": "{4}{U}{U}",
+    "text": "Vigilance\nWard {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 44,
+    "power": 6,
+    "toughness": 5,
+    "keywords": [
+      "vigilance"
+    ],
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Gone Fishing",
+      "cost": "{3}{U}",
+      "text": "Exile two target creatures and/or lands you control, then return them to the battlefield under their owner's control.",
+      "set": "HOB",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Lake-town Mariners // Gone Fishing"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Long Lake Nuisance",
+    "cost": "{3}{U}",
+    "text": "Flying\nWhen this creature enters, recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 45,
+    "power": 3,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U"
+    ],
+    "name": "The Lord of the Eagles",
+    "cost": "{7}{U}{U}",
+    "text": "Flash\nThis spell costs {X} less to cast, where X is the total power of creatures you control with flying.\nFlying",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 46,
+    "power": 8,
+    "toughness": 8,
+    "keywords": [
+      "flash",
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Master's Councillors",
+    "cost": "{1}{U}",
+    "text": "Vigilance\nThis creature gets +2/+0 for each graveyard with seven or more cards in it.\nWhenever you draw your second card each turn, target player mills three cards. (They put the top three cards of their library into their graveyard.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 47,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mirkwood Meditator",
+    "cost": "{2}{U}",
+    "text": "Landfall — Whenever a land you control enters, you may have this creature's base power and toughness become 4/2 until end of turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 48,
+    "power": 2,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Most Decrepit Old Bird",
+    "cost": "{U}",
+    "text": "Flying\nThreshold — This creature gets +1/+1 as long as there are seven or more cards in your graveyard.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 49,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Speak Secrets",
+      "cost": "{1}{U}",
+      "text": "Mill four cards, then put an instant or sorcery card from among them into your hand.",
+      "set": "HOB",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Most Decrepit Old Bird // Speak Secrets"
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Old Fat Spider Can't See Me",
+    "cost": "{2}{U}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI — Target creature you control gains hexproof for as long as this Saga remains on the battlefield.\nII — Prevent all damage that would be dealt by up to one target creature for as long as this Saga remains on the battlefield.\nIII, IV — Draw a card.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 50,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Plunder the Trollshaws",
+    "cost": "{1}{U}",
+    "text": "Draw a card. If this spell was cast from a graveyard, draw two cards instead.\nFlashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 51,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bird"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Ravenhill Flock",
+    "cost": "{3}{U}",
+    "text": "Flying\nWhenever you draw a card, put a +1/+1 counter on this creature.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 52,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Riddles in the Dark",
+    "cost": "{2}{U}",
+    "text": "Look at the top four cards of your library and separate them into a face-down pile and a face-up pile. An opponent chooses one of the piles. Put that pile into your hand and the other into your graveyard.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 53,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Roll-Roll-Roll-Roll",
+    "cost": "{2}{U}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II, III, IV — Exile up to one target creature or land you control. If you do, return it to the battlefield under its owner's control at the beginning of the next end step.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 54,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Sound the Trumpets",
+    "cost": "{1}{U}{U}",
+    "text": "Counter target spell. If that spell's mana value was 2 or less, recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 55,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Thranduil's Decree",
+    "cost": "{4}{U}{U}",
+    "text": "Counter target spell. If a permanent spell is countered this way, exile it instead of putting it into its owner's graveyard. You may cast that card without paying its mana cost for as long as it remains exiled.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 56,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Uncover the Moon-Letters",
+    "cost": "{3}{U}",
+    "text": "Whenever you cast a noncreature spell, you may draw X cards, where X is the amount of mana spent to cast that spell. If you do, discard two cards.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 57,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Uneasy Partings",
+    "cost": "{3}{U}",
+    "text": "This spell costs {1} less to cast if it targets an attacking nontoken creature.\nTarget creature's owner puts it on their choice of the top or bottom of their library.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 58,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Wizard's Staff",
+    "cost": "{1}{U}",
+    "text": "Equipped creature has prowess. (Whenever its controller casts a noncreature spell, that creature gets +1/+1 until end of turn.)\nIf a triggered ability of equipped creature triggers, that ability triggers an additional time.\nEquip Wizard {1}\nEquip {3}",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 59,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Along the Crooked Way",
+    "cost": "{2}{B}",
+    "text": "When this enchantment enters, return target creature card from your graveyard to your hand.\nWhenever a creature card leaves your graveyard, amass Goblins 1.\n{1}{B}: Goblins and Orcs you control gain menace until end of turn.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 60,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Azog, Moria's Ruin",
+    "cost": "{2}{B}",
+    "text": "When Azog enters, destroy up to one other target creature. Its controller amasses Goblins X, where X is that creature's power. If you controlled that creature, draw a card. (To amass Goblins X, that player puts X +1/+1 counters on an Army they control. It's also a Goblin. If they don't control an Army, they create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 61,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Bilbo's Deadly Slice",
+    "cost": "{1}{B}{B}",
+    "text": "Destroy target creature.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 62,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Crude Bent Blade",
+    "cost": "{2}{B}",
+    "text": "When this Equipment enters, target opponent sacrifices a creature of their choice.\nEquipped creature gets +2/+1.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 63,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Desolation Prowler",
+    "cost": "{1}{B}",
+    "text": "Pay 2 life: This creature gets +2/+2 until end of turn. Activate only once each turn.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 64,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Down, Down to Goblin-town",
+    "cost": "{2}{B}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI — Target opponent reveals their hand. You choose a nonland card from it. That player discards that card.\nII — Amass Goblins 1. (Put a +1/+1 counter on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)\nIII, IV — Target opponent loses 1 life and you gain 1 life.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 65,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bat"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Dreaded Bat-Cloud",
+    "cost": "{4}{B}",
+    "text": "This spell costs {3} less to cast if a creature died this turn.\nFlying, deathtouch",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 66,
+    "power": 4,
+    "toughness": 2,
+    "keywords": [
+      "flying",
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Front Porch Sentries",
+    "cost": "{1}{B}",
+    "text": "When this creature dies, target creature an opponent controls gets -1/-1 until end of turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 67,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Gathering of Darkness",
+    "cost": "{3}{B}",
+    "text": "Return up to one target creature card from your graveyard to your hand.\nAmass Goblins 3. (Put three +1/+1 counters on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 68,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Gnashing of Teeth",
+    "cost": "{1}{B}{B}",
+    "text": "Choose one —\n• Target creature gets -5/-5 until end of turn. If that creature would die this turn, exile it instead.\n• Creatures target player controls get -1/-1 until end of turn.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 69,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Horror"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Gollum, Riddle Master",
+    "cost": "{1}{B}",
+    "text": "As Gollum enters, choose odd or even. (Zero is even.)\nWhenever an opponent casts a spell with mana value of the chosen quality, choose one that hasn't been chosen —\n• Put a +1/+1 counter on Gollum.\n• Each opponent loses 2 life and you gain 2 life.\n• Draw a card.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 70,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Horror"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Gollum, Silent Slinker",
+    "cost": "{3}{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 71,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Meager Meal",
+      "cost": "{B}",
+      "text": "Put a +1/+1 counter on up to one target creature. Target player gains 2 life. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Gollum, Silent Slinker // Meager Meal"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Horror"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "Gollum the Abandoned",
+    "cost": "{1}{B}",
+    "text": "Gollum can't block.\nWhen Gollum enters, exile up to one target card from an opponent's graveyard. Each opponent loses 2 life.\n{2}, Sacrifice an artifact or creature: Return this card from your graveyard to your hand. Activate only as a sorcery.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 72,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Insect"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Great Fierce Bee",
+    "cost": "{2}{B}",
+    "text": "Flying\nWhenever one or more other creatures die, scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 73,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Great Ugly-Looking Goblin",
+    "cost": "{5}{B}",
+    "text": "Each creature you control with a +1/+1 counter on it has menace. (It can't be blocked except by two or more creatures.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 74,
+    "power": 4,
+    "toughness": 4,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Clap! Snap!",
+      "cost": "{1}{B}",
+      "text": "Amass Goblins 2. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Great Ugly-Looking Goblin // Clap! Snap!"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Head of the Hunt",
+    "cost": "{2}{B}{B}",
+    "text": "Flash\nIf a creature an opponent controls would die, exile it instead. When you do, create a 2/2 green Wolf creature token.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 75,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Inside Information",
+    "cost": "{X}{B}{B}",
+    "text": "Exile the top X cards of target opponent's library. You may play those cards this turn. If you cast a spell this way, pay life equal to its mana value rather than pay its mana cost.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 76,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "The Master of Lake-town",
+    "cost": "{1}{B}{B}",
+    "text": "Deathtouch\nWhenever a player loses life, that player mills that many cards. (Damage causes loss of life.)\nWhen The Master of Lake-town dies, draw a card for each graveyard with seven or more cards in it.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 77,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Nighthowl Pursuer",
+    "cost": "{B}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nFerocious — Whenever this creature attacks while you control a creature with power 4 or greater, this creature gets +2/+2 until end of turn.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 78,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Rage into the Valley",
+    "cost": "{2}{B}",
+    "text": "You draw a card and lose 1 life.\nAmass Goblins 2. (Put two +1/+1 counters on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 79,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Ravening Warg",
+    "cost": "{1}{B}",
+    "text": "Deathtouch\nFerocious — Whenever this creature attacks while you control a creature with power 4 or greater, you gain 2 life.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 80,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Reverent Howl",
+    "cost": "{2}{B}",
+    "text": "Choose one —\n• Target player draws two cards and loses 2 life.\n• Target creature gets +2/+2 and gains lifelink until end of turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 81,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Rhovanion Rampager",
+    "cost": "{2}{B}",
+    "text": "Whenever this creature attacks, you may sacrifice another creature. If you do, put a number of +1/+1 counters on this creature equal to the sacrificed creature's power.\nWhen this creature dies, amass Goblins X, where X is this creature's power. (Put X +1/+1 counters on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 82,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Citizen"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B"
+    ],
+    "name": "The Sackville-Bagginses",
+    "cost": "{1}{B}",
+    "text": "When The Sackville-Bagginses enter, you may sacrifice another creature or artifact. If you do, draw a card and create a Treasure token.\nWhenever you sacrifice a token, target opponent loses 1 life.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 83,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Stir Up Trouble",
+    "cost": "{B}",
+    "text": "As an additional cost to cast this spell, sacrifice an artifact or creature or pay {4}.\nDestroy target creature.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 84,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Stony-Voiced Goblins",
+    "cost": "{1}{B}",
+    "text": "When this creature enters, each opponent discards a card.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 85,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Supper for Spiders",
+    "cost": "{1}{B}",
+    "text": "Put onto the battlefield under your control all creature cards in your opponents' graveyards that were put there from the battlefield this turn. They are Food artifacts with \"{2}, {T}, Sacrifice this artifact: You gain 3 life.\" (They lose all other types and subtypes.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 86,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Bard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Balin, Loremaster",
+    "cost": "{3}{R}{R}",
+    "text": "Storied (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nWhenever Balin or another Dwarf you control enters, you may discard your hand. Draw X cards, where X is the number of cards discarded this way. If you have an enduring story, Balin deals X damage to each opponent.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 87,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Bard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Bombur, Gentle Dreamer",
+    "cost": "{2}{R}",
+    "text": "Storied (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nBombur doesn't untap during your untap step unless you have an enduring story.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 88,
+    "power": 5,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Bard"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Bothersome Noisemaker",
+    "cost": "{1}{R}",
+    "text": "Whenever you cast a noncreature spell, amass Goblins 1. (Put a +1/+1 counter on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 89,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Burn, Burn, Tree and Fern",
+    "cost": "{3}{R}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI — This Saga deals 6 damage to target creature an opponent controls.\nII — Destroy target artifact an opponent controls.\nIII, IV — Add {R}.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 90,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Dáin Ironfoot",
+    "cost": "{2}{R}",
+    "text": "When Dáin enters, create a colorless Equipment artifact token named Axe with \"Equipped creature gets +1/+0\" and equip {2}. When you do, attach it to target creature you control.\nWhenever Dáin attacks, each equipped attacking creature gains double strike until end of turn.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 91,
+    "power": 1,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon",
+      "Wurm"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Desert Were-Worm",
+    "cost": "{4}{R}{R}",
+    "text": "This creature gets +2/+0 for each Mountain you control.\nWhenever you attack with creatures with total power 12 or greater for the first time each turn, untap all attacking creatures. After this phase, there is an additional combat phase.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 92,
+    "power": 0,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Desolation of Smaug",
+    "cost": "{2}{R}{R}",
+    "text": "Desolation of Smaug deals 3 damage to each non-Dragon creature.\nAdd four mana in any combination of colors. Spend this mana only to cast Dragon spells.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 93,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Dori, Bearer of Friends",
+    "cost": "{2}{R}",
+    "text": "Trample\nWhen Dori enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 94,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Dwarven Mauler",
+    "cost": "{R}",
+    "text": "Equip abilities you activate that target this creature cost {2} less to activate.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 95,
+    "power": 2,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Wizard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Gandalf, Goblins' Bane",
+    "cost": "{2}{R}",
+    "text": "Whenever you cast a noncreature spell, Gandalf gets +1/+1 until end of turn and deals 1 damage to each opponent.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 96,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Flameshape",
+      "cost": "{1}{R}",
+      "text": "Look at the top two cards of your library and exile them face down. For as long as they remain exiled, you may play them if you control a Wizard.",
+      "set": "HOB",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "Gandalf, Goblins' Bane // Flameshape"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Wizard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Gandalf, Spark Starter",
+    "cost": "{4}{R}{R}",
+    "text": "Reach\nWhen Gandalf enters, he deals 3 damage divided as you choose among one, two, or three targets.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 97,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Getaway Barrel",
+    "cost": "{3}{R}",
+    "text": "When this artifact is put into a graveyard from the battlefield, reveal the top thirteen cards of your library. Put a random creature card from among them onto the battlefield. Put the rest on the bottom of your library in a random order.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 98,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Glóin the Mighty",
+    "cost": "{3}{R}",
+    "text": "At the beginning of your first main phase, add {R}{R}.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 99,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Easy Pickings",
+      "cost": "{2}{R}",
+      "text": "Easy Pickings deals 1 damage to each creature your opponents control. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Glóin the Mighty // Easy Pickings"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Goblin-town Flunkies",
+    "cost": "{1}{R}",
+    "text": "Haste\nWhen this creature enters, amass Goblins 1. (Put a +1/+1 counter on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 100,
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Gundabad Opportunist",
+    "cost": "{3}{R}",
+    "text": "When this creature enters, exile the top card of your library. Until the end of your next turn, you may play that card.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 101,
+    "power": 4,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Iron Hills Stalwart",
+    "cost": "{4}{R}",
+    "text": "Reach, trample\nWhen this creature enters, attach target Equipment you control to up to one target creature you control.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 102,
+    "power": 4,
+    "toughness": 5,
+    "keywords": [
+      "reach",
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Last Light of Durin's Day",
+    "cost": "{1}{R}",
+    "text": "Whenever a Mountain you control enters, put a quest counter on this enchantment. If it has six or more quest counters on it, sacrifice it. If you do, search your hand and/or library for a Dragon card and put it onto the battlefield. If you search your library this way, shuffle.\nMountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 103,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "The Misty Mountains Cold",
+    "cost": "{2}{R}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II, III, IV — Create a Treasure token. Then if you control four or more Treasures, sacrifice this Saga. If you do, create a 6/6 red Dragon creature token with flying. (A Treasure token is an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 104,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Misty Mountains Raider",
+    "cost": "{4}{R}",
+    "text": "Whenever you attack, amass Goblins 2. (Put two +1/+1 counters on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 105,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Óin the Brave",
+    "cost": "{1}{R}",
+    "text": "Storied (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nAs long as you have an enduring story, Óin gets +1/+0 and has haste.\n{1}, {T}, Discard a card: Draw a card.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 106,
+    "power": 1,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Pinecone Strike",
+    "cost": "{1}{R}",
+    "text": "Choose one or both —\n• Pinecone Strike deals 3 damage to target creature. If that creature would die this turn, exile it instead.\n• Destroy target artifact token.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 107,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Ragged Short Spear",
+    "cost": "{1}{R}",
+    "text": "When this Equipment enters, you may discard a card. If you do, draw two cards.\nEquipped creature gets +2/+0.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 108,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Smaug, the Great Calamity",
+    "cost": "{5}{R}{R}",
+    "text": "Flying",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 109,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "name": "Spew Flame",
+      "cost": "{4}{R}",
+      "text": "Spew Flame deals 5 damage to target creature. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Smaug, the Great Calamity // Spew Flame"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Smaug the Magnificent",
+    "cost": "{2}{R}{R}",
+    "text": "Flying, haste\nWhenever Smaug attacks, he deals damage equal to the number of Treasures you control to any target.\nAt the beginning of your upkeep, create a Treasure token.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 110,
+    "power": 4,
+    "toughness": 3,
+    "keywords": [
+      "flying",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Smaug's Fury",
+    "cost": "{1}{R}",
+    "text": "Target creature gets +3/+0 and gains reach and first strike until end of turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 111,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Snowslope Hunter",
+    "cost": "{2}{R}",
+    "text": "Sacrifice another creature or artifact: Exile the top card of your library. You may play it until the end of your next turn. Activate only during your turn and only once each turn.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 112,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Giant"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Stone-Giant of High Pass",
+    "cost": "{5}{R}{R}",
+    "text": "Whenever this creature enters or attacks, create a 3/1 colorless Wall artifact creature token with defender named Stone Boulder.\n{2}{R}, Sacrifice an artifact: This creature deals 4 damage to any target.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 113,
+    "power": 7,
+    "toughness": 7,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Thorin, Mountain-king",
+    "cost": "{3}{R}",
+    "text": "Trample\nWhen Thorin enters, attach any number of target Equipment you control to target creature you control. When one or more Equipment become attached to that creature this way, that creature deals damage equal to its power to up to one target creature.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 114,
+    "power": 3,
+    "toughness": 4,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Tidings of War",
+    "cost": "{R}",
+    "text": "Amass Goblins 1. If this spell was cast from a graveyard, amass Goblins 3 instead. (To amass Goblins X, put X +1/+1 counters on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)\nFlashback {3}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 115,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Attercop",
+    "cost": "{1}{G}",
+    "text": "Reach, deathtouch\nLandfall — Whenever a land you control enters, this creature gets +1/+1 until end of turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 116,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "reach",
+      "deathtouch"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Bejeweled Warg",
+    "cost": "{1}{G}",
+    "text": "Trample\nWhenever this creature deals combat damage to a player, choose one —\n• Put a +1/+1 counter on target Wolf you control.\n• Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 117,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Bear",
+      "Shapeshifter"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Beorn, Reluctant Host",
+    "cost": "{4}{G}",
+    "text": "Trample",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 118,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "trample"
+    ],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "G"
+      ],
+      "name": "Till and Tend",
+      "cost": "{1}{G}",
+      "text": "You may play an additional land this turn. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "C",
+      "keywords": []
+    },
+    "imageName": "Beorn, Reluctant Host // Till and Tend"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear",
+      "Shapeshifter",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Beorn the Fierce",
+    "cost": "{3}{G}{G}",
+    "text": "Trample\nOther Bears you control get +2/+2.\nAt the beginning of combat on your turn, put a trample counter on up to one target creature you control. It becomes a Bear in addition to its other types. Then if you control three or more Bears, draw two cards.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 119,
+    "power": 6,
+    "toughness": 6,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Beorn's Hospitality",
+    "cost": "{1}{G}",
+    "text": "Landfall — Whenever a land you control enters, put a +1/+1 counter on target creature you control.\n{5}{G}{G}: This enchantment becomes a Bear creature in addition to its other types and gains \"This creature's power and toughness are each equal to the number of lands you control.\" (This effect doesn't end.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 120,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Boughside Wanderers",
+    "cost": "{4}{G}{G}",
+    "text": "When this creature enters, look at the top four cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.\nLandfall — Whenever a land you control enters, this creature gets +2/+2 until end of turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 121,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Cantankerous Keepers",
+    "cost": "{5}{G}",
+    "text": "Affinity for Elves (This spell costs {1} less to cast for each Elf you control.)\nWhen this creature enters, mill four cards, then put all Elf cards from among them into your hand.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 122,
+    "power": 4,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Dancing from Dark to Dawn",
+    "cost": "{3}{G}{G}",
+    "text": "Whenever you cast a creature spell, put X +1/+1 counters on target creature you control, where X is that spell's mana value.\nLandfall — Whenever a land you control enters, create a 2/2 green Bear creature token.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 123,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Saga"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Down in the Valley",
+    "cost": "{2}{G}",
+    "text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI — Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nII — This Saga gains \"Landfall — Whenever a land you control enters, create a 1/1 green Elf creature token.\"\nIII, IV — Elves you control get +1/+0 and gain vigilance until end of turn.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 124,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Galion, Elvenking's Butler",
+    "cost": "{2}{G}{G}",
+    "text": "Whenever Galion attacks, choose up to one other target creature you control. Its base power and toughness become equal to Galion's power and toughness until end of turn.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 125,
+    "power": 4,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Gigantic Big Bear",
+    "cost": "{5}{G}{G}",
+    "text": "This spell can't be countered.\nHexproof, haste",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 126,
+    "power": 10,
+    "toughness": 7,
+    "keywords": [
+      "hexproof",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Guardian of the Halls",
+    "cost": "{1}{G}",
+    "text": "Trample\n{5}{G}{G}: Put three +1/+1 counters on this creature.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 127,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Little Bear",
+    "cost": "{2}{G}",
+    "text": "Flash\nWhen this creature enters, untap another target creature you control. If that creature is a Bear, put a +1/+1 counter on it.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 128,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Mirkwood Pathmaker",
+    "cost": "{2}{G}",
+    "text": "Mirkwood Pathmaker's power and toughness are each equal to the number of lands you control.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 129,
+    "power": 0,
+    "powerText": "*",
+    "toughness": 0,
+    "toughnessText": "*",
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Rabbit"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Nasty Little Rabbit",
+    "cost": "{G}",
+    "text": "Ferocious — At the beginning of combat on your turn, if you control a creature with power 4 or greater, put a +1/+1 counter on this creature.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 130,
+    "power": 1,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Halfling",
+      "Advisor"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "The Notary Hobbits",
+    "cost": "{3}{G}{G}",
+    "text": "When The Notary Hobbits enter, if they're not a token, create two tokens that are copies of them, except the tokens aren't legendary.\n{T}: Add {C} for each Halfling you control.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 131,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Old Fat Spider",
+    "cost": "{4}{G}{G}",
+    "text": "Reach\nThis creature can't be blocked by creatures with power 2 or less.\nWhenever this creature becomes the target of a spell or ability an opponent controls, draw a card.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 132,
+    "power": 6,
+    "toughness": 7,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Ordinary Bear",
+    "cost": "{3}{G}",
+    "text": "",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 133,
+    "power": 4,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Part in Friendship",
+    "cost": "{4}{G}",
+    "text": "Whenever a nontoken creature you control dies, reveal cards from the top of your library until you reveal a creature card. If its mana value is less than or equal to the number of lands you control, put it onto the battlefield. Otherwise, put it into your hand. Put the rest on the bottom of your library in a random order. This ability triggers only once each turn.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 134,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Quarrel",
+    "cost": "{1}{G}",
+    "text": "Target creature you control deals damage equal to its power to target creature an opponent controls.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 135,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Avatar",
+      "Wizard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "G"
+    ],
+    "name": "Radagast of Rhosgobel",
+    "cost": "{2}{G}{G}",
+    "text": "The first creature spell you cast each turn costs {2} less to cast and can be cast as though it had flash.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 136,
+    "power": 2,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Through the Forest Gate",
+    "cost": "{6}{G}{G}",
+    "text": "Look at the top twenty cards of your library, put any number of land cards from among them onto the battlefield tapped, then shuffle. You gain 8 life.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 137,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Troll Negotiations",
+    "cost": "{2}{G}{G}",
+    "text": "Put two +1/+1 counters on target creature you control. Then it fights target creature an opponent controls. (Each deals damage equal to its power to the other.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 138,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Warg Tactics",
+    "cost": "{1}{G}",
+    "text": "Choose one —\n• Destroy target creature with flying.\n• Put a +1/+1 counter on target creature you control. It gains trample and hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 139,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Wargling",
+    "cost": "{1}{G}",
+    "text": "Ferocious — Whenever this creature attacks while you control a creature with power 4 or greater, until end of turn, this creature gets +1/+0 and creatures you control gain trample.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 140,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Wilderland Scrounger",
+    "cost": "{4}{G}",
+    "text": "Ferocious — Whenever this creature attacks while you control a creature with power 4 or greater, put a +1/+1 counter on each creature you control.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 141,
+    "power": 3,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Scout"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Wood Elves",
+    "cost": "{2}{G}",
+    "text": "When this creature enters, search your library for a Forest card, put that card onto the battlefield, then shuffle.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 142,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Druid"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Woodland Weavemaster",
+    "cost": "{1}{G}",
+    "text": "Vigilance\nWhenever another Elf you control enters, this creature gets +1/+1 until end of turn.\n{T}: Add X mana of any one color, where X is this creature's power. Spend this mana only to cast Elf spells and activate abilities of Elf sources.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 143,
+    "power": 1,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Noble",
+      "Archer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Bard, King of Dale",
+    "cost": "{4}{W}{U}",
+    "text": "Reach, vigilance\nIf you would draw a card except the first one you draw in each of your draw steps, draw two cards instead.\nIf one or more tokens would be created under your control, twice that many of those tokens are created instead.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 144,
+    "power": 3,
+    "toughness": 5,
+    "keywords": [
+      "reach",
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Archer"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Bard the Bowman",
+    "cost": "{1}{W}{U}",
+    "text": "Reach\nWhenever you draw your second card each turn, put a +1/+1 counter on target creature. It gains lifelink until end of turn.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 145,
+    "power": 1,
+    "toughness": 3,
+    "keywords": [
+      "reach"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Bard's Company",
+    "cost": "{2}{W}{U}",
+    "text": "You may cast this spell as though it had flash if you control a Human.\nOther creatures you control get +1/+1.\nWhenever this creature enters or attacks, recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 146,
+    "power": 2,
+    "toughness": 3,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Bard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Bifur, Melodic Rider",
+    "cost": "{4}{R/W}{R/W}",
+    "text": "Storied (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nWhenever Bifur enters or attacks, put a +1/+1 counter on target creature.\nAs long as you have an enduring story, if a triggered ability of a Dwarf you control triggers, that ability triggers an additional time.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 147,
+    "power": 4,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Bolg of the North",
+    "cost": "{3}{B}{R}",
+    "text": "When Bolg enters, you may sacrifice another creature. When you do, Bolg deals damage equal to that creature's power to another target creature. If excess damage was dealt this way, amass Goblins X, where X is that excess damage. (Put X +1/+1 counters on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 148,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Bolg's Company",
+    "cost": "{B}{R}",
+    "text": "This creature has haste as long as you control another Goblin.\n{T}, Sacrifice another Goblin: Add {B}{R}.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 149,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "The Chief Warg",
+    "cost": "{2}{B}{G}",
+    "text": "Menace (This creature can't be blocked except by two or more creatures.)\nFerocious — Whenever you attack while you control a creature with power 4 or greater, you draw a card and lose 1 life.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 150,
+    "power": 3,
+    "toughness": 3,
+    "keywords": [
+      "menace"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Chief Warg's Company",
+    "cost": "{1}{B}{G}",
+    "text": "Trample\nThis creature can't attack unless you control two or more other Wolves.\nAt the beginning of your upkeep, create a 2/2 green Wolf creature token.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 151,
+    "power": 5,
+    "toughness": 3,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warrior"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Dáin's Company",
+    "cost": "{R}{W}",
+    "text": "This creature has lifelink as long as you control another Dwarf.\nWhen this creature enters, look at the top four cards of your library. You may reveal a Dwarf or Equipment card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 152,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Wolf"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Duskwatch Hunter",
+    "cost": "{2}{B/G}",
+    "text": "This creature can't be blocked by tokens.\nWhen this creature enters, put a +1/+1 counter on target creature.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 153,
+    "power": 3,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Warrior"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Dwalin, Weaponmaster",
+    "cost": "{1}{R/W}",
+    "text": "First strike\nWhenever Dwalin enters or attacks, put a hone counter on each Equipment you control. (Each hone counter on an Equipment grants +1/+0 to equipped creature.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 154,
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "first_strike"
+    ]
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [
+      "Aura"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Eagle's Rescue",
+    "cost": "{2}{W/U}{W/U}",
+    "text": "Enchant creature\nEnchanted creature gets +2/+2 and has flying.\n{2}{W/U}{W/U}: Return this card from your graveyard to the battlefield attached to target creature you control with power 1 or less. Activate only as a sorcery.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 155,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Fearsome Goblin Pair",
+    "cost": "{2}{B/R}",
+    "text": "When this creature dies, amass Goblins 4. (Put four +1/+1 counters on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 156,
+    "power": 1,
+    "toughness": 1,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Goblin Plate Mail",
+    "cost": "{1}{B/R}",
+    "text": "When this Equipment enters, amass Goblins 1, then attach this Equipment to the amassed Army. (To amass Goblins 1, put a +1/+1 counter on an Army you control. It's also a Goblin. If you don't control an Army, create a 0/0 black Goblin Army creature token first.)\nEquipped creature gets +1/+0 and has menace.\nEquip {4}",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 157,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Goblin",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "The Great Goblin",
+    "cost": "{1}{B/R}{B/R}",
+    "text": "Whenever you put one or more counters on a Goblin, Orc, or Army you control, The Great Goblin deals 2 damage to target opponent.\nWhenever another Goblin, Orc, or Army you control dies, exile the top card of your library. You may play it until the end of your next turn.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 158,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Bear"
+    ],
+    "supertypes": [],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Large Bear",
+    "cost": "{3}{B/G}{B/G}",
+    "text": "Reach, trample, haste",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 159,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "reach",
+      "trample",
+      "haste"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Ranger"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Mirkwood Nurturer",
+    "cost": "{2}{G/U}",
+    "text": "When this creature enters, return up to one other target permanent you control to its owner's hand. If you do, put a +1/+1 counter on this creature.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 160,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Bard"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Nori, Teller of Tales",
+    "cost": "{1}{R/W}",
+    "text": "Whenever Nori attacks, target attacking creature gains first strike until end of turn.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 161,
+    "power": 2,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U",
+      "W"
+    ],
+    "name": "Patient Instructor",
+    "cost": "{2}{W/U}",
+    "text": "Vigilance\nWhen this creature enters, recruit. (Draw a card, then discard a card. If you discarded a nonland card, create a 1/1 white Human Soldier creature token.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 162,
+    "power": 2,
+    "toughness": 2,
+    "keywords": [
+      "vigilance"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Citizen"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Silvan Reveler",
+    "cost": "{2}{G}{U}",
+    "text": "When this creature enters, draw a card, then discard a card. If you discard a land card this way, put it from your graveyard onto the battlefield tapped.\nLandfall — Whenever a land you control enters, you may pay {1}{G}{U}. If you do, return this card from your graveyard to your hand.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 163,
+    "power": 3,
+    "toughness": 2,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "R"
+    ],
+    "name": "Smaug, Wicked Worm",
+    "cost": "{3}{B}{R}",
+    "text": "Flying\nWhen Smaug enters, create X tapped Treasure tokens, where X is the number of artifacts your opponents control.\nWhenever you cast a spell, if mana from a Treasure was spent to cast it, you draw a card and lose 1 life.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 164,
+    "power": 5,
+    "toughness": 5,
+    "keywords": [
+      "flying"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dwarf",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R",
+      "W"
+    ],
+    "name": "Thorin Oakenshield",
+    "cost": "{R}{W}",
+    "text": "Trample\nStoried (If you control three or more artifacts, legendaries, and/or Sagas, you have an enduring story for the rest of the game.)\nAs long as you have an enduring story, artifacts and creatures you control have ward {1}.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 165,
+    "power": 3,
+    "toughness": 2,
+    "keywords": [
+      "trample"
+    ]
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "U",
+      "G"
+    ],
+    "name": "Thranduil, Sindarin Liege",
+    "cost": "{2}{G/U}{G/U}",
+    "text": "Other Elves you control get +1/+1.\nLandfall — Whenever a land you control enters, create a 1/1 green Elf creature token.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 166,
+    "power": 2,
+    "toughness": 3,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U",
+        "G"
+      ],
+      "name": "Silvan Rally",
+      "cost": "{1}{G/U}{G/U}",
+      "text": "Mill four cards, then put up to two land cards from among them into your hand. (Then exile this card. You may cast the creature later from exile.)",
+      "set": "HOB",
+      "rarity": "U",
+      "keywords": []
+    },
+    "imageName": "Thranduil, Sindarin Liege // Silvan Rally"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Noble"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G",
+      "U"
+    ],
+    "name": "Thranduil, the Elvenking",
+    "cost": "{2}{B}{G}{U}",
+    "text": "Thranduil has all activated abilities of all Elf cards in your graveyard.\nWhenever another legendary Elf you control enters, draw two cards, then discard a card.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 167,
+    "power": 5,
+    "toughness": 6,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elf",
+      "Soldier"
+    ],
+    "supertypes": [],
+    "colors": [
+      "G",
+      "U"
+    ],
+    "name": "Thranduil's Company",
+    "cost": "{2}{G}{U}",
+    "text": "As long as you control another Elf, you may play an additional land on each of your turns.\nLandfall — Whenever a land you control enters, put two +1/+1 counters on target creature you control. It gains vigilance until end of turn.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 168,
+    "power": 3,
+    "toughness": 4,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Troll"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "B",
+      "G"
+    ],
+    "name": "Tom, Bert, and William",
+    "cost": "{3}{B}{G}",
+    "text": "{1}, Sacrifice another creature: Draw cards equal to the sacrificed creature's power, then discard a card.\nWhen Tom, Bert, and William die, if they were a creature, return them to the battlefield. They're an artifact. (They're no longer a creature.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 169,
+    "power": 5,
+    "toughness": 5,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "The Arkenstone",
+    "cost": "{5}",
+    "text": "Creatures you control get +1/+1.\nAt the beginning of your end step, draw a card.",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 170,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "W"
+      ],
+      "name": "Seek the Heart",
+      "cost": "{2}{W}",
+      "text": "Search your library for a legendary creature card, reveal it, put it into your hand, then shuffle. (Then exile this card. You may cast the artifact later from exile.)",
+      "set": "HOB",
+      "rarity": "M",
+      "keywords": []
+    },
+    "imageName": "The Arkenstone // Seek the Heart"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "The Black Arrow",
+    "cost": "{3}",
+    "text": "Flash\nWhen The Black Arrow enters, it deals 1 damage to any target. If a Dragon is dealt damage this way, destroy it.\nEquipped creature gets +1/+1 and has reach.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 171,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Dwarven Mattock",
+    "cost": "{2}",
+    "text": "When this Equipment enters, attach it to target Dwarf you control.\nEquipped creature gets +2/+2 and has ward {1}. (Whenever equipped creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 172,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Giant's Boulder",
+    "cost": "{1}",
+    "text": "When this artifact enters, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)\n{1}, {T}: Add one mana of any color.\n{7}, {T}, Sacrifice this artifact: Destroy target permanent.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 173,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Glamdring, Foe-hammer",
+    "cost": "{2}",
+    "text": "Instant and sorcery spells you cast cost {X} less to cast, where X is equipped creature's power.\nEquip {2}",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 174,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Sorcery"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Gleam of Death",
+      "cost": "{3}{U}",
+      "text": "Mill six cards, then put all instant and sorcery cards from among them into your hand. (Then exile this card. You may cast the artifact later from exile.)",
+      "set": "HOB",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "Glamdring, Foe-hammer // Gleam of Death"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Key to the Side-Door",
+    "cost": "{1}",
+    "text": "{2}, {T}: Target creature can't be blocked this turn.\n{1}, {T}, Discard a legendary card with the same name as a legendary permanent you control: Draw two cards.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 175,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "My Precious",
+    "cost": "{3}",
+    "text": "Equipped creature has hexproof and can't be blocked.\nEquip—{2}, Pay 2 life.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 176,
+    "keywords": [],
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "B"
+      ],
+      "name": "Allure of Power",
+      "cost": "{1}{B}",
+      "text": "As an additional cost to cast this spell, sacrifice a creature.\nDraw two cards.",
+      "set": "HOB",
+      "rarity": "R",
+      "keywords": []
+    },
+    "imageName": "My Precious // Allure of Power"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Orcrist, Goblin-cleaver",
+    "cost": "{3}",
+    "text": "Equipped creature gets +2/+2 and has trample.\nWhenever equipped creature deals combat damage to a player, choose a creature type. Create a Treasure token for each creature you control of that type.\nEquip {3}",
+    "set": "HOB",
+    "rarity": "M",
+    "number": 177,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Sting, Bilbo's Sword",
+    "cost": "{2}",
+    "text": "Flash\nWhen Sting enters, put a hone counter on Sting for each creature target opponent controls. Attach Sting to up to one target creature you control. (Each hone counter on an Equipment grants +1/+0 to equipped creature.)\nEquip {3}",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 178,
+    "keywords": [
+      "flash"
+    ]
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [],
+    "name": "Thrór's Map",
+    "cost": "{2}",
+    "text": "When Thrór's Map enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{2}, {T}: Draw a card, then discard a card.",
+    "set": "HOB",
+    "rarity": "U",
+    "number": 179,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [
+      "Equipment"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "Well-Worn Spatula",
+    "cost": "{1}",
+    "text": "When this Equipment enters, you gain 2 life.\nEquipped creature gets +1/+1.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 180,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Elven Passage",
+    "cost": "",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle. You may behold an Elf. If you do, untap that land. (To behold an Elf, choose an Elf you control or reveal an Elf card from your hand.)",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 181,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Elvenking's Halls",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {G} or {U}.\n{2}{G}{U}, {T}, Sacrifice this land: Put two +1/+1 counters on target Elf you control. Activate only as a sorcery.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 182,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Goblin-town",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {B} or {R}.\n{2}{B}{R}, {T}, Sacrifice this land: Put two +1/+1 counters on target Goblin or Orc you control. Activate only as a sorcery.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 183,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Hobbit Hole",
+    "cost": "",
+    "text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nHalflingcycling {4} ({4}, Discard this card: Search your library for a Halfling card, reveal it, put it into your hand, then shuffle.)",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 184,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Iron Hills",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {R} or {W}.\n{2}{R}{W}, {T}, Sacrifice this land: Put two +1/+1 counters on target Dwarf you control. Activate only as a sorcery.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 185,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Lake-town",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {W} or {U}.\n{2}{W}{U}, {T}, Sacrifice this land: Put two +1/+1 counters on target Human you control. Activate only as a sorcery.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 186,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [
+      "Mountain"
+    ],
+    "supertypes": [],
+    "colors": [],
+    "name": "The Lonely Mountain",
+    "cost": "",
+    "text": "({T}: Add {R}.)\nThis land enters tapped unless you control an Equipment.\n{4}{R}, {T}: Create a 2/2 red Dwarf creature token. This ability costs {1} less to activate for each Equipment you control. Activate only as a sorcery.",
+    "set": "HOB",
+    "rarity": "R",
+    "number": 187,
+    "keywords": []
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Mirkwood",
+    "cost": "",
+    "text": "This land enters tapped.\n{T}: Add {B} or {G}.\n{2}{B}{G}, {T}, Sacrifice this land: Put two +1/+1 counters on target Bear, Spider, or Wolf you control. Activate only as a sorcery.",
+    "set": "HOB",
+    "rarity": "C",
+    "number": 188,
+    "keywords": []
+  }
+]

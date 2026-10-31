@@ -1,3 +1,4 @@
+import {WEB_SHIRE_TOKENS} from './sets/web-shire-tokens';
 import {ORBIT_TOKENS} from './sets/orbit-tokens';
 import {CAMPUS_TOKENS} from './sets/campus-tokens';
 import {MEADOW_TOKENS} from './sets/meadow-tokens';
@@ -10,6 +11,7 @@ import { GEN_TOKENS } from './sets/gen/tokens';
 const T = (d: Omit<CardDef, 'set' | 'rarity' | 'token'>): CardDef => ({ ...d, set: 'TOK', rarity: 'T', token: true });
 
 export const TOKENS: CardDef[] = [
+ ...WEB_SHIRE_TOKENS,
  ...CAMPUS_TOKENS,
   ...ORBIT_TOKENS,
   ...MEADOW_TOKENS,

@@ -11,7 +11,7 @@ import type {
   Amt,
   Mode,
 } from "../../engine/types";
-export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS" | "EOE" | "TDM", catalog: any[], auto: object) {
+export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS" | "EOE" | "TDM" | "SPM" | "HOB", catalog: any[], auto: object) {
   const patches = new Map<number, Partial<CardDef>>(
     Object.entries(auto).map(([n, p]) => [Number(n), p]),
   );
@@ -65,7 +65,7 @@ export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS" |
       const patch = patches.get(row.number);
       if (!patch) { if(old&&(code==='EOE'||code==='TDM')){const list=(REPRINTS[code]??=[]);if(!list.some(([id])=>id===old.id))list.push([old.id,row.rarity]);continue;} if(partial) continue; throw Error(code + " missing " + row.number + " " + row.name); }
       // Partial batches must preserve the established definition of shared reprints.
-      if((partial||code==='EOE'||code==='TDM')&&old&&old.set!==code){
+      if((partial||code==='EOE'||code==='TDM'||code==='SPM'||code==='HOB')&&old&&old.set!==code){
         const list=(REPRINTS[code]??=[]);
         if(!list.some(([id])=>id===old.id))list.push([old.id,row.rarity]);
         continue;
@@ -95,6 +95,17 @@ export function setBuilder(code: "WOE" | "OTJ" | "FDN" | "DSK" | "LCI" | "SOS" |
        const warp=row.text.match(/^Warp ((?:\{[^}]+\})+)/m);if(warp)c.warp=warp[1];
        const harmonize=row.text.match(/^Harmonize ((?:\{[^}]+\})+)/m);if(harmonize)c.harmonize=harmonize[1];
        if(row.adventure)c.meadow={...c.meadow,orbitOmen:true};
+      }
+      if(code==='SPM'||code==='HOB'){
+       c.meadow={...c.meadow,webShire:true};
+       const crew=row.text.match(/Crew (\d+)/);if(crew&&!c.abilities?.some(a=>a.kind==='activated'&&a.cost.crew!==undefined))c.abilities=[...(c.abilities??[]),{kind:'activated',cost:{crew:Number(crew[1])},effects:[{e:'animate',what:'self',p:row.power,t:row.toughness}],label:'搭載'+crew[1]}];
+       const web=row.text.match(/^Web-slinging ((?:\{[^}]+\})+)/m);if(web)c.meadow.webCost=web[1];
+       const mayhem=row.text.match(/^Mayhem ((?:\{[^}]+\})+)/m);if(mayhem)c.mayhem=mayhem[1];
+       if(/^Mayhem \(/m.test(row.text))c.meadow.webMayhemLand=true;
+       if(/^Storied \(/m.test(row.text))c.meadow.webStoried=true;
+       const ward=row.text.match(/Ward \{(\d+)\}/);if(ward)c.ward=Number(ward[1]);
+       const fb=row.text.match(/^Flashback ((?:\{[^}]+\})+)/m);if(fb)c.flashback=fb[1];
+       for(const key of ['back','adventure']as const)if(row[key]){c[key]={...row[key],...c[key],text:row[key].text}as any;if(key==='back'){c.back!.id=slug(row.name)+'-back';c.back!.set=code;c.back!.meadow={...c.back!.meadow,webShire:true};}}
       }
       if(row.text.includes("This spell can't be countered."))c.uncounterable=true;
       const impending=row.text.match(/Impending (\d+)—((?:\{[^}]+\})+)/);if(impending)c.impending={n:Number(impending[1]),cost:impending[2]};

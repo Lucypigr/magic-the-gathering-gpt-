@@ -1,3 +1,4 @@
+import {completeSpm,completeHob} from './sets/web-shire-data';
 import {supplementEoe,supplementTdm} from './sets/orbit-extra';
 import {completeLci} from './sets/lci-extra';
 import {completeSos} from './sets/sos-extra';
@@ -723,6 +724,8 @@ completeLci();
 completeSos();
 supplementEoe();
 supplementTdm();
+completeSpm();
+completeHob();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

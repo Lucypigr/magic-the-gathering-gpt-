@@ -1,3 +1,4 @@
+import {webAmount,webCondition,webTrigger,webObserve,webBaseStats,webStats,webCanBlock,webGranted} from './web-shire-support';
 import {finalStats,finalCanBlock,finalObserve} from './orbit-final-support';
 import {orbitStationStats} from './orbit-station';
 import {orbitCondition,orbitAmount,orbitTrigger,orbitBaseStats,orbitGrantedAbilities} from './orbit';
@@ -72,6 +73,7 @@ export function frontierAmount(
   x = 0,
   ev?: GameEvent,
 ) {
+  if(/^(spm|hob):/.test(key))return webAmount(g,pid,source,key,ev);
   if(/^(eoe|tdm):/.test(key))return orbitAmount(g,pid,key,source,ev);
   if(/^(lci|sos):/.test(key))return campusAmount(g,pid,source,key,x,ev);
   if(/^(blb|dft):/.test(key))return meadowAmount(g,pid,source,key,ev);
@@ -116,6 +118,7 @@ export function frontierCondition(
   source: number,
   ev?:GameEvent,
 ) {
+  if(/^(spm|hob):/.test(c.action))return webCondition(g,c.action,pid,source,ev);
   if(/^(eoe|tdm):/.test(c.action))return orbitCondition(g,c.action,pid,source,ev);
   if(/^(lci|sos):/.test(c.action))return campusCondition(g,c.action,pid,source,ev);
   if(/^(blb|dft):/.test(c.action))return meadowCondition(g,c.action,pid,source,ev);
@@ -153,6 +156,7 @@ export function frontierTrigger(
   a: TriggeredAbility,
   ev: GameEvent,
 ) {
+  if(/^(spm|hob):/.test(a.frontierEvent??''))return webTrigger(g,c,a,ev);
   if(/^(eoe|tdm):/.test(a.frontierEvent??''))return orbitTrigger(g,c,a,ev);
   if(/^(lci|sos):/.test(a.frontierEvent??''))return campusTrigger(g,c,a,ev);
   if(/^(blb|dft):/.test(a.frontierEvent??''))return meadowTrigger(g,c,a,ev);
@@ -295,6 +299,7 @@ export function frontierObserve(g: GameState, ev: GameEvent) {
   meadowObserve(g,ev);
   campusObserve(g,ev);
   finalObserve(g,ev);
+  webObserve(g,ev);
   if (ev.type === "step" && ev.step === "endStep")
     for (const c of Object.values(g.cards))
       if (
@@ -340,6 +345,7 @@ export function frontierBaseStats(
   meadowBaseStats(g,c,st);
   campusBaseStats(g,c,st);
   orbitBaseStats(g,c,st);
+  webBaseStats(g,c,st);
   if (!abilitiesSuppressed(g, c)) {
     if (c.def.id === "regal-bunnicorn")
       st.p = st.t = g.battlefield.filter(
@@ -383,6 +389,7 @@ export function frontierStats(
   campusStats(g,c,st);
   orbitStationStats(g,c,st);
   finalStats(g,c,st);
+  webStats(g,c,st);
   if (
     isCreature(c) &&
     frontierStatic(g, c.controller, "roseBase").some((s) => s.id !== c.id) &&
@@ -421,6 +428,7 @@ export function frontierStats(
       ).length;
 }
 export function frontierCanBlock(g: GameState, b: Card, a: Card) {
+ if(!webCanBlock(g,b,a))return false;
   if(!finalCanBlock(g,b,a))return false;
   if (
     frontierStatic(g, a.controller, "coyoteProtection").some(
@@ -494,7 +502,7 @@ export function frontierGrantedAbilities(
   g: GameState,
   c: Card,
 ): import("./types").ActivatedAbility[] {
-  const out: import("./types").ActivatedAbility[] = [...orbitGrantedAbilities(g,c),...foundationGrantedAbilities(g,c),...meadowGrantedAbilities(g,c),...campusGrantedAbilities(g,c)];
+  const out: import("./types").ActivatedAbility[] = [...webGranted(g,c),...orbitGrantedAbilities(g,c),...foundationGrantedAbilities(g,c),...meadowGrantedAbilities(g,c),...campusGrantedAbilities(g,c)];
   if (
     c.def.types.includes("Artifact") &&
     frontierStatic(g, c.controller, "foodFight").length

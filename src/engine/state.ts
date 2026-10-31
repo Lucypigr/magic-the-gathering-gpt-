@@ -1,3 +1,4 @@
+import {webModified,webNoCounter} from './web-shire-support';
 import {frontierStatic,frontierBaseStats,frontierStats,frontierCondition,enchanted} from './frontier-support';
 import {mshApplyStats,mshBaseStats,mshCondition} from './msh-support';
 import {mkmApplyStats,mkmBaseStats,mkmCondition,mkmStatic} from './mkm-support';
@@ -180,7 +181,7 @@ export function cloneGame(g: GameState): GameState {
     stack: g.stack.map((s) => ({ ...s, targets: s.targets.slice() })),
     eot: g.eot.map((e) => ({ ...e })),
     pending: g.pending.slice(),
-    orbitShields:g.orbitShields?.map(s=>({...s})),extraTurns:g.extraTurns?.slice(),playerControl:g.playerControl?{...g.playerControl}:undefined,extraCombat:g.extraCombat?{...g.extraCombat}:undefined,delayed:g.delayed?.map(d=>({...d})),
+    webStories:g.webStories?.slice(),orbitShields:g.orbitShields?.map(s=>({...s})),extraTurns:g.extraTurns?.slice(),playerControl:g.playerControl?{...g.playerControl}:undefined,extraCombat:g.extraCombat?{...g.extraCombat}:undefined,delayed:g.delayed?.map(d=>({...d})),
     log: [],
     shows: [],
     sim: true,
@@ -206,7 +207,7 @@ export function log(g: GameState, text: string, player?: PID, kind: LogEntry['ki
 
 /** Copy effects copy earlier copy effects, while ignoring counters and later power/type changes. */
 export function copiableDefinition(c:Card):CardDef {
-  const base=c.copyLayer??c.campusTypeDef??c.campusOriginalDef??c.meadowTypeDef??c.baseDef??c.orbitTypeDef??c.orbitFinalBase??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.def;
+  const base=c.copyLayer??c.webTypeDef??c.campusTypeDef??c.campusOriginalDef??c.meadowTypeDef??c.baseDef??c.orbitTypeDef??c.orbitFinalBase??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.def;
   return {...base,...(!c.copyLayer&&c.front?{copyFront:c.front}:{})};
 }
 
@@ -483,6 +484,9 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   if (f.token !== undefined && c.token !== f.token) return false;
   if (f.enteredThisTurn !== undefined && (c.enteredTurn === g.turn) !== f.enteredThisTurn) return false;
   if (f.stunned && c.stun <= 0) return false;
+  if(f.webModified!==undefined&&webModified(g,c)!==f.webModified)return false;
+  if(f.webAllTypes&&f.type&&!(Array.isArray(f.type)?f.type:[f.type]).every(t=>c.def.types.includes(t)))return false;
+  if(f.webAlsoSub&&!c.def.subtypes?.includes(f.webAlsoSub))return false;
   if(f.orbitWarp&&!c.def.warp)return false;
   if (f.plusCounters !== undefined && c.counters > 0 !== f.plusCounters) return false;
   if (f.hasCounters !== undefined && (c.counters !== 0 || !!c.charge || !!c.stun || !!c.hexproofCounters || !!c.finality || !!c.lore || !!c.loyalty||Object.values(c.eclCounters??{}).some(n=>n>0)) !== f.hasCounters) return false;
@@ -713,4 +717,4 @@ export function etbTriggersSuppressed(g: GameState): boolean {
   return false;
 }
 
-export function uncounterableSpells(g:GameState,pid:PID){if(frontierStatic(g,pid,'fdn:spellUncounterable').length||frontierStatic(g,pid,'lci:uncounterable').length)return true;return g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.ecl==='squelcher'));}
+export function uncounterableSpells(g:GameState,pid:PID){if(webNoCounter(g))return true;if(frontierStatic(g,pid,'fdn:spellUncounterable').length||frontierStatic(g,pid,'lci:uncounterable').length)return true;return g.battlefield.some(id=>g.cards[id].controller===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.ecl==='squelcher'));}

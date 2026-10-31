@@ -1,3 +1,4 @@
+import {webPermission} from './web-shire-support';
 import {finalPermission} from './orbit-final-support';
 import {campusPermission,campusExtraCosts} from './campus-casting';
 import {meadowExtraCosts,validForage,payForage,festivalCast} from './meadow-costs';
@@ -6,7 +7,7 @@ import { isCreature, isLand, stats } from "./state";
 import { moveCard, tapCard, sacrifice,loseLife } from "./zones";
 import type { Card, CastAlt, GameState, PID, PriorityAction } from "./types";
 export function foundationPermission(g: GameState, pid: PID, c: Card): boolean {
-  if(finalPermission(g,pid,c)||campusPermission(g,pid,c))return true;
+  if(webPermission(g,pid,c)||finalPermission(g,pid,c)||campusPermission(g,pid,c))return true;
   const f = frontierFlags(g, pid),
     own = c.owner === pid;
   if (

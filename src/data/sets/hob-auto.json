@@ -1,0 +1,647 @@
+{
+  "9": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{3}{W}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": {
+              "all": {
+                "type": "Creature",
+                "ctrl": "you"
+              }
+            },
+            "p": 1,
+            "t": 1
+          }
+        ],
+        "label": "由你操控的生物得+1/+1直到回合結"
+      }
+    ]
+  },
+  "19": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "combatStart",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 3,
+            "t": 0,
+            "kw": [
+              "first_strike"
+            ]
+          }
+        ],
+        "cond": {
+          "c": "drawsGte",
+          "n": 2
+        },
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "you"
+            },
+            "notSelf": true
+          }
+        ]
+      }
+    ]
+  },
+  "28": {
+    "spell": {
+      "modes": [
+        {
+          "text": "由你操控的生物得+2/+1直到回合結束",
+          "effects": [
+            {
+              "e": "pump",
+              "what": {
+                "all": {
+                  "type": "Creature",
+                  "ctrl": "you"
+                }
+              },
+              "p": 2,
+              "t": 1
+            }
+          ]
+        },
+        {
+          "text": "消滅目標神器或結界。你獲得2點生命",
+          "effects": [
+            {
+              "e": "destroy",
+              "what": "T0"
+            },
+            {
+              "e": "gain",
+              "n": 2
+            }
+          ],
+          "targets": [
+            {
+              "kind": "permanent",
+              "filter": {
+                "type": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "34": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          }
+        ]
+      }
+    ],
+    "adventure": {
+      "name": "Take a Glance",
+      "cost": "{U}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Scry 2. (Then exile this card. You may cast the creature later from exile.)",
+      "spell": {
+        "effects": [
+          {
+            "e": "scry",
+            "n": 2
+          }
+        ]
+      },
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "set": "HOB",
+      "rarity": "C"
+    },
+    "imageName": "Bilbo Baggins, Burglar // Take a Glance"
+  },
+  "35": {
+    "spell": {
+      "modes": [
+        {
+          "text": "反擊目標咒語，除非其操控者支付{4}",
+          "effects": [
+            {
+              "e": "counterUnless",
+              "what": "T0",
+              "pay": 4
+            }
+          ],
+          "targets": [
+            {
+              "kind": "spell"
+            }
+          ]
+        },
+        {
+          "text": "抓兩張牌，然後棄一張牌",
+          "effects": [
+            {
+              "e": "draw",
+              "n": 2
+            },
+            {
+              "e": "discard",
+              "n": 1,
+              "who": "you"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "38": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{4}{U}"
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "unblockable"
+            ]
+          }
+        ],
+        "label": "目標生物本回合不能被阻擋",
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      }
+    ]
+  },
+  "43": {
+    "keywords": [
+      "vigilance"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "drawSecond",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 1
+          }
+        ]
+      }
+    ]
+  },
+  "62": {
+    "spell": {
+      "effects": [
+        {
+          "e": "destroy",
+          "what": "T0"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "63": {
+    "equip": {
+      "cost": "{2}",
+      "grant": {
+        "p": 2,
+        "t": 1
+      }
+    },
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "edict",
+            "who": "T0",
+            "filter": {
+              "type": "Creature"
+            }
+          }
+        ],
+        "targets": [
+          {
+            "kind": "opponent"
+          }
+        ]
+      }
+    ]
+  },
+  "64": {
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "life": 2
+        },
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 2,
+            "t": 2
+          }
+        ],
+        "label": "此生物得+2/+2直到回合結束",
+        "oncePerTurn": true
+      }
+    ]
+  },
+  "67": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "dies",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": -1,
+            "t": -1
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "ctrl": "opp"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "85": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "discard",
+            "n": 1,
+            "who": "opp"
+          }
+        ]
+      }
+    ]
+  },
+  "94": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "token",
+            "token": "tok-treasure"
+          }
+        ]
+      }
+    ]
+  },
+  "109": {
+    "keywords": [
+      "flying"
+    ],
+    "adventure": {
+      "name": "Spew Flame",
+      "cost": "{4}{R}",
+      "types": [
+        "Sorcery"
+      ],
+      "text": "Spew Flame deals 5 damage to target creature. (Then exile this card. You may cast the creature later from exile.)",
+      "spell": {
+        "effects": [
+          {
+            "e": "damage",
+            "n": 5,
+            "to": "T0"
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      },
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "R"
+      ],
+      "set": "HOB",
+      "rarity": "C"
+    },
+    "imageName": "Smaug, the Great Calamity // Spew Flame"
+  },
+  "111": {
+    "spell": {
+      "effects": [
+        {
+          "e": "pump",
+          "what": "T0",
+          "p": 3,
+          "t": 0,
+          "kw": [
+            "reach",
+            "first_strike"
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature"
+        }
+      ]
+    }
+  },
+  "116": {
+    "keywords": [
+      "reach",
+      "deathtouch"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "landfall",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "self",
+            "p": 1,
+            "t": 1
+          }
+        ]
+      }
+    ]
+  },
+  "126": {
+    "uncounterable": true,
+    "keywords": [
+      "hexproof",
+      "haste"
+    ]
+  },
+  "127": {
+    "keywords": [
+      "trample"
+    ],
+    "abilities": [
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{5}{G}{G}"
+        },
+        "effects": [
+          {
+            "e": "counters",
+            "what": "self",
+            "n": 3
+          }
+        ],
+        "label": "在此生物上放置三個+1/+1指示物"
+      }
+    ]
+  },
+  "133": {},
+  "135": {
+    "spell": {
+      "effects": [
+        {
+          "e": "bite",
+          "a": "T0",
+          "b": "T1"
+        }
+      ],
+      "targets": [
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "you"
+          }
+        },
+        {
+          "kind": "creature",
+          "filter": {
+            "ctrl": "opp"
+          }
+        }
+      ]
+    }
+  },
+  "139": {
+    "spell": {
+      "modes": [
+        {
+          "text": "消滅目標具飛行異能的生物",
+          "effects": [
+            {
+              "e": "destroy",
+              "what": "T0"
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "kw": "flying"
+              }
+            }
+          ]
+        },
+        {
+          "text": "在目標由你操控的生物上放置一個+1/+1",
+          "effects": [
+            {
+              "e": "counters",
+              "what": "T0",
+              "n": 1
+            },
+            {
+              "e": "pump",
+              "what": "T0",
+              "p": 0,
+              "t": 0,
+              "kw": [
+                "trample",
+                "hexproof"
+              ]
+            }
+          ],
+          "targets": [
+            {
+              "kind": "creature",
+              "filter": {
+                "ctrl": "you"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "145": {
+    "keywords": [
+      "reach"
+    ],
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "drawSecond",
+        "effects": [
+          {
+            "e": "counters",
+            "what": "T0",
+            "n": 1
+          },
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "lifelink"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature"
+          }
+        ]
+      }
+    ]
+  },
+  "159": {
+    "keywords": [
+      "reach",
+      "trample",
+      "haste"
+    ]
+  },
+  "161": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "attacks",
+        "effects": [
+          {
+            "e": "pump",
+            "what": "T0",
+            "p": 0,
+            "t": 0,
+            "kw": [
+              "first_strike"
+            ]
+          }
+        ],
+        "targets": [
+          {
+            "kind": "creature",
+            "filter": {
+              "attacking": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "179": {
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "searchLand",
+            "to": "hand"
+          }
+        ]
+      },
+      {
+        "kind": "activated",
+        "cost": {
+          "mana": "{2}",
+          "tap": true
+        },
+        "effects": [
+          {
+            "e": "draw",
+            "n": 1
+          },
+          {
+            "e": "discard",
+            "n": 1,
+            "who": "you"
+          }
+        ],
+        "label": "抓一張牌，然後棄一張牌"
+      }
+    ]
+  },
+  "180": {
+    "equip": {
+      "cost": "{1}",
+      "grant": {
+        "p": 1,
+        "t": 1
+      }
+    },
+    "abilities": [
+      {
+        "kind": "trigger",
+        "on": "etb",
+        "effects": [
+          {
+            "e": "gain",
+            "n": 2
+          }
+        ]
+      }
+    ]
+  }
+}

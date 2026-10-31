@@ -149,6 +149,7 @@ export function validateTargets(
     if(specs[i].differentFrom!==undefined&&sameTarget(ts[specs[i].differentFrom!]??null,t))return '必須選不同的目標';
     const graveIndex=specs[i].sameGraveyardAs,graveTarget=graveIndex!==undefined?ts[graveIndex]:null;if(graveTarget&&'c'in graveTarget&&'c'in t&&g.cards[graveTarget.c].owner!==g.cards[t.c].owner)return '必須選同一墳墓場的牌';if(graveTarget&&'p'in graveTarget&&'c'in t&&graveTarget.p!==g.cards[t.c].owner)return '必須選指定玩家墳墓場的牌';
     const totalMax=specs[i].totalMvMax;if(totalMax!==undefined&&ts.reduce((n,t)=>n+(t&&'c'in t?manaValue(g.cards[t.c].def):0),0)>totalMax)return '目標總法力值超過限制';
+    if(specs[i].webDifferentNames&&'c'in t&&ts.some((other,j)=>j<i&&other&&'c'in other&&g.cards[other.c].def.name===g.cards[t.c].def.name))return '目標必須具有不同牌名';
     const sharedIndex=specs[i].sharesTypeWith;const shared=sharedIndex!==undefined?ts[sharedIndex]:null;
     if(shared&&'c'in shared&&'c'in t){const a=g.cards[shared.c],b=g.cards[t.c];if(!a.def.changeling&&!b.def.changeling&&!a.def.subtypes?.some(sub=>b.def.subtypes?.includes(sub)))return '目標必須共用生物類別';}
     const otherIndex = specs[i].differentControllerFrom;

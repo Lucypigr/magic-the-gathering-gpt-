@@ -1,3 +1,4 @@
+import {webStatic,webStory,webForced} from './web-shire-support';
 import {frontierCanBlock,frontierStatic,enchanted} from './frontier-support';
 import {mshStatic} from './msh-support';
 import {mkmStatic} from './mkm-support';
@@ -66,10 +67,11 @@ export function attackablePlaneswalkers(g: GameState, attacker: PID): Card[] {
 }
 
 export function declareAttackers(g: GameState, pid: PID, ids: number[], targets?: Record<number, number>): Card[] {
-  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&((c.mkmMarks?.mustAttackBlock===g.turn)||(c.frontierMarks?.bdMustAttack===g.turn)||(!abilitiesSuppressed(g,c)&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='fdn:mustAttack'))||(!abilitiesSuppressed(g,c)&&['red-herring','ares-god-of-war','tok-msh-void','tok-msh-alien'].includes(c.def.id)));});
+  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&(webForced(g,c)||(c.mkmMarks?.mustAttackBlock===g.turn)||(c.frontierMarks?.bdMustAttack===g.turn)||(!abilitiesSuppressed(g,c)&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='fdn:mustAttack'))||(!abilitiesSuppressed(g,c)&&['red-herring','ares-god-of-war','tok-msh-void','tok-msh-alien'].includes(c.def.id)));});
   const uniq = [...new Set([...ids,...forced])];
   const list = uniq.map((id) => g.cards[id]).filter((c) => c && c.controller === pid && canAttack(g, c));
-  const tax=frontierStatic(g,(1-pid) as PID,'archangelTax').filter(c=>!c.tapped).length;
+  const storyTax=webStory(g,other(pid))?webStatic(g,other(pid),'storyAttackTax').length:0;
+  const tax=storyTax+frontierStatic(g,(1-pid) as PID,'archangelTax').filter(c=>!c.tapped).length;
   if(tax&&list.length){
     // Nonvigilant attackers are already tapped when attack costs are paid.
     const reserved=list.filter(c=>!stats(g,c).kw.has('vigilance'));for(const c of reserved)c.tapped=true;
@@ -132,7 +134,8 @@ export function declareBlockers(g: GameState, pid: PID, blocks: [number, number]
   const countFor = (a: number) => valid.filter(([, x]) => x === a).length;
   valid = valid.filter(([, a]) => !(g.cards[a].def.id==='relentless-x-atm092'||g.cards[a].frontierMarks?.cpBlockThree===g.turn||abilitiesOf(g,g.cards[a]).some(a=>a.kind==='static'&&a.frontier==='lci:blockThree')?countFor(a)<3:stats(g,g.cards[a]).kw.has('menace')&&countFor(a)<2));
   valid = valid.filter(([,a],i) => !stats(g,g.cards[a]).onlyOneBlocker || valid.findIndex(([,id])=>id===a)===i);
-  const tax=frontierStatic(g,(1-pid) as PID,'archangelTax').filter(c=>c.attacking).length;if(tax&&valid.length&&!payCost(g,pid,parseCost('{'+tax*valid.length+'}')))return [];
+  const storyTax=webStory(g,other(pid))?webStatic(g,other(pid),'storyAttackTax').length:0;
+  const tax=storyTax+frontierStatic(g,(1-pid) as PID,'archangelTax').filter(c=>c.attacking).length;if(tax&&valid.length&&!payCost(g,pid,parseCost('{'+tax*valid.length+'}')))return [];
   for (const [b, a] of valid) {
     const bc = g.cards[b];
     const ac = g.cards[a];

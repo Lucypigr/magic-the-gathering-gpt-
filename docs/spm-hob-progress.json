@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "sets": {
+    "SPM": {
+      "printed": 188,
+      "available": 188,
+      "pending": [],
+      "faces": 5
+    },
+    "HOB": {
+      "printed": 188,
+      "available": 188,
+      "pending": [],
+      "faces": 17
+    }
+  }
+}

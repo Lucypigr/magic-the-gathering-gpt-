@@ -1066,5 +1066,59 @@
     "power": 1,
     "toughness": 1,
     "text": ""
+  },
+  {
+    "id": "tok-g-spider-21-g-reach",
+    "name": "Spider",
+    "colors": [
+      "G"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Spider"
+    ],
+    "power": 2,
+    "toughness": 1,
+    "keywords": [
+      "reach"
+    ],
+    "text": "延勢"
+  },
+  {
+    "id": "tok-g-robot-11--flying",
+    "name": "Robot",
+    "colors": [],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Robot"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "keywords": [
+      "flying"
+    ],
+    "text": "飛行"
+  },
+  {
+    "id": "tok-g-human-citizen-11-gw",
+    "name": "Human Citizen",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Citizen"
+    ],
+    "power": 1,
+    "toughness": 1,
+    "text": ""
   }
 ]
