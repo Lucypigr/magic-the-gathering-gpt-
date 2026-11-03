@@ -131,8 +131,8 @@ export function NetDecks({
       <TopBar profile={profile} go={go} title="抄牌組" />
 
       <section className="panel">
-        <h3 className="section-title">近代賽果敢牌組</h3>
-        <p className="muted small">三副原始牌表均已收錄主牌60張及備牌15張。可直接試玩；備牌會隨牌組保存，單局對戰只使用主牌。</p>
+        <h3 className="section-title">近代賽完整牌組</h3>
+        <p className="muted small">{modernLists.length}副原始牌表均已收錄主牌60張及備牌15張。可直接試玩；備牌會隨牌組保存，單局對戰只使用主牌。</p>
         <div className="choice-list three">
           {modernLists.map(d => <button key={d.id} className="choice" onClick={() => void open({ name: d.name, main: d.main.map(([n, name]) => ({ n: Number(n), name: String(name) })), side: d.side.map(([n, name]) => ({ n: Number(n), name: String(name) })) }, 'Forge（' + d.date + '）', `https://github.com/${d.source.repository}/blob/${d.source.revision}/${d.source.path}`, 'modern')}>
             <span className="choice-name">{d.name}</span><span className="choice-sub">主牌60張 · 備牌15張 · 全部原卡</span>

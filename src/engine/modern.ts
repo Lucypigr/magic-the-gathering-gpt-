@@ -1,3 +1,4 @@
+import { murktideEffect } from './modern-murktide';
 import { abilitiesOf, abilitiesSuppressed, matches, stats, uncounterableSpells } from './state';
 import { colorsOf, manaValue } from './mana';
 import { moveCard } from './zones';
@@ -34,6 +35,7 @@ export function modernConsignChoices(g: GameState) { return g.stack.filter(s => 
 export function* modernEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'frontier' }>): SubFlow {
   const p = ctx.controller, source = g.cards[ctx.source], player = g.players[p], target = resolveRef(g, ctx, 'T0').cards[0];
   switch (ef.action.slice(7)) {
+    case 'force': case 'subtlety': case 'surgical': case 'talents': case 'ragavan': case 'dashReturn': yield* murktideEffect(g, ctx, ef); break;
     case 'iteration': {
       const ids = player.library.slice(0, 3);
       const [hand] = yield* choose(g, p, '選一張放進手上', ids, Math.min(1, ids.length), 1);

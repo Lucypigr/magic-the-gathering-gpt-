@@ -386,5 +386,153 @@
         "Obsidian Charmaw"
       ]
     ]
+  },
+  {
+    "id": "modern-izzet-murktide",
+    "name": "伊捷龍侯",
+    "sourceName": "[Modern] #23 - Izzet Murktide",
+    "source": {
+      "repository": "Card-Forge/forge-extras",
+      "revision": "d3783237b98ca3714aeea5796ea593f49f6921cb",
+      "path": "decks/currentmodernmetagame.zip",
+      "sha256": "70e85196c8a031a4ba27864e08a4917dc4605785594308148366e025578bd948"
+    },
+    "date": "2026-10-17",
+    "main": [
+      [
+        1,
+        "Consign to Memory"
+      ],
+      [
+        4,
+        "Dragon's Rage Channeler"
+      ],
+      [
+        4,
+        "Expressive Iteration"
+      ],
+      [
+        1,
+        "Force of Negation"
+      ],
+      [
+        3,
+        "Scalding Tarn"
+      ],
+      [
+        4,
+        "Preordain"
+      ],
+      [
+        2,
+        "Polluted Delta"
+      ],
+      [
+        2,
+        "Misty Rainforest"
+      ],
+      [
+        3,
+        "Murktide Regent"
+      ],
+      [
+        4,
+        "Mishra's Bauble"
+      ],
+      [
+        3,
+        "Lightning Bolt"
+      ],
+      [
+        4,
+        "Ragavan, Nimble Pilferer"
+      ],
+      [
+        1,
+        "Island"
+      ],
+      [
+        1,
+        "Island"
+      ],
+      [
+        2,
+        "Spell Snare"
+      ],
+      [
+        1,
+        "Island"
+      ],
+      [
+        4,
+        "Counterspell"
+      ],
+      [
+        2,
+        "Subtlety"
+      ],
+      [
+        1,
+        "Thundering Falls"
+      ],
+      [
+        4,
+        "Unholy Heat"
+      ],
+      [
+        4,
+        "Spirebluff Canal"
+      ],
+      [
+        3,
+        "Steam Vents"
+      ],
+      [
+        2,
+        "Flow State"
+      ]
+    ],
+    "side": [
+      [
+        1,
+        "Surgical Extraction"
+      ],
+      [
+        3,
+        "Consign to Memory"
+      ],
+      [
+        1,
+        "Fire Magic"
+      ],
+      [
+        1,
+        "Meltdown"
+      ],
+      [
+        3,
+        "Mystical Dispute"
+      ],
+      [
+        2,
+        "Obsidian Charmaw"
+      ],
+      [
+        1,
+        "Stern Scolding"
+      ],
+      [
+        1,
+        "Ral, Crackling Wit"
+      ],
+      [
+        1,
+        "Blood Moon"
+      ],
+      [
+        1,
+        "Test of Talents"
+      ]
+    ]
   }
 ]

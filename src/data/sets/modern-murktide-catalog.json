@@ -1,0 +1,208 @@
+[
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Blood Moon",
+    "cost": "{2}{R}",
+    "text": "Nonbasic lands are Mountains.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "8ED",
+    "sourceUuid": "d5e20783-c30f-57d5-bbac-b2f297ed1698",
+    "sourceSha256": "d58f14d149d99699c23953f968afa928f1d79b680647a41c67490c7b0566f835"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Counterspell",
+    "cost": "{U}{U}",
+    "text": "Counter target spell.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "MH2",
+    "sourceUuid": "40470d4d-f834-59ae-9af3-de01926a221a",
+    "sourceSha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Force of Negation",
+    "cost": "{1}{U}{U}",
+    "text": "If it's not your turn, you may exile a blue card from your hand rather than pay this spell's mana cost.\nCounter target noncreature spell. If that spell is countered this way, exile it instead of putting it into its owner's graveyard.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "MH1",
+    "sourceUuid": "9e4849c5-fd8e-523b-829d-6445471867e2",
+    "sourceSha256": "7be14580fee9bc1dbbbe7ebdd645ab1016ce00ba6e6e15e075bab1ed31486a09"
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Misty Rainforest",
+    "cost": "",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Forest or Island card, put it onto the battlefield, then shuffle.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "ZEN",
+    "sourceUuid": "613e3626-6735-549f-a37f-f8dfaf1fd61d",
+    "sourceSha256": "f9f91405e5fbd6396d603dfd33fa6622ebae50bde0e3a543fc22a03f0a4a8d09"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Mystical Dispute",
+    "cost": "{2}{U}",
+    "text": "This spell costs {2} less to cast if it targets a blue spell.\nCounter target spell unless its controller pays {3}.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "ELD",
+    "sourceUuid": "5651bd95-cb41-5266-8654-93707f0c4f9a",
+    "sourceSha256": "515ec60620f8b17b74cec57185799679d006d43d0387e393d5749368244f01f2"
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Polluted Delta",
+    "cost": "",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for an Island or Swamp card, put it onto the battlefield, then shuffle.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "KTK",
+    "sourceUuid": "dbc76978-5109-550a-b0e5-5768cdd1f6d8",
+    "sourceSha256": "ae537fbb5ae27e1c439b5d7496f8203746279c267c06ea5055f0ef23836f249c"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Monkey",
+      "Pirate"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "colors": [
+      "R"
+    ],
+    "name": "Ragavan, Nimble Pilferer",
+    "cost": "{R}",
+    "text": "Whenever Ragavan deals combat damage to a player, create a Treasure token and exile the top card of that player's library. Until end of turn, you may cast that card.\nDash {1}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)",
+    "set": "META",
+    "rarity": "M",
+    "sourceSet": "MH2",
+    "sourceUuid": "03245f9c-8df0-5763-89fe-9fdfd55acfa0",
+    "sourceSha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3",
+    "power": 2,
+    "toughness": 1
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Stern Scolding",
+    "cost": "{U}",
+    "text": "Counter target creature spell with power or toughness 2 or less.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "LTR",
+    "sourceUuid": "0886a7ac-9776-5815-b032-f40589d37266",
+    "sourceSha256": "ab38cbe1d6af1729d10c200fd1d990c0b5458e453f82fb85fe6997e59542481d"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental",
+      "Incarnation"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Subtlety",
+    "cost": "{2}{U}{U}",
+    "text": "Flash\nFlying\nWhen this creature enters, choose up to one target creature spell or planeswalker spell. Its owner puts it on their choice of the top or bottom of their library.\nEvoke—Exile a blue card from your hand.",
+    "set": "META",
+    "rarity": "M",
+    "sourceSet": "MH2",
+    "sourceUuid": "584d7124-cc7f-508a-9304-16cc17dd3751",
+    "sourceSha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3",
+    "power": 3,
+    "toughness": 3
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "B"
+    ],
+    "name": "Surgical Extraction",
+    "cost": "{B/P}",
+    "text": "({B/P} can be paid with either {B} or 2 life.)\nChoose target card in a graveyard other than a basic land card. Search its owner's graveyard, hand, and library for any number of cards with the same name as that card and exile them. Then that player shuffles.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "NPH",
+    "sourceUuid": "faa41ad0-fe62-5866-8b36-6d1d264f54fe",
+    "sourceSha256": "a992336b6dfbc1532d6c59d65ac6d85d93776af2441c3fddc021beb98752fd0b"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Test of Talents",
+    "cost": "{1}{U}",
+    "text": "Counter target instant or sorcery spell. Search its controller's graveyard, hand, and library for any number of cards with the same name as that spell and exile them. That player shuffles, then draws a card for each card exiled from their hand this way.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "STX",
+    "sourceUuid": "62e66ae0-25fc-5ef9-a175-0f05ed8acc3f",
+    "sourceSha256": "52ad191928f3c5f36b6f5f2dd4b22440215a2688f90f7e4d3348560a49dd328e"
+  }
+]

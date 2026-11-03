@@ -1,4 +1,5 @@
 import {webStatic,webCastBlocked,webCost,webAbilityCost,webFlash,webLifeOnly,webLifeEligible,webVariableMax,webTargets,webActivationCosts,webPayActivationCosts} from './web-shire-support';
+import { modernRefresh } from './modern-moon';
 import { modernColorlessLand, modernConsignChoices } from './modern';
 import {finalPermission,finalFree,finalCost,finalQuote,finalCanSac,finalStatic,finalActivationBlocked,finalAbilityCost,finalSilenced} from './orbit-final-support';
 import {orbitStationValue} from './orbit-station';
@@ -56,6 +57,7 @@ import { faceDownDef, turnFaceUp } from './facedown';
 export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = false, forDef?: CardDef, fromHand = false): ManaSource[] {
   if(forDef&&!forDef.eclAbilityPayment&&forDef.types.includes('Creature')&&frontierStatic(g,pid,'dsk:creatureConvoke').length)convoke=true;
   if(forDef?.types.includes('Creature')&&!forDef.eclAbilityPayment&&eclStatic(g,pid,'creatureConvoke').length)convoke=true;
+  modernRefresh(g);
   const out: ManaSource[] = [];
   if(forDef&&mshCanImprovise(g,pid,forDef))for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&!c.tapped&&id!==exclude&&c.def.types.includes('Artifact')&&!c.def.produces)out.push({id,produces:['C'],isCreature:isCreature(c),convoke:true});}
   for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&!c.tapped&&id!==exclude&&matches(g,{sub:'Food'},c,pid)&&frontierStatic(g,pid,'foodMana').length&&(!isCreature(c)||!c.sick||hasKw(g,c,'haste')))out.push({id,produces:['G'],isCreature:isCreature(c)});}
@@ -240,6 +242,8 @@ export function castDef(def: CardDef, alt?: CastAlt): CardDef {
   else if(alt==='bargain')d={...def,cost:costToString(reduceCost(parseCost(def.cost),parseCost('{'+(def.frontier?.bargainDiscount??0)+'}')))};
   else if(alt==='teamwork')d={...def,spell:def.msh?.teamworkSpell??def.spell};
   else if(alt==='evidenceFree')d={...def,cost:''};
+  else if(alt==='modernPitch')d={...def,cost:'{0}'};
+  else if(alt==='modernDash')d={...def,cost:String(def.meadow?.modernDash)};
   else if(alt==='evoke'&&def.evoke)d={...def,cost:def.evoke};
   else if(alt==='sneak'||alt==='sneakGranted'){d={...def,cost:alt==='sneakGranted'?'{3}{B}':def.sneak??'{3}{B}'};}
   else if (alt === 'adventure' && def.adventure) {
@@ -349,7 +353,9 @@ function baseCastAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] 
     if(def.msh?.teamwork&&teamworkPayment(g,pid,def.msh.teamwork))base.push('teamwork');
     if(def.mkm?.optionalEvidence&&canEvidence(g,pid,def.mkm.optionalEvidence))base.push('evidence');
     if(!isLand(c)&&mkmStatic(g,pid,'evidenceFree').length&&canEvidence(g,pid,10))base.push('evidenceFree');
-    if(def.evoke)base.push('evoke');
+    if(def.evoke&&(!def.meadow?.modernPitch||modernPitchChoices(g,pid,c).length))base.push('evoke');
+    if(def.meadow?.modernPitch&&!def.evoke&&g.active!==pid&&modernPitchChoices(g,pid,c).length)base.push('modernPitch');
+    if(def.meadow?.modernDash)base.push('modernDash');
     if (def.disguise) base.push('disguise');
     if(!isLand(c)&&isCreature(c)&&mshFlags(g,pid).freeRG&&colorsOf(def).some(c=>c==='R'||c==='G'))base.push('free');
     if (!isLand(c) && freeCastAllowed(g, pid, c)) base.push('free');
@@ -426,7 +432,8 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
   }
   let cost = alt==='campusMiracle'?parseCost('{2}'):c.eclCast?.free&&eclPermission(g,pid,c)?parseCost(''):parseCost(c.airbent ? '{2}' : def.spell?.modes?.[mode ?? 0]?.cost ?? def.cost);
   if(c.def.meadow?.orbitDragonTargetTax&&targets?.some(t=>t&&'c'in t&&g.cards[t.c].def.subtypes?.includes('Dragon')))cost.generic+=Number(c.def.meadow.orbitDragonTargetTax);
-  if(alt==='modernLife')cost.G=Math.max(0,cost.G-1);
+  if(alt==='modernLife'){const color=(c.def.meadow?.modernPhyrexianColor??'G') as import('./types').Color;cost[color]=Math.max(0,cost[color]-1);}
+  if(c.def.meadow?.modernDispute&&(targets??g.stack.filter(s=>s.kind==='spell').map(s=>({c:s.cardId}))).some(t=>t&&'c'in t&&g.cards[t.c]?.zone==='stack'&&colorsOf(g.cards[t.c].castFace??g.cards[t.c].def).includes('U')))cost.generic=Math.max(0,cost.generic-2);
   if(c.def.meadow?.modernCharmaw)cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller!==pid&&isLand(g.cards[id])&&modernColorlessLand(g,g.cards[id])).length);
   campusCost(g,pid,c,def,cost,targets,alt);
   finalCost(g,pid,c,def,cost,targets);
@@ -654,6 +661,7 @@ export function grantedAbilities(g: GameState, c: Card): ActivatedAbility[] {
 
 /** 這張牌目前所有的起動式異能（含授予的；索引依序接在本身的異能後面） */
 export function abilitiesFor(g: GameState, c: Card): ActivatedAbility[] {
+  modernRefresh(g);
   if (abilitiesSuppressed(g, c)) return foundationGrantedAbilities(g,c).filter(a=>a.roomDoor!==undefined);
   const base = activatedAbilities(c.def);
   const extra = [...grantedAbilities(g, c),...(c.copiedAbilities??[]).filter((a):a is ActivatedAbility=>a.kind==='activated')];
@@ -956,7 +964,7 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
       effects: spellEffects(def, mode),
       maxX: def.meadow?.campusLifeX?g.players[pid].life:def.id==='doppelgang'||alt === 'plotted' || alt === 'disguise' ? undefined : maxXFor(g, pid, c, mode, alt),
       label:
-        alt==='modernLife'?`支付2點生命：${name}`:alt==='web'||alt==='webGranted'?`蛛絲甩蕩 ${def.cost}：${name}（收回已橫置的己方生物）`:alt==='webLife'?`支付${manaValue(c.def)}生命施放 ${name}`:alt==='webGraveDiscard'?`額外棄一張牌：從墳墓場施放 ${name}`:alt==='webDiscard'?`額外棄一張牌施放 ${name}`:alt==='webSac'?`額外犧牲神器或生物施放 ${name}`:alt==='titaniaMana'?`另付{2}施放：${name}`:alt==='teamwork'?`Teamwork ${def.msh?.teamwork}：${def.spell?.modes?.[m]?.text??name}`:def.ecl?.variableTargets?`選${m}個目標：${name}`:alt==='evidence'?`蒐證${def.mkm?.optionalEvidence}：${name}`:alt==='evidenceFree'?`蒐證10取代法力費用：${name}`:alt==='evoke'?`呼魂 ${def.cost}：${name}`:(alt==='sneak'||alt==='sneakGranted') ? `潛行 ${def.cost}：收回未被阻擋的攻擊者` : alt === 'adventure'
+        alt==='modernPitch'?`放逐另一張藍色手牌：${name}`:alt==='modernDash'?`疾奔 ${def.cost}：${name}`:alt==='modernLife'?`支付2點生命：${name}`:alt==='web'||alt==='webGranted'?`蛛絲甩蕩 ${def.cost}：${name}（收回已橫置的己方生物）`:alt==='webLife'?`支付${manaValue(c.def)}生命施放 ${name}`:alt==='webGraveDiscard'?`額外棄一張牌：從墳墓場施放 ${name}`:alt==='webDiscard'?`額外棄一張牌施放 ${name}`:alt==='webSac'?`額外犧牲神器或生物施放 ${name}`:alt==='titaniaMana'?`另付{2}施放：${name}`:alt==='teamwork'?`Teamwork ${def.msh?.teamwork}：${def.spell?.modes?.[m]?.text??name}`:def.ecl?.variableTargets?`選${m}個目標：${name}`:alt==='evidence'?`蒐證${def.mkm?.optionalEvidence}：${name}`:alt==='evidenceFree'?`蒐證10取代法力費用：${name}`:alt==='evoke'?`呼魂 ${def.cost}：${name}`:(alt==='sneak'||alt==='sneakGranted') ? `潛行 ${def.cost}：收回未被阻擋的攻擊者` : alt === 'adventure'
           ? `${c.def.mkm?.split?'施放另一半':c.def.meadow?.orbitOmen?'預兆':'冒險'}：${name}`
           : alt === 'flashback'
             ? `返照：${name}`
@@ -1044,6 +1052,7 @@ export function sacChoices(g: GameState, pid: PID, f: Filter, sourceId?: number)
 // 執行動作（回傳錯誤訊息或 null）
 // ------------------------------------------------------------
 export function performAction(g: GameState, pid: PID, a: PriorityAction): string | null {
+  modernRefresh(g);
   g.eclEventGroup=g.nextSid++;
   if ((a.type === 'cast' || a.type === 'activate') && combatLocked(g)) return splitSecondLocked(g) ? '切割咒語在堆疊上時，不能施放咒語或起動異能' : '戰鬥中不能施放咒語或起動異能';
   if (a.type === 'play') return doPlay(g, pid, a.card);
@@ -1172,6 +1181,9 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   const frontierSids=a.stackTargetSids??(a.stackTargetSid!==undefined?[a.stackTargetSid]:[]);
   if(stackKinds.some((kind,i)=>!frontierStackChoices(g,pid,kind).some(s=>s.sid===frontierSids[i])))return '請選擇合法的堆疊目標';
   const p = g.players[pid];
+  const needsPitch=alt==='modernPitch'||alt==='evoke'&&!!def.meadow?.modernPitch;
+  const pitch=needsPitch?(a.modernExile??modernPitchChoices(g,pid,c)[0]):undefined;
+  if(needsPitch&&(pitch===undefined||!modernPitchChoices(g,pid,c).includes(pitch)))return '必須放逐手上另一張藍色牌';
   const terrorLife=3*new Set(targets.flatMap(t=>t&&'c'in t&&g.cards[t.c].controller!==pid&&frontierStatic(g,g.cards[t.c].controller,'terrorCost').some(s=>s.id===t.c)?[t.c]:[])).size;
   if(alt==='modernLife'&&!frontierCanPayLife(g,pid,2))return '生命不足以支付非瑞克西亞費用';
   const modeLife=(def.spell?.modes?.[mode??0]?.life??0)+terrorLife;
@@ -1271,6 +1283,8 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   c.frontierMarks.webTreasureCast=Number(foundationManaSources.some(id=>g.cards[id].def.subtypes?.includes('Treasure')));
   if(def.meadow?.modernDelve)(c.frontierMarks??={}).modernDelveSpells=delve.filter(id=>g.cards[id].def.types.some(t=>t==='Instant'||t==='Sorcery')).length;
   if(alt==='modernLife')frontierPayLife(g,pid,2);
+  if(pitch!==undefined)moveCard(g,g.cards[pitch],'exile');
+  (c.frontierMarks??={}).modernDash=Number(alt==='modernDash');
   for(const id of delve)moveCard(g,g.cards[id],'exile');
   if(chosenPower)(chosenPower.orbitPowerHistory??={})[chosenPower.objectVersion??0]=stats(g,chosenPower).p;
   if(c.def.meadow?.finalWarpLife&&alt==='warp')frontierPayLife(g,pid,Number(c.def.meadow.finalWarpLife));
@@ -1332,7 +1346,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
     c.def = def;
   }
   c.zone = 'stack';
-  c.castFace=def.meadow?.modernBatch&&alt==='flashback'?{...def,cost:c.def.cost}:def;
+  c.castFace=def.meadow?.modernBatch&&['flashback','modernPitch','modernDash','evoke'].includes(alt??'')?{...def,cost:c.def.cost}:def;
   c.objectVersion=(c.objectVersion??0)+1;
   c.controller = pid;
   c.playableTurn = undefined;
@@ -1646,3 +1660,5 @@ export function frontierCanPayLife(g:GameState,pid:PID,n:number){return g.player
 export function frontierPayLife(g:GameState,pid:PID,n:number){if(frontierStatic(g,pid,'ashiokLife').length&&g.players[pid].library.length>=n){for(const id of g.players[pid].library.slice(0,n))moveCard(g,g.cards[id],'exile');}else loseLife(g,pid,n);}
 
 export function frontierStackChoices(g:GameState,pid:PID,kind:string){return g.stack.filter(s=>kind==='modernConsign'?modernConsignChoices(g).includes(s):kind==='webInstantOrTriggered'?(s.kind==='trigger'||s.kind==='spell'&&(g.cards[s.cardId].castFace??g.cards[s.cardId].def).types.some(t=>t==='Instant'||t==='Sorcery')):kind==='ownAbility'?s.kind!=='spell'&&s.controller===pid:kind==='retarget'?s.targets.filter(Boolean).length===1:s.kind!=='spell'||(g.cards[s.cardId].castFace??g.cards[s.cardId].def).types.some(t=>t==='Instant'||t==='Sorcery'));}
+
+export const modernPitchChoices = (g: GameState, p: PID, c: Card): number[] => g.players[p].hand.filter(id => id !== c.id && colorsOf(g.cards[id].def).includes('U'));

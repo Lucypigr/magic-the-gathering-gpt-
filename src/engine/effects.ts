@@ -1034,7 +1034,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
           continue;
         }
         log(g, `${cardName(c)} 被反擊`, c.controller, 'cast');
-        moveCard(g, c, counteredZone(g, c));
+        moveCard(g, c, ef.exile ? 'exile' : counteredZone(g, c));
       }
       break;
     }

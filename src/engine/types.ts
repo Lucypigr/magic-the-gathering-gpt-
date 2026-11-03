@@ -467,7 +467,7 @@ export type Effect =
   | { e: 'surveil'; n: number; retrieve?: { filter?: Filter; mvLeLife?: boolean } }
   | { e: 'dig'; tapped?:boolean; all?:boolean; optional?: boolean; randomBottom?: boolean; n: Amt; take?: number; filter?: Filter; rest: 'bottom' | 'graveyard' | 'top'; to?: 'hand' | 'battlefield' }
   | { e: 'searchLand'; to: 'battlefield' | 'hand'; tapped?: boolean; untapIfLands?: number; who?: Ref; may?: boolean }
-  | { e: 'counter'; what: Ref }
+  | { e: 'counter'; what: Ref; exile?: boolean }
   | { e: 'counterUnless'; what: Ref; pay: number }
   | { e: 'fight'; a: Ref; b: Ref }
   | { e: 'bite'; a: Ref; b: Ref; byLoyalty?: boolean }
@@ -962,6 +962,7 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  modernMoonBase?: CardDef;
  webArtifactEntry?:boolean;webFoodEntry?:boolean;webTypeDef?:CardDef;webAppliedDef?:CardDef;
  campusLinked?:{id:number;version:number;def:CardDef;power:number;token?:boolean}[];
  orbitFinalBase?:CardDef;orbitFinalApplied?:CardDef;
@@ -1223,7 +1224,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
  bdCounters?:Record<string,number>;
@@ -1374,6 +1375,7 @@ export interface Show {
 }
 
 export interface GameState {
+  modernMoonActive?: boolean;
  webActive?:boolean;webGlobals?:boolean;webStories?:boolean[];orbitFinalActive?:boolean;orbitFinalGlobals?:boolean;orbitShields?:{player:PID;source:number;link?:number;spell:number;turn:number}[];
   orbitHasStation?:boolean;orbitHasRinging?:boolean;
  campusParadigms?:{name:string;player:PID;card:number;version:number}[];
@@ -1496,7 +1498,7 @@ export type ChoosePurpose =
 export type PriorityAction =
   | { type: 'pass' }
   | { type: 'play'; card: number }
-  | { type: 'cast';replicate?:number;webReturn?:number; orbitChosen?:number;orbitDelve?:number[];harmonizeTapped?:number|null; foundationCosts?:number[]; distribution?:number[];stackTargetSids?:number[];card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
+  | { type: 'cast';replicate?:number;modernExile?:number;webReturn?:number; orbitChosen?:number;orbitDelve?:number[];harmonizeTapped?:number|null; foundationCosts?:number[]; distribution?:number[];stackTargetSids?:number[];card: number; targets: (TargetRef | null)[]; mode?: number; sac?: number; discard?: number; alt?: CastAlt; x?: number; /** 效果結算中施放：不受時機限制 */ ignoreTiming?: boolean; blightCard?:number;beheld?:number[];beholdType?:string;eclCounterSources?:{card:number;kind:string}[];teamworkTapped?:number[];evidenceCards?:number[];returnLand?:number;stackTargetSid?:number;conspireTapped?:number[][] }
   | { type: 'activate';webCounterCards?:number[]; distribution?:number[]; card: number; ability: number; targets: (TargetRef | null)[]; sac?: number; x?: number; costCards?: number[]; counterCard?: number; discard?: number; blightCard?:number;counterKind?:string;counterPayments?:{kind:string;n:number}[];evidenceCards?:number[];stackTargetSid?:number;tapCards?:number[] };
 
 export type Response =

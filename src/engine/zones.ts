@@ -1,3 +1,5 @@
+import { modernRefresh } from './modern-moon';
+import { modernDashEntry } from './modern-murktide';
 import { modernEntry } from './modern';
 import {webEntry,webExtraTriggers,webNoPrevent,webPrevent,webRedirect,webDeathSource,webWard,webStatic,webNeedsRiot,webPrepareEntry} from './web-shire-support';
 import {finalEntry,finalRefresh,finalCanSac,finalCounterMultiplier,finalExtraTriggers,finalStatic,finalProtected,finalPreventDamage} from './orbit-final-support';
@@ -383,6 +385,7 @@ export function removeFromZone(g: GameState, c: Card): void {
 }
 
 function resetPermanentState(c: Card): void {
+ if(c.modernMoonBase){c.def=c.modernMoonBase;c.modernMoonBase=undefined;}
  if(c.webTypeDef){c.def=c.webTypeDef;c.webTypeDef=undefined;c.webAppliedDef=undefined;}
  if(c.orbitFinalBase){c.def=c.orbitFinalBase;c.orbitFinalBase=undefined;c.orbitFinalApplied=undefined;}
  if(c.orbitTypeDef){c.def=c.orbitTypeDef;c.orbitTypeDef=undefined;c.orbitAppliedDef=undefined;}
@@ -563,6 +566,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   if(c.def.abilities?.some(a=>a.kind==='static'&&a.frontier==='tdm:ringing'))g.orbitHasRinging=true;
   orbitRefresh(g,c);
   finalRefresh(g);
+  modernRefresh(g);
 }
 
 function returnLinked(g: GameState, sourceId: number): void {
@@ -580,6 +584,7 @@ function returnLinked(g: GameState, sourceId: number): void {
 
 export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped = false, enterAs?: CardDef): void {
   if(c.tokenDeparted)return;
+  modernRefresh(g,c);
   if((c.def.ecl?.asEnters||webNeedsRiot(g,c,controller))&&!c.eclPrepared && !(c.def.ecl?.asEnters==='shock'&&g.players[controller].isAI)){
     if(!g.eclEntryQueue?.some(e=>e.card===c.id))(g.eclEntryQueue??=[]).push({card:c.id,controller,tapped,enterAs});
     return;
@@ -610,6 +615,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   c.zone = 'battlefield';
   g.battlefield.push(c.id);
   c.controller = controller;
+  modernRefresh(g,c);
   webPrepareEntry(c);
   c.tapped = t;
   c.sick = true;
@@ -650,6 +656,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   finalEntry(g,c,controller);
   webEntry(g,c,controller,origin);
   modernEntry(c,origin);
+  modernDashEntry(g,c,origin);
   const bdDoubles=frontierStatic(g,controller,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length;
   const fd=finalCounterMultiplier(g,c)*2**(frontierStatic(g,controller,'fdn:doubleCounters').length+bdDoubles);if(c.finality)c.finalityCount=fd;if(c.counters>0)c.counters*=fd;if(c.charge)c.charge*=fd;if(c.stun)c.stun*=fd;if(c.hexproofCounters)c.hexproofCounters*=fd;for(const key of Object.keys(c.eclCounters??{}))c.eclCounters![key]*=fd;if(c.impendingTime!==undefined)c.impendingTime=c.eclCounters?.time??c.impendingTime;
   if(c.counters>0)c.counters+=mshStatic(g,c.controller,'extraCounters').length;

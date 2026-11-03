@@ -1,3 +1,4 @@
+import { modernRefresh } from './modern-moon';
 import {webModified,webNoCounter} from './web-shire-support';
 import {frontierStatic,frontierBaseStats,frontierStats,frontierCondition,enchanted} from './frontier-support';
 import {mshApplyStats,mshBaseStats,mshCondition} from './msh-support';
@@ -207,7 +208,7 @@ export function log(g: GameState, text: string, player?: PID, kind: LogEntry['ki
 
 /** Copy effects copy earlier copy effects, while ignoring counters and later power/type changes. */
 export function copiableDefinition(c:Card):CardDef {
-  const base=c.copyLayer??c.webTypeDef??c.campusTypeDef??c.campusOriginalDef??c.meadowTypeDef??c.baseDef??c.orbitTypeDef??c.orbitFinalBase??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.def;
+  const base=c.copyLayer??c.tlaLandOriginal??c.webTypeDef??c.campusTypeDef??c.campusOriginalDef??c.meadowTypeDef??c.baseDef??c.orbitTypeDef??c.orbitFinalBase??c.foundationAuraOriginal??c.tlaOriginalDef??c.auraBaseDef??c.modernMoonBase??c.def;
   return {...base,...(!c.copyLayer&&c.front?{copyFront:c.front}:{})};
 }
 
@@ -280,6 +281,7 @@ export function abilitiesSuppressed(g: GameState, c: Card): boolean {
 
 /** 永久物目前實際擁有的異能（失去所有異能時為空） */
 export function abilitiesOf(g: GameState, c: Card): Ability[] {
+  modernRefresh(g);
   return abilitiesSuppressed(g, c) ? [] : [...(c.def.abilities ?? []), ...(c.def.offspring&&c.offspringPaid?[{kind:'trigger' as const,on:'etb' as const,effects:[{e:'copyCreature' as const,what:'selfAny' as const,p:1,t:1,preserveLegendary:true}]}]:[]), ...(c.copiedAbilities ?? []), ...(c.temporaryAbilities?.turn===g.turn?c.temporaryAbilities.abilities:[])];
 }
 
@@ -300,6 +302,7 @@ export function hasSupertype(g: GameState, c: Card, type: 'Basic' | 'Legendary')
 // instead of recursively restarting it; completed results are never cached.
 const activeStatCalculations = new WeakMap<GameState, Map<string, Stats>>();
 export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
+  modernRefresh(g);
   let active = activeStatCalculations.get(g);
   if (!active) activeStatCalculations.set(g, active = new Map());
   const evaluation = c.id + ':' + ignoreEot, pending = active.get(evaluation);
@@ -432,6 +435,7 @@ export function hasKw(g: GameState, c: Card, kw: Keyword): boolean {
 // 篩選
 // ------------------------------------------------------------
 export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, sourceId?: number): boolean {
+  modernRefresh(g);
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;

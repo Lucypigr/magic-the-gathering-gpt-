@@ -18,7 +18,7 @@ import {refreshFinLands} from './fin-support';
 import {colorsOf} from './mana';
 import {resolveEclEntries} from './ecl';
 import {beholdOptions,canReceiveCounters,counterKinds,vividColors} from './ecl-support';
-import { canPayCost, abilitiesFor, frontierStackChoices,castDef,spellCost,canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
+import { modernPitchChoices, canPayCost, abilitiesFor, frontierStackChoices,castDef,spellCost,canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
 import {
   attackCandidates,
   blockCandidates,
@@ -453,6 +453,7 @@ export function* priorityStep(g: GameState): SubFlow {
     } else {
       if(r.type==='cast'){
         const card=g.cards[r.card];
+        if(card&&(r.alt==='modernPitch'||r.alt==='evoke'&&card.def.meadow?.modernPitch)&&r.modernExile===undefined){const options=modernPitchChoices(g,p,card);const a:Response=yield{type:'choose',player:p,prompt:'放逐手上另一張藍色牌以支付替代費用',options,min:1,max:1,purpose:'dig'};r.modernExile=a.type==='choose'?a.ids[0]:undefined;}
         if(card?.def.meadow?.finalChosenPowerCost&&r.orbitChosen===undefined){const options=[...g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])),...g.players[p].exile.filter(id=>g.cards[id].warpExiled!==undefined&&isCreature(g.cards[id]))];const a:Response=yield{type:'choose',player:p,prompt:'選擇己方生物或已躍遷的生物牌',options,min:1,max:1,purpose:'dig'};r.orbitChosen=a.type==='choose'?a.ids[0]:undefined;}
         if(card&&r.alt==='harmonize'&&r.harmonizeTapped===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&!g.cards[id].tapped);const a:Response=yield{type:'choose',player:p,prompt:'可橫置一個生物以減少和聲費用',options,min:0,max:1,purpose:'dig'};r.harmonizeTapped=a.type==='choose'?a.ids[0]??null:null;}
         if(card&&(card.def.meadow?.modernDelve||finalStatic(g,p,'delveSpells').length)&&r.orbitDelve===undefined){const options=g.players[p].graveyard.filter(id=>id!==card.id);const a:Response=yield{type:'choose',player:p,prompt:'可放逐墳墓場牌以探掘（每張減少一點通用法術力）',options,min:0,max:Math.min(options.length,spellCost(g,card,p,r.mode,r.targets,r.alt,r.x??0,r.foundationCosts,r.harmonizeTapped).generic),purpose:'dig'};r.orbitDelve=a.type==='choose'?a.ids:[];}

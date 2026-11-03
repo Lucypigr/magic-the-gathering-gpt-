@@ -1,0 +1,112 @@
+{
+  "Mystical Dispute": {
+    "text": "如果此咒語以藍色咒語為目標，則它減少{2}來施放。\n除非目標咒語的操控者支付{3}，否則反擊之。",
+    "oracleText": "This spell costs {2} less to cast if it targets a blue spell.\nCounter target spell unless its controller pays {3}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4873,
+    "oracleId": "48390b8d-db41-48a5-9bac-316660ab7252",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Force of Negation": {
+    "text": "如果當前不是你的回合，則你可以從你手上放逐一張藍色牌，而不支付此咒語的法術力費用。\n反擊目標非生物咒語。如果以此法反擊該咒語，則改為將它放逐，而非置入其擁有者的墳墓場。",
+    "oracleText": "If it's not your turn, you may exile a blue card from your hand rather than pay this spell's mana cost.\nCounter target noncreature spell. If that spell is countered this way, exile it instead of putting it into its owner's graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 5364,
+    "oracleId": "ac2173f9-f223-440a-9231-fd98762bdc6f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Subtlety": {
+    "text": "閃現\n飛行\n當此生物進場時，選擇至多一個目標生物咒語或鵬洛客咒語。該咒語的擁有者依其選擇將之置於其牌庫頂或牌庫底。\n呼魂～從你手上放逐一張藍色牌。",
+    "oracleText": "Flash\nFlying\nWhen this creature enters, choose up to one target creature spell or planeswalker spell. Its owner puts it on their choice of the top or bottom of their library.\nEvoke—Exile a blue card from your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 7803,
+    "oracleId": "377179d5-ac83-4d34-b5b1-f3d8caa60f79",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Ragavan, Nimble Pilferer": {
+    "text": "每當勒格文對任一牌手造成戰鬥傷害時，派出一個珍寶衍生物並放逐該牌手的牌庫頂牌。直到回合結束，你可以施放該牌。\n掩襲{1}{R}（你可以支付此咒語的掩襲費用來施放它。如果你如此作，則它獲得敏捷異能，且在下個結束步驟開始時便需從戰場移回其擁有者手上。）",
+    "oracleText": "Whenever Ragavan deals combat damage to a player, create a Treasure token and exile the top card of that player's library. Until end of turn, you may cast that card.\nDash {1}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 7991,
+    "oracleId": "37108cd4-bbab-4ce3-9ed6-f60e8422e703",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Test of Talents": {
+    "text": "反擊目標瞬間或法術咒語。從其操控者的墳墓場、手牌及牌庫中搜尋任意數量與該咒語同名的牌，並將它們放逐。該牌手洗牌，然後每以此法從其手上放逐一張牌，其便抓一張牌。",
+    "oracleText": "Counter target instant or sorcery spell. Search its controller's graveyard, hand, and library for any number of cards with the same name as that spell and exile them. That player shuffles, then draws a card for each card exiled from their hand this way.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 8120,
+    "oracleId": "d808262d-43ca-46f8-ab8b-b584773f9c58",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Stern Scolding": {
+    "text": "反擊目標力量或防禦力等於或小於2的生物咒語。",
+    "oracleText": "Counter target creature spell with power or toughness 2 or less.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 13074,
+    "oracleId": "3bc8a406-3ae7-4f56-a33c-b4a2c115b917",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Counterspell": {
+    "text": "反擊目標咒語。",
+    "oracleText": "Counter target spell.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26483,
+    "oracleId": "cc187110-1148-4090-bbb8-e205694a39f5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Blood Moon": {
+    "text": "非基本地都是山脈。",
+    "oracleText": "Nonbasic lands are Mountains.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26762,
+    "oracleId": "94fac5fe-97d5-4c12-a80c-8efff9d853ae",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Polluted Delta": {
+    "text": "{T}，支付1點生命，犧牲此地：從你牌庫中搜尋一張海島或沼澤牌，將之放進戰場，然後洗牌。",
+    "oracleText": "{T}, Pay 1 life, Sacrifice this land: Search your library for an Island or Swamp card, put it onto the battlefield, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 32289,
+    "oracleId": "ef86989d-ce80-4e55-aece-7d11710eeffa",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Misty Rainforest": {
+    "text": "{T}，支付1點生命，犧牲此地：從你的牌庫中搜尋一張樹林或海島牌，將之放進戰場，然後洗牌。",
+    "oracleText": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Forest or Island card, put it onto the battlefield, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 37111,
+    "oracleId": "09dd85aa-47bc-4713-a9b9-8b52ff2285ed",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  },
+  "Surgical Extraction": {
+    "text": "（{B/P}可用{B}或2點生命來支付。）\n選擇目標在墳墓場中的牌，且不能是基本地牌。從其擁有者的墳墓場、手牌及牌庫中搜尋任意數量與之同名的牌，並將它們放逐。然後該牌手洗牌。",
+    "oracleText": "({B/P} can be paid with either {B} or 2 life.)\nChoose target card in a graveyard other than a basic land card. Search its owner's graveyard, hand, and library for any number of cards with the same name as that card and exile them. Then that player shuffles.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 37940,
+    "oracleId": "3bfa088c-9a47-4123-aee5-4de44e355bef",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18"
+  }
+}

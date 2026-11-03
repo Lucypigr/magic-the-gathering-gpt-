@@ -1,14 +1,14 @@
 {
-  "cards": 5243,
-  "collectibleCards": 5238,
+  "cards": 5254,
+  "collectibleCards": 5249,
   "tokens": 304,
   "additionalFaces": 228,
-  "totalRows": 5775,
-  "uniqueEnglishNames": 5626,
-  "translatedRows": 5775,
+  "totalRows": 5786,
+  "uniqueEnglishNames": 5637,
+  "translatedRows": 5786,
   "unresolved": [],
   "counts": {
-    "published": 1960,
+    "published": 1971,
     "database": 3812,
     "terminology": 3
   },
@@ -161,9 +161,9 @@
       "terminology": 0
     },
     "META": {
-      "cards": 80,
-      "translated": 80,
-      "published": 70,
+      "cards": 91,
+      "translated": 91,
+      "published": 81,
       "database": 10,
       "terminology": 0
     }

@@ -1,3 +1,4 @@
+import { completeModernMurktide } from './sets/modern-murktide';
 import { completeModernProwess } from './sets/modern-prowess';
 import {completeSpm,completeHob} from './sets/web-shire-data';
 import {supplementEoe,supplementTdm} from './sets/orbit-extra';
@@ -729,6 +730,7 @@ completeSpm();
 completeHob();
 
 completeModernProwess();
+completeModernMurktide();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];
