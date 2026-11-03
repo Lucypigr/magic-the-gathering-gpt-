@@ -1,0 +1,119 @@
+﻿code,name,date,type,primary,count,available,missing,modernLegal,modernAvailable
+8ED,Eighth Edition,2003-07-28,core,True,337,22,315,342,27
+MRD,Mirrodin,2003-10-02,expansion,True,286,7,279,282,12
+DST,Darksteel,2004-02-06,expansion,True,165,3,162,163,3
+5DN,Fifth Dawn,2004-06-04,expansion,True,165,0,165,164,0
+CHK,Champions of Kamigawa,2004-10-01,expansion,True,286,3,283,289,8
+BOK,Betrayers of Kamigawa,2005-02-04,expansion,True,165,0,165,164,0
+SOK,Saviors of Kamigawa,2005-06-03,expansion,True,165,1,164,165,1
+9ED,Ninth Edition,2005-07-29,core,True,339,26,313,342,31
+RAV,Ravnica: City of Guilds,2005-10-07,expansion,True,286,10,276,290,15
+GPT,Guildpact,2006-02-03,expansion,True,165,5,160,165,5
+DIS,Dissension,2006-05-05,expansion,True,180,6,174,180,6
+CSP,Coldsnap,2006-07-21,expansion,True,150,2,148,153,2
+TSP,Time Spiral,2006-10-06,expansion,True,281,4,277,284,9
+TSB,Time Spiral Timeshifted,2006-10-06,expansion,True,121,2,119,121,2
+PLC,Planar Chaos,2007-02-02,expansion,True,165,0,165,164,0
+FUT,Future Sight,2007-05-04,expansion,True,180,2,178,179,2
+10E,Tenth Edition,2007-07-13,core,True,363,28,335,368,33
+LRW,Lorwyn,2007-10-12,expansion,True,281,4,277,285,9
+MOR,Morningtide,2008-02-01,expansion,True,150,5,145,150,5
+SHM,Shadowmoor,2008-05-02,expansion,True,281,1,280,286,6
+EVE,Eventide,2008-07-25,expansion,True,180,1,179,180,1
+ALA,Shards of Alara,2008-10-03,expansion,True,229,3,226,234,8
+CON,Conflux,2009-02-06,expansion,True,145,2,143,145,2
+ARB,Alara Reborn,2009-04-30,expansion,True,145,1,144,145,1
+M10,Magic 2010,2009-07-17,core,True,229,32,197,233,37
+ZEN,Zendikar,2009-10-02,expansion,True,229,12,217,233,17
+WWK,Worldwake,2010-02-05,expansion,True,145,4,141,144,4
+ROE,Rise of the Eldrazi,2010-04-23,expansion,True,228,7,221,233,12
+DPA,Duels of the Planeswalkers,2010-06-04,box,False,97,15,82,101,19
+M11,Magic 2011,2010-07-16,core,True,229,27,202,234,32
+SOM,Scars of Mirrodin,2010-10-01,expansion,True,229,9,220,234,14
+MBS,Mirrodin Besieged,2011-02-04,expansion,True,145,4,141,150,9
+NPH,New Phyrexia,2011-05-13,expansion,True,165,0,165,167,5
+M12,Magic 2012,2011-07-15,core,True,229,25,204,233,30
+ISD,Innistrad,2011-09-30,expansion,True,249,9,240,254,14
+DKA,Dark Ascension,2012-02-03,expansion,True,158,5,153,158,5
+AVR,Avacyn Restored,2012-05-04,expansion,True,229,5,224,234,10
+M13,Magic 2013,2012-07-13,core,True,229,29,200,234,34
+RTR,Return to Ravnica,2012-10-05,expansion,True,249,22,227,253,27
+GTC,Gatecrash,2013-02-01,expansion,True,249,17,232,249,17
+DGM,Dragon's Maze,2013-05-03,expansion,True,156,14,142,156,14
+MMA,Modern Masters,2013-06-07,masters,False,229,10,219,228,10
+M14,Magic 2014,2013-07-19,core,True,229,21,208,234,26
+THS,Theros,2013-09-27,expansion,True,229,11,218,234,16
+BNG,Born of the Gods,2014-02-07,expansion,True,165,5,160,165,5
+JOU,Journey into Nyx,2014-05-02,expansion,True,165,5,160,165,5
+MD1,Modern Event Deck 2014,2014-05-30,box,False,24,3,21,26,5
+M15,Magic 2015,2014-07-18,core,True,264,21,243,269,26
+KTK,Khans of Tarkir,2014-09-26,expansion,True,249,18,231,252,23
+FRF,Fate Reforged,2015-01-23,expansion,True,175,12,163,180,17
+DTK,Dragons of Tarkir,2015-03-27,expansion,True,249,14,235,254,19
+MM2,Modern Masters 2015,2015-05-22,masters,False,249,13,236,248,13
+ORI,Magic Origins,2015-07-17,core,True,268,19,249,273,24
+BFZ,Battle for Zendikar,2015-10-02,expansion,True,249,8,241,254,13
+OGW,Oath of the Gatewatch,2016-01-22,expansion,True,182,6,176,183,7
+SOI,Shadows over Innistrad,2016-04-08,expansion,True,282,6,276,287,11
+W16,Welcome Deck 2016,2016-04-08,starter,False,16,4,12,16,4
+EMN,Eldritch Moon,2016-07-22,expansion,True,205,5,200,205,5
+KLD,Kaladesh,2016-09-30,expansion,True,259,18,241,264,23
+AER,Aether Revolt,2017-01-20,expansion,True,194,4,190,194,4
+MM3,Modern Masters 2017,2017-03-17,masters,False,249,27,222,249,27
+W17,Welcome Deck 2017,2017-04-15,starter,False,30,6,24,30,6
+AKH,Amonkhet,2017-04-28,expansion,True,267,8,259,272,13
+HOU,Hour of Devastation,2017-07-14,expansion,True,194,5,189,199,10
+XLN,Ixalan,2017-09-29,expansion,True,269,21,248,274,26
+RIX,Rivals of Ixalan,2018-01-19,expansion,True,200,16,184,205,21
+DOM,Dominaria,2018-04-27,expansion,True,260,25,235,265,30
+M19,Core Set 2019,2018-07-13,core,True,294,65,229,299,70
+GRN,Guilds of Ravnica,2018-10-05,expansion,True,263,22,241,268,27
+GK1,GRN Guild Kit,2018-11-02,box,False,117,12,105,121,17
+GS1,Global Series Jiang Yanggu & Mu Yanling,2018-06-22,duel_deck,False,36,1,35,9,5
+RNA,Ravnica Allegiance,2019-01-25,expansion,True,263,17,246,268,22
+GK2,RNA Guild Kit,2019-02-15,box,False,123,2,121,128,7
+WAR,War of the Spark,2019-05-03,expansion,True,260,9,251,265,14
+MH1,Modern Horizons,2019-06-14,draft_innovation,True,250,7,243,253,7
+M20,Core Set 2020,2019-07-12,core,True,324,57,267,327,62
+ELD,Throne of Eldraine,2019-10-04,expansion,True,280,20,260,282,25
+THB,Theros Beyond Death,2020-01-24,expansion,True,268,11,257,271,16
+IKO,Ikoria: Lair of Behemoths,2020-04-24,expansion,True,260,20,240,262,25
+M21,Core Set 2021,2020-07-03,core,True,280,52,228,285,57
+ZNR,Zendikar Rising,2020-09-25,expansion,True,265,13,252,270,18
+KHM,Kaldheim,2021-02-05,expansion,True,295,12,283,304,17
+STX,Strixhaven: School of Mages,2021-04-23,expansion,True,275,4,271,280,9
+MH2,Modern Horizons 2,2021-06-18,draft_innovation,True,304,1,303,307,6
+AFR,Adventures in the Forgotten Realms,2021-07-23,expansion,True,261,3,258,266,8
+MID,Innistrad: Midnight Hunt,2021-09-24,expansion,True,267,15,252,272,20
+VOW,Innistrad: Crimson Vow,2021-11-19,expansion,True,267,17,250,272,22
+DBL,Innistrad: Double Feature,2022-01-28,draft_innovation,False,532,31,501,532,31
+NEO,Kamigawa: Neon Dynasty,2022-02-18,expansion,True,282,16,266,287,21
+SNC,Streets of New Capenna,2022-04-29,expansion,True,261,12,249,266,17
+DMU,Dominaria United,2022-09-09,expansion,True,266,19,247,271,24
+BRO,The Brothers' War,2022-11-18,expansion,True,272,13,259,277,18
+ONE,Phyrexia: All Will Be One,2023-02-10,expansion,True,266,14,252,271,19
+MOM,March of the Machine,2023-04-21,expansion,True,291,16,275,296,21
+MAT,March of the Machine: The Aftermath,2023-05-12,expansion,True,50,0,50,50,0
+LTR,The Lord of the Rings: Tales of Middle-earth,2023-06-23,draft_innovation,True,284,0,284,288,5
+WOE,Wilds of Eldraine,2023-09-08,expansion,True,276,276,0,280,280
+LCI,The Lost Caverns of Ixalan,2023-11-17,expansion,True,286,286,0,291,291
+MKM,Murders at Karlov Manor,2024-02-09,expansion,True,274,271,3,279,276
+OTJ,Outlaws of Thunder Junction,2024-04-19,expansion,True,271,271,0,276,276
+BIG,The Big Score,2024-04-19,expansion,True,30,2,28,30,2
+MH3,Modern Horizons 3,2024-06-14,draft_innovation,True,303,0,303,306,5
+ACR,Assassin's Creed,2024-07-05,draft_innovation,True,133,4,129,138,9
+BLB,Bloomburrow,2024-08-02,expansion,True,274,274,0,279,279
+DSK,Duskmourn: House of Horror,2024-09-27,expansion,True,271,271,0,276,276
+FDN,Foundations,2024-11-15,core,True,512,512,0,517,517
+DFT,Aetherdrift,2025-02-14,expansion,True,271,271,0,276,276
+TDM,Tarkir: Dragonstorm,2025-04-11,expansion,True,271,271,0,276,276
+FIN,Final Fantasy,2025-06-13,expansion,True,305,305,0,311,311
+EOE,Edge of Eternities,2025-08-01,expansion,True,261,261,0,266,266
+SPM,Marvel's Spider-Man,2025-09-26,expansion,True,188,188,0,193,193
+TLA,Avatar: The Last Airbender,2025-11-21,expansion,True,281,281,0,286,286
+ECL,Lorwyn Eclipsed,2026-01-23,expansion,True,268,268,0,273,273
+TMT,Teenage Mutant Ninja Turtles,2026-03-06,expansion,True,190,190,0,195,195
+SOS,Secrets of Strixhaven,2026-04-24,expansion,True,266,266,0,271,271
+MSH,Marvel Super Heroes,2026-06-26,expansion,True,276,276,0,281,281
+HOB,The Hobbit,2026-08-14,expansion,True,188,188,0,193,193
+FRA,Reality Fracture,2026-10-02,expansion,True,280,280,0,285,285

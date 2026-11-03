@@ -1,0 +1,1552 @@
+{
+  "cardRepository": "taw/magic-search-engine-data",
+  "cardRevision": "03baa9d51c50d07a2de44cdd2aa3bcf09b0713fa",
+  "cardDirectory": "data/sets",
+  "cardSnapshotDate": "2026-10-23",
+  "formatRepository": "Card-Forge/forge",
+  "formatRevision": "7c34365c749ca46ab71336c5f267340d6088e600",
+  "formatPath": "forge-gui/res/formats/Sanctioned/Modern.txt",
+  "formatSha256": "0ad4083b6359ceed8de224e055691bc16ff0cbb2dd91375f222215678db2045b",
+  "decks": {
+    "repository": "Card-Forge/forge-extras",
+    "revision": "d3783237b98ca3714aeea5796ea593f49f6921cb",
+    "path": "decks/currentmodernmetagame.zip",
+    "sha256": "70e85196c8a031a4ba27864e08a4917dc4605785594308148366e025578bd948"
+  },
+  "sets": [
+    {
+      "forgeCode": "8ED",
+      "file": "8ED.json",
+      "code": "8ED",
+      "name": "Eighth Edition",
+      "type": "core",
+      "date": "2003-07-28",
+      "sha256": "d58f14d149d99699c23953f968afa928f1d79b680647a41c67490c7b0566f835",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MRD",
+      "file": "MRD.json",
+      "code": "MRD",
+      "name": "Mirrodin",
+      "type": "expansion",
+      "date": "2003-10-02",
+      "sha256": "68f39c5c464e71e651cb32401237c0a655700a0d6b4bd573627de10aeb8f1753",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DST",
+      "file": "DST.json",
+      "code": "DST",
+      "name": "Darksteel",
+      "type": "expansion",
+      "date": "2004-02-06",
+      "sha256": "5ad0505c0a6a2ad8994c1f90ce01593cad6fafaf76fa9b9688b8a7b21caef382",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "5DN",
+      "file": "5DN.json",
+      "code": "5DN",
+      "name": "Fifth Dawn",
+      "type": "expansion",
+      "date": "2004-06-04",
+      "sha256": "303793a0937161fae85fa181e6dc4a63541e4e8459161420ccfb09c83dd710ec",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "CHK",
+      "file": "CHK.json",
+      "code": "CHK",
+      "name": "Champions of Kamigawa",
+      "type": "expansion",
+      "date": "2004-10-01",
+      "sha256": "907b7e7550d49d8cf319e760137c7a46645f0c27453f2fdf78a45d3d15838ac1",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "BOK",
+      "file": "BOK.json",
+      "code": "BOK",
+      "name": "Betrayers of Kamigawa",
+      "type": "expansion",
+      "date": "2005-02-04",
+      "sha256": "d43b006171932d153f048ec2c6866220a86cc7bcc5d11f95d186af48ab00d6e3",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "SOK",
+      "file": "SOK.json",
+      "code": "SOK",
+      "name": "Saviors of Kamigawa",
+      "type": "expansion",
+      "date": "2005-06-03",
+      "sha256": "52eb3e409eaf3c7a4f7dadbd5489a01c22562c5eb150909d81e347ab36114875",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "9ED",
+      "file": "9ED.json",
+      "code": "9ED",
+      "name": "Ninth Edition",
+      "type": "core",
+      "date": "2005-07-29",
+      "sha256": "0139cb4b89392b7cc5a87539b9e916ce2db92e8b1f0cddf8ef11cb3c7dcc1379",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "RAV",
+      "file": "RAV.json",
+      "code": "RAV",
+      "name": "Ravnica: City of Guilds",
+      "type": "expansion",
+      "date": "2005-10-07",
+      "sha256": "9424cb93153113142ea328b20a8989782eb9848c4d750783929f1e3ffa615ecf",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "GPT",
+      "file": "GPT.json",
+      "code": "GPT",
+      "name": "Guildpact",
+      "type": "expansion",
+      "date": "2006-02-03",
+      "sha256": "7333b096ab68ae537021ccde9f9c494647031ba00da52ffa4cb8666fc265eaaf",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DIS",
+      "file": "DIS.json",
+      "code": "DIS",
+      "name": "Dissension",
+      "type": "expansion",
+      "date": "2006-05-05",
+      "sha256": "08e5d16b625caddf6088370b1a31144b68e87ee93978925f9d092ebc4025997f",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "CSP",
+      "file": "CSP.json",
+      "code": "CSP",
+      "name": "Coldsnap",
+      "type": "expansion",
+      "date": "2006-07-21",
+      "sha256": "9bd560eeb1fad5b964b8aa83b85e14e6759a87947788b6a5ddc29ea9e2af04c9",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "TSP",
+      "file": "TSP.json",
+      "code": "TSP",
+      "name": "Time Spiral",
+      "type": "expansion",
+      "date": "2006-10-06",
+      "sha256": "4d4a78ad44692be2e18e15dd631b2fe0a33a00c2e51a5f75263544178919df12",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "TSB",
+      "file": "TSB.json",
+      "code": "TSB",
+      "name": "Time Spiral Timeshifted",
+      "type": "expansion",
+      "date": "2006-10-06",
+      "sha256": "8f8697d06648f6891e1a1ca88a48076955c47e14418c712b6bf090232050e18c",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "PLC",
+      "file": "PLC.json",
+      "code": "PLC",
+      "name": "Planar Chaos",
+      "type": "expansion",
+      "date": "2007-02-02",
+      "sha256": "5dde09bbbe532b30dc85e022145b6ecd944b5837f0e7da25931739fab73d9bb1",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "FUT",
+      "file": "FUT.json",
+      "code": "FUT",
+      "name": "Future Sight",
+      "type": "expansion",
+      "date": "2007-05-04",
+      "sha256": "9d793b95ccc8fb590cbeb14d75196f8b408987fc6923bb4fedaf36d8c1d754bb",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "10E",
+      "file": "10E.json",
+      "code": "10E",
+      "name": "Tenth Edition",
+      "type": "core",
+      "date": "2007-07-13",
+      "sha256": "420731ac0af7dd85359c93bd1ddd83732360123b04ebfb87af4e0801c6e18c2b",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "LRW",
+      "file": "LRW.json",
+      "code": "LRW",
+      "name": "Lorwyn",
+      "type": "expansion",
+      "date": "2007-10-12",
+      "sha256": "a25e04f2fa3eaba45340c9eeb1d481967e62941e5618db3b1b85f149896ea934",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MOR",
+      "file": "MOR.json",
+      "code": "MOR",
+      "name": "Morningtide",
+      "type": "expansion",
+      "date": "2008-02-01",
+      "sha256": "773ebd4371b79aa22f8fb15b4b9da564f63f61df9afbe4f8d73af30fd8d14124",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "SHM",
+      "file": "SHM.json",
+      "code": "SHM",
+      "name": "Shadowmoor",
+      "type": "expansion",
+      "date": "2008-05-02",
+      "sha256": "e0d49bf7d68277388bcdb4d2d59808812d9a4af21badf4c325445a589a34fed6",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "EVE",
+      "file": "EVE.json",
+      "code": "EVE",
+      "name": "Eventide",
+      "type": "expansion",
+      "date": "2008-07-25",
+      "sha256": "0e8f36b87c92398c04bf89f34ff0f0606e01b62e0a3bc49e60f9e3496db3ff87",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ALA",
+      "file": "ALA.json",
+      "code": "ALA",
+      "name": "Shards of Alara",
+      "type": "expansion",
+      "date": "2008-10-03",
+      "sha256": "4796ca8a12ca662ef12370f78487f258d7a03f68aa635a3b704169888585da62",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "CFX",
+      "file": "CON_.json",
+      "code": "CON",
+      "name": "Conflux",
+      "type": "expansion",
+      "date": "2009-02-06",
+      "sha256": "39f44cbdf022003b64aee4f087c6c79d6b44ad1e76cada457189f12cabfa68ee",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ARB",
+      "file": "ARB.json",
+      "code": "ARB",
+      "name": "Alara Reborn",
+      "type": "expansion",
+      "date": "2009-04-30",
+      "sha256": "7eb853f5d920e798283ff669e39efafea1ae76aa83bb65ce8c3741e442e53246",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M10",
+      "file": "M10.json",
+      "code": "M10",
+      "name": "Magic 2010",
+      "type": "core",
+      "date": "2009-07-17",
+      "sha256": "44d7f54bdfbc0a1af0eff37811fc18b1e6a3d2035549a4074ff8835e1b4c76e9",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ZEN",
+      "file": "ZEN.json",
+      "code": "ZEN",
+      "name": "Zendikar",
+      "type": "expansion",
+      "date": "2009-10-02",
+      "sha256": "f9f91405e5fbd6396d603dfd33fa6622ebae50bde0e3a543fc22a03f0a4a8d09",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "WWK",
+      "file": "WWK.json",
+      "code": "WWK",
+      "name": "Worldwake",
+      "type": "expansion",
+      "date": "2010-02-05",
+      "sha256": "48bed49702e80d11fbb4f1f7fabd4a47162f5bee4fbcf86121447819e34f82ed",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ROE",
+      "file": "ROE.json",
+      "code": "ROE",
+      "name": "Rise of the Eldrazi",
+      "type": "expansion",
+      "date": "2010-04-23",
+      "sha256": "1697f599a8a345aa4660b3eb2262e8c74e6cbbfbe18dd56f07f8a54715db4a66",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DPA",
+      "file": "DPA.json",
+      "code": "DPA",
+      "name": "Duels of the Planeswalkers",
+      "type": "box",
+      "date": "2010-06-04",
+      "sha256": "fd214a3eae827e2212708fb2ace7fd74831ce5ef5b8abc1b393ffc487982bb49",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M11",
+      "file": "M11.json",
+      "code": "M11",
+      "name": "Magic 2011",
+      "type": "core",
+      "date": "2010-07-16",
+      "sha256": "8e4d7a94aa6e55e8b943c21751e415879e5820734661cad50972fdaf587a074b",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "SOM",
+      "file": "SOM.json",
+      "code": "SOM",
+      "name": "Scars of Mirrodin",
+      "type": "expansion",
+      "date": "2010-10-01",
+      "sha256": "0cf8694c93a9359ee183c882648bffb71bc78ece711ebd5fadb7839d7b0552ef",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MBS",
+      "file": "MBS.json",
+      "code": "MBS",
+      "name": "Mirrodin Besieged",
+      "type": "expansion",
+      "date": "2011-02-04",
+      "sha256": "25e25b500c36921ee03769893323a6cbe400832d39d6f3872093dd8b4faeb34c",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "NPH",
+      "file": "NPH.json",
+      "code": "NPH",
+      "name": "New Phyrexia",
+      "type": "expansion",
+      "date": "2011-05-13",
+      "sha256": "a992336b6dfbc1532d6c59d65ac6d85d93776af2441c3fddc021beb98752fd0b",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M12",
+      "file": "M12.json",
+      "code": "M12",
+      "name": "Magic 2012",
+      "type": "core",
+      "date": "2011-07-15",
+      "sha256": "845d082e6086c341adc1a8fa30241a7cbe468add6f26d3a1fe3f49833f5f0e65",
+      "meta": {
+        "date": "2026-10-08",
+        "version": "5.3.0+20261008"
+      }
+    },
+    {
+      "forgeCode": "ISD",
+      "file": "ISD.json",
+      "code": "ISD",
+      "name": "Innistrad",
+      "type": "expansion",
+      "date": "2011-09-30",
+      "sha256": "63b009937515cf48034074c63b7b1343b40921455f4d4365a8716c24076c9a33",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DKA",
+      "file": "DKA.json",
+      "code": "DKA",
+      "name": "Dark Ascension",
+      "type": "expansion",
+      "date": "2012-02-03",
+      "sha256": "57251868915f5fba4fcd022b51ace3d9c486d8814f5b6bf3015b8d64735bc3a1",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "AVR",
+      "file": "AVR.json",
+      "code": "AVR",
+      "name": "Avacyn Restored",
+      "type": "expansion",
+      "date": "2012-05-04",
+      "sha256": "3fbcebca82aa45b4e609cfb8345275243fbfd42a0175434744352fc11b9a1d36",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M13",
+      "file": "M13.json",
+      "code": "M13",
+      "name": "Magic 2013",
+      "type": "core",
+      "date": "2012-07-13",
+      "sha256": "f15ebda811e26abe273a7f4fd0cdd5fd5653d9d5ffdcd0bf14b46c7109215fe9",
+      "meta": {
+        "date": "2026-10-08",
+        "version": "5.3.0+20261008"
+      }
+    },
+    {
+      "forgeCode": "RTR",
+      "file": "RTR.json",
+      "code": "RTR",
+      "name": "Return to Ravnica",
+      "type": "expansion",
+      "date": "2012-10-05",
+      "sha256": "db0213bb5c534cf09692d0dadfc65af4b23c213f43072ffaa2efd37328bcc4b7",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "GTC",
+      "file": "GTC.json",
+      "code": "GTC",
+      "name": "Gatecrash",
+      "type": "expansion",
+      "date": "2013-02-01",
+      "sha256": "bc1785c817a88dc5e946256e2b5f9cd1a69fd359050087e94437e6ad1bded562",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DGM",
+      "file": "DGM.json",
+      "code": "DGM",
+      "name": "Dragon's Maze",
+      "type": "expansion",
+      "date": "2013-05-03",
+      "sha256": "498ddb1fd577aad4430bdeda42e1a9315bb3da372bba12012d3711348ff49024",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MMA",
+      "file": "MMA.json",
+      "code": "MMA",
+      "name": "Modern Masters",
+      "type": "masters",
+      "date": "2013-06-07",
+      "sha256": "e404555624a3a22f8bc6c1bc663ce1eb5dc81526363c912323072267f7921b43",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M14",
+      "file": "M14.json",
+      "code": "M14",
+      "name": "Magic 2014",
+      "type": "core",
+      "date": "2013-07-19",
+      "sha256": "1b512ffab1842b680e2b591afcef9560e0bce055beb43ecb24fbe20244e0d208",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "THS",
+      "file": "THS.json",
+      "code": "THS",
+      "name": "Theros",
+      "type": "expansion",
+      "date": "2013-09-27",
+      "sha256": "d97d36549c809d8a426c1be886bef9ee2a176cce29bda033125752dbd026b532",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "BNG",
+      "file": "BNG.json",
+      "code": "BNG",
+      "name": "Born of the Gods",
+      "type": "expansion",
+      "date": "2014-02-07",
+      "sha256": "2bc959d325a41c57cf7af3e20a0b376f4c544620d0d118d419ac1481f9df46b0",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "JOU",
+      "file": "JOU.json",
+      "code": "JOU",
+      "name": "Journey into Nyx",
+      "type": "expansion",
+      "date": "2014-05-02",
+      "sha256": "cc2430dc5565c3cd67536e59c562ab837b1f90fb99a0c266b8a2dfccb44325ef",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MD1",
+      "file": "MD1.json",
+      "code": "MD1",
+      "name": "Modern Event Deck 2014",
+      "type": "box",
+      "date": "2014-05-30",
+      "sha256": "025e89a2e27730dfac1c25d5045ac0365d47f380f045d1606e536d6074e534ee",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M15",
+      "file": "M15.json",
+      "code": "M15",
+      "name": "Magic 2015",
+      "type": "core",
+      "date": "2014-07-18",
+      "sha256": "b5d0ef7ee9b8cd1f78e3d9cac6877cd1d3e5b6b96feb81b332fff4347591de8c",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "KTK",
+      "file": "KTK.json",
+      "code": "KTK",
+      "name": "Khans of Tarkir",
+      "type": "expansion",
+      "date": "2014-09-26",
+      "sha256": "ae537fbb5ae27e1c439b5d7496f8203746279c267c06ea5055f0ef23836f249c",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "FRF",
+      "file": "FRF.json",
+      "code": "FRF",
+      "name": "Fate Reforged",
+      "type": "expansion",
+      "date": "2015-01-23",
+      "sha256": "9eb1fb759a384893b487da868eb1f6b7e505baa39c62a3d24d9d1705223953a4",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DTK",
+      "file": "DTK.json",
+      "code": "DTK",
+      "name": "Dragons of Tarkir",
+      "type": "expansion",
+      "date": "2015-03-27",
+      "sha256": "39f304315a1276bb38591db81f5fcb8434ce0f6a78504d0311fd8e51cbbacc9d",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MM2",
+      "file": "MM2.json",
+      "code": "MM2",
+      "name": "Modern Masters 2015",
+      "type": "masters",
+      "date": "2015-05-22",
+      "sha256": "e1cc84e29d5c78df9c1fa5e609566002b9ace3796cda07208b2e300c2a381679",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ORI",
+      "file": "ORI.json",
+      "code": "ORI",
+      "name": "Magic Origins",
+      "type": "core",
+      "date": "2015-07-17",
+      "sha256": "b543f813ac5eab3d87361e338216f992a30df0aa43ce4847b4aafc07d02ff363",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "BFZ",
+      "file": "BFZ.json",
+      "code": "BFZ",
+      "name": "Battle for Zendikar",
+      "type": "expansion",
+      "date": "2015-10-02",
+      "sha256": "ebf545e2731ae5e5205c1a9f60573ea111383ae04222ad744cbcdc61db84fef3",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "OGW",
+      "file": "OGW.json",
+      "code": "OGW",
+      "name": "Oath of the Gatewatch",
+      "type": "expansion",
+      "date": "2016-01-22",
+      "sha256": "1a330dca04f734a155203b0501157181a79cb52a19a9453b37fd1ccdae55895a",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "SOI",
+      "file": "SOI.json",
+      "code": "SOI",
+      "name": "Shadows over Innistrad",
+      "type": "expansion",
+      "date": "2016-04-08",
+      "sha256": "4ded197bbd7d22f7486367269dc729b31819e61f9fc31b277105c7db392ca10e",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "W16",
+      "file": "W16.json",
+      "code": "W16",
+      "name": "Welcome Deck 2016",
+      "type": "starter",
+      "date": "2016-04-08",
+      "sha256": "aad39fd25f9e41b1d802726fb19c3df8041ce83cfe34782e38817ce52957300e",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "EMN",
+      "file": "EMN.json",
+      "code": "EMN",
+      "name": "Eldritch Moon",
+      "type": "expansion",
+      "date": "2016-07-22",
+      "sha256": "9e8939c98b5acc9d04f505c4c17b57673e183268dee65db591dae21c18efb91e",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "KLD",
+      "file": "KLD.json",
+      "code": "KLD",
+      "name": "Kaladesh",
+      "type": "expansion",
+      "date": "2016-09-30",
+      "sha256": "9bd0ac9d2bbd63f9074ea95bbce4f3b159fc99f38b32bcc8a76c6e5947f10245",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "AER",
+      "file": "AER.json",
+      "code": "AER",
+      "name": "Aether Revolt",
+      "type": "expansion",
+      "date": "2017-01-20",
+      "sha256": "100ade1479a633cd256025b3f80c269c0f909eb991000fa25360802f97fad082",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MM3",
+      "file": "MM3.json",
+      "code": "MM3",
+      "name": "Modern Masters 2017",
+      "type": "masters",
+      "date": "2017-03-17",
+      "sha256": "6ea6f4aa504962907bf7cdb1e6e0710727973754746012f94f98f4cb98258b66",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "W17",
+      "file": "W17.json",
+      "code": "W17",
+      "name": "Welcome Deck 2017",
+      "type": "starter",
+      "date": "2017-04-15",
+      "sha256": "a01fe0f0b428547f621e1a6dcbbe9f9530b325f06156d1ee0a6650754520b0d2",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "AKH",
+      "file": "AKH.json",
+      "code": "AKH",
+      "name": "Amonkhet",
+      "type": "expansion",
+      "date": "2017-04-28",
+      "sha256": "7179c6b6d3c2a7783ea64f71a4809c3e444d71a28a0c020591cde8423291ac53",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "HOU",
+      "file": "HOU.json",
+      "code": "HOU",
+      "name": "Hour of Devastation",
+      "type": "expansion",
+      "date": "2017-07-14",
+      "sha256": "98ef94d303b1aca3d1565f5d54a054d67caddc078c0c64fb244d0c995b59e85f",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "XLN",
+      "file": "XLN.json",
+      "code": "XLN",
+      "name": "Ixalan",
+      "type": "expansion",
+      "date": "2017-09-29",
+      "sha256": "beb6aaf302dd0dad81ab99a492a99069eadc6c918121c50f0d9db22f4d4606f5",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "RIX",
+      "file": "RIX.json",
+      "code": "RIX",
+      "name": "Rivals of Ixalan",
+      "type": "expansion",
+      "date": "2018-01-19",
+      "sha256": "06be53faec5a5fbdfdb606baea6b29f65ddfe26dc440031c53309a646cc55c4f",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DOM",
+      "file": "DOM.json",
+      "code": "DOM",
+      "name": "Dominaria",
+      "type": "expansion",
+      "date": "2018-04-27",
+      "sha256": "2f8cf1c1cf3b99e5e4bc6bfbfb7cff5e1468d881d6470aeea35774a5c8f23086",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M19",
+      "file": "M19.json",
+      "code": "M19",
+      "name": "Core Set 2019",
+      "type": "core",
+      "date": "2018-07-13",
+      "sha256": "f9cebf218553247b3f1df094f0b3833d64dfa3c1349e1d76df9d76c1a905fef4",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "GRN",
+      "file": "GRN.json",
+      "code": "GRN",
+      "name": "Guilds of Ravnica",
+      "type": "expansion",
+      "date": "2018-10-05",
+      "sha256": "cff93a885206536b64f412fb6967892489c987d8930907bef9808a3a36e2e265",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "GK1",
+      "file": "GK1.json",
+      "code": "GK1",
+      "name": "GRN Guild Kit",
+      "type": "box",
+      "date": "2018-11-02",
+      "sha256": "777dddb4a36e09b965469b841c36c2559eec7969a20ff88df6008f4599bf17f5",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "G18",
+      "file": "GS1.json",
+      "code": "GS1",
+      "name": "Global Series Jiang Yanggu & Mu Yanling",
+      "type": "duel_deck",
+      "date": "2018-06-22",
+      "sha256": "ec9c64cda3b565d49960ba287551bb8e3ae3e8f996250fe416c3a6f583a71ef2",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "RNA",
+      "file": "RNA.json",
+      "code": "RNA",
+      "name": "Ravnica Allegiance",
+      "type": "expansion",
+      "date": "2019-01-25",
+      "sha256": "2ad02c86c68de3ac8f5493f74206f7f54e229db963b4ef3dffa28f7564278690",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "GK2",
+      "file": "GK2.json",
+      "code": "GK2",
+      "name": "RNA Guild Kit",
+      "type": "box",
+      "date": "2019-02-15",
+      "sha256": "4e0d0793c9d129c507b0aa9e3bd7887035e0853c7e2542ea054a2bf78786035e",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "WAR",
+      "file": "WAR.json",
+      "code": "WAR",
+      "name": "War of the Spark",
+      "type": "expansion",
+      "date": "2019-05-03",
+      "sha256": "93cb6d77a8c498b91a4209d5efbaccd5e482fd4eee56f614dc5552ba4d3323e9",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MH1",
+      "file": "MH1.json",
+      "code": "MH1",
+      "name": "Modern Horizons",
+      "type": "draft_innovation",
+      "date": "2019-06-14",
+      "sha256": "7be14580fee9bc1dbbbe7ebdd645ab1016ce00ba6e6e15e075bab1ed31486a09",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M20",
+      "file": "M20.json",
+      "code": "M20",
+      "name": "Core Set 2020",
+      "type": "core",
+      "date": "2019-07-12",
+      "sha256": "b3f47f5049ebd97a52e908b2c61a97436f6b8584ef1a99ce79080721d89636f6",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ELD",
+      "file": "ELD.json",
+      "code": "ELD",
+      "name": "Throne of Eldraine",
+      "type": "expansion",
+      "date": "2019-10-04",
+      "sha256": "515ec60620f8b17b74cec57185799679d006d43d0387e393d5749368244f01f2",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "THB",
+      "file": "THB.json",
+      "code": "THB",
+      "name": "Theros Beyond Death",
+      "type": "expansion",
+      "date": "2020-01-24",
+      "sha256": "63c0b5ad9ccaaa9300662ebcc47f93e364a2812c60153fc305467bcaf1d51d4d",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "IKO",
+      "file": "IKO.json",
+      "code": "IKO",
+      "name": "Ikoria: Lair of Behemoths",
+      "type": "expansion",
+      "date": "2020-04-24",
+      "sha256": "aa72b701da943084fa5bb6f89ff9424fbc5865776c8a00637ddaa546ff48c897",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "M21",
+      "file": "M21.json",
+      "code": "M21",
+      "name": "Core Set 2021",
+      "type": "core",
+      "date": "2020-07-03",
+      "sha256": "0295b9013bfdc7ea4dd72140bf2a2a5357b26c0ffcc57cd5bbe1bbe27165efb0",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ZNR",
+      "file": "ZNR.json",
+      "code": "ZNR",
+      "name": "Zendikar Rising",
+      "type": "expansion",
+      "date": "2020-09-25",
+      "sha256": "1fc3ffff41011f246b53779dcc5f8dd4002e05acb9bfbfadc79efb4212018267",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "KHM",
+      "file": "KHM.json",
+      "code": "KHM",
+      "name": "Kaldheim",
+      "type": "expansion",
+      "date": "2021-02-05",
+      "sha256": "1cd5e2f03c2d20115df8ae8da0606d8a9d20e0eedb9df5c0e8f11fb498553992",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "STX",
+      "file": "STX.json",
+      "code": "STX",
+      "name": "Strixhaven: School of Mages",
+      "type": "expansion",
+      "date": "2021-04-23",
+      "sha256": "52ad191928f3c5f36b6f5f2dd4b22440215a2688f90f7e4d3348560a49dd328e",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MH2",
+      "file": "MH2.json",
+      "code": "MH2",
+      "name": "Modern Horizons 2",
+      "type": "draft_innovation",
+      "date": "2021-06-18",
+      "sha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "AFR",
+      "file": "AFR.json",
+      "code": "AFR",
+      "name": "Adventures in the Forgotten Realms",
+      "type": "expansion",
+      "date": "2021-07-23",
+      "sha256": "a29b148beee16521bab99eb9ba6d4b6c855d5d2ad2b67a3accc626e929399085",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MID",
+      "file": "MID.json",
+      "code": "MID",
+      "name": "Innistrad: Midnight Hunt",
+      "type": "expansion",
+      "date": "2021-09-24",
+      "sha256": "ec33684473fb4ab14a230cb58d2f6eec433f2e83824cb4a20ee0de8561fb35f3",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "VOW",
+      "file": "VOW.json",
+      "code": "VOW",
+      "name": "Innistrad: Crimson Vow",
+      "type": "expansion",
+      "date": "2021-11-19",
+      "sha256": "f0e06cef71e6ae2f3c6a943883595c8ed2ed8a1e2ca4ea7bd768ec353698ea26",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DBL",
+      "file": "DBL.json",
+      "code": "DBL",
+      "name": "Innistrad: Double Feature",
+      "type": "draft_innovation",
+      "date": "2022-01-28",
+      "sha256": "178889e6f94bb4dc1a83f228946533233edf464cb2f90f31d06eeb05d44fdb71",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "NEO",
+      "file": "NEO.json",
+      "code": "NEO",
+      "name": "Kamigawa: Neon Dynasty",
+      "type": "expansion",
+      "date": "2022-02-18",
+      "sha256": "41209e3a2ef97c8b9ceae9197297e7a586a9985d6d5249c52c14a5123c87c573",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "SNC",
+      "file": "SNC.json",
+      "code": "SNC",
+      "name": "Streets of New Capenna",
+      "type": "expansion",
+      "date": "2022-04-29",
+      "sha256": "d5e802786d5ba416e04b8ca709ed2c9115232749c1541226292eabe38b88fde7",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DMU",
+      "file": "DMU.json",
+      "code": "DMU",
+      "name": "Dominaria United",
+      "type": "expansion",
+      "date": "2022-09-09",
+      "sha256": "8b5d010647367aa7eece3b0e5f65804249d5515cf51ea01841b8b7c67e9b0d98",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "BRO",
+      "file": "BRO.json",
+      "code": "BRO",
+      "name": "The Brothers' War",
+      "type": "expansion",
+      "date": "2022-11-18",
+      "sha256": "e756b27272cd9e1bdb8578b30831c11191886cb5d6aca45f2d127543208d4ec5",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ONE",
+      "file": "ONE.json",
+      "code": "ONE",
+      "name": "Phyrexia: All Will Be One",
+      "type": "expansion",
+      "date": "2023-02-10",
+      "sha256": "eb25c534dd02f99da85824638d1e31b4146a2192b327b8c3d29881b26bba499f",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MOM",
+      "file": "MOM.json",
+      "code": "MOM",
+      "name": "March of the Machine",
+      "type": "expansion",
+      "date": "2023-04-21",
+      "sha256": "4da272e8b3a9ee5fbe15330457f40d5c0e73a0f33dd9f60e4d9e8e3a5bb97d07",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MAT",
+      "file": "MAT.json",
+      "code": "MAT",
+      "name": "March of the Machine: The Aftermath",
+      "type": "expansion",
+      "date": "2023-05-12",
+      "sha256": "59260efb01dbc1bb6ac9a5c3a007919eb01e0bc1012a17b8697152ea23cfceaf",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "LTR",
+      "file": "LTR.json",
+      "code": "LTR",
+      "name": "The Lord of the Rings: Tales of Middle-earth",
+      "type": "draft_innovation",
+      "date": "2023-06-23",
+      "sha256": "ab38cbe1d6af1729d10c200fd1d990c0b5458e453f82fb85fe6997e59542481d",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "WOE",
+      "file": "WOE.json",
+      "code": "WOE",
+      "name": "Wilds of Eldraine",
+      "type": "expansion",
+      "date": "2023-09-08",
+      "sha256": "bc0381e7f3506bf06d48370d581a12567314a1805c8825a6d5f96f54dc6f0e22",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "LCI",
+      "file": "LCI.json",
+      "code": "LCI",
+      "name": "The Lost Caverns of Ixalan",
+      "type": "expansion",
+      "date": "2023-11-17",
+      "sha256": "76a1ac4a75f544f7164a905ce5940a7f4303665cd6e3d12541aff8c4f6d54a79",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MKM",
+      "file": "MKM.json",
+      "code": "MKM",
+      "name": "Murders at Karlov Manor",
+      "type": "expansion",
+      "date": "2024-02-09",
+      "sha256": "810d6a94c3208d567ada23648fc7b20fc95eeae7f9efd7434116ed4317a92b69",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "OTJ",
+      "file": "OTJ.json",
+      "code": "OTJ",
+      "name": "Outlaws of Thunder Junction",
+      "type": "expansion",
+      "date": "2024-04-19",
+      "sha256": "0f56df4a2fa28f7bc3db2ec66c66dab2eee28945be71b3ef1b2501757d5ba5a0",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "BIG",
+      "file": "BIG.json",
+      "code": "BIG",
+      "name": "The Big Score",
+      "type": "expansion",
+      "date": "2024-04-19",
+      "sha256": "c2769b3f7012e8e91a8650a37ed8d8fc61ba1bbe39c107e8fb1c5069b991bdfd",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MH3",
+      "file": "MH3.json",
+      "code": "MH3",
+      "name": "Modern Horizons 3",
+      "type": "draft_innovation",
+      "date": "2024-06-14",
+      "sha256": "47d64f2c35b4fa774ba3610b2b6129c3e2029cd7b9f8c3a3ebe6dede6080b853",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ACR",
+      "file": "ACR.json",
+      "code": "ACR",
+      "name": "Assassin's Creed",
+      "type": "draft_innovation",
+      "date": "2024-07-05",
+      "sha256": "22599f3fa4a4e7c8af3a916ddba407d0fc817b101b90309409ef18d072d8e986",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "BLB",
+      "file": "BLB.json",
+      "code": "BLB",
+      "name": "Bloomburrow",
+      "type": "expansion",
+      "date": "2024-08-02",
+      "sha256": "0e2684b188646d171a362a1ec0852f786bf3e2022bc88ea28e1e9333ed40bed5",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DSK",
+      "file": "DSK.json",
+      "code": "DSK",
+      "name": "Duskmourn: House of Horror",
+      "type": "expansion",
+      "date": "2024-09-27",
+      "sha256": "fe89f9a4071e704bcfd54292523366c84ec6dfbe99d58ccef00bcc2a527453ce",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "FDN",
+      "file": "FDN.json",
+      "code": "FDN",
+      "name": "Foundations",
+      "type": "core",
+      "date": "2024-11-15",
+      "sha256": "2fde2e2cebef3f5b56762bf75ff907f57eea0bb35ccb68721dee0c0dcdd2caf8",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "DFT",
+      "file": "DFT.json",
+      "code": "DFT",
+      "name": "Aetherdrift",
+      "type": "expansion",
+      "date": "2025-02-14",
+      "sha256": "f621ee4a561515ee668c196d163c5e944fd1682112f483b4ef8466b59610215a",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "TDM",
+      "file": "TDM.json",
+      "code": "TDM",
+      "name": "Tarkir: Dragonstorm",
+      "type": "expansion",
+      "date": "2025-04-11",
+      "sha256": "1c0ce14cf03e5195487893284ef79c45f5e317d4f768782f1e32673bd8f0c3f4",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "FIN",
+      "file": "FIN.json",
+      "code": "FIN",
+      "name": "Final Fantasy",
+      "type": "expansion",
+      "date": "2025-06-13",
+      "sha256": "8f9cbfdf31d77e777a470c4e49e240af5a2eb70e75c4369c68261007eb043a44",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "EOE",
+      "file": "EOE.json",
+      "code": "EOE",
+      "name": "Edge of Eternities",
+      "type": "expansion",
+      "date": "2025-08-01",
+      "sha256": "4667d6e5691aa32126122de6a37bc1d1234fb47fed938be5abcae34d3bd9ba97",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "SPM",
+      "file": "SPM.json",
+      "code": "SPM",
+      "name": "Marvel's Spider-Man",
+      "type": "expansion",
+      "date": "2025-09-26",
+      "sha256": "c80b4b114a3f00a774bb58bc732e5f1d508d41dd9f989e60fd7a9f604b47b53a",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "TLA",
+      "file": "TLA.json",
+      "code": "TLA",
+      "name": "Avatar: The Last Airbender",
+      "type": "expansion",
+      "date": "2025-11-21",
+      "sha256": "f21a8a0e36601fec0dbe6719188ac414a6d6cd6cf8ba97369e69259b335644c5",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "ECL",
+      "file": "ECL.json",
+      "code": "ECL",
+      "name": "Lorwyn Eclipsed",
+      "type": "expansion",
+      "date": "2026-01-23",
+      "sha256": "f62b8055828fd6fcf36c4af80f488990c3c54638eb305cfc6a996d6022cd0b71",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "TMT",
+      "file": "TMT.json",
+      "code": "TMT",
+      "name": "Teenage Mutant Ninja Turtles",
+      "type": "expansion",
+      "date": "2026-03-06",
+      "sha256": "f408a29dcd45e9f60ceb197144b91a76c249c256f2af2dd96cd10cc5063ccf19",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "SOS",
+      "file": "SOS.json",
+      "code": "SOS",
+      "name": "Secrets of Strixhaven",
+      "type": "expansion",
+      "date": "2026-04-24",
+      "sha256": "cb2f493e9d82f3cb26edaf3eb30466d36e299894d460e732e7d826842a6a4e1d",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "MSH",
+      "file": "MSH.json",
+      "code": "MSH",
+      "name": "Marvel Super Heroes",
+      "type": "expansion",
+      "date": "2026-06-26",
+      "sha256": "2690d145f86e868d139612c6e12daddfae742f9a285fad5184d49b9dd1f5d478",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "HOB",
+      "file": "HOB.json",
+      "code": "HOB",
+      "name": "The Hobbit",
+      "type": "expansion",
+      "date": "2026-08-14",
+      "sha256": "3357cff35e66661f8d2ab717389a44cc4181820ac790be01aaa3bf10b3bdb04f",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    },
+    {
+      "forgeCode": "FRA",
+      "file": "FRA.json",
+      "code": "FRA",
+      "name": "Reality Fracture",
+      "type": "expansion",
+      "date": "2026-10-02",
+      "sha256": "b5249b6f367fd07e7f8fb193a5e6a3b580a4a35cd035e739765834cc497f5755",
+      "meta": {
+        "date": "2026-10-23",
+        "version": "5.3.0+20261023"
+      }
+    }
+  ]
+}
