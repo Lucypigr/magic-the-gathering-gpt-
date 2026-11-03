@@ -1,3 +1,4 @@
+import { completeModernProwess } from './sets/modern-prowess';
 import {completeSpm,completeHob} from './sets/web-shire-data';
 import {supplementEoe,supplementTdm} from './sets/orbit-extra';
 import {completeLci} from './sets/lci-extra';
@@ -726,6 +727,8 @@ supplementEoe();
 supplementTdm();
 completeSpm();
 completeHob();
+
+completeModernProwess();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

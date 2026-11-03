@@ -103,7 +103,7 @@ export default function App() {
   const startTrial = (deck: SavedDeck, aiDeckId?: string) => {
     setReward(0);
     setResultExtra(null);
-    go({ name: 'battle', deckId: deck.id, level: 'normal', aiDeckId: aiDeckId ?? randomAiDeck('standard'), random: !aiDeckId, key: Date.now(), format: 'standard', trial: deck });
+    go({ name: 'battle', deckId: deck.id, level: 'normal', aiDeckId: aiDeckId ?? randomAiDeck(deck.format ?? 'standard'), random: !aiDeckId, key: Date.now(), format: deck.format ?? 'standard', trial: deck });
   };
 
   const setSettings = (s: Settings) =>

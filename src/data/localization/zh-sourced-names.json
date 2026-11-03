@@ -1624,6 +1624,23 @@
     "number": "49",
     "released": "2025-09-23"
   },
+  "all aboard": {
+    "name": "全體上車",
+    "sourceName": "All Aboard",
+    "originalChinese": "全体上车",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24011,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "788d3cfa-7706-4728-9c48-cf7bc963d002",
+    "faceOracleId": "65af9913-963b-5db8-abe0-83726abdf0bb",
+    "set": "SOS",
+    "number": "322",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "all-fates scroll": {
     "name": "封命卷軸",
     "sourceName": "All-Fates Scroll",
@@ -1976,6 +1993,40 @@
     "set": "VOW",
     "number": "142",
     "released": "2021-11-19"
+  },
+  "ancestral craving": {
+    "name": "先人的渴望",
+    "sourceName": "Ancestral Craving",
+    "originalChinese": "先人的渴望",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 20232,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "c8e9a7e1-28ae-40e3-8715-1bb0aa2057c7",
+    "faceOracleId": "6042b23e-f45b-5298-a99f-c792cfa67ec9",
+    "set": "FRA",
+    "number": "49",
+    "stage": 5,
+    "released": "2026-10-02"
+  },
+  "ancestral recall": {
+    "name": "先人的召還",
+    "sourceName": "Ancestral Recall",
+    "originalChinese": "先人的召还",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19569,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "24a29be4-5bc2-469b-b2ce-2fb305c3facb",
+    "faceOracleId": "eff393e8-3a72-5082-b2ff-249ecd7183f4",
+    "set": "SOS",
+    "number": "315",
+    "stage": 5,
+    "released": "2026-04-24"
   },
   "anchovy & banana pizza": {
     "name": "鳳尾魚香蕉披薩",
@@ -2448,6 +2499,23 @@
     "number": "40",
     "released": "2023-09-08"
   },
+  "aqueous aria": {
+    "name": "流水詠歎",
+    "sourceName": "Aqueous Aria",
+    "originalChinese": "流水咏叹",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 22375,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "9b3155c1-c662-4ff1-80e2-4064e6233dc5",
+    "faceOracleId": "b0e2120b-49c8-521c-8495-274b8474f1d5",
+    "set": "SOS",
+    "number": "40",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "aquitect's defenses": {
     "name": "建渠者的防禦",
     "sourceName": "Aquitect's Defenses",
@@ -2562,6 +2630,23 @@
     "number": "55",
     "stage": 5,
     "released": "2024-11-15"
+  },
+  "arc of fortune": {
+    "name": "命運之弧",
+    "sourceName": "Arc of Fortune",
+    "originalChinese": "命运之弧",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18265,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "67c603cc-ad66-4a1c-8386-5901c9c01bfb",
+    "faceOracleId": "f11e1b22-69da-514c-b4d4-5628e4d42688",
+    "set": "FRA",
+    "number": "426",
+    "stage": 5,
+    "released": "2026-10-02"
   },
   "arc reactor": {
     "name": "光弧反應堆",
@@ -2749,6 +2834,23 @@
     "number": "418",
     "stage": 5,
     "released": "2026-06-26"
+  },
+  "arid mesa": {
+    "name": "不毛高地",
+    "sourceName": "Arid Mesa",
+    "originalChinese": "不毛高地",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 107814,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "25ac5405-df7b-4097-914a-022cb18e20d4",
+    "multiverseId": "524669",
+    "set": "MH2",
+    "number": "244",
+    "released": "2021-06-18"
   },
   "ark of hunger": {
     "name": "飢渴約櫃",
@@ -3072,6 +3174,23 @@
     "number": "117",
     "stage": 5,
     "released": "2024-11-15"
+  },
+  "assault strobe": {
+    "name": "突襲閃光",
+    "sourceName": "Assault Strobe",
+    "originalChinese": "突袭闪光",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 87787,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "9b505c78-5dbd-483d-92bb-5144060e962f",
+    "multiverseId": "232371",
+    "set": "SOM",
+    "number": "82",
+    "released": "2010-10-01"
   },
   "assert perfection": {
     "name": "維護至美",
@@ -3682,6 +3801,23 @@
     "number": "249",
     "stage": 5,
     "released": "2025-02-14"
+  },
+  "awaken the ages": {
+    "name": "喚醒古時",
+    "sourceName": "Awaken the Ages",
+    "originalChinese": "唤醒古时",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19796,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "e85c6bd2-db15-4052-88c0-3ae25414f0ca",
+    "faceOracleId": "b88f86ec-485d-5bfe-99da-06f0f1632de6",
+    "set": "SOS",
+    "number": "131",
+    "stage": 5,
+    "released": "2026-04-24"
   },
   "awaken the honored dead": {
     "name": "喚醒榮耀亡者",
@@ -5473,6 +5609,23 @@
     "stage": 5,
     "released": "2024-11-15"
   },
+  "bind to life": {
+    "name": "結合生命",
+    "sourceName": "Bind to Life",
+    "originalChinese": "结合生命",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24410,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "3a97bc8d-bd81-468e-9277-eba4fac11ee0",
+    "faceOracleId": "76749dab-0a18-509e-997f-dd898c1553c3",
+    "set": "SOS",
+    "number": "166",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "bioengineered future": {
     "name": "生機創未來",
     "sourceName": "Bioengineered Future",
@@ -6029,6 +6182,23 @@
     "number": "82",
     "released": "2017-11-17"
   },
+  "bloodletting": {
+    "name": "放血",
+    "sourceName": "Bloodletting",
+    "originalChinese": "放血",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19020,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "84bb960c-c34e-4979-8c0f-893c85cee27d",
+    "faceOracleId": "8d90acb8-37e4-514c-be9a-6b2eb27b8010",
+    "set": "SOS",
+    "number": "88",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "bloodline bidding": {
     "name": "血脈爭先",
     "sourceName": "Bloodline Bidding",
@@ -6062,6 +6232,23 @@
     "number": "49",
     "stage": 5,
     "released": "2026-10-02"
+  },
+  "bloodstained mire": {
+    "name": "血斑泥沼",
+    "sourceName": "Bloodstained Mire",
+    "originalChinese": "血斑泥沼",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 88543,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "579743fe-f71e-4cb2-8629-d6b02ed1591d",
+    "multiverseId": "664020",
+    "set": "MH3",
+    "number": "216",
+    "released": "2024-06-14"
   },
   "bloodthirsty conqueror": {
     "name": "嗜血征服者",
@@ -6836,6 +7023,22 @@
     "number": "360",
     "released": "2023-11-17"
   },
+  "brainstorm": {
+    "name": "腦力激盪",
+    "sourceName": "Brainstorm",
+    "originalChinese": "脑力激荡",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 19956,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "9ff71d13-c4b7-4125-ab10-db4abbb7a074",
+    "set": "MMQ",
+    "number": "61",
+    "released": "1999-10-04"
+  },
   "bramble familiar": {
     "name": "刺藤傭獸",
     "sourceName": "Bramble Familiar",
@@ -6971,6 +7174,23 @@
     "number": "3",
     "stage": 5,
     "released": "2024-08-02"
+  },
+  "brazen borrower": {
+    "name": "厚顏借物靈",
+    "sourceName": "Brazen Borrower",
+    "originalChinese": "厚颜借物灵",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 106157,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "ed39ecb5-6c7c-428d-8ff3-7bd30edf00d5",
+    "multiverseId": "660908",
+    "set": "SPG",
+    "number": "30",
+    "released": "2024-04-19"
   },
   "brazen collector": {
     "name": "厚顏集物客",
@@ -8399,6 +8619,22 @@
     "number": "195",
     "stage": 5,
     "released": "2025-02-14"
+  },
+  "careful study": {
+    "name": "細心鑽研",
+    "sourceName": "Careful Study",
+    "originalChinese": "细心钻研",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 108768,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "dea15b53-2940-40e7-8d48-8ec11341da83",
+    "set": "ODY",
+    "number": "70",
+    "released": "2001-10-01"
   },
   "caretaker's talent": {
     "name": "照護者才能",
@@ -10849,6 +11085,23 @@
     "stage": 5,
     "released": "2026-08-14"
   },
+  "consign to memory": {
+    "name": "托諸記憶",
+    "sourceName": "Consign to Memory",
+    "originalChinese": "托诸记忆",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 84430,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "bc95af55-d1dd-4fe6-adb0-3ad6db20d986",
+    "multiverseId": "663858",
+    "set": "MH3",
+    "number": "54",
+    "released": "2024-06-14"
+  },
   "constrictor sage": {
     "name": "蛇身智者",
     "sourceName": "Constrictor Sage",
@@ -11437,6 +11690,23 @@
     "number": "83",
     "stage": 5,
     "released": "2024-11-15"
+  },
+  "craft with pride": {
+    "name": "誠意製作",
+    "sourceName": "Craft with Pride",
+    "originalChinese": "诚意制作",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19776,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "23c3de07-8aa2-48e9-848c-50b5a40bd133",
+    "faceOracleId": "de35343a-3a4a-5bb4-aed0-44411a8d6c8d",
+    "set": "SOS",
+    "number": "117",
+    "stage": 5,
+    "released": "2026-04-24"
   },
   "craftwork crusher": {
     "name": "拼裝碾壓獸",
@@ -13343,6 +13613,23 @@
     "stage": 5,
     "released": "2026-10-02"
   },
+  "deep sight": {
+    "name": "深邃視界",
+    "sourceName": "Deep Sight",
+    "originalChinese": "深邃视界",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19723,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "702e871d-90d8-4468-8f69-5ae42af2c9d3",
+    "faceOracleId": "a72d9147-9018-5f99-a3fa-81aec1bf259e",
+    "set": "SOS",
+    "number": "237",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "deepchannel duelist": {
     "name": "通渠鬥客",
     "sourceName": "Deepchannel Duelist",
@@ -13654,6 +13941,23 @@
     "number": "83",
     "stage": 5,
     "released": "2025-02-14"
+  },
+  "demonic tutor": {
+    "name": "邪魔導師",
+    "sourceName": "Demonic Tutor",
+    "originalChinese": "邪魔导师",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 101073,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "89153e75-2333-42e8-bc28-1b3d1e4726dd",
+    "multiverseId": "627554",
+    "set": "CMM",
+    "number": "509",
+    "released": "2023-08-04"
   },
   "denzilore fatehold": {
     "name": "鄧齊洛展鑑",
@@ -15307,6 +15611,22 @@
     "number": "79",
     "stage": 5,
     "released": "2025-04-11"
+  },
+  "dragon's rage channeler": {
+    "name": "龍怒通念師",
+    "sourceName": "Dragon's Rage Channeler",
+    "originalChinese": "龙怒通念师",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 87227,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "c75cc38d-aee6-44ab-be69-26491fb9b808",
+    "set": "H2R",
+    "number": "9",
+    "released": "2024-06-14"
   },
   "dragonback assault": {
     "name": "龍背突襲",
@@ -17978,6 +18298,23 @@
     "stage": 5,
     "released": "2026-01-23"
   },
+  "enroot": {
+    "name": "入地",
+    "sourceName": "Enroot",
+    "originalChinese": "入地",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17473,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "db655c5a-06f6-42bc-8180-d9ca1c1d939a",
+    "faceOracleId": "fa14aa88-7d27-5a9e-a404-0af18ff4b276",
+    "set": "FRA",
+    "number": "437",
+    "stage": 5,
+    "released": "2026-10-02"
+  },
   "enter the avatar state": {
     "name": "神通顯力",
     "sourceName": "Enter the Avatar State",
@@ -18708,6 +19045,23 @@
     "number": "114",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "expressive iteration": {
+    "name": "展現迭代",
+    "sourceName": "Expressive Iteration",
+    "originalChinese": "展现迭代",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 35330,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "462129ce-da6e-4483-a01d-d5c67707d778",
+    "multiverseId": "666720",
+    "set": "SPG",
+    "number": "43",
+    "released": "2024-06-14"
   },
   "extended absence": {
     "name": "長期缺席",
@@ -19895,6 +20249,23 @@
     "number": "86",
     "stage": 5,
     "released": "2024-11-15"
+  },
+  "fiery islet": {
+    "name": "熾火孤島",
+    "sourceName": "Fiery Islet",
+    "originalChinese": "炽火孤岛",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 92547,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "3e73be68-aec6-4033-9cdd-bc473d7db93a",
+    "multiverseId": "668386",
+    "set": "ACR",
+    "number": "112",
+    "released": "2024-07-05"
   },
   "fight on!": {
     "name": "繼續戰鬥！",
@@ -21379,6 +21750,23 @@
     "faceOracleId": "eca8edf5-55bd-57e0-8969-30a188e88e76",
     "set": "SOS",
     "number": "256",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
+  "forum's favor": {
+    "name": "論壇恩惠",
+    "sourceName": "Forum's Favor",
+    "originalChinese": "论坛恩惠",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18604,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "66ee56b9-aca8-4efa-b9b5-50717e0784a7",
+    "faceOracleId": "e251e3db-c1dd-5dfe-822a-532277ec0c99",
+    "set": "SOS",
+    "number": "19",
     "stage": 5,
     "released": "2026-04-24"
   },
@@ -26317,6 +26705,23 @@
     "stage": 5,
     "released": "2024-09-27"
   },
+  "have a bite": {
+    "name": "來嘗一口",
+    "sourceName": "Have a Bite",
+    "originalChinese": "来尝一口",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19675,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "02125db4-4507-467a-ac0c-406de2c7d533",
+    "faceOracleId": "01ba1dad-a9e9-5442-8bb6-725c3073ff93",
+    "set": "SOS",
+    "number": "72",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "hawkeye, master marksman": {
     "name": "神射手鷹眼",
     "sourceName": "Hawkeye, Master Marksman",
@@ -26988,6 +27393,23 @@
     "number": "414",
     "stage": 5,
     "released": "2026-06-26"
+  },
+  "heroic stanza": {
+    "name": "英雄詩篇",
+    "sourceName": "Heroic Stanza",
+    "originalChinese": "英雄诗篇",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19603,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "2f5f46ed-b8aa-4864-bd20-17281d4632bf",
+    "faceOracleId": "8a122db1-922a-52a3-90e3-d96067f545de",
+    "set": "SOS",
+    "number": "170",
+    "stage": 5,
+    "released": "2026-04-24"
   },
   "hex magic": {
     "name": "邪術魔法",
@@ -28893,6 +29315,23 @@
     "number": "294",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "improvised act": {
+    "name": "臨時舉動",
+    "sourceName": "Improvised Act",
+    "originalChinese": "临时举动",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17368,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "33e3793c-098f-4897-88f3-9f9ce9081e0f",
+    "faceOracleId": "c204fda1-6184-50c8-832d-3485864d0ab8",
+    "set": "FRA",
+    "number": "428",
+    "stage": 5,
+    "released": "2026-10-02"
   },
   "improvised arsenal": {
     "name": "應急武裝",
@@ -30801,6 +31240,22 @@
     "number": "191",
     "stage": 5,
     "released": "2025-06-13"
+  },
+  "jump": {
+    "name": "跳躍",
+    "sourceName": "Jump",
+    "originalChinese": "跳跃",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 117920,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "67e566e0-a19d-4e06-8920-e9f4468ab7a5",
+    "set": "4BB",
+    "number": "79",
+    "released": "1995-04-01"
   },
   "jump scare": {
     "name": "突發驚嚇",
@@ -33081,6 +33536,23 @@
     "stage": 5,
     "released": "2025-06-13"
   },
+  "lava dart": {
+    "name": "熔岩鏢",
+    "sourceName": "Lava Dart",
+    "originalChinese": "熔岩镖",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 18148,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "b16dd041-451d-4914-8c46-aa315a90d802",
+    "multiverseId": "466369",
+    "set": "MH1",
+    "number": "134",
+    "released": "2019-06-14"
+  },
   "lavaleaper": {
     "name": "躍熔妖",
     "sourceName": "Lavaleaper",
@@ -33572,6 +34044,22 @@
     "number": "15",
     "stage": 5,
     "released": "2025-08-01"
+  },
+  "lightning bolt": {
+    "name": "閃電擊",
+    "sourceName": "Lightning Bolt",
+    "originalChinese": "闪电击",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 53066,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "310de1ef-f1b6-4b61-9d6c-6b70382a7f95",
+    "set": "4BB",
+    "number": "208",
+    "released": "1995-04-01"
   },
   "lightning, army of one": {
     "name": "王牌驅散雷光",
@@ -36385,6 +36873,23 @@
     "stage": 5,
     "released": "2025-08-01"
   },
+  "meltdown": {
+    "name": "熔燬",
+    "sourceName": "Meltdown",
+    "originalChinese": "熔毁",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 44544,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "19eedd92-8386-4ca9-ad72-afa03fa4bb28",
+    "multiverseId": "664817",
+    "set": "MH3",
+    "number": "418",
+    "released": "2024-06-14"
+  },
   "meltstrider eulogist": {
     "name": "熾行讚頌兵",
     "sourceName": "Meltstrider Eulogist",
@@ -37450,6 +37955,23 @@
     "stage": 5,
     "released": "2026-01-23"
   },
+  "mishra's bauble": {
+    "name": "米斯拉的飾品",
+    "sourceName": "Mishra's Bauble",
+    "originalChinese": "米斯拉的饰品",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 29648,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "b02452bb-a049-4e86-ba2c-135803caa03d",
+    "multiverseId": "587151",
+    "set": "BRR",
+    "number": "34",
+    "released": "2022-11-18"
+  },
   "mistbreath elder": {
     "name": "霧息長老",
     "sourceName": "Mistbreath Elder",
@@ -37892,6 +38414,23 @@
     "number": "204",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "molten tide": {
+    "name": "熱熔浪潮",
+    "sourceName": "Molten Tide",
+    "originalChinese": "热熔浪潮",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18281,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "8940f503-fc6d-4fae-be74-22c660cae1a7",
+    "faceOracleId": "a4f1daec-df5d-500b-8306-1d2a34877694",
+    "set": "FRA",
+    "number": "429",
+    "stage": 5,
+    "released": "2026-10-02"
   },
   "molten-core maestro": {
     "name": "熔核名師",
@@ -38920,6 +39459,23 @@
     "stage": 5,
     "released": "2026-06-26"
   },
+  "murktide regent": {
+    "name": "黯潮龍侯",
+    "sourceName": "Murktide Regent",
+    "originalChinese": "黯潮龙侯",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 55928,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "ad586c86-6d5b-49ac-8908-098eddae26e6",
+    "multiverseId": "527191",
+    "set": "MH2",
+    "number": "337",
+    "released": "2021-06-18"
+  },
   "murky sewer": {
     "name": "陰暗下水道",
     "sourceName": "Murky Sewer",
@@ -39033,6 +39589,23 @@
     "number": "124",
     "stage": 5,
     "released": "2026-03-06"
+  },
+  "mutagenic growth": {
+    "name": "生體突長",
+    "sourceName": "Mutagenic Growth",
+    "originalChinese": "生体突长",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 3921,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "2e0861a2-1858-47af-8154-20a977c2b298",
+    "multiverseId": "397966",
+    "set": "MM2",
+    "number": "149",
+    "released": "2015-05-22"
   },
   "mutant": {
     "name": "突變體",
@@ -40317,6 +40890,23 @@
     "stage": 5,
     "released": "2025-11-21"
   },
+  "obsidian charmaw": {
+    "name": "黑曜石焰喉龍",
+    "sourceName": "Obsidian Charmaw",
+    "originalChinese": "黑曜石焰喉龙",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 62389,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "89b7a09e-a28f-4153-81b0-c8dbb1aaa0e7",
+    "multiverseId": "527207",
+    "set": "MH2",
+    "number": "353",
+    "released": "2021-06-18"
+  },
   "obyra's attendants": {
     "name": "歐拜拉的隨員",
     "sourceName": "Obyra's Attendants",
@@ -40655,6 +41245,23 @@
     "number": "182",
     "released": "2025-09-23"
   },
+  "omit variables": {
+    "name": "忽略變數",
+    "sourceName": "Omit Variables",
+    "originalChinese": "忽略变数",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19971,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "511951ed-fbff-4e44-9429-27f237496672",
+    "faceOracleId": "8b0aced4-c6a6-51c8-81df-dc4d9ffea2b9",
+    "set": "FRA",
+    "number": "143",
+    "stage": 5,
+    "released": "2026-10-02"
+  },
   "omni-changeling": {
     "name": "全能化形",
     "sourceName": "Omni-Changeling",
@@ -40806,6 +41413,23 @@
     "number": "21",
     "stage": 5,
     "released": "2024-09-27"
+  },
+  "oracle's gift": {
+    "name": "聖法諭贈禮",
+    "sourceName": "Oracle's Gift",
+    "originalChinese": "圣法谕赠礼",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25997,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "c63b3511-d597-4c6e-9094-eabdeaa8a394",
+    "faceOracleId": "c2c00eb2-b6cf-5e3b-88fd-b2a793e3b635",
+    "set": "SOS",
+    "number": "318",
+    "stage": 5,
+    "released": "2026-04-24"
   },
   "oracle's restoration": {
     "name": "聖法諭的復原",
@@ -41514,6 +42138,23 @@
     "stage": 5,
     "released": "2025-02-14"
   },
+  "pack a punch": {
+    "name": "強力出擊",
+    "sourceName": "Pack a Punch",
+    "originalChinese": "强力出击",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19572,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "df1c0d06-2109-4297-9271-8a003fc892bc",
+    "faceOracleId": "6121e326-b1e4-58c1-b399-65409d177efa",
+    "set": "SOS",
+    "number": "198",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "pactdoll terror": {
     "name": "應諾懼偶",
     "sourceName": "Pactdoll Terror",
@@ -42044,6 +42685,23 @@
     "stage": 5,
     "released": "2024-09-27"
   },
+  "peer review": {
+    "name": "同儕評閱",
+    "sourceName": "Peer Review",
+    "originalChinese": "同侪评阅",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19975,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "63f67baa-3f37-41b8-9ee6-3c37f828917d",
+    "faceOracleId": "d02becfa-ed78-57f6-a184-5f1529229fac",
+    "set": "FRA",
+    "number": "146",
+    "stage": 5,
+    "released": "2026-10-02"
+  },
   "peerless recycling": {
     "name": "無匹回收",
     "sourceName": "Peerless Recycling",
@@ -42230,6 +42888,23 @@
     "number": "4",
     "released": "2024-04-19"
   },
+  "pest friend": {
+    "name": "害蟲好友",
+    "sourceName": "Pest Friend",
+    "originalChinese": "害虫好友",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25786,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "cb125cd4-c7c2-415d-b802-bdcfc2454403",
+    "faceOracleId": "4a7747c9-636a-5ca6-95b2-f01d27e9d0bd",
+    "set": "SOS",
+    "number": "199",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "pest mascot": {
     "name": "害蟲苑像",
     "sourceName": "Pest Mascot",
@@ -42361,6 +43036,23 @@
     "number": "178",
     "stage": 5,
     "released": "2025-04-11"
+  },
+  "petty theft": {
+    "name": "小偷小摸",
+    "sourceName": "Petty Theft",
+    "originalChinese": "小偷小摸",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 106157,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "ed39ecb5-6c7c-428d-8ff3-7bd30edf00d5",
+    "multiverseId": "660908",
+    "set": "SPG",
+    "number": "30",
+    "released": "2024-04-19"
   },
   "phantom train": {
     "name": "魔列車",
@@ -43477,6 +44169,23 @@
     "stage": 5,
     "released": "2026-03-06"
   },
+  "preordain": {
+    "name": "註定",
+    "sourceName": "Preordain",
+    "originalChinese": "注定",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 108987,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "122f2cc2-5f4d-497c-96b5-ed5698f28b51",
+    "multiverseId": "659881",
+    "set": "OTC",
+    "number": "107",
+    "released": "2024-04-19"
+  },
   "preposterous proportions": {
     "name": "浩大無比",
     "sourceName": "Preposterous Proportions",
@@ -43731,6 +44440,23 @@
     "number": "21",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "prismatic ending": {
+    "name": "虹彩終局",
+    "sourceName": "Prismatic Ending",
+    "originalChinese": "虹彩终局",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 107324,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "32d8d2eb-4a6b-4651-8ffb-d17160f9a7fb",
+    "multiverseId": "666717",
+    "set": "SPG",
+    "number": "40",
+    "released": "2024-06-14"
   },
   "prismatic undercurrents": {
     "name": "虹彩暗流",
@@ -45214,6 +45940,22 @@
     "stage": 5,
     "released": "2025-04-11"
   },
+  "raise dead": {
+    "name": "起死回生",
+    "sourceName": "Raise Dead",
+    "originalChinese": "起死回生",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 67334,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "a59a6665-08df-420e-ab27-8677288f295b",
+    "set": "4BB",
+    "number": "156",
+    "released": "1995-04-01"
+  },
   "raise the past": {
     "name": "召起過往",
     "sourceName": "Raise the Past",
@@ -45332,6 +46074,22 @@
     "number": "151",
     "stage": 5,
     "released": "2024-09-27"
+  },
+  "rampant growth": {
+    "name": "徒長",
+    "sourceName": "Rampant Growth",
+    "originalChinese": "徒长",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 59941,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "3ffbf716-9c3a-45aa-8fdb-632128cc97e2",
+    "set": "TMP",
+    "number": "245",
+    "released": "1997-10-14"
   },
   "rampart hunter": {
     "name": "壁壘獵妖",
@@ -45978,6 +46736,22 @@
     "stage": 5,
     "released": "2025-11-21"
   },
+  "reanimate": {
+    "name": "活屍法",
+    "sourceName": "Reanimate",
+    "originalChinese": "活尸法",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 58779,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "ae1ef31c-8ca5-444c-8f39-e1d1827318f5",
+    "set": "TMP",
+    "number": "151",
+    "released": "1997-10-14"
+  },
   "reaping willow": {
     "name": "納命柳木",
     "sourceName": "Reaping Willow",
@@ -46318,6 +47092,23 @@
     "stage": 5,
     "released": "2025-02-14"
   },
+  "regrowth": {
+    "name": "再生新芽",
+    "sourceName": "Regrowth",
+    "originalChinese": "再生新芽",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 41769,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "af727601-5251-48b6-b5e3-b68ca0608bc9",
+    "multiverseId": "518173",
+    "set": "STA",
+    "number": "56",
+    "released": "2021-04-23"
+  },
   "rehearsed debater": {
     "name": "熟練辯手",
     "sourceName": "Rehearsed Debater",
@@ -46351,6 +47142,23 @@
     "number": "216",
     "stage": 5,
     "released": "2025-04-11"
+  },
+  "rejoinder": {
+    "name": "駁倒",
+    "sourceName": "Rejoinder",
+    "originalChinese": "驳倒",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25018,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "d97de156-5a6d-4dc6-953e-d4bad63cbad2",
+    "faceOracleId": "fa774142-817c-5d74-9d2b-7fac4924d17d",
+    "set": "SOS",
+    "number": "12",
+    "stage": 5,
+    "released": "2026-04-24"
   },
   "release the dogs": {
     "name": "關門放狗",
@@ -47997,6 +48805,23 @@
     "number": "192",
     "stage": 5,
     "released": "2025-11-21"
+  },
+  "rocket volley": {
+    "name": "飛焰齊射",
+    "sourceName": "Rocket Volley",
+    "originalChinese": "飞焰齐射",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25975,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "03931270-504a-4b0b-af3f-918bf124ea07",
+    "faceOracleId": "ef5b6f13-9fa1-5cba-9686-76d663bb8307",
+    "set": "SOS",
+    "number": "334",
+    "stage": 5,
+    "released": "2026-04-24"
   },
   "rocket-powered goblin glider": {
     "name": "火箭驅動的綠魔滑翔機",
@@ -49720,6 +50545,23 @@
     "stage": 5,
     "released": "2025-06-13"
   },
+  "scalding tarn": {
+    "name": "沸騰山湖",
+    "sourceName": "Scalding Tarn",
+    "originalChinese": "沸腾山湖",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 76067,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "17c6ba55-2470-4dde-a7fa-137a60716c96",
+    "multiverseId": "526169",
+    "set": "MH2",
+    "number": "439",
+    "released": "2021-06-18"
+  },
   "scales of shale": {
     "name": "頁岩披身",
     "sourceName": "Scales of Shale",
@@ -50149,6 +50991,23 @@
     "stage": 5,
     "released": "2026-10-02"
   },
+  "scrollboost": {
+    "name": "書卷加持",
+    "sourceName": "Scrollboost",
+    "originalChinese": "书卷加持",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25982,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "c77ddcac-ce54-4348-bde2-5d9caf3d5b04",
+    "faceOracleId": "6ff59dcf-d446-5110-9c15-8f24aa7e2efc",
+    "set": "SOS",
+    "number": "33",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "scrounge for eternity": {
     "name": "虛空探寶",
     "sourceName": "Scrounge for Eternity",
@@ -50470,6 +51329,23 @@
     "stage": 5,
     "released": "2025-11-21"
   },
+  "secret rendezvous": {
+    "name": "秘密相會",
+    "sourceName": "Secret Rendezvous",
+    "originalChinese": "秘密相会",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 61941,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "39528cf0-343e-499b-a69f-c5c3c2898c25",
+    "multiverseId": "516122",
+    "set": "STX",
+    "number": "26",
+    "released": "2021-04-23"
+  },
   "secret tunnel": {
     "name": "秘密隧道",
     "sourceName": "Secret Tunnel",
@@ -50486,6 +51362,23 @@
     "number": "278",
     "stage": 5,
     "released": "2025-11-21"
+  },
+  "seed suture": {
+    "name": "愈種縫合",
+    "sourceName": "Seed Suture",
+    "originalChinese": "愈种缝合",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18449,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "cd61c26b-8d3c-4730-92f2-0d94d961bafd",
+    "faceOracleId": "e685749a-4402-5a32-a9fc-af3c40754a2b",
+    "set": "FRA",
+    "number": "3",
+    "stage": 5,
+    "released": "2026-10-02"
   },
   "seedglaive mentor": {
     "name": "種劍導師",
@@ -50605,6 +51498,23 @@
     "number": "69",
     "stage": 5,
     "released": "2024-11-15"
+  },
+  "seething song": {
+    "name": "熱血戰歌",
+    "sourceName": "Seething Song",
+    "originalChinese": "热血战歌",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 104135,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "f493ce26-005c-4ddc-80f0-47bea4fd013a",
+    "multiverseId": "521198",
+    "set": "C21",
+    "number": "179",
+    "released": "2021-04-23"
   },
   "seifer almasy": {
     "name": "塞法·阿爾馬西",
@@ -51901,6 +52811,22 @@
     "number": "92",
     "stage": 5,
     "released": "2025-04-11"
+  },
+  "sign in blood": {
+    "name": "以血立契",
+    "sourceName": "Sign in Blood",
+    "originalChinese": "以血立契",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 36037,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "96f4824c-61d4-4ffa-904e-c8ae97350704",
+    "set": "SCD",
+    "number": "107",
+    "released": "2022-12-02"
   },
   "signaling roar": {
     "name": "示警怒吼",
@@ -53443,6 +54369,23 @@
     "number": "156",
     "stage": 5,
     "released": "2026-01-23"
+  },
+  "soul tether": {
+    "name": "靈魂相鏈",
+    "sourceName": "Soul Tether",
+    "originalChinese": "灵魂相链",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18398,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "bad2e3b2-ad47-4e17-b35e-0fcc13e82937",
+    "faceOracleId": "e559ef3e-6819-5e56-810d-c095f1837592",
+    "set": "FRA",
+    "number": "139",
+    "stage": 5,
+    "released": "2026-10-02"
   },
   "soul-shackled zombie": {
     "name": "魂枷靈俑",
@@ -56372,6 +57315,22 @@
     "stage": 5,
     "released": "2025-02-14"
   },
+  "stream of life": {
+    "name": "生命之源",
+    "sourceName": "Stream of Life",
+    "originalChinese": "生命之源",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 31634,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "575fd1b4-adc4-47d4-afd1-abc2ec04bcb5",
+    "set": "4BB",
+    "number": "272",
+    "released": "1995-04-01"
+  },
   "strength of will": {
     "name": "毅力堅持",
     "sourceName": "Strength of Will",
@@ -56418,6 +57377,23 @@
     "faceOracleId": "719ff7f8-7559-5dba-b01c-279459aec9c8",
     "set": "SOS",
     "number": "131",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
+  "striking palette": {
+    "name": "奪目色盤",
+    "sourceName": "Striking Palette",
+    "originalChinese": "夺目色盘",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25795,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "c008d60a-ee06-4411-b8e7-c2df13616105",
+    "faceOracleId": "b9d3ffe2-8694-5227-a9d7-e63b0d173b6c",
+    "set": "SOS",
+    "number": "126",
     "stage": 5,
     "released": "2026-04-24"
   },
@@ -58009,6 +58985,22 @@
     "number": "28",
     "stage": 5,
     "released": "2024-08-02"
+  },
+  "swords to plowshares": {
+    "name": "化劍為犁",
+    "sourceName": "Swords to Plowshares",
+    "originalChinese": "化剑为犁",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 7716,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "c80d1df6-247d-4ceb-8493-226a2a4a8f75",
+    "set": "4BB",
+    "number": "52",
+    "released": "1995-04-01"
   },
   "swordsman, sharp scoundrel": {
     "name": "刺頭惡棍劍客",
@@ -62667,6 +63659,23 @@
     "stage": 5,
     "released": "2025-06-13"
   },
+  "tormod's crypt": {
+    "name": "托瑪墓穴",
+    "sourceName": "Tormod's Crypt",
+    "originalChinese": "托玛墓穴",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 118614,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "a23814c0-f9da-49c4-bfff-69786a5d651b",
+    "multiverseId": "602437",
+    "set": "DMR",
+    "number": "388",
+    "released": "2023-01-13"
+  },
   "town greeter": {
     "name": "迎賓鎮民",
     "sourceName": "Town Greeter",
@@ -63956,6 +64965,23 @@
     "number": "155",
     "released": "2023-09-08"
   },
+  "twofold intent": {
+    "name": "連筆成鋒",
+    "sourceName": "Twofold Intent",
+    "originalChinese": "连笔成锋",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25806,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "bd9d3a70-faed-4bc6-97d8-1601b36cdb21",
+    "faceOracleId": "131391d6-ce06-5045-bd8b-c3e275f82bd5",
+    "set": "SOS",
+    "number": "27",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "ty lee, artful acrobat": {
     "name": "優雅舞者泰麗",
     "sourceName": "Ty Lee, Artful Acrobat",
@@ -64733,6 +65759,22 @@
       }
     ]
   },
+  "unholy heat": {
+    "name": "不潔熱火",
+    "sourceName": "Unholy Heat",
+    "originalChinese": "不洁热火",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 86607,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "909bb097-1f7c-4d5b-be83-426d84e382c3",
+    "set": "H2R",
+    "number": "13",
+    "released": "2024-06-14"
+  },
   "unidentified hovership": {
     "name": "不明浮空船",
     "sourceName": "Unidentified Hovership",
@@ -65085,6 +66127,23 @@
     "number": "81",
     "stage": 5,
     "released": "2024-09-27"
+  },
+  "unwind history": {
+    "name": "倒流歷史",
+    "sourceName": "Unwind History",
+    "originalChinese": "倒流历史",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17395,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "e7b78acd-5288-4528-97a8-a5b43de90bf5",
+    "faceOracleId": "e16001fc-62c2-56a3-9b55-27494abdd052",
+    "set": "FRA",
+    "number": "425",
+    "stage": 5,
+    "released": "2026-10-02"
   },
   "urban retreat": {
     "name": "城中居所",
@@ -65888,6 +66947,23 @@
     "number": "50",
     "released": "2025-09-23"
   },
+  "venomous words": {
+    "name": "惡毒言辭",
+    "sourceName": "Venomous Words",
+    "originalChinese": "恶毒言辞",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26032,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "2796c3d9-9e56-40f2-8398-7a131c4657ff",
+    "faceOracleId": "e0e07e2b-c460-5171-8e0b-97a969c6984b",
+    "set": "SOS",
+    "number": "98",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "venomsac lagac": {
     "name": "毒囊勒嘎",
     "sourceName": "Venomsac Lagac",
@@ -66056,6 +67132,23 @@
     "number": "188",
     "released": "2025-09-23"
   },
+  "vibrant idea": {
+    "name": "活力創想",
+    "sourceName": "Vibrant Idea",
+    "originalChinese": "活力创想",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 20655,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "5ba7abbc-f6e8-40c2-800b-11efd10cca5b",
+    "faceOracleId": "937c1451-3b77-5254-9653-eac739dc8a88",
+    "set": "SOS",
+    "number": "56",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "vibrant outburst": {
     "name": "炫麗爆發",
     "sourceName": "Vibrant Outburst",
@@ -66106,6 +67199,23 @@
     "number": "359",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "vicious verse": {
+    "name": "惡毒詞句",
+    "sourceName": "Vicious Verse",
+    "originalChinese": "恶毒词句",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGso",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17616,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "e1ffb884-a89e-4e2a-9beb-8bd5838b6a94",
+    "faceOracleId": "cf5018cd-1d78-54c9-8890-50dce3cb5b2c",
+    "set": "FRA",
+    "number": "164",
+    "stage": 5,
+    "released": "2026-10-02"
   },
   "victor, valgavoth's seneschal": {
     "name": "瓦伽沃總管維克托",
@@ -68726,6 +69836,23 @@
     "stage": 5,
     "released": "2026-04-24"
   },
+  "wild idea": {
+    "name": "狂野靈感",
+    "sourceName": "Wild Idea",
+    "originalChinese": "狂野灵感",
+    "kind": "database",
+    "language": "zhs",
+    "declaredSource": "MTGZH",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 19721,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "oracleId": "a8c44bd9-6470-47d7-934f-77c76a44a984",
+    "faceOracleId": "198fe33f-f7a6-553b-83e7-cfe8fd0309cf",
+    "set": "SOS",
+    "number": "223",
+    "stage": 5,
+    "released": "2026-04-24"
+  },
   "wild pack squad": {
     "name": "野性戰團小隊",
     "sourceName": "Wild Pack Squad",
@@ -69413,6 +70540,23 @@
     "set": "EXO",
     "number": "130",
     "released": "1998-06-15"
+  },
+  "wooded foothills": {
+    "name": "繁茂丘陵",
+    "sourceName": "Wooded Foothills",
+    "originalChinese": "繁茂丘陵",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 106826,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-10-18",
+    "scryfallId": "3164be2f-28c9-4a33-bd70-d5089396538c",
+    "multiverseId": "664840",
+    "set": "MH3",
+    "number": "441",
+    "released": "2024-06-14"
   },
   "woodland acolyte": {
     "name": "林地侍僧",

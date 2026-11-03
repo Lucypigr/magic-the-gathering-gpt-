@@ -14,6 +14,7 @@ const LEVELS: { id: Level; name: string; desc: string }[] = [
 ];
 
 const FORMATS: { id: Format; desc: string }[] = [
+  { id: 'modern', desc: '使用近代賽合法卡牌，主牌至少60張、備牌最多15張。單局對戰使用主牌。' },
   { id: 'free', desc: `收藏中的卡都能用，至少 ${MIN_DECK} 張。對手使用經典卡組成的環境套牌。` },
   { id: 'standard', desc: `只能用目前標準賽合法的卡，至少 ${MIN_DECK_STANDARD} 張。對手使用 2026 年 9 月標準賽的熱門套牌。` },
 ];

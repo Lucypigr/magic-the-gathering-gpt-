@@ -8,6 +8,7 @@ export interface DeckList {
   colors: Color[];
   /** 卡牌 id → 張數 */
   cards: Record<string, number>;
+  sideboard?: Record<string, number>;
   /** AI 風格 */
   style?: 'aggro' | 'midrange' | 'control' | 'tempo';
   /** 環境參考 */

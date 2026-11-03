@@ -1,3 +1,4 @@
+import { modernEntry } from './modern';
 import {webEntry,webExtraTriggers,webNoPrevent,webPrevent,webRedirect,webDeathSource,webWard,webStatic,webNeedsRiot,webPrepareEntry} from './web-shire-support';
 import {finalEntry,finalRefresh,finalCanSac,finalCounterMultiplier,finalExtraTriggers,finalStatic,finalProtected,finalPreventDamage} from './orbit-final-support';
 import {orbitRefresh,orbitStationValue} from './orbit-station';
@@ -648,6 +649,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   campusEntry(g,c,controller,origin);
   finalEntry(g,c,controller);
   webEntry(g,c,controller,origin);
+  modernEntry(c,origin);
   const bdDoubles=frontierStatic(g,controller,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length;
   const fd=finalCounterMultiplier(g,c)*2**(frontierStatic(g,controller,'fdn:doubleCounters').length+bdDoubles);if(c.finality)c.finalityCount=fd;if(c.counters>0)c.counters*=fd;if(c.charge)c.charge*=fd;if(c.stun)c.stun*=fd;if(c.hexproofCounters)c.hexproofCounters*=fd;for(const key of Object.keys(c.eclCounters??{}))c.eclCounters![key]*=fd;if(c.impendingTime!==undefined)c.impendingTime=c.eclCounters?.time??c.impendingTime;
   if(c.counters>0)c.counters+=mshStatic(g,c.controller,'extraCounters').length;

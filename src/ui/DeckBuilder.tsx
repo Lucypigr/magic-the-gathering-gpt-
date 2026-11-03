@@ -2,7 +2,7 @@ import {traditionalRulesText} from '../data/localization';
 import { displayName, zhName } from '../data/names';
 import { useMemo, useState } from 'react';
 import type { Screen, UpdateProfile } from '../App';
-import { BASIC_LANDS, COLLECTIBLE, SET_INFO, deckSize, isStandardLegal } from '../data';
+import { BASIC_LANDS, COLLECTIBLE, SET_INFO, deckSize, isStandardLegal, isModernLegal } from '../data';
 import { STANDARD_SETS } from '../engine/types';
 import { colorsOf } from '../engine/mana';
 import { getDef } from '../engine/registry';
@@ -35,7 +35,9 @@ export function matchFilter(d: CardDef, f: PoolFilter): boolean {
     if (f.color !== 'C' && f.color !== 'M' && !cols.includes(f.color)) return false;
   }
   if (f.type && !d.types.includes(f.type as CardDef['types'][number])) return false;
-  if (f.set === 'STD') {
+  if (f.set === 'MODERN') {
+    if (!isModernLegal(d)) return false;
+  } else if (f.set === 'STD') {
     if (!isStandardLegal(d)) return false;
   } else if (f.set && d.set !== f.set) return false;
   if (f.rarity && d.rarity !== f.rarity) return false;
@@ -69,6 +71,7 @@ export function FilterBar({ f, setF, extra }: { f: PoolFilter; setF: (f: PoolFil
       </select>
       <select id="set-filter" value={f.set} onChange={(e) => setF({ ...f, set: e.target.value })} aria-label="系列">
         <option value="">全部系列</option>
+        <option value="MODERN">近代賽合法</option>
         <option value="STD">標準賽合法的卡</option>
         <optgroup label="標準賽系列">
           {[...STANDARD_SETS].reverse().map((s) => (
@@ -122,7 +125,7 @@ export function DeckBuilder({ profile, go, update }: { profile: Profile; go: (s:
   }
   function canAdd(id: string): boolean {
     if (isBasic(id)) return true;
-    const cur = deck.cards[id] ?? 0;
+    const cur = (deck.cards[id] ?? 0) + (deck.sideboard?.[id] ?? 0);
     return (cur < MAX_COPIES || !!getDef(id).anyNumber) && cur < (profile.collection[id] ?? 0);
   }
   const add = (id: string) =>
@@ -147,7 +150,7 @@ export function DeckBuilder({ profile, go, update }: { profile: Profile; go: (s:
   function duplicate() {
     const id = uid();
     update((p) => {
-      p.decks.push({ id, name: `${deck.name}（複製）`, cards: { ...deck.cards } });
+      p.decks.push({ ...deck, id, name: `${deck.name}（複製）`, cards: { ...deck.cards }, sideboard: deck.sideboard ? { ...deck.sideboard } : undefined });
     });
     setEditId(id);
   }
@@ -163,7 +166,7 @@ export function DeckBuilder({ profile, go, update }: { profile: Profile; go: (s:
   function autoLands() {
     const nonBasic = Object.entries(deck.cards).filter(([id]) => !isBasic(id));
     const spells = nonBasic.filter(([id]) => !getDef(id).types.includes('Land')).reduce((s, [, n]) => s + n, 0);
-    const target = spells >= 30 ? 60 : 40;
+    const target = deck.format === 'modern' || spells >= 30 ? 60 : 40;
     const need = target - deckSize(deck);
     if (need <= 0) return;
     const pips = pipCounts(deck.cards);
@@ -182,6 +185,7 @@ export function DeckBuilder({ profile, go, update }: { profile: Profile; go: (s:
 
   const chk = checkDeck(profile, deck);
   const chkStd = checkDeck(profile, deck, 'standard');
+  const chkModern = checkDeck(profile, deck, 'modern');
   const cv = curve(deck.cards);
   const maxCv = Math.max(1, ...cv);
   const entries = Object.entries(deck.cards)
@@ -303,6 +307,7 @@ export function DeckBuilder({ profile, go, update }: { profile: Profile; go: (s:
             <div className="fmt-row">
               <span className={`fmt-badge ${chk.ok ? 'ok' : 'bad'}`}>自由模式{chk.ok ? '：可以出戰' : '：不符合'}</span>
               <span className={`fmt-badge ${chkStd.ok ? 'ok' : 'bad'}`}>標準模式{chkStd.ok ? '：可以出戰' : '：不符合'}</span>
+              <span className={`valid ${chkModern.ok ? 'ok' : 'bad'}`} title={chkModern.errors.join('\n')}>近代賽{chkModern.ok ? '：可以出戰' : '：不符合'}</span>
             </div>
             {chk.errors.map((e) => (
               <div key={e} className="err">
@@ -363,6 +368,11 @@ export function DeckBuilder({ profile, go, update }: { profile: Profile; go: (s:
               </div>
             );
           })}
+          {deck.sideboard && <div className="deck-group">
+            <h4>備牌（{Object.values(deck.sideboard).reduce((a, b) => a + b, 0)}張）</h4>
+            <p className="muted small">單局對戰只使用主牌。</p>
+            {Object.entries(deck.sideboard).map(([id, n]) => <div className="deck-row" key={id}><span className="dr-n">{n}</span><button className="dr-name linkish" onClick={() => setDetail(getDef(id))}>{displayName(getDef(id))}</button><ManaCost cost={getDef(id).cost} size={14} /></div>)}
+          </div>}
           {entries.length === 0 && <p className="muted">套牌是空的。從卡池點選卡牌加入。</p>}
         </section>
       </div>

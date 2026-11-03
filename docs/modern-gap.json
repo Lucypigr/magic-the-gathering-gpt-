@@ -1,19 +1,19 @@
 {
   "summary": {
-    "registryDefinitions": 5222,
+    "registryDefinitions": 5243,
     "allProducts": 118,
     "primarySets": 107,
     "completePrimarySets": 18,
     "incompletePrimarySets": 89,
-    "zeroCoveragePrimarySets": 7,
+    "zeroCoveragePrimarySets": 5,
     "modernLegalNames": 22708,
-    "availableModernNames": 5219,
-    "missingModernNames": 17489,
+    "availableModernNames": 5240,
+    "missingModernNames": 17468,
     "sampleDecks": 50,
     "legalSampleDecks": 50,
-    "completeMainDecks": 0,
-    "complete75Decks": 0,
-    "sampleMissingNames": 391,
+    "completeMainDecks": 3,
+    "complete75Decks": 3,
+    "sampleMissingNames": 370,
     "snapshotDate": "2026-10-23",
     "deckFileDate": "2026-10-17"
   },
@@ -156,10 +156,10 @@
       "type": "expansion",
       "date": "2006-07-21",
       "count": 150,
-      "available": 2,
-      "missing": 148,
+      "available": 3,
+      "missing": 147,
       "modernLegal": 153,
-      "modernAvailable": 2,
+      "modernAvailable": 3,
       "primary": true
     },
     {
@@ -180,10 +180,10 @@
       "type": "expansion",
       "date": "2006-10-06",
       "count": 121,
-      "available": 2,
-      "missing": 119,
+      "available": 3,
+      "missing": 118,
       "modernLegal": 121,
-      "modernAvailable": 2,
+      "modernAvailable": 3,
       "primary": true
     },
     {
@@ -312,10 +312,10 @@
       "type": "core",
       "date": "2009-07-17",
       "count": 229,
-      "available": 32,
-      "missing": 197,
+      "available": 33,
+      "missing": 196,
       "modernLegal": 233,
-      "modernAvailable": 37,
+      "modernAvailable": 38,
       "primary": true
     },
     {
@@ -324,10 +324,10 @@
       "type": "expansion",
       "date": "2009-10-02",
       "count": 229,
-      "available": 12,
-      "missing": 217,
+      "available": 14,
+      "missing": 215,
       "modernLegal": 233,
-      "modernAvailable": 17,
+      "modernAvailable": 19,
       "primary": true
     },
     {
@@ -372,10 +372,10 @@
       "type": "core",
       "date": "2010-07-16",
       "count": 229,
-      "available": 27,
-      "missing": 202,
+      "available": 29,
+      "missing": 200,
       "modernLegal": 234,
-      "modernAvailable": 32,
+      "modernAvailable": 34,
       "primary": true
     },
     {
@@ -384,10 +384,10 @@
       "type": "expansion",
       "date": "2010-10-01",
       "count": 229,
-      "available": 9,
-      "missing": 220,
+      "available": 10,
+      "missing": 219,
       "modernLegal": 234,
-      "modernAvailable": 14,
+      "modernAvailable": 15,
       "primary": true
     },
     {
@@ -408,10 +408,10 @@
       "type": "expansion",
       "date": "2011-05-13",
       "count": 165,
-      "available": 0,
-      "missing": 165,
+      "available": 1,
+      "missing": 164,
       "modernLegal": 167,
-      "modernAvailable": 5,
+      "modernAvailable": 6,
       "primary": true
     },
     {
@@ -468,10 +468,10 @@
       "type": "core",
       "date": "2012-07-13",
       "count": 229,
-      "available": 29,
-      "missing": 200,
+      "available": 30,
+      "missing": 199,
       "modernLegal": 234,
-      "modernAvailable": 34,
+      "modernAvailable": 35,
       "primary": true
     },
     {
@@ -588,10 +588,10 @@
       "type": "core",
       "date": "2014-07-18",
       "count": 264,
-      "available": 21,
-      "missing": 243,
+      "available": 22,
+      "missing": 242,
       "modernLegal": 269,
-      "modernAvailable": 26,
+      "modernAvailable": 27,
       "primary": true
     },
     {
@@ -600,10 +600,10 @@
       "type": "expansion",
       "date": "2014-09-26",
       "count": 249,
-      "available": 18,
-      "missing": 231,
+      "available": 20,
+      "missing": 229,
       "modernLegal": 252,
-      "modernAvailable": 23,
+      "modernAvailable": 25,
       "primary": true
     },
     {
@@ -636,10 +636,10 @@
       "type": "masters",
       "date": "2015-05-22",
       "count": 249,
-      "available": 13,
-      "missing": 236,
+      "available": 15,
+      "missing": 234,
       "modernLegal": 248,
-      "modernAvailable": 13,
+      "modernAvailable": 15,
       "primary": false
     },
     {
@@ -744,10 +744,10 @@
       "type": "masters",
       "date": "2017-03-17",
       "count": 249,
-      "available": 27,
-      "missing": 222,
+      "available": 29,
+      "missing": 220,
       "modernLegal": 249,
-      "modernAvailable": 27,
+      "modernAvailable": 29,
       "primary": false
     },
     {
@@ -912,10 +912,10 @@
       "type": "draft_innovation",
       "date": "2019-06-14",
       "count": 250,
-      "available": 7,
-      "missing": 243,
+      "available": 9,
+      "missing": 241,
       "modernLegal": 253,
-      "modernAvailable": 7,
+      "modernAvailable": 9,
       "primary": true
     },
     {
@@ -936,10 +936,10 @@
       "type": "expansion",
       "date": "2019-10-04",
       "count": 280,
-      "available": 20,
-      "missing": 260,
+      "available": 21,
+      "missing": 259,
       "modernLegal": 282,
-      "modernAvailable": 25,
+      "modernAvailable": 26,
       "primary": true
     },
     {
@@ -972,10 +972,10 @@
       "type": "core",
       "date": "2020-07-03",
       "count": 280,
-      "available": 52,
-      "missing": 228,
+      "available": 53,
+      "missing": 227,
       "modernLegal": 285,
-      "modernAvailable": 57,
+      "modernAvailable": 58,
       "primary": true
     },
     {
@@ -1008,10 +1008,10 @@
       "type": "expansion",
       "date": "2021-04-23",
       "count": 275,
-      "available": 4,
-      "missing": 271,
+      "available": 5,
+      "missing": 270,
       "modernLegal": 280,
-      "modernAvailable": 9,
+      "modernAvailable": 10,
       "primary": true
     },
     {
@@ -1020,10 +1020,10 @@
       "type": "draft_innovation",
       "date": "2021-06-18",
       "count": 304,
-      "available": 1,
-      "missing": 303,
+      "available": 8,
+      "missing": 296,
       "modernLegal": 307,
-      "modernAvailable": 6,
+      "modernAvailable": 13,
       "primary": true
     },
     {
@@ -1236,10 +1236,10 @@
       "type": "draft_innovation",
       "date": "2024-06-14",
       "count": 303,
-      "available": 0,
-      "missing": 303,
+      "available": 4,
+      "missing": 299,
       "modernLegal": 306,
-      "modernAvailable": 5,
+      "modernAvailable": 9,
       "primary": true
     },
     {
@@ -1248,10 +1248,10 @@
       "type": "draft_innovation",
       "date": "2024-07-05",
       "count": 133,
-      "available": 4,
-      "missing": 129,
+      "available": 5,
+      "missing": 128,
       "modernLegal": 138,
-      "modernAvailable": 9,
+      "modernAvailable": 10,
       "primary": true
     },
     {
@@ -2169,131 +2169,16 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 22,
-      "sideAvailable": 3,
-      "missingNames": 18,
-      "missing": [
-        {
-          "name": "Dragon's Rage Channeler",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Expressive Iteration",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Preordain",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mutagenic Growth",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Unholy Heat",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Fiery Islet",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lava Dart",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Murktide Regent",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Brazen Borrower",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tormod's Crypt",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Unholy Heat",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        }
-      ],
+      "mainAvailable": 60,
+      "sideAvailable": 15,
+      "missingNames": 0,
+      "missing": [],
       "illegal": [],
       "main": [
         {
           "name": "Dragon's Rage Channeler",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2305,37 +2190,37 @@
         {
           "name": "Expressive Iteration",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Arid Mesa",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Scalding Tarn",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Preordain",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Mutagenic Growth",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2353,7 +2238,7 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2365,7 +2250,7 @@
         {
           "name": "Unholy Heat",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2389,13 +2274,13 @@
         {
           "name": "Fiery Islet",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Bloodstained Mire",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2407,7 +2292,7 @@
         {
           "name": "Lava Dart",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -2415,13 +2300,13 @@
         {
           "name": "Murktide Regent",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2433,25 +2318,25 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Brazen Borrower",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Tormod's Crypt",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Meltdown",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2463,7 +2348,7 @@
         {
           "name": "Unholy Heat",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -2481,9 +2366,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 24,
-      "sideAvailable": 3,
-      "missingNames": 17,
+      "mainAvailable": 28,
+      "sideAvailable": 6,
+      "missingNames": 15,
       "missing": [
         {
           "name": "Thoughtseize",
@@ -2510,12 +2395,6 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Force of Negation",
           "quantity": 1,
           "available": false,
@@ -2536,12 +2415,6 @@
         {
           "name": "Polluted Delta",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Prismatic Ending",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -2578,12 +2451,6 @@
         {
           "name": "Mystical Dispute",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -2659,7 +2526,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2731,7 +2598,7 @@
         {
           "name": "Prismatic Ending",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2811,7 +2678,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2853,24 +2720,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 16,
-      "sideAvailable": 0,
-      "missingNames": 23,
+      "mainAvailable": 29,
+      "sideAvailable": 3,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Thoughtcast",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Fiery Islet",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Preordain",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -2918,18 +2773,6 @@
           "legal": true
         },
         {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tormod's Crypt",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Shivan Reef",
           "quantity": 3,
           "available": false,
@@ -2962,12 +2805,6 @@
         {
           "name": "Pithing Needle",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -3013,13 +2850,13 @@
         {
           "name": "Fiery Islet",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Preordain",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3079,7 +2916,7 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3097,7 +2934,7 @@
         {
           "name": "Tormod's Crypt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3153,7 +2990,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3201,9 +3038,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 16,
-      "sideAvailable": 0,
-      "missingNames": 21,
+      "mainAvailable": 28,
+      "sideAvailable": 6,
+      "missingNames": 16,
       "missing": [
         {
           "name": "Territorial Kavu",
@@ -3219,18 +3056,6 @@
         },
         {
           "name": "Flooded Strand",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -3255,12 +3080,6 @@
         },
         {
           "name": "Ragavan, Nimble Pilferer",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wooded Foothills",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -3298,18 +3117,6 @@
         {
           "name": "Wear // Tear",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -3367,13 +3174,13 @@
         {
           "name": "Arid Mesa",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3421,7 +3228,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3495,13 +3302,13 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Obsidian Charmaw",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3537,9 +3344,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 14,
-      "sideAvailable": 3,
-      "missingNames": 23,
+      "mainAvailable": 20,
+      "sideAvailable": 7,
+      "missingNames": 19,
       "missing": [
         {
           "name": "Flooded Strand",
@@ -3556,12 +3363,6 @@
         {
           "name": "Seasoned Pyromancer",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -3585,12 +3386,6 @@
         },
         {
           "name": "Thraben Charm",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -3656,20 +3451,8 @@
           "legal": true
         },
         {
-          "name": "Obsidian Charmaw",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Wrath of the Skies",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -3709,7 +3492,7 @@
         {
           "name": "Arid Mesa",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3751,7 +3534,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3855,7 +3638,7 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3867,7 +3650,7 @@
         {
           "name": "Meltdown",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3891,19 +3674,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 16,
-      "sideAvailable": 2,
-      "missingNames": 20,
+      "mainAvailable": 18,
+      "sideAvailable": 4,
+      "missingNames": 19,
       "missing": [
         {
           "name": "Atraxa, Grand Unifier",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -3986,12 +3763,6 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Fatal Push",
           "quantity": 1,
           "available": false,
@@ -4051,7 +3822,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4221,7 +3992,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4293,9 +4064,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 20,
-      "sideAvailable": 2,
-      "missingNames": 20,
+      "mainAvailable": 26,
+      "sideAvailable": 8,
+      "missingNames": 16,
       "missing": [
         {
           "name": "Ajani, Nacatl Pariah",
@@ -4310,12 +4081,6 @@
           "legal": true
         },
         {
-          "name": "Arid Mesa",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ephemerate",
           "quantity": 4,
           "available": false,
@@ -4324,12 +4089,6 @@
         {
           "name": "Arena of Glory",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -4382,18 +4141,6 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Grafdigger's Cage",
           "quantity": 1,
           "available": false,
@@ -4441,7 +4188,7 @@
         {
           "name": "Arid Mesa",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4477,7 +4224,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4593,13 +4340,13 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Obsidian Charmaw",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4641,9 +4388,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 14,
-      "sideAvailable": 0,
-      "missingNames": 22,
+      "mainAvailable": 23,
+      "sideAvailable": 3,
+      "missingNames": 17,
       "missing": [
         {
           "name": "Pyretic Ritual",
@@ -4664,12 +4411,6 @@
           "legal": true
         },
         {
-          "name": "Arid Mesa",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Reckless Impulse",
           "quantity": 3,
           "available": false,
@@ -4678,12 +4419,6 @@
         {
           "name": "Ruby Medallion",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -4730,20 +4465,8 @@
           "legal": true
         },
         {
-          "name": "Wooded Foothills",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Manamorphose",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -4761,12 +4484,6 @@
         },
         {
           "name": "Wear // Tear",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Prismatic Ending",
           "quantity": 3,
           "available": false,
           "legal": true
@@ -4825,7 +4542,7 @@
         {
           "name": "Arid Mesa",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4849,7 +4566,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4903,7 +4620,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4939,7 +4656,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -4965,7 +4682,7 @@
         {
           "name": "Prismatic Ending",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5373,9 +5090,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 13,
-      "sideAvailable": 4,
-      "missingNames": 26,
+      "mainAvailable": 19,
+      "sideAvailable": 7,
+      "missingNames": 23,
       "missing": [
         {
           "name": "Jace, the Mind Sculptor",
@@ -5402,12 +5119,6 @@
           "legal": true
         },
         {
-          "name": "Arid Mesa",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Monumental Henge",
           "quantity": 1,
           "available": false,
@@ -5416,12 +5127,6 @@
         {
           "name": "Orim's Chant",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -5464,12 +5169,6 @@
         {
           "name": "Narset, Parter of Veils",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Prismatic Ending",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -5528,12 +5227,6 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Supreme Verdict",
           "quantity": 1,
           "available": false,
@@ -5581,7 +5274,7 @@
         {
           "name": "Arid Mesa",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5611,7 +5304,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5683,7 +5376,7 @@
         {
           "name": "Prismatic Ending",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5757,7 +5450,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6178,8 +5871,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 13,
-      "sideAvailable": 0,
-      "missingNames": 29,
+      "sideAvailable": 1,
+      "missingNames": 28,
       "missing": [
         {
           "name": "Karn, the Great Creator",
@@ -6273,12 +5966,6 @@
         },
         {
           "name": "Walking Ballista",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tormod's Crypt",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -6489,7 +6176,7 @@
         {
           "name": "Tormod's Crypt",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6585,24 +6272,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 20,
-      "sideAvailable": 0,
-      "missingNames": 22,
+      "mainAvailable": 35,
+      "sideAvailable": 5,
+      "missingNames": 15,
       "missing": [
         {
           "name": "Thoughtseize",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -6644,12 +6319,6 @@
           "legal": true
         },
         {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Nethergoyf",
           "quantity": 4,
           "available": false,
@@ -6657,18 +6326,6 @@
         },
         {
           "name": "Detective's Phoenix",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Unholy Heat",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -6710,19 +6367,7 @@
           "legal": true
         },
         {
-          "name": "Obsidian Charmaw",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Grafdigger's Cage",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -6757,13 +6402,13 @@
         {
           "name": "Arid Mesa",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6823,7 +6468,7 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6853,7 +6498,7 @@
         {
           "name": "Unholy Heat",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6865,7 +6510,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6909,7 +6554,7 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6921,7 +6566,7 @@
         {
           "name": "Meltdown",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6951,9 +6596,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 7,
+      "mainAvailable": 13,
       "sideAvailable": 1,
-      "missingNames": 27,
+      "missingNames": 24,
       "missing": [
         {
           "name": "Allosaurus Rider",
@@ -6963,12 +6608,6 @@
         },
         {
           "name": "Xenagos, God of Revels",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wooded Foothills",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -7006,12 +6645,6 @@
         {
           "name": "Snow-Covered Forest",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -7078,12 +6711,6 @@
         {
           "name": "Endurance",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -7159,7 +6786,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7207,7 +6834,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7291,7 +6918,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8007,16 +7634,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 25,
-      "sideAvailable": 0,
-      "missingNames": 19,
+      "mainAvailable": 26,
+      "sideAvailable": 4,
+      "missingNames": 17,
       "missing": [
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Cling to Dust",
           "quantity": 3,
@@ -8084,12 +7705,6 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Damnation",
           "quantity": 2,
           "available": false,
@@ -8131,7 +7746,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8259,7 +7874,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8314,8 +7929,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 18,
-      "sideAvailable": 2,
-      "missingNames": 20,
+      "sideAvailable": 3,
+      "missingNames": 19,
       "missing": [
         {
           "name": "Devourer of Destiny",
@@ -8421,12 +8036,6 @@
         },
         {
           "name": "Walking Ballista",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tormod's Crypt",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -8595,7 +8204,7 @@
         {
           "name": "Tormod's Crypt",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8625,9 +8234,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 5,
-      "sideAvailable": 4,
-      "missingNames": 20,
+      "mainAvailable": 9,
+      "sideAvailable": 8,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Suppression Ray",
@@ -8655,12 +8264,6 @@
         },
         {
           "name": "Disrupting Shoal",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Preordain",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -8738,12 +8341,6 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Engineered Explosives",
           "quantity": 2,
           "available": false,
@@ -8785,7 +8382,7 @@
         {
           "name": "Preordain",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8877,7 +8474,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9237,43 +8834,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 15,
-      "sideAvailable": 2,
-      "missingNames": 22,
+      "mainAvailable": 45,
+      "sideAvailable": 8,
+      "missingNames": 11,
       "missing": [
-        {
-          "name": "Consign to Memory",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Dragon's Rage Channeler",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Expressive Iteration",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Force of Negation",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Preordain",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -9286,24 +8853,6 @@
         {
           "name": "Misty Rainforest",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Murktide Regent",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -9326,25 +8875,7 @@
           "legal": true
         },
         {
-          "name": "Unholy Heat",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Surgical Extraction",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -9352,12 +8883,6 @@
         {
           "name": "Mystical Dispute",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -9385,19 +8910,19 @@
         {
           "name": "Consign to Memory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Dragon's Rage Channeler",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Expressive Iteration",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9409,13 +8934,13 @@
         {
           "name": "Scalding Tarn",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Preordain",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9433,19 +8958,19 @@
         {
           "name": "Murktide Regent",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Lightning Bolt",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9499,7 +9024,7 @@
         {
           "name": "Unholy Heat",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9531,7 +9056,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9543,7 +9068,7 @@
         {
           "name": "Meltdown",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9555,7 +9080,7 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9945,9 +9470,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 13,
-      "sideAvailable": 4,
-      "missingNames": 19,
+      "mainAvailable": 18,
+      "sideAvailable": 10,
+      "missingNames": 15,
       "missing": [
         {
           "name": "Emperor of Bones",
@@ -9986,12 +9511,6 @@
           "legal": true
         },
         {
-          "name": "Scalding Tarn",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Snow-Covered Swamp",
           "quantity": 2,
           "available": false,
@@ -10022,12 +9541,6 @@
           "legal": true
         },
         {
-          "name": "Bloodstained Mire",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Archon of Cruelty",
           "quantity": 3,
           "available": false,
@@ -10052,19 +9565,7 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Vexing Bauble",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -10141,7 +9642,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10195,7 +9696,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10233,7 +9734,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10251,7 +9752,7 @@
         {
           "name": "Meltdown",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -10269,9 +9770,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 18,
-      "sideAvailable": 3,
-      "missingNames": 19,
+      "mainAvailable": 30,
+      "sideAvailable": 5,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Arena of Glory",
@@ -10310,12 +9811,6 @@
           "legal": true
         },
         {
-          "name": "Lightning Bolt",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ox of Agonas",
           "quantity": 1,
           "available": false,
@@ -10323,24 +9818,6 @@
         },
         {
           "name": "Faithless Looting",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -10365,12 +9842,6 @@
         },
         {
           "name": "Blood Moon",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -10465,7 +9936,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10489,19 +9960,19 @@
         {
           "name": "Scalding Tarn",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Bloodstained Mire",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Arid Mesa",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10545,7 +10016,7 @@
         {
           "name": "Meltdown",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10575,9 +10046,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 18,
+      "mainAvailable": 20,
       "sideAvailable": 3,
-      "missingNames": 25,
+      "missingNames": 24,
       "missing": [
         {
           "name": "Birds of Paradise",
@@ -10671,12 +10142,6 @@
         },
         {
           "name": "Verdant Catacombs",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wooded Foothills",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -10891,7 +10356,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10971,9 +10436,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 17,
-      "sideAvailable": 1,
-      "missingNames": 24,
+      "mainAvailable": 31,
+      "sideAvailable": 5,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Wrenn and Six",
@@ -10988,12 +10453,6 @@
           "legal": true
         },
         {
-          "name": "Arid Mesa",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Xander's Lounge",
           "quantity": 1,
           "available": false,
@@ -11002,12 +10461,6 @@
         {
           "name": "Indomitable Creativity",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -11036,18 +10489,6 @@
           "legal": true
         },
         {
-          "name": "Wooded Foothills",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Prismatic Ending",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Dwarven Mine",
           "quantity": 3,
           "available": false,
@@ -11061,12 +10502,6 @@
         },
         {
           "name": "Leyline Binding",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -11086,12 +10521,6 @@
         {
           "name": "Wear // Tear",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -11149,7 +10578,7 @@
         {
           "name": "Arid Mesa",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11173,7 +10602,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11215,7 +10644,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11233,7 +10662,7 @@
         {
           "name": "Prismatic Ending",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11287,7 +10716,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11325,7 +10754,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11367,9 +10796,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 20,
-      "sideAvailable": 1,
-      "missingNames": 24,
+      "mainAvailable": 24,
+      "sideAvailable": 4,
+      "missingNames": 21,
       "missing": [
         {
           "name": "Orcish Bowmasters",
@@ -11392,12 +10821,6 @@
         {
           "name": "Psychic Frog",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -11428,12 +10851,6 @@
         {
           "name": "Marsh Flats",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -11474,12 +10891,6 @@
           "legal": true
         },
         {
-          "name": "Murktide Regent",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Engineered Explosives",
           "quantity": 2,
           "available": false,
@@ -11500,12 +10911,6 @@
         {
           "name": "Stern Scolding",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -11575,7 +10980,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11629,7 +11034,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11677,7 +11082,7 @@
         {
           "name": "Murktide Regent",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11733,7 +11138,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11769,9 +11174,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 14,
+      "mainAvailable": 17,
       "sideAvailable": 1,
-      "missingNames": 22,
+      "missingNames": 21,
       "missing": [
         {
           "name": "Fatal Push",
@@ -11860,12 +11265,6 @@
         {
           "name": "Verdant Catacombs",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -12055,7 +11454,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -12129,113 +11528,16 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 22,
-      "sideAvailable": 7,
-      "missingNames": 14,
-      "missing": [
-        {
-          "name": "Arid Mesa",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Dragon's Rage Channeler",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Expressive Iteration",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Fiery Islet",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lava Dart",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Preordain",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mutagenic Growth",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wooded Foothills",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wooded Foothills",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Unholy Heat",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        }
-      ],
+      "mainAvailable": 60,
+      "sideAvailable": 15,
+      "missingNames": 0,
+      "missing": [],
       "illegal": [],
       "main": [
         {
           "name": "Arid Mesa",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12253,19 +11555,19 @@
         {
           "name": "Dragon's Rage Channeler",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Expressive Iteration",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Fiery Islet",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12277,19 +11579,19 @@
         {
           "name": "Lava Dart",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Preordain",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Mutagenic Growth",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12307,13 +11609,13 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12325,7 +11627,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12343,13 +11645,13 @@
         {
           "name": "Wooded Foothills",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Wooded Foothills",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12363,7 +11665,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12375,13 +11677,13 @@
         {
           "name": "Meltdown",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Consign to Memory",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12393,7 +11695,7 @@
         {
           "name": "Unholy Heat",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12423,9 +11725,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 21,
+      "mainAvailable": 30,
       "sideAvailable": 0,
-      "missingNames": 17,
+      "missingNames": 13,
       "missing": [
         {
           "name": "Goblin Guide",
@@ -12452,24 +11754,6 @@
           "legal": true
         },
         {
-          "name": "Bloodstained Mire",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Skullcrack",
           "quantity": 4,
           "available": false,
@@ -12489,12 +11773,6 @@
         },
         {
           "name": "Lava Spike",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -12577,19 +11855,19 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Scalding Tarn",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Arid Mesa",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12643,7 +11921,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -12693,9 +11971,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 14,
+      "mainAvailable": 16,
       "sideAvailable": 4,
-      "missingNames": 20,
+      "missingNames": 19,
       "missing": [
         {
           "name": "Waker of Waves",
@@ -12742,12 +12020,6 @@
         {
           "name": "Shardless Agent",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Brazen Borrower",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -12925,7 +12197,7 @@
         {
           "name": "Brazen Borrower",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13029,16 +12301,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 18,
-      "sideAvailable": 2,
-      "missingNames": 20,
+      "mainAvailable": 22,
+      "sideAvailable": 7,
+      "missingNames": 17,
       "missing": [
-        {
-          "name": "Arid Mesa",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Colossus Hammer",
           "quantity": 4,
@@ -13112,12 +12378,6 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Grafdigger's Cage",
           "quantity": 2,
           "available": false,
@@ -13142,12 +12402,6 @@
           "legal": true
         },
         {
-          "name": "Tormod's Crypt",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Vexing Bauble",
           "quantity": 1,
           "available": false,
@@ -13159,7 +12413,7 @@
         {
           "name": "Arid Mesa",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13299,7 +12553,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13341,7 +12595,7 @@
         {
           "name": "Tormod's Crypt",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13365,9 +12619,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 22,
-      "sideAvailable": 2,
-      "missingNames": 21,
+      "mainAvailable": 25,
+      "sideAvailable": 6,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Archmage's Charm",
@@ -13384,12 +12638,6 @@
         {
           "name": "Polluted Delta",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -13448,12 +12696,6 @@
           "legal": true
         },
         {
-          "name": "Scalding Tarn",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Sheoldred's Edict",
           "quantity": 3,
           "available": false,
@@ -13484,12 +12726,6 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Engineered Explosives",
           "quantity": 1,
           "available": false,
@@ -13497,12 +12733,6 @@
         },
         {
           "name": "Force of Negation",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -13543,7 +12773,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13675,7 +12905,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13737,7 +12967,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13755,7 +12985,7 @@
         {
           "name": "Meltdown",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13797,16 +13027,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 17,
-      "sideAvailable": 1,
-      "missingNames": 24,
+      "mainAvailable": 30,
+      "sideAvailable": 8,
+      "missingNames": 18,
       "missing": [
-        {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Tamiyo, Inquisitive Student",
           "quantity": 4,
@@ -13816,12 +13040,6 @@
         {
           "name": "Mox Opal",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -13839,18 +13057,6 @@
         },
         {
           "name": "Urza's Saga",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Unholy Heat",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -13922,12 +13128,6 @@
           "legal": true
         },
         {
-          "name": "Obsidian Charmaw",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ragavan, Nimble Pilferer",
           "quantity": 2,
           "available": false,
@@ -13938,12 +13138,6 @@
           "quantity": 1,
           "available": false,
           "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 4,
-          "available": false,
-          "legal": true
         }
       ],
       "illegal": [],
@@ -13951,7 +13145,7 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13993,7 +13187,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14017,13 +13211,13 @@
         {
           "name": "Unholy Heat",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Scalding Tarn",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14139,7 +13333,7 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14157,7 +13351,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14181,9 +13375,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 6,
-      "sideAvailable": 2,
-      "missingNames": 29,
+      "mainAvailable": 15,
+      "sideAvailable": 6,
+      "missingNames": 24,
       "missing": [
         {
           "name": "Emry, Lurker of the Loch",
@@ -14217,12 +13411,6 @@
         },
         {
           "name": "Malevolent Rumble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mishra's Bauble",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -14264,12 +13452,6 @@
           "legal": true
         },
         {
-          "name": "Scalding Tarn",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Shifting Woodland",
           "quantity": 2,
           "available": false,
@@ -14294,12 +13476,6 @@
           "legal": true
         },
         {
-          "name": "Tormod's Crypt",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Urza's Saga",
           "quantity": 3,
           "available": false,
@@ -14308,12 +13484,6 @@
         {
           "name": "Boseiju, Who Endures",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -14350,12 +13520,6 @@
         {
           "name": "Swan Song",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Unholy Heat",
-          "quantity": 2,
           "available": false,
           "legal": true
         }
@@ -14419,7 +13583,7 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14461,7 +13625,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14503,7 +13667,7 @@
         {
           "name": "Tormod's Crypt",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14523,7 +13687,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14571,7 +13735,7 @@
         {
           "name": "Unholy Heat",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -14589,9 +13753,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 5,
+      "mainAvailable": 9,
       "sideAvailable": 1,
-      "missingNames": 27,
+      "missingNames": 26,
       "missing": [
         {
           "name": "Pithing Needle",
@@ -14685,12 +13849,6 @@
         },
         {
           "name": "Thoughtseize",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mishra's Bauble",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -14899,7 +14057,7 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14997,9 +14155,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 8,
-      "sideAvailable": 0,
-      "missingNames": 20,
+      "mainAvailable": 12,
+      "sideAvailable": 4,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Orcish Bowmasters",
@@ -15074,12 +14232,6 @@
           "legal": true
         },
         {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Thoughtseize",
           "quantity": 4,
           "available": false,
@@ -15087,12 +14239,6 @@
         },
         {
           "name": "Street Wraith",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -15217,7 +14363,7 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15243,7 +14389,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15286,8 +14432,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 11,
-      "sideAvailable": 0,
-      "missingNames": 17,
+      "sideAvailable": 4,
+      "missingNames": 16,
       "missing": [
         {
           "name": "Vodalian Hexcatcher",
@@ -15382,12 +14528,6 @@
         {
           "name": "Subtlety",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -15519,7 +14659,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15549,9 +14689,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 19,
-      "sideAvailable": 3,
-      "missingNames": 25,
+      "mainAvailable": 27,
+      "sideAvailable": 4,
+      "missingNames": 21,
       "missing": [
         {
           "name": "Dryad of the Ilysian Grove",
@@ -15608,12 +14748,6 @@
           "legal": true
         },
         {
-          "name": "Lightning Bolt",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Valakut, the Molten Pinnacle",
           "quantity": 3,
           "available": false,
@@ -15634,18 +14768,6 @@
         {
           "name": "Yavimaya, Cradle of Growth",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wooded Foothills",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -15694,12 +14816,6 @@
         {
           "name": "Endurance",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -15799,7 +14915,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15829,13 +14945,13 @@
         {
           "name": "Arid Mesa",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Wooded Foothills",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15915,7 +15031,7 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15939,125 +15055,22 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 23,
-      "sideAvailable": 2,
-      "missingNames": 17,
-      "missing": [
-        {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Dragon's Rage Channeler",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Expressive Iteration",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Fiery Islet",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Preordain",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mutagenic Growth",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lava Dart",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Assault Strobe",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Prismatic Ending",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Unholy Heat",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Murktide Regent",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tormod's Crypt",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        }
-      ],
+      "mainAvailable": 60,
+      "sideAvailable": 15,
+      "missingNames": 0,
+      "missing": [],
       "illegal": [],
       "main": [
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Arid Mesa",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16069,31 +15082,31 @@
         {
           "name": "Dragon's Rage Channeler",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Expressive Iteration",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Fiery Islet",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Preordain",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Mutagenic Growth",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16117,7 +15130,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16129,7 +15142,7 @@
         {
           "name": "Lava Dart",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16153,13 +15166,13 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Assault Strobe",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16173,31 +15186,31 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Prismatic Ending",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Unholy Heat",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Murktide Regent",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Tormod's Crypt",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16209,7 +15222,7 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -16227,9 +15240,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 21,
-      "sideAvailable": 2,
-      "missingNames": 23,
+      "mainAvailable": 28,
+      "sideAvailable": 6,
+      "missingNames": 20,
       "missing": [
         {
           "name": "Witch Enchanter",
@@ -16257,12 +15270,6 @@
         },
         {
           "name": "Birthing Ritual",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wooded Foothills",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -16310,12 +15317,6 @@
           "legal": true
         },
         {
-          "name": "Scalding Tarn",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Windswept Heath",
           "quantity": 1,
           "available": false,
@@ -16330,12 +15331,6 @@
         {
           "name": "Wear // Tear",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -16453,7 +15448,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16531,7 +15526,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16563,7 +15558,7 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16617,25 +15612,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 21,
-      "sideAvailable": 0,
-      "missingNames": 21,
+      "mainAvailable": 37,
+      "sideAvailable": 2,
+      "missingNames": 15,
       "missing": [
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Faithless Looting",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -16658,26 +15641,8 @@
           "legal": true
         },
         {
-          "name": "Wooded Foothills",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Fatal Push",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Dragon's Rage Channeler",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -16694,12 +15659,6 @@
           "legal": true
         },
         {
-          "name": "Mishra's Bauble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Brotherhood's End",
           "quantity": 2,
           "available": false,
@@ -16708,12 +15667,6 @@
         {
           "name": "Rakdos Charm",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -16759,7 +15712,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16783,7 +15736,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16831,7 +15784,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16843,7 +15796,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16855,7 +15808,7 @@
         {
           "name": "Dragon's Rage Channeler",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16873,7 +15826,7 @@
         {
           "name": "Mishra's Bauble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16899,7 +15852,7 @@
         {
           "name": "Obsidian Charmaw",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16954,8 +15907,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 17,
-      "sideAvailable": 6,
-      "missingNames": 15,
+      "sideAvailable": 10,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Flagstones of Trokair",
@@ -17044,12 +15997,6 @@
         {
           "name": "March of Otherworldly Light",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 4,
           "available": false,
           "legal": true
         }
@@ -17199,7 +16146,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17223,9 +16170,9 @@
       ],
       "mainTotal": 61,
       "sideTotal": 15,
-      "mainAvailable": 20,
-      "sideAvailable": 6,
-      "missingNames": 20,
+      "mainAvailable": 24,
+      "sideAvailable": 10,
+      "missingNames": 17,
       "missing": [
         {
           "name": "Birthing Ritual",
@@ -17236,12 +16183,6 @@
         {
           "name": "Coiling Oracle",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -17300,18 +16241,6 @@
           "legal": true
         },
         {
-          "name": "Preordain",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Prismatic Ending",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Solitude",
           "quantity": 4,
           "available": false,
@@ -17336,19 +16265,7 @@
           "legal": true
         },
         {
-          "name": "Consign to Memory",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Mystical Dispute",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Prismatic Ending",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -17383,7 +16300,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17479,13 +16396,13 @@
         {
           "name": "Preordain",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Prismatic Ending",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17553,7 +16470,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17565,7 +16482,7 @@
         {
           "name": "Prismatic Ending",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17601,16 +16518,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 17,
-      "sideAvailable": 2,
-      "missingNames": 19,
+      "mainAvailable": 27,
+      "sideAvailable": 7,
+      "missingNames": 13,
       "missing": [
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Detective's Phoenix",
           "quantity": 4,
@@ -17632,12 +16543,6 @@
         {
           "name": "Fatal Push",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -17678,12 +16583,6 @@
           "legal": true
         },
         {
-          "name": "Wooded Foothills",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Brotherhood's End",
           "quantity": 2,
           "available": false,
@@ -17692,24 +16591,6 @@
         {
           "name": "Collective Brutality",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Meltdown",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Obsidian Charmaw",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Unholy Heat",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -17737,7 +16618,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17767,7 +16648,7 @@
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17839,7 +16720,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17865,13 +16746,13 @@
         {
           "name": "Meltdown",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Obsidian Charmaw",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17883,7 +16764,7 @@
         {
           "name": "Unholy Heat",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17913,9 +16794,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 5,
+      "mainAvailable": 6,
       "sideAvailable": 4,
-      "missingNames": 31,
+      "missingNames": 30,
       "missing": [
         {
           "name": "Jace, the Perfected Mind",
@@ -18040,12 +16921,6 @@
         {
           "name": "Fractured Sanity",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scalding Tarn",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -18259,7 +17134,7 @@
         {
           "name": "Scalding Tarn",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -18351,9 +17226,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 18,
-      "sideAvailable": 3,
-      "missingNames": 18,
+      "mainAvailable": 21,
+      "sideAvailable": 6,
+      "missingNames": 16,
       "missing": [
         {
           "name": "Chancellor of the Annex",
@@ -18369,12 +17244,6 @@
         },
         {
           "name": "Thoughtseize",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Prismatic Ending",
           "quantity": 3,
           "available": false,
           "legal": true
@@ -18424,12 +17293,6 @@
         {
           "name": "Faithful Mending",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Consign to Memory",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -18529,7 +17392,7 @@
         {
           "name": "Prismatic Ending",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -18615,7 +17478,7 @@
         {
           "name": "Consign to Memory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -18675,9 +17538,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 13,
+      "mainAvailable": 24,
       "sideAvailable": 2,
-      "missingNames": 19,
+      "missingNames": 15,
       "missing": [
         {
           "name": "Chandra's Incinerator",
@@ -18698,26 +17561,8 @@
           "legal": true
         },
         {
-          "name": "Wooded Foothills",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Searing Blaze",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arid Mesa",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lightning Bolt",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -18754,12 +17599,6 @@
         {
           "name": "Seal of Fire",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bloodstained Mire",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -18823,7 +17662,7 @@
         {
           "name": "Wooded Foothills",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -18835,13 +17674,13 @@
         {
           "name": "Arid Mesa",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Lightning Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -18901,7 +17740,7 @@
         {
           "name": "Bloodstained Mire",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -18947,24 +17786,8 @@
   ],
   "missingPopular": [
     [
-      "Consign to Memory",
-      25
-    ],
-    [
       "Mystical Dispute",
       19
-    ],
-    [
-      "Arid Mesa",
-      15
-    ],
-    [
-      "Lightning Bolt",
-      15
-    ],
-    [
-      "Bloodstained Mire",
-      14
     ],
     [
       "Fatal Push",
@@ -18983,19 +17806,11 @@
       14
     ],
     [
-      "Scalding Tarn",
-      14
-    ],
-    [
       "Grafdigger's Cage",
       13
     ],
     [
       "Misty Rainforest",
-      12
-    ],
-    [
-      "Obsidian Charmaw",
       12
     ],
     [
@@ -19011,15 +17826,7 @@
       11
     ],
     [
-      "Mishra's Bauble",
-      11
-    ],
-    [
       "Vexing Bauble",
-      11
-    ],
-    [
-      "Wooded Foothills",
       11
     ],
     [
@@ -19028,10 +17835,6 @@
     ],
     [
       "Endurance",
-      9
-    ],
-    [
-      "Meltdown",
       9
     ],
     [
@@ -19048,10 +17851,6 @@
     ],
     [
       "Otawara, Soaring City",
-      8
-    ],
-    [
-      "Unholy Heat",
       8
     ],
     [
@@ -19091,23 +17890,11 @@
       7
     ],
     [
-      "Preordain",
-      7
-    ],
-    [
-      "Prismatic Ending",
-      7
-    ],
-    [
       "Subtlety",
       7
     ],
     [
       "Teferi, Time Raveler",
-      7
-    ],
-    [
-      "Tormod's Crypt",
       7
     ],
     [
@@ -19175,10 +17962,6 @@
       5
     ],
     [
-      "Dragon's Rage Channeler",
-      5
-    ],
-    [
       "Dryad Arbor",
       5
     ],
@@ -19227,15 +18010,7 @@
       4
     ],
     [
-      "Expressive Iteration",
-      4
-    ],
-    [
       "Faithless Looting",
-      4
-    ],
-    [
-      "Fiery Islet",
       4
     ],
     [
@@ -19244,10 +18019,6 @@
     ],
     [
       "Mox Opal",
-      4
-    ],
-    [
-      "Murktide Regent",
       4
     ],
     [
@@ -19335,19 +18106,11 @@
       3
     ],
     [
-      "Lava Dart",
-      3
-    ],
-    [
       "Leyline Binding",
       3
     ],
     [
       "Metallic Rebuke",
-      3
-    ],
-    [
-      "Mutagenic Growth",
       3
     ],
     [
@@ -19420,10 +18183,6 @@
     ],
     [
       "Birthing Ritual",
-      2
-    ],
-    [
-      "Brazen Borrower",
       2
     ],
     [
@@ -19704,10 +18463,6 @@
     ],
     [
       "Archmage's Charm",
-      1
-    ],
-    [
-      "Assault Strobe",
       1
     ],
     [

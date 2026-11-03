@@ -68,6 +68,7 @@ export interface LadderFormat {
 }
 
 export interface LadderState {
+  modern: LadderFormat;
   standard: LadderFormat;
   free: LadderFormat;
   history: LadderRecord[];
@@ -75,7 +76,7 @@ export interface LadderState {
 
 export function newLadder(): LadderState {
   const f = (): LadderFormat => ({ points: 0, best: 0, w: 0, l: 0, streak: 0 });
-  return { standard: f(), free: f(), history: [] };
+  return { modern: f(), standard: f(), free: f(), history: [] };
 }
 
 /** 勝負後的積分變化（黃金以下連勝加星、青銅不掉星、不會掉出目前大段） */

@@ -1,3 +1,4 @@
+import { modernDelirium, modernStats, modernTrigger, modernCanBlock } from './modern';
 import {webAmount,webCondition,webTrigger,webObserve,webBaseStats,webStats,webCanBlock,webGranted} from './web-shire-support';
 import {finalStats,finalCanBlock,finalObserve} from './orbit-final-support';
 import {orbitStationStats} from './orbit-station';
@@ -118,6 +119,7 @@ export function frontierCondition(
   source: number,
   ev?:GameEvent,
 ) {
+  if(c.action==='modern:delirium')return modernDelirium(g,pid);
   if(/^(spm|hob):/.test(c.action))return webCondition(g,c.action,pid,source,ev);
   if(/^(eoe|tdm):/.test(c.action))return orbitCondition(g,c.action,pid,source,ev);
   if(/^(lci|sos):/.test(c.action))return campusCondition(g,c.action,pid,source,ev);
@@ -156,6 +158,7 @@ export function frontierTrigger(
   a: TriggeredAbility,
   ev: GameEvent,
 ) {
+  if(a.frontierEvent?.startsWith('modern:'))return modernTrigger(g,c,a,ev);
   if(/^(spm|hob):/.test(a.frontierEvent??''))return webTrigger(g,c,a,ev);
   if(/^(eoe|tdm):/.test(a.frontierEvent??''))return orbitTrigger(g,c,a,ev);
   if(/^(lci|sos):/.test(a.frontierEvent??''))return campusTrigger(g,c,a,ev);
@@ -390,6 +393,7 @@ export function frontierStats(
   orbitStationStats(g,c,st);
   finalStats(g,c,st);
   webStats(g,c,st);
+  modernStats(g,c,st);
   if (
     isCreature(c) &&
     frontierStatic(g, c.controller, "roseBase").some((s) => s.id !== c.id) &&
@@ -428,6 +432,7 @@ export function frontierStats(
       ).length;
 }
 export function frontierCanBlock(g: GameState, b: Card, a: Card) {
+ if(!modernCanBlock(g,b,a))return false;
  if(!webCanBlock(g,b,a))return false;
   if(!finalCanBlock(g,b,a))return false;
   if (

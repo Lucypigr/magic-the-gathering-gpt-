@@ -98,7 +98,7 @@ export function Ladder({
       <TopBar profile={profile} go={go} title="天梯配對" />
       <section className="panel ladder-head">
         <div className="seg" role="tablist" aria-label="賽制">
-          {(['standard', 'free'] as const).map((f) => (
+          {(['standard', 'modern', 'free'] as const).map((f) => (
             <button key={f} role="tab" aria-selected={format === f} className={format === f ? 'on' : ''} onClick={() => changeFormat(f)} disabled={phase.kind !== 'idle'}>
               {FORMAT_NAME[f]}天梯
             </button>

@@ -1,5 +1,5 @@
 import type { Level } from '../ai/combatAI';
-import { ALL_AI_DECKS, BASIC_LANDS, STANDARD_STARTERS, STARTER_DECKS, deckSize, isStandardLegal, type Format } from '../data';
+import { ALL_AI_DECKS, BASIC_LANDS, STANDARD_STARTERS, STARTER_DECKS, deckSize, isLegalForFormat, type Format } from '../data';
 import { getDef } from '../engine/registry';
 import { displayName } from '../data/names';
 import { hasDef } from '../engine/registry';
@@ -10,6 +10,8 @@ export interface SavedDeck {
   id: string;
   name: string;
   cards: Record<string, number>;
+  sideboard?: Record<string, number>;
+  format?: Format;
 }
 
 export interface Settings {
@@ -54,7 +56,7 @@ const KEY = 'mtg-duel-arena-profile-v1';
 export const START_GOLD = 300;
 export const MIN_DECK = 40;
 export const MIN_DECK_STANDARD = 60;
-export const FORMAT_NAME: Record<Format, string> = { free: '自由', standard: '標準' };
+export const FORMAT_NAME: Record<Format, string> = { free: '自由', standard: '標準', modern: '近代賽' };
 export const MAX_COPIES = 4;
 
 export const REWARDS: Record<Level, { win: number; loss: number }> = {
@@ -140,7 +142,7 @@ function summary(p: Profile): Pick<SlotInfo, 'gold' | 'cards' | 'decks' | 'wins'
     gold: p.gold,
     cards: Object.values(p.collection).reduce((a, b) => a + b, 0),
     decks: p.decks.length,
-    wins: lv.easy.w + lv.normal.w + lv.hard.w + p.ladder.standard.w + p.ladder.free.w,
+    wins: lv.easy.w + lv.normal.w + lv.hard.w + p.ladder.standard.w + p.ladder.free.w + p.ladder.modern.w,
   };
 }
 
@@ -278,11 +280,13 @@ function sanitize(p: Profile): Profile {
       streak: p.stats?.streak ?? 0,
     },
     ladder: {
+      modern: { ...base.ladder.modern, ...p.ladder?.modern },
       standard: { ...base.ladder.standard, ...p.ladder?.standard },
       free: { ...base.ladder.free, ...p.ladder?.free },
       history: p.ladder?.history ?? [],
     },
   };
+  if (!['free', 'standard', 'modern'].includes(out.lastFormat ?? '')) out.lastFormat = 'free';
   // 舊存檔：補發兩套標準入門套牌
   if (!p.standardStarters) {
     for (const d of STANDARD_STARTERS) {
@@ -329,11 +333,17 @@ export interface DeckCheck {
 export function checkDeck(p: Profile, d: SavedDeck, format: Format = 'free'): DeckCheck {
   const errors: string[] = [];
   const size = deckSize(d);
-  const min = format === 'standard' ? MIN_DECK_STANDARD : MIN_DECK;
-  if (size < min) errors.push(`${format === 'standard' ? '標準賽' : ''}套牌至少需要 ${min} 張（目前 ${size} 張）`);
-  for (const [id, n] of Object.entries(d.cards)) {
+  const min = format === 'free' ? MIN_DECK : MIN_DECK_STANDARD;
+  if (size < min) errors.push(`${format === 'free' ? '' : FORMAT_NAME[format]}套牌至少需要 ${min} 張（目前 ${size} 張）`);
+  const all = { ...d.cards };
+  if (format === 'modern') {
+    if (Object.values(d.sideboard ?? {}).reduce((a, b) => a + b, 0) > 15) errors.push('備牌最多15張');
+    for (const [id, n] of Object.entries(d.sideboard ?? {})) all[id] = (all[id] ?? 0) + n;
+  }
+  for (const [id, n] of Object.entries(all)) {
+    if (!Number.isInteger(n) || n < 0 || !hasDef(id)) { errors.push('無效的卡牌數量或卡牌'); continue; }
     if (isBasic(id)) continue;
-    if (format === 'standard' && !isStandardLegal(getDef(id))) errors.push(`${displayName(getDef(id))} 不能用於標準賽`);
+    if (!isLegalForFormat(getDef(id), format)) errors.push(`${displayName(getDef(id))} 不能用於${FORMAT_NAME[format]}`);
     if (n > MAX_COPIES && !getDef(id).anyNumber) errors.push(`同名卡最多 ${MAX_COPIES} 張`);
     const own = p.collection[id] ?? 0;
     if (n > own) errors.push(`收藏不足：需要 ${n} 張，只有 ${own} 張`);

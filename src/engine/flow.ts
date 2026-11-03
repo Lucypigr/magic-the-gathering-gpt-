@@ -18,7 +18,7 @@ import {refreshFinLands} from './fin-support';
 import {colorsOf} from './mana';
 import {resolveEclEntries} from './ecl';
 import {beholdOptions,canReceiveCounters,counterKinds,vividColors} from './ecl-support';
-import { abilitiesFor, frontierStackChoices,castDef,spellCost,canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
+import { canPayCost, abilitiesFor, frontierStackChoices,castDef,spellCost,canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
 import {
   attackCandidates,
   blockCandidates,
@@ -455,8 +455,9 @@ export function* priorityStep(g: GameState): SubFlow {
         const card=g.cards[r.card];
         if(card?.def.meadow?.finalChosenPowerCost&&r.orbitChosen===undefined){const options=[...g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])),...g.players[p].exile.filter(id=>g.cards[id].warpExiled!==undefined&&isCreature(g.cards[id]))];const a:Response=yield{type:'choose',player:p,prompt:'選擇己方生物或已躍遷的生物牌',options,min:1,max:1,purpose:'dig'};r.orbitChosen=a.type==='choose'?a.ids[0]:undefined;}
         if(card&&r.alt==='harmonize'&&r.harmonizeTapped===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&!g.cards[id].tapped);const a:Response=yield{type:'choose',player:p,prompt:'可橫置一個生物以減少和聲費用',options,min:0,max:1,purpose:'dig'};r.harmonizeTapped=a.type==='choose'?a.ids[0]??null:null;}
-        if(card&&finalStatic(g,p,'delveSpells').length&&r.orbitDelve===undefined){const options=g.players[p].graveyard.filter(id=>id!==card.id);const a:Response=yield{type:'choose',player:p,prompt:'可放逐墳墓場牌以探掘（每張減少一點通用法術力）',options,min:0,max:Math.min(options.length,spellCost(g,card,p,r.mode,r.targets,r.alt,r.x??0,r.foundationCosts,r.harmonizeTapped).generic),purpose:'dig'};r.orbitDelve=a.type==='choose'?a.ids:[];}
+        if(card&&(card.def.meadow?.modernDelve||finalStatic(g,p,'delveSpells').length)&&r.orbitDelve===undefined){const options=g.players[p].graveyard.filter(id=>id!==card.id);const a:Response=yield{type:'choose',player:p,prompt:'可放逐墳墓場牌以探掘（每張減少一點通用法術力）',options,min:0,max:Math.min(options.length,spellCost(g,card,p,r.mode,r.targets,r.alt,r.x??0,r.foundationCosts,r.harmonizeTapped).generic),purpose:'dig'};r.orbitDelve=a.type==='choose'?a.ids:[];}
         if(card&&(r.alt==='web'||r.alt==='webGranted')&&r.webReturn===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&g.cards[id].tapped&&isCreature(g.cards[id]));const answer:Response=yield{type:'choose',player:p,prompt:'蛛絲甩蕩：收回已橫置的己方生物',options,min:1,max:1,purpose:'dig'};r.webReturn=answer.type==='choose'?answer.ids[0]:undefined;}
+        if(card?.def.meadow?.modernReplicate&&r.replicate===undefined){const cost=spellCost(g,card,p,r.mode,r.targets,r.alt,r.x??0);let max=0;while(canPayCost(g,p,{...cost,generic:cost.generic+max+1}))max++;const a:Response=yield{type:'mode',player:p,prompt:'選擇複製次數（每次另付{1}）',options:Array.from({length:max+1},(_,n)=>String(n)),count:1,purpose:'count'};r.replicate=a.type==='modes'?a.picks[0]??0:0;}
         const view=card?castDef(card.def,r.alt):undefined;
         const stackKinds=view?.spell?.modes?.[r.mode??0]?.frontierStackTargets??(view?.frontierStack?[view.frontierStack]:[]);
         if(stackKinds.length&&!r.stackTargetSids){r.stackTargetSids=r.stackTargetSid!==undefined?[r.stackTargetSid]:[];for(let i=r.stackTargetSids.length;i<stackKinds.length;i++){const items=frontierStackChoices(g,p,stackKinds[i]);if(!items.length)break;const answer:Response=yield{type:'mode',player:p,prompt:'選擇堆疊上的目標',options:items.map(s=>s.text),count:1,purpose:'trigger'};r.stackTargetSids.push(items[answer.type==='modes'?answer.picks[0]??0:0].sid);}}

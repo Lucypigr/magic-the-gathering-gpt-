@@ -1,0 +1,390 @@
+[
+  {
+    "id": "modern-temur-prowess",
+    "name": "鐵木爾果敢",
+    "sourceName": "[Modern] #31 - Temur Prowess",
+    "source": {
+      "repository": "Card-Forge/forge-extras",
+      "revision": "d3783237b98ca3714aeea5796ea593f49f6921cb",
+      "path": "decks/currentmodernmetagame.zip",
+      "sha256": "70e85196c8a031a4ba27864e08a4917dc4605785594308148366e025578bd948"
+    },
+    "date": "2026-10-17",
+    "main": [
+      [
+        2,
+        "Arid Mesa"
+      ],
+      [
+        3,
+        "Steam Vents"
+      ],
+      [
+        4,
+        "Cori-Steel Cutter"
+      ],
+      [
+        4,
+        "Dragon's Rage Channeler"
+      ],
+      [
+        4,
+        "Expressive Iteration"
+      ],
+      [
+        2,
+        "Fiery Islet"
+      ],
+      [
+        1,
+        "Flashback"
+      ],
+      [
+        4,
+        "Lava Dart"
+      ],
+      [
+        4,
+        "Preordain"
+      ],
+      [
+        3,
+        "Mutagenic Growth"
+      ],
+      [
+        2,
+        "Mountain"
+      ],
+      [
+        4,
+        "Monastery Swiftspear"
+      ],
+      [
+        4,
+        "Mishra's Bauble"
+      ],
+      [
+        4,
+        "Lightning Bolt"
+      ],
+      [
+        4,
+        "Slickshot Show-Off"
+      ],
+      [
+        3,
+        "Bloodstained Mire"
+      ],
+      [
+        1,
+        "Thundering Falls"
+      ],
+      [
+        2,
+        "Violent Urge"
+      ],
+      [
+        1,
+        "Wooded Foothills"
+      ],
+      [
+        3,
+        "Wooded Foothills"
+      ],
+      [
+        1,
+        "Stomping Ground"
+      ]
+    ],
+    "side": [
+      [
+        1,
+        "Consign to Memory"
+      ],
+      [
+        2,
+        "Spell Snare"
+      ],
+      [
+        2,
+        "Meltdown"
+      ],
+      [
+        2,
+        "Consign to Memory"
+      ],
+      [
+        1,
+        "Spell Pierce"
+      ],
+      [
+        3,
+        "Unholy Heat"
+      ],
+      [
+        1,
+        "Spell Pierce"
+      ],
+      [
+        3,
+        "Pick Your Poison"
+      ]
+    ]
+  },
+  {
+    "id": "modern-izzet-prowess",
+    "name": "伊捷果敢",
+    "sourceName": "[Modern] #03 - Izzet Prowess",
+    "source": {
+      "repository": "Card-Forge/forge-extras",
+      "revision": "d3783237b98ca3714aeea5796ea593f49f6921cb",
+      "path": "decks/currentmodernmetagame.zip",
+      "sha256": "70e85196c8a031a4ba27864e08a4917dc4605785594308148366e025578bd948"
+    },
+    "date": "2026-10-17",
+    "main": [
+      [
+        4,
+        "Dragon's Rage Channeler"
+      ],
+      [
+        1,
+        "Thundering Falls"
+      ],
+      [
+        3,
+        "Expressive Iteration"
+      ],
+      [
+        3,
+        "Arid Mesa"
+      ],
+      [
+        4,
+        "Lightning Bolt"
+      ],
+      [
+        3,
+        "Scalding Tarn"
+      ],
+      [
+        4,
+        "Preordain"
+      ],
+      [
+        3,
+        "Mutagenic Growth"
+      ],
+      [
+        3,
+        "Mountain"
+      ],
+      [
+        2,
+        "Spell Snare"
+      ],
+      [
+        4,
+        "Mishra's Bauble"
+      ],
+      [
+        4,
+        "Cori-Steel Cutter"
+      ],
+      [
+        1,
+        "Unholy Heat"
+      ],
+      [
+        3,
+        "Steam Vents"
+      ],
+      [
+        1,
+        "Violent Urge"
+      ],
+      [
+        4,
+        "Monastery Swiftspear"
+      ],
+      [
+        2,
+        "Fiery Islet"
+      ],
+      [
+        3,
+        "Bloodstained Mire"
+      ],
+      [
+        4,
+        "Slickshot Show-Off"
+      ],
+      [
+        4,
+        "Lava Dart"
+      ]
+    ],
+    "side": [
+      [
+        1,
+        "Murktide Regent"
+      ],
+      [
+        4,
+        "Consign to Memory"
+      ],
+      [
+        2,
+        "Spell Pierce"
+      ],
+      [
+        1,
+        "Obsidian Charmaw"
+      ],
+      [
+        1,
+        "Brazen Borrower"
+      ],
+      [
+        2,
+        "Tormod's Crypt"
+      ],
+      [
+        1,
+        "Meltdown"
+      ],
+      [
+        1,
+        "Spell Snare"
+      ],
+      [
+        2,
+        "Unholy Heat"
+      ]
+    ]
+  },
+  {
+    "id": "modern-jeskai-prowess",
+    "name": "潔斯凱果敢",
+    "sourceName": "[Modern] #42 - Jeskai Prowess",
+    "source": {
+      "repository": "Card-Forge/forge-extras",
+      "revision": "d3783237b98ca3714aeea5796ea593f49f6921cb",
+      "path": "decks/currentmodernmetagame.zip",
+      "sha256": "70e85196c8a031a4ba27864e08a4917dc4605785594308148366e025578bd948"
+    },
+    "date": "2026-10-17",
+    "main": [
+      [
+        4,
+        "Mishra's Bauble"
+      ],
+      [
+        4,
+        "Arid Mesa"
+      ],
+      [
+        4,
+        "Cori-Steel Cutter"
+      ],
+      [
+        4,
+        "Dragon's Rage Channeler"
+      ],
+      [
+        2,
+        "Expressive Iteration"
+      ],
+      [
+        2,
+        "Fiery Islet"
+      ],
+      [
+        4,
+        "Preordain"
+      ],
+      [
+        3,
+        "Mutagenic Growth"
+      ],
+      [
+        1,
+        "Pompous Battlemage"
+      ],
+      [
+        3,
+        "Mountain"
+      ],
+      [
+        4,
+        "Monastery Swiftspear"
+      ],
+      [
+        4,
+        "Lightning Bolt"
+      ],
+      [
+        4,
+        "Slickshot Show-Off"
+      ],
+      [
+        4,
+        "Lava Dart"
+      ],
+      [
+        1,
+        "Thundering Falls"
+      ],
+      [
+        2,
+        "Steam Vents"
+      ],
+      [
+        2,
+        "Sacred Foundry"
+      ],
+      [
+        4,
+        "Bloodstained Mire"
+      ],
+      [
+        2,
+        "Assault Strobe"
+      ],
+      [
+        2,
+        "Monstrous Rage"
+      ]
+    ],
+    "side": [
+      [
+        3,
+        "Consign to Memory"
+      ],
+      [
+        3,
+        "Prismatic Ending"
+      ],
+      [
+        2,
+        "Unholy Heat"
+      ],
+      [
+        1,
+        "Murktide Regent"
+      ],
+      [
+        2,
+        "Tormod's Crypt"
+      ],
+      [
+        2,
+        "Spell Pierce"
+      ],
+      [
+        2,
+        "Obsidian Charmaw"
+      ]
+    ]
+  }
+]

@@ -2,7 +2,7 @@
 // 天梯對手的套牌：有人拿網路上的完整套牌，有人自己改過，
 // 也有人拿入門套牌、自組的部族牌，甚至是亂湊、地數不對的雜牌。
 // ============================================================
-import { COLLECTIBLE, STANDARD_STARTERS, STARTER_DECKS, aiDecksFor, isStandardLegal, type DeckList, type Format } from '../data';
+import { COLLECTIBLE, STANDARD_STARTERS, STARTER_DECKS, aiDecksFor, isLegalForFormat, MODERN_AI_DECKS, type DeckList, type Format } from '../data';
 import { colorsOf, manaValue } from '../engine/mana';
 import type { CardDef, Color } from '../engine/types';
 import { getDef, hasDef } from '../engine/registry';
@@ -64,7 +64,7 @@ const poolCache = new Map<Format, CardDef[]>();
 function poolFor(format: Format): CardDef[] {
   let p = poolCache.get(format);
   if (!p) {
-    p = COLLECTIBLE.filter((c) => !c.token && ['C', 'U', 'R', 'M'].includes(c.rarity) && (format === 'free' || isStandardLegal(c)));
+    p = COLLECTIBLE.filter((c) => !c.token && ['C', 'U', 'R', 'M'].includes(c.rarity) && isLegalForFormat(c, format));
     poolCache.set(format, p);
   }
   return p;
@@ -262,7 +262,7 @@ function makeTribal(format: Format, rnd: Rnd, uid: string): DeckList {
 function makeJank(format: Format, rnd: Rnd, uid: string): DeckList {
   const pool = poolFor(format);
   const cols = randomColors(2 + Math.floor(rnd() * 4), rnd);
-  const min = format === 'standard' ? 60 : 40;
+  const min = format === 'free' ? 40 : 60;
   const size = min + (rnd() < 0.5 ? 0 : Math.floor(rnd() * 25));
   // 地數常常不對：太少或太多
   const lands = Math.max(12, Math.round(size * (rnd() < 0.5 ? 0.24 + rnd() * 0.12 : 0.44 + rnd() * 0.1)));
@@ -322,12 +322,12 @@ function makeTuned(base: DeckList, format: Format, rnd: Rnd, uid: string): DeckL
     cards[b] = (cards[b] ?? 0) + 1;
   }
   const name = pick([`${base.name}（改）`, `${base.name}（自改版）`, base.name, `${base.name} 預算版`], rnd);
-  return { ...base, id: `opp-${uid}`, name, cards };
+  return { ...base, sideboard: undefined, id: `opp-${uid}`, name, cards };
 }
 
 /** 入門套牌，可能加了幾張開包拿到的卡 */
 function makeStarter(format: Format, rnd: Rnd, uid: string): DeckList {
-  const base = pick(format === 'standard' ? STANDARD_STARTERS : STARTER_DECKS, rnd);
+  const base = pick(format === 'modern' ? MODERN_AI_DECKS : format === 'standard' ? STANDARD_STARTERS : STARTER_DECKS, rnd);
   if (rnd() < 0.5) return base;
   return { ...makeTuned(base, format, rnd, uid), name: `${base.name.replace(/（.*）/, '')}（加了新卡）` };
 }

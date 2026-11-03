@@ -41,7 +41,7 @@ export function Home({ profile, go, update }: { profile: Profile; go: (s: Screen
       <TopBar profile={profile} go={go} title="主選單" />
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">天梯配對 · 開包 · 自由組牌 · 標準賽</p>
+          <p className="eyebrow">天梯配對 · 開包 · 自由組牌 · 標準賽 · 近代賽</p>
           <h2 className="hero-title">挑戰環境套牌</h2>
           <p className="hero-sub">
             用入門套牌出發，贏下對戰賺取金幣，買補充包擴充收藏，組出屬於你的套牌。標準模式收錄 19 個現行標準賽系列，AI 會使用 2026 年 9 月標準賽的熱門套路。
@@ -130,7 +130,7 @@ export function Home({ profile, go, update }: { profile: Profile; go: (s: Screen
         <div className="section-head">
           <h3 className="section-title">AI 的環境套牌</h3>
           <div className="seg" role="tablist" aria-label="賽制">
-            {(['standard', 'free'] as const).map((f) => (
+            {(['standard', 'modern', 'free'] as const).map((f) => (
               <button key={f} role="tab" aria-selected={fmt === f} className={fmt === f ? 'on' : ''} onClick={() => setFmt(f)}>
                 {FORMAT_NAME[f]}模式
               </button>

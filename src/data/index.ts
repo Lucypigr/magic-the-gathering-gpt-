@@ -4,6 +4,8 @@ import { CARDS } from './cards';
 import { TOKENS } from './tokens';
 import { REPRINTS, STANDARD_BANNED, STANDARD_LEGAL_CLASSICS } from './reprints';
 import { AI_DECKS, type DeckList } from './decks';
+import { MODERN_AI_DECKS, isModernLegal } from './modern';
+export * from './modern';
 import { STANDARD_AI_DECKS } from './standardDecks';
 import { STANDARD_SETS } from '../engine/types';
 
@@ -58,7 +60,7 @@ export function cardsInSet(set: SetCode): CardDef[] {
 // ------------------------------------------------------------
 // 賽制
 // ------------------------------------------------------------
-export type Format = 'free' | 'standard';
+export type Format = 'free' | 'standard' | 'modern';
 
 const STD_SET_CODES = new Set<string>(STANDARD_SETS);
 // 在現行標準賽系列中重印過的卡也是標準賽合法
@@ -78,7 +80,9 @@ export function isStandardBanned(def: CardDef): boolean {
 
 /** 某賽制下 AI 可以使用的環境套牌 */
 export function aiDecksFor(format: Format): DeckList[] {
-  return format === 'standard' ? STANDARD_AI_DECKS : AI_DECKS;
+  return format === 'modern' ? MODERN_AI_DECKS : format === 'standard' ? STANDARD_AI_DECKS : AI_DECKS;
 }
 
-export const ALL_AI_DECKS: DeckList[] = [...AI_DECKS, ...STANDARD_AI_DECKS];
+export const ALL_AI_DECKS: DeckList[] = [...AI_DECKS, ...STANDARD_AI_DECKS, ...MODERN_AI_DECKS];
+
+export const isLegalForFormat = (d: CardDef, f: Format): boolean => f === 'free' || (f === 'modern' ? isModernLegal(d) : isStandardLegal(d));

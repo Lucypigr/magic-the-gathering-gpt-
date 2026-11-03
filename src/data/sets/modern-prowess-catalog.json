@@ -1,0 +1,405 @@
+[
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Arid Mesa",
+    "cost": "",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Mountain or Plains card, put it onto the battlefield, then shuffle.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "ZEN",
+    "sourceUuid": "ac7a549d-deb4-56c5-8941-4da1ba8a3293",
+    "sourceSha256": "f9f91405e5fbd6396d603dfd33fa6622ebae50bde0e3a543fc22a03f0a4a8d09"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Assault Strobe",
+    "cost": "{R}",
+    "text": "Target creature gains double strike until end of turn. (It deals both first-strike and regular combat damage.)",
+    "set": "META",
+    "rarity": "C",
+    "sourceSet": "SOM",
+    "sourceUuid": "bedad837-5f8c-544f-a70f-be6861e6b3ac",
+    "sourceSha256": "0cf8694c93a9359ee183c882648bffb71bc78ece711ebd5fadb7839d7b0552ef"
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Bloodstained Mire",
+    "cost": "",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Swamp or Mountain card, put it onto the battlefield, then shuffle.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "KTK",
+    "sourceUuid": "efe7b30c-c659-5316-91cd-6ece7955c546",
+    "sourceSha256": "ae537fbb5ae27e1c439b5d7496f8203746279c267c06ea5055f0ef23836f249c"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Faerie",
+      "Rogue"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Brazen Borrower",
+    "cost": "{1}{U}{U}",
+    "text": "Flash\nFlying\nThis creature can block only creatures with flying.",
+    "set": "META",
+    "rarity": "M",
+    "sourceSet": "ELD",
+    "sourceUuid": "51c8a322-0601-51ed-b5f9-bebb5d97b5d9",
+    "sourceSha256": "515ec60620f8b17b74cec57185799679d006d43d0387e393d5749368244f01f2",
+    "power": 3,
+    "toughness": 1,
+    "adventure": {
+      "types": [
+        "Instant"
+      ],
+      "subtypes": [
+        "Adventure"
+      ],
+      "supertypes": [],
+      "colors": [
+        "U"
+      ],
+      "name": "Petty Theft",
+      "cost": "{1}{U}",
+      "text": "Return target nonland permanent an opponent controls to its owner's hand.",
+      "set": "META",
+      "rarity": "M",
+      "sourceSet": "ELD",
+      "sourceUuid": "6d05f540-87ee-53cb-b9ae-dcb9d1ff8844",
+      "sourceSha256": "515ec60620f8b17b74cec57185799679d006d43d0387e393d5749368244f01f2"
+    }
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Consign to Memory",
+    "cost": "{U}",
+    "text": "Replicate {1} (When you cast this spell, copy it for each time you paid its replicate cost. You may choose new targets for the copies.)\nCounter target triggered ability or colorless spell.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "MH3",
+    "sourceUuid": "b7273086-1327-5cfc-bfe2-0bac73bd1e6f",
+    "sourceSha256": "47d64f2c35b4fa774ba3610b2b6129c3e2029cd7b9f8c3a3ebe6dede6080b853"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Human",
+      "Shaman"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Dragon's Rage Channeler",
+    "cost": "{R}",
+    "text": "Whenever you cast a noncreature spell, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)\nDelirium — As long as there are four or more card types among cards in your graveyard, this creature gets +2/+2, has flying, and attacks each combat if able.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "MH2",
+    "sourceUuid": "34c7209b-75b9-5bab-a193-71a6fd7dccfa",
+    "sourceSha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3",
+    "power": 1,
+    "toughness": 1
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R",
+      "U"
+    ],
+    "name": "Expressive Iteration",
+    "cost": "{U}{R}",
+    "text": "Look at the top three cards of your library. Put one of them into your hand, put one of them on the bottom of your library, and exile one of them. You may play the exiled card this turn.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "STX",
+    "sourceUuid": "82ee6986-02f8-50fb-81a5-26f0d3bc0b92",
+    "sourceSha256": "52ad191928f3c5f36b6f5f2dd4b22440215a2688f90f7e4d3348560a49dd328e"
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Fiery Islet",
+    "cost": "",
+    "text": "{T}, Pay 1 life: Add {U} or {R}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "MH1",
+    "sourceUuid": "8e4f4bb0-dbc5-5994-8023-dc305a3569d2",
+    "sourceSha256": "7be14580fee9bc1dbbbe7ebdd645ab1016ce00ba6e6e15e075bab1ed31486a09"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Lava Dart",
+    "cost": "{R}",
+    "text": "Lava Dart deals 1 damage to any target.\nFlashback—Sacrifice a Mountain. (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "set": "META",
+    "rarity": "C",
+    "sourceSet": "MH1",
+    "sourceUuid": "223dc54a-32f3-5b9e-91ba-7c3d6aa6cd27",
+    "sourceSha256": "7be14580fee9bc1dbbbe7ebdd645ab1016ce00ba6e6e15e075bab1ed31486a09"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Lightning Bolt",
+    "cost": "{R}",
+    "text": "Lightning Bolt deals 3 damage to any target.",
+    "set": "META",
+    "rarity": "C",
+    "sourceSet": "M10",
+    "sourceUuid": "78380203-7623-50bc-ab48-577cd655ee9a",
+    "sourceSha256": "44d7f54bdfbc0a1af0eff37811fc18b1e6a3d2035549a4074ff8835e1b4c76e9"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Meltdown",
+    "cost": "{X}{R}",
+    "text": "Destroy each artifact with mana value X or less.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "MH3",
+    "sourceUuid": "332b83d9-1007-5f1f-a702-4c8b8a14bb2f",
+    "sourceSha256": "47d64f2c35b4fa774ba3610b2b6129c3e2029cd7b9f8c3a3ebe6dede6080b853"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Mishra's Bauble",
+    "cost": "{0}",
+    "text": "{T}, Sacrifice this artifact: Look at the top card of target player's library. Draw a card at the beginning of the next turn's upkeep.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "CSP",
+    "sourceUuid": "f91a8a7d-89df-5c91-9137-07640a16ccbf",
+    "sourceSha256": "9bd560eeb1fad5b964b8aa83b85e14e6759a87947788b6a5ddc29ea9e2af04c9"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Murktide Regent",
+    "cost": "{5}{U}{U}",
+    "text": "Delve (Each card you exile from your graveyard while casting this spell pays for {1}.)\nFlying\nThis creature enters with a +1/+1 counter on it for each instant and sorcery card exiled with it.\nWhenever an instant or sorcery card leaves your graveyard, put a +1/+1 counter on this creature.",
+    "set": "META",
+    "rarity": "M",
+    "sourceSet": "MH2",
+    "sourceUuid": "4bc16cb7-51fe-514b-ba2f-69c39d255cad",
+    "sourceSha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3",
+    "power": 3,
+    "toughness": 3
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "G"
+    ],
+    "name": "Mutagenic Growth",
+    "cost": "{G/P}",
+    "text": "({G/P} can be paid with either {G} or 2 life.)\nTarget creature gets +2/+2 until end of turn.",
+    "set": "META",
+    "rarity": "C",
+    "sourceSet": "NPH",
+    "sourceUuid": "6e1a0bc2-eb2b-57b1-9ba8-1b021cd51166",
+    "sourceSha256": "a992336b6dfbc1532d6c59d65ac6d85d93776af2441c3fddc021beb98752fd0b"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Dragon"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Obsidian Charmaw",
+    "cost": "{3}{R}{R}",
+    "text": "This spell costs {1} less to cast for each land your opponents control that could produce {C}.\nFlying\nWhen this creature enters, destroy target nonbasic land an opponent controls.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "MH2",
+    "sourceUuid": "4ceeba04-139b-5375-854d-0417af4a1cb0",
+    "sourceSha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3",
+    "power": 4,
+    "toughness": 4
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "U"
+    ],
+    "name": "Preordain",
+    "cost": "{U}",
+    "text": "Scry 2, then draw a card. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+    "set": "META",
+    "rarity": "C",
+    "sourceSet": "M11",
+    "sourceUuid": "54c23a15-eecc-511c-b2b4-1c6c6ca6a22a",
+    "sourceSha256": "8e4d7a94aa6e55e8b943c21751e415879e5820734661cad50972fdaf587a074b"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "W"
+    ],
+    "name": "Prismatic Ending",
+    "cost": "{X}{W}",
+    "text": "Converge — Exile target nonland permanent if its mana value is less than or equal to the number of colors of mana spent to cast this spell.",
+    "set": "META",
+    "rarity": "U",
+    "sourceSet": "MH2",
+    "sourceUuid": "efdbf638-dbe6-5813-ba0b-dafbac1e1468",
+    "sourceSha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3"
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Scalding Tarn",
+    "cost": "",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for an Island or Mountain card, put it onto the battlefield, then shuffle.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "ZEN",
+    "sourceUuid": "2776db51-8343-5762-8f56-9b15be46e3a7",
+    "sourceSha256": "f9f91405e5fbd6396d603dfd33fa6622ebae50bde0e3a543fc22a03f0a4a8d09"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Tormod's Crypt",
+    "cost": "{0}",
+    "text": "{T}, Sacrifice this artifact: Exile target player's graveyard.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "TSB",
+    "sourceUuid": "f71ab18f-dd60-5b9e-b3bc-52c56187672a",
+    "sourceSha256": "8f8697d06648f6891e1a1ca88a48076955c47e14418c712b6bf090232050e18c"
+  },
+  {
+    "types": [
+      "Instant"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Unholy Heat",
+    "cost": "{R}",
+    "text": "Unholy Heat deals 2 damage to target creature or planeswalker.\nDelirium — Unholy Heat deals 6 damage instead if there are four or more card types among cards in your graveyard.",
+    "set": "META",
+    "rarity": "C",
+    "sourceSet": "MH2",
+    "sourceUuid": "f00bdb93-10ca-5f1c-a496-bd927a5dd483",
+    "sourceSha256": "b4cddf4047f34a744d18cb573c7b1cf1e6521101ba51c55893cd7bf68cf824e3"
+  },
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Wooded Foothills",
+    "cost": "",
+    "text": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Mountain or Forest card, put it onto the battlefield, then shuffle.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "KTK",
+    "sourceUuid": "71dc1055-b9e8-5574-9232-8eba92030e1e",
+    "sourceSha256": "ae537fbb5ae27e1c439b5d7496f8203746279c267c06ea5055f0ef23836f249c"
+  }
+]

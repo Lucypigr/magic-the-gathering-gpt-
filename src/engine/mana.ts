@@ -36,6 +36,7 @@ export function parseCost(cost: string | undefined): ManaCost {
     if (/^\d+$/.test(sym)) out.generic += parseInt(sym, 10);
     else if (sym === 'X') out.x = (out.x ?? 0) + 1;
     else if (sym === 'W' || sym === 'U' || sym === 'B' || sym === 'R' || sym === 'G' || sym === 'C') out[sym] += 1;
+    else if (/^[WUBRG]\/P$/.test(sym)) out[sym[0] as Color] += 1;
     else if (/^[WUBRG]\/[WUBRG]$/.test(sym)) (out.hyb ??= []).push(sym[0] + sym[2]);
     else if (/^2\/[WUBRG]$/.test(sym)) (out.twoHyb ??= []).push(sym[2] as Mana);
   }

@@ -338,7 +338,7 @@ export function finalAbilityCost(g: GameState, c: Card, a: ActivatedAbility, cos
             cost.generic = Math.max(0, cost.generic - colorsOf(g.cards[ref.c].def).length);
     }
 }
-export function finalQuote(g: GameState, p: PID, c: Card, cost: import('./mana').ManaCost) { return finalStatic(g, p, 'delveSpells').length ? { ...cost, generic: Math.max(0, cost.generic - g.players[p].graveyard.filter(id => id !== c.id).length) } : cost; }
+export function finalQuote(g: GameState, p: PID, c: Card, cost: import('./mana').ManaCost) { return (c.def.meadow?.modernDelve || finalStatic(g, p, 'delveSpells').length) ? { ...cost, generic: Math.max(0, cost.generic - g.players[p].graveyard.filter(id => id !== c.id).length) } : cost; }
 export function finalCastTargets(g: GameState, p: PID, c: Card, specs: import('./types').TargetSpec[]) {
     if (c.def.meadow?.finalManaTarget)
         return specs.map(s => ({ ...s, filter: { ...s.filter, mvMax: c.manaSpent ?? 0 } }));

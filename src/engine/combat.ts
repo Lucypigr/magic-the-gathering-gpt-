@@ -1,3 +1,4 @@
+import { modernForced } from './modern';
 import {webStatic,webStory,webForced} from './web-shire-support';
 import {frontierCanBlock,frontierStatic,enchanted} from './frontier-support';
 import {mshStatic} from './msh-support';
@@ -67,7 +68,7 @@ export function attackablePlaneswalkers(g: GameState, attacker: PID): Card[] {
 }
 
 export function declareAttackers(g: GameState, pid: PID, ids: number[], targets?: Record<number, number>): Card[] {
-  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&(webForced(g,c)||(c.mkmMarks?.mustAttackBlock===g.turn)||(c.frontierMarks?.bdMustAttack===g.turn)||(!abilitiesSuppressed(g,c)&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='fdn:mustAttack'))||(!abilitiesSuppressed(g,c)&&['red-herring','ares-god-of-war','tok-msh-void','tok-msh-alien'].includes(c.def.id)));});
+  const forced=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===pid&&canAttack(g,c)&&(webForced(g,c)||modernForced(g,c)||(c.mkmMarks?.mustAttackBlock===g.turn)||(c.frontierMarks?.bdMustAttack===g.turn)||(!abilitiesSuppressed(g,c)&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='fdn:mustAttack'))||(!abilitiesSuppressed(g,c)&&['red-herring','ares-god-of-war','tok-msh-void','tok-msh-alien'].includes(c.def.id)));});
   const uniq = [...new Set([...ids,...forced])];
   const list = uniq.map((id) => g.cards[id]).filter((c) => c && c.controller === pid && canAttack(g, c));
   const storyTax=webStory(g,other(pid))?webStatic(g,other(pid),'storyAttackTax').length:0;

@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Screen, UpdateProfile } from '../App';
-import { deckSize } from '../data';
+import { getDef } from '../engine/registry';
+import modernLists from '../data/modern-decklists.json';
+import { deckSize, type Format } from '../data';
 import { displayName } from '../data/names';
 import { colorsOf } from '../engine/mana';
 import type { CardDef, Color } from '../engine/types';
@@ -39,6 +41,7 @@ function loadSnapshot(): Promise<NetDeckSnapshot | null> {
 }
 
 interface Pending {
+  format?: Format;
   deck: ParsedDeck;
   source: string;
   url?: string;
@@ -79,12 +82,12 @@ export function NetDecks({
     return info;
   }
 
-  async function open(deck: ParsedDeck, source: string, link?: string) {
+  async function open(deck: ParsedDeck, source: string, link?: string, format: Format = 'standard') {
     if (!deck.main.length) {
       setErr('沒有讀到任何卡牌。');
       return;
     }
-    setPending({ deck, source, url: link, info: await withInfo(deck) });
+    setPending({ deck, source, format, url: link, info: await withInfo(deck) });
   }
 
   async function fromUrl() {
@@ -126,6 +129,16 @@ export function NetDecks({
   return (
     <div className="page">
       <TopBar profile={profile} go={go} title="抄牌組" />
+
+      <section className="panel">
+        <h3 className="section-title">近代賽果敢牌組</h3>
+        <p className="muted small">三副原始牌表均已收錄主牌60張及備牌15張。可直接試玩；備牌會隨牌組保存，單局對戰只使用主牌。</p>
+        <div className="choice-list three">
+          {modernLists.map(d => <button key={d.id} className="choice" onClick={() => void open({ name: d.name, main: d.main.map(([n, name]) => ({ n: Number(n), name: String(name) })), side: d.side.map(([n, name]) => ({ n: Number(n), name: String(name) })) }, 'Forge（' + d.date + '）', `https://github.com/${d.source.repository}/blob/${d.source.revision}/${d.source.path}`, 'modern')}>
+            <span className="choice-name">{d.name}</span><span className="choice-sub">主牌60張 · 備牌15張 · 全部原卡</span>
+          </button>)}
+        </div>
+      </section>
 
       <section className="panel nd-import">
         <h2 className="nd-h">貼上網址，一鍵套用</h2>
@@ -223,6 +236,7 @@ export function NetDecks({
               if (buy) buyMissing(p, buy);
               p.decks.push(deck);
               p.lastDeckId = deck.id;
+              if (deck.format) p.lastFormat = deck.format;
             });
             setPending(null);
             go({ name: 'decks' });
@@ -276,13 +290,16 @@ function ImportPreview({
   onTrial: (deck: SavedDeck) => void;
 }) {
   const [name, setName] = useState((pending.deck.name ?? '匯入的套牌').slice(0, 24));
-  const [substitute, setSubstitute] = useState(true);
+  const modern = pending.format === 'modern';
+  const [substitute, setSubstitute] = useState(!modern);
   const [detail, setDetail] = useState<CardDef | null>(null);
-  const plan = useMemo(() => resolveDeck(profile, pending.deck, { info: pending.info, substitute, standard: true }), [profile, pending, substitute]);
+  const plan = useMemo(() => resolveDeck(profile, pending.deck, { info: pending.info, substitute: modern ? false : substitute, standard: !modern }), [profile, pending, substitute]);
+  const purchase = useMemo(() => modern ? resolveDeck(profile, { ...pending.deck, main: [...pending.deck.main, ...pending.deck.side], side: [] }, { substitute: false }) : plan, [modern, profile, pending, plan]);
+  const sideboard = modern ? buildCards(resolveDeck(profile, { ...pending.deck, main: pending.deck.side, side: [] }, { substitute: false }), true) : undefined;
   const full = buildCards(plan, true);
   const size = deckSize({ cards: full });
-  const missing = plan.lines.reduce((s, l) => s + l.missing, 0);
-  const deckOf = (cards: Record<string, number>): SavedDeck => ({ id: uid(), name: name.trim() || '匯入的套牌', cards });
+  const missing = purchase.lines.reduce((s, l) => s + l.missing, 0);
+  const deckOf = (cards: Record<string, number>): SavedDeck => ({ id: uid(), name: name.trim() || '匯入的套牌', cards, ...(modern ? { format: 'modern' as const, sideboard } : {}) });
 
   const rows = [...plan.lines].sort((a, b) => rowOrder(a) - rowOrder(b) || (a.def?.cost?.length ?? 0) - (b.def?.cost?.length ?? 0));
 
@@ -301,8 +318,8 @@ function ImportPreview({
               <button className="btn" onClick={() => onCreate(deckOf(full), null)} title="缺的卡之後開包或購買取得，補齊前套牌不能出戰">
                 先建立（之後補卡）
               </button>
-              <button className="btn btn-primary" disabled={profile.gold < plan.cost} onClick={() => onCreate(deckOf(full), plan)}>
-                買齊 {missing} 張並建立 <Gold n={plan.cost} />
+              <button className="btn btn-primary" disabled={profile.gold < purchase.cost} onClick={() => onCreate(deckOf(full), purchase)}>
+                買齊 {missing} 張並建立 <Gold n={purchase.cost} />
               </button>
             </>
           ) : (
@@ -329,7 +346,7 @@ function ImportPreview({
               </a>
             </>
           )}
-          {pending.deck.side.length > 0 && ` · 備牌 ${pending.deck.side.reduce((s, l) => s + l.n, 0)} 張（本遊戲沒有換備牌，略過）`}
+          {pending.deck.side.length > 0 && ` · 備牌 ${pending.deck.side.reduce((s, l) => s + l.n, 0)} 張${modern ? '（已保存；單局對戰使用主牌）' : '（本遊戲沒有換備牌，略過）'}`}
         </p>
 
         <div className="nd-summary">
@@ -339,14 +356,14 @@ function ImportPreview({
           {plan.dropped > 0 && <span className="chip chip-bad">無法放入 {plan.dropped}</span>}
           <span className={`chip ${size >= 60 ? 'chip-ok' : 'chip-bad'}`}>共 {size} 張</span>
         </div>
-        <label className="nd-toggle">
+        {!modern && <label className="nd-toggle">
           <input type="checkbox" checked={substitute} onChange={(e) => setSubstitute(e.target.checked)} />
           遊戲還沒收錄的咒語，自動換成顏色與法術力值相近的卡
-        </label>
+        </label>}
         <p className="small">
           {missing > 0 ? (
             <>
-              你的收藏還缺 <b>{missing}</b> 張，買齊需要 <Gold n={plan.cost} />（你有 <Gold n={profile.gold} />）。
+              你的收藏還缺 <b>{missing}</b> 張，買齊需要 <Gold n={purchase.cost} />（你有 <Gold n={profile.gold} />）。
             </>
           ) : (
             '你已經擁有所有需要的卡！'
@@ -375,6 +392,10 @@ function ImportPreview({
             </li>
           ))}
         </ul>
+        {modern && sideboard && <>
+          <h3>備牌（{Object.values(sideboard).reduce((a, b) => a + b, 0)}張）</h3>
+          <ul className="nd-cards">{Object.entries(sideboard).map(([id, n]) => <li key={id} className="nd-card"><span className="nd-n">{n}</span><button className="linkish nd-cn" onClick={() => setDetail(getDef(id))}>{displayName(getDef(id))}</button></li>)}</ul>
+        </>}
       </div>
       {detail && (
         <Modal title={displayName(detail)} onClose={() => setDetail(null)} wide>

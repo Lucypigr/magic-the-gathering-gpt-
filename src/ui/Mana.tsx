@@ -13,6 +13,9 @@ export function ManaSymbol({ sym, size }: { sym: string; size?: number }) {
       </span>
     );
   }
+  if (/^[WUBRG]\/P$/.test(sym)) {
+    return <span className={`mana mana-${sym[0]}`} style={style} title={`${GLYPH[sym[0]]}色法術力，或支付2點生命`}>{GLYPH[sym[0]]}<sup>Φ</sup></span>;
+  }
   if (/^2\/[WUBRG]$/.test(sym)) {
     return (
       <span className={`mana mana-${sym[2]} mana-two`} style={style} title={`${GLYPH[sym[2]]}色法術力，或兩點任何法術力`}>

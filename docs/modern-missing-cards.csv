@@ -2390,7 +2390,6 @@ Wilderness Elemental,Wilderness Elemental,CSP
 Zur the Enchanter,Zur the Enchanter,MM3
 Coldsteel Heart,Coldsteel Heart,CSP
 Jester's Scepter,Jester's Scepter,CSP
-Mishra's Bauble,Mishra's Bauble,CSP
 Phyrexian Ironfoot,Phyrexian Ironfoot,CSP
 Phyrexian Snowcrusher,Phyrexian Snowcrusher,CSP
 Phyrexian Soulgorger,Phyrexian Soulgorger,CSP
@@ -2794,7 +2793,6 @@ Mindless Automaton,Mindless Automaton,TSB
 Mirari,Mirari,TSB
 The Rack,The Rack,DPA
 Serrated Arrows,Serrated Arrows,TSB
-Tormod's Crypt,Tormod's Crypt,M21
 War Barge,War Barge,TSB
 Arena,Arena,TSB
 Desert,Desert,TSB
@@ -4736,7 +4734,6 @@ Fiery Hellhound,Fiery Hellhound,ORI
 Goblin Artillery,Goblin Artillery,M10
 Inferno Elemental,Inferno Elemental,M10
 Jackal Familiar,Jackal Familiar,M10
-Lightning Bolt,Lightning Bolt,MM2
 Magma Phoenix,Magma Phoenix,M11
 Seismic Strike,Seismic Strike,M15
 Stone Giant,Stone Giant,M10
@@ -4971,7 +4968,6 @@ Stonework Puma,Stonework Puma,ZEN
 Trailblazer's Boots,Trailblazer's Boots,LTR
 Trusty Machete,Trusty Machete,ZEN
 Akoum Refuge,Akoum Refuge,ZEN
-Arid Mesa,Arid Mesa,MH2
 Crypt of Agadeem,Crypt of Agadeem,ZEN
 "Emeria, the Sky Ruin","Emeria, the Sky Ruin",ZEN
 Graypelt Refuge,Graypelt Refuge,ZEN
@@ -4983,7 +4979,6 @@ Marsh Flats,Marsh Flats,MH2
 Misty Rainforest,Misty Rainforest,MH2
 "Oran-Rief, the Vastwood","Oran-Rief, the Vastwood",ZEN
 Piranha Marsh,Piranha Marsh,ZEN
-Scalding Tarn,Scalding Tarn,MH2
 Sejiri Refuge,Sejiri Refuge,ZEN
 Soaring Seacliff,Soaring Seacliff,ZEN
 Teetering Peaks,Teetering Peaks,ZEN
@@ -5375,7 +5370,6 @@ Maritime Guard,Maritime Guard,ORI
 Mass Polymorph,Mass Polymorph,M11
 Merfolk Spy,Merfolk Spy,M14
 Phantom Beast,Phantom Beast,M11
-Preordain,Preordain,M11
 Redirect,Redirect,M13
 Scroll Thief,Scroll Thief,M14
 Stormtide Leviathan,Stormtide Leviathan,M15
@@ -5530,7 +5524,6 @@ Skinrender,Skinrender,SOM
 "Skithiryx, the Blight Dragon","Skithiryx, the Blight Dragon",SOM
 Tainted Strike,Tainted Strike,SOM
 Arc Trail,Arc Trail,SOM
-Assault Strobe,Assault Strobe,SOM
 Barrage Ogre,Barrage Ogre,SOM
 Blade-Tribe Berserkers,Blade-Tribe Berserkers,SOM
 Cerebral Eruption,Cerebral Eruption,SOM
@@ -5914,7 +5907,6 @@ Greenhilt Trainee,Greenhilt Trainee,NPH
 Leeching Bite,Leeching Bite,NPH
 Maul Splicer,Maul Splicer,NPH
 "Melira, Sylvok Outcast","Melira, Sylvok Outcast",NPH
-Mutagenic Growth,Mutagenic Growth,MM2
 Mycosynth Fiend,Mycosynth Fiend,NPH
 Noxious Revival,Noxious Revival,NPH
 Phyrexian Swarmlord,Phyrexian Swarmlord,NPH
@@ -8357,12 +8349,10 @@ Sultai Banner,Sultai Banner,KTK
 Temur Banner,Temur Banner,KTK
 Ugin's Nexus,Ugin's Nexus,KTK
 Witness of the Ages,Witness of the Ages,KTK
-Bloodstained Mire,Bloodstained Mire,MH3
 Flooded Strand,Flooded Strand,MH3
 Polluted Delta,Polluted Delta,MH3
 Tomb of the Spirit Dragon,Tomb of the Spirit Dragon,KTK
 Windswept Heath,Windswept Heath,MH3
-Wooded Foothills,Wooded Foothills,MH3
 "Ugin, the Spirit Dragon","Ugin, the Spirit Dragon",M21
 Abzan Advantage,Abzan Advantage,FRF
 Abzan Runemark,Abzan Runemark,FRF
@@ -12233,7 +12223,6 @@ Goblin Matron,Goblin Matron,MH1
 Goblin War Party,Goblin War Party,MH1
 Hollowhead Sliver,Hollowhead Sliver,MH1
 Igneous Elemental,Igneous Elemental,MH1
-Lava Dart,Lava Dart,MH1
 Magmatic Sinkhole,Magmatic Sinkhole,MH1
 Orcish Hellraiser,Orcish Hellraiser,MH1
 Ore-Scale Guardian,Ore-Scale Guardian,MH1
@@ -12332,7 +12321,6 @@ Talisman of Resilience,Talisman of Resilience,MH1
 Universal Automaton,Universal Automaton,MH1
 Barren Moor,Barren Moor,MH1
 Cave of Temptation,Cave of Temptation,MH1
-Fiery Islet,Fiery Islet,ACR
 Forgotten Cave,Forgotten Cave,MH1
 Frostwalk Bastion,Frostwalk Bastion,MH1
 Hall of Heliod's Generosity,Hall of Heliod's Generosity,MH1
@@ -12540,7 +12528,6 @@ True Love's Kiss,True Love's Kiss,ELD
 Venerable Knight,Venerable Knight,ELD
 Worthy Knight,Worthy Knight,ELD
 Animating Faerie // Bring to Life,Animating Faerie,ELD
-Brazen Borrower // Petty Theft,Brazen Borrower,ELD
 Corridor Monitor,Corridor Monitor,ELD
 Didn't Say Please,Didn't Say Please,ELD
 "Emry, Lurker of the Loch","Emry, Lurker of the Loch",ELD
@@ -14099,7 +14086,6 @@ Elemental Masterpiece,Elemental Masterpiece,STX
 Elemental Summoning,Elemental Summoning,STX
 Eureka Moment,Eureka Moment,STX
 Exhilarating Elocution,Exhilarating Elocution,STX
-Expressive Iteration,Expressive Iteration,STX
 Fractal Summoning,Fractal Summoning,STX
 Fracture,Fracture,STX
 Galazeth Prismari,Galazeth Prismari,STX
@@ -14211,7 +14197,6 @@ Marble Gargoyle,Marble Gargoyle,MH2
 Nykthos Paragon,Nykthos Paragon,MH2
 Out of Time,Out of Time,MH2
 Piercing Rays,Piercing Rays,MH2
-Prismatic Ending,Prismatic Ending,MH2
 Resurgent Belief,Resurgent Belief,MH2
 Sanctifier en-Vec,Sanctifier en-Vec,MH2
 Scour the Desert,Scour the Desert,MH2
@@ -14238,7 +14223,6 @@ Junk Winder,Junk Winder,MH2
 Lose Focus,Lose Focus,MH2
 Lucid Dreams,Lucid Dreams,MH2
 Mental Journey,Mental Journey,MH2
-Murktide Regent,Murktide Regent,MH2
 Mystic Redaction,Mystic Redaction,MH2
 Parcel Myr,Parcel Myr,MH2
 Phantasmal Dreadmaw,Phantasmal Dreadmaw,MH2
@@ -14305,7 +14289,6 @@ Breya's Apprentice,Breya's Apprentice,MH2
 Calibrated Blast,Calibrated Blast,MH2
 Captain Ripley Vance,Captain Ripley Vance,MH2
 Chef's Kiss,Chef's Kiss,MH2
-Dragon's Rage Channeler,Dragon's Rage Channeler,MH2
 Faithless Salvaging,Faithless Salvaging,MH2
 Fast // Furious,Fast,MH2
 Flame Blitz,Flame Blitz,MH2
@@ -14320,7 +14303,6 @@ Kaleidoscorch,Kaleidoscorch,MH2
 Lightning Spear,Lightning Spear,MH2
 Mine Collapse,Mine Collapse,MH2
 Mount Velus Manticore,Mount Velus Manticore,MH2
-Obsidian Charmaw,Obsidian Charmaw,MH2
 "Ragavan, Nimble Pilferer","Ragavan, Nimble Pilferer",MH2
 Revolutionist,Revolutionist,MH2
 Skophos Reaver,Skophos Reaver,MH2
@@ -14328,7 +14310,6 @@ Slag Strider,Slag Strider,MH2
 Spreading Insurrection,Spreading Insurrection,MH2
 Strike It Rich,Strike It Rich,MH2
 Tavern Scoundrel,Tavern Scoundrel,MH2
-Unholy Heat,Unholy Heat,MH2
 Viashino Lashclaw,Viashino Lashclaw,MH2
 Abundant Harvest,Abundant Harvest,MH2
 "Aeve, Progenitor Ooze","Aeve, Progenitor Ooze",MH2
@@ -17137,7 +17118,6 @@ Aether Spike,Aether Spike,MH3
 Amphibian Downpour,Amphibian Downpour,MH3
 Bespoke Battlewagon,Bespoke Battlewagon,MH3
 Brainsurge,Brainsurge,MH3
-Consign to Memory,Consign to Memory,MH3
 Copycrook,Copycrook,MH3
 Corrupted Shapeshifter,Corrupted Shapeshifter,MH3
 Deem Inferior,Deem Inferior,MH3
@@ -17357,7 +17337,6 @@ Victimize,Victimize,MH3
 Cursed Mirror,Cursed Mirror,MH3
 Fledgling Dragon,Fledgling Dragon,MH3
 "Laelia, the Blade Reforged","Laelia, the Blade Reforged",MH3
-Meltdown,Meltdown,MH3
 Meteoric Mace,Meteoric Mace,MH3
 Annoyed Altisaur,Annoyed Altisaur,MH3
 Branching Evolution,Branching Evolution,MH3
