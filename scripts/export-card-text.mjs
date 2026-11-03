@@ -9,7 +9,7 @@ try {
   const cards = [];
   const visit = (c) => {
     cards.push(c);
-    for (const k of ["back", "adventure", "copyFront"]) if (c[k]) visit(c[k]);
+    for (const k of ["back", "adventure", "prepare", "copyFront"]) if (c[k]) visit(c[k]);
     if (c.room)
       for (const face of Object.values(c.room))
         cards.push({ ...c, ...face, room: undefined });

@@ -295,7 +295,15 @@ export function hasSupertype(g: GameState, c: Card, type: 'Basic' | 'Legendary')
   return !!c.def.supertypes?.includes(type) || (type === 'Legendary' && hasSerum(g, c));
 }
 
+// Continuous predicates can ask for the stats currently being computed (for
+// example, an anthem for flying creatures). Reuse that evaluation's snapshot
+// instead of recursively restarting it; completed results are never cached.
+const activeStatCalculations = new WeakMap<GameState, Map<string, Stats>>();
 export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
+  let active = activeStatCalculations.get(g);
+  if (!active) activeStatCalculations.set(g, active = new Map());
+  const evaluation = c.id + ':' + ignoreEot, pending = active.get(evaluation);
+  if (pending) return { ...pending, kw: new Set(pending.kw) };
   const original = cardDefinition(c);
   const typed=c.zone==='battlefield'&&c.def.id==='goddric-cloaked-reveler'&&!abilitiesSuppressed(g,c)&&(g.players[c.controller].nonlandEtbThisTurn??0)>=2?{...original,subtypes:['Dragon']}:original;
   const d=c.zone==='battlefield'&&isCreature(c)&&c.owner!==c.controller&&g.battlefield.some(id=>g.cards[id].controller===c.controller&&g.cards[id].def.id==='laughing-jasper-flint'&&!abilitiesSuppressed(g,g.cards[id]))?{...typed,subtypes:[...(typed.subtypes??[]),'Mercenary']}:typed;
@@ -308,6 +316,8 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
     cantAttack: false,
     cantBlock: false,
   };
+  active.set(evaluation, st);
+  try {
   frontierBaseStats(g,c,st);
   mshBaseStats(g,c,st);
   if (c.zone !== 'battlefield') return st;
@@ -410,6 +420,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   mshApplyStats(g,c,st);
   frontierStats(g,c,st);
   return st;
+  } finally { active.delete(evaluation); }
 }
 
 export function hasKw(g: GameState, c: Card, kw: Keyword): boolean {

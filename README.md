@@ -86,6 +86,8 @@ LCI 與 SOS 已補齊 286／266 個不同牌名，含另一面與準備咒語及
 
 [原始資料與實際效果檢查](docs/card-effect-review.md) 列出已修正的問題及仍存在的 TLA 規則簡化；卡池齊全不表示所有效果與官方完全一致。
 
+逐張測試可用 `npm run test:cards` 重跑；[逐卡記錄](docs/per-card-tests.md) 保留已確認失敗、未涵蓋的規則及測試場景，未宣稱所有效果均與官方一致。
+
 TLA、TMT、ECL、FIN、MKM、MSH、WOE、OTJ、FDN、DSK、BLB、DFT、LCI、SOS、EOE、TDM、SPM 與 HOB 的完整清單已收錄；各系列計數範圍與驗證限制見 docs 內說明。SPM 與 HOB 均已收錄 188／188；[卡片與驗證範圍](docs/spm-hob.md)。EOE 與 TDM 目前收錄 261／261 與 271／271；[補卡進度與驗證範圍](docs/eoe-tdm.md)。卡牌資料（名稱、費用、類別、力量／防禦力、稀有度、標準賽合法性與禁卡）取自 [Scryfall](https://scryfall.com/)。下一次輪替在 2027 年 2 月，屆時 WOE 到 DSK 會離開標準賽。
 
 ### 經典補充包（自由模式用）

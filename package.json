@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "build:artifact": "npm run build:single && node scripts/make-artifact.mjs",
     "fetch-images": "node scripts/fetch-images.mjs",
-    "build:offline": "npm run build:single && node scripts/embed-images.mjs"
+    "build:offline": "npm run build:single && node scripts/embed-images.mjs",
+    "test:cards": "node scripts/test-each-card.mjs --write"
   },
   "dependencies": {
     "opencc-js": "^1.4.2",

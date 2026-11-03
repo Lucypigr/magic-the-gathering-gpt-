@@ -723,7 +723,8 @@ saga(231, [
 ]);
 a(232, [trig('mainStart', [E(232)], { targets: [spec('creatureOrGy', {}, true)] })]);
 a(233, [power('{C}{W}{U}{B}{R}{G}', [cnt('self', 2), E(233)])]);
-a(234, [trig('castNoncreature', [pump('self', 1, 1)])]);
+// The two printed prowess instances already create two engine triggers.
+a(234, []);
 a(235, [F('titaniaWard')]);
 d(235, { addCost: { discard: 1 } });
 a(236, [etb([{ e: 'token', token: 'tok-sturdy-shield', attachTo: 'self' }])]);

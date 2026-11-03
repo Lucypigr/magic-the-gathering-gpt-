@@ -44,6 +44,8 @@ describe("offline Traditional Chinese rules", () => {
           adventure: undefined,
           room: undefined,
         });
+      if (c.prepare)
+        visit({ ...c, ...c.prepare, back: undefined, adventure: undefined, prepare: undefined, room: undefined });
       if (c.room)
         for (const door of [c.room.left, c.room.right])
           visit({

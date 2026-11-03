@@ -1140,6 +1140,7 @@ adv(234, [E("seekBeast")]);
 a(235, [event("oppSmallSpell", [dmg(1, "evPlayer")])]);
 adv(237, [{ e: "bounce", what: "T0" }], [spec("spell")]);
 adv(240, [E("swiftSpiral")], [spec("creature", { token: false })]);
+a(241, [etb([draw])]);
 adv(
   241,
   [E("topLibrary")],

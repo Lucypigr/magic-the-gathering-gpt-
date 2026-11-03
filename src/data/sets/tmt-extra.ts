@@ -1247,7 +1247,7 @@ d(
 d(
   'Krang, Utrom Warlord',
   '飛行，踐踏，不滅，敏捷。你的其他神器生物也具有這些異能。',
-  ab([
+  { keywords: ['flying', 'trample', 'indestructible', 'haste'], abilities: [
     {
       kind: 'static',
       anthem: {
@@ -1260,7 +1260,7 @@ d(
         grant: { kw: ['flying', 'trample', 'indestructible', 'haste'] },
       },
     },
-  ]),
+  ] },
 );
 d(
   'Omni-Cheese Pizza',

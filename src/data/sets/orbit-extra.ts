@@ -34,7 +34,7 @@ s(14,[E('destroyAndLander')],[permanent]);
 a(15,[{kind:'static',frontier:'fdn:doubleTokens'}]);
 a(16,[etb([{e:'bounce',what:'T0'}],{targets:[{...ownPermanent,notSelf:true,optional:true}]})]);
 a(17,[trig('endStep',[{e:'gain',n:2}],{cond:C('tappedTwo')})]);
-s(18,[{e:'damage',n:N('focusFire'),to:'T0'}],[spec('creature',{inCombat:true})]);
+s(18,[{e:'damage',n:N('eoe:focusFire'),to:'T0'}],[spec('creature',{inCombat:true})]);
 a(22,[etb([token('tok-g-human-soldier-11-w')]),act({mana:'{4}{W}{W}',sacSelf:true},[{e:'tutor',filter:{sub:'Equipment'},to:'battlefield'}],'搜尋武具')]);
 d(26,{meadow:{orbitEtbOthers:true}});
 s(29,[destroy,{e:'gain',n:3}],[spec('permanent',{or:[{type:'Artifact'},{type:'Creature',tapped:true}]})]);

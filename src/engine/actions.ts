@@ -251,7 +251,7 @@ export function castDef(def: CardDef, alt?: CastAlt): CardDef {
       rarity: def.rarity,
       cost: a.cost,
       types: a.types,
-      subtypes: def.meadow?.orbitOmen?['Omen']:['Adventure'],
+      subtypes: def.mkm?.split ? [] : def.meadow?.orbitOmen ? ['Omen'] : ['Adventure'],
       spell: a.spell,
       frontier:a.frontier,ecl:a.ecl,frontierStack:a.frontierStack,addCost:def.meadow?.webAdventureSac?{sac:{type:'Creature'}}:undefined,
       text: a.text,
