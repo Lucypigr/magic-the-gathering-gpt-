@@ -69,7 +69,7 @@ if args.write:
  out=repo/'docs';(out/'modern-gap.json').write_text(json.dumps({k:v for k,v in report.items()if k!='missingCards'},ensure_ascii=False,indent=2)+'\n')
  def table(filename,fields,records):
   with open(out/filename,'w',encoding='utf-8-sig',newline='')as f:
-   writer=csv.DictWriter(f,fields,extrasaction='ignore');writer.writeheader();writer.writerows(records)
+   writer=csv.DictWriter(f,fields,extrasaction='ignore',lineterminator='\n');writer.writeheader();writer.writerows(records)
  table('modern-series-gap.csv',['code','name','date','type','primary','count','available','missing','modernLegal','modernAvailable'],setrows)
  table('modern-missing-cards.csv',['name','primaryName','set'],report['missingCards'])
  table('modern-deck-gap.csv',['name','mainAvailable','mainTotal','sideAvailable','sideTotal','missingNames','missingMainNames','missingSideNames'],[{**d,'missingMainNames':' / '.join(x['name']for x in d['main']if not x['available']),'missingSideNames':' / '.join(x['name']for x in d['side']if not x['available'])}for d in decks])
