@@ -163,7 +163,7 @@ export function cloneGame(g: GameState): GameState {
   const cards: Record<number, Card> = {};
   for (const k in g.cards) {
     const c = g.cards[k];
-    cards[k] = { ...c,orbitStationHistory:c.orbitStationHistory?{...c.orbitStationHistory}:undefined,orbitPowerHistory:c.orbitPowerHistory?{...c.orbitPowerHistory}:undefined,frontierMarks:c.frontierMarks?{...c.frontierMarks}:undefined,meadowLinked:c.meadowLinked?.slice(),campusLinked:c.campusLinked?.map(x=>({...x})),lastKeywords:c.lastKeywords?.slice(),finMarks:c.finMarks?{...c.finMarks}:undefined,finLinked:c.finLinked?.slice(), manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
+    cards[k] = { ...c, modernSuspended:c.modernSuspended?{...c.modernSuspended}:undefined,orbitStationHistory:c.orbitStationHistory?{...c.orbitStationHistory}:undefined,orbitPowerHistory:c.orbitPowerHistory?{...c.orbitPowerHistory}:undefined,frontierMarks:c.frontierMarks?{...c.frontierMarks}:undefined,meadowLinked:c.meadowLinked?.slice(),campusLinked:c.campusLinked?.map(x=>({...x})),lastKeywords:c.lastKeywords?.slice(),finMarks:c.finMarks?{...c.finMarks}:undefined,finLinked:c.finLinked?.slice(), manaPaid:c.manaPaid?.slice(),eclBeheld:c.eclBeheld?.slice(),eclCounters:c.eclCounters?{...c.eclCounters}:undefined,eclCast:c.eclCast?{...c.eclCast}:undefined,eclUsage:c.eclUsage?{...c.eclUsage}:undefined, raphaelPermissions:c.raphaelPermissions?.map(p=>({...p})),colorProtections:c.colorProtections?.map(p=>({...p})),temporaryAbilities:c.temporaryAbilities?{turn:c.temporaryAbilities.turn,abilities:c.temporaryAbilities.abilities.slice()}:undefined,lastCounterKinds:c.lastCounterKinds?{...c.lastCounterKinds}:undefined, blockedBy: c.blockedBy.slice(), usedThisTurn: c.usedThisTurn.slice(), exhausted: c.exhausted?.slice(), permanentGrants:c.permanentGrants?.map(x=>({...x,kw:x.kw?.slice()})),chosenModes:c.chosenModes?.slice(),classModesTurn:c.classModesTurn?{turn:c.classModesTurn.turn,modes:c.classModesTurn.modes.slice()}:undefined,crewedBy:c.crewedBy?.slice(),copiedAbilities:c.copiedAbilities?.slice(),grantedFirebend:c.grantedFirebend?{...c.grantedFirebend}:undefined,returnControl:c.returnControl?{...c.returnControl}:undefined };
   }
   const cp = (p: Player): Player => ({
     ...p,frontierFlags:p.frontierFlags?{...p.frontierFlags}:undefined,finFlags:p.finFlags?{...p.finFlags}:undefined,eclEntries:p.eclEntries?.slice(),eclMaralenUsed:p.eclMaralenUsed?.slice(),eclRestrictedMana:p.eclRestrictedMana?.map(m=>({...m})),
@@ -175,7 +175,7 @@ export function cloneGame(g: GameState): GameState {
     retainedRed:p.retainedRed?.slice(),spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
-    ...g,
+    ...g, modernRed:g.modernRed?{...g.modernRed,damage:[...g.modernRed.damage]}:undefined,
     modernBurn: g.modernBurn ? { ...g.modernBurn, landTurns: [...g.modernBurn.landTurns], noGainTurns: [...g.modernBurn.noGainTurns], palms: g.modernBurn.palms.map(x=>({...x})), blood: g.modernBurn.blood.map(x=>({...x})) } : undefined,campusParadigms:g.campusParadigms?.map(x=>({...x})),campusDelayed:g.campusDelayed?.map(x=>({...x})),meadowDelayed:g.meadowDelayed?.map(d=>({...d,ids:d.ids?.slice()})),eclEntryQueue:g.eclEntryQueue?.map(e=>({...e})),lastManaPayment:g.lastManaPayment?.slice(),
     cards,
     players: [cp(g.players[0]), cp(g.players[1])],
@@ -324,6 +324,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   try {
   frontierBaseStats(g,c,st);
   mshBaseStats(g,c,st);
+  if(c.zone==='stack'&&c.frontierMarks?.modernArenaHaste===g.turn)st.kw.add('haste');
   if (c.zone !== 'battlefield') return st;
   if(c.noUntapBy!==undefined && g.cards[c.noUntapBy]?.zone==='battlefield' && g.cards[c.noUntapBy].controller===c.noUntapController) st.noUntap=true;
   if (c.suspected) {

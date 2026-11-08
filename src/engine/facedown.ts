@@ -1,3 +1,4 @@
+import { redCage } from './modern-red';
 // ============================================================
 // 面朝下的牌（偽裝、斗篷、顯化恐懼）
 // 面朝下時 Card.def 換成無名的 2/2 生物，真正的牌記在 Card.hidden；
@@ -45,6 +46,7 @@ export function faceDownDef(real: CardDef, ward: boolean): CardDef {
 /** 把一張牌面朝下放進戰場 */
 export function putFaceDown(g: GameState, c: Card, pid: PID, ward: boolean): void {
   const real = c.hidden ?? c.def;
+  if(!c.token&&['graveyard','library'].includes(c.zone)&&redCage(g))return;
   c.hidden = real;
   c.def = faceDownDef(real, ward);
   enterBattlefield(g, c, pid);

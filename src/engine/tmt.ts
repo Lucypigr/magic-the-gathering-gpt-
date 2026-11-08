@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import { uncounterableSpells } from './state';
 import { payCost } from './actions';
 import { choose, freeCast } from './tla';
@@ -48,7 +49,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       if (r.type === 'yesno' && r.yes && payCost(g, item.controller, parseCost(`{${ef.amount ?? 0}}`))) break;
       const c = g.cards[item.cardId];
       if (item.kind === 'spell') {
-        if (!uncounterableSpells(g,c.controller)&&!c.def.uncounterable && !item.uncounterable)
+        if (!uncounterableSpells(g,c.controller)&&!c.def.uncounterable && !redMastery(g,c) && !item.uncounterable)
           moveCard(g, c, item.alt === 'flashback' || item.alt === 'harmonize' ? 'exile' : 'graveyard');
       } else g.stack = g.stack.filter((s) => s.sid !== item.sid);
       break;

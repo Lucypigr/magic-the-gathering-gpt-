@@ -9,9 +9,9 @@ SOK,Saviors of Kamigawa,2005-06-03,expansion,True,165,1,164,165,1
 9ED,Ninth Edition,2005-07-29,core,True,339,27,312,342,32
 RAV,Ravnica: City of Guilds,2005-10-07,expansion,True,286,10,276,290,15
 GPT,Guildpact,2006-02-03,expansion,True,165,5,160,165,5
-DIS,Dissension,2006-05-05,expansion,True,180,6,174,180,6
+DIS,Dissension,2006-05-05,expansion,True,180,7,173,180,7
 CSP,Coldsnap,2006-07-21,expansion,True,150,3,147,153,3
-TSP,Time Spiral,2006-10-06,expansion,True,281,4,277,284,9
+TSP,Time Spiral,2006-10-06,expansion,True,281,5,276,284,10
 TSB,Time Spiral Timeshifted,2006-10-06,expansion,True,121,3,118,121,3
 PLC,Planar Chaos,2007-02-02,expansion,True,165,0,165,164,0
 FUT,Future Sight,2007-05-04,expansion,True,180,2,178,179,2
@@ -34,13 +34,13 @@ MBS,Mirrodin Besieged,2011-02-04,expansion,True,145,4,141,150,9
 NPH,New Phyrexia,2011-05-13,expansion,True,165,2,163,167,7
 M12,Magic 2012,2011-07-15,core,True,229,25,204,233,30
 ISD,Innistrad,2011-09-30,expansion,True,249,9,240,254,14
-DKA,Dark Ascension,2012-02-03,expansion,True,158,5,153,158,5
+DKA,Dark Ascension,2012-02-03,expansion,True,158,6,152,158,6
 AVR,Avacyn Restored,2012-05-04,expansion,True,229,5,224,234,10
 M13,Magic 2013,2012-07-13,core,True,229,30,199,234,35
 RTR,Return to Ravnica,2012-10-05,expansion,True,249,22,227,253,27
 GTC,Gatecrash,2013-02-01,expansion,True,249,18,231,249,18
 DGM,Dragon's Maze,2013-05-03,expansion,True,156,14,142,156,14
-MMA,Modern Masters,2013-06-07,masters,False,229,12,217,228,12
+MMA,Modern Masters,2013-06-07,masters,False,229,13,216,228,13
 M14,Magic 2014,2013-07-19,core,True,229,21,208,234,26
 THS,Theros,2013-09-27,expansion,True,229,11,218,234,16
 BNG,Born of the Gods,2014-02-07,expansion,True,165,6,159,165,6
@@ -51,7 +51,7 @@ KTK,Khans of Tarkir,2014-09-26,expansion,True,249,22,227,252,27
 FRF,Fate Reforged,2015-01-23,expansion,True,175,12,163,180,17
 DTK,Dragons of Tarkir,2015-03-27,expansion,True,249,14,235,254,19
 MM2,Modern Masters 2015,2015-05-22,masters,False,249,17,232,248,17
-ORI,Magic Origins,2015-07-17,core,True,268,20,248,273,25
+ORI,Magic Origins,2015-07-17,core,True,268,21,247,273,26
 BFZ,Battle for Zendikar,2015-10-02,expansion,True,249,8,241,254,13
 OGW,Oath of the Gatewatch,2016-01-22,expansion,True,182,6,176,183,7
 SOI,Shadows over Innistrad,2016-04-08,expansion,True,282,6,276,287,11
@@ -59,7 +59,7 @@ W16,Welcome Deck 2016,2016-04-08,starter,False,16,4,12,16,4
 EMN,Eldritch Moon,2016-07-22,expansion,True,205,5,200,205,5
 KLD,Kaladesh,2016-09-30,expansion,True,259,18,241,264,23
 AER,Aether Revolt,2017-01-20,expansion,True,194,4,190,194,4
-MM3,Modern Masters 2017,2017-03-17,masters,False,249,32,217,249,32
+MM3,Modern Masters 2017,2017-03-17,masters,False,249,33,216,249,33
 W17,Welcome Deck 2017,2017-04-15,starter,False,30,6,24,30,6
 AKH,Amonkhet,2017-04-28,expansion,True,267,8,259,272,13
 HOU,Hour of Devastation,2017-07-14,expansion,True,194,5,189,199,10
@@ -74,11 +74,11 @@ RNA,Ravnica Allegiance,2019-01-25,expansion,True,263,18,245,268,23
 GK2,RNA Guild Kit,2019-02-15,box,False,123,2,121,128,7
 WAR,War of the Spark,2019-05-03,expansion,True,260,9,251,265,14
 MH1,Modern Horizons,2019-06-14,draft_innovation,True,250,11,239,253,11
-M20,Core Set 2020,2019-07-12,core,True,324,57,267,327,62
+M20,Core Set 2020,2019-07-12,core,True,324,58,266,327,63
 ELD,Throne of Eldraine,2019-10-04,expansion,True,280,22,258,282,27
 THB,Theros Beyond Death,2020-01-24,expansion,True,268,11,257,271,16
 IKO,Ikoria: Lair of Behemoths,2020-04-24,expansion,True,260,20,240,262,25
-M21,Core Set 2021,2020-07-03,core,True,280,53,227,285,58
+M21,Core Set 2021,2020-07-03,core,True,280,54,226,285,59
 ZNR,Zendikar Rising,2020-09-25,expansion,True,265,14,251,270,19
 KHM,Kaldheim,2021-02-05,expansion,True,295,12,283,304,17
 STX,Strixhaven: School of Mages,2021-04-23,expansion,True,275,6,269,280,11
@@ -100,7 +100,7 @@ LCI,The Lost Caverns of Ixalan,2023-11-17,expansion,True,286,286,0,291,291
 MKM,Murders at Karlov Manor,2024-02-09,expansion,True,274,271,3,279,276
 OTJ,Outlaws of Thunder Junction,2024-04-19,expansion,True,271,271,0,276,276
 BIG,The Big Score,2024-04-19,expansion,True,30,2,28,30,2
-MH3,Modern Horizons 3,2024-06-14,draft_innovation,True,303,6,297,306,11
+MH3,Modern Horizons 3,2024-06-14,draft_innovation,True,303,7,296,306,12
 ACR,Assassin's Creed,2024-07-05,draft_innovation,True,133,6,127,138,11
 BLB,Bloomburrow,2024-08-02,expansion,True,274,274,0,279,279
 DSK,Duskmourn: House of Horror,2024-09-27,expansion,True,271,271,0,276,276

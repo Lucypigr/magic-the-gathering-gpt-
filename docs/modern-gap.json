@@ -1,19 +1,19 @@
 {
   "summary": {
-    "registryDefinitions": 5266,
+    "registryDefinitions": 5272,
     "allProducts": 118,
     "primarySets": 107,
     "completePrimarySets": 18,
     "incompletePrimarySets": 89,
     "zeroCoveragePrimarySets": 4,
     "modernLegalNames": 22708,
-    "availableModernNames": 5263,
-    "missingModernNames": 17445,
+    "availableModernNames": 5269,
+    "missingModernNames": 17439,
     "sampleDecks": 50,
     "legalSampleDecks": 50,
-    "completeMainDecks": 5,
-    "complete75Decks": 5,
-    "sampleMissingNames": 347,
+    "completeMainDecks": 6,
+    "complete75Decks": 6,
+    "sampleMissingNames": 341,
     "snapshotDate": "2026-10-23",
     "deckFileDate": "2026-10-17"
   },
@@ -144,10 +144,10 @@
       "type": "expansion",
       "date": "2006-05-05",
       "count": 180,
-      "available": 6,
-      "missing": 174,
+      "available": 7,
+      "missing": 173,
       "modernLegal": 180,
-      "modernAvailable": 6,
+      "modernAvailable": 7,
       "primary": true
     },
     {
@@ -168,10 +168,10 @@
       "type": "expansion",
       "date": "2006-10-06",
       "count": 281,
-      "available": 4,
-      "missing": 277,
+      "available": 5,
+      "missing": 276,
       "modernLegal": 284,
-      "modernAvailable": 9,
+      "modernAvailable": 10,
       "primary": true
     },
     {
@@ -444,10 +444,10 @@
       "type": "expansion",
       "date": "2012-02-03",
       "count": 158,
-      "available": 5,
-      "missing": 153,
+      "available": 6,
+      "missing": 152,
       "modernLegal": 158,
-      "modernAvailable": 5,
+      "modernAvailable": 6,
       "primary": true
     },
     {
@@ -516,10 +516,10 @@
       "type": "masters",
       "date": "2013-06-07",
       "count": 229,
-      "available": 12,
-      "missing": 217,
+      "available": 13,
+      "missing": 216,
       "modernLegal": 228,
-      "modernAvailable": 12,
+      "modernAvailable": 13,
       "primary": false
     },
     {
@@ -648,10 +648,10 @@
       "type": "core",
       "date": "2015-07-17",
       "count": 268,
-      "available": 20,
-      "missing": 248,
+      "available": 21,
+      "missing": 247,
       "modernLegal": 273,
-      "modernAvailable": 25,
+      "modernAvailable": 26,
       "primary": true
     },
     {
@@ -744,10 +744,10 @@
       "type": "masters",
       "date": "2017-03-17",
       "count": 249,
-      "available": 32,
-      "missing": 217,
+      "available": 33,
+      "missing": 216,
       "modernLegal": 249,
-      "modernAvailable": 32,
+      "modernAvailable": 33,
       "primary": false
     },
     {
@@ -924,10 +924,10 @@
       "type": "core",
       "date": "2019-07-12",
       "count": 324,
-      "available": 57,
-      "missing": 267,
+      "available": 58,
+      "missing": 266,
       "modernLegal": 327,
-      "modernAvailable": 62,
+      "modernAvailable": 63,
       "primary": true
     },
     {
@@ -972,10 +972,10 @@
       "type": "core",
       "date": "2020-07-03",
       "count": 280,
-      "available": 53,
-      "missing": 227,
+      "available": 54,
+      "missing": 226,
       "modernLegal": 285,
-      "modernAvailable": 58,
+      "modernAvailable": 59,
       "primary": true
     },
     {
@@ -1236,10 +1236,10 @@
       "type": "draft_innovation",
       "date": "2024-06-14",
       "count": 303,
-      "available": 6,
-      "missing": 297,
+      "available": 7,
+      "missing": 296,
       "modernLegal": 306,
-      "modernAvailable": 11,
+      "modernAvailable": 12,
       "primary": true
     },
     {
@@ -1450,8 +1450,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 10,
-      "sideAvailable": 1,
-      "missingNames": 23,
+      "sideAvailable": 3,
+      "missingNames": 22,
       "missing": [
         {
           "name": "Ugin's Labyrinth",
@@ -1588,12 +1588,6 @@
         {
           "name": "Trinisphere",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 2,
           "available": false,
           "legal": true
         }
@@ -1773,7 +1767,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1798,8 +1792,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 9,
-      "sideAvailable": 2,
-      "missingNames": 25,
+      "sideAvailable": 4,
+      "missingNames": 24,
       "missing": [
         {
           "name": "Gemstone Caverns",
@@ -1948,12 +1942,6 @@
         {
           "name": "Warping Wail",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 2,
           "available": false,
           "legal": true
         }
@@ -2139,7 +2127,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2697,8 +2685,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 29,
-      "sideAvailable": 3,
-      "missingNames": 18,
+      "sideAvailable": 4,
+      "missingNames": 17,
       "missing": [
         {
           "name": "Thoughtcast",
@@ -2786,12 +2774,6 @@
         },
         {
           "name": "Strix Serenade",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -2978,7 +2960,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3296,9 +3278,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 26,
+      "mainAvailable": 27,
       "sideAvailable": 8,
-      "missingNames": 16,
+      "missingNames": 15,
       "missing": [
         {
           "name": "Flooded Strand",
@@ -3321,12 +3303,6 @@
         {
           "name": "Windswept Heath",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arena of Glory",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -3450,7 +3426,7 @@
         {
           "name": "Arena of Glory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3968,9 +3944,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 28,
-      "sideAvailable": 11,
-      "missingNames": 13,
+      "mainAvailable": 29,
+      "sideAvailable": 12,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Ajani, Nacatl Pariah",
@@ -3987,12 +3963,6 @@
         {
           "name": "Ephemerate",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arena of Glory",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -4029,12 +3999,6 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -4092,7 +4056,7 @@
         {
           "name": "Arena of Glory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4238,7 +4202,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4605,8 +4569,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 8,
-      "sideAvailable": 1,
-      "missingNames": 25,
+      "sideAvailable": 3,
+      "missingNames": 24,
       "missing": [
         {
           "name": "Gemstone Caverns",
@@ -4749,12 +4713,6 @@
         {
           "name": "Thief of Existence",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -4940,7 +4898,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5349,8 +5307,8 @@
       "mainTotal": 61,
       "sideTotal": 15,
       "mainAvailable": 10,
-      "sideAvailable": 5,
-      "missingNames": 26,
+      "sideAvailable": 7,
+      "missingNames": 25,
       "missing": [
         {
           "name": "Gruul Turf",
@@ -5493,12 +5451,6 @@
         {
           "name": "Bojuka Bog",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -5702,7 +5654,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6129,8 +6081,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 36,
-      "sideAvailable": 7,
-      "missingNames": 13,
+      "sideAvailable": 9,
+      "missingNames": 12,
       "missing": [
         {
           "name": "Thoughtseize",
@@ -6201,12 +6153,6 @@
         {
           "name": "Inquisition of Kozilek",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -6398,7 +6344,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7695,8 +7641,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 18,
-      "sideAvailable": 3,
-      "missingNames": 19,
+      "sideAvailable": 4,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Devourer of Destiny",
@@ -7761,12 +7707,6 @@
         {
           "name": "Urza's Tower",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -7922,7 +7862,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8259,8 +8199,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 12,
-      "sideAvailable": 1,
-      "missingNames": 22,
+      "sideAvailable": 3,
+      "missingNames": 21,
       "missing": [
         {
           "name": "Disciple of Freyalise",
@@ -8373,12 +8313,6 @@
         {
           "name": "Trinisphere",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -8540,7 +8474,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9427,16 +9361,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 30,
+      "mainAvailable": 31,
       "sideAvailable": 7,
-      "missingNames": 13,
+      "missingNames": 12,
       "missing": [
-        {
-          "name": "Arena of Glory",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Street Wraith",
           "quantity": 4,
@@ -9515,7 +9443,7 @@
         {
           "name": "Arena of Glory",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10772,8 +10700,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 20,
-      "sideAvailable": 1,
-      "missingNames": 20,
+      "sideAvailable": 2,
+      "missingNames": 19,
       "missing": [
         {
           "name": "Fatal Push",
@@ -10885,12 +10813,6 @@
         },
         {
           "name": "Force of Despair",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -11083,7 +11005,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11790,8 +11712,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 22,
-      "sideAvailable": 7,
-      "missingNames": 17,
+      "sideAvailable": 9,
+      "missingNames": 16,
       "missing": [
         {
           "name": "Colossus Hammer",
@@ -11862,12 +11784,6 @@
         {
           "name": "Windswept Heath",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -12053,7 +11969,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16115,8 +16031,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 13,
-      "sideAvailable": 4,
-      "missingNames": 28,
+      "sideAvailable": 5,
+      "missingNames": 27,
       "missing": [
         {
           "name": "Jace, the Perfected Mind",
@@ -16265,12 +16181,6 @@
         {
           "name": "Extirpate",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -16498,7 +16408,7 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16834,47 +16744,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 45,
-      "sideAvailable": 11,
-      "missingNames": 6,
-      "missing": [
-        {
-          "name": "Chandra's Incinerator",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Arena of Glory",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Rift Bolt",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Seal of Fire",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Grafdigger's Cage",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Exquisite Firecraft",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        }
-      ],
+      "mainAvailable": 60,
+      "sideAvailable": 15,
+      "missingNames": 0,
+      "missing": [],
       "illegal": [],
       "main": [
         {
@@ -16886,7 +16759,7 @@
         {
           "name": "Chandra's Incinerator",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16940,13 +16813,13 @@
         {
           "name": "Arena of Glory",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Rift Bolt",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16970,7 +16843,7 @@
         {
           "name": "Seal of Fire",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16996,13 +16869,13 @@
         {
           "name": "Grafdigger's Cage",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Exquisite Firecraft",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17034,10 +16907,6 @@
     [
       "Flooded Strand",
       14
-    ],
-    [
-      "Grafdigger's Cage",
-      13
     ],
     [
       "Thoughtseize",
@@ -17202,10 +17071,6 @@
     [
       "Tamiyo, Inquisitive Student",
       5
-    ],
-    [
-      "Arena of Glory",
-      4
     ],
     [
       "Chalice of the Void",
@@ -17672,10 +17537,6 @@
       1
     ],
     [
-      "Chandra's Incinerator",
-      1
-    ],
-    [
       "Chandra, Awakened Inferno",
       1
     ],
@@ -17789,10 +17650,6 @@
     ],
     [
       "Eternal Witness",
-      1
-    ],
-    [
-      "Exquisite Firecraft",
       1
     ],
     [
@@ -18136,10 +17993,6 @@
       1
     ],
     [
-      "Rift Bolt",
-      1
-    ],
-    [
       "River of Tears",
       1
     ],
@@ -18165,10 +18018,6 @@
     ],
     [
       "Sea Gate Restoration",
-      1
-    ],
-    [
-      "Seal of Fire",
       1
     ],
     [

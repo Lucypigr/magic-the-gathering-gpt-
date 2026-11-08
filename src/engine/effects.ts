@@ -16,6 +16,7 @@ import {mkmAmount} from './mkm-support';
 import {finEffect} from './fin';
 import {finAmount,finStatic} from './fin-support';
 import {canReceiveCounters} from './ecl-support';
+import { redMastery } from './modern-red';
 import {copiableDefinition,abilitiesSuppressed,uncounterableSpells} from './state';
 import {eclEffect,makeEclTokenBatch} from './ecl';
 import { canPayCost,castDef, castDuringResolution, castTargetSpecs, manaSources, payCost, spellEffects } from './actions';
@@ -1029,7 +1030,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'counter': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'stack') continue;
-        if (uncounterableSpells(g,c.controller)||c.def.uncounterable || ((c.castFace??c.def).types.includes('Creature')&&!!finalStatic(g,c.controller,'creaturesUncounterable').length) || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) {
+        if (redMastery(g,c)||uncounterableSpells(g,c.controller)||c.def.uncounterable || ((c.castFace??c.def).types.includes('Creature')&&!!finalStatic(g,c.controller,'creaturesUncounterable').length) || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) {
           log(g, `${cardName(c)} 不能被反擊`, c.controller);
           continue;
         }
@@ -1040,7 +1041,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     }
     case 'counterUnless': {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
-        if (c.zone !== 'stack' || uncounterableSpells(g,c.controller)||c.def.uncounterable || ((c.castFace??c.def).types.includes('Creature')&&!!finalStatic(g,c.controller,'creaturesUncounterable').length) || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) continue;
+        if (c.zone !== 'stack' || redMastery(g,c)||uncounterableSpells(g,c.controller)||c.def.uncounterable || ((c.castFace??c.def).types.includes('Creature')&&!!finalStatic(g,c.controller,'creaturesUncounterable').length) || g.stack.some((it) => it.cardId === c.id && it.uncounterable)) continue;
         const payer = c.controller;
         const cost = { ...parseCost(''), generic: ef.pay };
         let paid = false;

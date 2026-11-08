@@ -1,0 +1,110 @@
+[
+  {
+    "types": [
+      "Land"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Arena of Glory",
+    "cost": "",
+    "text": "This land enters tapped unless you control a Mountain.\n{T}: Add {R}.\n{R}, {T}, Exert this land: Add {R}{R}. If any of that mana is spent on a creature spell, it gains haste until end of turn. (An exerted permanent won't untap during your next untap step.)",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "MH3",
+    "sourceUuid": "ec41dbde-c951-5454-8210-e9fcad225741",
+    "sourceSha256": "47d64f2c35b4fa774ba3610b2b6129c3e2029cd7b9f8c3a3ebe6dede6080b853"
+  },
+  {
+    "types": [
+      "Creature"
+    ],
+    "subtypes": [
+      "Elemental"
+    ],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Chandra's Incinerator",
+    "cost": "{5}{R}",
+    "text": "This spell costs {X} less to cast, where X is the total amount of noncombat damage dealt to your opponents this turn.\nTrample\nWhenever a source you control deals noncombat damage to an opponent, this creature deals that much damage to target creature or planeswalker that player controls.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "M21",
+    "sourceUuid": "4b90cc3f-bd38-5675-91c8-d6ec3e68df8c",
+    "sourceSha256": "0295b9013bfdc7ea4dd72140bf2a2a5357b26c0ffcc57cd5bbe1bbe27165efb0",
+    "power": 6,
+    "toughness": 6
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Exquisite Firecraft",
+    "cost": "{1}{R}{R}",
+    "text": "Exquisite Firecraft deals 4 damage to any target.\nSpell mastery — If there are two or more instant and/or sorcery cards in your graveyard, this spell can't be countered.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "ORI",
+    "sourceUuid": "839e567a-ee93-5cec-9c34-a4354b09f3a3",
+    "sourceSha256": "b543f813ac5eab3d87361e338216f992a30df0aa43ce4847b4aafc07d02ff363"
+  },
+  {
+    "types": [
+      "Artifact"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [],
+    "name": "Grafdigger's Cage",
+    "cost": "{1}",
+    "text": "Creature cards in graveyards and libraries can't enter the battlefield.\nPlayers can't cast spells from graveyards or libraries.",
+    "set": "META",
+    "rarity": "R",
+    "sourceSet": "DKA",
+    "sourceUuid": "76fbb5ac-829d-5f43-9f79-a5392d7c944c",
+    "sourceSha256": "57251868915f5fba4fcd022b51ace3d9c486d8814f5b6bf3015b8d64735bc3a1"
+  },
+  {
+    "types": [
+      "Sorcery"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Rift Bolt",
+    "cost": "{2}{R}",
+    "text": "Rift Bolt deals 3 damage to any target.\nSuspend 1—{R} (Rather than cast this card from your hand, you may pay {R} and exile it with a time counter on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost.)",
+    "set": "META",
+    "rarity": "C",
+    "sourceSet": "TSP",
+    "sourceUuid": "26995916-9d28-5d0f-8df8-79227f145147",
+    "sourceSha256": "4d4a78ad44692be2e18e15dd631b2fe0a33a00c2e51a5f75263544178919df12"
+  },
+  {
+    "types": [
+      "Enchantment"
+    ],
+    "subtypes": [],
+    "supertypes": [],
+    "colors": [
+      "R"
+    ],
+    "name": "Seal of Fire",
+    "cost": "{R}",
+    "text": "Sacrifice this enchantment: It deals 2 damage to any target.",
+    "set": "META",
+    "rarity": "C",
+    "sourceSet": "DIS",
+    "sourceUuid": "d5923e41-af43-565c-a25e-94bcd6d47b79",
+    "sourceSha256": "08e5d16b625caddf6088370b1a31144b68e87ee93978925f9d092ebc4025997f"
+  }
+]

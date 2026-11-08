@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import {innkeeperMultiplier} from './meadow-support';
 import { canPayCost, castDuringResolution, payCost } from './actions';
 import { copiableDefinition, isCreature, isLand, matches, newCard, other, shuffleArr, stats } from './state';
@@ -136,7 +137,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
           paid = true;
         }
       }
-      if (!paid && !(item.kind === 'spell' && g.cards[item.cardId].def.uncounterable)) {
+      if (!paid && !(item.kind === 'spell' && (g.cards[item.cardId].def.uncounterable||redMastery(g,g.cards[item.cardId])))) {
         g.stack = g.stack.filter((it) => it.sid !== item.sid);
         if (item.kind === 'spell' && !g.cards[item.cardId].def.uncounterable) moveCard(g, g.cards[item.cardId], 'graveyard');
       }
@@ -909,7 +910,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
         break;
       }
       const x = g.cards[it.cardId];
-      if (x.def.uncounterable) break;
+      if (x.def.uncounterable||redMastery(g,x)) break;
       g.stack = g.stack.filter((s) => s.sid !== it.sid);
       moveCard(g, x, ef.action === '221' ? 'exile' : 'graveyard');
       break;

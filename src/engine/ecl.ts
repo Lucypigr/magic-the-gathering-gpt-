@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import {webBeforeEntry} from './web-shire';
 import {webStatic,webChooseRiot} from './web-shire-support';
 import {finalStatic} from './orbit-final-support';
@@ -247,7 +248,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
       if (paid) loseLife(g, pid, n);
       else if (item.kind === 'spell') {
         const c = g.cards[item.cardId];
-        if (!uncounterableSpells(g, pid) && !c.def.uncounterable && !item.uncounterable)
+        if (!uncounterableSpells(g, pid) && !(c.def.uncounterable||(item.kind==='spell'&&redMastery(g,c))) && !item.uncounterable)
           moveCard(g, c, item.alt === 'flashback' || item.alt === 'harmonize' ? 'exile' : 'graveyard');
       } else g.stack = g.stack.filter((s) => s.sid !== item.sid);
       break;
@@ -458,7 +459,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
         if (item.controller === me) continue;
         const c = g.cards[item.cardId];
         if (item.kind === 'spell') {
-          if (uncounterableSpells(g, c.controller) || c.def.uncounterable || item.uncounterable) continue;
+          if (uncounterableSpells(g, c.controller) || (c.def.uncounterable||(item.kind==='spell'&&redMastery(g,c))) || item.uncounterable) continue;
           moveCard(g, c, item.alt === 'flashback' || item.alt === 'harmonize' ? 'exile' : 'graveyard');
         } else g.stack = g.stack.filter((s) => s.sid !== item.sid);
         n++;

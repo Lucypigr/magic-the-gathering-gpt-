@@ -1,3 +1,4 @@
+import { redEffect } from './modern-red';
 import { burnEffect, burnTrigger } from './modern-burn';
 import { murktideEffect } from './modern-murktide';
 import { abilitiesOf, abilitiesSuppressed, matches, stats, uncounterableSpells } from './state';
@@ -26,6 +27,7 @@ export const modernForced = (g: GameState, c: Card) => has(g, c, 'channeler') &&
 export const modernCanBlock = (g: GameState, b: Card, a: Card) => !has(g, b, 'blockFlyingOnly') || importFlying(g, a);
 const importFlying = (g: GameState, c: Card) => stats(g, c).kw.has('flying');
 export function modernTrigger(g: GameState, c: Card, a: TriggeredAbility, e: GameEvent) {
+  if(a.frontierEvent==='modern:red:damage')return e.type==='frontier'&&e.action==='modern:red:damage'&&e.other===c.controller&&e.player!==c.controller&&e.amount>0;
   if(a.frontierEvent?.startsWith('modern:burn:')) return burnTrigger(g,a,e);
   return a.frontierEvent === 'modern:graveSpellLeaves' && e.type === 'fin' && e.action === 'zoneMove' && e.from === 'graveyard' && e.player === c.controller && g.cards[e.card].def.types.some(t => t === 'Instant' || t === 'Sorcery');
 }
@@ -35,6 +37,7 @@ export function modernEntry(c: Card, from: string) {
 }
 export function modernConsignChoices(g: GameState) { return g.stack.filter(s => s.kind === 'trigger' || s.kind === 'spell' && colorsOf(g.cards[s.cardId].castFace ?? g.cards[s.cardId].def).length === 0); }
 export function* modernEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'frontier' }>): SubFlow {
+  if(ef.action.startsWith('modern:red:')) {yield*redEffect(g,ctx,ef);return;}
   if(ef.action.startsWith('modern:burn:')) { yield* burnEffect(g,ctx,ef); return; }
   const p = ctx.controller, source = g.cards[ctx.source], player = g.players[p], target = resolveRef(g, ctx, 'T0').cards[0];
   switch (ef.action.slice(7)) {

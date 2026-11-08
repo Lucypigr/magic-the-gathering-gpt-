@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import { finalContext, finalCastCopy, finalTransferCounters } from './orbit-final-common';
 import { copiableDefinition, isCreature, isLand, newCard, shuffleArr, stats, other } from './state';
 import { moveCard, enterBattlefield, putCounters, drawCards, discardMany, destroyCards, sacrifice, dealDamage, loseLife, tapCard } from './zones';
@@ -34,7 +35,7 @@ export function* finalEoeEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                 const cost = parseCost('{1}');
                 if (canPayCost(g, item.controller, cost) && (yield* yes('支付{1}守護？', item.controller)))
                     payCost(g, item.controller, cost);
-                else if (!item.uncounterable && !g.cards[item.cardId].def.uncounterable) {
+                else if (!item.uncounterable && !(g.cards[item.cardId].def.uncounterable||(item.kind==='spell'&&redMastery(g,g.cards[item.cardId])))) {
                     g.stack = g.stack.filter(s => s.sid !== item.sid);
                     if (item.kind === 'spell')
                         moveCard(g, g.cards[item.cardId], 'graveyard');

@@ -1,0 +1,62 @@
+{
+  "Chandra's Incinerator": {
+    "text": "此咒語減少{X}來施放，X為所有對手本回閤中受過的非戰鬥傷害總數量。\n踐踏\n每當一個由你操控的來源向任一對手造成非戰鬥傷害時，此生物對目標由該牌手操控的生物或鵬洛客造成等量的傷害。",
+    "oracleText": "This spell costs {X} less to cast, where X is the total amount of noncombat damage dealt to your opponents this turn.\nTrample\nWhenever a source you control deals noncombat damage to an opponent, this creature deals that much damage to target creature or planeswalker that player controls.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 2854,
+    "oracleId": "515cee6a-a2e1-4eeb-8e1d-293724313b14",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arena of Glory": {
+    "text": "除非你操控山脈，否則此地須橫置進場。\n{T}：加{R}。\n{R}，{T}，耗竭此地：加{R}{R}。如果該份法術力中包含用以支付生物咒語者，則它獲得敏捷異能直到回合結束。（已耗竭的永久物於你的下一個重置步驟中不能重置。）",
+    "oracleText": "This land enters tapped unless you control a Mountain.\n{T}: Add {R}.\n{R}, {T}, Exert this land: Add {R}{R}. If any of that mana is spent on a creature spell, it gains haste until end of turn. (An exerted permanent won't untap during your next untap step.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 15473,
+    "oracleId": "63dfe794-5f56-41ec-9883-5523b41cc3e0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Seal of Fire": {
+    "text": "犧牲此結界：它對任意一個目標造成2點傷害。",
+    "oracleText": "Sacrifice this enchantment: It deals 2 damage to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 27618,
+    "oracleId": "348a345e-4639-41ca-b015-a5d43459eb64",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Rift Bolt": {
+    "text": "時縫之雷對任意一個目標造成3點傷害。\n延緩1～{R}（除了從你手上施放此牌，你可以支付{R}並將它放逐，且上面有一個計時指示物。在你的維持開始時，從其上移去一個計時指示物。當移去最後一個時，你可以施放它且不需支付其法術力費用。）",
+    "oracleText": "Rift Bolt deals 3 damage to any target.\nSuspend 1—{R} (Rather than cast this card from your hand, you may pay {R} and exile it with a time counter on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 31050,
+    "oracleId": "2b8afa9f-4236-4c02-a8d5-3c145caecfd6",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Grafdigger's Cage": {
+    "text": "墳墓場和牌庫中的生物牌不能進戰場。\n牌手不能從墳墓場或牌庫中施放咒語。",
+    "oracleText": "Creature cards in graveyards and libraries can't enter the battlefield.\nPlayers can't cast spells from graveyards or libraries.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 34983,
+    "oracleId": "753cb2b2-24ce-484f-a2d0-be6fd2c67ebd",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Exquisite Firecraft": {
+    "text": "精巧火術對任意一個目標造成4點傷害。\n精熟咒語～如果你墳墓場中有兩張或更多的瞬間和／或法術牌，則此咒語不能被反擊。",
+    "oracleText": "Exquisite Firecraft deals 4 damage to any target.\nSpell mastery — If there are two or more instant and/or sorcery cards in your graveyard, this spell can't be countered.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 37917,
+    "oracleId": "e83c617f-1e07-40db-9b12-ae01122a3e24",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  }
+}

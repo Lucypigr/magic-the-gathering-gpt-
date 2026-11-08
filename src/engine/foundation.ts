@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import {innkeeperMultiplier} from './meadow-support';
 import {
   copiableDefinition,
@@ -191,7 +192,7 @@ export function* foundationEffect(
       if (
         !paid &&
         !item.uncounterable &&
-        !g.cards[item.cardId].def.uncounterable
+        !(g.cards[item.cardId].def.uncounterable||(item.kind==='spell'&&redMastery(g,g.cards[item.cardId])))
       ) {
         g.stack = g.stack.filter((s) => s.sid !== item.sid);
         if (item.kind === "spell")

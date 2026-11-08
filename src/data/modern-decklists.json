@@ -646,5 +646,117 @@
         "Surgical Extraction"
       ]
     ]
+  },
+  {
+    "id": "modern-mono-red-burn",
+    "name": "純紅燒牌",
+    "sourceName": "[Modern] #50 - Mono-Red Burn",
+    "source": {
+      "repository": "Card-Forge/forge-extras",
+      "revision": "d3783237b98ca3714aeea5796ea593f49f6921cb",
+      "path": "decks/currentmodernmetagame.zip",
+      "sha256": "70e85196c8a031a4ba27864e08a4917dc4605785594308148366e025578bd948"
+    },
+    "date": "2026-10-17",
+    "main": [
+      [
+        1,
+        "Thundering Falls"
+      ],
+      [
+        4,
+        "Chandra's Incinerator"
+      ],
+      [
+        4,
+        "Goblin Guide"
+      ],
+      [
+        4,
+        "Barbarian Ring"
+      ],
+      [
+        2,
+        "Wooded Foothills"
+      ],
+      [
+        2,
+        "Searing Blaze"
+      ],
+      [
+        3,
+        "Arid Mesa"
+      ],
+      [
+        4,
+        "Lightning Bolt"
+      ],
+      [
+        3,
+        "Eidolon of the Great Revel"
+      ],
+      [
+        4,
+        "Skewer the Critics"
+      ],
+      [
+        3,
+        "Arena of Glory"
+      ],
+      [
+        4,
+        "Rift Bolt"
+      ],
+      [
+        4,
+        "Monastery Swiftspear"
+      ],
+      [
+        4,
+        "Boltwave"
+      ],
+      [
+        4,
+        "Lava Spike"
+      ],
+      [
+        4,
+        "Seal of Fire"
+      ],
+      [
+        4,
+        "Mountain"
+      ],
+      [
+        2,
+        "Bloodstained Mire"
+      ]
+    ],
+    "side": [
+      [
+        3,
+        "Smash to Smithereens"
+      ],
+      [
+        2,
+        "Grafdigger's Cage"
+      ],
+      [
+        2,
+        "Exquisite Firecraft"
+      ],
+      [
+        2,
+        "Searing Blood"
+      ],
+      [
+        2,
+        "Magebane Lizard"
+      ],
+      [
+        4,
+        "Roiling Vortex"
+      ]
+    ]
   }
 ]

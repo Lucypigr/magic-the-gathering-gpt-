@@ -1,4 +1,5 @@
 import {webStatic,webCastBlocked,webCost,webAbilityCost,webFlash,webLifeOnly,webLifeEligible,webVariableMax,webTargets,webActivationCosts,webPayActivationCosts} from './web-shire-support';
+import { redSuspend,redCastBlocked,redDiscount } from './modern-red';
 import { modernRefresh } from './modern-moon';
 import { modernColorlessLand, modernConsignChoices } from './modern';
 import {finalPermission,finalFree,finalCost,finalQuote,finalCanSac,finalStatic,finalActivationBlocked,finalAbilityCost,finalSilenced} from './orbit-final-support';
@@ -124,6 +125,8 @@ export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = 
    if(card.def.id==='secluded-courtyard'&&forDef&&card.eclType&&matchesDefSubtype(forDef,card.eclType))source.produces=['C','W','U','B','R','G'];
    if(card.def.id==='haunted-screen'){source.produces=['W','B',...(g.players[pid].life>0?['U','R','G']as const:[])];}
   }
+  const arena=Array.from({length:g.players[pid].modernArenaMana??0},(_,i)=>({id:-86000-i,produces:['R' as const],isCreature:false,pool:true}));
+  if(forDef?.types.includes('Creature')&&!forDef.eclAbilityPayment)out.unshift(...arena);else out.push(...arena);
   return out;
 }
 
@@ -162,6 +165,7 @@ export function canPayCost(g: GameState, pid: PID, cost: ManaCost, exclude?: num
 export function payCost(g: GameState, pid: PID, cost: ManaCost, exclude?: number, convoke = false, forDef?: CardDef, fromHand = false, water = forDef?.waterbend ?? 0): boolean {
   const pay = paymentWithWater(g,pid,cost,exclude,convoke,forDef,fromHand,water);
   if (!pay) return false;
+  g.modernLastArenaManaSpent=pay.filter(p=>p.id<=-86000&&p.id>-87000).length;
   const normalSources=manaSources(g,pid,exclude,convoke,forDef,fromHand);
   g.lastManaSourceIds=pay.filter(p=>p.id>=0).map(p=>p.id);
   g.lastManaPayment=pay.filter(p=>!normalSources.find(s=>s.id===p.id)?.convoke).map(p=>p.mana);
@@ -176,6 +180,7 @@ export function payCost(g: GameState, pid: PID, cost: ManaCost, exclude?: number
   for (const p of pay) if (p.id >= 0 && normalSources.find(s=>s.id===p.id)?.pain && p.mana !== 'C') frontierPayLife(g, pid, 1);
   for (const p of pay) { const damage=normalSources.find(s=>s.id===p.id)?.selfDamage; if(p.id>=0&&damage)dealDamage(g,g.cards[p.id],pid,{p:pid},damage); }
   for (const p of pay) if (p.id >= 0 && g.cards[p.id].def.sacOnMana) sacrifice(g, g.cards[p.id]);
+  g.players[pid].modernArenaMana=Math.max(0,(g.players[pid].modernArenaMana??0)-(g.modernLastArenaManaSpent??0));
   // 用掉的法術力池
   const usedPool = new Set(pay.filter((p) => p.id <= -1000 && p.id > -2000).map((p) => -1000 - p.id));
   if (usedPool.size) g.players[pid].pool = (g.players[pid].pool ?? []).filter((_, i) => !usedPool.has(i));
@@ -204,6 +209,7 @@ export function payCost(g: GameState, pid: PID, cost: ManaCost, exclude?: number
 export const isMainPhase = (g: GameState) => g.phase === 'main1' || g.phase === 'main2';
 export const sorceryTiming = (g: GameState, pid: PID) => g.active === pid && isMainPhase(g) && g.stack.length === 0;
 export const instantSpeed = (def: CardDef) => def.types.includes('Instant') || !!def.keywords?.includes('flash');
+const suspendTiming = (g:GameState,pid:PID,c:Card) => sorceryTiming(g,pid)||instantSpeed(c.def)||orbitFlash(g,pid,c.def)||webFlash(g,pid,c.def)||!!frontierStatic(g,pid,'fdn:allFlash').length||!!(frontierStatic(g,pid,'blb:noncreatureFlash').length&&!c.def.types.includes('Creature'))||mshCosmicFlash(g,pid)||!!(c.def.flashCond&&checkCond(g,c.def.flashCond,pid,c.id,[]));
 
 // ------------------------------------------------------------
 // 咒語資訊
@@ -247,6 +253,7 @@ export function castDef(def: CardDef, alt?: CastAlt): CardDef {
   else if(alt==='bargain')d={...def,cost:costToString(reduceCost(parseCost(def.cost),parseCost('{'+(def.frontier?.bargainDiscount??0)+'}')))};
   else if(alt==='teamwork')d={...def,spell:def.msh?.teamworkSpell??def.spell};
   else if(alt==='evidenceFree')d={...def,cost:''};
+  else if(alt==='modernSuspended')d={...def,cost:'{0}'};
   else if(alt==='modernSpectacle')d={...def,cost:String(def.meadow?.modernSpectacle)};
   else if(alt==='modernPitch')d={...def,cost:'{0}'};
   else if(alt==='modernDash')d={...def,cost:String(def.meadow?.modernDash)};
@@ -331,7 +338,7 @@ export function sneakAttackers(g:GameState,pid:PID):Card[]{return ['combat_block
 function ninjaGraveSneak(g:GameState,pid:PID):boolean{return g.battlefield.some(id=>{const c=g.cards[id];return c.controller===pid&&c.def.id==='ninja-teen'&&(c.classLevel??1)>=3&&!abilitiesSuppressed(g,c);});}
 function graveCastAllowed(g:GameState,pid:PID,c:Card):boolean{return g.active===pid&&g.battlefield.some(id=>{const s=g.cards[id];return s.controller===pid&&abilitiesOf(g,s).some(a=>a.kind==='static'&&a.graveCast&&matches(g,a.graveCast,c,pid,s.id));});}
 
-export function castAlts(g:GameState,pid:PID,c:Card):(CastAlt|undefined)[]{let alts=baseCastAlts(g,pid,c);if(c.zone==='hand'&&c.owner===pid){const tapped=g.battlefield.some(id=>{const a=g.cards[id];return a.controller===pid&&a.tapped&&isCreature(a);});if(tapped&&c.def.meadow?.webCost)alts.push('web');if(tapped&&c.def.supertypes?.includes('Legendary')&&colorsOf(c.def).length&&webStatic(g,pid,'grantWeb').length)alts.push('webGranted');if(c.def.meadow?.webDiscardOrPay)alts.push('webDiscard');if(c.def.meadow?.webSacOrPay)alts.push('webSac');}if(c.zone==='graveyard'&&c.owner===pid&&c.def.meadow?.webGraveDiscard)alts.push('webGraveDiscard');if(webLifeEligible(g,pid,c)){if(webLifeOnly(g,pid,c))alts=alts.filter(a=>a!==undefined);alts.push('webLife');}if(alts.length&&finalFree(g,pid,c)){alts.push('free');if(c.def.adventure&&g.active===pid&&g.players[pid].spellsThisTurn===0&&[...finalStatic(g,0,'firstSpellFree'),...finalStatic(g,1,'firstSpellFree')].length)alts.push('orbitFreeOmen');}if(c.zone==='graveyard'&&c.owner===pid&&c.def.meadow?.graveSacCast)alts.push('graveCost');if((c.def.meadow?.forageSpell||osteoCast(g,pid,c))&&validForage(g,pid,forageOptions(g,pid,c.id).defaults,c.id))alts.push('forage');if(!alts.length)return alts;if(c.zone==='hand'&&frontierStatic(g,pid,'dsk:mutationCost').length)alts.push('mutation');if(c.zone==='exile'&&!frontierFlags(g,pid).warpedUsed&&frontierStatic(g,pid,'dsk:warpedFree').length)alts.push('free');return alts;}
+export function castAlts(g:GameState,pid:PID,c:Card):(CastAlt|undefined)[]{if(redCastBlocked(g,c))return [];let alts=baseCastAlts(g,pid,c);if(c.zone==='hand'&&c.owner===pid){const tapped=g.battlefield.some(id=>{const a=g.cards[id];return a.controller===pid&&a.tapped&&isCreature(a);});if(tapped&&c.def.meadow?.webCost)alts.push('web');if(tapped&&c.def.supertypes?.includes('Legendary')&&colorsOf(c.def).length&&webStatic(g,pid,'grantWeb').length)alts.push('webGranted');if(c.def.meadow?.webDiscardOrPay)alts.push('webDiscard');if(c.def.meadow?.webSacOrPay)alts.push('webSac');}if(c.zone==='graveyard'&&c.owner===pid&&c.def.meadow?.webGraveDiscard)alts.push('webGraveDiscard');if(webLifeEligible(g,pid,c)){if(webLifeOnly(g,pid,c))alts=alts.filter(a=>a!==undefined);alts.push('webLife');}if(alts.length&&finalFree(g,pid,c)){alts.push('free');if(c.def.adventure&&g.active===pid&&g.players[pid].spellsThisTurn===0&&[...finalStatic(g,0,'firstSpellFree'),...finalStatic(g,1,'firstSpellFree')].length)alts.push('orbitFreeOmen');}if(c.zone==='graveyard'&&c.owner===pid&&c.def.meadow?.graveSacCast)alts.push('graveCost');if((c.def.meadow?.forageSpell||osteoCast(g,pid,c))&&validForage(g,pid,forageOptions(g,pid,c.id).defaults,c.id))alts.push('forage');if(!alts.length)return alts;if(c.zone==='hand'&&frontierStatic(g,pid,'dsk:mutationCost').length)alts.push('mutation');if(c.zone==='exile'&&!frontierFlags(g,pid).warpedUsed&&frontierStatic(g,pid,'dsk:warpedFree').length)alts.push('free');return alts;}
 function baseCastAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] {
   const def = c.def;
   if(festivalCast(g,pid,c))return [undefined];
@@ -362,6 +369,7 @@ function baseCastAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] 
     if(def.evoke&&(!def.meadow?.modernPitch||modernPitchChoices(g,pid,c).length))base.push('evoke');
     if(def.meadow?.modernPitch&&!def.evoke&&g.active!==pid&&modernPitchChoices(g,pid,c).length)base.push('modernPitch');
     if(def.meadow?.modernDash)base.push('modernDash');
+    if(def.meadow?.modernRedSuspend)base.push('modernSuspend');
     if(def.meadow?.modernSpectacle&&g.players[pid === 0 ? 1 : 0].lifeLostThisTurn>0)base.push('modernSpectacle');
     if (def.disguise) base.push('disguise');
     if(!isLand(c)&&isCreature(c)&&mshFlags(g,pid).freeRG&&colorsOf(def).some(c=>c==='R'||c==='G'))base.push('free');
@@ -539,6 +547,7 @@ export function spellCost(g: GameState, c: Card, pid: PID, mode?: number, target
   if(def.id==='the-pride-of-hull-clade')cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])).reduce((n,id)=>n+Math.max(0,stats(g,g.cards[id]).t),0));
   if(def.subtypes?.includes('Case')&&mkmStatic(g,pid,'caseMana').length){const total=cost.generic+cost.W+cost.U+cost.B+cost.R+cost.G+cost.C+(cost.hyb?.length??0);cost={...parseCost(''),generic:total};}
   if(c.def.meadow?.orbitFerociousDiscount)cost.generic=Math.max(0,cost.generic-g.battlefield.filter(id=>g.cards[id].controller===pid&&isCreature(g.cards[id])&&stats(g,g.cards[id]).p>=4).length);
+  if(c.def.meadow?.modernRedIncinerator)cost.generic=Math.max(0,cost.generic-redDiscount(g,pid));
   if (targets) cost.generic += wardTax(g, pid, targets);
   return cost;
 }
@@ -919,7 +928,8 @@ export function castOptionsFor(g: GameState, pid: PID, c: Card): PlayOption[] {
 function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined): PlayOption[] {
   const rawDef = castDef(c.def, alt),def=c.zone==='exile'?{...rawDef,meadow:{...rawDef.meadow,webPaymentExile:true}}:rawDef;
   const out: PlayOption[] = [];
-  if(webCastBlocked(g,pid,c)||finalSilenced(g,pid)||campusCastBlocked(g,pid))return out;
+  if(redCastBlocked(g,c)||webCastBlocked(g,pid,c)||finalSilenced(g,pid)||campusCastBlocked(g,pid))return out;
+  if(alt==='modernSuspend'){if(!suspendTiming(g,pid,c)||(frontierStatic(g,0,'highNoon').length+frontierStatic(g,1,'highNoon').length)&&g.players[pid].spellsThisTurn>=1||!canPayCost(g,pid,parseCost(String(c.def.meadow?.modernRedSuspend))))return out;return[{kind:'cast',card:c.id,alt,specs:[],effects:[],label:'延緩1－{R}：'+displayName(c.def)}];}
   if(pid!==g.active&&mshStatic(g,g.active,'ownTurnSilence').length)return out;
   if (alt === 'cycle') {
     if (!canPayCost(g, pid, parseCost(def.cost))) return out;
@@ -1165,6 +1175,8 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if(campusCastBlocked(g,pid))return '目前不能施放咒語';
   if(pid!==g.active&&mshStatic(g,g.active,'ownTurnSilence').length)return '對手回合中不能施放咒語';
   if(webCastBlocked(g,pid,c)||finalSilenced(g,pid))return '本回合無法施放咒語';
+  if(c&&redCastBlocked(g,c))return '不能從墳墓場或牌庫施放咒語';
+  if(c&&alt==='modernSuspend')return redSuspend(g,pid,c,suspendTiming(g,pid,c));
   if (!c || (isLand(c)&&alt!=='adventure') || (!duringResolution && !inCastableZone(g, pid, c, alt))) return '無法施放這張牌';
   const rawDef = castDef(c.def, alt),def=c.zone==='exile'?{...rawDef,meadow:{...rawDef.meadow,webPaymentExile:true}}:rawDef;
   if(c.def.meadow?.webShire)g.webActive=true;
@@ -1277,6 +1289,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   for(const id of [...conspireIds,...teamwork,...foundationTapIds])g.cards[id].tapped=false;
   if(!paid)return `法術力不足（需要 ${costToString(cost)}）`;
   const tapGroup=g.mshTapGroup;g.mshTapGroup=g.nextSid++;for(const id of teamwork){tapCard(g,g.cards[id]);emit(g,{type:'msh',action:'teamworkTap',card:id,player:pid});}g.mshTapGroup=tapGroup;
+  const arenaSpent=g.modernLastArenaManaSpent??0;
   const foundationManaSources=(g.lastManaSourceIds??[]).slice(),campusPaid=g.lastManaPayment?.slice(),campusSpent=g.lastManaSpent??0;
   const caveMana=foundationManaSources.filter(id=>g.cards[id].def.subtypes?.includes('Cave')).length;
   if(eaterLife)frontierPayLife(g,pid,eaterLife);if(c.zone==='exile'&&alt==='free')frontierFlags(g,pid).warpedUsed=1;
@@ -1309,6 +1322,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   }
   c.mkmEvidence=false;if(evidenceN&&evidenceIds)payEvidence(g,pid,c,evidenceIds);
   if(def.id==='demand-answers'&&(mode??0)===0){const id=a.discard??p.hand.find(id=>id!==c.id);if(id!==undefined)discard(g,g.cards[id]);}
+  (c.frontierMarks??={}).modernArenaHaste=arenaSpent&&def.types.includes('Creature')?g.turn:-1;
   c.manaPaid=campusPaid;
   for(const k of Object.keys(c.frontierMarks??{}))if(k.startsWith('cpUsedMana:')||k==='cpRebound')delete c.frontierMarks![k];
   (c.frontierMarks??={}).cpCaveMana=caveMana;for(const id of foundationManaSources)c.frontierMarks['cpUsedMana:'+id]=1;
@@ -1341,6 +1355,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
   if (discardCard) discard(g, discardCard);
   removeFromZone(g, c);
   c.castOrigin = c.zone;
+  if(c.zone==='exile'&&c.modernSuspended){c.modernSuspended=undefined;delete c.eclCounters?.time;}
   if(alt==='campusFree')frontierFlags(g,pid).cpFreeUsed=1;
   if(c.def.meadow?.campusLifeX)frontierPayLife(g,pid,a.x??0);
   if(c.zone==='graveyard'&&isCreature(c)&&frontierFlags(g,pid).cpTomb){frontierFlags(g,pid).cpTomb=0;(c.finMarks??={}).enterFinality=1;(c.frontierMarks??={}).cpVampire=1;}
@@ -1353,7 +1368,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
     c.def = def;
   }
   c.zone = 'stack';
-  c.castFace=def.meadow?.modernBatch&&['flashback','modernPitch','modernDash','modernSpectacle','evoke'].includes(alt??'')?{...def,cost:c.def.cost}:def;
+  c.castFace=def.meadow?.modernBatch&&['flashback','modernPitch','modernDash','modernSpectacle','evoke','modernSuspended','free'].includes(alt??'')?{...def,cost:c.def.cost}:def;
   c.objectVersion=(c.objectVersion??0)+1;
   c.controller = pid;
   c.playableTurn = undefined;

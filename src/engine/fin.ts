@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import { copiableDefinition } from './state';
 import { canPayCost, castDuringResolution, castTargetSpecs, payCost, spellEffects } from './actions';
 import { choose, freeCast } from './tla';
@@ -303,7 +304,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
       if (item) {
         if (item.kind === 'spell') {
           const c = g.cards[item.cardId];
-          if (!c.def.uncounterable && !item.uncounterable && !uncounterableSpells(g, item.controller))
+          if (!(c.def.uncounterable||(item.kind==='spell'&&redMastery(g,c))) && !item.uncounterable && !uncounterableSpells(g, item.controller))
             moveCard(g, c, item.alt === 'flashback' ? 'exile' : 'graveyard');
         } else g.stack = g.stack.filter((s) => s.sid !== item.sid);
       }
@@ -373,7 +374,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
         canPayCost(g, item.controller, parseCost(`{${n}}`)) &&
         (yield* yes(g, item.controller, `支付{${n}}以免被反擊？`)) &&
         payCost(g, item.controller, parseCost(`{${n}}`));
-      if (!paid && !c.def.uncounterable && !item.uncounterable && !uncounterableSpells(g, item.controller))
+      if (!paid && !(c.def.uncounterable||(item.kind==='spell'&&redMastery(g,c))) && !item.uncounterable && !uncounterableSpells(g, item.controller))
         moveCard(g, c, ef.action === 'syncopate' || item.alt === 'flashback' ? 'exile' : 'graveyard');
       break;
     }

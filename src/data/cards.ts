@@ -1,3 +1,4 @@
+import { completeModernRed } from './sets/modern-red';
 import { completeModernBurn } from './sets/modern-burn';
 import { completeModernMurktide } from './sets/modern-murktide';
 import { completeModernProwess } from './sets/modern-prowess';
@@ -733,6 +734,7 @@ completeHob();
 completeModernProwess();
 completeModernMurktide();
 completeModernBurn();
+completeModernRed();
 
 export const CARDS: CardDef[] = defs;
 export const BASIC_LANDS = ['plains', 'island', 'swamp', 'mountain', 'forest'];

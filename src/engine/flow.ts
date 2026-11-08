@@ -440,7 +440,7 @@ export function* priorityStep(g: GameState): SubFlow {
             pl.pool=ozai ? [...(pl.pool??[]),...(pl.firePool??[])].map(()=> 'R' as const) : webStatic(g,pl.id,'retainRed').length?(pl.pool??[]).filter(m=>m==='R'):[];
             if(ozai) pl.firePool=[];
             pl.poolNoncreature = [];pl.mshRestricted=[];pl.mkmGossip=[];
-            pl.poolLesson=[];pl.frontierMana=[];pl.foundationPool=(pl.foundationPool??[]).filter(m=>m.keepTurn===g.turn);
+            if(!webStatic(g,pl.id,'retainRed').length)pl.modernArenaMana=0;pl.poolLesson=[];pl.frontierMana=[];pl.foundationPool=(pl.foundationPool??[]).filter(m=>m.keepTurn===g.turn);
           }
           return;
         }
@@ -664,7 +664,7 @@ function* turn(g: GameState): SubFlow {
     p.extraLandsThisTurn = 0;
     p.loyaltyActivatedThisTurn = false;
     p.mountainBonus = false;
-    p.pool = webStatic(g,p.id,'retainRed').length?(p.pool??[]).filter(m=>m==='R'):[];p.frontierMana=[];p.foundationPool=[];p.mkmGossip=[];p.mshRestricted=[];
+    p.pool = webStatic(g,p.id,'retainRed').length?(p.pool??[]).filter(m=>m==='R'):[];if(!webStatic(g,p.id,'retainRed').length)p.modernArenaMana=0;p.frontierMana=[];p.foundationPool=[];p.mkmGossip=[];p.mshRestricted=[];
     const lightning=p.finFlags?.lightningUntil;
     p.finFlags=lightning&&lightning!==a+1?{lightningUntil:lightning}:{};
     p.retainedRed=webStatic(g,p.id,'retainRed').length?(p.retainedRed??[]).filter(m=>m==='R'):[];p.eclRestrictedMana=[];p.eclEntries=[];p.eclCounterPlaced=false;p.eclAttackedMerfolk=0;p.eclMaralenUsed=[];if(p.eclPreventDamageUntil===a)p.eclPreventDamageUntil=undefined;

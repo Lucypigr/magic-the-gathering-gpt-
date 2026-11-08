@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import { webNoCounter } from './web-shire-support';
 import { finalContext, finalLook } from './orbit-final-common';
 import { webAddTypes, webForm, webCopy, webDig, webMillPick } from './web-shire';
@@ -94,7 +95,7 @@ export function* webSpmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             break;
         case 'counterStack': {
             const item = g.stack.find(s => s.sid === ef.n);
-            if (item && !webNoCounter(g) && !item.uncounterable && !g.cards[item.cardId].def.uncounterable) {
+            if (item && !webNoCounter(g) && !item.uncounterable && !(g.cards[item.cardId].def.uncounterable||(item.kind==='spell'&&redMastery(g,g.cards[item.cardId])))) {
                 g.stack = g.stack.filter(s => s.sid !== item.sid);
                 if (item.kind === 'spell')
                     moveCard(g, g.cards[item.cardId], 'graveyard');

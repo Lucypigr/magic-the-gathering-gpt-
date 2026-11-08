@@ -1,3 +1,4 @@
+import { redObserve,redDamage,redEntry,redEntryBlocked } from './modern-red';
 import { burnObserve, burnPrevent } from './modern-burn';
 import { modernRefresh } from './modern-moon';
 import { modernDashEntry } from './modern-murktide';
@@ -229,6 +230,7 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 
 export function emit(g: GameState, ev: GameEvent): void {
   burnObserve(g,ev);
+  redObserve(g,ev);
   if(ev.type==='counterPlaced')orbitRefresh(g);
   if(ev.type==='step'&&ev.step==='endStep')for(const id of g.battlefield){const c=g.cards[id];if(!c.sacAtEnd)continue;c.sacAtEnd=undefined;g.pending.push({source:id,controller:(c.frontierMarks?.orbitTempController?c.frontierMarks.orbitTempController-1:c.controller) as PID,sourceLinkKey:c.tmtLinkKey,abilityIndex:-341,ev,ability:{kind:'trigger',on:'eachEndStep',effects:[{e:'frontier',action:'tdm:tempSac'}]}});}
 
@@ -458,6 +460,8 @@ export function refreshTlaPermanents(g: GameState): void {
 }
 
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
+  if(to==='battlefield'&&redEntryBlocked(g,c))return;
+  if(c.zone==='exile'&&to!=='exile'&&c.modernSuspended){c.modernSuspended=undefined;delete c.eclCounters?.time;}
   if(to==='graveyard'&&c.zone==='battlefield'){const source=webDeathSource(g,c)??g.cards[(c.frontierMarks?.webWolfSource??0)-1];if(source&&isCreature(c)){delete c.frontierMarks?.webWolfSource;to='exile';g.pending.push({source:source.id,controller:source.controller,abilityIndex:-405,ev:{type:'frontier',action:'webHunt',card:c.id,player:source.controller,amount:0},ability:{kind:'trigger',on:'frontierEvent',effects:[{e:'token',token:'tok-wolf'}]}});}}
   let foundationShuffle=false;if(to==='graveyard'){const replacement=foundationGraveReplacement(g,c);if(replacement){to=replacement.to;foundationShuffle=to==='library';if(replacement.link!==undefined)(c.frontierMarks??={}).valgavothLink=replacement.link;}}
   if(c.zone==='battlefield')(c.frontierMarks??={}).lastController=c.controller;
@@ -586,6 +590,7 @@ function returnLinked(g: GameState, sourceId: number): void {
 
 export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped = false, enterAs?: CardDef): void {
   if(c.tokenDeparted)return;
+  if(redEntryBlocked(g,c))return;
   modernRefresh(g,c);
   if((c.def.ecl?.asEnters||webNeedsRiot(g,c,controller))&&!c.eclPrepared && !(c.def.ecl?.asEnters==='shock'&&g.players[controller].isAI)){
     if(!g.eclEntryQueue?.some(e=>e.card===c.id))(g.eclEntryQueue??=[]).push({card:c.id,controller,tapped,enterAs});
@@ -659,6 +664,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   webEntry(g,c,controller,origin);
   modernEntry(c,origin);
   modernDashEntry(g,c,origin);
+  redEntry(g,c,origin);
   const bdDoubles=frontierStatic(g,controller,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length;
   const fd=finalCounterMultiplier(g,c)*2**(frontierStatic(g,controller,'fdn:doubleCounters').length+bdDoubles);if(c.finality)c.finalityCount=fd;if(c.counters>0)c.counters*=fd;if(c.charge)c.charge*=fd;if(c.stun)c.stun*=fd;if(c.hexproofCounters)c.hexproofCounters*=fd;for(const key of Object.keys(c.eclCounters??{}))c.eclCounters![key]*=fd;if(c.impendingTime!==undefined)c.impendingTime=c.eclCounters?.time??c.impendingTime;
   if(c.counters>0)c.counters+=mshStatic(g,c.controller,'extraCounters').length;
@@ -725,6 +731,7 @@ export const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 /** 以背面進戰場（模式雙面牌施放背面、轉化後放回戰場） */
 export function enterBattlefieldBack(g: GameState, c: Card, controller: PID, tapped = false): void {
   if(c.tokenDeparted)return;
+  if(redEntryBlocked(g,c))return;
   const front = c.front ?? c.def;
   if (!front.back) {
     enterBattlefield(g, c, controller, tapped);
@@ -965,6 +972,7 @@ export function dealDamage(
   if ('p' in target) {
     const p = g.players[target.p];
     loseLife(g, target.p, n);
+    if(!opts.combat){redDamage(g,target.p,n);if(src)emit(g,{type:'frontier',action:'modern:red:damage',card:src.id,player:target.p,other:src.zone==='battlefield'?src.controller:srcController,amount:n});}
     if(src&&!opts.combat)emit(g,{type:'frontier',action:'bdDamagePlayer',card:src.id,player:target.p,amount:n});
     if (opts.noLifeGain) p.cantGainLife = true;
     log(g, `${srcName} 對 ${p.name} 造成 ${n} 點傷害（${p.life}）`, srcController, 'damage');

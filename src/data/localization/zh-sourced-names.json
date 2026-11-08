@@ -2818,6 +2818,22 @@
     "stage": 5,
     "released": "2025-06-13"
   },
+  "arena of glory": {
+    "name": "榮光競技場",
+    "sourceName": "Arena of Glory",
+    "originalChinese": "荣光竞技场",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 106539,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "86cbcf48-0410-4eb5-b617-4f72da2f9da1",
+    "set": "PMH3",
+    "number": "215s",
+    "released": "2024-06-14"
+  },
   "ares, god of war": {
     "name": "戰神阿瑞斯",
     "sourceName": "Ares, God of War",
@@ -9469,6 +9485,23 @@
     "number": "76",
     "stage": 5,
     "released": "2026-10-02"
+  },
+  "chandra's incinerator": {
+    "name": "茜卓的焚焰靈",
+    "sourceName": "Chandra's Incinerator",
+    "originalChinese": "茜卓的焚焰灵",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 107264,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "b906cdb4-6a82-4611-abde-43566f9d01eb",
+    "multiverseId": "489134",
+    "set": "M21",
+    "number": "302",
+    "released": "2020-07-03"
   },
   "changeling wayfinder": {
     "name": "探路化形",
@@ -19147,6 +19180,23 @@
     "number": "43",
     "released": "2024-06-14"
   },
+  "exquisite firecraft": {
+    "name": "精巧火術",
+    "sourceName": "Exquisite Firecraft",
+    "originalChinese": "精巧火术",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 56859,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "4f7109a9-9eec-48fe-9081-5a0424f255ce",
+    "multiverseId": "513277",
+    "set": "TSR",
+    "number": "343",
+    "released": "2021-03-19"
+  },
   "extended absence": {
     "name": "長期缺席",
     "sourceName": "Extended Absence",
@@ -25085,6 +25135,22 @@
     "number": "16",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "grafdigger's cage": {
+    "name": "挖墳人囚籠",
+    "sourceName": "Grafdigger's Cage",
+    "originalChinese": "挖坟人囚笼",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 43158,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "84530969-e778-4624-aaad-557450f70539",
+    "set": "PM20",
+    "number": "227p",
+    "released": "2019-07-12"
   },
   "graft surgeon": {
     "name": "接殖醫士",
@@ -48282,6 +48348,23 @@
     "stage": 5,
     "released": "2025-02-14"
   },
+  "rift bolt": {
+    "name": "時縫之雷",
+    "sourceName": "Rift Bolt",
+    "originalChinese": "时缝之雷",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 123916,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "4ccd0ada-92b2-48f3-b5ae-96346fc138b6",
+    "multiverseId": "572779",
+    "set": "2X2",
+    "number": "122",
+    "released": "2022-07-08"
+  },
   "rig for war": {
     "name": "整裝備戰",
     "sourceName": "Rig for War",
@@ -51311,6 +51394,22 @@
     "set": "LCI",
     "number": "323",
     "released": "2023-11-17"
+  },
+  "seal of fire": {
+    "name": "火焰之緘印",
+    "sourceName": "Seal of Fire",
+    "originalChinese": "火焰之缄印",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zht",
+    "declaredSource": "Chinese Traditional",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 96049,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "37eaf1f6-4bdc-4669-9a15-50b65e016ccf",
+    "set": "NEM",
+    "number": "98",
+    "released": "2000-02-14"
   },
   "seam rip": {
     "name": "接縫裂痕",

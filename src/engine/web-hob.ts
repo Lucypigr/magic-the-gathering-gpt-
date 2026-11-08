@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import { finalContext, finalLook } from './orbit-final-common';
 import { webAddTypes, webForm, webDig, webMillPick } from './web-shire';
 import { copiableDefinition, isCreature, isLand, uncounterableSpells, matches, randInt, shuffleArr, stats } from './state';
@@ -186,7 +187,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
         case '56':
             if (t?.zone === 'stack') {
                 const item = g.stack.find(s => s.kind === 'spell' && s.cardId === t.id), permanent = !t.castFace?.types.some(type => type === 'Instant' || type === 'Sorcery') && !t.def.types.some(type => type === 'Instant' || type === 'Sorcery');
-                if (item && !uncounterableSpells(g, item.controller) && !item.uncounterable && !t.def.uncounterable) {
+                if (item && !uncounterableSpells(g, item.controller) && !item.uncounterable && !(t.def.uncounterable||(item.kind==='spell'&&redMastery(g,t)))) {
                     if (permanent) {
                         g.stack = g.stack.filter(s => s !== item);
                         permit(t, Number.MAX_SAFE_INTEGER);

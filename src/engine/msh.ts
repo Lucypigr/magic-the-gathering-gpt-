@@ -1,3 +1,4 @@
+import { redMastery } from './modern-red';
 import {innkeeperMultiplier} from './meadow-support';
 import { canPayCost, payCost } from './actions';
 import { copiableDefinition, isCreature, isLand, matches, newCard, other, shuffleArr, stats } from './state';
@@ -849,7 +850,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
           paid = true;
         } else if (which === 2) paid = payCost(g, item.controller, parseCost('{2}'));
       }
-      if (!paid && !(item.kind === 'spell' && g.cards[item.cardId].def.uncounterable)) {
+      if (!paid && !(item.kind === 'spell' && (g.cards[item.cardId].def.uncounterable||(item.kind==='spell'&&redMastery(g,g.cards[item.cardId]))))) {
         g.stack = g.stack.filter((it) => it.sid !== item.sid);
         if (item.kind === 'spell') moveCard(g, g.cards[item.cardId], 'graveyard');
       }

@@ -963,6 +963,7 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  modernSuspended?:{player:PID;version:number};
   modernMoonBase?: CardDef;
  webArtifactEntry?:boolean;webFoodEntry?:boolean;webTypeDef?:CardDef;webAppliedDef?:CardDef;
  campusLinked?:{id:number;version:number;def:CardDef;power:number;token?:boolean}[];
@@ -1130,6 +1131,7 @@ export interface Card {
 }
 
 export interface Player {
+  modernArenaMana?:number;
  campusSkipTurns?:number;
 
  foundationPool?:{mana:Mana;rule:'room'|'any';keepTurn?:number}[];foundationNoLifeGain?:boolean;foundationLost?:boolean;
@@ -1225,7 +1227,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'modernSpectacle' | 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'modernSuspend' | 'modernSuspended' | 'modernSpectacle' | 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
  bdCounters?:Record<string,number>;
@@ -1376,6 +1378,8 @@ export interface Show {
 }
 
 export interface GameState {
+  modernRed?:{turn:number;damage:[number,number]};
+  modernLastArenaManaSpent?:number;
   modernBurn?: {
     landTurns: [number, number]; noGainTurns: [number, number]; noPreventTurn: number;
     palms: { source: number; chosen: number; player: PID; turn: number; version: number; link?: number; fromStack: boolean }[];
