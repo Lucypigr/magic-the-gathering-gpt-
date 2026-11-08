@@ -44,7 +44,7 @@ try {
     translatedRows: rows.filter(r => r.sourced).length,
     unresolved: rows.filter(r => !r.sourced).map(r => ({ id: r.id, name: r.english })),
     counts: Object.fromEntries(['published', 'database', 'terminology'].map(k => [k, rows.filter(r => r.kind === k).length])),
-    bySet, databaseRelease: dbSource.release, sourceArchiveSha256: dbSource.archiveSha256,
+    bySet, databaseReleases: [...new Set(rows.map(r=>r.sourceUrl.match(/releases\/tag\/(data-[^/]+)$/)?.[1]).filter(Boolean))].sort(), databaseRelease: dbSource.release, sourceArchiveSha256: dbSource.archiveSha256,
   };
   const importedNames = [...new Set(netdecks.decks.flatMap(d => [...d.main, ...d.side].map(([, name]) => name)))];
   summary.importedDeckNames = importedNames.length;
@@ -64,7 +64,7 @@ try {
     '| --- | ---: | ---: | ---: | ---: | ---: |',
     ...Object.entries(bySet).map(([set, n]) => `| ${set} | ${n.cards} | ${n.translated} | ${n.published} | ${n.database} | ${n.terminology} |`), '',
     '完整清單：[逐卡及逐面 CSV](card-name-audit.csv)；[統計 JSON](card-name-audit.json)。CSV 保留英文、中文、卡片 ID、系列、來源分類、資料檔行號與來源識別碼。', '',
-    `來源：[MTGJSON 印刷資料](https://github.com/${printSource.repository}/tree/${printSource.revision}/${printSource.directory})及 [MTGZH 中文卡庫公開快照](${dbSource.releaseUrl})。`, '',
+    `來源：[MTGJSON 印刷資料](https://github.com/${printSource.repository}/tree/${printSource.revision}/${printSource.directory})及 MTGZH 中文卡庫公開快照：${summary.databaseReleases.map(r=>`[${r}](https://github.com/${dbSource.repository}/releases/tag/${r})`).join("、")}。`, '',
     '這是程式逐筆比對英文身份、牌面與卡庫紀錄，不宣稱逐張人工訪問官網。已有的繁體出版名稱優先；簡體來源只轉為繁體字。MTGZH、MTGso 及來源未細分的卡庫名稱均保留其性質，不當成官方印刷譯名。標示 GPT/AI 的名稱與未審定 stage 0 名稱不採用。', '',
     '房間兩門分別對照後才組合。同名的兩種 Chandra Emblem 依遊戲 ID 分別對應抓牌徽記與5點傷害徽記；御火士兵、御火龍及 Role 的遊戲別名對照保存在 scripts/localization/name-aliases.json。衍生物術語對照另標示，沒有冒充同名印刷卡。', '',
     '英文原名、卡圖及卡片機制不變。每次新增卡片後重新生成此報告，不能沿用舊的完成率。', '',

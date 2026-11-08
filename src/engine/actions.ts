@@ -48,7 +48,7 @@ import type {
   TargetRef,
   TargetSpec,
 } from './types';
-import { putMinusCounters, bend, tapCard, discard, discardMany, emit, enterBattlefield, loseLife, moveCard, removeFromZone, sacrifice } from './zones';
+import { dealDamage, putMinusCounters, bend, tapCard, discard, discardMany, emit, enterBattlefield, loseLife, moveCard, removeFromZone, sacrifice } from './zones';
 import { faceDownDef, turnFaceUp } from './facedown';
 
 // ------------------------------------------------------------
@@ -88,7 +88,7 @@ export function manaSources(g: GameState, pid: PID, exclude?: number, convoke = 
     if (cr && c.sick && !hasKw(g, c, 'haste')&&!mshStatic(g,pid,'activateHaste').length) continue;
     if (c.def.chosenColorMana && !c.chosenColor) continue;
     if(c.def.id==='freya-crescent'&&(!forDef||!(forDef.eclAbilityPayment?forDef.fin?.equipment==='equipPayment':forDef.subtypes?.includes('Equipment'))))continue;
-    out.push({ id, produces: (c.def.id==='intrepid-stablemaster'&&forDef&&!forDef.eclAbilityPayment&&forDef.subtypes?.some(s=>s==='Mount'||s==='Vehicle'))||(c.def.id==='bucolic-ranch'&&forDef&&!forDef.eclAbilityPayment&&forDef.subtypes?.includes('Mount'))?['W','U','B','R','G']:c.def.id==='arc-reactor'?['C']:(mshStatic(g,pid,'conditionalDual').some(s=>s.id===c.id)&&c.enteredTurn!==g.turn&&!g.battlefield.some(id=>g.cards[id].controller===pid&&g.cards[id].def.supertypes?.includes('Basic')))?['C']:(isLand(c)&&mkmStatic(g,pid,'guildpact').length)?['W','U','B','R','G']:(c.def.id==='jasmine-dragon-tea-shop' && forDef?.subtypes?.includes('Ally')) || (c.def.id==='white-lotus-hideout' && forDef?.subtypes?.some(s=>s==='Lesson'||s==='Shrine')) || (c.def.id==='turtle-lair'&&forDef?.subtypes?.some(s=>s==='Ninja'||s==='Turtle')) ? ['C','W','U','B','R','G'] : c.def.id==='eclipsed-realms'&&forDef&&!forDef.eclAbilityPayment&&c.eclType&&matchesDefSubtype(forDef,c.eclType)?['C','W','U','B','R','G']:c.def.chosenColorMana && c.chosenColor ? [c.chosenColor] : c.def.produces, isCreature: cr, sac: c.def.sacOnMana, filter: c.def.filterMana, pain: c.def.painMana });
+    out.push({ id, produces: (c.def.id==='intrepid-stablemaster'&&forDef&&!forDef.eclAbilityPayment&&forDef.subtypes?.some(s=>s==='Mount'||s==='Vehicle'))||(c.def.id==='bucolic-ranch'&&forDef&&!forDef.eclAbilityPayment&&forDef.subtypes?.includes('Mount'))?['W','U','B','R','G']:c.def.id==='arc-reactor'?['C']:(mshStatic(g,pid,'conditionalDual').some(s=>s.id===c.id)&&c.enteredTurn!==g.turn&&!g.battlefield.some(id=>g.cards[id].controller===pid&&g.cards[id].def.supertypes?.includes('Basic')))?['C']:(isLand(c)&&mkmStatic(g,pid,'guildpact').length)?['W','U','B','R','G']:(c.def.id==='jasmine-dragon-tea-shop' && forDef?.subtypes?.includes('Ally')) || (c.def.id==='white-lotus-hideout' && forDef?.subtypes?.some(s=>s==='Lesson'||s==='Shrine')) || (c.def.id==='turtle-lair'&&forDef?.subtypes?.some(s=>s==='Ninja'||s==='Turtle')) ? ['C','W','U','B','R','G'] : c.def.id==='eclipsed-realms'&&forDef&&!forDef.eclAbilityPayment&&c.eclType&&matchesDefSubtype(forDef,c.eclType)?['C','W','U','B','R','G']:c.def.chosenColorMana && c.chosenColor ? [c.chosenColor] : c.def.produces, isCreature: cr, sac: c.def.sacOnMana, filter: c.def.filterMana, pain: c.def.painMana, selfDamage: c.def.meadow?.modernBarbarianMana ? 1 : undefined });
     // 「{T}：加{C}{C}」（艾姆庫的放逐能力）
     if (c.bonusMana !== undefined && g.cards[c.bonusMana]?.zone === 'exile') out.push({ id: -100000 - id, produces: ['C'], isCreature: false, extra: true });
     // 「每當你為山脈橫置來產生法術力時，額外加一點{R}」
@@ -141,14 +141,18 @@ export function extraLandDrops(g: GameState, pid: PID): number {
 function paymentWithWater(g: GameState, pid: PID, cost: ManaCost, exclude?: number, convoke=false, forDef?: CardDef, fromHand=false, water=forDef?.waterbend ?? 0) {
   const sources=manaSources(g,pid,exclude,convoke,forDef,fromHand);
   const first=findPayment(cost,sources); if(!first) return null;
-  if(!water) return first;
+  const lifeAffordable=(payment: typeof first)=>{
+    const n=new Set(payment.filter(p=>p.id>=0&&p.mana!=='C'&&sources.find(s=>s.id===p.id)?.pain).map(p=>p.id)).size;
+    return n===0||n<=g.players[pid].life+(frontierStatic(g,pid,'ashiokLife').length?g.players[pid].library.length:0);
+  };
+  if(!water) return lifeAffordable(first)?first:null;
   const used=new Set(first.map(p=>p.id));
   for(const p of first)if(p.id<=-400000)used.add(Math.floor((-400000-p.id)/1000));
   const helpers: ManaSource[]=g.battlefield.map(id=>g.cards[id]).filter(c=>c.controller===pid && !c.tapped && c.id!==exclude && !used.has(c.id) && (isCreature(c)||c.def.types.includes('Artifact'))).map(c=>({id:-300000-c.id,produces:['C'],isCreature:false}));
   const ids=new Set(helpers.map(s=>-300000-s.id));
   const remaining=sources.filter(s=>!used.has(s.id)&&!ids.has(s.id));
   const second=findPayment(parseCost(`{${water}}`),[...helpers,...remaining]);
-  return second ? [...first,...second] : null;
+  return second && lifeAffordable([...first,...second]) ? [...first,...second] : null;
 }
 
 export function canPayCost(g: GameState, pid: PID, cost: ManaCost, exclude?: number, convoke = false, forDef?: CardDef, fromHand = false, water = forDef?.waterbend ?? 0): boolean {
@@ -169,7 +173,8 @@ export function payCost(g: GameState, pid: PID, cost: ManaCost, exclude?: number
   const paidLands=new Set([...pay.filter(p=>p.id>=0&&(isLand(g.cards[p.id])||g.cards[p.id].def.id==='arc-reactor'||g.cards[p.id].def.id==='troyan-gutsy-explorer'||g.cards[p.id].def.id==='intrepid-stablemaster'||g.cards[p.id].token&&g.cards[p.id].def.types.includes('Artifact'))).map(p=>p.id),...bonusLandIds]);
   for(const id of paidLands){const store=(mana:import('./types').Mana)=>{const key=g.cards[id].def.id;if(key==='intrepid-stablemaster'||key==='troyan-gutsy-explorer')(g.players[pid].frontierMana??=[]).push({mana,rule:key==='intrepid-stablemaster'?'mountVehicle':'bigSpell'});else(g.players[pid].pool??=[]).push(mana);};const extras=landManaExtras(g,g.cards[id],forDef),parent=normalSources.find(s=>s.id===id);const usedBonus=pay.find(p=>normalSources.find(s=>s.id===p.id)?.matchManaOf===id);const color=pay.find(p=>p.id===id)?.mana??usedBonus?.mana??parent?.produces[0]??'C';for(let k=0;k<extras.length;k++)if((!extras[k].requires||color===extras[k].requires)&&!pay.some(p=>p.id===-400000-id*1000-k))store(extras[k].matches?color:extras[k][0]);if(extras.length&&!pay.some(p=>p.id===id))store(color);}
 
-  for (const p of pay) if (p.id >= 0 && g.cards[p.id].def.painMana && p.mana !== 'C') loseLife(g, pid, 1);
+  for (const p of pay) if (p.id >= 0 && normalSources.find(s=>s.id===p.id)?.pain && p.mana !== 'C') frontierPayLife(g, pid, 1);
+  for (const p of pay) { const damage=normalSources.find(s=>s.id===p.id)?.selfDamage; if(p.id>=0&&damage)dealDamage(g,g.cards[p.id],pid,{p:pid},damage); }
   for (const p of pay) if (p.id >= 0 && g.cards[p.id].def.sacOnMana) sacrifice(g, g.cards[p.id]);
   // 用掉的法術力池
   const usedPool = new Set(pay.filter((p) => p.id <= -1000 && p.id > -2000).map((p) => -1000 - p.id));
@@ -242,6 +247,7 @@ export function castDef(def: CardDef, alt?: CastAlt): CardDef {
   else if(alt==='bargain')d={...def,cost:costToString(reduceCost(parseCost(def.cost),parseCost('{'+(def.frontier?.bargainDiscount??0)+'}')))};
   else if(alt==='teamwork')d={...def,spell:def.msh?.teamworkSpell??def.spell};
   else if(alt==='evidenceFree')d={...def,cost:''};
+  else if(alt==='modernSpectacle')d={...def,cost:String(def.meadow?.modernSpectacle)};
   else if(alt==='modernPitch')d={...def,cost:'{0}'};
   else if(alt==='modernDash')d={...def,cost:String(def.meadow?.modernDash)};
   else if(alt==='evoke'&&def.evoke)d={...def,cost:def.evoke};
@@ -356,6 +362,7 @@ function baseCastAlts(g: GameState, pid: PID, c: Card): (CastAlt | undefined)[] 
     if(def.evoke&&(!def.meadow?.modernPitch||modernPitchChoices(g,pid,c).length))base.push('evoke');
     if(def.meadow?.modernPitch&&!def.evoke&&g.active!==pid&&modernPitchChoices(g,pid,c).length)base.push('modernPitch');
     if(def.meadow?.modernDash)base.push('modernDash');
+    if(def.meadow?.modernSpectacle&&g.players[pid === 0 ? 1 : 0].lifeLostThisTurn>0)base.push('modernSpectacle');
     if (def.disguise) base.push('disguise');
     if(!isLand(c)&&isCreature(c)&&mshFlags(g,pid).freeRG&&colorsOf(def).some(c=>c==='R'||c==='G'))base.push('free');
     if (!isLand(c) && freeCastAllowed(g, pid, c)) base.push('free');
@@ -964,7 +971,7 @@ function castOptionsAs(g: GameState, pid: PID, c: Card, alt: CastAlt | undefined
       effects: spellEffects(def, mode),
       maxX: def.meadow?.campusLifeX?g.players[pid].life:def.id==='doppelgang'||alt === 'plotted' || alt === 'disguise' ? undefined : maxXFor(g, pid, c, mode, alt),
       label:
-        alt==='modernPitch'?`放逐另一張藍色手牌：${name}`:alt==='modernDash'?`疾奔 ${def.cost}：${name}`:alt==='modernLife'?`支付2點生命：${name}`:alt==='web'||alt==='webGranted'?`蛛絲甩蕩 ${def.cost}：${name}（收回已橫置的己方生物）`:alt==='webLife'?`支付${manaValue(c.def)}生命施放 ${name}`:alt==='webGraveDiscard'?`額外棄一張牌：從墳墓場施放 ${name}`:alt==='webDiscard'?`額外棄一張牌施放 ${name}`:alt==='webSac'?`額外犧牲神器或生物施放 ${name}`:alt==='titaniaMana'?`另付{2}施放：${name}`:alt==='teamwork'?`Teamwork ${def.msh?.teamwork}：${def.spell?.modes?.[m]?.text??name}`:def.ecl?.variableTargets?`選${m}個目標：${name}`:alt==='evidence'?`蒐證${def.mkm?.optionalEvidence}：${name}`:alt==='evidenceFree'?`蒐證10取代法力費用：${name}`:alt==='evoke'?`呼魂 ${def.cost}：${name}`:(alt==='sneak'||alt==='sneakGranted') ? `潛行 ${def.cost}：收回未被阻擋的攻擊者` : alt === 'adventure'
+        alt==='modernSpectacle'?`歡慶 ${def.cost}：${name}`:alt==='modernPitch'?`放逐另一張藍色手牌：${name}`:alt==='modernDash'?`疾奔 ${def.cost}：${name}`:alt==='modernLife'?`支付2點生命：${name}`:alt==='web'||alt==='webGranted'?`蛛絲甩蕩 ${def.cost}：${name}（收回已橫置的己方生物）`:alt==='webLife'?`支付${manaValue(c.def)}生命施放 ${name}`:alt==='webGraveDiscard'?`額外棄一張牌：從墳墓場施放 ${name}`:alt==='webDiscard'?`額外棄一張牌施放 ${name}`:alt==='webSac'?`額外犧牲神器或生物施放 ${name}`:alt==='titaniaMana'?`另付{2}施放：${name}`:alt==='teamwork'?`Teamwork ${def.msh?.teamwork}：${def.spell?.modes?.[m]?.text??name}`:def.ecl?.variableTargets?`選${m}個目標：${name}`:alt==='evidence'?`蒐證${def.mkm?.optionalEvidence}：${name}`:alt==='evidenceFree'?`蒐證10取代法力費用：${name}`:alt==='evoke'?`呼魂 ${def.cost}：${name}`:(alt==='sneak'||alt==='sneakGranted') ? `潛行 ${def.cost}：收回未被阻擋的攻擊者` : alt === 'adventure'
           ? `${c.def.mkm?.split?'施放另一半':c.def.meadow?.orbitOmen?'預兆':'冒險'}：${name}`
           : alt === 'flashback'
             ? `返照：${name}`
@@ -1346,7 +1353,7 @@ function doCast(g: GameState, pid: PID, a: Extract<PriorityAction, { type: 'cast
     c.def = def;
   }
   c.zone = 'stack';
-  c.castFace=def.meadow?.modernBatch&&['flashback','modernPitch','modernDash','evoke'].includes(alt??'')?{...def,cost:c.def.cost}:def;
+  c.castFace=def.meadow?.modernBatch&&['flashback','modernPitch','modernDash','modernSpectacle','evoke'].includes(alt??'')?{...def,cost:c.def.cost}:def;
   c.objectVersion=(c.objectVersion??0)+1;
   c.controller = pid;
   c.playableTurn = undefined;

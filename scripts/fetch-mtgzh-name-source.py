@@ -6,7 +6,7 @@ import sys
 import tarfile
 import urllib.request
 
-spec = json.loads(Path('scripts/localization/mtgzh-name-source.json').read_text())
+spec = json.loads(Path(sys.argv[2] if len(sys.argv) > 2 else 'scripts/localization/mtgzh-name-source.json').read_text())
 destination = Path(sys.argv[1] if len(sys.argv) > 1 else '/tmp/mtgzh-name-source')
 destination.mkdir(parents=True, exist_ok=True)
 

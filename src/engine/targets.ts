@@ -130,6 +130,20 @@ export function isLegalTarget(
   return legalTargets(g, spec, controller, sourceId).some((x) => sameTarget(x, t));
 }
 
+/** Related targets remain independently legal; use LKI if the referenced permanent left. */
+export function targetControllerMatches(g: GameState, spec: TargetSpec, t: TargetRef, chosen: (TargetRef | null)[]): boolean {
+  if(spec.sameControllerAs === undefined) return true;
+  const previous = chosen[spec.sameControllerAs];
+  if(!previous) return true;
+  const controller = (ref: TargetRef): PID => 'p' in ref ? ref.p : g.cards[ref.c].zone === 'battlefield' ? g.cards[ref.c].controller : (g.cards[ref.c].frontierMarks?.lastController ?? g.cards[ref.c].owner) as PID;
+  return controller(previous) === controller(t);
+}
+export function targetRelationPossible(g: GameState, specs: TargetSpec[], index: number, t: TargetRef, chosen: (TargetRef | null)[], p: PID, source?: number): boolean {
+  if(!targetControllerMatches(g,specs[index],t,chosen)) return false;
+  const next=[...chosen];next[index]=t;
+  return specs.every((s,j)=>j<=index||s.sameControllerAs!==index||legalTargets(g,s,p,source).some(c=>targetControllerMatches(g,s,c,next)));
+}
+
 /** 驗證一組目標；回傳錯誤訊息或 null */
 export function validateTargets(
   g: GameState,
@@ -145,6 +159,7 @@ export function validateTargets(
       if (!specs[i].optional) return '請選擇目標';
       continue;
     }
+    if (!targetControllerMatches(g,specs[i],t,ts)) return '目標必須由指定玩家或鵬洛客的操控者操控';
     if (!isLegalTarget(g, specs[i], t, controller, sourceId)) return '目標不合法';
     if(specs[i].differentFrom!==undefined&&sameTarget(ts[specs[i].differentFrom!]??null,t))return '必須選不同的目標';
     const graveIndex=specs[i].sameGraveyardAs,graveTarget=graveIndex!==undefined?ts[graveIndex]:null;if(graveTarget&&'c'in graveTarget&&'c'in t&&g.cards[graveTarget.c].owner!==g.cards[t.c].owner)return '必須選同一墳墓場的牌';if(graveTarget&&'p'in graveTarget&&'c'in t&&graveTarget.p!==g.cards[t.c].owner)return '必須選指定玩家墳墓場的牌';
@@ -164,7 +179,7 @@ export function validateTargets(
 
 /** 每個必選目標是否都至少有一個合法選項 */
 export function hasTargetsAvailable(g: GameState, specs: TargetSpec[], controller: PID, sourceId?: number): boolean {
-  return specs.every((s) => s.optional || legalTargets(g, s, controller, sourceId).length > 0);
+  return specs.every((s, i) => s.optional || legalTargets(g, s, controller, sourceId).some(t=>targetRelationPossible(g,specs,i,t,[],controller,sourceId)));
 }
 
 /** An Aura entering without being cast chooses a legal host; this does not target. */

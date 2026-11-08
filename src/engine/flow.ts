@@ -18,6 +18,7 @@ import {refreshFinLands} from './fin-support';
 import {colorsOf} from './mana';
 import {resolveEclEntries} from './ecl';
 import {beholdOptions,canReceiveCounters,counterKinds,vividColors} from './ecl-support';
+import { burnCleanup } from './modern-burn';
 import { modernPitchChoices, canPayCost, abilitiesFor, frontierStackChoices,castDef,spellCost,canActivate, crewChoice,finStackChoices, performAction, sacChoices } from './actions';
 import {
   attackCandidates,
@@ -43,7 +44,7 @@ import {
   shuffleArr,
   stats,matches,
 } from './state';
-import { hasTargetsAvailable, isLegalTarget, legalTargets, validateTargets } from './targets';
+import { targetControllerMatches, hasTargetsAvailable, isLegalTarget, legalTargets, validateTargets } from './targets';
 import type { Card, Effect, Flow, GameState, PID, Response, SubFlow, TargetRef, TargetSpec } from './types';
 import { addLore, discard, drawCards, emit, enterBattlefield, enterBattlefieldBack, moveCard,  putIntoGraveyard, sacrifice } from './zones';
 
@@ -321,7 +322,7 @@ function* resolveTopItem(g: GameState): SubFlow {
   if(item.frontierStackSids?.length&&item.frontierStackSids.every(id=>!g.stack.some(s=>s.sid===id))&&!item.targets.some(Boolean)){if(item.kind==='spell'&&src.zone==='stack')moveCard(g,src,'graveyard');return;}
   const hadTargets = item.targets.some((t) => !!t);
   const legal = item.targets.map((t, i) =>
-    t && specs[i] && (item.targetVersions?.[i]===undefined || !('c' in t) || item.targetVersions[i]===(g.cards[t.c]?.objectVersion??0)) && isLegalTarget(g, specs[i], t, item.controller, item.cardId) ? t : null,
+    t && specs[i] && (item.targetVersions?.[i]===undefined || !('c' in t) || item.targetVersions[i]===(g.cards[t.c]?.objectVersion??0)) && isLegalTarget(g, specs[i], t, item.controller, item.cardId) && targetControllerMatches(g,specs[i],t,item.targets) ? t : null,
   );
   if (hadTargets && legal.every((t) => !t)) {
     log(g, `${cardName(src)} 因目標不合法而無效`, item.controller);
@@ -794,6 +795,7 @@ function* turn(g: GameState): SubFlow {
     }
   }
   g.eot = g.eot.filter((e) => e.until !== undefined);
+  burnCleanup(g);
   for(const c of Object.values(g.cards)){const permission=c.eclCast;if(permission&&((permission.until!==undefined&&permission.until<=g.turn)||(permission.by===a&&permission.nextTurn!==undefined&&permission.nextTurn<=(g.players[a].eclTurnCount??0))))c.eclCast=undefined;}
   // 清除階段若有觸發，再給一次優先權
   if (g.pending.length) yield* priorityStep(g);

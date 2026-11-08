@@ -6,6 +6,7 @@ import { displayName, publishedChineseName, sourcedChineseName, setCardLanguage 
 import entries from '../src/data/localization/zh-sourced-names.json';
 import overrides from '../src/data/localization/zh-token-name-overrides.json';
 import manifest from '../scripts/localization/mtgzh-name-source.json';
+import burnManifest from '../scripts/localization/modern-burn-source.json';
 import netdecks from '../public/netdecks.json';
 import { CardDetail, ImagesEnabled } from '../src/ui/CardView';
 import { matchFilter } from '../src/ui/DeckBuilder';
@@ -91,11 +92,14 @@ describe('full pool Chinese name source matching', () => {
   });
 
   it('retains source row identifiers and excludes explicitly AI-tagged names', () => {
-    const files: Record<string, string> = manifest.files;
+    const manifests = new Map([manifest, burnManifest].map(m => [m.releaseUrl, m]));
     for (const row of [...Object.values(entries), ...Object.values(overrides)]) {
       expect(row.sourceLine).toBeGreaterThan(0);
+      const source = manifests.get(row.sourceUrl);
+      expect(source, row.sourceUrl).toBeDefined();
+      const files: Record<string,string> = source!.files;
       expect(files[row.sourceFile]).toMatch(/^[0-9a-f]{64}$/);
-      expect(row.sourceUrl).toBe(manifest.releaseUrl);
+      expect(source!.archiveSha256).toMatch(/^[0-9a-f]{64}$/);
       expect(row.originalChinese).toMatch(/[\u3400-\u9fff]/);
       expect(row.declaredSource).not.toMatch(/gpt|chatgpt|gemini|claude|(?:^|[^a-z])ai(?:[^a-z]|$)/i);
     }

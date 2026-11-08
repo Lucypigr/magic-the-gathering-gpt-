@@ -1,3 +1,4 @@
+import { burnObserve, burnPrevent } from './modern-burn';
 import { modernRefresh } from './modern-moon';
 import { modernDashEntry } from './modern-murktide';
 import { modernEntry } from './modern';
@@ -227,6 +228,7 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 }
 
 export function emit(g: GameState, ev: GameEvent): void {
+  burnObserve(g,ev);
   if(ev.type==='counterPlaced')orbitRefresh(g);
   if(ev.type==='step'&&ev.step==='endStep')for(const id of g.battlefield){const c=g.cards[id];if(!c.sacAtEnd)continue;c.sacAtEnd=undefined;g.pending.push({source:id,controller:(c.frontierMarks?.orbitTempController?c.frontierMarks.orbitTempController-1:c.controller) as PID,sourceLinkKey:c.tmtLinkKey,abilityIndex:-341,ev,ability:{kind:'trigger',on:'eachEndStep',effects:[{e:'frontier',action:'tdm:tempSac'}]}});}
 
@@ -872,7 +874,7 @@ export function gainLife(g: GameState, pid: PID, n: number): void {
   if(g.battlefield.some(id=>g.cards[id].def.id==='mornsong-aria'&&!abilitiesSuppressed(g,g.cards[id])))return;
   if(g.battlefield.some(id=>g.cards[id].attachedToPlayer===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='dsk:woundNoLife')))return;
   if(frontierStatic(g,0,'blb:sunspine').length||frontierStatic(g,1,'blb:sunspine').length)return;
-  if (p.cantGainLife||p.foundationNoLifeGain||frontierStatic(g,0,'fdn:noLifeGain').length||frontierStatic(g,1,'fdn:noLifeGain').length) return;
+  if (g.modernBurn?.noGainTurns[pid]===g.turn||p.cantGainLife||p.foundationNoLifeGain||frontierStatic(g,0,'fdn:noLifeGain').length||frontierStatic(g,1,'fdn:noLifeGain').length) return;
   n += lifegainBonus(g, pid);
   n*=2**finStatic(g,pid,'doubleLife').length;
   p.life += n;
@@ -909,7 +911,7 @@ export function dealDamage(
 ): number {
   if (n <= 0) return 0;
   if('p'in target){const redirect=webRedirect(g,target.p);if(redirect)target={c:redirect.id};}
-  const noPrevent=webNoPrevent(g)||meadowNoPrevent(g)||!!opts.combat&&([...finalStatic(g,0,'combatNoPrevent'),...finalStatic(g,1,'combatNoPrevent')].length>0);
+  const noPrevent=g.modernBurn?.noPreventTurn===g.turn||webNoPrevent(g)||meadowNoPrevent(g)||!!opts.combat&&([...finalStatic(g,0,'combatNoPrevent'),...finalStatic(g,1,'combatNoPrevent')].length>0);
   if(!opts.combat&&src&&colorsOf(src.def).includes('R')&&'p'in target&&target.p!==srcController)for(const axonil of frontierStatic(g,srcController,'lci:axonil'))n=Math.max(n,stats(g,axonil).p);
   const cpVictim='c'in target?g.cards[target.c]:undefined,cpRemaining=cpVictim&&isCreature(cpVictim)?Math.max(0,stats(g,cpVictim).t-cpVictim.damage):Infinity;
   if(src&&matches(g,{sub:['Lizard','Mouse','Otter','Raccoon']},src,srcController))n+=frontierStatic(g,srcController,'blb:flamecaller').length;
@@ -942,12 +944,12 @@ export function dealDamage(
       }
     }
   }
-  if('c'in target){const c=g.cards[target.c];if(!noPrevent&&c&&mshStatic(g,c.controller,'preventSelfDamage').some(s=>s.id===c.id))return 0;if(!noPrevent&&c&&(c.eclCounters?.shield??0)>0){c.eclCounters!.shield--;return 0;}if(c?.def.id==='wolverine-fierce-fighter'&&!abilitiesSuppressed(g,c)){c.damage=0;c.dtDamage=false;}}
+  if('c'in target){const c=g.cards[target.c];if(!noPrevent&&c&&mshStatic(g,c.controller,'preventSelfDamage').some(s=>s.id===c.id))return 0;if(c&&(c.eclCounters?.shield??0)>0){c.eclCounters!.shield--;if(!noPrevent)return 0;}if(c?.def.id==='wolverine-fierce-fighter'&&!abilitiesSuppressed(g,c)){c.damage=0;c.dtDamage=false;}}
   if(!opts.combat){const controller='p'in target?target.p:g.cards[target.c]?.controller;if(controller!==undefined&&controller!==srcController)for(const s of mshStatic(g,srcController,'hawkeyeDamage'))n+=stats(g,s).p;}
   if(src)for(const id of g.battlefield){const eq=g.cards[id];if(eq.attachedTo===src.id&&abilitiesOf(g,eq).some(a=>a.kind==='static'&&a.msh==='doubleEquippedDamage'))n*=2;}
   const victim='p' in target?target.p:g.cards[target.c]?.controller;
   if(victim!==undefined && victim!==srcController)for(const id of g.battlefield){const s=g.cards[id];if(s.controller===srcController&&s.def.id==='fated-firepower'&&!abilitiesSuppressed(g,s))n+=s.charge??0;}
-  const foundationResult=foundationDamage(g,src,srcController,target,n,!!opts.combat);n=foundationResult.n;if(foundationResult.mill){for(const id of g.players[other(srcController)].library.slice(0,foundationResult.mill))moveCard(g,g.cards[id],'graveyard');}if(n<=0)return 0;
+  const foundationResult=foundationDamage(g,src,srcController,target,n,!!opts.combat,noPrevent);n=foundationResult.n;if(foundationResult.mill){for(const id of g.players[other(srcController)].library.slice(0,foundationResult.mill))moveCard(g,g.cards[id],'graveyard');}if(n<=0)return 0;
   const kws = src ? (src.zone === 'battlefield' ? stats(g, src).kw : new Set(cardDefinition(src).keywords ?? [])) : new Set();
   if(src?.def.subtypes?.some(s=>s==='Noble'||s==='Lesson')&&g.battlefield.some(id=>g.cards[id].controller===srcController&&g.cards[id].def.id==='lo-and-li-twin-tutors'&&!abilitiesSuppressed(g,g.cards[id])))kws.add('lifelink');
   if(src?.spellWitherTurn===g.turn)kws.add('wither');
@@ -958,6 +960,7 @@ export function dealDamage(
   if(!noPrevent&&webPrevent(g,src,'c'in target?g.cards[target.c]:undefined,n)){if('c'in target&&g.cards[target.c]?.def.abilities?.some(a=>a.kind==='static'&&a.frontier==='spm:final:antivenom'))putCounters(g,g.cards[target.c],n);return 0;}
   if(!noPrevent&&'c'in target&&src&&finalProtected(g,g.cards[target.c],colorsOf(src.castFace??src.def)))return 0;
   if(!noPrevent&&'p'in target&&finalPreventDamage(g,src??undefined,srcController,target.p,n))return 0;
+  if(!noPrevent&&burnPrevent(g,src,srcController,target,n))return 0;
   if(src&&n>0){(src.frontierMarks??={}).finalDealtEver=1;if(g.webActive)emit(g,{type:'frontier',action:'webDealt',card:src.id,player:srcController,other:'c'in target?target.c:undefined,webVersion:'c'in target?g.cards[target.c]?.objectVersion:undefined,amount:n});}
   if ('p' in target) {
     const p = g.players[target.p];

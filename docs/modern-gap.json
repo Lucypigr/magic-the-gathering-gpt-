@@ -1,19 +1,19 @@
 {
   "summary": {
-    "registryDefinitions": 5254,
+    "registryDefinitions": 5266,
     "allProducts": 118,
     "primarySets": 107,
     "completePrimarySets": 18,
     "incompletePrimarySets": 89,
     "zeroCoveragePrimarySets": 4,
     "modernLegalNames": 22708,
-    "availableModernNames": 5251,
-    "missingModernNames": 17457,
+    "availableModernNames": 5263,
+    "missingModernNames": 17445,
     "sampleDecks": 50,
     "legalSampleDecks": 50,
-    "completeMainDecks": 4,
-    "complete75Decks": 4,
-    "sampleMissingNames": 359,
+    "completeMainDecks": 5,
+    "complete75Decks": 5,
+    "sampleMissingNames": 347,
     "snapshotDate": "2026-10-23",
     "deckFileDate": "2026-10-17"
   },
@@ -72,10 +72,10 @@
       "type": "expansion",
       "date": "2004-10-01",
       "count": 286,
-      "available": 3,
-      "missing": 283,
+      "available": 4,
+      "missing": 282,
       "modernLegal": 289,
-      "modernAvailable": 8,
+      "modernAvailable": 9,
       "primary": true
     },
     {
@@ -252,10 +252,10 @@
       "type": "expansion",
       "date": "2008-05-02",
       "count": 281,
-      "available": 1,
-      "missing": 280,
+      "available": 2,
+      "missing": 279,
       "modernLegal": 286,
-      "modernAvailable": 6,
+      "modernAvailable": 7,
       "primary": true
     },
     {
@@ -324,10 +324,10 @@
       "type": "expansion",
       "date": "2009-10-02",
       "count": 229,
-      "available": 15,
-      "missing": 214,
+      "available": 16,
+      "missing": 213,
       "modernLegal": 233,
-      "modernAvailable": 20,
+      "modernAvailable": 21,
       "primary": true
     },
     {
@@ -336,10 +336,10 @@
       "type": "expansion",
       "date": "2010-02-05",
       "count": 145,
-      "available": 4,
-      "missing": 141,
+      "available": 5,
+      "missing": 140,
       "modernLegal": 144,
-      "modernAvailable": 4,
+      "modernAvailable": 5,
       "primary": true
     },
     {
@@ -492,10 +492,10 @@
       "type": "expansion",
       "date": "2013-02-01",
       "count": 249,
-      "available": 17,
-      "missing": 232,
+      "available": 18,
+      "missing": 231,
       "modernLegal": 249,
-      "modernAvailable": 17,
+      "modernAvailable": 18,
       "primary": true
     },
     {
@@ -516,10 +516,10 @@
       "type": "masters",
       "date": "2013-06-07",
       "count": 229,
-      "available": 11,
-      "missing": 218,
+      "available": 12,
+      "missing": 217,
       "modernLegal": 228,
-      "modernAvailable": 11,
+      "modernAvailable": 12,
       "primary": false
     },
     {
@@ -552,10 +552,10 @@
       "type": "expansion",
       "date": "2014-02-07",
       "count": 165,
-      "available": 5,
-      "missing": 160,
+      "available": 6,
+      "missing": 159,
       "modernLegal": 165,
-      "modernAvailable": 5,
+      "modernAvailable": 6,
       "primary": true
     },
     {
@@ -564,10 +564,10 @@
       "type": "expansion",
       "date": "2014-05-02",
       "count": 165,
-      "available": 5,
-      "missing": 160,
+      "available": 6,
+      "missing": 159,
       "modernLegal": 165,
-      "modernAvailable": 5,
+      "modernAvailable": 6,
       "primary": true
     },
     {
@@ -600,10 +600,10 @@
       "type": "expansion",
       "date": "2014-09-26",
       "count": 249,
-      "available": 21,
-      "missing": 228,
+      "available": 22,
+      "missing": 227,
       "modernLegal": 252,
-      "modernAvailable": 26,
+      "modernAvailable": 27,
       "primary": true
     },
     {
@@ -636,10 +636,10 @@
       "type": "masters",
       "date": "2015-05-22",
       "count": 249,
-      "available": 16,
-      "missing": 233,
+      "available": 17,
+      "missing": 232,
       "modernLegal": 248,
-      "modernAvailable": 16,
+      "modernAvailable": 17,
       "primary": false
     },
     {
@@ -648,10 +648,10 @@
       "type": "core",
       "date": "2015-07-17",
       "count": 268,
-      "available": 19,
-      "missing": 249,
+      "available": 20,
+      "missing": 248,
       "modernLegal": 273,
-      "modernAvailable": 24,
+      "modernAvailable": 25,
       "primary": true
     },
     {
@@ -744,10 +744,10 @@
       "type": "masters",
       "date": "2017-03-17",
       "count": 249,
-      "available": 31,
-      "missing": 218,
+      "available": 32,
+      "missing": 217,
       "modernLegal": 249,
-      "modernAvailable": 31,
+      "modernAvailable": 32,
       "primary": false
     },
     {
@@ -876,10 +876,10 @@
       "type": "expansion",
       "date": "2019-01-25",
       "count": 263,
-      "available": 17,
-      "missing": 246,
+      "available": 18,
+      "missing": 245,
       "modernLegal": 268,
-      "modernAvailable": 22,
+      "modernAvailable": 23,
       "primary": true
     },
     {
@@ -912,10 +912,10 @@
       "type": "draft_innovation",
       "date": "2019-06-14",
       "count": 250,
-      "available": 10,
-      "missing": 240,
+      "available": 11,
+      "missing": 239,
       "modernLegal": 253,
-      "modernAvailable": 10,
+      "modernAvailable": 11,
       "primary": true
     },
     {
@@ -984,10 +984,10 @@
       "type": "expansion",
       "date": "2020-09-25",
       "count": 265,
-      "available": 13,
-      "missing": 252,
+      "available": 14,
+      "missing": 251,
       "modernLegal": 270,
-      "modernAvailable": 18,
+      "modernAvailable": 19,
       "primary": true
     },
     {
@@ -1236,10 +1236,10 @@
       "type": "draft_innovation",
       "date": "2024-06-14",
       "count": 303,
-      "available": 5,
-      "missing": 298,
+      "available": 6,
+      "missing": 297,
       "modernLegal": 306,
-      "modernAvailable": 10,
+      "modernAvailable": 11,
       "primary": true
     },
     {
@@ -1248,10 +1248,10 @@
       "type": "draft_innovation",
       "date": "2024-07-05",
       "count": 133,
-      "available": 5,
-      "missing": 128,
+      "available": 6,
+      "missing": 127,
       "modernLegal": 138,
-      "modernAvailable": 10,
+      "modernAvailable": 11,
       "primary": true
     },
     {
@@ -4274,9 +4274,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 23,
+      "mainAvailable": 24,
       "sideAvailable": 3,
-      "missingNames": 17,
+      "missingNames": 16,
       "missing": [
         {
           "name": "Pyretic Ritual",
@@ -4311,12 +4311,6 @@
         {
           "name": "Ral, Monsoon Mage",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sunbaked Canyon",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -4464,7 +4458,7 @@
         {
           "name": "Sunbaked Canyon",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11322,95 +11316,22 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 30,
-      "sideAvailable": 2,
-      "missingNames": 12,
-      "missing": [
-        {
-          "name": "Goblin Guide",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Eidolon of the Great Revel",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Barbarian Ring",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sunbaked Canyon",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Skullcrack",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Skewer the Critics",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Searing Blaze",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Lava Spike",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Smash to Smithereens",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Searing Blood",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Roiling Vortex",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Deflecting Palm",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        }
-      ],
+      "mainAvailable": 60,
+      "sideAvailable": 15,
+      "missingNames": 0,
+      "missing": [],
       "illegal": [],
       "main": [
         {
           "name": "Goblin Guide",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Eidolon of the Great Revel",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11434,13 +11355,13 @@
         {
           "name": "Barbarian Ring",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Sunbaked Canyon",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11476,13 +11397,13 @@
         {
           "name": "Skullcrack",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Skewer the Critics",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11494,13 +11415,13 @@
         {
           "name": "Searing Blaze",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Lava Spike",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11520,25 +11441,25 @@
         {
           "name": "Smash to Smithereens",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Searing Blood",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Roiling Vortex",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Deflecting Palm",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16913,42 +16834,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 24,
-      "sideAvailable": 2,
-      "missingNames": 15,
+      "mainAvailable": 45,
+      "sideAvailable": 11,
+      "missingNames": 6,
       "missing": [
         {
           "name": "Chandra's Incinerator",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Goblin Guide",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Barbarian Ring",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Searing Blaze",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Eidolon of the Great Revel",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Skewer the Critics",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -16966,20 +16857,8 @@
           "legal": true
         },
         {
-          "name": "Lava Spike",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Seal of Fire",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Smash to Smithereens",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -16992,18 +16871,6 @@
         {
           "name": "Exquisite Firecraft",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Searing Blood",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Roiling Vortex",
-          "quantity": 4,
           "available": false,
           "legal": true
         }
@@ -17025,13 +16892,13 @@
         {
           "name": "Goblin Guide",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Barbarian Ring",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17043,7 +16910,7 @@
         {
           "name": "Searing Blaze",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17061,13 +16928,13 @@
         {
           "name": "Eidolon of the Great Revel",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Skewer the Critics",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17097,7 +16964,7 @@
         {
           "name": "Lava Spike",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17123,7 +16990,7 @@
         {
           "name": "Smash to Smithereens",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17141,7 +17008,7 @@
         {
           "name": "Searing Blood",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -17153,7 +17020,7 @@
         {
           "name": "Roiling Vortex",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -17505,10 +17372,6 @@
       2
     ],
     [
-      "Barbarian Ring",
-      2
-    ],
-    [
       "Birds of Paradise",
       2
     ],
@@ -17561,10 +17424,6 @@
       2
     ],
     [
-      "Eidolon of the Great Revel",
-      2
-    ],
-    [
       "Emperor of Bones",
       2
     ],
@@ -17594,10 +17453,6 @@
     ],
     [
       "Goblin Bombardment",
-      2
-    ],
-    [
-      "Goblin Guide",
       2
     ],
     [
@@ -17637,10 +17492,6 @@
       2
     ],
     [
-      "Lava Spike",
-      2
-    ],
-    [
       "Liquimetal Coating",
       2
     ],
@@ -17673,27 +17524,7 @@
       2
     ],
     [
-      "Roiling Vortex",
-      2
-    ],
-    [
       "Scapeshift",
-      2
-    ],
-    [
-      "Searing Blaze",
-      2
-    ],
-    [
-      "Searing Blood",
-      2
-    ],
-    [
-      "Skewer the Critics",
-      2
-    ],
-    [
-      "Smash to Smithereens",
       2
     ],
     [
@@ -17714,10 +17545,6 @@
     ],
     [
       "Summoner's Pact",
-      2
-    ],
-    [
-      "Sunbaked Canyon",
       2
     ],
     [
@@ -17906,10 +17733,6 @@
     ],
     [
       "Death's Shadow",
-      1
-    ],
-    [
-      "Deflecting Palm",
       1
     ],
     [
@@ -18386,10 +18209,6 @@
     ],
     [
       "Six",
-      1
-    ],
-    [
-      "Skullcrack",
       1
     ],
     [

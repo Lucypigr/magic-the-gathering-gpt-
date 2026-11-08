@@ -1,0 +1,122 @@
+{
+  "Skewer the Critics": {
+    "text": "揭幕{R}（如果本回閤中有對手失去過生命，則你可以支付此咒語的揭幕費用而非法術力費用來施放它。）\n遏止倒彩對任意一個目標造成3點傷害。",
+    "oracleText": "Spectacle {R} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)\nSkewer the Critics deals 3 damage to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 1170,
+    "oracleId": "c43b616e-ef87-4c12-810b-a1a3260168fa",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sunbaked Canyon": {
+    "text": "{T}，支付1點生命：加{R}或{W}。\n{1}，{T}，犧牲此地：抓一張牌。",
+    "oracleText": "{T}, Pay 1 life: Add {R} or {W}.\n{1}, {T}, Sacrifice this land: Draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 2317,
+    "oracleId": "f97fd068-b83a-4621-bf8c-cc96e880ce90",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Roiling Vortex": {
+    "text": "在每位牌手的維持開始時，此結界對其造成1點傷害。\n每當任一牌手施放咒語，若施放該咒語時未支付過法術力，則此結界對該牌手造成5點傷害。\n{R}：本回閤中，對手不能獲得生命。",
+    "oracleText": "At the beginning of each player's upkeep, this enchantment deals 1 damage to them.\nWhenever a player casts a spell, if no mana was spent to cast that spell, this enchantment deals 5 damage to that player.\n{R}: Your opponents can't gain life this turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4311,
+    "oracleId": "34f83b7a-45a7-40a8-abcb-31d7aae4cea1",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Barbarian Ring": {
+    "text": "{T}：加{R}。此地對你造成1點傷害。\n門檻～{R}，{T}，犧牲此地：它對任意一個目標造成2點傷害。只能於你墳墓場中有七張或更多牌時起動。",
+    "oracleText": "{T}: Add {R}. This land deals 1 damage to you.\nThreshold — {R}, {T}, Sacrifice this land: It deals 2 damage to any target. Activate only if there are seven or more cards in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28555,
+    "oracleId": "eeb9377b-72c1-4214-9a66-0f55577c17d1",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Lava Spike": {
+    "text": "熔岩擊對目標牌手或鵬洛客造成3點傷害。",
+    "oracleText": "Lava Spike deals 3 damage to target player or planeswalker.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 30280,
+    "oracleId": "2837888c-bfa8-4955-9334-0605ad409f7e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Smash to Smithereens": {
+    "text": "消滅目標神器。砸成碎片對該神器的操控者造成3點傷害。",
+    "oracleText": "Destroy target artifact. Smash to Smithereens deals 3 damage to that artifact's controller.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 32013,
+    "oracleId": "e0583f29-c344-4b56-b0dc-bef1089a95c7",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Goblin Guide": {
+    "text": "敏捷\n每當此生物攻擊時，防禦牌手展示其牌庫頂牌。若它是地牌，則該牌手將它置於其手上。",
+    "oracleText": "Haste\nWhenever this creature attacks, defending player reveals the top card of their library. If it's a land card, that player puts it into their hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 32838,
+    "oracleId": "51d9564b-44fc-4de1-9119-09d7b4089378",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Searing Blaze": {
+    "text": "炙熱火光對目標牌手或鵬洛客造成1點傷害，並對目標由該牌手或該鵬洛客之操控者操控的生物造成1點傷害。\n地落～如果本回閤中有地在你的操控下進戰場，則改為炙熱火光對該牌手或鵬洛客造成3點傷害，並對該生物造成3點傷害。",
+    "oracleText": "Searing Blaze deals 1 damage to target player or planeswalker and 1 damage to target creature that player or that planeswalker's controller controls.\nLandfall — If you had a land enter the battlefield under your control this turn, Searing Blaze deals 3 damage to that player or planeswalker and 3 damage to that creature instead.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 34401,
+    "oracleId": "74b08a70-b0bb-4340-98a0-b1d5b7c9d2cc",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Skullcrack": {
+    "text": "本回閤中，牌手不能獲得生命。本回閤中，傷害不能被防止。碎顱擊對目標牌手或鵬洛客造成3點傷害。",
+    "oracleText": "Players can't gain life this turn. Damage can't be prevented this turn. Skullcrack deals 3 damage to target player or planeswalker.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 36162,
+    "oracleId": "a6fc0b0c-9ba2-47f2-ab92-26fd20d0f86d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Deflecting Palm": {
+    "text": "選擇一個來源。於本回閤中，防止該來源下一次將對你造成的傷害。如果以此法防止傷害，則饋擊掌對該來源的操控者造成等量的傷害。",
+    "oracleText": "The next time a source of your choice would deal damage to you this turn, prevent that damage. If damage is prevented this way, Deflecting Palm deals that much damage to that source's controller.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 36636,
+    "oracleId": "dc5dffc8-fac5-4956-bac4-1ad2cc16f6be",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Eidolon of the Great Revel": {
+    "text": "每當任一牌手施放法術力值等於或小於3的咒語時，此生物對該牌手造成2點傷害。",
+    "oracleText": "Whenever a player casts a spell with mana value 3 or less, this creature deals 2 damage to that player.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 36966,
+    "oracleId": "2fd7018e-1c36-4d7f-8f72-22f2f7f60c60",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Searing Blood": {
+    "text": "炙熱鮮血對目標生物造成2點傷害。當該生物於本回閤中死去時，炙熱鮮血對該生物的操控者造成3點傷害。",
+    "oracleText": "Searing Blood deals 2 damage to target creature. When that creature dies this turn, Searing Blood deals 3 damage to the creature's controller.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 37272,
+    "oracleId": "902b82fd-bb18-4833-b427-af8c9751f870",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  }
+}

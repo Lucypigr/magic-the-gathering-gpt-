@@ -1,14 +1,14 @@
 {
-  "cards": 5254,
-  "collectibleCards": 5249,
+  "cards": 5266,
+  "collectibleCards": 5261,
   "tokens": 304,
   "additionalFaces": 228,
-  "totalRows": 5786,
-  "uniqueEnglishNames": 5637,
-  "translatedRows": 5786,
+  "totalRows": 5798,
+  "uniqueEnglishNames": 5649,
+  "translatedRows": 5798,
   "unresolved": [],
   "counts": {
-    "published": 1971,
+    "published": 1983,
     "database": 3812,
     "terminology": 3
   },
@@ -161,13 +161,17 @@
       "terminology": 0
     },
     "META": {
-      "cards": 91,
-      "translated": 91,
-      "published": 81,
+      "cards": 103,
+      "translated": 103,
+      "published": 93,
       "database": 10,
       "terminology": 0
     }
   },
+  "databaseReleases": [
+    "data-2026-10-18",
+    "data-2026-11-08"
+  ],
   "databaseRelease": "data-2026-10-18",
   "sourceArchiveSha256": "09f5a743c581e210903b7f91ea246052489523139d0fc8d8f75c33d279d02ecc",
   "importedDeckNames": 418,

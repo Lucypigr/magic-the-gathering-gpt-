@@ -534,5 +534,117 @@
         "Test of Talents"
       ]
     ]
+  },
+  {
+    "id": "modern-boros-burn",
+    "name": "波洛斯燒牌",
+    "sourceName": "[Modern] #32 - Boros Burn",
+    "source": {
+      "repository": "Card-Forge/forge-extras",
+      "revision": "d3783237b98ca3714aeea5796ea593f49f6921cb",
+      "path": "decks/currentmodernmetagame.zip",
+      "sha256": "70e85196c8a031a4ba27864e08a4917dc4605785594308148366e025578bd948"
+    },
+    "date": "2026-10-17",
+    "main": [
+      [
+        4,
+        "Goblin Guide"
+      ],
+      [
+        4,
+        "Eidolon of the Great Revel"
+      ],
+      [
+        4,
+        "Monastery Swiftspear"
+      ],
+      [
+        3,
+        "Mountain"
+      ],
+      [
+        1,
+        "Sacred Foundry"
+      ],
+      [
+        2,
+        "Barbarian Ring"
+      ],
+      [
+        4,
+        "Sunbaked Canyon"
+      ],
+      [
+        2,
+        "Bloodstained Mire"
+      ],
+      [
+        2,
+        "Scalding Tarn"
+      ],
+      [
+        1,
+        "Arid Mesa"
+      ],
+      [
+        4,
+        "Inspiring Vantage"
+      ],
+      [
+        1,
+        "Elegant Parlor"
+      ],
+      [
+        4,
+        "Skullcrack"
+      ],
+      [
+        4,
+        "Skewer the Critics"
+      ],
+      [
+        4,
+        "Boros Charm"
+      ],
+      [
+        4,
+        "Searing Blaze"
+      ],
+      [
+        4,
+        "Lava Spike"
+      ],
+      [
+        4,
+        "Boltwave"
+      ],
+      [
+        4,
+        "Lightning Bolt"
+      ]
+    ],
+    "side": [
+      [
+        4,
+        "Smash to Smithereens"
+      ],
+      [
+        3,
+        "Searing Blood"
+      ],
+      [
+        4,
+        "Roiling Vortex"
+      ],
+      [
+        2,
+        "Deflecting Palm"
+      ],
+      [
+        2,
+        "Surgical Extraction"
+      ]
+    ]
   }
 ]

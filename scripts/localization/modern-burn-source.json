@@ -1,0 +1,15 @@
+{
+  "provider": "MTGZH / magic-cards-zhs",
+  "repository": "HeliumOctahelide/magic-cards-zhs",
+  "release": "data-2026-11-08",
+  "releaseUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+  "archiveUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/download/data-2026-11-08/magic-cards-zhs-data-2026-11-08.tar.gz",
+  "archiveSha256": "8f53960d205768895d320ab9629853d1fc77d5d0c7800954cdf8ebc290d1d467",
+  "license": "CC BY-SA (see upstream LICENSE-CC-BY-SA.txt); underlying card text and names retain their respective attribution",
+  "files": {
+    "scryfall_card.json": "cc60aeb4d40b4e43abfe96b20290364a7392f32d6dc676fa18c88c30186caf03",
+    "zhs_card.json": "10d218104846abcc312d4c9d8f74e49c47cd9d0861a7e19595ea0af346ee63ed",
+    "zhs_oracle.json": "e8f8c6f2b5808386baad1910925068b87a88dae51f8d2570894ed24bf7c85c33",
+    "zhs_type.json": "cd858cf4d9716cded5cba9c05ba7e2f4df42cb600c4e00ba6ac716d34d097a94"
+  }
+}

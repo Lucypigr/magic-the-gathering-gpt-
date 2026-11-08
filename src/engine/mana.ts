@@ -103,6 +103,7 @@ export function costToString(c: ManaCost): string {
 }
 
 export interface ManaSource {
+  selfDamage?: number;
   id: number;
   /** 只能用來施放非生物咒語 */
   noncreatureOnly?: boolean;

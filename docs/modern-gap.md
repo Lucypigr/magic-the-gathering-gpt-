@@ -6,24 +6,24 @@
 
 - Modern 來源清單共 118 個產品；排除 11 個純重印、入門及合併產品後，核心／擴充與直接加入 Modern 的特別系列共 **107 個**。
 - 依『牌名是否有可載入定義』判斷，完整 **18 個**，未完整 **89 個**；其中 **4 個**完全沒有非基本地牌名。其餘未齊系列已有部分同名重印牌，不是整個系列都空白。
-- 合法 Modern 卡池共 **22,708 種牌名**，遊戲已有 **5,251 種**（23.1%），缺 **17,457 種**。同名跨系列重印只算一次，基本地包含在此卡池總數。
-- 50 份牌表樣本中，主牌能完整還原 **4/50**；包含備牌能完整還原 **4/50**。這 50 份牌表合計缺 **359 種不同的牌**。
+- 合法 Modern 卡池共 **22,708 種牌名**，遊戲已有 **5,263 種**（23.2%），缺 **17,445 種**。同名跨系列重印只算一次，基本地包含在此卡池總數。
+- 50 份牌表樣本中，主牌能完整還原 **5/50**；包含備牌能完整還原 **5/50**。這 50 份牌表合計缺 **347 種不同的牌**。
 
 這裡統計的是遊戲是否收錄，不是帳號已擁有幾張，也不使用顏色／法術力相近牌來代換。同名可找到定義不代表卡片的所有官方效果已驗證；相關限制見 [逐卡測試](per-card-tests.md)。
 
-遊戲現已提供近代賽模式、獨立卡池與禁牌篩選，以及鐵木爾／伊捷／潔斯凱果敢與伊捷龍侯四副原始牌表，均保留60張主牌與15張備牌。備牌會保存並計入合法性與收藏檢查；目前對局仍是單局，尚無局間換備牌流程。
+遊戲現已提供近代賽模式、獨立卡池與禁牌篩選，以及鐵木爾果敢、伊捷果敢、潔斯凱果敢、伊捷龍侯、波洛斯燒牌共5副原始牌表，均保留60張主牌與15張備牌。備牌會保存並計入合法性與收藏檢查；目前對局仍是單局，尚無局間換備牌流程。
 
 ## 優先補的 Modern 系列
 
 | 系列 | 名稱 | 已收錄 | 全系列非基本地 | 尚缺 |
 |---|---|---:|---:|---:|
-| MH3 | Modern Horizons 3 | 5 | 303 | 298 |
+| MH3 | Modern Horizons 3 | 6 | 303 | 297 |
 | MH2 | Modern Horizons 2 | 12 | 304 | 292 |
-| MH1 | Modern Horizons | 10 | 250 | 240 |
+| MH1 | Modern Horizons | 11 | 250 | 239 |
 | LTR | The Lord of the Rings: Tales of Middle-earth | 1 | 284 | 283 |
-| ACR | Assassin's Creed | 5 | 133 | 128 |
+| ACR | Assassin's Creed | 6 | 133 | 127 |
 
-如果目標是先還原競技牌表，先補這 50 份樣本共缺的 359 種牌，比直接補完整 17,457 種卡池更集中。仍需逐張實作／驗證效果，不能只匯入顯示文字。
+如果目標是先還原競技牌表，先補這 50 份樣本共缺的 347 種牌，比直接補完整 17,445 種卡池更集中。仍需逐張實作／驗證效果，不能只匯入顯示文字。
 
 ## 現有系列的新發現
 
@@ -47,7 +47,7 @@
 | [Modern] #07 - Boros Energy | 26/60 | 8/15 | 16 |
 | [Modern] #08 - Goryo's Vengeance | 24/60 | 8/15 | 15 |
 | [Modern] #09 - Jeskai Energy | 28/60 | 11/15 | 13 |
-| [Modern] #10 - Ruby Storm | 23/60 | 3/15 | 17 |
+| [Modern] #10 - Ruby Storm | 24/60 | 3/15 | 16 |
 | [Modern] #11 - Mono-Green Basking Broodscale Combo | 8/60 | 1/15 | 25 |
 | [Modern] #12 - Azorius Control | 21/60 | 12/15 | 19 |
 | [Modern] #13 - Amulet Titan | 10/61 | 5/15 | 26 |
@@ -69,7 +69,7 @@
 | [Modern] #29 - Dimir Murktide | 36/60 | 8/15 | 15 |
 | [Modern] #30 - The Rock | 20/60 | 1/15 | 20 |
 | [Modern] #31 - Temur Prowess | 60/60 | 15/15 | 0 |
-| [Modern] #32 - Boros Burn | 30/60 | 2/15 | 12 |
+| [Modern] #32 - Boros Burn | 60/60 | 15/15 | 0 |
 | [Modern] #33 - Living End | 28/60 | 8/15 | 15 |
 | [Modern] #34 - Hammer Time | 22/60 | 7/15 | 17 |
 | [Modern] #35 - Grixis Control | 36/60 | 12/15 | 12 |
@@ -87,7 +87,7 @@
 | [Modern] #47 - Rakdos HollowOne | 29/60 | 7/15 | 12 |
 | [Modern] #48 - Mill | 13/60 | 4/15 | 28 |
 | [Modern] #49 - Esper Reanimator | 24/60 | 8/15 | 14 |
-| [Modern] #50 - Mono-Red Burn | 24/60 | 2/15 | 15 |
+| [Modern] #50 - Mono-Red Burn | 45/60 | 11/15 | 6 |
 
 ## 最常缺的共用牌
 
@@ -129,7 +129,7 @@
 | MRD | Mirrodin | 7 | 286 | 279 |
 | DST | Darksteel | 3 | 165 | 162 |
 | 5DN | Fifth Dawn | 0 | 165 | 165 |
-| CHK | Champions of Kamigawa | 3 | 286 | 283 |
+| CHK | Champions of Kamigawa | 4 | 286 | 282 |
 | BOK | Betrayers of Kamigawa | 0 | 165 | 165 |
 | SOK | Saviors of Kamigawa | 1 | 165 | 164 |
 | 9ED | Ninth Edition | 27 | 339 | 312 |
@@ -144,14 +144,14 @@
 | 10E | Tenth Edition | 28 | 363 | 335 |
 | LRW | Lorwyn | 4 | 281 | 277 |
 | MOR | Morningtide | 5 | 150 | 145 |
-| SHM | Shadowmoor | 1 | 281 | 280 |
+| SHM | Shadowmoor | 2 | 281 | 279 |
 | EVE | Eventide | 1 | 180 | 179 |
 | ALA | Shards of Alara | 3 | 229 | 226 |
 | CON | Conflux | 2 | 145 | 143 |
 | ARB | Alara Reborn | 1 | 145 | 144 |
 | M10 | Magic 2010 | 33 | 229 | 196 |
-| ZEN | Zendikar | 15 | 229 | 214 |
-| WWK | Worldwake | 4 | 145 | 141 |
+| ZEN | Zendikar | 16 | 229 | 213 |
+| WWK | Worldwake | 5 | 145 | 140 |
 | ROE | Rise of the Eldrazi | 7 | 228 | 221 |
 | M11 | Magic 2011 | 29 | 229 | 200 |
 | SOM | Scars of Mirrodin | 10 | 229 | 219 |
@@ -163,17 +163,17 @@
 | AVR | Avacyn Restored | 5 | 229 | 224 |
 | M13 | Magic 2013 | 30 | 229 | 199 |
 | RTR | Return to Ravnica | 22 | 249 | 227 |
-| GTC | Gatecrash | 17 | 249 | 232 |
+| GTC | Gatecrash | 18 | 249 | 231 |
 | DGM | Dragon's Maze | 14 | 156 | 142 |
 | M14 | Magic 2014 | 21 | 229 | 208 |
 | THS | Theros | 11 | 229 | 218 |
-| BNG | Born of the Gods | 5 | 165 | 160 |
-| JOU | Journey into Nyx | 5 | 165 | 160 |
+| BNG | Born of the Gods | 6 | 165 | 159 |
+| JOU | Journey into Nyx | 6 | 165 | 159 |
 | M15 | Magic 2015 | 22 | 264 | 242 |
-| KTK | Khans of Tarkir | 21 | 249 | 228 |
+| KTK | Khans of Tarkir | 22 | 249 | 227 |
 | FRF | Fate Reforged | 12 | 175 | 163 |
 | DTK | Dragons of Tarkir | 14 | 249 | 235 |
-| ORI | Magic Origins | 19 | 268 | 249 |
+| ORI | Magic Origins | 20 | 268 | 248 |
 | BFZ | Battle for Zendikar | 8 | 249 | 241 |
 | OGW | Oath of the Gatewatch | 6 | 182 | 176 |
 | SOI | Shadows over Innistrad | 6 | 282 | 276 |
@@ -187,15 +187,15 @@
 | DOM | Dominaria | 25 | 260 | 235 |
 | M19 | Core Set 2019 | 65 | 294 | 229 |
 | GRN | Guilds of Ravnica | 22 | 263 | 241 |
-| RNA | Ravnica Allegiance | 17 | 263 | 246 |
+| RNA | Ravnica Allegiance | 18 | 263 | 245 |
 | WAR | War of the Spark | 9 | 260 | 251 |
-| MH1 | Modern Horizons | 10 | 250 | 240 |
+| MH1 | Modern Horizons | 11 | 250 | 239 |
 | M20 | Core Set 2020 | 57 | 324 | 267 |
 | ELD | Throne of Eldraine | 22 | 280 | 258 |
 | THB | Theros Beyond Death | 11 | 268 | 257 |
 | IKO | Ikoria: Lair of Behemoths | 20 | 260 | 240 |
 | M21 | Core Set 2021 | 53 | 280 | 227 |
-| ZNR | Zendikar Rising | 13 | 265 | 252 |
+| ZNR | Zendikar Rising | 14 | 265 | 251 |
 | KHM | Kaldheim | 12 | 295 | 283 |
 | STX | Strixhaven: School of Mages | 6 | 275 | 269 |
 | MH2 | Modern Horizons 2 | 12 | 304 | 292 |
@@ -215,8 +215,8 @@
 | MKM | Murders at Karlov Manor | 271 | 274 | 3 |
 | OTJ | Outlaws of Thunder Junction | 271 | 271 | 0 |
 | BIG | The Big Score | 2 | 30 | 28 |
-| MH3 | Modern Horizons 3 | 5 | 303 | 298 |
-| ACR | Assassin's Creed | 5 | 133 | 128 |
+| MH3 | Modern Horizons 3 | 6 | 303 | 297 |
+| ACR | Assassin's Creed | 6 | 133 | 127 |
 | BLB | Bloomburrow | 274 | 274 | 0 |
 | DSK | Duskmourn: House of Horror | 271 | 271 | 0 |
 | FDN | Foundations | 512 | 512 | 0 |
@@ -239,10 +239,10 @@
 - [Forge Modern 系列清單](https://github.com/Card-Forge/forge/blob/7c34365c749ca46ab71336c5f267340d6088e600/forge-gui/res/formats/Sanctioned/Modern.txt)；核心／擴充之外納入 MH1、MH2、MH3、LTR、ACR，重印／入門產品不當成額外要補的系列。
 - [牌表壓縮包固定版本](https://github.com/Card-Forge/forge-extras/blob/d3783237b98ca3714aeea5796ea593f49f6921cb/decks/currentmodernmetagame.zip)。
 
-每個下載檔案的 SHA-256 鎖定於 `scripts/modern-sources.json`。執行 `python scripts/audit-modern.py --write` 可重建 JSON 及 CSV；預設快取 `/tmp/modern-audit`，缺少檔案時會下載固定版本並驗證。本次已加入近代賽模式與32種牌；卡圖與原專案未修改。
+每個下載檔案的 SHA-256 鎖定於 `scripts/modern-sources.json`。執行 `python scripts/audit-modern.py --write` 可重建 JSON 及 CSV；預設快取 `/tmp/modern-audit`，缺少檔案時會下載固定版本並驗證。本次已加入近代賽模式與44種牌；卡圖與原專案未修改。
 
 - [系列完整 CSV](modern-series-gap.csv)
 - [50 份套牌缺牌 CSV](modern-deck-gap.csv)
 - [全部 Modern 缺牌 CSV](modern-missing-cards.csv)
-- [359 種優先補牌 CSV](modern-priority-cards.csv)
+- [347 種優先補牌 CSV](modern-priority-cards.csv)
 - [詳細資料與來源 JSON](modern-gap.json)

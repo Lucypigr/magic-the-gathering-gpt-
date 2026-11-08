@@ -4292,6 +4292,23 @@
     "stage": 5,
     "released": "2024-11-15"
   },
+  "barbarian ring": {
+    "name": "蠻族決鬥擂臺",
+    "sourceName": "Barbarian Ring",
+    "originalChinese": "蛮族决斗擂台",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 78924,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "c184406c-b22c-4b9b-9d3a-3e7b17efd8a0",
+    "multiverseId": "664372",
+    "set": "MH3",
+    "number": "299",
+    "released": "2024-06-14"
+  },
   "barbed bloodletter": {
     "name": "倒刺放血斧",
     "sourceName": "Barbed Bloodletter",
@@ -13840,6 +13857,23 @@
       }
     ]
   },
+  "deflecting palm": {
+    "name": "饋擊掌",
+    "sourceName": "Deflecting Palm",
+    "originalChinese": "馈击掌",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 50763,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "c5580886-a402-4048-b8b6-39e19479f491",
+    "multiverseId": "502076",
+    "set": "CMR",
+    "number": "444",
+    "released": "2020-11-20"
+  },
   "defossilize": {
     "name": "化石復生",
     "sourceName": "Defossilize",
@@ -17199,6 +17233,23 @@
     "number": "181",
     "stage": 5,
     "released": "2025-04-11"
+  },
+  "eidolon of the great revel": {
+    "name": "盛歡幻靈",
+    "sourceName": "Eidolon of the Great Revel",
+    "originalChinese": "盛欢幻灵",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 27959,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "183ef738-0559-49ca-85b4-e6836521f203",
+    "multiverseId": "442615",
+    "set": "A25",
+    "number": "128",
+    "released": "2018-03-16"
   },
   "eirdu, carrier of dawn": {
     "name": "晨光神使埃爾度",
@@ -24576,6 +24627,23 @@
     "number": "117",
     "stage": 5,
     "released": "2026-04-24"
+  },
+  "goblin guide": {
+    "name": "鬼怪嚮導",
+    "sourceName": "Goblin Guide",
+    "originalChinese": "鬼怪向导",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 101797,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "62d2058c-3f20-4566-b366-93a2cbbe682f",
+    "multiverseId": "491546",
+    "set": "2XM",
+    "number": "347",
+    "released": "2020-08-07"
   },
   "goblin negotiation": {
     "name": "鬼怪式談判",
@@ -33602,6 +33670,23 @@
     "set": "MH1",
     "number": "134",
     "released": "2019-06-14"
+  },
+  "lava spike": {
+    "name": "熔岩擊",
+    "sourceName": "Lava Spike",
+    "originalChinese": "熔岩击",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 11659,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "0852af16-f650-4293-81d8-9008882ff45a",
+    "multiverseId": "513281",
+    "set": "TSR",
+    "number": "347",
+    "released": "2021-03-19"
   },
   "lavaleaper": {
     "name": "躍熔妖",
@@ -49074,6 +49159,23 @@
     "stage": 5,
     "released": "2025-04-11"
   },
+  "roiling vortex": {
+    "name": "狂攪漩渦",
+    "sourceName": "Roiling Vortex",
+    "originalChinese": "狂搅漩涡",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 54869,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "0b057eb7-8439-4d26-89df-c345ab2773e1",
+    "multiverseId": "494641",
+    "set": "ZNR",
+    "number": "156",
+    "released": "2020-09-25"
+  },
   "roll-roll-roll-roll": {
     "name": "滾啊滾，滾啊滾",
     "sourceName": "Roll-Roll-Roll-Roll",
@@ -51244,6 +51346,40 @@
     "stage": 5,
     "released": "2026-01-23"
   },
+  "searing blaze": {
+    "name": "炙熱火光",
+    "sourceName": "Searing Blaze",
+    "originalChinese": "炙热火光",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 30685,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "301f13dd-39b8-4a93-9c05-3dc4fa1f1c75",
+    "multiverseId": "211084",
+    "set": "WWK",
+    "number": "90",
+    "released": "2010-02-05"
+  },
+  "searing blood": {
+    "name": "炙熱鮮血",
+    "sourceName": "Searing Blood",
+    "originalChinese": "炙热鲜血",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 61766,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "bb43fd07-d281-447d-88bf-c53498c2cf20",
+    "multiverseId": "378648",
+    "set": "BNG",
+    "number": "111",
+    "released": "2014-02-07"
+  },
   "searslicer goblin": {
     "name": "灼勢鬼怪",
     "sourceName": "Searslicer Goblin",
@@ -53379,6 +53515,23 @@
     "number": "8",
     "released": "2023-11-17"
   },
+  "skewer the critics": {
+    "name": "遏止倒彩",
+    "sourceName": "Skewer the Critics",
+    "originalChinese": "遏止倒彩",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 80715,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "9f3261b6-4f5c-4cf0-a396-1d9397603602",
+    "multiverseId": "658226",
+    "set": "OTP",
+    "number": "26",
+    "released": "2024-04-19"
+  },
   "skilled battlecarver": {
     "name": "卓越塑兵客",
     "sourceName": "Skilled Battlecarver",
@@ -53429,6 +53582,23 @@
     "number": "224",
     "stage": 5,
     "released": "2025-04-11"
+  },
+  "skullcrack": {
+    "name": "碎顱擊",
+    "sourceName": "Skullcrack",
+    "originalChinese": "碎颅击",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 49503,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "170a06cd-501e-43c8-98e0-63ebd61cc0aa",
+    "multiverseId": "658227",
+    "set": "OTP",
+    "number": "27",
+    "released": "2024-04-19"
   },
   "skullsnap nuisance": {
     "name": "響顱擾蟲",
@@ -53868,6 +54038,22 @@
     "number": "35",
     "stage": 5,
     "released": "2026-01-23"
+  },
+  "smash to smithereens": {
+    "name": "砸成碎片",
+    "sourceName": "Smash to Smithereens",
+    "originalChinese": "砸成碎片",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 85208,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "4daccff6-8395-4b11-a4ce-3576aa38bc09",
+    "set": "F16",
+    "number": "3",
+    "released": "2016-01-01"
   },
   "smaug the magnificent": {
     "name": "了不起的斯毛格",
@@ -58253,6 +58439,23 @@
     "set": "OM1",
     "number": "130",
     "released": "2025-09-23"
+  },
+  "sunbaked canyon": {
+    "name": "日灼峽谷",
+    "sourceName": "Sunbaked Canyon",
+    "originalChinese": "日灼峡谷",
+    "kind": "published",
+    "language": "zhs",
+    "printLanguage": "zhs",
+    "declaredSource": "Chinese Simplified",
+    "sourceFile": "zhs_card.json",
+    "sourceLine": 10620,
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08",
+    "scryfallId": "bd5b2ce3-3cf0-47dd-9b76-940ae7eb8498",
+    "multiverseId": "668385",
+    "set": "ACR",
+    "number": "111",
+    "released": "2024-07-05"
   },
   "sunbillow verge": {
     "name": "陽坪邊陲",

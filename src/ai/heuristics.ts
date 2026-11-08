@@ -1,6 +1,6 @@
 import { manaValue, parseCost } from '../engine/mana';
 import { isCreature, isLand, landsOf, other, stats } from '../engine/state';
-import { legalTargets, sameTarget } from '../engine/targets';
+import { targetRelationPossible, legalTargets, sameTarget } from '../engine/targets';
 import type { Card, Decision, Effect, GameState, PID, Ref, TargetRef, TargetSpec } from '../engine/types';
 import { creatureValue, defValue } from './evaluate';
 import { TUNING } from './tuning';
@@ -153,7 +153,7 @@ export function quickTargets(
 ): (TargetRef | null)[] {
   const out: (TargetRef | null)[] = [];
   specs.forEach((spec, i) => {
-    const ranked = rankTargets(g, pid, spec, effects, i, sourceId).filter((t) => !out.some((o) => sameTarget(o, t)));
+    const ranked = rankTargets(g, pid, spec, effects, i, sourceId).filter((t) => targetRelationPossible(g,specs,i,t,out,pid,sourceId) && !out.some((o) => sameTarget(o, t)));
     const pol = polarity(effects, i);
     const first = ranked[0] ?? null;
     if (spec.optional && first) {

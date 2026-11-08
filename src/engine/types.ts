@@ -116,6 +116,7 @@ export interface TargetSpec {
   sharesTypeWith?:number;
   allowRepeat?: boolean;
   differentControllerFrom?: number;
+  sameControllerAs?: number;
   targetsOwnArtifactOrCreature?: boolean;
   kind: TargetKind;
   filter?: Filter;
@@ -1224,7 +1225,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'modernSpectacle' | 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
  bdCounters?:Record<string,number>;
@@ -1375,6 +1376,11 @@ export interface Show {
 }
 
 export interface GameState {
+  modernBurn?: {
+    landTurns: [number, number]; noGainTurns: [number, number]; noPreventTurn: number;
+    palms: { source: number; chosen: number; player: PID; turn: number; version: number; link?: number; fromStack: boolean }[];
+    blood: { source: number; controller: PID; creature: number; version: number; turn: number }[];
+  };
   modernMoonActive?: boolean;
  webActive?:boolean;webGlobals?:boolean;webStories?:boolean[];orbitFinalActive?:boolean;orbitFinalGlobals?:boolean;orbitShields?:{player:PID;source:number;link?:number;spell:number;turn:number}[];
   orbitHasStation?:boolean;orbitHasRinging?:boolean;

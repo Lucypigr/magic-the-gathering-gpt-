@@ -17,7 +17,7 @@ import { attackablePlaneswalkers, attackCandidates, blockCandidates, canBlock } 
 import { MatchController } from '../../engine/controller';
 import { costToString, manaValue } from '../../engine/mana';
 import { cardName, isCreature, stats } from '../../engine/state';
-import { legalTargets, sameTarget } from '../../engine/targets';
+import { targetRelationPossible, legalTargets, sameTarget } from '../../engine/targets';
 import type { CardDef, CastAlt, Filter, PID, PriorityAction, TargetRef, TargetSpec } from '../../engine/types';
 import { loadProfile, type SavedDeck, type Settings } from '../../meta/profile';
 import { EMOTES, type Emote, type Opponent } from '../../meta/ladder';
@@ -311,7 +311,7 @@ export function Battle(props: Props) {
     if (!g || !dr || dr.stage !== 'targets') return [];
     const spec = dr.specs[dr.targets.length];
     if (!spec) return [];
-    return legalTargets(g, spec, actingPid, dr.source).filter((t) => (spec.allowRepeat || !dr.targets.some((x) => sameTarget(x, t))) && (spec.differentControllerFrom===undefined || (()=>{const previous=dr.targets[spec.differentControllerFrom];return !previous||!('c' in previous)||!('c' in t)||g.cards[previous.c].controller!==g.cards[t.c].controller;})()));
+    return legalTargets(g, spec, actingPid, dr.source).filter((t) => (spec.allowRepeat || !dr.targets.some((x) => sameTarget(x, t))) && targetRelationPossible(g,dr.specs,dr.targets.length,t,dr.targets,actingPid,dr.source) && (spec.differentControllerFrom===undefined || (()=>{const previous=dr.targets[spec.differentControllerFrom];return !previous||!('c' in previous)||!('c' in t)||g.cards[previous.c].controller!==g.cards[t.c].controller;})()));
   }
 
   function sacNow(dr: Draft | null): number[] {
@@ -323,7 +323,7 @@ export function Battle(props: Props) {
     let cur = dr;
     while (cur.stage === 'targets' && cur.targets.length < cur.specs.length) {
       const spec = cur.specs[cur.targets.length];
-      const legal = g ? legalTargets(g, spec, actingPid, cur.source).filter((t) => spec.allowRepeat || !cur.targets.some((x) => sameTarget(x, t))) : [];
+      const legal = g ? legalTargets(g, spec, actingPid, cur.source).filter((t) => targetRelationPossible(g!,cur.specs,cur.targets.length,t,cur.targets,actingPid,cur.source) && (spec.allowRepeat || !cur.targets.some((x) => sameTarget(x, t)))) : [];
       if (spec.kind === 'opponent' && legal.length === 1) cur = { ...cur, targets: [...cur.targets, legal[0]] };
       else if (spec.optional && legal.length === 0) cur = { ...cur, targets: [...cur.targets, null] };
       else break;

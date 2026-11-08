@@ -175,7 +175,8 @@ export function cloneGame(g: GameState): GameState {
     retainedRed:p.retainedRed?.slice(),spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
-    ...g,campusParadigms:g.campusParadigms?.map(x=>({...x})),campusDelayed:g.campusDelayed?.map(x=>({...x})),meadowDelayed:g.meadowDelayed?.map(d=>({...d,ids:d.ids?.slice()})),eclEntryQueue:g.eclEntryQueue?.map(e=>({...e})),lastManaPayment:g.lastManaPayment?.slice(),
+    ...g,
+    modernBurn: g.modernBurn ? { ...g.modernBurn, landTurns: [...g.modernBurn.landTurns], noGainTurns: [...g.modernBurn.noGainTurns], palms: g.modernBurn.palms.map(x=>({...x})), blood: g.modernBurn.blood.map(x=>({...x})) } : undefined,campusParadigms:g.campusParadigms?.map(x=>({...x})),campusDelayed:g.campusDelayed?.map(x=>({...x})),meadowDelayed:g.meadowDelayed?.map(d=>({...d,ids:d.ids?.slice()})),eclEntryQueue:g.eclEntryQueue?.map(e=>({...e})),lastManaPayment:g.lastManaPayment?.slice(),
     cards,
     players: [cp(g.players[0]), cp(g.players[1])],
     battlefield: g.battlefield.slice(),

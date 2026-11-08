@@ -36,9 +36,10 @@ export function foundationDamage(
   target: TargetRef,
   n: number,
   combat: boolean,
+  noPrevent = false,
 ): { n: number; mill?: number } {
   if (
-    !meadowNoPrevent(g)&&combat &&
+    !noPrevent&&!meadowNoPrevent(g)&&combat &&
     src &&
     frontierStatic(g, src.controller, "fdn:preventCombatBoth").some(
       (c) => c.id === src.id,
@@ -61,18 +62,18 @@ export function foundationDamage(
     target.p !== pid &&
     frontierStatic(g, pid, "dsk:mindskinner").length
   )
-    return { n: 0, mill: n };
+    return { n: noPrevent ? n : 0, mill: n };
   if ("c" in target) {
     const c = g.cards[target.c];
     if (c) {
       if (
-        !meadowNoPrevent(g)&&frontierStatic(g, c.controller, "fdn:protectionEverything").some(
+        !noPrevent&&!meadowNoPrevent(g)&&frontierStatic(g, c.controller, "fdn:protectionEverything").some(
           (x) => x.id === c.id,
         )
       )
         return { n: 0 };
       if (
-        !meadowNoPrevent(g)&&combat &&
+        !noPrevent&&!meadowNoPrevent(g)&&combat &&
         (frontierStatic(g, c.controller, "fdn:preventCombatBoth").some(
           (x) => x.id === c.id,
         ) ||
@@ -84,7 +85,7 @@ export function foundationDamage(
       )
         return { n: 0 };
       if (
-        !meadowNoPrevent(g)&&!combat &&
+        !noPrevent&&!meadowNoPrevent(g)&&!combat &&
         isCreature(c) &&
         frontierStatic(g, c.controller, "fdn:preventOtherNoncombat").some(
           (x) => x.id !== c.id,
