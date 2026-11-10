@@ -31,10 +31,11 @@ export const STANDARD_SETS = [
   'FRA',
 ] as const;
 export type StandardSet = (typeof STANDARD_SETS)[number];
-export type SetCode = StandardSet | 'CORE' | 'META' | 'BAS' | 'TOK';
+export type SetCode = StandardSet | 'MH3' | 'CORE' | 'META' | 'BAS' | 'TOK';
 
 export type Keyword =
   | 'wither' | 'persist' | 'protection_colors' | 'protection_opponent'
+  | 'shroud'
   | 'flying'
   | 'reach'
   | 'first_strike'
@@ -54,7 +55,7 @@ export type Keyword =
 
 /** 篩選條件：用來描述「哪些物件」符合。ctrl 以能力控制者的視角判斷。 */
 export interface Filter {
- webModified?:boolean;webAllTypes?:boolean;webAlsoSub?:string;
+ mh3SingleTarget?:boolean;mh3Colored?:boolean;mh3Multicolor?:boolean;webModified?:boolean;webAllTypes?:boolean;webAlsoSub?:string;
   orbitWarp?:boolean;
  mvMaxSourcePower?:boolean;
   outlaw?:boolean;notOutlaw?:boolean;enchanted?:boolean;alsoType?:CardType;frontierAdventure?:boolean;frontierSpellOrAdventure?:boolean;frontierNoTokenName?:boolean;frontierUniqueName?:boolean;attachedToSource?:boolean;
@@ -111,6 +112,7 @@ export interface Filter {
 export type TargetKind = 'exileCard' | 'permanentOrPlayer' | 'creatureOrGy' | 'spellOrPermanent' | 'creatureOrPlaneswalker' | 'creature' | 'player' | 'opponent' | 'any' | 'permanent' | 'spell' | 'gyCard' | 'spellOrCreature';
 
 export interface TargetSpec {
+ mh3AbilityTargets?:boolean;mh3OpponentPlayer?:boolean;
   targetController?:PID;differentFrom?:number;
   webDifferentNames?:boolean;sameGraveyardAs?:number;totalMvMax?:number;
   sharesTypeWith?:number;
@@ -327,6 +329,7 @@ export type Cond =
   | { c: 'jaceLoyaltyGte'; n: number };
 
 export interface ExtraCost {
+  mh3Energy?: number;mh3ExileSelf?:boolean;
   /** 棄掉符合條件的牌 */
   discardFilter?: Filter;
   /** 從你的墳墓場放逐另一張符合條件的牌 */
@@ -677,6 +680,7 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+  mh3Adapt?: number; mh3EnergyTarget?:boolean;mh3ReturnSelf?:boolean;mh3Quest?:boolean;mh3ReturnElf?:boolean;
  webExileCreature?:boolean;webReturnTapped?:boolean;webRemoveCounters?:number;webRemoveKind?:string;webDiscardLegendaryName?:boolean;webEquipmentDiscount?:boolean;orbitTapArtifacts?:boolean;orbitLifeX?:boolean;orbitSidisi?:boolean;orbitNamedLandDiscount?:boolean;orbitSpacecraftAttackDiscount?:boolean;orbitCounterDiscount?:number;orbitDominion?:number;orbitVariableTargets?:boolean;orbitFixedX?:number;
  orbitStation?:boolean;
  campusEquipmentSac?:number;campusLocusKey?:number;campusExileArtifacts?:boolean;campusDiscardHand?:boolean;campusVariable?:'players';campusPageDiscount?:boolean;
@@ -700,7 +704,7 @@ export interface ActivatedAbility {
   kind: 'activated';
   /** loyalty：忠誠異能（+N 放置、-N 移除忠誠指示物；每個鵬洛客每回合只能起動一次，只能於法術時機） */
   /** crew：駕駛 N（橫置總力量 N 或更多的其他未橫置生物） */
-  cost: { blight?:number; discardFilter?:Filter; mana?: string; discard?: number; tap?: boolean; tapN?: { filter: Filter; n: number }; discardSelf?: boolean; exileSelf?: boolean; sacSelf?: boolean; sacOther?: Filter; life?: number; craft?: Filter; craftCount?: number; loyalty?: number; crew?: number };
+  cost: { mh3Energy?:number; blight?:number; discardFilter?:Filter; mana?: string; discard?: number; tap?: boolean; tapN?: { filter: Filter; n: number }; discardSelf?: boolean; exileSelf?: boolean; sacSelf?: boolean; sacOther?: Filter; life?: number; craft?: Filter; craftCount?: number; loyalty?: number; crew?: number };
   targets?: TargetSpec[];
   effects: Effect[];
   sorcery?: boolean;
@@ -833,7 +837,7 @@ export interface CardDef {
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
-  ecl?: {variableTargets?:'creature';asEnters?:'web'|'orbit'|'campusLandCopy'|'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
+  ecl?: {variableTargets?:'creature';asEnters?:'web'|'orbit'|'campusLandCopy'|'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'|'shock3'|'mh3Copy'|'mh3Shape'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
   sneak?: string;
   combatPowerMin?: number;
   evadePowGte?: number;
@@ -855,6 +859,7 @@ export interface CardDef {
   subtypes?: string[];
   power?: number;
   toughness?: number;
+  printedPower?:string;printedToughness?:string;
   keywords?: Keyword[];
   /** {T}：加一點列出的任一種法術力 */
   produces?: Mana[];
@@ -866,7 +871,7 @@ export interface CardDef {
   /** 產生有色法術力時要支付1點生命（{C} 不用） */
   painMana?: boolean;
   /** 產生的法術力只能用來施放某類咒語 */
-  manaOnly?: 'creature' | 'angel' | 'enchantOrSpecial' | 'planeswalker' | 'notFromHand' | 'artifactOrAbility' | 'notNonartifactSpell';
+  manaOnly?: 'creature' | 'angel' | 'enchantOrSpecial' | 'planeswalker' | 'notFromHand' | 'artifactOrAbility' | 'notNonartifactSpell'|'colorlessOrAbility';
   /** 冒險：同一張牌上的另一個瞬間或法術；施放後此牌放逐，之後可以從放逐區施放本體 */
   adventure?: { frontier?:CardDef['frontier'];ecl?:CardDef['ecl'];frontierStack?:string;name: string; zh?: string; cost: string; types: CardType[]; text: string; spell: SpellSpec };
   /** 準備：此生物附帶的咒語；已準備時可以施放它的複製（之後取消準備） */
@@ -963,6 +968,7 @@ export interface CardDef {
 export type Zone = 'library' | 'hand' | 'battlefield' | 'graveyard' | 'exile' | 'stack' | 'outside';
 
 export interface Card {
+  mh3PrototypeBase?:CardDef;mh3TypeBase?:CardDef;mh3EntryFrom?:Zone;mh3CastTurn?:number;mh3BestowBase?: CardDef;mh3TemporaryBase?:CardDef;mh3CopyTurn?:number;
   modernSuspended?:{player:PID;version:number};
   modernMoonBase?: CardDef;
  webArtifactEntry?:boolean;webFoodEntry?:boolean;webTypeDef?:CardDef;webAppliedDef?:CardDef;
@@ -1131,6 +1137,7 @@ export interface Card {
 }
 
 export interface Player {
+  mh3GroundedNoBlockTurn?:number;mh3RalDiscountUntil?:number;mh3ImproviseTurn?:number;mh3SilencedTurn?:number;mh3NoAttacksTurn?:number;mh3LifeLockTurn?:number;mh3Blessing?:boolean;mh3DebuffUntil?:number;mh3ExtraBeginning?:number;energy?: number; mh3EnergyTurn?: number; mh3EnergySpent?: number;
   modernArenaMana?:number;
  campusSkipTurns?:number;
 
@@ -1227,12 +1234,12 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'modernSuspend' | 'modernSuspended' | 'modernSpectacle' | 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'mh3Madness'|'mh3Energy'|'mh3EnergyPaid'|'mh3Retrace'|'mh3KickerG'|'mh3KickerU'|'mh3KickerBoth'|'mh3Bestow'|'mh3Flare'|'mh3Emerge'|'mh3Escape'|'mh3Prototype'|'mh3Overload'|'modernSuspend' | 'modernSuspended' | 'modernSpectacle' | 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
  bdCounters?:Record<string,number>;
  bdOffspringPaid?:boolean;bdGiftPaid?:boolean;
- bdSac?:{power:number;mana:number;vehicle:boolean};
+ bdSac?:{power:number;mana:number;vehicle:boolean;toughness?:number;subtypes?:string[]};
   frontierStackSids?:number[];distribution?:number[];
   sourceType?:string;
   sourceLinkKey?: number;
@@ -1378,6 +1385,7 @@ export interface Show {
 }
 
 export interface GameState {
+  mh3Delayed?:{source:number;controller:PID;kind:string;card:number;version:number;sourceVersion:number}[];
   modernRed?:{turn:number;damage:[number,number]};
   modernLastArenaManaSpent?:number;
   modernBurn?: {

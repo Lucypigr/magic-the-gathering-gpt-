@@ -1,10 +1,13 @@
+import{drawWithReplacements}from'./draw-replacements';
+import{counterKinds}from'./ecl-support';
+import{mh3PayEnergy,mh3GainEnergy,mh3Draw}from'./mh3';
 import { modernEffect } from './modern';
 import {webEffect} from './web-shire';
 import {finalCanSac,finalStatic} from './orbit-final-support';
 import {orbitEffect} from './orbit';
 import {frontierStatic} from './frontier-support';
 import {campusEffect} from './campus';
-import {meadowEffect,meadowCounter} from './meadow';
+import {meadowEffect,meadowCounter,meadowYes} from './meadow';
 import {foundationEffect} from './foundation';
 import {otjEffect} from './otj';
 import {woeEffect} from './woe';
@@ -38,26 +41,7 @@ import {
 } from './state';
 import { legalTargets, validateTargets } from './targets';
 import type { Amt, Card, Effect, GameEvent, GameState, PID, Ref, Response, SubFlow, TargetRef, TriggeredAbility } from './types';
-import {
-  refreshTlaPermanents,
-  bend,
-  tapCard,
-  createToken,
-  dealDamage,
-  destroyCards,
-  discard,
-  discardMany,
-  drawCards,
-  emit,
-  enterBattlefield,
-  gainLife,
-  loseLife,
-  moveCard,
-  putCounters,putMinusCounters,
-  sacrifice,
-  enterBattlefieldBack,
-  transformCard,
-} from './zones';
+import { refreshTlaPermanents, bend, tapCard, createToken, dealDamage, destroyCards, discard, discardMany, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, putMinusCounters, sacrifice, enterBattlefieldBack, transformCard } from './zones';
 import { tmtEffect } from './tmt';
 import { tlaEffect } from './tla';
 import { putFaceDown } from './facedown';
@@ -78,7 +62,8 @@ export interface Ctx {
  lastDiscover?:number;
 
  bdCounters?:Record<string,number>;
- bdSac?:{power:number;mana:number;vehicle:boolean};
+ mh3Ability?:boolean;
+ bdSac?:{power:number;mana:number;vehicle:boolean;toughness?:number;subtypes?:string[]};
  mode?:number;sacToughness?:number;
   distribution?:number[];
   sourceType?:string;
@@ -334,19 +319,19 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const n = amount(g, ctx, ef.n);
       const r = resolveRef(g, ctx, ef.to);
       const dsrc = ef.from ? resolveRef(g, ctx, ef.from).cards[0] ?? src : src;
-      for (const p of r.players) dealDamage(g, dsrc, me, { p }, n, { noLifeGain: ef.noLifeGain });
+      for (const p of r.players) dealDamage(g, dsrc, me, { p }, n, { noLifeGain: ef.noLifeGain,ability:ctx.mh3Ability });
       for (const c of r.cards) {
         // 過量傷害：超過致命傷害的部分
         const lethal = isCreature(c) ? Math.max(0, stats(g, c).t - c.damage) : c.def.types.includes('Planeswalker') ? Math.max(0, c.loyalty ?? 0) : 0;
         if (c.zone === 'battlefield') ctx.excess = Math.max(0, n - lethal);
-        dealDamage(g, dsrc, me, { c: c.id }, n);
+        dealDamage(g,dsrc,me,{c:c.id},n,{ability:ctx.mh3Ability});
       }
       break;
     }
     case 'draw': {
       const n = amount(g, ctx, ef.n);
       for (const p of resolveRef(g, ctx, ef.who ?? 'you').players) {
-        ctx.count = drawCards(g, p, n);
+        ctx.count = yield*mh3Draw(g,p,n);
         log(g, `抽 ${ctx.count} 張牌`, p);
       }
       break;
@@ -550,8 +535,8 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
         const p = c.controller;
-        if(mshStatic(g,p,'extraConniveDraw').length)drawCards(g,p,mshStatic(g,p,'extraConniveDraw').length);
-        drawCards(g, p, 1);
+        if(mshStatic(g,p,'extraConniveDraw').length)(yield*drawWithReplacements(g,p,mshStatic(g,p,'extraConniveDraw').length));
+        (yield*drawWithReplacements(g,p,1));
         const ids = yield* choose(g, p, '密謀：選擇一張牌棄掉', g.players[p].hand.slice(), 1, 1, 'discard');
         const d = ids.length ? g.cards[ids[0]] : undefined;
         if (d) {
@@ -581,7 +566,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       break;
     }
     case 'recruit': {
-      drawCards(g, me, 1);
+      (yield*drawWithReplacements(g,me,1));
       const ids = yield* choose(g, me, '招募：選擇一張牌棄掉', g.players[me].hand.slice(), 1, 1, 'discard');
       const c = ids.length ? g.cards[ids[0]] : undefined;
       if (c) {
@@ -714,7 +699,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         const yes = yield* yesno(g, p, '要棄掉你的手牌並抓七張牌嗎？', ctx.source, 'may');
         if (!yes) continue;
         discardMany(g, g.players[p].hand.map((id) => g.cards[id]));
-        drawCards(g, p, 7);
+        (yield*drawWithReplacements(g,p,7));
         log(g, '棄掉手牌並抓七張牌', p);
       }
       break;
@@ -735,7 +720,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       if(orig.def.meadow?.cantCopy)break;
       const copiedDef=item.alt==='adventure'||item.alt==='orbitFreeOmen'||item.alt==='back'?castDef(orig.def,item.alt):orig.def;
       const cp = newCard(g, copiedDef, me, true);
-      cp.evokePaid=orig.evokePaid;cp.mkmEvidence=orig.mkmEvidence;cp.mshTeamwork=orig.mshTeamwork;
+      cp.castFace=orig.castFace;cp.castX=item.x??orig.castX;cp.kicked=orig.kicked;cp.evokePaid=orig.evokePaid;cp.mkmEvidence=orig.mkmEvidence;cp.mshTeamwork=orig.mshTeamwork;
       cp.zone = 'stack';
       cp.spellWitherTurn=orig.spellWitherTurn;
       let targets = item.targets.slice();
@@ -748,6 +733,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         }
       }
       g.stack.push({ ...item, bdOffspringPaid:item.alt==='offspring'||item.bdOffspringPaid,bdGiftPaid:item.alt==='gift'||item.bdGiftPaid,sid: g.nextSid++, cardId: cp.id, controller: me, targets,targetVersions:targets.map(t=>t&&'c'in t?g.cards[t.c]?.objectVersion??0:undefined), alt: undefined, uncounterable: false });
+      emit(g,{type:'frontier',action:'modern:mh3:spellCopied',card:cp.id,player:me,amount:1});
       log(g, `複製了 ${cardName(orig)}`, me, 'cast');
       g.version++;
       break;
@@ -757,7 +743,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       log(g, '本回合你可以在瞬間時機起動傑斯的忠誠異能', me);
       break;
     case 'cryomancer': {
-      drawCards(g, me, 2);
+      (yield*drawWithReplacements(g,me,2));
       const hand = g.players[me].hand.slice();
       const ids = yield* choose(g, me, '選擇 2 張牌棄掉', hand, Math.min(2, hand.length), Math.min(2, hand.length), 'discard');
       const nonland = ids.filter((id) => !isLand(g.cards[id])).length;
@@ -805,7 +791,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         const nonland = ids.filter((id) => !isLand(g.cards[id])).length;
         discardMany(g, ids.map((id) => g.cards[id]));
         if (nonland < ef.n) {
-          drawCards(g, me, 1);
+          (yield*drawWithReplacements(g,me,1));
           log(g, `${g.players[p].name} 沒有棄掉 ${ef.n} 張非地牌，你抓一張牌`, me);
         }
       }
@@ -1306,26 +1292,14 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       }
       break;
     case 'proliferate': {
-      const times = amount(g, ctx, ef.times);
-      for (let i = 0; i < times; i++) {
-        const opts = g.battlefield.filter((id) => {
-          const c = g.cards[id];
-          return c.counters !== 0 || (c.def.types.includes('Planeswalker') && (c.loyalty ?? 0) > 0);
-        });
-        if (!opts.length) break;
-        const ids = yield* choose(g, me, '增殖：選擇要多放一個指示物的永久物', opts, 0, opts.length, 'proliferate', true);
-        for (const id of ids) {
-          const c = g.cards[id];
-          if (c.def.types.includes('Planeswalker') && !isCreature(c)) {
-            c.loyalty = (c.loyalty ?? 0) + 1;
-            emit(g, { type: 'loyaltyPlaced', card: c.id, controller: c.controller, amount: 1 });
-          } else if (c.counters > 0 && isCreature(c)) putCounters(g, c, 1);
-          else c.counters += c.counters < 0 ? -1 : 1;
-        }
-        if (ids.length) log(g, `增殖 ${ids.length} 個永久物`, me);
+      const times=amount(g,ctx,ef.times);
+      for(let i=0;i<times;i++){
+        const opts=g.battlefield.filter(id=>Object.values(counterKinds(g.cards[id])).some(n=>n>0));
+        const ids=opts.length?yield*choose(g,me,'增殖：選擇永久物',opts,0,opts.length,'proliferate',true):[];
+        for(const id of ids){const c=g.cards[id];for(const[k,n]of Object.entries(counterKinds(c)))if(n>0)meadowCounter(g,c,k==='plus'?'+1/+1':k,1,me);}
+        for(const player of g.players)if((player.energy??0)>0&&(yield*meadowYes(me,'增殖：讓'+player.name+'增加一點能量？')))mh3GainEnergy(g,player.id,1);
         g.version++;
-      }
-      break;
+      }break;
     }
     case 'theorix': {
       const pl = g.players[me];
@@ -1450,7 +1424,8 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'costThen': {
       const cost = ef.cost;
       let paid = false;
-      if (cost.sac) {
+      if(cost.mh3Energy!==undefined){if((g.players[me].energy??0)>=cost.mh3Energy&&(yield*meadowYes(me,ef.prompt)))paid=mh3PayEnergy(g,me,cost.mh3Energy);}
+      else if (cost.sac) {
         const opts = g.battlefield.filter((id) => {
           const c = g.cards[id];
           return c.controller === me && finalCanSac(g,c) && matches(g, cost.sac, c, me, ctx.source);

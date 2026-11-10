@@ -103,6 +103,7 @@ export function costToString(c: ManaCost): string {
 }
 
 export interface ManaSource {
+  coloredOnly?: boolean;
   selfDamage?: number;
   id: number;
   /** 只能用來施放非生物咒語 */
@@ -160,7 +161,7 @@ function findPaymentBase(cost: ManaCost, sources: ManaSource[]): { id: number; m
   for (const h of cost.hyb ?? []) need.push([h[0] as Mana, h[1] as Mana]);
   const total = need.length + cost.generic;
   if (total === 0) return [];
-  if (sources.length < total) return null;
+  if (sources.length < total||cost.generic>sources.filter(s=>!s.coloredOnly).length) return null;
 
   // 稀缺的顏色先分配
   const supply = (m: Mana[]) => sources.filter((s) => m.some((x) => s.produces.includes(x))).length;
@@ -178,7 +179,7 @@ function findPaymentBase(cost: ManaCost, sources: ManaSource[]): { id: number; m
   // 過濾地變出顏色時，要多用一個來源支付 {1}
   let extra = 0;
   const dfs = (i: number): boolean => {
-    if(i===need.length){const count=cost.generic+extra,start=assign.length;if(count===0)return true;if(sources.length-used.size<count)return false;for(const s of ordered){if(used.has(s.id))continue;const m=s.produces.find(m=>compatible(s,m));if(m===undefined)continue;assign.push({id:s.id,mana:m});if(assign.length-start===count)return true;}assign.splice(start);return count===0;}
+    if(i===need.length){const count=cost.generic+extra,start=assign.length;if(count===0)return true;if(sources.length-used.size<count)return false;for(const s of ordered){if(used.has(s.id)||s.coloredOnly)continue;const m=s.produces.find(m=>compatible(s,m));if(m===undefined)continue;assign.push({id:s.id,mana:m});if(assign.length-start===count)return true;}assign.splice(start);return count===0;}
 
     const opts = need[i];
     for (const s of ordered) {

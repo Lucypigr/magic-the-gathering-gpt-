@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import {campusTargets} from './campus-casting';
 import {beholdOptions,canReceiveCounters} from './ecl-support';
 // Shared choices for TLA cards that cannot be expressed as a fixed effect list.
@@ -7,22 +8,7 @@ import { manaValue, parseCost } from './mana';
 import { cardName, isCreature, isLand, matches, other, shuffleArr, stats } from './state';
 import { hasTargetsAvailable, legalTargets, validateTargets } from './targets';
 import type { Card, Effect, GameState, PID, Ref, Response, SubFlow, TargetSpec } from './types';
-import {
-  bend,
-  createToken,
-  destroyCards,
-  discard,
-  drawCards,
-  emit,
-  enterBattlefield,
-  gainLife,
-  loseLife,
-  moveCard,
-  putCounters,
-  sacrifice,
-  tapCard,
-  transformCard,
-} from './zones';
+import { bend, createToken, destroyCards, discard, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice, tapCard, transformCard } from './zones';
 
 export function* choose(g: GameState, pid: PID, prompt: string, options: number[], min = 0, max = 1): SubFlow<number[]> {
   if (!options.length || max <= 0) return [];
@@ -253,11 +239,11 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
     case 'revival':
       for (const id of [...p.graveyard]) moveCard(g, g.cards[id], 'library');
       shuffleArr(g, p.library);
-      drawCards(g, me, 7);
+      (yield*drawWithReplacements(g,me,7));
       p.noHandLimit = true;
       break;
     case 'teo': {
-      drawCards(g, me, 1);
+      (yield*drawWithReplacements(g,me,1));
       const [id] = yield* choose(g, me, '棄一張牌', p.hand.slice(), 1);
       if (id !== undefined) {
         const nonland = !isLand(g.cards[id]);
@@ -276,7 +262,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
       break;
     }
     case 'wan':
-      drawCards(g, me, Math.floor((src.castX ?? 0) / 2));
+      (yield*drawWithReplacements(g,me,Math.floor((src.castX ?? 0) / 2)));
       break;
     case 'yue': {
       const options = p.hand.filter((id) => !isCreature(g.cards[id]) && !isLand(g.cards[id]));
@@ -555,7 +541,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
     }
     case 'invasionDraw':
       if (ownCreatures(g, me).some((id) => g.cards[id].attacking && g.cards[id].def.subtypes?.includes('Ally') && g.cards[id].dealtCombat))
-        drawCards(g, me, 1);
+        (yield*drawWithReplacements(g,me,1));
       break;
     case 'usurper': {
       const [id] = yield* choose(
@@ -642,7 +628,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
       const [id] = yield* choose(g, me, '棄一張牌', p.hand.slice(), 1);
       if (id !== undefined) {
         discard(g, g.cards[id]);
-        drawCards(g, me, 1);
+        (yield*drawWithReplacements(g,me,1));
       }
       break;
     }
@@ -661,7 +647,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
     case 'sokkaLoot': {
       const ids = yield* choose(g, me, '棄至多兩張牌', p.hand.slice(), 0, 2);
       for (const id of ids) discard(g, g.cards[id]);
-      drawCards(g, me, ids.length);
+      (yield*drawWithReplacements(g,me,ids.length));
       break;
     }
     case 'conflicted': {
@@ -680,7 +666,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
       if (pick === undefined) break;
       src.chosenModes = [...used, pick];
       loseLife(g, me, 2);
-      if (pick === 0) drawCards(g, me, 1);
+      if (pick === 0) (yield*drawWithReplacements(g,me,1));
       if (pick === 1) putCounters(g, src, 1);
       if (pick === 2) yield* run([{ e: 'addMana', mana: ['R'] }]);
       if (pick === 3) {

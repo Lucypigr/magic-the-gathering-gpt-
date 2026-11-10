@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import {innkeeperMultiplier} from './meadow-support';
 import { canPayCost, castDuringResolution, payCost } from './actions';
@@ -7,21 +8,7 @@ import { resolveRef, runEffects, type Ctx } from './effects';
 import { makeEclTokenBatch } from './ecl';
 import { canEvidence, evidenceChoices, mkmFlags, mkmCondition } from './mkm-support';
 import { putFaceDown, turnFaceUp } from './facedown';
-import {
-  dealDamage,
-  discard,
-  discardMany,
-  drawCards,
-  emit,
-  enterBattlefield,
-  gainLife,
-  loseLife,
-  moveCard,
-  putCounters,
-  sacrifice,
-  tapCard,
-  destroyCards,
-} from './zones';
+import { dealDamage, discard, discardMany, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice, tapCard, destroyCards } from './zones';
 import { choose, freeCast } from './tla';
 import type { Card, CardDef, Effect, Filter, GameState, PID, Response, SubFlow } from './types';
 const own = (g: GameState, pid: PID, f: Filter = {}) =>
@@ -310,7 +297,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
             n++;
           }
         }
-      drawCards(g, pid, n);
+      (yield*drawWithReplacements(g,pid,n));
       break;
     }
     case '50': {
@@ -405,7 +392,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
       }
       break;
     case '75':
-      drawCards(g, pid, ctx.ev?.type === 'sacrifice' && g.cards[ctx.ev.card].suspected ? 2 : src.mkmMarks?.sacSuspect === g.turn ? 2 : 1);
+      (yield*drawWithReplacements(g,pid,ctx.ev?.type === 'sacrifice' && g.cards[ctx.ev.card].suspected ? 2 : src.mkmMarks?.sacSuspect === g.turn ? 2 : 1));
       break;
     case '83':
       if (src.mkmEvidence) {
@@ -423,7 +410,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
           moveCard(g, g.cards[cid], 'exile');
         }
         shuffleArr(g, g.players[opp].library);
-        drawCards(g, opp, count);
+        (yield*drawWithReplacements(g,opp,count));
       }
       break;
     case '84': {
@@ -850,7 +837,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
       if (c) {
         const yours = c.controller === pid;
         destroyCards(g, [c]);
-        if (yours) drawCards(g, pid, 1);
+        if (yours) (yield*drawWithReplacements(g,pid,1));
       }
       break;
     case '214': {
@@ -928,7 +915,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
       const ids = own(g, opp, { nonType: 'Land', token: false });
       if (ids.length >= 2 && (yield* yes(opp, '犧牲兩個非地非衍生永久物？'))) {
         for (const id of yield* pick(ids, '犧牲兩個', 2, 2, opp)) sacrifice(g, g.cards[id]);
-      } else drawCards(g, pid, 2);
+      } else (yield*drawWithReplacements(g,pid,2));
       break;
     }
     case '232': {
@@ -985,7 +972,7 @@ export function* mkmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'mkm
     case 'ceasePlayer': {
       const i = yield* mode(pid, '選擇獲得生命與抓牌的玩家', ['自己', '對手']);
       gainLife(g, i === 0 ? pid : opp, 2);
-      drawCards(g, i === 0 ? pid : opp, 1);
+      (yield*drawWithReplacements(g,i === 0 ? pid : opp,1));
       break;
     }
     case 'split246':

@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import { copiableDefinition } from './state';
 import { canPayCost, castDuringResolution, castTargetSpecs, payCost, spellEffects } from './actions';
@@ -8,23 +9,7 @@ import { resolveRef, runEffects, type Ctx } from './effects';
 import { manaValue, parseCost } from './mana';
 import { GameOver, isCreature, isLand, matches, newCard, other, randInt, shuffleArr, stats, uncounterableSpells } from './state';
 import { validateTargets } from './targets';
-import {
-  addLore,
-  dealDamage,
-  discard,
-  drawCards,
-  emit,
-  enterBattlefield,
-  enterBattlefieldBack,
-  gainLife,
-  loseLife,
-  moveCard,
-  putCounters,
-  putIntoGraveyard,
-  sacrifice,
-  tapCard,
-  transformCard,
-} from './zones';
+import { addLore, dealDamage, discard, emit, enterBattlefield, enterBattlefieldBack, gainLife, loseLife, moveCard, putCounters, putIntoGraveyard, sacrifice, tapCard, transformCard } from './zones';
 import type { Card, CardDef, Color, Effect, Filter, GameState, PID, Ref, Response, SubFlow, TargetRef } from './types';
 const E = (action: string, n?: number, what?: Ref): Effect => ({ e: 'fin', action, n, what });
 const token = (name: string, n = 1): Effect => ({ e: 'token', token: 'tok-fin-' + name, n });
@@ -211,7 +196,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
         pid = resolveRef(g, ctx, 'T0').players[0];
       if (c && pid !== undefined) {
         control(g, c, pid);
-        drawCards(g, me, 1);
+        (yield*drawWithReplacements(g,me,1));
       }
       break;
     }
@@ -431,7 +416,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
       if (ctx.ev?.type !== 'combatDamage') break;
       const n = ctx.ev.amount;
       control(g, src, ctx.ev.player);
-      drawCards(g, me, n);
+      (yield*drawWithReplacements(g,me,n));
       yield* run([{ e: 'token', token: 'tok-treasure', n, tapped: true }]);
       loseLife(g, me, n);
       break;
@@ -440,7 +425,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
       for (let i = 0; i < (ef.n ?? 1) && g.players[opp].library.length; i++) moveCard(g, g.cards[g.players[opp].library[0]], 'exile');
       break;
     case 'ninjaLoot': {
-      drawCards(g, me, 1);
+      (yield*drawWithReplacements(g,me,1));
       const [id] = yield* choose(g, me, '棄一牌，該玩家失去其法力值生命', p.hand.slice(), 1);
       if (id !== undefined) {
         const n = manaValue(g.cards[id].def);
@@ -522,7 +507,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
         g,
         ids.map((id) => g.cards[id]),
       );
-      drawCards(g, me, ids.length);
+      (yield*drawWithReplacements(g,me,ids.length));
       break;
     }
     case 'odinGrant':
@@ -571,7 +556,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
           .filter((id) => g.cards[id].controller === me)
           .reduce((n, id) => n + (g.cards[id].def.cost?.match(/\{(?:R|[WUBG]\/R|R\/[WUBG])\}/g)?.length ?? 0), 0);
         for (const id of p.hand.slice()) discard(g, g.cards[id]);
-        drawCards(g, me, n);
+        (yield*drawWithReplacements(g,me,n));
       }
       break;
     case 'ifritReturn':
@@ -639,7 +624,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
       }
       if (fromGy) {
         for (const id of p.hand.slice()) discard(g, g.cards[id]);
-        drawCards(g, me, 4);
+        (yield*drawWithReplacements(g,me,4));
       }
       break;
     }
@@ -1022,7 +1007,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
     case 'joshuaLoot': {
       const ids = yield* choose(g, me, '可棄至多兩張，然後抓同數量', p.hand.slice(), 0, Math.min(2, p.hand.length));
       for (const id of ids) discard(g, g.cards[id]);
-      drawCards(g, me, ids.length);
+      (yield*drawWithReplacements(g,me,ids.length));
       break;
     }
     case 'phoenixMassReturn': {
@@ -1043,7 +1028,7 @@ export function* finEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'fin
           discard(g, g.cards[id]);
         }
       }
-      drawCards(g, me, new Set(cards.flatMap((c) => c.def.types)).size);
+      (yield*drawWithReplacements(g,me,new Set(cards.flatMap((c) => c.def.types)).size));
       break;
     }
     case 'opponentEdictPermanent': {

@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import {innkeeperMultiplier} from './meadow-support';
 import { canPayCost, payCost } from './actions';
@@ -9,22 +10,7 @@ import { makeEclTokenBatch } from './ecl';
 import { mshStatic, mshFlags, planLimit } from './msh-support';
 import { choose, freeCast } from './tla';
 import { validateTargets } from './targets';
-import {
-  dealDamage,
-  discard,
-  discardMany,
-  drawCards,
-  emit,
-  enterBattlefield,
-  enterBattlefieldBack,
-  addLore,
-  gainLife,
-  moveCard,
-  putCounters,
-  sacrifice,
-  tapCard,
-  destroyCards,
-} from './zones';
+import { dealDamage, discard, discardMany, emit, enterBattlefield, enterBattlefieldBack, addLore, gainLife, moveCard, putCounters, sacrifice, tapCard, destroyCards } from './zones';
 import type { Card, CardDef, Effect, Filter, GameState, PID, Ref, Response, SubFlow, Keyword } from './types';
 const E = (action: string, what?: Ref, n?: number): Effect => ({ e: 'msh', action, what, n });
 const own = (g: GameState, pid: PID, filter: Filter = {}) =>
@@ -192,7 +178,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
         0,
       ))[0];
       if (id !== undefined) enterBattlefield(g, g.cards[id], pid);
-      else drawCards(g, pid, 1);
+      else (yield*drawWithReplacements(g,pid,1));
       break;
     }
     case 'serumEquip': {
@@ -211,7 +197,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
       break;
     case '59': {
       const top = g.cards[p.library[0]];
-      if (top?.def.types.includes('Artifact')) drawCards(g, pid, 1);
+      if (top?.def.types.includes('Artifact')) (yield*drawWithReplacements(g,pid,1));
       break;
     }
     case '62':
@@ -418,7 +404,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
         moveCard(g, g.cards[id], 'exile');
         permission(g, g.cards[id], pid, true);
       }
-      drawCards(g, pid, ids.length);
+      (yield*drawWithReplacements(g,pid,ids.length));
       break;
     }
     case 'sacArtifactOrDiscard':
@@ -436,7 +422,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
         discard(g, g.cards[id]);
       }
       if (nonland) yield* run([{ e: 'reflexive', targets: [{ kind: 'any' }], effects: [{ e: 'damage', n: 2, to: 'T0' }] }]);
-      else drawCards(g, pid, ef.n ?? 1);
+      else (yield*drawWithReplacements(g,pid,ef.n ?? 1));
       break;
     }
     case '138':
@@ -520,7 +506,7 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
             .map(([k]) => k);
           const k = yield* mode(pid, '移除哪一種指示物？', kinds);
           removeCounterKind(g.cards[id], kinds[k] ?? kinds[0]);
-          drawCards(g, pid, 1);
+          (yield*drawWithReplacements(g,pid,1));
         }
       }
       break;
@@ -609,8 +595,8 @@ export function* mshEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'msh
     }
     case 'armorDraw':
       if (yield* yes(pid, '依神器數抓牌並讓對手抓一張？')) {
-        drawCards(g, pid, own(g, pid, { type: 'Artifact' }).length);
-        drawCards(g, opp, 1);
+        (yield*drawWithReplacements(g,pid,own(g, pid, { type: 'Artifact' }).length));
+        (yield*drawWithReplacements(g,opp,1));
       }
       break;
     case 'artifactDiscountTurn':

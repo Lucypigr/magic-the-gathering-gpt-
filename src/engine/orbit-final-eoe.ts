@@ -1,7 +1,8 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import { finalContext, finalCastCopy, finalTransferCounters } from './orbit-final-common';
 import { copiableDefinition, isCreature, isLand, newCard, shuffleArr, stats, other } from './state';
-import { moveCard, enterBattlefield, putCounters, drawCards, discardMany, destroyCards, sacrifice, dealDamage, loseLife, tapCard } from './zones';
+import { moveCard, enterBattlefield, putCounters, discardMany, destroyCards, sacrifice, dealDamage, loseLife, tapCard } from './zones';
 import { runEffects, resolveRef, type Ctx } from './effects';
 import { campusLink } from './campus';
 import {} from './ecl';
@@ -185,7 +186,7 @@ export function* finalEoeEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                 const discounted = (t.manaSpent ?? 0) < manaValue(t.castFace ?? t.def);
                 yield* run([{ e: 'counter', what: 'T0' }]);
                 if (discounted)
-                    drawCards(g, p, 1);
+                    (yield*drawWithReplacements(g,p,1));
             }
             break;
         case '86': {
@@ -193,7 +194,7 @@ export function* finalEoeEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             for (const id of ids)
                 moveCard(g, g.cards[id], 'library');
             shuffleArr(g, player.library);
-            drawCards(g, p, 7);
+            (yield*drawWithReplacements(g,p,7));
             break;
         }
         case 'warpBottom':
@@ -205,7 +206,7 @@ export function* finalEoeEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                 const who = t.controller, damaged = t.frontierTakenTurn === g.turn && (t.frontierTaken ?? 0) > 0;
                 destroyCards(g, [t]);
                 if (!damaged)
-                    drawCards(g, who, 2);
+                    (yield*drawWithReplacements(g,who,2));
             }
             break;
         case '112':
@@ -381,7 +382,7 @@ export function* finalEoeEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
         case 'discardHandDraw2':
             if (yield* yes('棄掉手牌並抓兩張？')) {
                 discardMany(g, player.hand.slice().map(id => g.cards[id]));
-                drawCards(g, p, 2);
+                (yield*drawWithReplacements(g,p,2));
             }
             break;
         case '176': {
@@ -421,7 +422,7 @@ export function* finalEoeEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                 break;
             else if (ctx.ev?.type === 'counterPlaced' && (yield* yes('依放置的指示物數量抓牌？'))) {
                 frontierFlags(g, p).finalTerraDraw = 1;
-                drawCards(g, p, ctx.ev.amount);
+                (yield*drawWithReplacements(g,p,ctx.ev.amount));
             }
             break;
         case '212': {
@@ -441,7 +442,7 @@ export function* finalEoeEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             const ids = yield* pick(eligible.map(c => c.id), '選擇兩個生物', 2, 2);
             for (const id of ids)
                 g.cards[id].counters--;
-            drawCards(g, p, 1);
+            (yield*drawWithReplacements(g,p,1));
             yield* token('tok-g-robot-22-');
             break;
         }
@@ -467,7 +468,7 @@ export function* finalEoeEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             }
             m.finalTannukCount++;
             if (m.finalTannukCount === 2)
-                drawCards(g, p, 1);
+                (yield*drawWithReplacements(g,p,1));
             break;
         }
         case 'graveBottom':

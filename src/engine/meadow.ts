@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import {finalCounterMultiplier} from './orbit-final-support';
 import {dftEffect} from './meadow-dft';
 import {abilitiesSuppressed,copiableDefinition,isCreature,isLand,matches,other,shuffleArr,stats} from './state';
@@ -7,7 +8,7 @@ import {choose,freeCast} from './tla';
 import {makeEclTokenBatch} from './ecl';
 import {canReceiveCounters} from './ecl-support';
 import {runEffects,resolveRef,type Ctx} from './effects';
-import {dealDamage,discardMany,drawCards,emit,enterBattlefield,gainLife,loseLife,moveCard,putCounters,sacrifice,tapCard,destroyCards} from './zones';
+import { dealDamage, discardMany, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice, tapCard, destroyCards } from './zones';
 import {frontierFlags,frontierStatic} from './frontier-support';
 import type {Ability,Card,CardDef,Color,Effect,GameState,PID,Response,SubFlow} from './types';
 export function* meadowYes(p:PID,prompt:string):SubFlow<boolean>{const r:Response=yield{type:'yesno',player:p,prompt};return r.type==='yesno'&&r.yes;}
@@ -62,12 +63,12 @@ export function* meadowEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'fro
  if(set==='dft'){yield*dftEffect(g,ctx,ef);return;}
  switch(action){
  case 'wardFood':{const item=g.stack.find(s=>s.sid===ef.n);if(!item)break;const who=item.controller,foods=g.battlefield.filter(id=>g.cards[id].controller===who&&matches(g,{sub:'Food'},g.cards[id],who));if(foods.length&&(yield*meadowYes(who,'犧牲一個食物支付守護？'))){const[id]=yield*pick(foods,'犧牲食物',1,1,who);if(id!==undefined)sacrifice(g,g.cards[id]);}else{g.stack=g.stack.filter(s=>s.sid!==ef.n);if(item.kind==='spell')moveCard(g,g.cards[item.cardId],'graveyard');}break;}
- case 'gift':{const kind=String(src.def.meadow?.gift??src.def.text.match(/^Gift (a tapped Fish|a Food|a Treasure|a card)/)?.[1]??'card');(src.frontierMarks??={}).bdGift=1;if(/Fish/.test(kind))yield*makeEclTokenBatch(g,opp,'tok-g-fish-11-u',1,{tapped:true});else if(/Food/.test(kind))yield*makeEclTokenBatch(g,opp,'tok-food',1);else if(/Treasure/.test(kind))yield*makeEclTokenBatch(g,opp,'tok-treasure',1);else drawCards(g,opp,1);emit(g,{type:'frontier',action:'bdGift',card:src.id,player:p,amount:1});break;}
- case '2':if(cards({ctrl:'opp',type:'Land'}).length>ours({type:'Land'}).length)yield*token('tok-treasure');if(g.players[opp].life>player.life)gainLife(g,p,4);if(cards({ctrl:'opp',type:'Creature'}).length>ours({type:'Creature'}).length)yield*token('tok-g-fish-11-u',2);if(g.players[opp].hand.length>player.hand.length)drawCards(g,p,1);break;
+ case 'gift':{const kind=String(src.def.meadow?.gift??src.def.text.match(/^Gift (a tapped Fish|a Food|a Treasure|a card)/)?.[1]??'card');(src.frontierMarks??={}).bdGift=1;if(/Fish/.test(kind))yield*makeEclTokenBatch(g,opp,'tok-g-fish-11-u',1,{tapped:true});else if(/Food/.test(kind))yield*makeEclTokenBatch(g,opp,'tok-food',1);else if(/Treasure/.test(kind))yield*makeEclTokenBatch(g,opp,'tok-treasure',1);else (yield*drawWithReplacements(g,opp,1));emit(g,{type:'frontier',action:'bdGift',card:src.id,player:p,amount:1});break;}
+ case '2':if(cards({ctrl:'opp',type:'Land'}).length>ours({type:'Land'}).length)yield*token('tok-treasure');if(g.players[opp].life>player.life)gainLife(g,p,4);if(cards({ctrl:'opp',type:'Creature'}).length>ours({type:'Creature'}).length)yield*token('tok-g-fish-11-u',2);if(g.players[opp].hand.length>player.hand.length)(yield*drawWithReplacements(g,p,1));break;
  case 'playerHexproof':frontierFlags(g,p).bdHexproof=1;break;
  case '11':if(chosen&&src.zone==='battlefield'){const small=stats(g,chosen).p<=2;yield*run([{e:'exileLinked',what:'T0'}]);if(small)counter(src,'+1/+1');}break;
  case 'moveCounters':if(chosen)for(const[k,n]of Object.entries(ctx.ev?.type==='dies'?ctx.ev.counterKinds??src.lastCounterKinds??{}:src.lastCounterKinds??{})){if(!n)continue;if(k==='plus'){if(Number(n)>0)counter(chosen,'+1/+1',Number(n));else chosen.counters+=Number(n);}else counter(chosen,k,Number(n));}break;
- case '15':{const m=src.frontierMarks??={};if(m.bdHostTurn!==g.turn)m.bdHostTurn=g.turn,m.bdHostCount=0;m.bdHostCount=(m.bdHostCount??0)+1;if(m.bdHostCount===2)drawCards(g,p,1);break;}
+ case '15':{const m=src.frontierMarks??={};if(m.bdHostTurn!==g.turn)m.bdHostTurn=g.turn,m.bdHostCount=0;m.bdHostCount=(m.bdHostCount??0)+1;if(m.bdHostCount===2)(yield*drawWithReplacements(g,p,1));break;}
  case 'returnNextCounter':case 'returnNextFlying':case 'returnNext':if(chosen){moveCard(g,chosen,'exile');meadowSchedule(g,ctx,action,chosen);}break;
  case 'indestructibleCounter':if(chosen)counter(chosen,'indestructible');break;
  case '34':{const list=cards({type:'Creature'});destroyCards(g,list);const ids=list.filter(c=>c.zone==='graveyard'&&c.owner===p).map(c=>c.id);const[id]=yield*pick(ids,'將本次死去的己方生物移回戰場',1);if(id!==undefined)enterBattlefield(g,g.cards[id],p);break;}
@@ -80,10 +81,10 @@ export function* meadowEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'fro
  case 'blinkOnDamage':if(chosen)(chosen.frontierMarks??={}).bdBlinkDamage=g.turn;break;
  case '66':{const ids=player.library.slice(0,ctx.x??src.castX??0),picked:number[]=[];for(const type of ['Artifact','Battle','Creature','Enchantment','Instant','Kindred','Land','Planeswalker','Sorcery']){const[id]=yield*pick(ids.filter(id=>!picked.includes(id)&&g.cards[id].def.types.includes(type as any)),'可為'+type+'放逐一張牌');if(id!==undefined){picked.push(id);moveCard(g,g.cards[id],'exile');}}for(const id of ids)if(!picked.includes(id))moveCard(g,g.cards[id],'graveyard');if(picked.length>=4){const[id]=yield*pick(picked.filter(id=>!isLand(g.cards[id])),'可免費施放一張放逐的牌');if(id!==undefined)yield*freeCast(g,ctx,g.cards[id],true);}for(const id of picked)if(g.cards[id].zone==='exile')moveCard(g,g.cards[id],'hand');break;}
  case 'chooseCopy':{const[id]=yield*pick(ours({type:['Artifact','Creature']}).map(c=>c.id),'選擇要複製的神器或生物',1);if(id!==undefined)yield*copy(g.cards[id]);break;}
- case '74':if(chosen){const match=matches(g,{sub:['Bird','Frog','Otter','Rat']},chosen,p);yield*run([{e:'flicker',what:'T0'}]);if(match)drawCards(g,p,1);}break;
+ case '74':if(chosen){const match=matches(g,{sub:['Bird','Frog','Otter','Rat']},chosen,p);yield*run([{e:'flicker',what:'T0'}]);if(match)(yield*drawWithReplacements(g,p,1));}break;
  case '81':{const old=src.eclCounters?.coin??0;counter(src,'coin');if((src.eclCounters?.coin??0)>old)emit(g,{type:'frontier',action:'bd:well',card:src.id,player:p,amount:src.eclCounters?.coin??0});break;}
  case '83':{const h=g.players[opp].hand.slice(),nonland=h.filter(id=>!isLand(g.cards[id]));if(nonland.length&&(yield*meadowYes(opp,'棄一張非地牌，代替棄兩張牌？'))){const[id]=yield*pick(nonland,'棄非地牌',1,1,opp);if(id!==undefined)discardMany(g,[g.cards[id]]);}else discardMany(g,(yield*pick(h,'棄兩張牌',Math.min(2,h.length),2,opp)).map(id=>g.cards[id]));break;}
- case 'banditDraw':if(g.players[opp].hand.length<=1)drawCards(g,p,1);break;
+ case 'banditDraw':if(g.players[opp].hand.length<=1)(yield*drawWithReplacements(g,p,1));break;
  case 'copyNonlegendary11':if(chosen?.zone==='battlefield'&&!chosen.def.supertypes?.includes('Legendary'))yield*copy(chosen,1);break;
  case 'greatestSac':{const cs=cards({ctrl:'opp',type:'Creature'}),n=Math.max(-Infinity,...cs.map(c=>stats(g,c).p));const[id]=yield*pick(cs.filter(c=>stats(g,c).p===n).map(c=>c.id),'犧牲力量最大的生物',1,1,opp);if(id!==undefined)sacrifice(g,g.cards[id]);break;}
  case '88':case '88gift':{const[id]=yield*pick(g.players[opp].hand.filter(id=>!isLand(g.cards[id])),'選擇對手手牌中的非地牌',1);if(id!==undefined){moveCard(g,g.cards[id],'exile');if(action==='88gift')g.cards[id].eclCast={by:p,mode:'finAnyMana'};}break;}
@@ -97,18 +98,18 @@ export function* meadowEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'fro
  case '117':yield*bargain(opp,3);break;
  case '118':{const h=g.players[opp].hand.slice();if(g.players[opp].lifeLostThisTurn>0){const[id]=yield*pick(h.filter(id=>!isLand(g.cards[id])),'選擇對手非地手牌',1);if(id!==undefined)discardMany(g,[g.cards[id]]);}else{const[id]=yield*pick(h,'棄一張牌',1,1,opp);if(id!==undefined)discardMany(g,[g.cards[id]]);}break;}
  case 'wickSnail':{const snails=ours({sub:'Snail'});if(!snails.length)yield*token('tok-bd-snail');else{const[id]=yield*pick(snails.map(c=>c.id),'選擇蝸牛加指示物',1);if(id!==undefined)counter(g.cards[id],'+1/+1');}break;}
- case 'wickSac':{const n=ctx.bdSac?.power??src.frontierMarks?.bdSacPower??0;dealDamage(g,src,p,{p:opp},n);drawCards(g,p,n);break;}
+ case 'wickSac':{const n=ctx.bdSac?.power??src.frontierMarks?.bdSacPower??0;dealDamage(g,src,p,{p:opp},n);(yield*drawWithReplacements(g,p,n));break;}
  case 'patrol':case 'forageReturnEvent':emit(g,{type:'frontier',action:'bd:'+action,card:src.id,player:p,amount:0});break;
  case 'exileIfDies':if(chosen)chosen.exileOnDeathTurn=g.turn;break;
  case 'impulse':yield*impulse(1);break;
  case 'impulseNext':yield*impulse(1,true);break;
  case 'impulseNextTwo':yield*impulse(2,true);break;
  case 'redManaPersist':(player.pool??=[]).push('R');player.keepRedTurn=g.turn;break;
- case '129':if(yield*meadowYes(p,'棄掉所有手牌以抓兩張牌？')){discardMany(g,player.hand.slice().map(id=>g.cards[id]));drawCards(g,p,2);}break;
+ case '129':if(yield*meadowYes(p,'棄掉所有手牌以抓兩張牌？')){discardMany(g,player.hand.slice().map(id=>g.cards[id]));(yield*drawWithReplacements(g,p,2));}break;
  case '132':{const out=yield*impulse(ours({type:'Creature'}).filter(c=>stats(g,c).p>=4).length);for(const c of out)c.eclCast={by:p,mode:'bdNextEnd'};meadowSchedule(g,ctx,'dragonhawk',undefined,{ids:out.map(c=>c.id),ownEnd:true});break;}
- case 'loot':if(player.hand.length&&(yield*meadowYes(p,'棄一張牌來抓牌？'))){const[id]=yield*pick(player.hand.slice(),'棄一張牌',1);if(id!==undefined){discardMany(g,[g.cards[id]]);drawCards(g,p,1);}}break;
+ case 'loot':if(player.hand.length&&(yield*meadowYes(p,'棄一張牌來抓牌？'))){const[id]=yield*pick(player.hand.slice(),'棄一張牌',1);if(id!==undefined){discardMany(g,[g.cards[id]]);(yield*drawWithReplacements(g,p,1));}}break;
  case 'stash':counter(src,'stash');break;
- case '141':{const n=Number(ctx.bdCounters?.stash??src.lastCounterKinds?.stash??src.eclCounters?.stash??0);discardMany(g,player.hand.slice().map(id=>g.cards[id]));drawCards(g,p,n);break;}
+ case '141':{const n=Number(ctx.bdCounters?.stash??src.lastCounterKinds?.stash??src.eclCounters?.stash??0);discardMany(g,player.hand.slice().map(id=>g.cards[id]));(yield*drawWithReplacements(g,p,n));break;}
  case 'doubleStrikeOrTrample':if(chosen){const i=yield*meadowMode(p,'選擇異能',['連擊','踐踏']);yield*run([{e:'pump',what:'T0',p:0,t:0,kw:[i===0?'double_strike':'trample']}]);}break;
  case '149':if(chosen&&(stats(g,chosen).p<=2||ours({sub:'Lizard',other:true}).length)){chosen.returnControl={player:chosen.controller,turn:g.turn};chosen.controller=p;chosen.tapped=false;g.eot.push({card:chosen.id,p:0,t:0,kw:['haste']});emit(g,{type:'fin',action:'controlChange',card:chosen.id,player:p,amount:chosen.returnControl.player});}break;
  case 'seasonBurn':meadowSchedule(g,ctx,'seasonBurn',undefined,{turn:g.turn+(g.active===p?2:1)});break;
@@ -117,7 +118,7 @@ export function* meadowEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'fro
  case 'cantBlock':if(chosen)g.eot.push({card:chosen.id,p:0,t:0,kw:[],cantBlock:true});break;
  case 'forage':yield*meadowForage(g,p);break;
  case 'forageCounters':if(yield*meadowForage(g,p))counter(src,'+1/+1',2);break;
- case 'forageDraw':if(yield*meadowForage(g,p))drawCards(g,p,1);break;
+ case 'forageDraw':if(yield*meadowForage(g,p))(yield*drawWithReplacements(g,p,1));break;
  case 'forageReturn':if(yield*meadowForage(g,p))emit(g,{type:'frontier',action:'bd:forageReturn',card:src.id,player:p,amount:0});break;
  case '167':{const ids=player.library.slice(0,4);for(const id of ids)moveCard(g,g.cards[id],'graveyard');const[id]=yield*pick(ids.filter(id=>g.cards[id].zone==='graveyard'&&!g.cards[id].def.types.some(t=>t==='Instant'||t==='Sorcery')),'可取回本次磨掉的永久物');const squirrel=id!==undefined&&matches(g,{sub:'Squirrel'},g.cards[id],p);if(id!==undefined)moveCard(g,g.cards[id],'hand');if(squirrel||ours({sub:'Squirrel'}).length)yield*token('tok-food');break;}
  case '168':{const ids:number[]=[];for(const id of player.library.slice()){const c=g.cards[id];if(isLand(c)){enterBattlefield(g,c,p,true);break;}ids.push(id);}for(const id of shuffled(ids))moveCard(g,g.cards[id],'library',true);break;}
@@ -134,9 +135,9 @@ export function* meadowEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'fro
  case 'supply':counter(src,'supply');break;
  case 'forageMana':for(let i=0;i<2;i++)yield*mana(1);break;
  case 'attachEquipment':{const host=resolveRef(g,ctx,'T1').cards[0];if(chosen&&host){chosen.attachedTo=host.id;emit(g,{type:'frontier',action:'attached',card:chosen.id,player:p,other:host.id,amount:0});}break;}
- case '204':drawCards(g,opp,1);yield*run([{e:'copySpell'}]);break;
- case 'ownTargetDraw':if(chosen?.controller===p)drawCards(g,p,2);break;
- case '212':if(ours({type:'Creature'}).reduce((n,c)=>n+stats(g,c).p,0)>=10)drawCards(g,p,1);break;
+ case '204':(yield*drawWithReplacements(g,opp,1));yield*run([{e:'copySpell'}]);break;
+ case 'ownTargetDraw':if(chosen?.controller===p)(yield*drawWithReplacements(g,p,2));break;
+ case '212':if(ours({type:'Creature'}).reduce((n,c)=>n+stats(g,c).p,0)>=10)(yield*drawWithReplacements(g,p,1));break;
  case '213':{const out=player.library.slice(0,2).map(id=>g.cards[id]);for(const c of out)moveCard(g,c,'exile');const[id]=yield*pick(out.map(c=>c.id),'選擇本回合可使用的牌',Math.min(1,out.length));if(id!==undefined)g.cards[id].eclCast={by:p,until:g.turn};break;}
  case 'helgaMana':yield*mana(stats(g,src).p,undefined,'bdHelga');break;
  case 'frogMana':yield*mana(1,['G','U'],'creature');break;

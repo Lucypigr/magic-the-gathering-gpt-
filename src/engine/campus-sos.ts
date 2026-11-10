@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import {campusDiscover,campusPermit} from './campus';
 import {campusConverge} from './campus-support';
 import {copiableDefinition,isCreature,isLand,matches,newCard,other,rand,shuffleArr,stats} from './state';
@@ -8,7 +9,7 @@ import {choose,freeCast,target} from './tla';
 import {makeEclTokenBatch} from './ecl';
 import {resolveRef,runEffects,type Ctx} from './effects';
 import {meadowCounter,meadowMode,meadowYes,meadowEffect} from './meadow';
-import {dealDamage,discardMany,drawCards,enterBattlefield,gainLife,loseLife,moveCard,putCounters,sacrifice,tapCard,destroyCards} from './zones';
+import { dealDamage, discardMany, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice, tapCard, destroyCards } from './zones';
 import type {Card,CardDef,Color,Effect,GameState,PID,SubFlow} from './types';
 export function* campusSosEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'frontier'}>):SubFlow{
  const action=ef.action.slice(4),offset=typeof ef.what==='string'&&/^T\d+$/.test(ef.what)?Number(ef.what.slice(1)):0,ctx={...original,targets:original.targets.slice(offset)},p=ctx.controller,src=g.cards[ctx.source],ev=ctx.ev;
@@ -20,7 +21,7 @@ export function* campusSosEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'
  const impulse=function*(until=g.turn+2):SubFlow{const id=g.players[p].library[0];if(id!==undefined){moveCard(g,g.cards[id],'exile');campusPermit(g,g.cards[id],p,until);}};
  switch(action){
  case 'freeGraveSpell':if(chosen?.zone==='graveyard'&&(yield*meadowYes(p,'免費施放墳墓場咒語？'))){chosen.finExileOnResolve=true;yield*freeCast(g,ctx,chosen);}break;
- case '5':{const n=campusConverge(src);if(n&&(yield*meadowYes(p,'抓'+n+'張後棄兩張？'))){drawCards(g,p,n);yield*run([{e:'discard',n:2,who:'you'}]);}break;}
+ case '5':{const n=campusConverge(src);if(n&&(yield*meadowYes(p,'抓'+n+'張後棄兩張？'))){(yield*drawWithReplacements(g,p,n));yield*run([{e:'discard',n:2,who:'you'}]);}break;}
  case 'tapOrUntap':if(chosen&&(yield*meadowYes(p,'橫置或重置？'))){if(chosen.tapped)chosen.tapped=false;else tapCard(g,chosen);}break;
  case 'swords':if(chosen){const who=chosen.controller,n=stats(g,chosen).p;moveCard(g,chosen,'exile');gainLife(g,who,n);}break;
  case 'blinkEnd':yield*meadowEffect(g,ctx,{...ef,action:'blb:returnNext'});break;
@@ -33,7 +34,7 @@ export function* campusSosEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'
  case '45':{const gy=g.players[p].graveyard;if(gy.length>=8&&(yield*meadowYes(p,'放逐八張墳墓場牌以準備？'))){for(const id of yield*pick(gy.slice(),'放逐八張牌',8,8))moveCard(g,g.cards[id],'exile');yield*run([{e:'prepare',what:'self'}]);}break;}
  case 'fractalDrawn':yield*fractal(g.players[p].drawsThisTurn);break;
  case 'fractalize':if(chosen){const n=(ctx.x??0)+1;g.eot.push({card:chosen.id,p:0,t:0,kw:[],base:{p:n,t:n}}as any);chosen.baseDef??=chosen.def;chosen.def={...chosen.def,colors:['G','U'],subtypes:['Fractal']};}break;
- case 'brainstorm':drawCards(g,p,3);for(const id of yield*pick(g.players[p].hand.slice(),'選兩張放回牌庫頂',2,2))moveCard(g,g.cards[id],'library');break;
+ case 'brainstorm':(yield*drawWithReplacements(g,p,3));for(const id of yield*pick(g.players[p].hand.slice(),'選兩張放回牌庫頂',2,2))moveCard(g,g.cards[id],'library');break;
  case 'spellMana':{let cols:Color[]=ef.n===2?['U']:ef.n===3?['R','R']:ef.n===4?['U','R']:[];if(!cols.length){const i=yield*meadowMode(p,'選擇限定法術力',['白','藍','黑','紅','綠']);cols=Array.from({length:ef.n===5?2:1},()=>['W','U','B','R','G'][i]as Color);}for(const mana of cols)(g.players[p].eclRestrictedMana??=[]).push({mana,rule:'campusSpell'});break;}
  case 'fractalXAll':yield*tk('tok-cp-fractal',ctx.x??0);for(const c of ours({sub:'Fractal'}))putCounters(g,c,ctx.x??0,undefined,p);break;
  case '57':if(chosen){const n=chosen.manaSpent??0,hasWizard=ours({sub:'Wizard'}).length;yield*run([{e:'counter',what:'T0'}]);if(hasWizard)(g.campusDelayed??=[]).push({kind:'nextMainMana',player:p,source:src.id,n,turn:g.turn});}break;
@@ -60,7 +61,7 @@ export function* campusSosEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'
  case 'redPowerMana':for(let i=0;i<Math.max(0,stats(g,src).p);i++)(g.players[p].pool??=[]).push('R');break;
  case 'nextCopy':frontierFlags(g,p).cpNextCopy=(frontierFlags(g,p).cpNextCopy??0)+1;break;
  case 'rubbleDamage':g.pending.push({source:src.id,controller:p,abilityIndex:-320,ev:{type:'frontier',action:'cpReflexive',card:src.id,player:p,amount:1},ability:{kind:'trigger',on:'frontierEvent',effects:[{e:'damage',n:1,to:'opp'}]}});break;
- case 'rummagePlayer':{const hand=g.players[player].hand.slice(),ids=yield*pick(hand,'可棄任意數量手牌',0,hand.length,player);discardMany(g,ids.map(id=>g.cards[id]));drawCards(g,player,ids.length);break;}
+ case 'rummagePlayer':{const hand=g.players[player].hand.slice(),ids=yield*pick(hand,'可棄任意數量手牌',0,hand.length,player);discardMany(g,ids.map(id=>g.cards[id]));(yield*drawWithReplacements(g,player,ids.length));break;}
  case 'millPlay':{const id=g.players[p].library[0];if(id!==undefined){moveCard(g,g.cards[id],'graveyard');campusPermit(g,g.cards[id],p);(g.cards[id].frontierMarks??={}).cpGravePlay=g.turn;}break;}
  case '140':{const counters=ev?.type==='dies'?ev.counterKinds:src.lastCounterKinds,plus=Number(counters?.plus??0);const ts=yield*tk('tok-cp-fractal');for(const c of ts){putCounters(g,c,plus,undefined,p);for(const[k,n]of Object.entries(counters??{}))if(k!=='plus'&&k!=='minus'&&Number(n)>0)meadowCounter(g,c,k,Number(n),p);}break;}
  case 'growthCounter':meadowCounter(g,src,'growth');break;
@@ -71,9 +72,9 @@ export function* campusSosEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'
  case '169':{const top=g.players[p].library.slice(0,5),ids=yield*pick(top.filter(id=>isLand(g.cards[id])||isCreature(g.cards[id])),'可揭示至多兩張生物或地',0,2);for(const id of ids)if(isLand(g.cards[id]))enterBattlefield(g,g.cards[id],p,true);else moveCard(g,g.cards[id],'hand');const rest=top.filter(id=>!ids.includes(id));shuffleArr(g,rest);for(const id of rest)moveCard(g,g.cards[id],'library',true);break;}
  case '172':if(chosen){const def=copiableDefinition(chosen);const ts=yield*tk({...def,types:[...new Set([...def.types,'Creature' as const])],subtypes:[...(def.subtypes??[]),'Fractal'],power:0,toughness:0});for(const c of ts)putCounters(g,c,6,undefined,p);}break;
  case '174':{const ids=ours({type:'Creature',tapped:false}).map(c=>c.id);if(ids.length>=3&&(yield*meadowYes(p,'橫置三個生物以複製？'))){for(const id of yield*pick(ids,'橫置三個生物',3,3))tapCard(g,g.cards[id]);yield*copy();}break;}
- case 'discardHandDrawOpp':{const n=g.players[player].hand.length;discardMany(g,g.players[p].hand.map(id=>g.cards[id]));drawCards(g,p,n);break;}
- case 'rummageAll':{const ids=g.players[p].hand.slice();discardMany(g,ids.map(id=>g.cards[id]));drawCards(g,p,ids.length);break;}
- case 'rummagePlus':{const ids=yield*pick(g.players[p].hand.slice(),'棄任意張再抓多一張',0,g.players[p].hand.length);discardMany(g,ids.map(id=>g.cards[id]));drawCards(g,p,ids.length+1);break;}
+ case 'discardHandDrawOpp':{const n=g.players[player].hand.length;discardMany(g,g.players[p].hand.map(id=>g.cards[id]));(yield*drawWithReplacements(g,p,n));break;}
+ case 'rummageAll':{const ids=g.players[p].hand.slice();discardMany(g,ids.map(id=>g.cards[id]));(yield*drawWithReplacements(g,p,ids.length));break;}
+ case 'rummagePlus':{const ids=yield*pick(g.players[p].hand.slice(),'棄任意張再抓多一張',0,g.players[p].hand.length);discardMany(g,ids.map(id=>g.cards[id]));(yield*drawWithReplacements(g,p,ids.length+1));break;}
  case '184':{const ids=g.players[p].library.filter(id=>isCreature(g.cards[id])),[id]=yield*pick(ids,'搜尋生物');if(id!==undefined){const gy=yield*meadowYes(p,'放入手牌？否則放入墳墓場');moveCard(g,g.cards[id],gy?'hand':'graveyard');}shuffleArr(g,g.players[p].library);break;}
  case 'impulseNext':yield*impulse();break;
  case '188':for(const id of[...g.players[p].graveyard])if(g.cards[id].def.types.some(t=>t==='Artifact'||t==='Creature')&&manaValue(g.cards[id].def)===(ctx.x??0))enterBattlefield(g,g.cards[id],p);break;
@@ -95,7 +96,7 @@ export function* campusSosEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'
  case 'cantBlock':if(chosen)g.eot.push({card:chosen.id,p:0,t:0,kw:[],cantBlock:true});break;
  case 'mayPutLand':{const[id]=yield*pick(g.players[p].hand.filter(id=>isLand(g.cards[id])),'可放一張地進場');if(id!==undefined)enterBattlefield(g,g.cards[id],p,true);break;}
  case 'delayedMana':for(let i=0;i<(ef.n??0);i++)(g.players[p].pool??=[]).push('C');break;
- case 'draw1':drawCards(g,p,1);break;
+ case 'draw1':(yield*drawWithReplacements(g,p,1));break;
  case 'gain1':gainLife(g,p,1);break;
  case 'copyCast':yield*copy();break;
  case 'stormCopies':for(let i=0;i<(ef.n??0);i++)yield*copy();break;

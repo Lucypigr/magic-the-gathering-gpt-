@@ -3,7 +3,7 @@ import { useState } from 'react';
 import type { Screen, UpdateProfile } from '../App';
 import { SET_INFO } from '../data';
 import { getDef } from '../engine/registry';
-import { addToCollection, CLASSIC_PRODUCTS, openPack, poolSize, rollSpecial, SPECIAL_DUP_GOLD, STANDARD_PRODUCTS, type PackResult, type Product } from '../meta/booster';
+import { addToCollection, CLASSIC_PRODUCTS, MODERN_PRODUCTS, openPack, poolSize, rollSpecial, SPECIAL_DUP_GOLD, STANDARD_PRODUCTS, type PackResult, type Product } from '../meta/booster';
 import { STANDARD_SETS } from '../engine/types';
 import { DUPLICATE_GOLD, type Profile } from '../meta/profile';
 import { CardBack, CardDetail, CardFace } from './CardView';
@@ -71,6 +71,8 @@ export function Shop({ profile, go, update }: { profile: Profile; go: (s: Screen
           );
         })}
       </div>
+      <h3 className="section-title">近代賽特別系列</h3>
+      <div className="panel"><h4>Modern Horizons 3（MH3）</h4><p className="muted small">{poolSize('MH3')} 種卡。不屬於標準賽系列；近代賽組牌會檢查禁牌。</p><div className="row">{MODERN_PRODUCTS.map(p=><button key={p.id} className="btn" onClick={()=>buy(p)} disabled={profile.gold<p.price}>{p.name} · {p.price} 金幣</button>)}</div></div>
       <h3 className="section-title">經典補充包</h3>
       <p className="muted small">收錄歷年核心系列與過去環境的強卡，適合自由模式。</p>
       <div className="shop-grid">

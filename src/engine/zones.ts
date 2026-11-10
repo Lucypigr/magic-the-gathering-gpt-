@@ -1,3 +1,5 @@
+import{mh3Detach}from'./mh3-cast';
+import{mh3Observe,mh3Static,mh3Entry,mh3Umbra,mh3Protected,mh3DamageBonus}from'./mh3';
 import { redObserve,redDamage,redEntry,redEntryBlocked } from './modern-red';
 import { burnObserve, burnPrevent } from './modern-burn';
 import { modernRefresh } from './modern-moon';
@@ -229,8 +231,9 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 }
 
 export function emit(g: GameState, ev: GameEvent): void {
+  if(ev.type==='cast'&&!ev.bdSpell){const castCard=ev.card;const item=g.stack.find(s=>s.kind==='spell'&&s.cardId===castCard);if(item)ev={...ev,bdSpell:{...item,targets:item.targets.slice(),targetSpecs:item.targetSpecs.slice(),effects:item.effects.slice()}};}
   burnObserve(g,ev);
-  redObserve(g,ev);
+  redObserve(g,ev);mh3Observe(g,ev);
   if(ev.type==='counterPlaced')orbitRefresh(g);
   if(ev.type==='step'&&ev.step==='endStep')for(const id of g.battlefield){const c=g.cards[id];if(!c.sacAtEnd)continue;c.sacAtEnd=undefined;g.pending.push({source:id,controller:(c.frontierMarks?.orbitTempController?c.frontierMarks.orbitTempController-1:c.controller) as PID,sourceLinkKey:c.tmtLinkKey,abilityIndex:-341,ev,ability:{kind:'trigger',on:'eachEndStep',effects:[{e:'frontier',action:'tdm:tempSac'}]}});}
 
@@ -329,7 +332,7 @@ export function emit(g: GameState, ev: GameEvent): void {
       if (ab.when && !checkCond(g, ab.when, c.controller, c.id, [],ev)) continue;
       if (ab.oncePerTurn) c.usedThisTurn.push(i);
       if(ab.oncePerGame)(c.exhausted??=[]).push(2000+i);
-      const copies=1+extraTriggers;
+      const copies=1+extraTriggers+(colorsOf(c.def).length===0?mh3Static(g,c.controller,'echoes').filter(s=>s.id!==c.id).length:0);
       for (let copy = 0; copy < copies; copy++) g.pending.push({
         source: c.id,
         controller: c.controller,
@@ -388,7 +391,10 @@ export function removeFromZone(g: GameState, c: Card): void {
   }
 }
 
-function resetPermanentState(c: Card): void {
+function resetPermanentState(c: Card,entering=false): void {
+ if(!entering&&c.mh3PrototypeBase){c.def=c.mh3PrototypeBase;c.mh3PrototypeBase=undefined;}
+ if(c.mh3TypeBase){c.def=c.mh3TypeBase;c.mh3TypeBase=undefined;}
+ if(!entering&&c.mh3BestowBase)mh3Detach(c);
  if(c.modernMoonBase){c.def=c.modernMoonBase;c.modernMoonBase=undefined;}
  if(c.webTypeDef){c.def=c.webTypeDef;c.webTypeDef=undefined;c.webAppliedDef=undefined;}
  if(c.orbitFinalBase){c.def=c.orbitFinalBase;c.orbitFinalBase=undefined;c.orbitFinalApplied=undefined;}
@@ -461,6 +467,8 @@ export function refreshTlaPermanents(g: GameState): void {
 
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
   if(to==='battlefield'&&redEntryBlocked(g,c))return;
+  if(to==='graveyard'&&mh3Static(g,c.owner,'necrodominance').length)to='exile';
+  if(c.zone==='battlefield'&&c.frontierMarks?.mh3Unearthed&&to!=='exile'&&to!=='battlefield')to='exile';
   if(c.zone==='exile'&&to!=='exile'&&c.modernSuspended){c.modernSuspended=undefined;delete c.eclCounters?.time;}
   if(to==='graveyard'&&c.zone==='battlefield'){const source=webDeathSource(g,c)??g.cards[(c.frontierMarks?.webWolfSource??0)-1];if(source&&isCreature(c)){delete c.frontierMarks?.webWolfSource;to='exile';g.pending.push({source:source.id,controller:source.controller,abilityIndex:-405,ev:{type:'frontier',action:'webHunt',card:c.id,player:source.controller,amount:0},ability:{kind:'trigger',on:'frontierEvent',effects:[{e:'token',token:'tok-wolf'}]}});}}
   let foundationShuffle=false;if(to==='graveyard'){const replacement=foundationGraveReplacement(g,c);if(replacement){to=replacement.to;foundationShuffle=to==='library';if(replacement.link!==undefined)(c.frontierMarks??={}).valgavothLink=replacement.link;}}
@@ -529,6 +537,8 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   removeFromZone(g, c);
   if (wasOnBf){resetPermanentState(c);c.finMarks=undefined;c.finLinked=undefined;}
   if(c.token&&wasOnBf&&to!=='battlefield')c.tokenDeparted=true;
+  if(c.mh3PrototypeBase&&to!=='battlefield'&&to!=='stack'){c.def=c.mh3PrototypeBase;c.mh3PrototypeBase=undefined;}
+  if(c.mh3BestowBase&&to!=='battlefield'&&to!=='stack')mh3Detach(c);
   c.zone = to;
   c.controller = c.owner;
   c.playableTurn = undefined;
@@ -612,7 +622,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   if(!c.frontierMarks?.cpCraftReturning)c.campusLinked=undefined;
   const finCounters=c.finMarks?.enterCounters??0,finFinality=c.finMarks?.enterFinality;
   const eclAttachment=c.eclPrepared?c.attachedTo:null;
-  resetPermanentState(c);
+  resetPermanentState(c,true);
   if(eclAttachment!==null)c.attachedTo=eclAttachment;
   if(enterAs){c.tlaOriginalDef=c.def;c.def=enterAs;c.copyLayer=enterAs;}
   c.mkmSolved=undefined;if(c.mkmMarks)for(const key of ['impostor','unlock','blood','killer','controlled','previous'])delete c.mkmMarks[key];
@@ -664,7 +674,8 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   webEntry(g,c,controller,origin);
   modernEntry(c,origin);
   modernDashEntry(g,c,origin);
-  redEntry(g,c,origin);
+  redEntry(g,c,origin);mh3Entry(g,c,origin);
+  if(isCreature(c)&&c.counters>0)c.counters*=2**mh3Static(g,c.controller,'doublePlus').length;
   const bdDoubles=frontierStatic(g,controller,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length;
   const fd=finalCounterMultiplier(g,c)*2**(frontierStatic(g,controller,'fdn:doubleCounters').length+bdDoubles);if(c.finality)c.finalityCount=fd;if(c.counters>0)c.counters*=fd;if(c.charge)c.charge*=fd;if(c.stun)c.stun*=fd;if(c.hexproofCounters)c.hexproofCounters*=fd;for(const key of Object.keys(c.eclCounters??{}))c.eclCounters![key]*=fd;if(c.impendingTime!==undefined)c.impendingTime=c.eclCounters?.time??c.impendingTime;
   if(c.counters>0)c.counters+=mshStatic(g,c.controller,'extraCounters').length;
@@ -778,6 +789,7 @@ export function putCounters(g: GameState, c: Card, n: number, counterBatch?: num
   n+=mshStatic(g,c.controller,'extraCounters').length;
   n+=frontierFlags(g,c.controller).prairiePlus??0;
   n*=finalCounterMultiplier(g,c);
+  if(isCreature(c))n*=2**mh3Static(g,c.controller,'doublePlus').length;
   c.counters += n;
   emit(g, { type: 'counterPlaced', card: c.id, controller: c.controller, amount: n, counterKind: '+1/+1', actor,counterBatch });
   return n;
@@ -819,7 +831,7 @@ export function putIntoGraveyard(g: GameState, cards: Card[]): void {
 }
 
 export function destroyCards(g: GameState, cards: Card[]): void {
-  const list = cards.filter((c) => {if(c.zone!=='battlefield'||hasKw(g,c,'indestructible'))return false;if((c.eclCounters?.shield??0)>0){c.eclCounters!.shield--;return false;}return true;});
+  const list = cards.filter((c) => {if(c.zone!=='battlefield'||hasKw(g,c,'indestructible')||mh3Umbra(g,c))return false;if((c.eclCounters?.shield??0)>0){c.eclCounters!.shield--;return false;}return true;});
   for (const c of list) log(g, `${cardName(c)} 被消滅`, c.controller);
   putIntoGraveyard(g, list);
 }
@@ -831,11 +843,16 @@ export function sacrifice(g: GameState, c: Card): void {
   putIntoGraveyard(g, [c]);
 }
 
-export function drawCards(g: GameState, pid: PID, n: number): number {
+export function modifiedDrawCount(g:GameState,pid:PID,n:number):number{
   if(g.battlefield.some(id=>g.cards[id].def.id==='mornsong-aria'&&!abilitiesSuppressed(g,g.cards[id])))return 0;
   if(g.orbitFinalGlobals&&g.players[pid].hand.length<=1)n+=finalStatic(g,pid,'riddlerDraw').length;
   const webDoubles=webStatic(g,pid,'doubleDraw').length;if(webDoubles){const exempt=g.phase==='draw'&&g.active===pid&&!frontierFlags(g,pid).webDrawStepSeen;n=(exempt?1:0)+(n-(exempt?1:0))*2**webDoubles;}
   n*=2**frontierStatic(g,pid,'dft:drawDouble').filter(c=>(g.players[pid].speed??0)>=4).length;
+  return n;
+}
+
+export function drawCards(g: GameState,pid:PID,n:number,prepared=false):number{
+  if(!prepared)n=modifiedDrawCount(g,pid,n);
   const p = g.players[pid];
   let drawn = 0;
   for (let i = 0; i < n; i++) {
@@ -862,7 +879,7 @@ export function drawCards(g: GameState, pid: PID, n: number): number {
 /** 棄牌；silent 時不發出事件（同時棄多張牌時由 discardMany 統一發出一次） */
 export function discard(g: GameState, c: Card, silent = false): void {
   log(g, `棄掉 ${cardName(c)}`, c.owner);
-  moveCard(g, c, 'graveyard');
+  if(c.def.meadow?.mh3Madness){moveCard(g,c,'exile');g.pending.push({source:c.id,controller:c.owner,abilityIndex:-520,ev:{type:'discard',card:c.id,player:c.owner},ability:{kind:'trigger',on:'anyDiscard',effects:[{e:'frontier',action:'modern:mh3:madness'}]}});}else moveCard(g, c, 'graveyard');
   c.discardedTurn = g.turn;
   g.players[c.owner].discardedThisTurn = (g.players[c.owner].discardedThisTurn ?? 0) + 1;
   if (!silent) emit(g, { type: 'discard', player: c.owner, card: c.id });
@@ -876,7 +893,7 @@ export function discardMany(g: GameState, cards: Card[]): void {
 }
 
 export function gainLife(g: GameState, pid: PID, n: number): void {
-  if (n <= 0) return;
+  if (n <= 0||g.players[pid].mh3LifeLockTurn===g.turn) return;
   const p = g.players[pid];
   if(g.battlefield.some(id=>g.cards[id].def.id==='mornsong-aria'&&!abilitiesSuppressed(g,g.cards[id])))return;
   if(g.battlefield.some(id=>g.cards[id].attachedToPlayer===pid&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='dsk:woundNoLife')))return;
@@ -891,7 +908,7 @@ export function gainLife(g: GameState, pid: PID, n: number): void {
 }
 
 export function loseLife(g: GameState, pid: PID, n: number): void {
-  if (n <= 0) return;
+  if (n <= 0||g.players[pid].mh3LifeLockTurn===g.turn) return;
   const p = g.players[pid];
   if(g.active!==pid)n*=2**frontierStatic(g,g.active,'lci:doubleOpponentLifeLoss').length;
   p.life -= n;
@@ -914,8 +931,11 @@ export function dealDamage(
   srcController: PID,
   target: TargetRef,
   n: number,
-  opts: { combat?: boolean; noLifeGain?: boolean; batchCombat?: boolean } = {},
+  opts: { ability?:boolean; combat?: boolean; noLifeGain?: boolean; batchCombat?: boolean } = {},
 ): number {
+  if('c'in target&&src&&mh3Protected(g,g.cards[target.c],src,!!opts.ability))return 0;
+  if(n<=0)return 0;
+  n+=mh3DamageBonus(g,srcController,target,!!opts.combat);
   if (n <= 0) return 0;
   if('p'in target){const redirect=webRedirect(g,target.p);if(redirect)target={c:redirect.id};}
   const noPrevent=g.modernBurn?.noPreventTurn===g.turn||webNoPrevent(g)||meadowNoPrevent(g)||!!opts.combat&&([...finalStatic(g,0,'combatNoPrevent'),...finalStatic(g,1,'combatNoPrevent')].length>0);

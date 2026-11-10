@@ -1,3 +1,4 @@
+import {mh3Effect,mh3Stats,mh3Trigger} from './mh3';
 import { redEffect } from './modern-red';
 import { burnEffect, burnTrigger } from './modern-burn';
 import { murktideEffect } from './modern-murktide';
@@ -21,12 +22,14 @@ export function modernColorlessLand(g: GameState, c: Card): boolean {
 export function modernDelirium(g: GameState, p: PID) { return new Set(g.players[p].graveyard.flatMap(id => g.cards[id].def.types)).size >= 4; }
 function has(g: GameState, c: Card, key: string) { return abilitiesOf(g, c).some(a => a.kind === 'static' && a.frontier === 'modern:' + key); }
 export function modernStats(g: GameState, c: Card, st: import('./state').Stats) {
+  mh3Stats(g,c,st);
   if (has(g, c, 'channeler') && modernDelirium(g, c.controller)) { st.p += 2; st.t += 2; st.kw.add('flying'); }
 }
 export const modernForced = (g: GameState, c: Card) => has(g, c, 'channeler') && modernDelirium(g, c.controller);
-export const modernCanBlock = (g: GameState, b: Card, a: Card) => !has(g, b, 'blockFlyingOnly') || importFlying(g, a);
+export const modernCanBlock = (g: GameState,b:Card,a:Card) => !(g.players[b.controller].mh3GroundedNoBlockTurn===g.turn&&!stats(g,b).kw.has('flying'))&&(!(has(g,b,'blockFlyingOnly')||abilitiesOf(g,b).some(x=>x.kind==='static'&&x.frontier==='modern:mh3:blockFlyingOnly'))||importFlying(g,a));
 const importFlying = (g: GameState, c: Card) => stats(g, c).kw.has('flying');
 export function modernTrigger(g: GameState, c: Card, a: TriggeredAbility, e: GameEvent) {
+  if(a.frontierEvent?.startsWith('modern:mh3:'))return mh3Trigger(g,c,a,e);
   if(a.frontierEvent==='modern:red:damage')return e.type==='frontier'&&e.action==='modern:red:damage'&&e.other===c.controller&&e.player!==c.controller&&e.amount>0;
   if(a.frontierEvent?.startsWith('modern:burn:')) return burnTrigger(g,a,e);
   return a.frontierEvent === 'modern:graveSpellLeaves' && e.type === 'fin' && e.action === 'zoneMove' && e.from === 'graveyard' && e.player === c.controller && g.cards[e.card].def.types.some(t => t === 'Instant' || t === 'Sorcery');
@@ -37,6 +40,7 @@ export function modernEntry(c: Card, from: string) {
 }
 export function modernConsignChoices(g: GameState) { return g.stack.filter(s => s.kind === 'trigger' || s.kind === 'spell' && colorsOf(g.cards[s.cardId].castFace ?? g.cards[s.cardId].def).length === 0); }
 export function* modernEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'frontier' }>): SubFlow {
+  if(ef.action.startsWith('modern:mh3:')){yield*mh3Effect(g,ctx,ef);return;}
   if(ef.action.startsWith('modern:red:')) {yield*redEffect(g,ctx,ef);return;}
   if(ef.action.startsWith('modern:burn:')) { yield* burnEffect(g,ctx,ef); return; }
   const p = ctx.controller, source = g.cards[ctx.source], player = g.players[p], target = resolveRef(g, ctx, 'T0').cards[0];

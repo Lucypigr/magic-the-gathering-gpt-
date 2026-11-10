@@ -1,3 +1,4 @@
+import{mh3BaseStats,mh3HasStatic}from'./mh3';
 import { modernRefresh } from './modern-moon';
 import {webModified,webNoCounter} from './web-shire-support';
 import {frontierStatic,frontierBaseStats,frontierStats,frontierCondition,enchanted} from './frontier-support';
@@ -175,7 +176,7 @@ export function cloneGame(g: GameState): GameState {
     retainedRed:p.retainedRed?.slice(),spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
-    ...g, modernRed:g.modernRed?{...g.modernRed,damage:[...g.modernRed.damage]}:undefined,
+    ...g, mh3Delayed:g.mh3Delayed?.map(d=>({...d})), modernRed:g.modernRed?{...g.modernRed,damage:[...g.modernRed.damage]}:undefined,
     modernBurn: g.modernBurn ? { ...g.modernBurn, landTurns: [...g.modernBurn.landTurns], noGainTurns: [...g.modernBurn.noGainTurns], palms: g.modernBurn.palms.map(x=>({...x})), blood: g.modernBurn.blood.map(x=>({...x})) } : undefined,campusParadigms:g.campusParadigms?.map(x=>({...x})),campusDelayed:g.campusDelayed?.map(x=>({...x})),meadowDelayed:g.meadowDelayed?.map(d=>({...d,ids:d.ids?.slice()})),eclEntryQueue:g.eclEntryQueue?.map(e=>({...e})),lastManaPayment:g.lastManaPayment?.slice(),
     cards,
     players: [cp(g.players[0]), cp(g.players[1])],
@@ -322,6 +323,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   };
   active.set(evaluation, st);
   try {
+  mh3BaseStats(g,c,st);
   frontierBaseStats(g,c,st);
   mshBaseStats(g,c,st);
   if(c.zone==='stack'&&c.frontierMarks?.modernArenaHaste===g.turn)st.kw.add('haste');
@@ -441,6 +443,8 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;
+  if(f.mh3SingleTarget&&g.stack.find(s=>s.kind==='spell'&&s.cardId===c.id)?.targets.filter(Boolean).length!==1)return false;
+  if(f.mh3Colored&&colorsOf(c.castFace??c.def).length===0||f.mh3Multicolor&&colorsOf(c.castFace??c.def).length<2)return false;
   if(f.mvMaxSourcePower){const source=g.cards[sourceId??-1];if(!source||manaValue(c.def)>(source.zone==='battlefield'?stats(g,source).p:source.lastPower??stats(g,source).p))return false;}
   const outlaw=c.def.subtypes?.some(t=>['Assassin','Mercenary','Pirate','Rogue','Warlock'].includes(t))||c.zone==='battlefield'&&c.owner!==c.controller&&g.battlefield.some(id=>g.cards[id].controller===c.controller&&g.cards[id].def.id==='laughing-jasper-flint'&&!abilitiesSuppressed(g,g.cards[id]));
   if(f.outlaw&&!outlaw||f.notOutlaw&&outlaw)return false;
@@ -478,7 +482,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   const jobTypes=c.zone==='battlefield'?g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&!abilitiesSuppressed(g,g.cards[id])).flatMap(id=>g.cards[id].def.fin?.job?[g.cards[id].def.fin!.job!]:[]):[];
   const serumTypes=hasSerum(g,c)?['Soldier']:[];
   const mkmLandTypes=isLand(c)&&c.zone==='battlefield'&&mkmStatic(g,c.controller,'guildpact').length?['Plains','Island','Swamp','Mountain','Forest']:[];
-  const foundationTypes:string[]=[];if(isCreature(c)){if(c.def.id==='skyknight-squire'&&c.counters>=3&&!abilitiesSuppressed(g,c))foundationTypes.push('Knight');if(c.def.id==='adaptive-automaton'&&c.eclType&&!abilitiesSuppressed(g,c))foundationTypes.push(c.eclType);for(const a of frontierStatic(g,c.controller,'dsk:allTribe'))if(a.eclType)foundationTypes.push(a.eclType);if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='fdn:angelAura')))foundationTypes.push('Angel');}
+  const foundationTypes:string[]=[];if(isCreature(c)&&g.battlefield.some(id=>id!==c.id&&mh3HasStatic(g,g.cards[id],'kudo')))foundationTypes.push('Bear');if(isCreature(c)){if(c.def.id==='skyknight-squire'&&c.counters>=3&&!abilitiesSuppressed(g,c))foundationTypes.push('Knight');if(c.def.id==='adaptive-automaton'&&c.eclType&&!abilitiesSuppressed(g,c))foundationTypes.push(c.eclType);for(const a of frontierStatic(g,c.controller,'dsk:allTribe'))if(a.eclType)foundationTypes.push(a.eclType);if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='fdn:angelAura')))foundationTypes.push('Angel');}
   if (f.sub && !asArr(f.sub).some(x=>foundationTypes.includes(x)) && !asArr(f.sub).some(s=>serumTypes.includes(s)) && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !mshChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
   if (f.nonSub && (asArr(f.nonSub).some(x=>foundationTypes.includes(x))||asArr(f.nonSub).some(s=>serumTypes.includes(s))||asArr(f.nonSub).some(s=>jobTypes.includes(s))||mshChangeling||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
   if (f.attackedThisTurn !== undefined && (c.attackedTurn === g.turn) !== f.attackedThisTurn) return false;

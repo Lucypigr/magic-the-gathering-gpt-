@@ -6,6 +6,7 @@ const MANA_BG: Record<string, string> = { W: '#f4ecc8', U: '#8fc3ea', B: '#b7aab
 
 export function ManaSymbol({ sym, size }: { sym: string; size?: number }) {
   const style = size ? { width: size, height: size, fontSize: size * 0.62 } : undefined;
+  if(sym==='E')return <span className="mana" style={style} title="能量指示物">⚡</span>;
   if (sym === 'T') {
     return (
       <span className="mana mana-T" style={style} title="橫置">

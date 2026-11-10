@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import {innkeeperMultiplier} from './meadow-support';
 import {
@@ -27,20 +28,7 @@ import { frontierStatic, frontierFlags } from "./frontier-support";
 import { turnFaceUp } from "./facedown";
 import { woeEffect } from "./woe";
 import { otjEffect } from "./otj";
-import {
-  dealDamage,
-  drawCards,
-  discardMany,
-  emit,
-  enterBattlefield,
-  gainLife,
-  loseLife,
-  moveCard,
-  putCounters,
-  sacrifice,
-  tapCard,
-  destroyCards,
-} from "./zones";
+import { dealDamage, discardMany, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice, tapCard, destroyCards } from "./zones";
 import type {
   Card,
   CardDef,
@@ -214,7 +202,7 @@ export function* foundationEffect(
       g.players[opp].poison = (g.players[opp].poison ?? 0) + 2*innkeeperMultiplier(g,ctx.controller);
       return;
     case "activeDraw":
-      drawCards(g, g.active, 1);
+      (yield*drawWithReplacements(g,g.active,1));
       return;
     case "selfTop":
       moveCard(g, src, "library");
@@ -737,7 +725,7 @@ export function* foundationEffect(
     }
     case "226": {
       const ids = own({ type: "Creature", plusCounters: true });
-      drawCards(g, pid, ids.length);
+      (yield*drawWithReplacements(g,pid,ids.length));
       for (const id of ids)
         yield* runEffects(g, { ...ctx, targets: [{ c: id }] }, [
           { e: "pump", what: "T0", p: 0, t: 0, kw: ["indestructible"] },
@@ -748,7 +736,7 @@ export function* foundationEffect(
       src.tlaOriginalDef ??= src.def;
       src.def = { ...src.def, subtypes: ["Werewolf"] };
       putCounters(g, src, 2);
-      drawCards(g, pid, 1);
+      (yield*drawWithReplacements(g,pid,1));
       break;
     case "232":
       if (c) {
@@ -810,7 +798,7 @@ export function* foundationEffect(
       if (c) {
         const zombie = matches(g, { sub: "Zombie" }, c, pid);
         moveCard(g, c, "hand");
-        if (zombie) drawCards(g, pid, 1);
+        if (zombie) (yield*drawWithReplacements(g,pid,1));
       }
       break;
     case "undyingMalice":
@@ -862,7 +850,7 @@ export function* foundationEffect(
           moveCard(g, g.cards[id], "library");
         shuffleArr(g, p.library);
       }
-      drawCards(g, pid, n);
+      (yield*drawWithReplacements(g,pid,n));
       if (n >= 10) {
         const ids = yield* pick(
           own({ type: "Land" }),
@@ -889,7 +877,7 @@ export function* foundationEffect(
         if (ctx.targets[0]) dealDamage(g, src, pid, ctx.targets[0], 4);
         gainLife(g, pid, 4);
       } else if (choice === 1) yield* run([{ e: "discard", who: "T0", n: 2 }]);
-      else if (choice === 2) drawCards(g, pid, 2);
+      else if (choice === 2) (yield*drawWithReplacements(g,pid,2));
       else p.foundationLost = p.lost = true;
       break;
     }
@@ -941,7 +929,7 @@ export function* foundationEffect(
           g,
           pl.hand.slice().map((id) => g.cards[id]),
         );
-        drawCards(g, pl.id, 7);
+        (yield*drawWithReplacements(g,pl.id,7));
       }
       break;
     case "625":
@@ -1062,7 +1050,7 @@ export function* foundationEffect(
     }
     case "658":
       if (ev?.type === "dies") {
-        if (ev.wasAttacking) drawCards(g, pid, 1);
+        if (ev.wasAttacking) (yield*drawWithReplacements(g,pid,1));
         else dealDamage(g, src, pid, { p: opp }, 1);
       }
       break;
@@ -1481,7 +1469,7 @@ export function* foundationEffect(
       case "72": {
         const m = ctx.mode ?? 0;
         if (m === 0) putCounters(g, src, 2);
-        else if (m === 1) drawCards(g, pid, 1);
+        else if (m === 1) (yield*drawWithReplacements(g,pid,1));
         else if (c) {
           src.tlaOriginalDef ??= src.def;
           src.def = copiableDefinition(c);
@@ -1510,7 +1498,7 @@ export function* foundationEffect(
             )
           )
             break;
-          drawCards(g, pid, 1);
+          (yield*drawWithReplacements(g,pid,1));
         }
         break;
       case "tamiyoCopies": {
@@ -1609,7 +1597,7 @@ export function* foundationEffect(
             discardMany(g, [g.cards[id]]);
           }
         }
-        if (ownDiscard) drawCards(g, pid, 1);
+        if (ownDiscard) (yield*drawWithReplacements(g,pid,1));
         break;
       }
       case "halfLife": {
@@ -2100,7 +2088,7 @@ export function* foundationEffect(
         break;
       case "225":
         if (yield* yes(pid, "抽一張牌？")) {
-          drawCards(g, pid, 1);
+          (yield*drawWithReplacements(g,pid,1));
           if (!frontierFlags(g, pid).faceEvent) {
             const id = (yield* pick(
               p.hand,
@@ -2225,7 +2213,7 @@ export function* foundationEffect(
           id = (yield* pick(ids, "可犧牲另一永久物", 0))[0];
         if (id !== undefined) {
           sacrifice(g, g.cards[id]);
-          drawCards(g, pid, 1);
+          (yield*drawWithReplacements(g,pid,1));
         }
         break;
       }

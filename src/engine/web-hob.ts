@@ -1,8 +1,9 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import { finalContext, finalLook } from './orbit-final-common';
 import { webAddTypes, webForm, webDig, webMillPick } from './web-shire';
 import { copiableDefinition, isCreature, isLand, uncounterableSpells, matches, randInt, shuffleArr, stats } from './state';
-import { moveCard, enterBattlefield, putCounters, drawCards, discardMany, destroyCards, sacrifice, dealDamage, loseLife, gainLife, emit } from './zones';
+import { moveCard, enterBattlefield, putCounters, discardMany, destroyCards, sacrifice, dealDamage, loseLife, gainLife, emit } from './zones';
 import { runEffects, resolveRef, type Ctx } from './effects';
 import { freeCast } from './tla';
 import { frontierFlags } from './frontier-support';
@@ -37,7 +38,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             if (m.webBelladonna === 1)
                 gainLife(g, p, 1);
             else if (m.webBelladonna === 2)
-                drawCards(g, p, 1);
+                (yield*drawWithReplacements(g,p,1));
             else if (m.webBelladonna === 3)
                 for (const c of ours({ type: 'Creature' }))
                     putCounters(g, c, 1);
@@ -154,7 +155,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             if (src.zone === 'battlefield') {
                 moveCard(g, src, 'library');
                 shuffleArr(g, g.players[owner].library);
-                drawCards(g, owner, 3);
+                (yield*drawWithReplacements(g,owner,3));
             }
             break;
         }
@@ -200,7 +201,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             break;
         case '57':
             if (ctx.ev?.type === 'cast' && (yield* yes('依施放所花法術力抓牌，然後棄兩張？'))) {
-                drawCards(g, p, g.cards[ctx.ev.card].manaSpent ?? 0);
+                (yield*drawWithReplacements(g,p,g.cards[ctx.ev.card].manaSpent ?? 0));
                 yield* run([{ e: 'discard', who: 'you', n: 2 }]);
             }
             break;
@@ -210,7 +211,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                 destroyCards(g, [t]);
                 yield* runEffects(g, { ...ctx, controller: who }, [{ e: 'amass', n }]);
                 if (who === p)
-                    drawCards(g, p, 1);
+                    (yield*drawWithReplacements(g,p,1));
             }
             break;
         case 'minusEach': {
@@ -232,7 +233,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                 gainLife(g, p, 2);
             }
             else
-                drawCards(g, p, 1);
+                (yield*drawWithReplacements(g,p,1));
             break;
         }
         case '76': {
@@ -269,7 +270,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             if (yield* yes('棄掉所有手牌後抓等量牌？')) {
                 const n = player.hand.length;
                 discardMany(g, player.hand.slice().map(id => g.cards[id]));
-                drawCards(g, p, n);
+                (yield*drawWithReplacements(g,p,n));
                 if (webStory(g, p))
                     dealDamage(g, src, p, { p: them }, n);
             }
@@ -372,7 +373,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                 webAddTypes(t, ['Bear']);
             }
             if (ours({ sub: 'Bear' }).length >= 3)
-                drawCards(g, p, 2);
+                (yield*drawWithReplacements(g,p,2));
             break;
         case 'bearLands':
             if (selfLive())
@@ -484,7 +485,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             }
             break;
         case '163': {
-            drawCards(g, p, 1);
+            (yield*drawWithReplacements(g,p,1));
             const [id] = yield* pick(player.hand.slice(), '棄一張牌', Math.min(1, player.hand.length));
             if (id !== undefined) {
                 const c = g.cards[id], land = isLand(c);
@@ -501,7 +502,7 @@ export function* webHobEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             yield* webMillPick(g, p, 4, { type: 'Land' }, 2);
             break;
         case '169':
-            drawCards(g, p, Math.max(0, ctx.bdSac?.power ?? 0));
+            (yield*drawWithReplacements(g,p,Math.max(0, ctx.bdSac?.power ?? 0)));
             yield* run([{ e: 'discard', who: 'you', n: 1 }]);
             break;
         case 'trollReturn':

@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { canPayCost, payCost } from "./actions";
 import {
   copiableDefinition,
@@ -16,18 +17,7 @@ import { choose, freeCast } from "./tla";
 import { makeEclTokenBatch } from "./ecl";
 import { mshEffect } from "./msh";
 import { frontierFlags } from "./frontier-support";
-import {
-  dealDamage,
-  discardMany,
-  drawCards,
-  enterBattlefield,
-  gainLife,
-  moveCard,
-  putCounters,
-  sacrifice,
-  tapCard,
-  destroyCards,
-} from "./zones";
+import { dealDamage, discardMany, enterBattlefield, gainLife, moveCard, putCounters, sacrifice, tapCard, destroyCards } from "./zones";
 import type {
   CardDef,
   Effect,
@@ -185,7 +175,7 @@ export function* woeEffect(
       if (c) {
         const qualifies = c.token || c.controller === pid;
         destroyCards(g, [c]);
-        if (c.zone !== "battlefield" && qualifies) drawCards(g, pid, 1);
+        if (c.zone !== "battlefield" && qualifies) (yield*drawWithReplacements(g,pid,1));
       }
       break;
     case "10":
@@ -248,7 +238,7 @@ export function* woeEffect(
     case "56":
       if (src.counters > 0 && (yield* yes(pid, "移去一個指示物抓牌？"))) {
         src.counters--;
-        drawCards(g, pid, 1);
+        (yield*drawWithReplacements(g,pid,1));
       }
       break;
     case "69": {
@@ -273,7 +263,7 @@ export function* woeEffect(
       break;
     }
     case "73": {
-      drawCards(g, pid, 1);
+      (yield*drawWithReplacements(g,pid,1));
       if (!p.hand.length) break;
       const ids = yield* pick(p.hand, "棄一張牌", 1);
       discardMany(
@@ -398,7 +388,7 @@ export function* woeEffect(
           moveCard(g, g.cards[id], "exile");
         }
         shuffleArr(g, pl.library);
-        drawCards(g, owner, n);
+        (yield*drawWithReplacements(g,owner,n));
       }
       break;
     case "90":
@@ -423,7 +413,7 @@ export function* woeEffect(
           candidates.length,
         );
       for (const id of ids) sacrifice(g, g.cards[id]);
-      if (action === "315") drawCards(g, pid, ids.length);
+      if (action === "315") (yield*drawWithReplacements(g,pid,ids.length));
       else {
         const chosen = yield* pick(
           p.graveyard.filter((id) => isCreature(g.cards[id])),

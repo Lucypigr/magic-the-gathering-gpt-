@@ -1,3 +1,4 @@
+import{mh3CommandHasGraves,mh3CommandSpecs}from'../../engine/mh3-cast';
 import {frontierStatic} from '../../engine/frontier-support';
 import { displayName } from '../../data/names';
 import {teamworkOptions,blackSymbols} from '../../engine/msh-support';
@@ -5,7 +6,7 @@ import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type CSS
 import type { Level } from '../../ai/combatAI';
 import { expandDeck, type DeckList } from '../../data';
 import {
-  abilitiesFor,
+  abilitiesFor,castDef,
   castableCards,
   castOptionsFor,
   playOptions,
@@ -125,6 +126,7 @@ export function Battle(props: Props) {
   const [teamworkPick,setTeamworkPick]=useState<{draft:Draft;n:number}|null>(null);
   const [mshStackPick,setMshStackPick]=useState<{draft:Draft;items:{sid:number;text:string}[]}|null>(null);
   const [evidencePick,setEvidencePick]=useState<{draft:Draft;n:number}|null>(null);
+  const [mh3GravePick,setMh3GravePick]=useState<{draft:Draft;max:number}|null>(null);
   const [xPick, setXPick] = useState<{ draft: Draft; max: number; value: number } | null>(null);
   const [detail, setDetail] = useState<number | null>(null);
   const [seq, setSeq] = useState(0);
@@ -396,6 +398,13 @@ export function Battle(props: Props) {
       return;
     }
     proceed(dr);
+  }
+
+  function proceedMh3(dr:Draft){
+    if(!g||dr.kind!=='cast'){proceed(dr);return;}
+    const def=castDef(g.cards[dr.source].def,dr.alt),specs=mh3CommandSpecs(def,dr.mode,dr.specs,dr.x??0);
+    if(mh3CommandHasGraves(def,dr.mode)){const max=Math.min(dr.x??0,g.players.flatMap(p=>p.graveyard).length);if(max>0){setMh3GravePick({draft:{...dr,specs},max});return;}}
+    proceed({...dr,specs});
   }
 
   function chooseTarget(t: TargetRef | null) {
@@ -924,6 +933,7 @@ export function Battle(props: Props) {
       {mshStackPick&&<Modal title="選擇要複製的異能" onClose={()=>setMshStackPick(null)}><div className="mode-list">{mshStackPick.items.map(item=><button className="btn" key={item.sid} onClick={()=>{const dr=mshStackPick.draft;setMshStackPick(null);finish({...dr,stackTargetSid:item.sid});}}>{item.text}</button>)}</div></Modal>}
       {teamworkPick&&<ChooseModal key={'teamwork-'+teamworkPick.draft.source} g={g} d={{type:'choose',player:actingPid,prompt:`Teamwork ${teamworkPick.n}：選擇總力量至少${teamworkPick.n}的生物來橫置`,options:teamworkOptions(g,actingPid),min:1,max:teamworkOptions(g,actingPid).length,purpose:'dig'}} onCancel={()=>setTeamworkPick(null)} onSubmit={ids=>{if(ids.reduce((v,id)=>v+Math.max(0,stats(g,g.cards[id]).p),0)<teamworkPick.n){setToast('所選生物的總力量不足');return;}const dr=teamworkPick.draft;setTeamworkPick(null);finish({...dr,teamworkTapped:ids});}}/>}
       {evidencePick && <ChooseModal key={'evidence-'+evidencePick.draft.source} g={g} d={{type:'choose',player:actingPid,prompt:`蒐證${evidencePick.n}：選擇法力值合計至少${evidencePick.n}的牌`,options:g.players[actingPid].graveyard.filter(id=>id!==evidencePick.draft.source),min:1,max:g.players[actingPid].graveyard.length,purpose:'dig'}} onCancel={()=>setEvidencePick(null)} onSubmit={ids=>{if(ids.reduce((v,id)=>v+manaValue(g.cards[id].def),0)<evidencePick.n){setToast('所選牌的法力值合計不足');return;}const dr=evidencePick.draft;setEvidencePick(null);finish({...dr,evidenceCards:ids});}} />}
+      {mh3GravePick&&<Modal title="指定幾張墳墓場牌？" onClose={()=>setMh3GravePick(null)}><p>至多 {mh3GravePick.max} 張，施放時指定目標。</p><div className="row">{Array.from({length:mh3GravePick.max+1},(_,n)=><button className="btn" key={n} onClick={()=>{const dr=mh3GravePick.draft,def=castDef(g.cards[dr.source].def,dr.alt);setMh3GravePick(null);proceed({...dr,specs:mh3CommandSpecs(def,dr.mode,dr.specs,dr.x??0,n)});}}>{n} 張</button>)}</div></Modal>}
       {xPick && (
         <Modal title={`決定 X 的值`} onClose={() => setXPick(null)}>
           <div className="x-pick">
@@ -942,7 +952,7 @@ export function Battle(props: Props) {
               onClick={() => {
                 const dr = { ...xPick.draft, x: xPick.value };
                 setXPick(null);
-                proceed(dr);
+                proceedMh3(dr);
               }}
             >
               確定

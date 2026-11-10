@@ -70,8 +70,8 @@ export interface CardFaceProps {
 
 export function CardFace({ def, size = 'md', pt, showText, className = '', onClick, onDoubleClick, onMouseEnter, children, title, style, special }: CardFaceProps) {
   const isCr = def.types.includes('Creature');
-  const p = pt?.p ?? def.power ?? 0;
-  const t = pt?.t ?? def.toughness ?? 0;
+  const p = pt?.p ?? def.printedPower ?? def.power ?? 0;
+  const t = pt?.t ?? def.printedToughness ?? def.toughness ?? 0;
   const ptCls = pt ? (pt.p > (def.power ?? 0) || pt.t > (def.toughness ?? 0) ? 'up' : pt.p < (def.power ?? 0) || pt.t < (def.toughness ?? 0) ? 'down' : '') : '';
   return (
     <div
@@ -180,7 +180,7 @@ export function CardDetail({ def, extra, special }: { def: CardDef; extra?: Reac
         )}
         {def.types.includes('Creature') && (
           <div className="cd-pt">
-            力量／防禦力 <b>{`${def.power}/${def.toughness}`}</b>
+            力量／防禦力 <b>{`${def.printedPower??def.power}/${def.printedToughness??def.toughness}`}</b>
           </div>
         )}
         {def.types.includes('Planeswalker') && (
@@ -283,7 +283,7 @@ function BackFace({ def }: { def: CardDef }) {
           )}
           {def.types.includes('Creature') && (
             <div className="cd-pt">
-              力量／防禦力 <b>{`${def.power}/${def.toughness}`}</b>
+              力量／防禦力 <b>{`${def.printedPower??def.power}/${def.printedToughness??def.toughness}`}</b>
             </div>
           )}
         </div>

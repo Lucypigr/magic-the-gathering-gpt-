@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import {validateTargets} from './targets';
 import {meadowEffect,meadowMode,meadowYes,meadowSchedule} from './meadow';
 import {copiableDefinition,isCreature,isLand,matches,other,shuffleArr,stats} from './state';
@@ -6,7 +7,7 @@ import {manaValue,parseCost} from './mana';
 import {choose} from './tla';
 import {makeEclTokenBatch} from './ecl';
 import {resolveRef,runEffects,type Ctx} from './effects';
-import {dealDamage,destroyCards,discardMany,drawCards,emit,enterBattlefield,loseLife,moveCard,putCounters,sacrifice} from './zones';
+import { dealDamage, destroyCards, discardMany, emit, enterBattlefield, loseLife, moveCard, putCounters, sacrifice } from './zones';
 import {frontierFlags} from './frontier-support';
 import type {Card,CardDef,Color,Effect,GameState,PID,Response,SubFlow} from './types';
 export function* dftEffect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'}>):SubFlow{
@@ -43,7 +44,7 @@ export function* dftEffect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'}>
  case 'graveLand':yield*gravePick({type:'Land'},true);break;
  case 'grantEmbalm':if(chosen)(chosen.frontierMarks??={}).bdEmbalm=g.turn;break;
  case 'embalm':{const base=copiableDefinition(src);yield*token({...base,colors:['W'],cost:'',subtypes:[...new Set([...(base.subtypes??[]),'Zombie'])]});break;}
- case 'sacVehicleDraw':if(ctx.bdSac?.vehicle)drawCards(g,p,1);break;
+ case 'sacVehicleDraw':if(ctx.bdSac?.vehicle)(yield*drawWithReplacements(g,p,1));break;
  case '83':{const cards=ctx.targets.flatMap(t=>t&&'c'in t?[g.cards[t.c]]:[]),own=cards.filter(c=>c.controller===p);destroyCards(g,cards);if(own.some(c=>c.zone!=='battlefield'))putCounters(g,src,2);break;}
  case 'discardInstantSorcery':{const[id]=yield*pick(g.players[opp].hand.filter(id=>g.cards[id].def.types.some(t=>t==='Instant'||t==='Sorcery')),'選對手瞬間或巫術手牌',1);if(id!==undefined)discardMany(g,[g.cards[id]]);break;}
  case 'exileHandArtifactCreature':{const[id]=yield*pick(g.players[opp].hand.filter(id=>g.cards[id].def.types.some(t=>t==='Artifact'||t==='Creature')),'選對手神器或生物手牌',1);if(id!==undefined)moveCard(g,g.cards[id],'exile');break;}
@@ -55,13 +56,13 @@ export function* dftEffect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'}>
  case 'abilityMana4':yield*mana(4);break;
  case 'powerAbilityMana':yield*mana(stats(g,src).p);break;
  case 'colorlessAbilityMana2':(player.eclRestrictedMana??=[]).push({mana:'C',rule:'ability'},{mana:'C',rule:'ability'});break;
- case '116':{const artifacts=own({type:'Artifact'}).map(c=>c.id),h=player.hand.slice(),modes=[...(artifacts.length?['犧牲神器']:[]),...(h.length?['棄一張牌']:[]),'不支付'];const i=yield*meadowMode(p,'可支付費用來抓牌',modes);if(modes[i]==='犧牲神器'){const[id]=yield*pick(artifacts,'犧牲神器',1);if(id!==undefined)sacrifice(g,g.cards[id]),drawCards(g,p,1);}else if(modes[i]==='棄一張牌'){const[id]=yield*pick(h,'棄一張牌',1);if(id!==undefined)discardMany(g,[g.cards[id]]),drawCards(g,p,1);}break;}
+ case '116':{const artifacts=own({type:'Artifact'}).map(c=>c.id),h=player.hand.slice(),modes=[...(artifacts.length?['犧牲神器']:[]),...(h.length?['棄一張牌']:[]),'不支付'];const i=yield*meadowMode(p,'可支付費用來抓牌',modes);if(modes[i]==='犧牲神器'){const[id]=yield*pick(artifacts,'犧牲神器',1);if(id!==undefined)sacrifice(g,g.cards[id]),(yield*drawWithReplacements(g,p,1));}else if(modes[i]==='棄一張牌'){const[id]=yield*pick(h,'棄一張牌',1);if(id!==undefined)discardMany(g,[g.cards[id]]),(yield*drawWithReplacements(g,p,1));}break;}
  case '120':if(chosen){const[id]=yield*pick(own({type:'Artifact'}).map(c=>c.id),'可犧牲一個神器');if(id!==undefined){sacrifice(g,g.cards[id]);enterBattlefield(g,chosen,p);}}break;
  case '127':g.extraCombat={player:p,landOnly:false,count:(g.extraCombat?.count??0)+2};meadowSchedule(g,ctx,'fullThrottle');break;
  case '128':{const[id]=yield*pick(own({or:[{type:'Creature'},{sub:'Vehicle'}]}).map(c=>c.id),'可犧牲生物或載具');if(id!==undefined){sacrifice(g,g.cards[id]);emit(g,{type:'frontier',action:'bd:blockbuster',card:src.id,player:p,amount:0});}break;}
- case '132':{const ids=yield*pick(player.hand.slice(),'可棄至多兩張牌',0,2);discardMany(g,ids.map(id=>g.cards[id]));drawCards(g,p,ids.length);break;}
+ case '132':{const ids=yield*pick(player.hand.slice(),'可棄至多兩張牌',0,2);discardMany(g,ids.map(id=>g.cards[id]));(yield*drawWithReplacements(g,p,ids.length));break;}
  case 'goblinMustAttack':{const out=yield*token('tok-g-goblin-11-r');for(const c of out)(c.frontierMarks??={}).bdMustAttack=g.turn;break;}
- case '135':if(player.hand.length&&(yield*meadowYes(p,'棄一張牌來抓兩張牌？'))){const[id]=yield*pick(player.hand.slice(),'棄一張牌',1);if(id!==undefined){discardMany(g,[g.cards[id]]);drawCards(g,p,2);}}break;
+ case '135':if(player.hand.length&&(yield*meadowYes(p,'棄一張牌來抓兩張牌？'))){const[id]=yield*pick(player.hand.slice(),'棄一張牌',1);if(id!==undefined){discardMany(g,[g.cards[id]]);(yield*drawWithReplacements(g,p,2));}}break;
  case '139':for(const who of [0,1]as PID[])if((g.players[who].speed??0)<4)dealDamage(g,src,p,{p:who},2);break;
  case '143':{const old=g.frontierEntryBatch;g.frontierEntryBatch=g.nextSid++;for(const id of player.graveyard.slice())if(matches(g,{or:[{sub:'Mount'},{sub:'Vehicle'}]},g.cards[id],p)){enterBattlefield(g,g.cards[id],p);meadowSchedule(g,ctx,'sacCreated',g.cards[id]);}g.frontierEntryBatch=old;for(const c of own({sub:'Vehicle'}))yield*animate(c);for(const c of own({type:'Creature'}))g.eot.push({card:c.id,p:0,t:0,kw:['haste']});break;}
  case '163':{const pool=[...player.library,...player.graveyard].filter(id=>isCreature(g.cards[id])&&g.cards[id].def.text.trim()===''&&!(g.cards[id].def.keywords?.length));const[id]=yield*pick(pool,'可從牌庫或墳墓場取沒有異能的生物');if(id!==undefined)moveCard(g,g.cards[id],'hand');if(id===undefined||g.cards[id].enteredFrom!=='graveyard'){shuffleArr(g,player.library);emit(g,{type:'search',player:p});}break;}
@@ -72,11 +73,11 @@ export function* dftEffect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'}>
  case '206':{const[id]=yield*pick(player.library.filter(id=>g.cards[id].def.types.includes('Artifact')),'可搜尋一張神器');if(id!==undefined){const c=g.cards[id];if(manaValue(c.def)<=2)enterBattlefield(g,c,p);else moveCard(g,c,'hand');}shuffleArr(g,player.library);emit(g,{type:'search',player:p});break;}
  case '213':if(canPayCost(g,p,parseCost('{1}'))&&(yield*meadowYes(p,'支付{1}複製神器咒語？'))){payCost(g,p,parseCost('{1}'));yield*run([{e:'copySpell'}]);}break;
  case '214':if(chosen&&src.meadowLinked?.includes(chosen.id)&&chosen.objectVersion===src.frontierMarks?.['bdMime:'+chosen.id]){const ability=src.def.abilities?.find(a=>a.kind==='activated'&&a.effects.some(e=>e.e==='frontier'&&e.action==='dft:214')),def=copiableDefinition(chosen);src.tlaOriginalDef??=src.def;src.copyLayer={...def,power:0,toughness:0,abilities:[...(def.abilities??[]),...(ability?[ability]:[])]};src.def=src.copyLayer;src.meadowTypeDef=undefined;}break;
- case '215':{const who=ctx.targets[0]&&'p'in ctx.targets[0]?ctx.targets[0].p:opp;const[id]=yield*pick(g.players[who].hand.slice(),'可選擇一張手牌棄掉');if(id!==undefined){discardMany(g,[g.cards[id]]);drawCards(g,who,1);}break;}
+ case '215':{const who=ctx.targets[0]&&'p'in ctx.targets[0]?ctx.targets[0].p:opp;const[id]=yield*pick(g.players[who].hand.slice(),'可選擇一張手牌棄掉');if(id!==undefined){discardMany(g,[g.cards[id]]);(yield*drawWithReplacements(g,who,1));}break;}
  case 'noPrevent':frontierFlags(g,p).bdNoPrevent=1;break;
  case '218':{const ids=yield*pick(player.hand.filter(id=>!g.cards[id].def.types.some(t=>t==='Instant'||t==='Sorcery')),'放任意數量永久物進場',0,player.hand.length),old=g.frontierEntryBatch;g.frontierEntryBatch=g.nextSid++;for(const id of ids)enterBattlefield(g,g.cards[id],p);g.frontierEntryBatch=old;break;}
  case 'thirdFromTop':if(chosen){const owner=chosen.owner;moveCard(g,chosen,'library');const lib=g.players[owner].library;lib.splice(lib.indexOf(chosen.id),1);lib.splice(Math.min(2,lib.length),0,chosen.id);}break;
- case '221':{const n=src.counters+src.stun+(src.charge??0)+(src.hexproofCounters??0)+(src.finality?Math.max(1,src.finalityCount??1):0)+(src.loyalty??0)+Object.values(src.eclCounters??{}).reduce((n,v)=>n+v,0);if(n%2)drawCards(g,p,2);break;}
+ case '221':{const n=src.counters+src.stun+(src.charge??0)+(src.hexproofCounters??0)+(src.finality?Math.max(1,src.finalityCount??1):0)+(src.loyalty??0)+Object.values(src.eclCounters??{}).reduce((n,v)=>n+v,0);if(n%2)(yield*drawWithReplacements(g,p,2));break;}
  case '223':if(yield*meadowYes(p,'將其他己方生物的基礎力量與防禦力改為此生物力量？')){const n=stats(g,src).p;for(const c of own({type:'Creature',other:true}))g.eot.push({card:c.id,p:0,t:0,kw:[],base:{p:n,t:n}});}break;
  case '224':{const lands:number[]=[],rest:number[]=[];for(const id of player.library.slice()){if(isLand(g.cards[id])){lands.push(id);if(lands.length===2)break;}else rest.push(id);}const old=g.frontierEntryBatch;g.frontierEntryBatch=g.nextSid++;for(const id of lands)enterBattlefield(g,g.cards[id],p,true);g.frontierEntryBatch=old;shuffleArr(g,rest);for(const id of rest)moveCard(g,g.cards[id],'library',true);break;}
  case '228':for(const c of g.battlefield.map(id=>g.cards[id]).filter(c=>c.id!==src.id&&isCreature(c)&&!c.def.types.includes('Artifact')))g.eot.push({card:c.id,p:-(ctx.x??0),t:-(ctx.x??0),kw:[]});break;

@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import {orbitFinalEffect} from './orbit-final';
 import {finalCondition,finalAmount,finalTrigger,finalBaseStats,finalGranted,finalCanSac} from './orbit-final-support';
 import {colorsOf} from './mana';
@@ -7,7 +8,7 @@ import {frontierStatic,frontierFlags} from './frontier-support';
 import {campusCondition,campusTrigger} from './campus-support';
 import {runEffects,resolveRef} from './effects';
 import type {Ctx} from './effects';
-import {destroyCards,moveCard,drawCards,dealDamage,loseLife,gainLife,discardMany,enterBattlefield,putCounters,sacrifice} from './zones';
+import { destroyCards, moveCard, dealDamage, loseLife, gainLife, discardMany, enterBattlefield, putCounters, sacrifice } from './zones';
 import {makeEclTokenBatch} from './ecl';
 import {meadowCounter,meadowYes,meadowMode} from './meadow';
 import {choose} from './tla';
@@ -75,7 +76,7 @@ export function* orbitEffect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'
  case 'recoverSpacecraft':{const ids=g.players[p].graveyard.filter(id=>matches(g,{or:[{type:'Creature'},{sub:'Spacecraft'}]},g.cards[id],p));const[id]=yield*choose(g,p,'將生物或星艦從墳墓場回手',ids,ids.length?1:0);if(id!==undefined)moveCard(g,g.cards[id],'hand');break;}
  case 'handCreature':{const ids=g.players[p].hand.filter(id=>isCreature(g.cards[id])),[id]=yield*choose(g,p,'可將手上一張生物放進戰場',ids);if(id!==undefined)enterBattlefield(g,g.cards[id],p);break;}
  case 'legendCopy':if(victim)yield*makeEclTokenBatch(g,p,{...copiableDefinition(victim),supertypes:[...new Set([...(copiableDefinition(victim).supertypes??[]),'Legendary' as const])]},1);break;
- case 'sacPowerDraw':drawCards(g,p,Math.max(0,ctx.bdSac?.power??0));break;
+ case 'sacPowerDraw':(yield*drawWithReplacements(g,p,Math.max(0,ctx.bdSac?.power??0)));break;
  case 'exileTwoCounter':{const ids=g.players[p].graveyard.slice();if(ids.length<2||!(yield*meadowYes(p,'放逐兩張墳墓場牌以放置指示物？')))break;const chosen=yield*choose(g,p,'放逐兩張墳墓場牌',ids,2,2);for(const id of chosen)moveCard(g,g.cards[id],'exile');if(c.zone==='battlefield'&&(ctx.sourceLinkKey===undefined||ctx.sourceLinkKey===c.tmtLinkKey))putCounters(g,c,1);break;}
  case 'counterUnlessX':yield*effects([{e:'counterUnless',what:ef.what??'T0',pay:ctx.x??0}]);break;
  case 'storiesDiscard':{const hand=g.players[p].hand.slice(),creatures=hand.filter(id=>isCreature(g.cards[id]));if(creatures.length&&(yield*meadowMode(p,'選擇棄牌方式',['棄一張生物牌','棄兩張牌']))===0){const ids=yield*choose(g,p,'棄一張生物牌',creatures,1);discardMany(g,ids.map(id=>g.cards[id]));}else yield*effects([{e:'discard',who:'you',n:2}]);break;}
@@ -94,7 +95,7 @@ export function* orbitEffect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'
  case 'sentinelLand':yield*effects([{e:'tutor',filter:{type:'Land',basic:true},optional:true,to:g.battlefield.some(id=>g.cards[id].controller===p&&g.cards[id].def.subtypes?.includes('Dragon'))?'battlefield':'top',tapped:true}]);break;
 
  case 'attachCreated':{if(ctx.created===undefined||c.zone!=='battlefield')break;c.attachedTo=ctx.created;break;}
- case 'drawIfPlus':if((victim?.counters??0)>0)drawCards(g,p,1);break;
+ case 'drawIfPlus':if((victim?.counters??0)>0)(yield*drawWithReplacements(g,p,1));break;
  case 'destroyAndLander':{if(!victim)break;const owner=victim.controller;destroyCards(g,[victim]);yield*makeEclTokenBatch(g,owner,'tok-lander',1);break;}
  case 'destroyIfZero':if(victim&&stats(g,victim).p<=0)destroyCards(g,[victim]);break;
  case 'surveilArtifacts':yield*effects([{e:'surveil',n:g.battlefield.filter(id=>g.cards[id].controller===p&&g.cards[id].def.types.includes('Artifact')).length}]);break;
@@ -103,9 +104,9 @@ export function* orbitEffect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'
  case 'doublePower':if(victim)yield*effects([{e:'pump',what:ef.what??'T0',p:stats(g,victim).p,t:0}]);break;
  case 'doubleStats':if(victim)yield*effects([{e:'pump',what:ef.what??'T0',p:stats(g,victim).p,t:stats(g,victim).t}]);break;
  case 'doubleAll':for(const id of [...g.battlefield]){const target=g.cards[id];if(target.controller===p&&isCreature(target)){const s=stats(g,target);g.eot.push({card:id,p:s.p,t:s.t,kw:[]});}}break;
- case 'kirin':if(victim){const token=victim.token;moveCard(g,victim,'hand');if(token)drawCards(g,p,1);}break;
+ case 'kirin':if(victim){const token=victim.token;moveCard(g,victim,'hand');if(token)(yield*drawWithReplacements(g,p,1));}break;
  case 'defeat':if(victim){const controller=victim.controller;moveCard(g,victim,'exile');loseLife(g,controller,3);gainLife(g,p,3);}break;
- case 'narset':if(yield*meadowYes(p,'棄掉手牌並依本回合施放咒語數抓牌？')){discardMany(g,g.players[p].hand.slice().map(id=>g.cards[id]));drawCards(g,p,g.players[p].spellsThisTurn);}break;
+ case 'narset':if(yield*meadowYes(p,'棄掉手牌並依本回合施放咒語數抓牌？')){discardMany(g,g.players[p].hand.slice().map(id=>g.cards[id]));(yield*drawWithReplacements(g,p,g.players[p].spellsThisTurn));}break;
  case 'toTop':case 'toBottom':if(victim){moveCard(g,victim,'library');const lib=g.players[victim.owner].library;lib.splice(lib.indexOf(victim.id),1);if(key==='toTop')lib.unshift(victim.id);else lib.push(victim.id);}break;
  case 'removeCounters':if(victim){victim.counters=0;victim.charge=0;victim.stun=0;victim.hexproofCounters=0;victim.eclCounters={};victim.lore=0;victim.loyalty=0;victim.finality=false;victim.finalityCount=0;}break;
  case 'impulseChoose':{const cards=g.players[p].library.slice(0,2);for(const id of cards)moveCard(g,g.cards[id],'exile');const [id]=yield*choose(g,p,'選擇一張可使用至下回合結束的牌',cards,cards.length?1:0,1);if(id!==undefined)campusPermit(g,g.cards[id],p,g.turn+(g.active===p?2:1));break;}

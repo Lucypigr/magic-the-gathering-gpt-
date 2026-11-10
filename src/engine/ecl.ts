@@ -1,3 +1,5 @@
+import{drawWithReplacements}from'./draw-replacements';
+import{mh3BeforeEntry}from'./mh3';
 import { redMastery } from './modern-red';
 import {webBeforeEntry} from './web-shire';
 import {webStatic,webChooseRiot} from './web-shire-support';
@@ -9,7 +11,7 @@ import {frontierStatic} from './frontier-support';
 import {mkmStatic} from './mkm-support';
 import { finStatic } from './fin-support';
 import { validateTargets } from './targets';
-import { canPayCost, payCost } from './actions';
+import { canPayCost, payCost, frontierCanPayLife, frontierPayLife } from './actions';
 import { allDefs, getDef } from './registry';
 import { choose, freeCast } from './tla';
 import { resolveRef, runEffects, type Ctx } from './effects';
@@ -27,19 +29,7 @@ import {
   stats,
 } from './state';
 import { counterKinds, ECL_TRIBES, removeCounterKind, vividColors } from './ecl-support';
-import {
-  dealDamage,
-  discard,
-  drawCards,
-  emit,
-  enterBattlefield,
-  loseLife,
-  moveCard,
-  putIntoGraveyard,
-  putMinusCounters,
-  sacrifice,
-  tapCard,
-} from './zones';
+import { dealDamage, discard, emit, enterBattlefield, loseLife, moveCard, putIntoGraveyard, putMinusCounters, sacrifice, tapCard } from './zones';
 import type { Card, CardDef, Color, Effect, Filter, GameState, PID, Ref, Response, SubFlow } from './types';
 const permanent = (c: Card) => c.def.types.some((t) => ['Creature', 'Artifact', 'Enchantment', 'Planeswalker', 'Land'].includes(t));
 const typeList = () =>
@@ -98,6 +88,7 @@ export function* resolveEclEntries(g: GameState): SubFlow {
     let def = entry.enterAs,
       tapped = entry.tapped;
     let choice = c.def.ecl?.asEnters;
+    if(choice==='mh3Copy'||choice==='mh3Shape')def=yield*mh3BeforeEntry(g,c,entry.controller);
     if(choice==='web')def=yield*webBeforeEntry(g,c,entry.controller);
     if(choice==='orbit')def=yield*orbitBeforeEntry(g,c,entry.controller);
     if(choice==='campusLandCopy')def=yield*campusBeforeEntry(g,c,entry.controller);
@@ -106,9 +97,10 @@ export function* resolveEclEntries(g: GameState): SubFlow {
     if(choice==='talion'){const r:Response=yield{type:'mode',player:entry.controller,prompt:'選擇1至10',options:Array.from({length:10},(_,i)=>String(i+1)),count:1,purpose:'count'};(c.frontierMarks??={}).talion=1+(r.type==='modes'?r.picks[0]??0:0);}
     if(choice==='cardName'){const landsOnly=!!c.def.meadow?.campusNameLand;const defs=allDefs().filter(d=>d.set!=='TOK'&&(!landsOnly||d.types.includes('Land')));const answer:Response=yield{type:'mode',player:entry.controller,prompt:landsOnly?'選擇地牌名稱':'對手手牌：'+g.players[other(entry.controller)].hand.map(id=>g.cards[id].def.name).join('、')+'；選擇一張牌名',options:defs.map(d=>d.name),count:1,purpose:'trigger'};c.foundationNamed=defs[answer.type==='modes'?answer.picks[0]??0:0]?.name;}
     if (choice === 'color') c.chosenColor = yield* color(g, entry.controller);
-    if (choice === 'shock') {
-      if (g.players[entry.controller].life >= 2 && (yield* yes(g, entry.controller, '支付2生命使震地不橫置？')))
-        loseLife(g, entry.controller, 2);
+    if (choice === 'shock'||choice==='shock3') {
+      const amount=choice==='shock3'?3:2;
+      if (frontierCanPayLife(g,entry.controller,amount) && (yield* yes(g, entry.controller, '支付'+amount+'生命使此地不橫置？')))
+        frontierPayLife(g, entry.controller, amount);
       else tapped = true;
     }
     if(choice==='otjClone'){const ids=g.battlefield.filter(id=>g.cards[id].controller===entry.controller&&isCreature(g.cards[id]));const [id]=yield*choose(g,entry.controller,'可複製一個己方生物',ids);if(id!==undefined){const base=copiable(g.cards[id]);def={...base,subtypes:[...(base.subtypes??[]),'Shapeshifter','Rogue'],ecl:undefined};}}
@@ -449,7 +441,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
       if (c) {
         const controller = c.controller;
         yield* run([{ e: 'counter', what: 'T0' }]);
-        drawCards(g, controller, 1);
+        (yield*drawWithReplacements(g,controller,1));
       }
       break;
     }
@@ -482,7 +474,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
     }
     case 'crescendo': {
       const sub = yield* chooseEclType(g, me);
-      drawCards(g, me, eligible(g, me, { sub }).length);
+      (yield*drawWithReplacements(g,me,eligible(g, me, { sub }).length));
       break;
     }
     case 'mirrorform': {
@@ -750,7 +742,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
       const [id] = yield* choose(g, me, '棄一張牌', p.hand.slice(), 1);
       if (id !== undefined) {
         discard(g, g.cards[id]);
-        drawCards(g, me, 1);
+        (yield*drawWithReplacements(g,me,1));
       }
       break;
     }
@@ -844,7 +836,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
       const ids = yield* choose(g, me, '選擇恰好兩個生物', eligible(g, me, { type: 'Creature' }), 2, 2);
       if (ids.length < 2) break;
       const n = Math.abs(stats(g, g.cards[ids[0]]).p - stats(g, g.cards[ids[1]]).p);
-      drawCards(g, me, n);
+      (yield*drawWithReplacements(g,me,n));
       for (const id of ids) g.eot.push({ card: id, p: n, t: n, kw: ['trample'] });
       break;
     }
@@ -1040,7 +1032,7 @@ export function* eclEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'ecl
         (ctx.sourceType ?? src.eclType) &&
         matches(g, { sub: (ctx.sourceType ?? src.eclType)! }, g.cards[ctx.ev.card], me)
       )
-        drawCards(g, me, 1);
+        (yield*drawWithReplacements(g,me,1));
       break;
     case 'wickermawMana': {
       const col = yield* color(g, me);

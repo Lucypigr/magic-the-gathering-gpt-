@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import {dftEffect} from './meadow-dft';
 import {campusSosEffect} from './campus-sos';
 import {copiableDefinition,isCreature,isLand,matches,other,shuffleArr,stats} from './state';
@@ -9,7 +10,7 @@ import {choose,freeCast,target} from './tla';
 import {makeEclTokenBatch} from './ecl';
 import {resolveRef,runEffects,type Ctx} from './effects';
 import {meadowCounter,meadowYes,meadowMode,meadowEffect} from './meadow';
-import {dealDamage,discardMany,drawCards,emit,enterBattlefield,enterBattlefieldBack,gainLife,loseLife,moveCard,putCounters,sacrifice,tapCard,destroyCards} from './zones';
+import { dealDamage, discardMany, emit, enterBattlefield, enterBattlefieldBack, gainLife, loseLife, moveCard, putCounters, sacrifice, tapCard, destroyCards } from './zones';
 import type {Card,CardDef,Effect,GameState,PID,SubFlow,TargetSpec} from './types';
 export function campusReflexive(g:GameState,ctx:Ctx,effects:Effect[],targets:TargetSpec[]=[]){g.pending.push({source:ctx.source,controller:ctx.controller,abilityIndex:-311,ev:{type:'frontier',action:'cpReflexive',card:ctx.source,player:ctx.controller,amount:1},ability:{kind:'trigger',on:'frontierEvent',effects,targets}});}
 export function campusPermit(g:GameState,c:Card,p:PID,until=g.turn){c.playableBy=p;c.playableTurn=g.turn;c.playableUntil=until;}
@@ -56,13 +57,13 @@ export function* campusEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'fro
  case '59':if(chosen){const n=manaValue(chosen.def);yield*run([{e:'counter',what:'T0'}]);yield*campusDiscover(g,ctx,n);}break;
  case 'tapOrUntap':if(chosen&&(yield*meadowYes(p,'要橫置或重置此永久物？'))){if(chosen.tapped)chosen.tapped=false;else tapCard(g,chosen);}break;
  case '61':for(const t of ctx.targets)if(t&&'c'in t){const c=g.cards[t.c];if(c?.zone==='battlefield'){c.campusOriginalDef??=c.def;c.def={id:c.def.id,name:c.def.name,set:c.def.set,rarity:c.def.rarity,cost:c.def.cost,types:['Artifact'],subtypes:['Treasure'],text:'',abilities:[{kind:'activated',cost:{tap:true,sacSelf:true},effects:[{e:'addManaOfChoice',n:1}],label:'犧牲：任意色',manaAbility:true}]};(c.frontierMarks??={}).cpTreasureSource=src.id;c.frontierMarks.cpTreasureVersion=src.objectVersion??0;}}break;
- case '63':{meadowCounter(g,src,'chorus');drawCards(g,p,1);const[id]=yield*pick(g.players[p].hand.slice(),'棄一張牌',1);if(id!==undefined){discardMany(g,[g.cards[id]]);if((src.eclCounters?.chorus??0)>=4&&g.cards[id].zone==='graveyard'&&(yield*meadowYes(p,'免費施放棄掉的牌？')))yield*freeCast(g,ctx,g.cards[id]);}break;}
+ case '63':{meadowCounter(g,src,'chorus');(yield*drawWithReplacements(g,p,1));const[id]=yield*pick(g.players[p].hand.slice(),'棄一張牌',1);if(id!==undefined){discardMany(g,[g.cards[id]]);if((src.eclCounters?.chorus??0)>=4&&g.cards[id].zone==='graveyard'&&(yield*meadowYes(p,'免費施放棄掉的牌？')))yield*freeCast(g,ctx,g.cards[id]);}break;}
  case 'removeTime':if((src.eclCounters?.time??0)>0)src.eclCounters!.time--;break;
  case 'reboundCast':if(src.zone==='exile'&&(yield*meadowYes(p,'反彈：免費施放？')))yield*freeCast(g,ctx,src);break;
  case 'animateDinosaur':if(chosen){chosen.baseDef??=chosen.def;chosen.def={...chosen.def,types:[...new Set([...chosen.def.types,'Artifact' as const,'Creature' as const])],subtypes:[...(chosen.def.subtypes??[]),'Dinosaur']};g.eot.push({card:chosen.id,p:0,t:0,kw:[],base:{p:4,t:3}});}break;
  case '73':{const ids=g.players[p].library.slice(0,3),[top]=yield*pick(ids,'可保留一張在牌庫頂');for(const id of ids)if(id!==top)moveCard(g,g.cards[id],'graveyard');break;}
  case '81':{const index=g.stack.findIndex(s=>s.sid===ef.n&&s.kind!=='spell'&&!s.manaAbility);if(index>=0){const[item]=g.stack.splice(index,1),source=g.cards[item.cardId];if(source?.zone==='battlefield'&&(item.sourceLinkKey===undefined||source.tmtLinkKey===item.sourceLinkKey)&&source.def.types.some(t=>t==='Artifact'||t==='Creature'||t==='Planeswalker')){(source.frontierMarks??={}).cpDisableSource=src.id;source.frontierMarks.cpDisableVersion=src.objectVersion??0;}}break;}
- case '88':if(!g.players[opp].hand.length)drawCards(g,p,1);else{const[id]=yield*choose(g,opp,'棄一張牌',g.players[opp].hand.slice(),1);if(id!==undefined)discardMany(g,[g.cards[id]]);}break;
+ case '88':if(!g.players[opp].hand.length)(yield*drawWithReplacements(g,p,1));else{const[id]=yield*choose(g,opp,'棄一張牌',g.players[opp].hand.slice(),1);if(id!==undefined)discardMany(g,[g.cards[id]]);}break;
  case '90':{const ids=yield*pick(g.players[p].graveyard.filter(id=>isCreature(g.cards[id])),'可取回至多兩張生物',0,2);for(const id of ids)moveCard(g,g.cards[id],'hand');break;}
  case '94':{const old=g.players.map(p=>p.graveyard.slice());for(const who of[g.active,other(g.active)]as PID[])for(const c of g.battlefield.map(id=>g.cards[id]).filter(c=>c.id!==src.id&&c.controller===who&&isCreature(c)))sacrifice(g,c);for(const who of[g.active,other(g.active)]as PID[])for(const id of old[who])if(g.cards[id].zone==='graveyard'&&isCreature(g.cards[id]))enterBattlefield(g,g.cards[id],who);break;}
  case '98':if(yield*meadowYes(p,'支付1生命，移回手上？')){if(g.players[p].life>=1){loseLife(g,p,1);moveCard(g,src,'hand');}}break;
@@ -72,12 +73,12 @@ export function* campusEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'fro
  case 'exileOpponentDeaths':frontierFlags(g,p).cpExileOpponentDeaths=1;break;
  case 'reanimateFinalityLife':if(chosen?.zone==='graveyard'){const n=manaValue(chosen.def);(chosen.finMarks??={}).enterFinality=1;enterBattlefield(g,chosen,p);loseLife(g,p,n);}break;
  case 'exileHandChoice':{const who=resolveRef(g,ctx,'T0').players[0]??opp,[id]=yield*choose(g,who,'放逐一張手牌',g.players[who].hand.slice(),1);if(id!==undefined)moveCard(g,g.cards[id],'exile');break;}
- case '123':{const ids=g.players[p].library.slice(0,2),grave=yield*pick(ids,'刺探2：選擇放入墳墓場',0,2);for(const id of grave)moveCard(g,g.cards[id],'graveyard');const n=ids.length-grave.length;drawCards(g,p,n);loseLife(g,p,3*n);break;}
+ case '123':{const ids=g.players[p].library.slice(0,2),grave=yield*pick(ids,'刺探2：選擇放入墳墓場',0,2);for(const id of grave)moveCard(g,g.cards[id],'graveyard');const n=ids.length-grave.length;(yield*drawWithReplacements(g,p,n));loseLife(g,p,3*n);break;}
  case 'tombPermission':frontierFlags(g,p).cpTomb=1;break;
  case '129':{const who=resolveRef(g,ctx,'T0').players[0]??opp,[id]=yield*pick(g.players[who].hand.filter(id=>g.cards[id].def.types.some(t=>t==='Artifact'||t==='Creature')),'選擇神器或生物棄掉',1);if(id!==undefined)discardMany(g,[g.cards[id]]);break;}
  case '133':if(ev?.type==='etb'&&(yield*meadowYes(p,'此生物基礎力量變成新恐龍的力量？'))){const n=stats(g,g.cards[ev.card]).p;g.eot.push({card:src.id,p:0,t:0,kw:[],base:{p:n}});}break;
  case '134':{const ids=g.players[p].library.slice(0,2);let land=false,nonland=false;for(const id of ids){const c=g.cards[id];land||=isLand(c);nonland||=!isLand(c);moveCard(g,c,'exile');campusPermit(g,c,p);}if(land)yield*tk('tok-cp-dino31');if(nonland)yield*tk('tok-treasure');break;}
- case 'rummagePlus':{const ids=yield*pick(g.players[p].hand.slice(),'棄任意張再抓多一張',0,g.players[p].hand.length);discardMany(g,ids.map(id=>g.cards[id]));drawCards(g,p,ids.length+1);break;}
+ case 'rummagePlus':{const ids=yield*pick(g.players[p].hand.slice(),'棄任意張再抓多一張',0,g.players[p].hand.length);discardMany(g,ids.map(id=>g.cards[id]));(yield*drawWithReplacements(g,p,ids.length+1));break;}
  case '135':meadowCounter(g,src,'bore');if((src.eclCounters?.bore??0)>=3){src.eclCounters!.bore=0;yield*run([{e:'transform',what:'self'}]);}break;
  case 'cantBlock':if(chosen)g.eot.push({card:chosen.id,p:0,t:0,kw:[],cantBlock:true});break;
  case 'impulse':case 'impulseNextEnd':{const id=g.players[p].library[0];if(id!==undefined){const c=g.cards[id];moveCard(g,c,'exile');campusPermit(g,c,p,action==='impulseNextEnd'?g.turn+2:g.turn);if(action==='impulseNextEnd')(c.frontierMarks??={}).cpUntilOwnEnd=p+1;}break;}
@@ -104,7 +105,7 @@ export function* campusEffect(g:GameState,original:Ctx,ef:Extract<Effect,{e:'fro
  case '212':{const n=ev?.type==='dies'?ev.power:ef.n??0;yield*tk({id:'tok-cp-fungus-dinosaur',name:'Fungus Dinosaur',set:'TOK',rarity:'T',token:true,types:['Creature'],subtypes:['Fungus','Dinosaur'],colors:['G'],cost:'',power:n,toughness:n,text:''});break;}
  case '213':{const[id]=yield*pick(g.players[p].hand.filter(id=>isLand(g.cards[id])),'可放一張地進場');if(id!==undefined){const cave=g.cards[id].def.subtypes?.includes('Cave');enterBattlefield(g,g.cards[id],p);if(cave)gainLife(g,p,4);}break;}
  case '221':if(stats(g,src).p===20)destroyCards(g,g.battlefield.map(id=>g.cards[id]).filter(c=>c.id!==src.id&&isCreature(c)));break;
- case '222':{drawCards(g,p,1);const[id]=yield*pick(g.players[p].hand.slice(),'棄一張牌',1);if(id!==undefined){const n=manaValue(g.cards[id].def);discardMany(g,[g.cards[id]]);yield*target(g,ctx,{kind:'player'},[{e:'mill',n,who:'T0'}]);}break;}
+ case '222':{(yield*drawWithReplacements(g,p,1));const[id]=yield*pick(g.players[p].hand.slice(),'棄一張牌',1);if(id!==undefined){const n=manaValue(g.cards[id].def);discardMany(g,[g.cards[id]]);yield*target(g,ctx,{kind:'player'},[{e:'mill',n,who:'T0'}]);}break;}
  case 'topPlay':frontierFlags(g,p).cpTopPlay=1;break;
  case '226':{const ids=ours({type:['Artifact','Creature'],tapped:false}).map(c=>c.id);if(ids.length>=2&&(yield*meadowYes(p,'橫置兩個神器或生物來發現3？'))){for(const id of yield*pick(ids,'選兩個',2,2))tapCard(g,g.cards[id]);yield*campusDiscover(g,ctx,3);}break;}
  case '228':{const[id]=yield*pick(ours({type:'Creature',other:true}).map(c=>c.id),'可複製另一個己方生物');if(id!==undefined){src.baseDef??=src.def;src.def={...copiableDefinition(g.cards[id])};src.copyLayer=src.def;}break;}

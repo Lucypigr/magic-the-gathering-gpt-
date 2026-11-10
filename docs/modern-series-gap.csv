@@ -47,7 +47,7 @@ BNG,Born of the Gods,2014-02-07,expansion,True,165,6,159,165,6
 JOU,Journey into Nyx,2014-05-02,expansion,True,165,6,159,165,6
 MD1,Modern Event Deck 2014,2014-05-30,box,False,24,3,21,26,5
 M15,Magic 2015,2014-07-18,core,True,264,22,242,269,27
-KTK,Khans of Tarkir,2014-09-26,expansion,True,249,22,227,252,27
+KTK,Khans of Tarkir,2014-09-26,expansion,True,249,24,225,252,29
 FRF,Fate Reforged,2015-01-23,expansion,True,175,12,163,180,17
 DTK,Dragons of Tarkir,2015-03-27,expansion,True,249,14,235,254,19
 MM2,Modern Masters 2015,2015-05-22,masters,False,249,17,232,248,17
@@ -73,7 +73,7 @@ GS1,Global Series Jiang Yanggu & Mu Yanling,2018-06-22,duel_deck,False,36,1,35,9
 RNA,Ravnica Allegiance,2019-01-25,expansion,True,263,18,245,268,23
 GK2,RNA Guild Kit,2019-02-15,box,False,123,2,121,128,7
 WAR,War of the Spark,2019-05-03,expansion,True,260,9,251,265,14
-MH1,Modern Horizons,2019-06-14,draft_innovation,True,250,11,239,253,11
+MH1,Modern Horizons,2019-06-14,draft_innovation,True,250,12,238,253,12
 M20,Core Set 2020,2019-07-12,core,True,324,58,266,327,63
 ELD,Throne of Eldraine,2019-10-04,expansion,True,280,22,258,282,27
 THB,Theros Beyond Death,2020-01-24,expansion,True,268,11,257,271,16
@@ -100,7 +100,7 @@ LCI,The Lost Caverns of Ixalan,2023-11-17,expansion,True,286,286,0,291,291
 MKM,Murders at Karlov Manor,2024-02-09,expansion,True,274,271,3,279,276
 OTJ,Outlaws of Thunder Junction,2024-04-19,expansion,True,271,271,0,276,276
 BIG,The Big Score,2024-04-19,expansion,True,30,2,28,30,2
-MH3,Modern Horizons 3,2024-06-14,draft_innovation,True,303,7,296,306,12
+MH3,Modern Horizons 3,2024-06-14,draft_innovation,True,303,303,0,306,305
 ACR,Assassin's Creed,2024-07-05,draft_innovation,True,133,6,127,138,11
 BLB,Bloomburrow,2024-08-02,expansion,True,274,274,0,279,279
 DSK,Duskmourn: House of Horror,2024-09-27,expansion,True,271,271,0,276,276

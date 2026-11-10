@@ -1,9 +1,10 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import { webNoCounter } from './web-shire-support';
 import { finalContext, finalLook } from './orbit-final-common';
 import { webAddTypes, webForm, webCopy, webDig, webMillPick } from './web-shire';
 import { copiableDefinition, isCreature, shuffleArr, stats } from './state';
-import { moveCard, enterBattlefield, putCounters, drawCards, discardMany, sacrifice, tapCard, dealDamage, loseLife, gainLife } from './zones';
+import { moveCard, enterBattlefield, putCounters, discardMany, sacrifice, tapCard, dealDamage, loseLife, gainLife } from './zones';
 import { resolveRef, type Ctx } from './effects';
 import { freeCast } from './tla';
 import { frontierFlags } from './frontier-support';
@@ -34,7 +35,7 @@ export function* webSpmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                 const chosen = yield* pick(ids, '橫置兩個永久物', 2, 2);
                 for (const id of chosen)
                     tapCard(g, g.cards[id], p);
-                drawCards(g, p, 1);
+                (yield*drawWithReplacements(g,p,1));
             }
             else if (selfLive())
                 sacrifice(g, src);
@@ -139,7 +140,7 @@ export function* webSpmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             if (id !== undefined) {
                 const n = manaValue(g.cards[id].def);
                 sacrifice(g, g.cards[id]);
-                drawCards(g, p, n);
+                (yield*drawWithReplacements(g,p,n));
                 const options = player.hand.filter(id => !g.cards[id].def.types.some(t => t === 'Instant' || t === 'Sorcery') && manaValue(g.cards[id].def) <= n), [chosen] = yield* pick(options, '可將符合費用的永久物放進戰場');
                 if (chosen !== undefined)
                     enterBattlefield(g, g.cards[chosen], p);
@@ -324,7 +325,7 @@ export function* webSpmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             break;
         }
         case '128':
-            drawCards(g, p, Math.max(0, 8 - player.hand.length));
+            (yield*drawWithReplacements(g,p,Math.max(0, 8 - player.hand.length)));
             break;
         case '135':
             if (yield* yes('交換生命總量？')) {
@@ -338,7 +339,7 @@ export function* webSpmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
                         break;
                     loseLife(g, loser, Math.abs(delta));
                     if (player.life < old)
-                        drawCards(g, p, old - player.life);
+                        (yield*drawWithReplacements(g,p,old - player.life));
                 }
             }
             break;

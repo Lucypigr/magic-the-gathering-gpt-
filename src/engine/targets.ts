@@ -1,3 +1,4 @@
+import{mh3Protected}from'./mh3';
 import {finalProtected,finalMonoHexproof} from './orbit-final-support';
 import {frontierFlags} from './frontier-support';
 import {frontierStatic} from './frontier-support';
@@ -6,13 +7,16 @@ import {manaValue} from './mana';
 import {finStatic} from './fin-support';
 import {eclStatic} from './ecl-support';
 import { colorsOf } from './mana';
-import { hasKw, isCreature, matches, other } from './state';
+import { hasKw, abilitiesSuppressed, isCreature, matches, other } from './state';
 import type { Card, GameState, PID, CardDef, TargetRef, TargetSpec } from './types';
 
 /** 辟邪：不能成為對手的咒語或異能的目標 */
-export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): boolean {
+export function targetable(g: GameState, c: Card, by: PID, sourceId?:number,ability=false): boolean {
   const ks=hasKw(g,c,'protection_colors'),ko=hasKw(g,c,'protection_opponent');
   const source=sourceId!==undefined?g.cards[sourceId]:undefined;
+  if(source&&mh3Protected(g,c,source,ability))return false;
+  if(source&&c.controller!==by&&c.def.meadow?.mh3HexproofColors&&colorsOf(source.castFace??source.def).length&&!abilitiesSuppressed(g,c))return false;
+  if(source&&c.controller!==by&&ability&&c.def.id==='volatile-stormdrake'&&!abilitiesSuppressed(g,c))return false;
   if(source&&(finalProtected(g,c,colorsOf(source.castFace??source.def))||finalMonoHexproof(g,c,source,by)))return false;
   if(source&&frontierStatic(g,c.controller,'coyoteProtection').some(s=>s.id===c.id)&&matches(g,{sub:'Coyote'},source,by))return false;
   if(source&&ks&&colorsOf(source.def).length)return false;
@@ -24,6 +28,7 @@ export function targetable(g: GameState, c: Card, by: PID, sourceId?:number): bo
   const ignore=c.controller!==by&&isCreature(c)&&frontierStatic(g,by,'dsk:ignoreHexproofWard').length;
   if(frontierStatic(g,c.controller,'fdn:protectionEverything').some(x=>x.id===c.id))return false;
   if(source&&c.controller!==by&&!ignore){const colors=colorsOf(source.castFace??source.def);if(frontierStatic(g,c.controller,'fdn:hexproofBlack').some(x=>x.id===c.id)&&colors.includes('B')||frontierStatic(g,c.controller,'fdn:hexproofWhite').some(x=>x.id===c.id)&&colors.includes('W')||frontierStatic(g,c.controller,'fdn:hexproofInstants').some(x=>x.id===c.id)&&(source.castFace??source.def).types.includes('Instant'))return false;}
+  if(hasKw(g,c,'shroud'))return false;
   if (!ignore&&c.controller !== by && hasKw(g, c, 'hexproof')) return false;
   return true;
 }
@@ -34,6 +39,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
   const f = spec.filter;
   const addPlayers = (onlyOpp: boolean) => {
     for (const pid of [0, 1] as PID[]) {
+      if(spec.mh3OpponentPlayer&&pid===controller)continue;
       if(pid!==controller&&(frontierFlags(g,pid).bdHexproof||frontierStatic(g,pid,'fdn:playerHexproof').length))continue;
       if (onlyOpp && pid === controller) continue;
       if (f?.ctrl === 'opp' && pid === controller) continue;
@@ -49,7 +55,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       if (creatureOnly && !isCreature(c) && !(orPlaneswalker && c.def.types.includes('Planeswalker'))) continue;
       if (spec.notSelf && id === sourceId) continue;
       if (!matches(g, f, c, controller, sourceId)) continue;
-      if (!attachment && !targetable(g, c, controller, sourceId)) continue;
+      if (!attachment && !targetable(g, c, controller, sourceId,spec.mh3AbilityTargets)) continue;
       out.push({ c: id });
     }
   };
@@ -94,6 +100,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       break;
     case 'gyCard':
       for (const pid of [0, 1] as PID[]) {
+      if(spec.mh3OpponentPlayer&&pid===controller)continue;
         if (f?.ctrl === 'you' && pid !== controller) continue;
         if (f?.ctrl === 'opp' && pid === controller) continue;
         for (const id of g.players[pid].graveyard) {

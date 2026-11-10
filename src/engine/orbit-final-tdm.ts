@@ -1,6 +1,7 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { finalContext, finalLook, finalCastCopy, finalBehold, finalCopyUntilEnd, finalEntryReanimate, finalSearch, finalTransferCounters } from './orbit-final-common';
 import { copiableDefinition, isCreature, isLand, matches, randInt, shuffleArr, stats } from './state';
-import { moveCard, enterBattlefield, putCounters, drawCards, discardMany, destroyCards, sacrifice, dealDamage, loseLife, gainLife } from './zones';
+import { moveCard, enterBattlefield, putCounters, discardMany, destroyCards, sacrifice, dealDamage, loseLife, gainLife } from './zones';
 import { runEffects, resolveRef, type Ctx } from './effects';
 import { freeCast } from './tla';
 import {} from './ecl';
@@ -103,7 +104,7 @@ export function* finalTdmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
             break;
         case 'measuresDraw':
             if (ctx.ev?.type === 'dies' && ctx.ev.controller === ef.n)
-                drawCards(g, ef.n as PID, 2);
+                (yield*drawWithReplacements(g,ef.n as PID,2));
             break;
         case 'decay':
             (g.delayed ??= []).push({ source: src.id, controller: p, on: 'endCombat', once: true, persistent: true, effects: [E('sacDecay')] });
@@ -181,7 +182,7 @@ export function* finalTdmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
         case '127': {
             const ids = yield* pick(player.hand.slice(), '可棄至多兩張牌', 0, 2);
             discardMany(g, ids.map(id => g.cards[id]));
-            drawCards(g, p, ids.length);
+            (yield*drawWithReplacements(g,p,ids.length));
             break;
         }
         case 'tersaPlay':
@@ -255,7 +256,7 @@ export function* finalTdmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
         case '172': {
             const total = () => ours({ type: 'Creature' }).reduce((n, c) => n + stats(g, c).t, 0);
             if (total() >= 10)
-                drawCards(g, p, 1);
+                (yield*drawWithReplacements(g,p,1));
             if (total() >= 20)
                 yield* run([{ e: 'untap', what: mineRef }]);
             if (total() >= 40)
@@ -279,7 +280,7 @@ export function* finalTdmEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, {
         case '176': {
             const doomed = cards({ type: ['Creature', 'Enchantment'] }), before = new Set(doomed.map(c => c.id));
             destroyCards(g, doomed);
-            drawCards(g, p, [...before].filter(id => g.cards[id].zone !== 'battlefield').length);
+            (yield*drawWithReplacements(g,p,[...before].filter(id => g.cards[id].zone !== 'battlefield').length));
             break;
         }
         case '184': {

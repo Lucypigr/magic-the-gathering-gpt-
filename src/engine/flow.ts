@@ -1,3 +1,8 @@
+import{drawWithReplacements}from'./draw-replacements';
+import{isLand}from'./state';
+import{meadowYes}from'./meadow';
+import{mh3TriggerAbility,mh3Cleanup,mh3Static,mh3Opening,mh3Umbra,mh3Draw}from'./mh3';
+import{mh3Detach}from'./mh3-cast';
 import {webRestore,webRefresh,webStatic,webLegendExempt,webTriggerAbility} from './web-shire-support';
 import {finalRefresh,finalStatic,finalTriggerAbility} from './orbit-final-support';
 import {orbitRefresh} from './orbit-station';
@@ -46,7 +51,7 @@ import {
 } from './state';
 import { targetControllerMatches, hasTargetsAvailable, isLegalTarget, legalTargets, validateTargets } from './targets';
 import type { Card, Effect, Flow, GameState, PID, Response, SubFlow, TargetRef, TargetSpec } from './types';
-import { addLore, discard, drawCards, emit, enterBattlefield, enterBattlefieldBack, moveCard,  putIntoGraveyard, sacrifice } from './zones';
+import { addLore, discard, emit, enterBattlefield, enterBattlefieldBack, moveCard, putIntoGraveyard, sacrifice } from './zones';
 
 // ------------------------------------------------------------
 // 狀態動作
@@ -82,7 +87,7 @@ export function checkSBA(g: GameState): void {
       if (!isCreature(c)) continue;
       const st = stats(g, c);
       if (st.t <= 0) dying.push(c);
-      else if ((c.damage >= st.t || c.dtDamage) && !st.kw.has('indestructible')) dying.push(c);
+      else if ((c.damage >= st.t || c.dtDamage) && !st.kw.has('indestructible')){if(mh3Umbra(g,c))changed=true;else dying.push(c);}
     }
     if (dying.length) {
       for (const c of dying) log(g, `${cardName(c)} 死去`, c.controller, 'combat');
@@ -95,7 +100,7 @@ export function checkSBA(g: GameState): void {
       if (c.def.aura) {
         const t = c.attachedTo != null ? g.cards[c.attachedTo] : undefined;
         if (c.attachedToPlayer===undefined&&(!t || t.zone !== 'battlefield' || (c.def.aura.target?.kind!=='permanent'&&!isCreature(t)))) {
-          moveCard(g, c, 'graveyard');
+          if(!mh3Detach(c))moveCard(g, c, 'graveyard');
           changed = true;
         }
       } else if (c.def.equip && c.attachedTo != null) {
@@ -166,6 +171,7 @@ function* flushTriggers(g: GameState): SubFlow {
     let ab = campusTriggerAbility(g,g.cards[t.source],meadowTriggerAbility(g,g.cards[t.source],t.ability,t.ev));
     if(ab.campusAbilityTarget){const items=g.stack.filter(s=>s.kind!=='spell'&&!s.manaAbility);const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇至多一個反擊異能的目標',options:['不選目標',...items.map(s=>s.text)],count:1,purpose:'trigger'};const index=r.type==='modes'?r.picks[0]??0:0;ab={...ab,effects:index&&items[index-1]?[{e:'frontier',action:'lci:81',n:items[index-1].sid}]:[]};}
     const src = g.cards[t.source];
+    ab=yield*mh3TriggerAbility(g,src,ab);
     ab=finalTriggerAbility(g,src,ab);
     ab=yield*webTriggerAbility(g,src,ab);
     if(ab.orbitDistribution){const counters=ab.orbitDistribution==='own3',total=counters?3:g.battlefield.filter(id=>g.cards[id].controller===t.controller&&g.cards[id].def.types.includes('Land')).length;const template:TargetSpec=counters?{kind:'creature',filter:{ctrl:'you'}}:{kind:'creatureOrPlaneswalker',filter:{ctrl:'opp'}};const max=Math.min(total,legalTargets(g,template,t.controller,t.source).length),min=counters&&max?1:0;if(counters&&!max)continue;const answer:Response=yield{type:'mode',player:t.controller,prompt:'選擇分配目標數量',options:Array.from({length:max-min+1},(_,i)=>String(i+min)),count:1,purpose:'count'};const n=min+(answer.type==='modes'?answer.picks[0]??0:0);let left=total;const effects:Effect[]=[];for(let i=0;i<n;i++){const limit=left-(n-i-1);let v=limit;if(i<n-1){const r:Response=yield{type:'mode',player:t.controller,prompt:'分配給第'+(i+1)+'個目標',options:Array.from({length:limit},(_,j)=>String(j+1)),count:1,purpose:'count'};v=1+(r.type==='modes'?r.picks[0]??0:0);}left-=v;effects.push(counters?{e:'counters',what:('T'+i)as 'T0',n:v}:{e:'damage',to:('T'+i)as 'T0',n:v});}ab={...ab,targets:Array.from({length:n},()=>template),effects};}
@@ -175,6 +181,7 @@ function* flushTriggers(g: GameState): SubFlow {
     let foundationDistribution:number[]|undefined;
     if(ab.foundationVariableTargets){const max=Math.min(ab.foundationVariableTargets,g.battlefield.filter(id=>isCreature(g.cards[id])).length);if(!max)continue;const answer:Response=yield{type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:max},(_,i)=>String(i+1)),count:1,purpose:'count'};const n=1+(answer.type==='modes'?answer.picks[0]??0:0);ab={...ab,targets:Array.from({length:n},()=>({kind:'creature'}))};foundationDistribution=n===1?[ab.foundationDistribution??2]:[1,1];}
     if (ab.modes) {
+      const modeNames=ab.modes.map(m=>m.text);
       // 模式式觸發：先選模式，再選目標
       const legal = ab.modes.map((_, i) => i).filter((i) => (!ab.modesOncePerTurn || src.classModesTurn?.turn!==g.turn || !src.classModesTurn.modes.includes(i)) && hasTargetsAvailable(g, ab.modes![i].targets ?? [], t.controller, t.source));
       const count = Math.min(ab.chooseN ?? 1, legal.length);
@@ -207,7 +214,7 @@ function* flushTriggers(g: GameState): SubFlow {
         sp.push(...(m.targets ?? []));
       }
       ab = { ...ab, modes: undefined, effects: eff, targets: sp.length ? sp : undefined };
-      log(g, `${cardName(src)}：選擇了「${picks.map((i) => t.ability.modes![i].text).join('」「')}」`, t.controller);
+      log(g, `${cardName(src)}：選擇了「${picks.map((i) => modeNames[i]).join('」「')}」`, t.controller);
     }
     if(ab.mkmDynamic){
       const kind=ab.mkmDynamic;const total=kind==='vindicator'?src.mkmMarks?.faceUpX??0:kind==='maze'?src.castX??0:kind==='distribute2'?2:kind==='distribute3'?3:g.battlefield.length;
@@ -224,7 +231,7 @@ function* flushTriggers(g: GameState): SubFlow {
     if(ab.finDynamic){const options=g.players[t.controller].graveyard.filter(id=>isCreature(g.cards[id]));const max=options.length;const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇返回生物目標數量（總法力值至多6）',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};const n=r.type==='modes'?Math.min(max,r.picks[0]??0):0;ab={...ab,targets:Array.from({length:n},()=>({kind:'gyCard' as const,filter:{ctrl:'you' as const,type:'Creature' as const},totalMvMax:6}))};}
     if(ab.variableVividTargets){const n=vividColors(g,t.controller).length;const r:Response=yield {type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:n+1},(_,i)=>String(i)),count:1,purpose:'count'};const k=r.type==='modes'?r.picks[0]??0:0;ab={...ab,targets:Array.from({length:Math.min(k,n)},()=>({kind:'creature' as const,filter:{ctrl:'you' as const}}))};}
     if(ab.frontierDynamic){const max=ab.frontierDynamic==='players'?2:Math.min(src.castX??0,g.battlefield.filter(id=>isCreature(g.cards[id])).length);const answer:Response=yield{type:'mode',player:t.controller,prompt:'選擇目標數量',options:Array.from({length:max+1},(_,i)=>String(i)),count:1,purpose:'count'};const n=answer.type==='modes'?answer.picks[0]??0:0;ab={...ab,targets:Array.from({length:n},()=>({kind:ab.frontierDynamic==='players'?'player' as const:'creature' as const}))};}
-    const specs = (ab.targets ?? []).map(s=>s.filter?.chosenTribe?{...s,filter:{...s.filter,chosenTribe:false,sub:t.sourceType??src.eclType??''}}:s).map(s=>s.filter?.crewedSourceThisTurn?{...s,filter:{...s.filter,crewedSourceThisTurn:false,ids:(src.crewedBy??[]).slice()}}:s);
+    const specs = (ab.targets ?? []).map(s=>({...s,mh3AbilityTargets:true})).map(s=>s.filter?.chosenTribe?{...s,filter:{...s.filter,chosenTribe:false,sub:t.sourceType??src.eclType??''}}:s).map(s=>s.filter?.crewedSourceThisTurn?{...s,filter:{...s.filter,crewedSourceThisTurn:false,ids:(src.crewedBy??[]).slice()}}:s);
     let targets: (TargetRef | null)[] = [];
     if (specs.length) {
       const options = specs.map((s) => legalTargets(g, s, t.controller, t.source));
@@ -292,7 +299,7 @@ export function* settle(g: GameState): SubFlow {
     for(const pid of [0,1] as PID[]){
       if(g.legendExempt?.pid===pid&&g.legendExempt.turn===g.turn)continue;
       const groups=new Map<string,number[]>();
-      for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&(c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN'||c.def.set==='MKM'||c.def.set==='MSH')&&matches(g,{legendary:true},c,pid))groups.set(c.def.name,[...(groups.get(c.def.name)??[]),id]);}
+      for(const id of g.battlefield){const c=g.cards[id];if(c.controller===pid&&(c.def.set==='TMT'||c.def.set==='ECL'||c.def.set==='FIN'||c.def.set==='MKM'||c.def.set==='MSH'||c.def.set==='MH3')&&matches(g,{legendary:true},c,pid))groups.set(c.def.name,[...(groups.get(c.def.name)??[]),id]);}
       for(const ids of groups.values())if(ids.length>1){
         const r:Response=yield {type:'choose',player:pid,prompt:'傳奇規則：選擇保留的一個永久物',options:ids,min:1,max:1,purpose:'sacrifice'};
         const keep=r.type==='choose'&&ids.includes(r.ids[0])?r.ids[0]:ids[ids.length-1];
@@ -324,13 +331,13 @@ function* resolveTopItem(g: GameState): SubFlow {
   const legal = item.targets.map((t, i) =>
     t && specs[i] && (item.targetVersions?.[i]===undefined || !('c' in t) || item.targetVersions[i]===(g.cards[t.c]?.objectVersion??0)) && isLegalTarget(g, specs[i], t, item.controller, item.cardId) && targetControllerMatches(g,specs[i],t,item.targets) ? t : null,
   );
-  if (hadTargets && legal.every((t) => !t)) {
+  if (hadTargets && legal.every((t) => !t)&&!src.mh3BestowBase) {
     log(g, `${cardName(src)} 因目標不合法而無效`, item.controller);
     if (item.kind === 'spell' && src.zone === 'stack') moveCard(g, src, item.alt === 'flashback' || item.alt === 'harmonize' ? 'exile' : 'graveyard');
     return;
   }
   const ctx: Ctx = {
-    controller: item.controller,
+    controller: item.controller,mh3Ability:item.kind!=='spell',
     source: item.cardId,
     targets: legal,
     ev: item.ev,
@@ -348,6 +355,7 @@ function* resolveTopItem(g: GameState): SubFlow {
     alt: item.alt,
   };
   if (item.kind === 'spell') {
+    if(src.mh3BestowBase&&!legal.some(Boolean))mh3Detach(src);
     const def = src.def;
     if ((item.alt === 'adventure'||item.alt==='orbitFreeOmen') || item.alt === 'flashback' || (item.alt === 'harmonize' && !isPermanentDef(def))) {
       // 冒險：結算後放逐，之後可以施放本體；返照：結算後放逐
@@ -385,7 +393,7 @@ function* resolveTopItem(g: GameState): SubFlow {
             ...host.def,
             types: [...new Set([...host.def.types, 'Creature' as const])],
             subtypes: anim.replaceCreatureTypes ? (anim.subtype?[anim.subtype]:[]) : [...(host.def.subtypes ?? []), ...(anim.subtype ? [anim.subtype] : [])],
-            ...(src.def.id==='noggle-the-mind'?{colors:[]}:{}),
+            ...(src.def.id==='noggle-the-mind'?{colors:[]}:src.def.id==='tricksters-elk'?{colors:['G' as const]}:src.def.id==='amphibian-downpour'?{colors:['U' as const]}:{}),
             power: anim.p,
             toughness: anim.t,
           };
@@ -437,10 +445,10 @@ export function* priorityStep(g: GameState): SubFlow {
           // 步驟結束：法術力池清空
           for (const pl of g.players) {
             const ozai=g.battlefield.some(id=>g.cards[id].controller===pl.id&&g.cards[id].def.id==='ozai-the-phoenix-king');
-            pl.pool=ozai ? [...(pl.pool??[]),...(pl.firePool??[])].map(()=> 'R' as const) : webStatic(g,pl.id,'retainRed').length?(pl.pool??[]).filter(m=>m==='R'):[];
+            pl.pool=ozai ? [...(pl.pool??[]),...(pl.firePool??[])].map(()=> 'R' as const) : (webStatic(g,pl.id,'retainRed').length+mh3Static(g,pl.id,'retainRed').length)?(pl.pool??[]).filter(m=>m==='R'):[];
             if(ozai) pl.firePool=[];
             pl.poolNoncreature = [];pl.mshRestricted=[];pl.mkmGossip=[];
-            if(!webStatic(g,pl.id,'retainRed').length)pl.modernArenaMana=0;pl.poolLesson=[];pl.frontierMana=[];pl.foundationPool=(pl.foundationPool??[]).filter(m=>m.keepTurn===g.turn);
+            if(!(webStatic(g,pl.id,'retainRed').length+mh3Static(g,pl.id,'retainRed').length))pl.modernArenaMana=0;pl.poolLesson=[];pl.frontierMana=[];pl.foundationPool=(pl.foundationPool??[]).filter(m=>m.keepTurn===g.turn);
           }
           return;
         }
@@ -459,6 +467,7 @@ export function* priorityStep(g: GameState): SubFlow {
         if(card&&r.alt==='harmonize'&&r.harmonizeTapped===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&isCreature(g.cards[id])&&!g.cards[id].tapped);const a:Response=yield{type:'choose',player:p,prompt:'可橫置一個生物以減少和聲費用',options,min:0,max:1,purpose:'dig'};r.harmonizeTapped=a.type==='choose'?a.ids[0]??null:null;}
         if(card&&(card.def.meadow?.modernDelve||finalStatic(g,p,'delveSpells').length)&&r.orbitDelve===undefined){const options=g.players[p].graveyard.filter(id=>id!==card.id);const a:Response=yield{type:'choose',player:p,prompt:'可放逐墳墓場牌以探掘（每張減少一點通用法術力）',options,min:0,max:Math.min(options.length,spellCost(g,card,p,r.mode,r.targets,r.alt,r.x??0,r.foundationCosts,r.harmonizeTapped).generic),purpose:'dig'};r.orbitDelve=a.type==='choose'?a.ids:[];}
         if(card&&(r.alt==='web'||r.alt==='webGranted')&&r.webReturn===undefined){const options=g.battlefield.filter(id=>g.cards[id].controller===p&&g.cards[id].tapped&&isCreature(g.cards[id]));const answer:Response=yield{type:'choose',player:p,prompt:'蛛絲甩蕩：收回已橫置的己方生物',options,min:1,max:1,purpose:'dig'};r.webReturn=answer.type==='choose'?answer.ids[0]:undefined;}
+        if(card?.def.meadow?.mh3ReplicateEnergy&&r.replicate===undefined){const max=Math.floor((g.players[p].energy??0)/Number(card.def.meadow.mh3ReplicateEnergy));const answer:Response=yield{type:'mode',player:p,prompt:'支付能量複製幾次？',options:Array.from({length:max+1},(_,n)=>String(n)),count:1,purpose:'count'};r.replicate=answer.type==='modes'?answer.picks[0]??0:0;}
         if(card?.def.meadow?.modernReplicate&&r.replicate===undefined){const cost=spellCost(g,card,p,r.mode,r.targets,r.alt,r.x??0);let max=0;while(canPayCost(g,p,{...cost,generic:cost.generic+max+1}))max++;const a:Response=yield{type:'mode',player:p,prompt:'選擇複製次數（每次另付{1}）',options:Array.from({length:max+1},(_,n)=>String(n)),count:1,purpose:'count'};r.replicate=a.type==='modes'?a.picks[0]??0:0;}
         const view=card?castDef(card.def,r.alt):undefined;
         const stackKinds=view?.spell?.modes?.[r.mode??0]?.frontierStackTargets??(view?.frontierStack?[view.frontierStack]:[]);
@@ -527,7 +536,7 @@ export function* priorityStep(g: GameState): SubFlow {
 // 回合流程
 // ------------------------------------------------------------
 function* mulligans(g: GameState): SubFlow {
-  for (const pid of [g.firstPlayer, other(g.firstPlayer)] as PID[]) drawCards(g, pid, 7);
+  for (const pid of [g.firstPlayer, other(g.firstPlayer)] as PID[]) (yield*drawWithReplacements(g,pid,7));
   for (const pid of [g.firstPlayer, other(g.firstPlayer)] as PID[]) {
     const pl = g.players[pid];
     while (pl.mulligans < 5) {
@@ -541,7 +550,7 @@ function* mulligans(g: GameState): SubFlow {
         pl.library.push(id);
       }
       shuffleArr(g, pl.library);
-      drawCards(g, pid, 7);
+      (yield*drawWithReplacements(g,pid,7));
     }
     if (pl.mulligans > 0) {
       const n = Math.min(pl.mulligans, pl.hand.length);
@@ -596,6 +605,7 @@ function* combatPhase(g: GameState): SubFlow {
   g.phase = 'combat_attackers';
   g.version++;
   const r: Response = yield { type: 'attackers', player: a };
+  if(r.type==='attackers')for(const id of r.ids){const c=g.cards[id];if(c?.def.id==='hydra-trainer'&&c.controller===a&&!c.tapped&&!c.sick&&(yield*meadowYes(a,'督戰海德拉訓練師？'))){(c.frontierMarks??={}).bdExertBy=a+1;c.frontierMarks.bdExertTurn=g.turn;c.frontierMarks.mh3ExertTurn=g.turn;}}
   const list = declareAttackers(g, a, r.type === 'attackers' ? r.ids : [], r.type === 'attackers' ? r.targets : undefined);
   if (!list.length) {
     g.phase = 'combat_end';
@@ -664,10 +674,10 @@ function* turn(g: GameState): SubFlow {
     p.extraLandsThisTurn = 0;
     p.loyaltyActivatedThisTurn = false;
     p.mountainBonus = false;
-    p.pool = webStatic(g,p.id,'retainRed').length?(p.pool??[]).filter(m=>m==='R'):[];if(!webStatic(g,p.id,'retainRed').length)p.modernArenaMana=0;p.frontierMana=[];p.foundationPool=[];p.mkmGossip=[];p.mshRestricted=[];
+    p.pool = (webStatic(g,p.id,'retainRed').length+mh3Static(g,p.id,'retainRed').length)?(p.pool??[]).filter(m=>m==='R'):[];if(!(webStatic(g,p.id,'retainRed').length+mh3Static(g,p.id,'retainRed').length))p.modernArenaMana=0;p.frontierMana=[];p.foundationPool=[];p.mkmGossip=[];p.mshRestricted=[];
     const lightning=p.finFlags?.lightningUntil;
     p.finFlags=lightning&&lightning!==a+1?{lightningUntil:lightning}:{};
-    p.retainedRed=webStatic(g,p.id,'retainRed').length?(p.retainedRed??[]).filter(m=>m==='R'):[];p.eclRestrictedMana=[];p.eclEntries=[];p.eclCounterPlaced=false;p.eclAttackedMerfolk=0;p.eclMaralenUsed=[];if(p.eclPreventDamageUntil===a)p.eclPreventDamageUntil=undefined;
+    p.retainedRed=(webStatic(g,p.id,'retainRed').length+mh3Static(g,p.id,'retainRed').length)?(p.retainedRed??[]).filter(m=>m==='R'):[];p.eclRestrictedMana=[];p.eclEntries=[];p.eclCounterPlaced=false;p.eclAttackedMerfolk=0;p.eclMaralenUsed=[];if(p.eclPreventDamageUntil===a)p.eclPreventDamageUntil=undefined;
     p.poolNoncreature = [];
     p.poolLesson=[];
     p.firePool = [];
@@ -697,12 +707,14 @@ function* turn(g: GameState): SubFlow {
   }
   // 重置
   g.phase = 'untap';
+  const winter=mh3Static(g,0,'winterMoon').length+mh3Static(g,1,'winterMoon').length;let winterKeep:number|undefined;if(winter){const ids=g.battlefield.filter(id=>{const c=g.cards[id];return c.controller===a&&c.tapped&&isLand(c)&&!c.def.supertypes?.includes('Basic')&&!stats(g,c).noUntap;});if(ids.length){const answer:Response=yield{type:'choose',player:a,prompt:'冬月：選擇至多一個非基本地重置',options:ids,min:0,max:1,purpose:'dig'};winterKeep=answer.type==='choose'?answer.ids[0]:undefined;}}
   const cpTappedBefore=g.battlefield.filter(id=>g.cards[id].controller===a&&g.cards[id].tapped);
   for (const id of g.battlefield) {
     const c = g.cards[id];
     if(c.def.id==="benders-waterskin") c.tapped=false;
     if (c.controller !== a){if(c.tapped&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='lci:opponentUntap')&&!stats(g,c).noUntap){if(c.stun>0)c.stun--;else c.tapped=false;}continue;}
     c.sick = false;
+    if(winter&&isLand(c)&&!c.def.supertypes?.includes('Basic')&&c.id!==winterKeep)continue;
     if(c.frontierMarks?.bdExertBy===a+1&&(c.frontierMarks.bdExertTurn??g.turn)<g.turn){delete c.frontierMarks.bdExertBy;delete c.frontierMarks.bdExertTurn;continue;}
     if(c.tapped&&c.def.id==='hedge-whisperer'){const r:Response=yield{type:'yesno',player:a,prompt:'保持 Hedge Whisperer 橫置？'};if(r.type==='yesno'&&r.yes)continue;}
     if (c.tapped && !stats(g, c).noUntap) {
@@ -722,7 +734,7 @@ function* turn(g: GameState): SubFlow {
   // 抓牌
   g.phase = 'draw';
   emit(g, { type: 'step', step: 'draw', player: a });
-  if (g.turn > 1) drawCards(g, a, 1);
+  if (g.turn > 1&&!mh3Static(g,a,'necrodominance').length) yield*mh3Draw(g,a,1);
   yield* priorityStep(g);if(g.finEndTurn)break phases;
   // 主要階段一：傳奇在抓牌步驟後前進一章
   g.phase = 'main1';
@@ -742,6 +754,7 @@ function* turn(g: GameState): SubFlow {
   emit(g,{type:'step',step:'main2',player:g.active});
   yield* priorityStep(g);if(g.finEndTurn)break phases;
   while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield*combatPhase(g);if(g.finEndTurn)break phases;g.landCombatOnly=false;if(extra.mainPhases){g.phase='main2';emit(g,{type:'step',step:'main2',player:a});yield*priorityStep(g);if(g.finEndTurn)break phases;}}
+  while((pl.mh3ExtraBeginning??0)>0){pl.mh3ExtraBeginning!--;g.phase='untap';for(const id of g.battlefield){const c=g.cards[id];if(c.controller!==a||stats(g,c).noUntap)continue;if(c.frontierMarks?.bdExertBy===a+1){delete c.frontierMarks.bdExertBy;continue;}if(c.stun>0)c.stun--;else c.tapped=false;}g.phase='upkeep';emit(g,{type:'step',step:'upkeep',player:a});yield*priorityStep(g);g.phase='draw';emit(g,{type:'step',step:'draw',player:a});if(!mh3Static(g,a,'necrodominance').length)yield*mh3Draw(g,a,1);yield*priorityStep(g);}
   // 結束：動員之類的暫時衍生物在結束步驟開始時犧牲
   g.phase = 'end';
   for (const id of [...g.battlefield]) {
@@ -762,14 +775,14 @@ function* turn(g: GameState): SubFlow {
   if(g.finExtraEnd){g.finExtraEnd=false;g.finEndNumber=2;emit(g,{type:'step',step:'endStep',player:a});yield* priorityStep(g);}
   }
   // 清除
-  g.phase = 'cleanup';
-  const handLimit=mshStatic(g,a,'handTen').length?10:webStatic(g,a,'hand8').length?8:Math.max(0,7-(frontierStatic(g,(1-a)as PID,'dsk:winterHand').length&&new Set(g.players[(1-a)as PID].graveyard.flatMap(id=>g.cards[id].def.types)).size>=4?new Set(g.players[(1-a)as PID].graveyard.flatMap(id=>g.cards[id].def.types)).size:0));
+  g.phase = 'cleanup';mh3Cleanup(g);
+  const handLimit=mh3Static(g,a,'necrodominance').length?5:mshStatic(g,a,'handTen').length?10:webStatic(g,a,'hand8').length?8:Math.max(0,7-(frontierStatic(g,(1-a)as PID,'dsk:winterHand').length&&new Set(g.players[(1-a)as PID].graveyard.flatMap(id=>g.cards[id].def.types)).size>=4?new Set(g.players[(1-a)as PID].graveyard.flatMap(id=>g.cards[id].def.types)).size:0));
   const over = pl.noHandLimit||frontierStatic(g,a,'fdn:noHandLimit').length||frontierStatic(g,a,'dsk:noHandLimit').length||mkmStatic(g,a,'noMaxHand').length||mshStatic(g,a,'noMaxHand').length ? 0 : pl.hand.length - handLimit;
   if (over > 0) {
     const r: Response = yield {
       type: 'choose',
       player: a,
-      prompt: `手牌上限為 7 張，請棄掉 ${over} 張`,
+      prompt: `手牌上限為 ${handLimit} 張，請棄掉 ${over} 張`,
       options: pl.hand.slice(),
       min: over,
       max: over,
@@ -805,11 +818,11 @@ export function* runGame(g: GameState, firstPlayer?: PID): Flow {
   try {
     g.firstPlayer = firstPlayer ?? (randInt(g, 2) as PID);
     log(g, `${g.players[g.firstPlayer].name} 先攻`, g.firstPlayer, 'turn');
-    yield* mulligans(g);
+    yield* mulligans(g);yield*mh3Opening(g);
     for (;;) yield* turn(g);
   } catch (e) {
     if (e instanceof GameOver) {
-      g.phase = 'cleanup';
+      g.phase = 'cleanup';mh3Cleanup(g);
       g.version++;
       return;
     }

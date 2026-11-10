@@ -1,19 +1,19 @@
 {
   "summary": {
-    "registryDefinitions": 5272,
+    "registryDefinitions": 5568,
     "allProducts": 118,
     "primarySets": 107,
-    "completePrimarySets": 18,
-    "incompletePrimarySets": 89,
+    "completePrimarySets": 19,
+    "incompletePrimarySets": 88,
     "zeroCoveragePrimarySets": 4,
     "modernLegalNames": 22708,
-    "availableModernNames": 5269,
-    "missingModernNames": 17439,
+    "availableModernNames": 5562,
+    "missingModernNames": 17146,
     "sampleDecks": 50,
     "legalSampleDecks": 50,
     "completeMainDecks": 6,
     "complete75Decks": 6,
-    "sampleMissingNames": 341,
+    "sampleMissingNames": 287,
     "snapshotDate": "2026-10-23",
     "deckFileDate": "2026-10-17"
   },
@@ -600,10 +600,10 @@
       "type": "expansion",
       "date": "2014-09-26",
       "count": 249,
-      "available": 22,
-      "missing": 227,
+      "available": 24,
+      "missing": 225,
       "modernLegal": 252,
-      "modernAvailable": 27,
+      "modernAvailable": 29,
       "primary": true
     },
     {
@@ -912,10 +912,10 @@
       "type": "draft_innovation",
       "date": "2019-06-14",
       "count": 250,
-      "available": 11,
-      "missing": 239,
+      "available": 12,
+      "missing": 238,
       "modernLegal": 253,
-      "modernAvailable": 11,
+      "modernAvailable": 12,
       "primary": true
     },
     {
@@ -1236,10 +1236,10 @@
       "type": "draft_innovation",
       "date": "2024-06-14",
       "count": 303,
-      "available": 7,
-      "missing": 296,
+      "available": 303,
+      "missing": 0,
       "modernLegal": 306,
-      "modernAvailable": 12,
+      "modernAvailable": 305,
       "primary": true
     },
     {
@@ -1449,16 +1449,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 10,
-      "sideAvailable": 3,
-      "missingNames": 22,
+      "mainAvailable": 37,
+      "sideAvailable": 4,
+      "missingNames": 13,
       "missing": [
-        {
-          "name": "Ugin's Labyrinth",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Blade of the Bloodchief",
           "quantity": 3,
@@ -1466,25 +1460,7 @@
           "legal": true
         },
         {
-          "name": "Basking Broodscale",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Eldrazi Temple",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Shifting Woodland",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Kozilek's Command",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -1496,32 +1472,8 @@
           "legal": true
         },
         {
-          "name": "Malevolent Rumble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ancient Stirrings",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sowing Mycospawn",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Glaring Fleshraker",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -1544,12 +1496,6 @@
           "legal": true
         },
         {
-          "name": "Devourer of Destiny",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Urza's Saga",
           "quantity": 4,
           "available": false,
@@ -1564,12 +1510,6 @@
         {
           "name": "Nature's Claim",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -1597,7 +1537,7 @@
         {
           "name": "Ugin's Labyrinth",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1615,7 +1555,7 @@
         {
           "name": "Basking Broodscale",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1633,7 +1573,7 @@
         {
           "name": "Shifting Woodland",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1645,7 +1585,7 @@
         {
           "name": "Kozilek's Command",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1657,7 +1597,7 @@
         {
           "name": "Malevolent Rumble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1669,19 +1609,19 @@
         {
           "name": "Sowing Mycospawn",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Glaring Fleshraker",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Vexing Bauble",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1711,7 +1651,7 @@
         {
           "name": "Devourer of Destiny",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1743,7 +1683,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1791,19 +1731,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 9,
-      "sideAvailable": 4,
-      "missingNames": 24,
+      "mainAvailable": 34,
+      "sideAvailable": 8,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Gemstone Caverns",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ugin's Labyrinth",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -1820,12 +1754,6 @@
           "legal": true
         },
         {
-          "name": "Basking Broodscale",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Talisman of Resilience",
           "quantity": 1,
           "available": false,
@@ -1838,44 +1766,8 @@
           "legal": true
         },
         {
-          "name": "Shifting Woodland",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Devourer of Destiny",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Kozilek's Command",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Malevolent Rumble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ancient Stirrings",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sowing Mycospawn",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -1916,26 +1808,8 @@
           "legal": true
         },
         {
-          "name": "Disruptor Flute",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Trinisphere",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Thief of Existence",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -1957,7 +1831,7 @@
         {
           "name": "Ugin's Labyrinth",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1975,7 +1849,7 @@
         {
           "name": "Basking Broodscale",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1999,7 +1873,7 @@
         {
           "name": "Shifting Woodland",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2011,19 +1885,19 @@
         {
           "name": "Devourer of Destiny",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Kozilek's Command",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Malevolent Rumble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2035,13 +1909,13 @@
         {
           "name": "Sowing Mycospawn",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Vexing Bauble",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2097,13 +1971,13 @@
         {
           "name": "Disruptor Flute",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Vexing Bauble",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2115,7 +1989,7 @@
         {
           "name": "Thief of Existence",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2354,19 +2228,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 33,
-      "sideAvailable": 10,
-      "missingNames": 12,
+      "mainAvailable": 41,
+      "sideAvailable": 12,
+      "missingNames": 9,
       "missing": [
         {
           "name": "Thoughtseize",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -2385,12 +2253,6 @@
         {
           "name": "March of Otherworldly Light",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Psychic Frog",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -2429,12 +2291,6 @@
           "quantity": 2,
           "available": false,
           "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
-          "quantity": 2,
-          "available": false,
-          "legal": true
         }
       ],
       "illegal": [],
@@ -2454,7 +2310,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2532,7 +2388,7 @@
         {
           "name": "Psychic Frog",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2660,7 +2516,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2684,9 +2540,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 29,
-      "sideAvailable": 4,
-      "missingNames": 17,
+      "mainAvailable": 33,
+      "sideAvailable": 6,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Thoughtcast",
@@ -2709,12 +2565,6 @@
         {
           "name": "Welding Jar",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Kappa Cannoneer",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -2761,19 +2611,7 @@
           "legal": true
         },
         {
-          "name": "Vexing Bauble",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Pithing Needle",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Strix Serenade",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -2844,7 +2682,7 @@
         {
           "name": "Kappa Cannoneer",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2936,7 +2774,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2954,7 +2792,7 @@
         {
           "name": "Strix Serenade",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2996,9 +2834,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 33,
+      "mainAvailable": 37,
       "sideAvailable": 10,
-      "missingNames": 12,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Territorial Kavu",
@@ -3008,12 +2846,6 @@
         },
         {
           "name": "Wild Nacatl",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -3102,7 +2934,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3278,49 +3110,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 27,
-      "sideAvailable": 8,
-      "missingNames": 15,
+      "mainAvailable": 50,
+      "sideAvailable": 12,
+      "missingNames": 6,
       "missing": [
-        {
-          "name": "Flooded Strand",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ajani, Nacatl Pariah",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Seasoned Pyromancer",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Windswept Heath",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Thraben Charm",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Guide of Souls",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Galvanic Discharge",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -3337,31 +3133,13 @@
           "legal": true
         },
         {
-          "name": "Ocelot Pride",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Marsh Flats",
           "quantity": 2,
           "available": false,
           "legal": true
         },
         {
-          "name": "Vexing Bauble",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Wear // Tear",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -3378,13 +3156,13 @@
         {
           "name": "Flooded Strand",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Ajani, Nacatl Pariah",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3414,7 +3192,7 @@
         {
           "name": "Windswept Heath",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3438,7 +3216,7 @@
         {
           "name": "Thraben Charm",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3450,7 +3228,7 @@
         {
           "name": "Guide of Souls",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3462,7 +3240,7 @@
         {
           "name": "Galvanic Discharge",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3498,7 +3276,7 @@
         {
           "name": "Ocelot Pride",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3530,7 +3308,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3554,7 +3332,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3584,9 +3362,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 24,
-      "sideAvailable": 8,
-      "missingNames": 15,
+      "mainAvailable": 33,
+      "sideAvailable": 10,
+      "missingNames": 12,
       "missing": [
         {
           "name": "Atraxa, Grand Unifier",
@@ -3603,12 +3381,6 @@
         {
           "name": "Faithful Mending",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -3637,12 +3409,6 @@
           "legal": true
         },
         {
-          "name": "Psychic Frog",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Solitude",
           "quantity": 4,
           "available": false,
@@ -3651,12 +3417,6 @@
         {
           "name": "Thoughtseize",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -3681,12 +3441,6 @@
         {
           "name": "Thoughtseize",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
-          "quantity": 2,
           "available": false,
           "legal": true
         }
@@ -3720,7 +3474,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3798,7 +3552,7 @@
         {
           "name": "Psychic Frog",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3852,7 +3606,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3926,7 +3680,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -3944,43 +3698,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 29,
-      "sideAvailable": 12,
-      "missingNames": 11,
+      "mainAvailable": 49,
+      "sideAvailable": 14,
+      "missingNames": 4,
       "missing": [
-        {
-          "name": "Ajani, Nacatl Pariah",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Ephemerate",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Guide of Souls",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Phelia, Exuberant Shepherd",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Galvanic Discharge",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -3991,20 +3715,8 @@
           "legal": true
         },
         {
-          "name": "Ocelot Pride",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -4026,13 +3738,13 @@
         {
           "name": "Ajani, Nacatl Pariah",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Flooded Strand",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4080,13 +3792,13 @@
         {
           "name": "Guide of Souls",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Phelia, Exuberant Shepherd",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4110,7 +3822,7 @@
         {
           "name": "Galvanic Discharge",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4128,7 +3840,7 @@
         {
           "name": "Ocelot Pride",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4208,7 +3920,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4238,9 +3950,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 24,
-      "sideAvailable": 3,
-      "missingNames": 16,
+      "mainAvailable": 32,
+      "sideAvailable": 6,
+      "missingNames": 13,
       "missing": [
         {
           "name": "Pyretic Ritual",
@@ -4263,18 +3975,6 @@
         {
           "name": "Reckless Impulse",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ruby Medallion",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ral, Monsoon Mage",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -4317,12 +4017,6 @@
         {
           "name": "Gemstone Caverns",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Orim's Chant",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -4404,7 +4098,7 @@
         {
           "name": "Ruby Medallion",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4416,7 +4110,7 @@
         {
           "name": "Ral, Monsoon Mage",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4514,7 +4208,7 @@
         {
           "name": "Orim's Chant",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4568,19 +4262,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 8,
-      "sideAvailable": 3,
-      "missingNames": 24,
+      "mainAvailable": 33,
+      "sideAvailable": 5,
+      "missingNames": 15,
       "missing": [
         {
           "name": "Gemstone Caverns",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ugin's Labyrinth",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -4597,12 +4285,6 @@
           "legal": true
         },
         {
-          "name": "Basking Broodscale",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Talisman of Resilience",
           "quantity": 2,
           "available": false,
@@ -4615,44 +4297,8 @@
           "legal": true
         },
         {
-          "name": "Shifting Woodland",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Devourer of Destiny",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Kozilek's Command",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Malevolent Rumble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ancient Stirrings",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sowing Mycospawn",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -4693,12 +4339,6 @@
           "legal": true
         },
         {
-          "name": "Vexing Bauble",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Pithing Needle",
           "quantity": 1,
           "available": false,
@@ -4707,12 +4347,6 @@
         {
           "name": "Trinisphere",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Thief of Existence",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -4734,7 +4368,7 @@
         {
           "name": "Ugin's Labyrinth",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4758,7 +4392,7 @@
         {
           "name": "Basking Broodscale",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4782,7 +4416,7 @@
         {
           "name": "Shifting Woodland",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4794,19 +4428,19 @@
         {
           "name": "Devourer of Destiny",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Kozilek's Command",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Malevolent Rumble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4818,13 +4452,13 @@
         {
           "name": "Sowing Mycospawn",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Vexing Bauble",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4874,7 +4508,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4892,7 +4526,7 @@
         {
           "name": "Thief of Existence",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4928,9 +4562,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 21,
+      "mainAvailable": 35,
       "sideAvailable": 12,
-      "missingNames": 19,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Jace, the Mind Sculptor",
@@ -4947,24 +4581,6 @@
         {
           "name": "Otawara, Soaring City",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Monumental Henge",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Orim's Chant",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -5005,20 +4621,8 @@
           "legal": true
         },
         {
-          "name": "Sink into Stupor",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -5082,7 +4686,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5094,7 +4698,7 @@
         {
           "name": "Monumental Henge",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5112,7 +4716,7 @@
         {
           "name": "Orim's Chant",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5202,7 +4806,7 @@
         {
           "name": "Sink into Stupor",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5220,7 +4824,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5306,9 +4910,9 @@
       ],
       "mainTotal": 61,
       "sideTotal": 15,
-      "mainAvailable": 10,
+      "mainAvailable": 13,
       "sideAvailable": 7,
-      "missingNames": 25,
+      "missingNames": 24,
       "missing": [
         {
           "name": "Gruul Turf",
@@ -5379,12 +4983,6 @@
         {
           "name": "Yavimaya, Cradle of Growth",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Malevolent Rumble",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -5550,7 +5148,7 @@
         {
           "name": "Malevolent Rumble",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5678,9 +5276,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 13,
-      "sideAvailable": 1,
-      "missingNames": 28,
+      "mainAvailable": 29,
+      "sideAvailable": 2,
+      "missingNames": 23,
       "missing": [
         {
           "name": "Karn, the Great Creator",
@@ -5713,24 +5311,6 @@
           "legal": true
         },
         {
-          "name": "Devourer of Destiny",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Kozilek's Command",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ugin's Labyrinth",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Dismember",
           "quantity": 2,
           "available": false,
@@ -5739,12 +5319,6 @@
         {
           "name": "Ulamog, the Ceaseless Hunger",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sowing Mycospawn",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -5821,12 +5395,6 @@
           "legal": true
         },
         {
-          "name": "Disruptor Flute",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ratchet Bomb",
           "quantity": 1,
           "available": false,
@@ -5898,19 +5466,19 @@
         {
           "name": "Devourer of Destiny",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Kozilek's Command",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Ugin's Labyrinth",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5934,7 +5502,7 @@
         {
           "name": "Sowing Mycospawn",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6032,7 +5600,7 @@
         {
           "name": "Disruptor Flute",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6080,9 +5648,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 36,
+      "mainAvailable": 44,
       "sideAvailable": 9,
-      "missingNames": 12,
+      "missingNames": 10,
       "missing": [
         {
           "name": "Thoughtseize",
@@ -6117,18 +5685,6 @@
         {
           "name": "Verdant Catacombs",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Nethergoyf",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Detective's Phoenix",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -6264,7 +5820,7 @@
         {
           "name": "Nethergoyf",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6276,7 +5832,7 @@
         {
           "name": "Detective's Phoenix",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6380,9 +5936,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 17,
+      "mainAvailable": 25,
       "sideAvailable": 5,
-      "missingNames": 22,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Allosaurus Rider",
@@ -6398,12 +5954,6 @@
         },
         {
           "name": "Veil of Summer",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Disciple of Freyalise",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -6457,19 +6007,7 @@
           "legal": true
         },
         {
-          "name": "Planar Genesis",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Griselbrand",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Bridgeworks Battle",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -6477,12 +6015,6 @@
         {
           "name": "Generous Ent",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -6576,7 +6108,7 @@
         {
           "name": "Disciple of Freyalise",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6648,7 +6180,7 @@
         {
           "name": "Planar Genesis",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6660,7 +6192,7 @@
         {
           "name": "Bridgeworks Battle",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6678,7 +6210,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6776,9 +6308,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 30,
+      "mainAvailable": 37,
       "sideAvailable": 9,
-      "missingNames": 13,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Castle Ardenvale",
@@ -6794,12 +6326,6 @@
         },
         {
           "name": "Field of Ruin",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Galvanic Discharge",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -6824,12 +6350,6 @@
         },
         {
           "name": "Wrath of God",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
           "quantity": 3,
           "available": false,
           "legal": true
@@ -6906,7 +6426,7 @@
         {
           "name": "Galvanic Discharge",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6966,7 +6486,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -7034,9 +6554,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 26,
+      "mainAvailable": 27,
       "sideAvailable": 7,
-      "missingNames": 18,
+      "missingNames": 17,
       "missing": [
         {
           "name": "Waker of Waves",
@@ -7088,12 +6608,6 @@
         },
         {
           "name": "Colossal Skyturtle",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sink into Stupor",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -7278,7 +6792,7 @@
         {
           "name": "Sink into Stupor",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7376,9 +6890,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 37,
+      "mainAvailable": 40,
       "sideAvailable": 9,
-      "missingNames": 12,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Cling to Dust",
@@ -7395,12 +6909,6 @@
         {
           "name": "Field of Ruin",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -7494,7 +7002,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7640,16 +7148,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 18,
-      "sideAvailable": 4,
-      "missingNames": 18,
+      "mainAvailable": 33,
+      "sideAvailable": 7,
+      "missingNames": 13,
       "missing": [
-        {
-          "name": "Devourer of Destiny",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Dismember",
           "quantity": 3,
@@ -7663,31 +7165,13 @@
           "legal": true
         },
         {
-          "name": "Glaring Fleshraker",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Karn, the Great Creator",
           "quantity": 4,
           "available": false,
           "legal": true
         },
         {
-          "name": "Kozilek's Command",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Thought-Knot Seer",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ugin's Labyrinth",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -7707,12 +7191,6 @@
         {
           "name": "Urza's Tower",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Disruptor Flute",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -7758,7 +7236,7 @@
         {
           "name": "Devourer of Destiny",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7782,7 +7260,7 @@
         {
           "name": "Glaring Fleshraker",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7794,7 +7272,7 @@
         {
           "name": "Kozilek's Command",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7830,7 +7308,7 @@
         {
           "name": "Ugin's Labyrinth",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7868,7 +7346,7 @@
         {
           "name": "Disruptor Flute",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7940,16 +7418,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 16,
-      "sideAvailable": 11,
-      "missingNames": 14,
+      "mainAvailable": 30,
+      "sideAvailable": 13,
+      "missingNames": 9,
       "missing": [
-        {
-          "name": "Suppression Ray",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Sea Gate Restoration",
           "quantity": 4,
@@ -7993,32 +7465,8 @@
           "legal": true
         },
         {
-          "name": "Waterlogged Teachings",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sink into Stupor",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Hydroelectric Specimen",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Tameshi, Reality Architect",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tamiyo, Inquisitive Student",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -8034,7 +7482,7 @@
         {
           "name": "Suppression Ray",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8118,19 +7566,19 @@
         {
           "name": "Waterlogged Teachings",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Sink into Stupor",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Hydroelectric Specimen",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8150,7 +7598,7 @@
         {
           "name": "Tamiyo, Inquisitive Student",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8198,16 +7646,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 12,
+      "mainAvailable": 36,
       "sideAvailable": 3,
-      "missingNames": 21,
+      "missingNames": 15,
       "missing": [
-        {
-          "name": "Disciple of Freyalise",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Dryad Arbor",
           "quantity": 1,
@@ -8227,12 +7669,6 @@
           "legal": true
         },
         {
-          "name": "Fanatic of Rhonas",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Fight Rigging",
           "quantity": 4,
           "available": false,
@@ -8245,38 +7681,14 @@
           "legal": true
         },
         {
-          "name": "Kozilek's Command",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Malevolent Rumble",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Mosswort Bridge",
           "quantity": 2,
           "available": false,
           "legal": true
         },
         {
-          "name": "Sowing Mycospawn",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Turntimber Symbiosis",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ugin's Labyrinth",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -8340,7 +7752,7 @@
         {
           "name": "Disciple of Freyalise",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8364,7 +7776,7 @@
         {
           "name": "Fanatic of Rhonas",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8388,13 +7800,13 @@
         {
           "name": "Kozilek's Command",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Malevolent Rumble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8412,7 +7824,7 @@
         {
           "name": "Sowing Mycospawn",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8424,7 +7836,7 @@
         {
           "name": "Ugin's Labyrinth",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8731,9 +8143,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 26,
+      "mainAvailable": 31,
       "sideAvailable": 0,
-      "missingNames": 20,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Yawgmoth, Thran Physician",
@@ -8772,12 +8184,6 @@
           "legal": true
         },
         {
-          "name": "Malevolent Rumble",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Verdant Catacombs",
           "quantity": 4,
           "available": false,
@@ -8804,12 +8210,6 @@
         {
           "name": "Endurance",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Spymaster's Vault",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -8939,7 +8339,7 @@
         {
           "name": "Malevolent Rumble",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9005,7 +8405,7 @@
         {
           "name": "Spymaster's Vault",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -9073,24 +8473,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 22,
-      "sideAvailable": 11,
-      "missingNames": 13,
+      "mainAvailable": 29,
+      "sideAvailable": 13,
+      "missingNames": 10,
       "missing": [
         {
-          "name": "Emperor of Bones",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Faithless Looting",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Psychic Frog",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -9154,12 +8542,6 @@
           "quantity": 2,
           "available": false,
           "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
-          "quantity": 2,
-          "available": false,
-          "legal": true
         }
       ],
       "illegal": [],
@@ -9173,7 +8555,7 @@
         {
           "name": "Emperor of Bones",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9185,7 +8567,7 @@
         {
           "name": "Psychic Frog",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9331,7 +8713,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9361,9 +8743,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 31,
-      "sideAvailable": 7,
-      "missingNames": 12,
+      "mainAvailable": 35,
+      "sideAvailable": 9,
+      "missingNames": 10,
       "missing": [
         {
           "name": "Street Wraith",
@@ -9379,12 +8761,6 @@
         },
         {
           "name": "Burning Inquiry",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Detective's Phoenix",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -9421,12 +8797,6 @@
         },
         {
           "name": "Deafening Silence",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -9473,7 +8843,7 @@
         {
           "name": "Detective's Phoenix",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9601,7 +8971,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9625,9 +8995,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 22,
+      "mainAvailable": 25,
       "sideAvailable": 3,
-      "missingNames": 23,
+      "missingNames": 22,
       "missing": [
         {
           "name": "Birds of Paradise",
@@ -9710,12 +9080,6 @@
         {
           "name": "Boseiju, Who Endures",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Windswept Heath",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -9917,7 +9281,7 @@
         {
           "name": "Windswept Heath",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10009,9 +9373,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 31,
+      "mainAvailable": 35,
       "sideAvailable": 9,
-      "missingNames": 16,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Wrenn and Six",
@@ -10039,18 +9403,6 @@
         },
         {
           "name": "Teferi, Time Raveler",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Orim's Chant",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Galvanic Discharge",
           "quantity": 3,
           "available": false,
           "legal": true
@@ -10187,13 +9539,13 @@
         {
           "name": "Orim's Chant",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Galvanic Discharge",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10357,31 +9709,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 36,
-      "sideAvailable": 8,
-      "missingNames": 15,
+      "mainAvailable": 45,
+      "sideAvailable": 11,
+      "missingNames": 9,
       "missing": [
         {
           "name": "Orcish Bowmasters",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tamiyo, Inquisitive Student",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sink into Stupor",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Psychic Frog",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -10410,12 +9744,6 @@
           "legal": true
         },
         {
-          "name": "Flooded Strand",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Fatal Push",
           "quantity": 4,
           "available": false,
@@ -10436,18 +9764,6 @@
         {
           "name": "Nihil Spellbomb",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Harbinger of the Seas",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Toxic Deluge",
-          "quantity": 1,
           "available": false,
           "legal": true
         }
@@ -10487,19 +9803,19 @@
         {
           "name": "Tamiyo, Inquisitive Student",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Sink into Stupor",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Psychic Frog",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10583,7 +9899,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10669,13 +9985,13 @@
         {
           "name": "Harbinger of the Seas",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Toxic Deluge",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10699,18 +10015,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 20,
+      "mainAvailable": 30,
       "sideAvailable": 2,
-      "missingNames": 19,
+      "missingNames": 16,
       "missing": [
         {
           "name": "Fatal Push",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Boggart Trawler",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -10728,12 +10038,6 @@
           "legal": true
         },
         {
-          "name": "Fell the Profane",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Force of Despair",
           "quantity": 2,
           "available": false,
@@ -10742,12 +10046,6 @@
         {
           "name": "March of Wretched Sorrow",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Necrodominance",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -10847,7 +10145,7 @@
         {
           "name": "Boggart Trawler",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10871,7 +10169,7 @@
         {
           "name": "Fell the Profane",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10889,7 +10187,7 @@
         {
           "name": "Necrodominance",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11405,9 +10703,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 28,
+      "mainAvailable": 29,
       "sideAvailable": 8,
-      "missingNames": 15,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Waker of Waves",
@@ -11448,12 +10746,6 @@
         {
           "name": "Colossal Skyturtle",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sink into Stupor",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -11625,7 +10917,7 @@
         {
           "name": "Sink into Stupor",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11711,9 +11003,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 22,
-      "sideAvailable": 9,
-      "missingNames": 16,
+      "mainAvailable": 26,
+      "sideAvailable": 10,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Colossus Hammer",
@@ -11782,12 +11074,6 @@
           "legal": true
         },
         {
-          "name": "Windswept Heath",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "March of Otherworldly Light",
           "quantity": 2,
           "available": false,
@@ -11802,12 +11088,6 @@
         {
           "name": "Surge of Salvation",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
-          "quantity": 1,
           "available": false,
           "legal": true
         }
@@ -11949,7 +11229,7 @@
         {
           "name": "Windswept Heath",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -12005,7 +11285,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -12023,18 +11303,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 36,
+      "mainAvailable": 39,
       "sideAvailable": 12,
-      "missingNames": 12,
+      "missingNames": 10,
       "missing": [
         {
           "name": "Archmage's Charm",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Brainsurge",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -12048,12 +11322,6 @@
         {
           "name": "Hall of Storm Giants",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -12123,7 +11391,7 @@
         {
           "name": "Brainsurge",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12201,7 +11469,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12389,16 +11657,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 33,
+      "mainAvailable": 37,
       "sideAvailable": 13,
-      "missingNames": 13,
+      "missingNames": 12,
       "missing": [
-        {
-          "name": "Tamiyo, Inquisitive Student",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Mox Opal",
           "quantity": 3,
@@ -12507,7 +11769,7 @@
         {
           "name": "Tamiyo, Inquisitive Student",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12707,9 +11969,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 19,
-      "sideAvailable": 8,
-      "missingNames": 22,
+      "mainAvailable": 30,
+      "sideAvailable": 9,
+      "missingNames": 17,
       "missing": [
         {
           "name": "Emry, Lurker of the Loch",
@@ -12738,12 +12000,6 @@
         {
           "name": "Jace, Wielder of Mysteries",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Malevolent Rumble",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -12778,25 +12034,7 @@
           "legal": true
         },
         {
-          "name": "Shifting Woodland",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Six",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Song of Creation",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tamiyo, Inquisitive Student",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -12816,12 +12054,6 @@
         {
           "name": "Flame of Anor",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flusterstorm",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -12897,7 +12129,7 @@
         {
           "name": "Malevolent Rumble",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12951,13 +12183,13 @@
         {
           "name": "Shifting Woodland",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Six",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12975,7 +12207,7 @@
         {
           "name": "Tamiyo, Inquisitive Student",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13025,7 +12257,7 @@
         {
           "name": "Flusterstorm",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13073,9 +12305,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 9,
-      "sideAvailable": 2,
-      "missingNames": 25,
+      "mainAvailable": 21,
+      "sideAvailable": 4,
+      "missingNames": 21,
       "missing": [
         {
           "name": "Pithing Needle",
@@ -13097,12 +12329,6 @@
         },
         {
           "name": "Ifnir Deadlands",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Kozilek's Command",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -13146,18 +12372,6 @@
         {
           "name": "Orcish Bowmasters",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Emperor of Bones",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Nethergoyf",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -13228,12 +12442,6 @@
           "legal": true
         },
         {
-          "name": "Toxic Deluge",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Force of Despair",
           "quantity": 1,
           "available": false,
@@ -13275,7 +12483,7 @@
         {
           "name": "Kozilek's Command",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13347,13 +12555,13 @@
         {
           "name": "Emperor of Bones",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Nethergoyf",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13445,7 +12653,7 @@
         {
           "name": "Toxic Deluge",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13469,31 +12677,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 20,
-      "sideAvailable": 7,
-      "missingNames": 15,
+      "mainAvailable": 31,
+      "sideAvailable": 9,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Orcish Bowmasters",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Nethergoyf",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tamiyo, Inquisitive Student",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Psychic Frog",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -13556,12 +12746,6 @@
           "quantity": 3,
           "available": false,
           "legal": true
-        },
-        {
-          "name": "Flusterstorm",
-          "quantity": 2,
-          "available": false,
-          "legal": true
         }
       ],
       "illegal": [],
@@ -13575,13 +12759,13 @@
         {
           "name": "Nethergoyf",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Tamiyo, Inquisitive Student",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13593,7 +12777,7 @@
         {
           "name": "Psychic Frog",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13703,7 +12887,7 @@
         {
           "name": "Flusterstorm",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13727,30 +12911,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 11,
+      "mainAvailable": 23,
       "sideAvailable": 11,
-      "missingNames": 14,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Vodalian Hexcatcher",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flare of Denial",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Harbinger of the Seas",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Sink into Stupor",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -13845,19 +13011,19 @@
         {
           "name": "Flare of Denial",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Harbinger of the Seas",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Sink into Stupor",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13973,9 +13139,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 27,
-      "sideAvailable": 4,
-      "missingNames": 21,
+      "mainAvailable": 29,
+      "sideAvailable": 6,
+      "missingNames": 19,
       "missing": [
         {
           "name": "Dryad of the Ilysian Grove",
@@ -14062,12 +13228,6 @@
           "legal": true
         },
         {
-          "name": "Windswept Heath",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Scapeshift",
           "quantity": 1,
           "available": false,
@@ -14087,12 +13247,6 @@
         },
         {
           "name": "Force of Vigor",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -14259,7 +13413,7 @@
         {
           "name": "Windswept Heath",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -14297,7 +13451,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14524,22 +13678,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 32,
+      "mainAvailable": 41,
       "sideAvailable": 9,
-      "missingNames": 17,
+      "missingNames": 13,
       "missing": [
-        {
-          "name": "Witch Enchanter",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Omnath, Locus of Creation",
           "quantity": 4,
@@ -14549,12 +13691,6 @@
         {
           "name": "Elesh Norn, Mother of Machines",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Birthing Ritual",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -14584,12 +13720,6 @@
         },
         {
           "name": "Endurance",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Windswept Heath",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -14636,13 +13766,13 @@
         {
           "name": "Witch Enchanter",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Flooded Strand",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14696,7 +13826,7 @@
         {
           "name": "Birthing Ritual",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14798,7 +13928,7 @@
         {
           "name": "Windswept Heath",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14878,9 +14008,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 39,
-      "sideAvailable": 2,
-      "missingNames": 14,
+      "mainAvailable": 47,
+      "sideAvailable": 4,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Faithless Looting",
@@ -14895,12 +14025,6 @@
           "legal": true
         },
         {
-          "name": "Flare of Malice",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Fatal Push",
           "quantity": 3,
           "available": false,
@@ -14909,12 +14033,6 @@
         {
           "name": "Orcish Bowmasters",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Nethergoyf",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -14932,12 +14050,6 @@
         },
         {
           "name": "Extract the Truth",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Vexing Bauble",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -15032,7 +14144,7 @@
         {
           "name": "Flare of Malice",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15080,7 +14192,7 @@
         {
           "name": "Nethergoyf",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15124,7 +14236,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15166,49 +14278,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 17,
-      "sideAvailable": 11,
-      "missingNames": 13,
+      "mainAvailable": 44,
+      "sideAvailable": 13,
+      "missingNames": 5,
       "missing": [
         {
           "name": "Flagstones of Trokair",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Witch Enchanter",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Windswept Heath",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Guide of Souls",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Ocelot Pride",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "White Orchid Phantom",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -15225,12 +14301,6 @@
           "legal": true
         },
         {
-          "name": "Phelia, Exuberant Shepherd",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ephemerate",
           "quantity": 4,
           "available": false,
@@ -15239,12 +14309,6 @@
         {
           "name": "Skyclave Apparition",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Thraben Charm",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -15266,7 +14330,7 @@
         {
           "name": "Witch Enchanter",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15284,7 +14348,7 @@
         {
           "name": "Windswept Heath",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15296,25 +14360,25 @@
         {
           "name": "Flooded Strand",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Guide of Souls",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Ocelot Pride",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "White Orchid Phantom",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15344,7 +14408,7 @@
         {
           "name": "Phelia, Exuberant Shepherd",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15382,7 +14446,7 @@
         {
           "name": "Thraben Charm",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15424,16 +14488,10 @@
       ],
       "mainTotal": 61,
       "sideTotal": 15,
-      "mainAvailable": 28,
-      "sideAvailable": 11,
-      "missingNames": 15,
+      "mainAvailable": 43,
+      "sideAvailable": 14,
+      "missingNames": 9,
       "missing": [
-        {
-          "name": "Birthing Ritual",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Coiling Oracle",
           "quantity": 3,
@@ -15455,18 +14513,6 @@
         {
           "name": "Extraction Specialist",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flare of Denial",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -15495,26 +14541,8 @@
           "legal": true
         },
         {
-          "name": "Windswept Heath",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Witch Enchanter",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Acidic Slime",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
-          "quantity": 3,
           "available": false,
           "legal": true
         }
@@ -15524,7 +14552,7 @@
         {
           "name": "Birthing Ritual",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15566,13 +14594,13 @@
         {
           "name": "Flare of Denial",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Flooded Strand",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15686,13 +14714,13 @@
         {
           "name": "Windswept Heath",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Witch Enchanter",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -15742,7 +14770,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -15760,16 +14788,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 29,
-      "sideAvailable": 7,
-      "missingNames": 12,
+      "mainAvailable": 37,
+      "sideAvailable": 9,
+      "missingNames": 9,
       "missing": [
-        {
-          "name": "Detective's Phoenix",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Burning Inquiry",
           "quantity": 4,
@@ -15790,12 +14812,6 @@
         },
         {
           "name": "Hollow One",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Nethergoyf",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -15831,12 +14847,6 @@
           "legal": true
         },
         {
-          "name": "Vexing Bauble",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Thoughtseize",
           "quantity": 2,
           "available": false,
@@ -15860,7 +14870,7 @@
         {
           "name": "Detective's Phoenix",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15896,7 +14906,7 @@
         {
           "name": "Nethergoyf",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16006,7 +15016,7 @@
         {
           "name": "Vexing Bauble",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16030,18 +15040,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 13,
+      "mainAvailable": 14,
       "sideAvailable": 5,
-      "missingNames": 27,
+      "missingNames": 26,
       "missing": [
         {
           "name": "Jace, the Perfected Mind",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Cephalid Coliseum",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -16220,7 +15224,7 @@
         {
           "name": "Cephalid Coliseum",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16444,9 +15448,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 24,
-      "sideAvailable": 8,
-      "missingNames": 14,
+      "mainAvailable": 32,
+      "sideAvailable": 11,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Chancellor of the Annex",
@@ -16463,12 +15467,6 @@
         {
           "name": "Thoughtseize",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Flooded Strand",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -16491,12 +15489,6 @@
           "legal": true
         },
         {
-          "name": "Psychic Frog",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Marsh Flats",
           "quantity": 4,
           "available": false,
@@ -16511,12 +15503,6 @@
         {
           "name": "Nihil Spellbomb",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Wrath of the Skies",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -16610,7 +15596,7 @@
         {
           "name": "Flooded Strand",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16646,7 +15632,7 @@
         {
           "name": "Psychic Frog",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16702,7 +15688,7 @@
         {
           "name": "Wrath of the Skies",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -16905,19 +15891,11 @@
       14
     ],
     [
-      "Flooded Strand",
-      14
-    ],
-    [
       "Thoughtseize",
       12
     ],
     [
       "Boseiju, Who Endures",
-      11
-    ],
-    [
-      "Vexing Bauble",
       11
     ],
     [
@@ -16945,23 +15923,11 @@
       8
     ],
     [
-      "Wrath of the Skies",
-      8
-    ],
-    [
       "Brotherhood's End",
       7
     ],
     [
       "Eldrazi Temple",
-      7
-    ],
-    [
-      "Kozilek's Command",
-      7
-    ],
-    [
-      "Malevolent Rumble",
       7
     ],
     [
@@ -16993,10 +15959,6 @@
       7
     ],
     [
-      "Windswept Heath",
-      7
-    ],
-    [
       "Break the Ice",
       6
     ],
@@ -17017,27 +15979,11 @@
       6
     ],
     [
-      "Psychic Frog",
-      6
-    ],
-    [
-      "Sink into Stupor",
-      6
-    ],
-    [
       "Thought-Knot Seer",
       6
     ],
     [
-      "Ugin's Labyrinth",
-      6
-    ],
-    [
       "Ashiok, Dream Render",
-      5
-    ],
-    [
-      "Devourer of Destiny",
       5
     ],
     [
@@ -17057,19 +16003,7 @@
       5
     ],
     [
-      "Nethergoyf",
-      5
-    ],
-    [
-      "Sowing Mycospawn",
-      5
-    ],
-    [
       "Street Wraith",
-      5
-    ],
-    [
-      "Tamiyo, Inquisitive Student",
       5
     ],
     [
@@ -17082,10 +16016,6 @@
     ],
     [
       "Faithless Looting",
-      4
-    ],
-    [
-      "Galvanic Discharge",
       4
     ],
     [
@@ -17105,10 +16035,6 @@
       4
     ],
     [
-      "Shifting Woodland",
-      4
-    ],
-    [
       "Verdant Catacombs",
       4
     ],
@@ -17125,23 +16051,11 @@
       3
     ],
     [
-      "Basking Broodscale",
-      3
-    ],
-    [
       "Blade of the Bloodchief",
       3
     ],
     [
       "Cling to Dust",
-      3
-    ],
-    [
-      "Detective's Phoenix",
-      3
-    ],
-    [
-      "Disruptor Flute",
       3
     ],
     [
@@ -17169,23 +16083,11 @@
       3
     ],
     [
-      "Guide of Souls",
-      3
-    ],
-    [
       "Leyline Binding",
       3
     ],
     [
       "Metallic Rebuke",
-      3
-    ],
-    [
-      "Ocelot Pride",
-      3
-    ],
-    [
-      "Orim's Chant",
       3
     ],
     [
@@ -17213,19 +16115,11 @@
       3
     ],
     [
-      "Witch Enchanter",
-      3
-    ],
-    [
       "Yavimaya, Cradle of Growth",
       3
     ],
     [
       "Abrupt Decay",
-      2
-    ],
-    [
-      "Ajani, Nacatl Pariah",
       2
     ],
     [
@@ -17238,10 +16132,6 @@
     ],
     [
       "Birds of Paradise",
-      2
-    ],
-    [
-      "Birthing Ritual",
       2
     ],
     [
@@ -17277,19 +16167,11 @@
       2
     ],
     [
-      "Disciple of Freyalise",
-      2
-    ],
-    [
       "Dress Down",
       2
     ],
     [
       "Drown in the Loch",
-      2
-    ],
-    [
-      "Emperor of Bones",
       2
     ],
     [
@@ -17301,19 +16183,7 @@
       2
     ],
     [
-      "Flare of Denial",
-      2
-    ],
-    [
-      "Flusterstorm",
-      2
-    ],
-    [
       "Force of Despair",
-      2
-    ],
-    [
-      "Glaring Fleshraker",
       2
     ],
     [
@@ -17322,10 +16192,6 @@
     ],
     [
       "Griselbrand",
-      2
-    ],
-    [
-      "Harbinger of the Seas",
       2
     ],
     [
@@ -17381,10 +16247,6 @@
       2
     ],
     [
-      "Phelia, Exuberant Shepherd",
-      2
-    ],
-    [
       "Primeval Titan",
       2
     ],
@@ -17418,18 +16280,6 @@
     ],
     [
       "The Stone Brain",
-      2
-    ],
-    [
-      "Thief of Existence",
-      2
-    ],
-    [
-      "Thraben Charm",
-      2
-    ],
-    [
-      "Toxic Deluge",
       2
     ],
     [
@@ -17505,19 +16355,7 @@
       1
     ],
     [
-      "Boggart Trawler",
-      1
-    ],
-    [
       "Bojuka Bog",
-      1
-    ],
-    [
-      "Brainsurge",
-      1
-    ],
-    [
-      "Bridgeworks Battle",
       1
     ],
     [
@@ -17526,10 +16364,6 @@
     ],
     [
       "Celestial Purge",
-      1
-    ],
-    [
-      "Cephalid Coliseum",
       1
     ],
     [
@@ -17669,15 +16503,7 @@
       1
     ],
     [
-      "Fanatic of Rhonas",
-      1
-    ],
-    [
       "Farseek",
-      1
-    ],
-    [
-      "Fell the Profane",
       1
     ],
     [
@@ -17690,10 +16516,6 @@
     ],
     [
       "Flagstones of Trokair",
-      1
-    ],
-    [
-      "Flare of Malice",
       1
     ],
     [
@@ -17761,10 +16583,6 @@
       1
     ],
     [
-      "Hydroelectric Specimen",
-      1
-    ],
-    [
       "Ice-Fang Coatl",
       1
     ],
@@ -17802,10 +16620,6 @@
     ],
     [
       "Jwari Disruption",
-      1
-    ],
-    [
-      "Kappa Cannoneer",
       1
     ],
     [
@@ -17865,10 +16679,6 @@
       1
     ],
     [
-      "Monumental Henge",
-      1
-    ],
-    [
       "Mosswort Bridge",
       1
     ],
@@ -17886,10 +16696,6 @@
     ],
     [
       "Narset, Parter of Veils",
-      1
-    ],
-    [
-      "Necrodominance",
       1
     ],
     [
@@ -17945,10 +16751,6 @@
       1
     ],
     [
-      "Planar Genesis",
-      1
-    ],
-    [
       "Prismatic Vista",
       1
     ],
@@ -17966,10 +16768,6 @@
     ],
     [
       "Rakdos Charm",
-      1
-    ],
-    [
-      "Ral, Monsoon Mage",
       1
     ],
     [
@@ -17994,10 +16792,6 @@
     ],
     [
       "River of Tears",
-      1
-    ],
-    [
-      "Ruby Medallion",
       1
     ],
     [
@@ -18057,10 +16851,6 @@
       1
     ],
     [
-      "Six",
-      1
-    ],
-    [
       "Skyclave Apparition",
       1
     ],
@@ -18085,10 +16875,6 @@
       1
     ],
     [
-      "Spymaster's Vault",
-      1
-    ],
-    [
       "Steelshaper's Gift",
       1
     ],
@@ -18101,15 +16887,7 @@
       1
     ],
     [
-      "Strix Serenade",
-      1
-    ],
-    [
       "Sunpetal Grove",
-      1
-    ],
-    [
-      "Suppression Ray",
       1
     ],
     [
@@ -18213,10 +16991,6 @@
       1
     ],
     [
-      "Waterlogged Teachings",
-      1
-    ],
-    [
       "Welding Jar",
       1
     ],
@@ -18226,10 +17000,6 @@
     ],
     [
       "Whir of Invention",
-      1
-    ],
-    [
-      "White Orchid Phantom",
       1
     ],
     [

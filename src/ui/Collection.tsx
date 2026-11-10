@@ -1,7 +1,7 @@
 import { displayName } from '../data/names';
 import { useMemo, useState } from 'react';
 import type { Screen, UpdateProfile } from '../App';
-import { COLLECTIBLE, SET_INFO } from '../data';
+import { COLLECTIBLE, SET_INFO, cardsInSet } from '../data';
 import { STANDARD_SETS } from '../engine/types';
 import type { CardDef } from '../engine/types';
 import { SELL_PRICE, type Profile } from '../meta/profile';
@@ -23,8 +23,8 @@ export function Collection({ profile, go, update }: { profile: Profile; go: (s: 
     () => COLLECTIBLE.filter((d) => matchFilter(d, f) && (!ownedOnly || (profile.collection[d.id] ?? 0) > 0) && (!specialOnly || specials.has(d.id))).sort(sortDefs),
     [f, ownedOnly, specialOnly, specials, profile.collection],
   );
-  const sets = ([...[...STANDARD_SETS].reverse(), 'CORE', 'META'] as const).map((s) => {
-    const all = COLLECTIBLE.filter((c) => c.set === s);
+  const sets = ([...[...STANDARD_SETS].reverse(), 'MH3', 'CORE', 'META'] as const).map((s) => {
+    const all = cardsInSet(s);
     const own = all.filter((c) => (profile.collection[c.id] ?? 0) > 0).length;
     return { s, own, total: all.length, sp: all.filter((c) => specials.has(c.id)).length };
   });

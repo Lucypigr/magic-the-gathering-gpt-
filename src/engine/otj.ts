@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { validateTargets, sameTarget } from "./targets";
 import { plotCard } from "./otj-support";
 import {
@@ -24,19 +25,7 @@ import { makeEclTokenBatch } from "./ecl";
 import { mshEffect } from "./msh";
 import { woeEffect } from "./woe";
 import { frontierFlags } from "./frontier-support";
-import {
-  dealDamage,
-  discardMany,
-  drawCards,
-  emit,
-  enterBattlefield,
-  loseLife,
-  moveCard,
-  putCounters,
-  sacrifice,
-  tapCard,
-  destroyCards,
-} from "./zones";
+import { dealDamage, discardMany, emit, enterBattlefield, loseLife, moveCard, putCounters, sacrifice, tapCard, destroyCards } from "./zones";
 import type {
   Card,
   CardDef,
@@ -402,7 +391,7 @@ export function* otjEffect(
           for (const id of [...player.hand, ...player.graveyard])
             moveCard(g, g.cards[id], "library");
           shuffleArr(g, player.library);
-          drawCards(g, player.id, 7);
+          (yield*drawWithReplacements(g,player.id,7));
         }
       break;
     case "78": {
@@ -498,7 +487,7 @@ export function* otjEffect(
           g,
           ids.map((id) => g.cards[id]),
         );
-        if (!high) drawCards(g, pid, 1);
+        if (!high) (yield*drawWithReplacements(g,pid,1));
       }
       break;
     case "tutorTop":
@@ -571,7 +560,7 @@ export function* otjEffect(
     case "98": {
       const ids = yield* pick(own(), "犧牲任意數量永久物", 0, own().length);
       for (const id of ids) sacrifice(g, g.cards[id]);
-      drawCards(g, pid, ids.length);
+      (yield*drawWithReplacements(g,pid,ids.length));
       break;
     }
     case "halfCreatures": {
@@ -702,7 +691,7 @@ export function* otjEffect(
         ))[0];
         if (id !== undefined) {
           discardMany(g, [g.cards[id]]);
-          drawCards(g, pid, 2);
+          (yield*drawWithReplacements(g,pid,2));
         }
       } else if (choice === 2) {
         const id = (yield* pick(
@@ -712,7 +701,7 @@ export function* otjEffect(
         ))[0];
         if (id !== undefined) {
           sacrifice(g, g.cards[id]);
-          drawCards(g, pid, 2);
+          (yield*drawWithReplacements(g,pid,2));
         }
       }
       break;
@@ -1018,7 +1007,7 @@ export function* otjEffect(
       if (id === undefined) break;
       const n = stats(g, g.cards[id]).p;
       sacrifice(g, g.cards[id]);
-      drawCards(g, pid, n);
+      (yield*drawWithReplacements(g,pid,n));
       const ids = yield* pick(
         p.hand.filter((id) => isLand(g.cards[id])),
         "可放至多X張地",

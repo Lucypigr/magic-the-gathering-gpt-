@@ -1,3 +1,4 @@
+import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import { uncounterableSpells } from './state';
 import { payCost } from './actions';
@@ -6,19 +7,7 @@ import { resolveRef, runEffects, type Ctx } from './effects';
 import { manaValue, parseCost } from './mana';
 import { hasKw, isCreature, isLand, matches, other, shuffleArr, stats } from './state';
 import type { Card, Color, Effect, GameState, PID, Ref, Response, SubFlow } from './types';
-import {
-  createToken,
-  destroyCards,
-  discard,
-  drawCards,
-  emit,
-  enterBattlefield,
-  gainLife,
-  loseLife,
-  moveCard,
-  putCounters,
-  sacrifice,
-} from './zones';
+import { createToken, destroyCards, discard, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice } from './zones';
 
 export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt' }>): SubFlow {
   const me = ctx.controller,
@@ -77,7 +66,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       const [id] = yield* choose(g, me, '可將手牌置底，然後抓牌', p.hand.slice());
       if (id !== undefined) {
         moveCard(g, g.cards[id], 'library', true);
-        drawCards(g, me, 1);
+        (yield*drawWithReplacements(g,me,1));
       }
       break;
     }
@@ -163,7 +152,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       for (const pl of g.players) for (const id of pl.exile) if (g.cards[id].tmtLinked === ef.n) g.cards[id].tmtLinked = undefined;
       break;
     case 'aprilDraw':
-      drawCards(g,me,p.spellTypesThisTurn?.length??0);
+      (yield*drawWithReplacements(g,me,p.spellTypesThisTurn?.length??0));
       break;
     case 'robot': {
       const c = card();
@@ -238,7 +227,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       ]);
       break;
     case 'refillFour':
-      drawCards(g, me, Math.max(0, 4 - p.hand.length));
+      (yield*drawWithReplacements(g,me,Math.max(0, 4 - p.hand.length)));
       break;
     case 'mondo': {
       const colors = ['W', 'U', 'B', 'R', 'G'] as const;
@@ -283,7 +272,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
         for (const id of [...q.hand, ...q.graveyard]) moveCard(g, g.cards[id], 'library');
         shuffleArr(g, q.library);
       }
-      for (const pid of chosen) drawCards(g, pid, 7);
+      for (const pid of chosen) (yield*drawWithReplacements(g,pid,7));
       break;
     }
     case 'cloneExile': {

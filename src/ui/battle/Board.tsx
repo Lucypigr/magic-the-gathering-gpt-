@@ -241,6 +241,7 @@ export function Avatar({
         {face ? <Art def={face} /> : <span className="hero-glyph">{pid === 0 ? '你' : 'AI'}</span>}
       </button>
       <div className={`hero-life ${p.life <= 5 ? 'low' : ''}`}>{p.life}</div>
+      {(p.energy??0)>0&&<span className="badge" title="能量指示物：不會在步驟或回合結束時消失">能量 {p.energy}</span>}
       <div className="hero-meta">
         <span className="hero-name">
           {p.name}

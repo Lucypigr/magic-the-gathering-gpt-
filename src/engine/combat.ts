@@ -11,6 +11,7 @@ import { tapCard } from './zones';
 import { dealDamage, emit } from './zones';
 
 export function canAttack(g: GameState, c: Card): boolean {
+  if(g.players[c.controller].mh3NoAttacksTurn===g.turn)return false;
   if (!isCreature(c) || c.zone !== 'battlefield' || c.tapped) return false;
   if (c.controller !== g.active) return false;
   if(g.landCombatOnly&&!c.def.types.includes('Land')&&c.def.id!=='tok-earth')return false;

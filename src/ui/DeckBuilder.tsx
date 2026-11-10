@@ -2,7 +2,7 @@ import {traditionalRulesText} from '../data/localization';
 import { displayName, zhName } from '../data/names';
 import { useMemo, useState } from 'react';
 import type { Screen, UpdateProfile } from '../App';
-import { BASIC_LANDS, COLLECTIBLE, SET_INFO, deckSize, isStandardLegal, isModernLegal } from '../data';
+import { BASIC_LANDS, COLLECTIBLE, SET_INFO, REPRINTS, deckSize, isStandardLegal, isModernLegal } from '../data';
 import { STANDARD_SETS } from '../engine/types';
 import { colorsOf } from '../engine/mana';
 import { getDef } from '../engine/registry';
@@ -39,7 +39,7 @@ export function matchFilter(d: CardDef, f: PoolFilter): boolean {
     if (!isModernLegal(d)) return false;
   } else if (f.set === 'STD') {
     if (!isStandardLegal(d)) return false;
-  } else if (f.set && d.set !== f.set) return false;
+  } else if (f.set && d.set !== f.set&&!(f.set==='MH3'&&(REPRINTS.MH3??[]).some(([id])=>id===d.id))) return false;
   if (f.rarity && d.rarity !== f.rarity) return false;
   return true;
 }
@@ -80,6 +80,7 @@ export function FilterBar({ f, setF, extra }: { f: PoolFilter; setF: (f: PoolFil
             </option>
           ))}
         </optgroup>
+        <optgroup label="近代賽特別系列"><option value="MH3">Modern Horizons 3（MH3）</option></optgroup>
         <optgroup label="經典">
           {(['CORE', 'META'] as const).map((s) => (
             <option key={s} value={s}>

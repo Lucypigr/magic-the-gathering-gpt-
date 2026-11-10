@@ -1,9 +1,9 @@
 // 由 Scryfall 資料產生：其他系列也有印刷的卡牌（會出現在該系列的補充包中）與標準賽合法的經典卡牌。
-import type { Rarity, StandardSet } from '../engine/types';
+import type { Rarity, StandardSet, SetCode } from '../engine/types';
 import { GEN_REPRINTS } from './sets/gen/reprints';
 
 /** 各標準賽系列補充包中額外收錄的卡（卡牌 id 與在該系列的稀有度） */
-export const REPRINTS: Partial<Record<StandardSet, [string, Rarity][]>> = {
+export const REPRINTS: Partial<Record<SetCode, [string, Rarity][]>> = {
   WOE: [
     ['quick-study', 'C'],
     ['stroke-of-midnight', 'U'],
