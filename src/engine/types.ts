@@ -1385,6 +1385,8 @@ export interface Show {
 }
 
 export interface GameState {
+  /** Remains true once an Idol has entered; cloned with the rest of game state. */
+  mh3IdolSeen?:boolean;
   mh3Delayed?:{source:number;controller:PID;kind:string;card:number;version:number;sourceVersion:number}[];
   modernRed?:{turn:number;damage:[number,number]};
   modernLastArenaManaSpent?:number;

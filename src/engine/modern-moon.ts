@@ -8,7 +8,7 @@ const overlays = new WeakMap<CardDef, CardDef>();
 const islandOverlays=new WeakMap<CardDef,CardDef>();
 const isMoon=(c:Card)=>c.def.abilities?.some(a=>a.kind==='static'&&(a.frontier==='modern:moon'||a.frontier==='modern:mh3:islands'));
 export function modernRefresh(g: GameState, entering?: Card) {
-  mh3Refresh(g);
+  mh3Refresh(g,entering);
   if (entering&&isMoon(entering)) g.modernMoonActive = true;
   if (!g.modernMoonActive || refreshing.has(g)) return;
   refreshing.add(g);

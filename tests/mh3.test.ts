@@ -74,3 +74,5 @@ describe('MH3 double faces and declared targets',()=>{
 it('free casts during resolution still require additional mana taxes',()=>{const g=mk();put(g,1,'charitable-levy');const c=inHand(g,0,'opt');expect(castDuringResolution(g,0,c.id,[],true)).not.toBeNull();expect(c.zone).toBe('hand');g.players[0].pool=['C'];expect(castDuringResolution(g,0,c.id,[],true)).toBeNull();expect(c.manaSpent).toBe(1);});
 
 it('MH3 tokens are registered separately from collectible cards',()=>{expect(TOKENS.filter(c=>c.id.startsWith('tok-mh3-'))).toHaveLength(26);expect(COLLECTIBLE.some(c=>c.id.startsWith('tok-mh3-'))).toBe(false);});
+
+it('Idol starts refreshing after entering a previously unrelated game and remains independent in AI clones',()=>{const g=mk(),body=put(g,0,'brave-kin-duo');stats(g,body);expect(g.mh3IdolSeen).toBe(false);const idol=put(g,0,'idol-of-false-gods');idol.counters=8;expect(stats(g,idol).p).toBe(8);expect(idol.def.types).toContain('Creature');const copy=cloneGame(g);copy.cards[idol.id].counters=0;stats(copy,copy.cards[idol.id]);expect(copy.cards[idol.id].def.types).not.toContain('Creature');expect(idol.def.types).toContain('Creature');});
