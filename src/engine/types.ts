@@ -1157,6 +1157,7 @@ export interface Player {
   eclTurnCount?:number;
   eclCounterPlaced?:boolean;
   eclAttackedMerfolk?:number;
+  mh2HexproofUntil?:number;
   eclPreventDamageUntil?:PID;
   eclMaralenUsed?:number[];
   frontierMana?:{mana:Mana;rule:'mountVehicle'|'bigSpell'}[];
