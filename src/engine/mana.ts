@@ -49,7 +49,7 @@ export function costTotal(c: ManaCost): number {
 }
 
 export function manaValue(def: CardDef): number {
-  return costTotal(parseCost(def.cost))+(def.mkm?.split?costTotal(parseCost(def.adventure?.cost)):0);
+  return costTotal(parseCost(def.cost))+(def.meadow?.mh2Split?costTotal(parseCost(def.back?.cost)):0)+(def.mkm?.split?costTotal(parseCost(def.adventure?.cost)):0);
 }
 
 export function addCosts(a: ManaCost, b: ManaCost): ManaCost {
@@ -103,6 +103,8 @@ export function costToString(c: ManaCost): string {
 }
 
 export interface ManaSource {
+  /** Mana supplied by a granted basic-land ability avoids the original mana ability costs. */
+  intrinsicColors?:Mana[];
   coloredOnly?: boolean;
   selfDamage?: number;
   id: number;

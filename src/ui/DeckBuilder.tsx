@@ -39,7 +39,7 @@ export function matchFilter(d: CardDef, f: PoolFilter): boolean {
     if (!isModernLegal(d)) return false;
   } else if (f.set === 'STD') {
     if (!isStandardLegal(d)) return false;
-  } else if (f.set && d.set !== f.set&&!(f.set==='MH3'&&(REPRINTS.MH3??[]).some(([id])=>id===d.id))) return false;
+  } else if (f.set && d.set !== f.set&&!((f.set==='MH3'||f.set==='MH2')&&(REPRINTS[f.set]??[]).some(([id])=>id===d.id))) return false;
   if (f.rarity && d.rarity !== f.rarity) return false;
   return true;
 }
@@ -80,7 +80,7 @@ export function FilterBar({ f, setF, extra }: { f: PoolFilter; setF: (f: PoolFil
             </option>
           ))}
         </optgroup>
-        <optgroup label="近代賽特別系列"><option value="MH3">Modern Horizons 3（MH3）</option></optgroup>
+        <optgroup label="近代賽特別系列"><option value="MH3">Modern Horizons 3（MH3）</option><option value="MH2">Modern Horizons 2（MH2）</option></optgroup>
         <optgroup label="經典">
           {(['CORE', 'META'] as const).map((s) => (
             <option key={s} value={s}>

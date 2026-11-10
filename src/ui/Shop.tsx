@@ -72,7 +72,8 @@ export function Shop({ profile, go, update }: { profile: Profile; go: (s: Screen
         })}
       </div>
       <h3 className="section-title">近代賽特別系列</h3>
-      <div className="panel"><h4>Modern Horizons 3（MH3）</h4><p className="muted small">{poolSize('MH3')} 種卡。不屬於標準賽系列；近代賽組牌會檢查禁牌。</p><div className="row">{MODERN_PRODUCTS.map(p=><button key={p.id} className="btn" onClick={()=>buy(p)} disabled={profile.gold<p.price}>{p.name} · {p.price} 金幣</button>)}</div></div>
+      <div className="panel"><h4>Modern Horizons 3（MH3）</h4><p className="muted small">{poolSize('MH3')} 種卡。不屬於標準賽系列；近代賽組牌會檢查禁牌。</p><div className="row">{MODERN_PRODUCTS.filter(p=>p.set==='MH3').map(p=><button key={p.id} className="btn" onClick={()=>buy(p)} disabled={profile.gold<p.price}>{p.name} · {p.price} 金幣</button>)}</div></div>
+      <div className="panel"><h4>Modern Horizons 2（MH2）</h4><p className="muted small">{poolSize('MH2')} 種卡。近代賽組牌會檢查禁牌。</p><div className="row">{MODERN_PRODUCTS.filter(p=>p.set==='MH2').map(p=><button key={p.id} className="btn" onClick={()=>buy(p)} disabled={profile.gold<p.price}>{p.name} · {p.price} 金幣</button>)}</div></div>
       <h3 className="section-title">經典補充包</h3>
       <p className="muted small">收錄歷年核心系列與過去環境的強卡，適合自由模式。</p>
       <div className="shop-grid">

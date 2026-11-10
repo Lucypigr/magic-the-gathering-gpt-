@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Disenchant",
+    "text": "Destroy target artifact or enchantment.",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24622,
+    "oracleId": "a7e97fa9-4b72-4548-b854-5be5f18a6f1a",
+    "sourceSha256": "e8f8c6f2b5808386baad1910925068b87a88dae51f8d2570894ed24bf7c85c33",
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  {
+    "name": "Braingeyser",
+    "text": "Target player draws X cards.",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 5815,
+    "oracleId": "9908e597-9470-4c13-8387-39431b380138",
+    "sourceSha256": "e8f8c6f2b5808386baad1910925068b87a88dae51f8d2570894ed24bf7c85c33",
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  {
+    "name": "Terror",
+    "text": "Destroy target nonartifact, nonblack creature. It can't be regenerated.",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24654,
+    "oracleId": "b81f041d-98db-4408-9472-c483e4a502bc",
+    "sourceSha256": "e8f8c6f2b5808386baad1910925068b87a88dae51f8d2570894ed24bf7c85c33",
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  {
+    "name": "Shivan Dragon",
+    "text": "Flying\\n{R}: This creature gets +1/+0 until end of turn.",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24156,
+    "oracleId": "711eea87-0fa3-46e0-a42b-fa5a86455f04",
+    "sourceSha256": "e8f8c6f2b5808386baad1910925068b87a88dae51f8d2570894ed24bf7c85c33",
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  {
+    "name": "Regrowth",
+    "text": "Return target card from your graveyard to your hand.",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 23531,
+    "oracleId": "e5152e8d-9f55-493d-a0fc-753cc72ee299",
+    "sourceSha256": "e8f8c6f2b5808386baad1910925068b87a88dae51f8d2570894ed24bf7c85c33",
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  {
+    "name": "Black Lotus",
+    "text": "{T}, Sacrifice this artifact: Add three mana of any one color.",
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24598,
+    "oracleId": "5089ec1a-f881-4d55-af14-5d996171203b",
+    "sourceSha256": "e8f8c6f2b5808386baad1910925068b87a88dae51f8d2570894ed24bf7c85c33",
+    "sourceUrl": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  }
+]

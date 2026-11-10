@@ -1,3 +1,4 @@
+import{makeEclTokenBatch}from'./ecl';
 import{drawWithReplacements}from'./draw-replacements';
 import { redMastery } from './modern-red';
 import { uncounterableSpells } from './state';
@@ -7,7 +8,7 @@ import { resolveRef, runEffects, type Ctx } from './effects';
 import { manaValue, parseCost } from './mana';
 import { hasKw, isCreature, isLand, matches, other, shuffleArr, stats } from './state';
 import type { Card, Color, Effect, GameState, PID, Ref, Response, SubFlow } from './types';
-import { createToken, destroyCards, discard, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice } from './zones';
+import { destroyCards, discard, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice } from './zones';
 
 export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt' }>): SubFlow {
   const me = ctx.controller,
@@ -365,7 +366,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       if (c) {
         const small = manaValue(c.def) <= 4;
         destroyCards(g, [c]);
-        if (small) createToken(g, 'tok-food', me);
+        if (small) (yield*makeEclTokenBatch(g,me,'tok-food',1))[0]!;
       }
       break;
     }
@@ -403,7 +404,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       if (ctx.ev?.type === 'discard' && ctx.ev.player === me) yield* run([{ e: 'damage', n: 2, to: 'opp' }]);
       break;
     case 'hob': {
-      const t = createToken(g, 'tok-mutant', me);
+      const t = (yield*makeEclTokenBatch(g,me,'tok-mutant',1))[0]!;
       yield* runEffects(g, { ...ctx, targets: [{ c: t.id }] }, [{ e: 'pump', what: 'T0', p: 0, t: 0, kw: ['haste'] }]);
       (g.delayed ??= []).push({
         source: t.id,
@@ -452,7 +453,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
         shuffleArr(g, p.library);
         emit(g, { type: 'search', player: me });
       }
-      if (!found) createToken(g, 'tok-food', me);
+      if (!found) (yield*makeEclTokenBatch(g,me,'tok-food',1))[0]!;
       break;
     }
     case 'leatherhead': {
@@ -643,7 +644,7 @@ export function* tmtEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tmt
       }
       break;
     case 'ooze':
-      for (let i = 0; i < (evKinds?.plus ?? evCard?.countersBeforeLeaving ?? 0); i++) createToken(g, 'tok-mutagen', me);
+      for (let i = 0; i < (evKinds?.plus ?? evCard?.countersBeforeLeaving ?? 0); i++) (yield*makeEclTokenBatch(g,me,'tok-mutagen',1))[0]!;
       break;
     case 'van': {
       const c = card();

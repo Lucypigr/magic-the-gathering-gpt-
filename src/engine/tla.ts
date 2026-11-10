@@ -1,3 +1,4 @@
+import{makeEclTokenBatch}from'./ecl';
 import{drawWithReplacements}from'./draw-replacements';
 import {campusTargets} from './campus-casting';
 import {beholdOptions,canReceiveCounters} from './ecl-support';
@@ -8,7 +9,7 @@ import { manaValue, parseCost } from './mana';
 import { cardName, isCreature, isLand, matches, other, shuffleArr, stats } from './state';
 import { hasTargetsAvailable, legalTargets, validateTargets } from './targets';
 import type { Card, Effect, GameState, PID, Ref, Response, SubFlow, TargetSpec } from './types';
-import { bend, createToken, destroyCards, discard, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice, tapCard, transformCard } from './zones';
+import { bend, destroyCards, discard, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, sacrifice, tapCard, transformCard } from './zones';
 
 export function* choose(g: GameState, pid: PID, prompt: string, options: number[], min = 0, max = 1): SubFlow<number[]> {
   if (!options.length || max <= 0) return [];
@@ -139,7 +140,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
       break;
     }
     case 'exileAlly':
-      if (ctx.ev?.type === 'cast' && g.cards[ctx.ev.card].castOrigin === 'exile') createToken(g, 'tok-ally', me);
+      if (ctx.ev?.type === 'cast' && g.cards[ctx.ev.card].castOrigin === 'exile') (yield*makeEclTokenBatch(g,me,'tok-ally',1))[0]!;
       break;
     case 'wrath': {
       const keep = card();
@@ -173,7 +174,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
       const id = src.attachedTo ?? src.lastAttachedTo;
       const c = id != null ? g.cards[id] : undefined;
       if (c?.zone === 'battlefield') moveCard(g, c, 'exile');
-      createToken(g, 'tok-ally', me);
+      (yield*makeEclTokenBatch(g,me,'tok-ally',1))[0]!;
       break;
     }
     case 'wave': {
@@ -352,7 +353,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
       if (c) {
         const creature = isCreature(c);
         moveCard(g, c, 'exile');
-        if (creature) createToken(g, 'tok-clue', me);
+        if (creature) (yield*makeEclTokenBatch(g,me,'tok-clue',1))[0]!;
       }
       break;
     }
@@ -602,7 +603,7 @@ export function* tlaEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'tla
       );
       if (id !== undefined) {
         g.cards[id].controller = opp;
-        const token = createToken(g, 'tok-ally', me);
+        const token = (yield*makeEclTokenBatch(g,me,'tok-ally',1))[0]!;
         const n = g.battlefield.filter((id) => g.cards[id].owner === me && g.cards[id].controller === opp).length;
         if (token) putCounters(g, token, n);
       }

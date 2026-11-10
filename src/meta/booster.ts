@@ -30,7 +30,7 @@ export const CLASSIC_PRODUCTS: Product[] = [
   { id: 'meta-5', set: 'META', name: '競技環境 補充包 ×5', price: 800, packs: 5, desc: '一次買五包，省下 100 金幣' },
 ];
 
-export const MODERN_PRODUCTS:Product[]=[{id:'mh3',set:'MH3',name:'MH3 補充包',price:PACK_PRICE,packs:1,desc:SET_INFO.MH3.desc},{id:'mh3-5',set:'MH3',name:'MH3 補充包 ×5',price:BUNDLE_PRICE,packs:5,desc:'一次買五包，省下50金幣'}];
+export const MODERN_PRODUCTS:Product[]=[{id:'mh2',set:'MH2',name:'MH2 補充包',price:PACK_PRICE,packs:1,desc:SET_INFO.MH2.desc},{id:'mh2-5',set:'MH2',name:'MH2 補充包 ×5',price:BUNDLE_PRICE,packs:5,desc:'一次買五包，省下50金幣'},{id:'mh3',set:'MH3',name:'MH3 補充包',price:PACK_PRICE,packs:1,desc:SET_INFO.MH3.desc},{id:'mh3-5',set:'MH3',name:'MH3 補充包 ×5',price:BUNDLE_PRICE,packs:5,desc:'一次買五包，省下50金幣'}];
 export const PRODUCTS: Product[] = [...STANDARD_PRODUCTS,...MODERN_PRODUCTS, ...CLASSIC_PRODUCTS];
 
 const poolCache = new Map<string, CardDef[]>();

@@ -1,3 +1,4 @@
+import{mh2Protected,mh2PlayerBlocked,mh2Has}from'./mh2';
 import{mh3Protected}from'./mh3';
 import {finalProtected,finalMonoHexproof} from './orbit-final-support';
 import {frontierFlags} from './frontier-support';
@@ -14,6 +15,8 @@ import type { Card, GameState, PID, CardDef, TargetRef, TargetSpec } from './typ
 export function targetable(g: GameState, c: Card, by: PID, sourceId?:number,ability=false): boolean {
   const ks=hasKw(g,c,'protection_colors'),ko=hasKw(g,c,'protection_opponent');
   const source=sourceId!==undefined?g.cards[sourceId]:undefined;
+  if(source&&c.controller!==by&&mh2Has(g,c,'monoHexproof')&&colorsOf(source.castFace??source.def).length===1)return false;
+  if(source&&mh2Protected(g,c,source))return false;
   if(source&&mh3Protected(g,c,source,ability))return false;
   if(source&&c.controller!==by&&c.def.meadow?.mh3HexproofColors&&colorsOf(source.castFace??source.def).length&&!abilitiesSuppressed(g,c))return false;
   if(source&&c.controller!==by&&ability&&c.def.id==='volatile-stormdrake'&&!abilitiesSuppressed(g,c))return false;
@@ -39,6 +42,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
   const f = spec.filter;
   const addPlayers = (onlyOpp: boolean) => {
     for (const pid of [0, 1] as PID[]) {
+      if(mh2PlayerBlocked(g,pid,controller,sourceId!==undefined?g.cards[sourceId]:undefined))continue;
       if(spec.mh3OpponentPlayer&&pid===controller)continue;
       if(pid!==controller&&(frontierFlags(g,pid).bdHexproof||frontierStatic(g,pid,'fdn:playerHexproof').length))continue;
       if (onlyOpp && pid === controller) continue;
@@ -55,6 +59,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       if (creatureOnly && !isCreature(c) && !(orPlaneswalker && c.def.types.includes('Planeswalker'))) continue;
       if (spec.notSelf && id === sourceId) continue;
       if (!matches(g, f, c, controller, sourceId)) continue;
+      if(attachment&&sourceId!==undefined&&mh2Protected(g,c,g.cards[sourceId]))continue;
       if (!attachment && !targetable(g, c, controller, sourceId,spec.mh3AbilityTargets)) continue;
       out.push({ c: id });
     }
@@ -64,7 +69,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
       addPlayers(false);
       break;
     case 'opponent':
-      if(!mshStatic(g,other(controller),'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,other(controller),'playerProtection').length&&!frontierFlags(g,other(controller)).bdHexproof)out.push({ p: other(controller) });
+      if(!mh2PlayerBlocked(g,other(controller),controller,sourceId!==undefined?g.cards[sourceId]:undefined)&&!mshStatic(g,other(controller),'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,other(controller),'playerProtection').length&&!frontierFlags(g,other(controller)).bdHexproof)out.push({ p: other(controller) });
       break;
     case 'permanentOrPlayer':addPerms(false);addPlayers(false);break;
     case 'creatureOrPlaneswalker':addPerms(true,true);break;
@@ -78,7 +83,7 @@ export function legalTargets(g: GameState, spec: TargetSpec, controller: PID, so
     case 'any': {
       // 任意一個目標：生物、鵬洛客或玩家
       addPerms(true, true);
-      for (const pid of [0, 1] as PID[])if(pid===controller||!frontierStatic(g,pid,'fdn:playerHexproof').length&&!mshStatic(g,pid,'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,pid,'playerProtection').length&&!frontierFlags(g,pid).bdHexproof)out.push({ p: pid });
+      for (const pid of [0, 1] as PID[])if(!mh2PlayerBlocked(g,pid,controller,sourceId!==undefined?g.cards[sourceId]:undefined)&&(pid===controller||!frontierStatic(g,pid,'fdn:playerHexproof').length&&!mshStatic(g,pid,'shieldHexproof').some(c=>(c.eclCounters?.shield??0)>0)&&!finStatic(g,pid,'playerProtection').length&&!frontierFlags(g,pid).bdHexproof))out.push({ p: pid });
       break;
     }
     case 'creatureOrGy':addPerms(true);for(const id of g.players.flatMap(p=>p.graveyard)){const c=g.cards[id];if(isCreature(c)&&id!==sourceId&&matches(g,f,c,controller,sourceId))out.push({c:id});}break;

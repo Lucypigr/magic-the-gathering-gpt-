@@ -46,6 +46,7 @@ export const SET_INFO: Record<Exclude<SetCode, 'TOK'>, SetInfo> = {
   MSH: { name: 'Marvel Super Heroes', short: '漫威英雄', desc: '漫威的超級英雄與反派。', released: '2026/06' },
   HOB: { name: 'The Hobbit', short: '哈比人', desc: '哈比人歷險記：矮人、鬼怪與龍。', released: '2026/08' },
   FRA: { name: 'Reality Fracture', short: '實相裂隙', desc: '鵬洛客齊聚：傑斯、阿耶尼與茜卓納拉，現實出現裂痕。', released: '2026/10' },
+  MH2: { name:'Modern Horizons 2',short:'MH2',desc:'直接加入近代賽的特別系列。',released:'2021/06' },
   MH3: { name: 'Modern Horizons 3', short: 'MH3', desc: '直接加入近代賽的特別系列。', released: '2024/06' },
   CORE: { name: '經典核心系列（M10–M21）', short: '核心', desc: '歷年核心系列的經典卡牌。' },
   META: { name: '競技環境精選', short: '環境', desc: '出現在競技環境套牌中的強力卡牌，稀有度較高。' },
@@ -55,7 +56,7 @@ export const SET_INFO: Record<Exclude<SetCode, 'TOK'>, SetInfo> = {
 export const COLLECTIBLE: CardDef[] = CARDS.filter((c) => c.set !== 'BAS');
 
 export function cardsInSet(set: SetCode): CardDef[] {
-  return CARDS.filter((c) => c.set === set||set==='MH3'&&(REPRINTS.MH3??[]).some(([id])=>id===c.id));
+  return CARDS.filter((c) => c.set === set||(set==='MH3'||set==='MH2')&&(REPRINTS[set]??[]).some(([id])=>id===c.id));
 }
 
 // ------------------------------------------------------------

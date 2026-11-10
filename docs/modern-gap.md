@@ -5,9 +5,9 @@
 ## 盤點結果
 
 - Modern 來源清單共 118 個產品；排除 11 個純重印、入門及合併產品後，核心／擴充與直接加入 Modern 的特別系列共 **107 個**。
-- 依『牌名是否有可載入定義』判斷，完整 **19 個**，未完整 **88 個**；其中 **4 個**完全沒有非基本地牌名。其餘未齊系列已有部分同名重印牌，不是整個系列都空白。
-- 合法 Modern 卡池共 **22,708 種牌名**，遊戲已有 **5,562 種**（24.5%），缺 **17,146 種**。同名跨系列重印只算一次，基本地包含在此卡池總數。
-- 50 份牌表樣本中，主牌能完整還原 **6/50**；包含備牌能完整還原 **6/50**。這 50 份牌表合計缺 **287 種不同的牌**。
+- 依『牌名是否有可載入定義』判斷，完整 **20 個**，未完整 **87 個**；其中 **4 個**完全沒有非基本地牌名。其餘未齊系列已有部分同名重印牌，不是整個系列都空白。
+- 合法 Modern 卡池共 **22,708 種牌名**，遊戲已有 **5,852 種**（25.8%），缺 **16,856 種**。同名跨系列重印只算一次，基本地包含在此卡池總數。
+- 50 份牌表樣本中，主牌能完整還原 **6/50**；包含備牌能完整還原 **6/50**。這 50 份牌表合計缺 **264 種不同的牌**。
 
 這裡統計的是遊戲是否收錄，不是帳號已擁有幾張，也不使用顏色／法術力相近牌來代換。同名可找到定義不代表卡片的所有官方效果已驗證；相關限制見 [逐卡測試](per-card-tests.md)。
 
@@ -18,12 +18,12 @@
 | 系列 | 名稱 | 已收錄 | 全系列非基本地 | 尚缺 |
 |---|---|---:|---:|---:|
 | MH3 | Modern Horizons 3 | 303 | 303 | 0 |
-| MH2 | Modern Horizons 2 | 12 | 304 | 292 |
+| MH2 | Modern Horizons 2 | 304 | 304 | 0 |
 | MH1 | Modern Horizons | 12 | 250 | 238 |
 | LTR | The Lord of the Rings: Tales of Middle-earth | 1 | 284 | 283 |
 | ACR | Assassin's Creed | 6 | 133 | 127 |
 
-如果目標是先還原競技牌表，先補這 50 份樣本共缺的 287 種牌，比直接補完整 17,146 種卡池更集中。仍需逐張實作／驗證效果，不能只匯入顯示文字。
+如果目標是先還原競技牌表，先補這 50 份樣本共缺的 264 種牌，比直接補完整 16,856 種卡池更集中。仍需逐張實作／驗證效果，不能只匯入顯示文字。
 
 ## 現有系列的新發現
 
@@ -38,55 +38,55 @@
 
 | 樣本牌表 | 主牌已收錄／總張數 | 備牌已收錄／總張數 | 還缺幾種牌 |
 |---|---:|---:|---:|
-| [Modern] #01 - Eldrazi | 37/60 | 4/15 | 13 |
-| [Modern] #02 - Eldrazi Ramp | 34/60 | 8/15 | 14 |
+| [Modern] #01 - Eldrazi | 42/60 | 4/15 | 11 |
+| [Modern] #02 - Eldrazi Ramp | 38/60 | 8/15 | 13 |
 | [Modern] #03 - Izzet Prowess | 60/60 | 15/15 | 0 |
-| [Modern] #04 - Esper Blink | 41/60 | 12/15 | 9 |
-| [Modern] #05 - Affinity | 33/60 | 6/15 | 14 |
-| [Modern] #06 - Domain Zoo | 37/60 | 10/15 | 11 |
-| [Modern] #07 - Boros Energy | 50/60 | 12/15 | 6 |
-| [Modern] #08 - Goryo's Vengeance | 33/60 | 10/15 | 12 |
-| [Modern] #09 - Jeskai Energy | 49/60 | 14/15 | 4 |
+| [Modern] #04 - Esper Blink | 47/60 | 12/15 | 7 |
+| [Modern] #05 - Affinity | 37/60 | 6/15 | 13 |
+| [Modern] #06 - Domain Zoo | 45/60 | 10/15 | 9 |
+| [Modern] #07 - Boros Energy | 55/60 | 12/15 | 4 |
+| [Modern] #08 - Goryo's Vengeance | 40/60 | 10/15 | 10 |
+| [Modern] #09 - Jeskai Energy | 56/60 | 14/15 | 2 |
 | [Modern] #10 - Ruby Storm | 32/60 | 6/15 | 13 |
-| [Modern] #11 - Mono-Green Basking Broodscale Combo | 33/60 | 5/15 | 15 |
-| [Modern] #12 - Azorius Control | 35/60 | 12/15 | 14 |
-| [Modern] #13 - Amulet Titan | 13/61 | 7/15 | 24 |
-| [Modern] #14 - Tron | 29/60 | 2/15 | 23 |
-| [Modern] #15 - Rakdos Midrange | 44/60 | 9/15 | 10 |
-| [Modern] #16 - Neobrand | 25/60 | 5/15 | 18 |
-| [Modern] #17 - Boros Ponza | 37/60 | 9/15 | 11 |
-| [Modern] #18 - Living End | 27/60 | 7/15 | 17 |
-| [Modern] #19 - Dimir Midrange | 40/60 | 9/15 | 11 |
-| [Modern] #20 - Eldrazi Tron | 33/60 | 7/15 | 13 |
+| [Modern] #11 - Mono-Green Basking Broodscale Combo | 37/60 | 5/15 | 14 |
+| [Modern] #12 - Azorius Control | 39/60 | 12/15 | 13 |
+| [Modern] #13 - Amulet Titan | 18/61 | 7/15 | 22 |
+| [Modern] #14 - Tron | 29/60 | 3/15 | 22 |
+| [Modern] #15 - Rakdos Midrange | 48/60 | 9/15 | 8 |
+| [Modern] #16 - Neobrand | 26/60 | 6/15 | 17 |
+| [Modern] #17 - Boros Ponza | 41/60 | 9/15 | 10 |
+| [Modern] #18 - Living End | 35/60 | 7/15 | 15 |
+| [Modern] #19 - Dimir Midrange | 40/60 | 11/15 | 10 |
+| [Modern] #20 - Eldrazi Tron | 33/60 | 9/15 | 12 |
 | [Modern] #21 - Belcher | 30/60 | 13/15 | 9 |
-| [Modern] #22 - Mono-Green Eldrazi | 36/60 | 3/15 | 15 |
+| [Modern] #22 - Mono-Green Eldrazi | 36/60 | 5/15 | 14 |
 | [Modern] #23 - Izzet Murktide | 60/60 | 15/15 | 0 |
-| [Modern] #24 - Yawgmoth | 31/60 | 0/15 | 18 |
-| [Modern] #25 - Grixis Reanimator | 29/60 | 13/15 | 10 |
-| [Modern] #26 - 4c HollowOne | 35/60 | 9/15 | 10 |
-| [Modern] #27 - Devoted Combo | 25/60 | 3/15 | 22 |
-| [Modern] #28 - Indomitable Creativity | 35/60 | 9/15 | 14 |
-| [Modern] #29 - Dimir Murktide | 45/60 | 11/15 | 9 |
-| [Modern] #30 - The Rock | 30/60 | 2/15 | 16 |
+| [Modern] #24 - Yawgmoth | 37/60 | 5/15 | 14 |
+| [Modern] #25 - Grixis Reanimator | 37/60 | 13/15 | 8 |
+| [Modern] #26 - 4c HollowOne | 39/60 | 9/15 | 9 |
+| [Modern] #27 - Devoted Combo | 27/60 | 5/15 | 20 |
+| [Modern] #28 - Indomitable Creativity | 38/60 | 9/15 | 13 |
+| [Modern] #29 - Dimir Murktide | 47/60 | 11/15 | 8 |
+| [Modern] #30 - The Rock | 35/60 | 6/15 | 13 |
 | [Modern] #31 - Temur Prowess | 60/60 | 15/15 | 0 |
 | [Modern] #32 - Boros Burn | 60/60 | 15/15 | 0 |
-| [Modern] #33 - Living End | 29/60 | 8/15 | 14 |
-| [Modern] #34 - Hammer Time | 26/60 | 10/15 | 14 |
-| [Modern] #35 - Grixis Control | 39/60 | 12/15 | 10 |
-| [Modern] #36 - Izzet Steel-Cutter | 37/60 | 13/15 | 12 |
-| [Modern] #37 - Song of Creation | 30/60 | 9/15 | 17 |
-| [Modern] #38 - Mono-Black Midrange | 21/60 | 4/15 | 21 |
-| [Modern] #39 - Death's Shadow | 31/60 | 9/15 | 11 |
-| [Modern] #40 - Merfolk | 23/60 | 11/15 | 11 |
-| [Modern] #41 - Titan Shift | 29/60 | 6/15 | 19 |
+| [Modern] #33 - Living End | 37/60 | 10/15 | 11 |
+| [Modern] #34 - Hammer Time | 30/60 | 10/15 | 13 |
+| [Modern] #35 - Grixis Control | 41/60 | 14/15 | 8 |
+| [Modern] #36 - Izzet Steel-Cutter | 41/60 | 13/15 | 11 |
+| [Modern] #37 - Song of Creation | 34/60 | 9/15 | 15 |
+| [Modern] #38 - Mono-Black Midrange | 26/60 | 6/15 | 18 |
+| [Modern] #39 - Death's Shadow | 31/60 | 12/15 | 10 |
+| [Modern] #40 - Merfolk | 31/60 | 11/15 | 9 |
+| [Modern] #41 - Titan Shift | 35/60 | 8/15 | 16 |
 | [Modern] #42 - Jeskai Prowess | 60/60 | 15/15 | 0 |
-| [Modern] #43 - 4c Midrange | 41/60 | 9/15 | 13 |
-| [Modern] #44 - Rakdos Aggro | 47/60 | 4/15 | 11 |
-| [Modern] #45 - Azorius Blink | 44/60 | 13/15 | 5 |
-| [Modern] #46 - Bant Blink | 43/61 | 14/15 | 9 |
+| [Modern] #43 - 4c Midrange | 50/60 | 10/15 | 9 |
+| [Modern] #44 - Rakdos Aggro | 47/60 | 5/15 | 10 |
+| [Modern] #45 - Azorius Blink | 48/60 | 13/15 | 4 |
+| [Modern] #46 - Bant Blink | 47/61 | 14/15 | 8 |
 | [Modern] #47 - Rakdos HollowOne | 37/60 | 9/15 | 9 |
-| [Modern] #48 - Mill | 14/60 | 5/15 | 26 |
-| [Modern] #49 - Esper Reanimator | 32/60 | 11/15 | 11 |
+| [Modern] #48 - Mill | 18/60 | 5/15 | 25 |
+| [Modern] #49 - Esper Reanimator | 48/60 | 13/15 | 6 |
 | [Modern] #50 - Mono-Red Burn | 60/60 | 15/15 | 0 |
 
 ## 最常缺的共用牌
@@ -150,7 +150,7 @@
 | CON | Conflux | 2 | 145 | 143 |
 | ARB | Alara Reborn | 1 | 145 | 144 |
 | M10 | Magic 2010 | 33 | 229 | 196 |
-| ZEN | Zendikar | 16 | 229 | 213 |
+| ZEN | Zendikar | 18 | 229 | 211 |
 | WWK | Worldwake | 5 | 145 | 140 |
 | ROE | Rise of the Eldrazi | 7 | 228 | 221 |
 | M11 | Magic 2011 | 29 | 229 | 200 |
@@ -198,7 +198,7 @@
 | ZNR | Zendikar Rising | 14 | 265 | 251 |
 | KHM | Kaldheim | 12 | 295 | 283 |
 | STX | Strixhaven: School of Mages | 6 | 275 | 269 |
-| MH2 | Modern Horizons 2 | 12 | 304 | 292 |
+| MH2 | Modern Horizons 2 | 304 | 304 | 0 |
 | AFR | Adventures in the Forgotten Realms | 3 | 261 | 258 |
 | MID | Innistrad: Midnight Hunt | 15 | 267 | 252 |
 | VOW | Innistrad: Crimson Vow | 17 | 267 | 250 |
@@ -244,5 +244,5 @@
 - [系列完整 CSV](modern-series-gap.csv)
 - [50 份套牌缺牌 CSV](modern-deck-gap.csv)
 - [全部 Modern 缺牌 CSV](modern-missing-cards.csv)
-- [287 種優先補牌 CSV](modern-priority-cards.csv)
+- [264 種優先補牌 CSV](modern-priority-cards.csv)
 - [詳細資料與來源 JSON](modern-gap.json)

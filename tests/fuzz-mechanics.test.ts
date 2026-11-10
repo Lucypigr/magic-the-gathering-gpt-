@@ -22,19 +22,15 @@ function deck(color: string, seed: number): string[] {
 }
 
 describe('新機制 AI 互打', () => {
-  it('各色新機制套牌都能正常打完', () => {
-    const cols = ['W', 'U', 'B', 'R', 'G'];
-    let seed = 7;
-    for (let i = 0; i < cols.length; i++) {
-      for (const lv of ['normal', 'hard'] as const) {
-        const g = runHeadless(
-          { name: 'A', deckName: cols[i], deck: deck(cols[i], seed), isAI: true },
-          { name: 'B', deckName: cols[(i + 2) % 5], deck: deck(cols[(i + 2) % 5], seed + 3), isAI: true },
-          [lv, lv],
-          seed++,
-        );
-        expect(g.winner).not.toBeNull();
-      }
-    }
+  // Preserve the same ten deterministic games, each with its own timeout and result.
+  const cols = ['W', 'U', 'B', 'R', 'G'];
+  const games = cols.flatMap((color, i) => (['normal', 'hard'] as const).map((level, j) => ({ color, opponent: cols[(i + 2) % 5], level, seed: 7 + i * 2 + j })));
+  it.each(games)('$color 對 $opponent（$level，seed $seed）能正常打完', ({color, opponent, level, seed}) => {
+    const g = runHeadless(
+      { name: 'A', deckName: color, deck: deck(color, seed), isAI: true },
+      { name: 'B', deckName: opponent, deck: deck(opponent, seed + 3), isAI: true },
+      [level, level], seed,
+    );
+    expect(g.winner).not.toBeNull();
   });
 });

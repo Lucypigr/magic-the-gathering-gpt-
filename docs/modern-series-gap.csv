@@ -24,7 +24,7 @@ ALA,Shards of Alara,2008-10-03,expansion,True,229,3,226,234,8
 CON,Conflux,2009-02-06,expansion,True,145,2,143,145,2
 ARB,Alara Reborn,2009-04-30,expansion,True,145,1,144,145,1
 M10,Magic 2010,2009-07-17,core,True,229,33,196,233,38
-ZEN,Zendikar,2009-10-02,expansion,True,229,16,213,233,21
+ZEN,Zendikar,2009-10-02,expansion,True,229,18,211,233,23
 WWK,Worldwake,2010-02-05,expansion,True,145,5,140,144,5
 ROE,Rise of the Eldrazi,2010-04-23,expansion,True,228,7,221,233,12
 DPA,Duels of the Planeswalkers,2010-06-04,box,False,97,15,82,101,19
@@ -59,7 +59,7 @@ W16,Welcome Deck 2016,2016-04-08,starter,False,16,4,12,16,4
 EMN,Eldritch Moon,2016-07-22,expansion,True,205,5,200,205,5
 KLD,Kaladesh,2016-09-30,expansion,True,259,18,241,264,23
 AER,Aether Revolt,2017-01-20,expansion,True,194,4,190,194,4
-MM3,Modern Masters 2017,2017-03-17,masters,False,249,33,216,249,33
+MM3,Modern Masters 2017,2017-03-17,masters,False,249,35,214,249,35
 W17,Welcome Deck 2017,2017-04-15,starter,False,30,6,24,30,6
 AKH,Amonkhet,2017-04-28,expansion,True,267,8,259,272,13
 HOU,Hour of Devastation,2017-07-14,expansion,True,194,5,189,199,10
@@ -82,7 +82,7 @@ M21,Core Set 2021,2020-07-03,core,True,280,54,226,285,59
 ZNR,Zendikar Rising,2020-09-25,expansion,True,265,14,251,270,19
 KHM,Kaldheim,2021-02-05,expansion,True,295,12,283,304,17
 STX,Strixhaven: School of Mages,2021-04-23,expansion,True,275,6,269,280,11
-MH2,Modern Horizons 2,2021-06-18,draft_innovation,True,304,12,292,307,17
+MH2,Modern Horizons 2,2021-06-18,draft_innovation,True,304,304,0,307,307
 AFR,Adventures in the Forgotten Realms,2021-07-23,expansion,True,261,3,258,266,8
 MID,Innistrad: Midnight Hunt,2021-09-24,expansion,True,267,15,252,272,20
 VOW,Innistrad: Crimson Vow,2021-11-19,expansion,True,267,17,250,272,22

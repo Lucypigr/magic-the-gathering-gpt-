@@ -1,3 +1,4 @@
+import{mh2TriggerAbility,mh2Regenerate,mh2Static,mh2Cleanup,mh2Protected}from'./mh2';
 import{drawWithReplacements}from'./draw-replacements';
 import{isLand}from'./state';
 import{meadowYes}from'./meadow';
@@ -87,7 +88,7 @@ export function checkSBA(g: GameState): void {
       if (!isCreature(c)) continue;
       const st = stats(g, c);
       if (st.t <= 0) dying.push(c);
-      else if ((c.damage >= st.t || c.dtDamage) && !st.kw.has('indestructible')){if(mh3Umbra(g,c))changed=true;else dying.push(c);}
+      else if ((c.damage >= st.t || c.dtDamage) && !st.kw.has('indestructible')){if(mh3Umbra(g,c)||mh2Regenerate(g,c))changed=true;else dying.push(c);}
     }
     if (dying.length) {
       for (const c of dying) log(g, `${cardName(c)} 死去`, c.controller, 'combat');
@@ -99,13 +100,13 @@ export function checkSBA(g: GameState): void {
       if (c.zone !== 'battlefield') continue;
       if (c.def.aura) {
         const t = c.attachedTo != null ? g.cards[c.attachedTo] : undefined;
-        if (c.attachedToPlayer===undefined&&(!t || t.zone !== 'battlefield' || (c.def.aura.target?.kind!=='permanent'&&!isCreature(t)))) {
+        if (c.attachedToPlayer===undefined&&(!t || t.zone !== 'battlefield' || mh2Protected(g,t,c) || (c.def.aura.target?.kind!=='permanent'&&!isCreature(t)))) {
           if(!mh3Detach(c))moveCard(g, c, 'graveyard');
           changed = true;
         }
       } else if (c.def.equip && c.attachedTo != null) {
         const t = g.cards[c.attachedTo];
-        if (isCreature(c) || !t || t.zone !== 'battlefield' || !isCreature(t)) {
+        if (isCreature(c) || !t || t.zone !== 'battlefield' || !isCreature(t)||mh2Protected(g,t,c)) {
           c.attachedTo = null;
           changed = true;
         }
@@ -171,7 +172,7 @@ function* flushTriggers(g: GameState): SubFlow {
     let ab = campusTriggerAbility(g,g.cards[t.source],meadowTriggerAbility(g,g.cards[t.source],t.ability,t.ev));
     if(ab.campusAbilityTarget){const items=g.stack.filter(s=>s.kind!=='spell'&&!s.manaAbility);const r:Response=yield{type:'mode',player:t.controller,prompt:'選擇至多一個反擊異能的目標',options:['不選目標',...items.map(s=>s.text)],count:1,purpose:'trigger'};const index=r.type==='modes'?r.picks[0]??0:0;ab={...ab,effects:index&&items[index-1]?[{e:'frontier',action:'lci:81',n:items[index-1].sid}]:[]};}
     const src = g.cards[t.source];
-    ab=yield*mh3TriggerAbility(g,src,ab);
+    ab=yield*mh3TriggerAbility(g,src,ab);ab=yield*mh2TriggerAbility(g,src,ab);
     ab=finalTriggerAbility(g,src,ab);
     ab=yield*webTriggerAbility(g,src,ab);
     if(ab.orbitDistribution){const counters=ab.orbitDistribution==='own3',total=counters?3:g.battlefield.filter(id=>g.cards[id].controller===t.controller&&g.cards[id].def.types.includes('Land')).length;const template:TargetSpec=counters?{kind:'creature',filter:{ctrl:'you'}}:{kind:'creatureOrPlaneswalker',filter:{ctrl:'opp'}};const max=Math.min(total,legalTargets(g,template,t.controller,t.source).length),min=counters&&max?1:0;if(counters&&!max)continue;const answer:Response=yield{type:'mode',player:t.controller,prompt:'選擇分配目標數量',options:Array.from({length:max-min+1},(_,i)=>String(i+min)),count:1,purpose:'count'};const n=min+(answer.type==='modes'?answer.picks[0]??0:0);let left=total;const effects:Effect[]=[];for(let i=0;i<n;i++){const limit=left-(n-i-1);let v=limit;if(i<n-1){const r:Response=yield{type:'mode',player:t.controller,prompt:'分配給第'+(i+1)+'個目標',options:Array.from({length:limit},(_,j)=>String(j+1)),count:1,purpose:'count'};v=1+(r.type==='modes'?r.picks[0]??0:0);}left-=v;effects.push(counters?{e:'counters',what:('T'+i)as 'T0',n:v}:{e:'damage',to:('T'+i)as 'T0',n:v});}ab={...ab,targets:Array.from({length:n},()=>template),effects};}
@@ -415,6 +416,7 @@ function* resolveTopItem(g: GameState): SubFlow {
     } else {
       yield* runEffects(g, ctx, item.effects);
       if(src.zone==='stack'&&src.frontierMarks?.lilahPlot){moveCard(g,src,'exile');src.plottedTurn=g.turn;delete src.frontierMarks.lilahPlot;}
+      if(src.zone==='stack'&&src.castOrigin==='hand'&&src.def.meadow?.mh2Rebound)(src.frontierMarks??={}).cpRebound=1;
       if(src.zone==='stack'){const dream=src.castOrigin==='hand'&&g.battlefield.some(id=>g.cards[id].controller===item.controller&&g.cards[id].def.id==='goliath-daydreamer'&&abilitiesOf(g,g.cards[id]).length);moveCard(g,src,dream||src.finExileOnResolve||src.frontierMarks?.cpRebound?'exile':'graveyard');src.finExileOnResolve=undefined;if(dream)src.eclDream=true;}
     }
   } else {
@@ -714,6 +716,7 @@ function* turn(g: GameState): SubFlow {
     if(c.def.id==="benders-waterskin") c.tapped=false;
     if (c.controller !== a){if(c.tapped&&abilitiesOf(g,c).some(a=>a.kind==='static'&&a.frontier==='lci:opponentUntap')&&!stats(g,c).noUntap){if(c.stun>0)c.stun--;else c.tapped=false;}continue;}
     c.sick = false;
+    if(c.frontierMarks?.mh2Frozen){delete c.frontierMarks.mh2Frozen;continue;}
     if(winter&&isLand(c)&&!c.def.supertypes?.includes('Basic')&&c.id!==winterKeep)continue;
     if(c.frontierMarks?.bdExertBy===a+1&&(c.frontierMarks.bdExertTurn??g.turn)<g.turn){delete c.frontierMarks.bdExertBy;delete c.frontierMarks.bdExertTurn;continue;}
     if(c.tapped&&c.def.id==='hedge-whisperer'){const r:Response=yield{type:'yesno',player:a,prompt:'保持 Hedge Whisperer 橫置？'};if(r.type==='yesno'&&r.yes)continue;}
@@ -732,10 +735,12 @@ function* turn(g: GameState): SubFlow {
   emit(g, { type: 'step', step: 'upkeep', player: a });
   yield* priorityStep(g);if(g.finEndTurn)break phases;
   // 抓牌
+  if(!mh2Static(g,a,'confinement').length){
   g.phase = 'draw';
   emit(g, { type: 'step', step: 'draw', player: a });
   if (g.turn > 1&&!mh3Static(g,a,'necrodominance').length) yield*mh3Draw(g,a,1);
   yield* priorityStep(g);if(g.finEndTurn)break phases;
+  }
   // 主要階段一：傳奇在抓牌步驟後前進一章
   g.phase = 'main1';
   emit(g, { type: 'step', step: 'main1', player: a });
@@ -754,7 +759,7 @@ function* turn(g: GameState): SubFlow {
   emit(g,{type:'step',step:'main2',player:g.active});
   yield* priorityStep(g);if(g.finEndTurn)break phases;
   while(g.extraCombat?.player===a){const extra=g.extraCombat;g.landCombatOnly=extra.landOnly;g.extraCombat=(extra.count??1)>1?{...extra,count:(extra.count??1)-1}:undefined;yield*combatPhase(g);if(g.finEndTurn)break phases;g.landCombatOnly=false;if(extra.mainPhases){g.phase='main2';emit(g,{type:'step',step:'main2',player:a});yield*priorityStep(g);if(g.finEndTurn)break phases;}}
-  while((pl.mh3ExtraBeginning??0)>0){pl.mh3ExtraBeginning!--;g.phase='untap';for(const id of g.battlefield){const c=g.cards[id];if(c.controller!==a||stats(g,c).noUntap)continue;if(c.frontierMarks?.bdExertBy===a+1){delete c.frontierMarks.bdExertBy;continue;}if(c.stun>0)c.stun--;else c.tapped=false;}g.phase='upkeep';emit(g,{type:'step',step:'upkeep',player:a});yield*priorityStep(g);g.phase='draw';emit(g,{type:'step',step:'draw',player:a});if(!mh3Static(g,a,'necrodominance').length)yield*mh3Draw(g,a,1);yield*priorityStep(g);}
+  while((pl.mh3ExtraBeginning??0)>0){pl.mh3ExtraBeginning!--;g.phase='untap';for(const id of g.battlefield){const c=g.cards[id];if(c.controller!==a||stats(g,c).noUntap)continue;if(c.frontierMarks?.bdExertBy===a+1){delete c.frontierMarks.bdExertBy;continue;}if(c.stun>0)c.stun--;else c.tapped=false;}g.phase='upkeep';emit(g,{type:'step',step:'upkeep',player:a});yield*priorityStep(g);g.phase='draw';emit(g,{type:'step',step:'draw',player:a});if(!mh3Static(g,a,'necrodominance').length&&!mh2Static(g,a,'confinement').length)yield*mh3Draw(g,a,1);yield*priorityStep(g);}
   // 結束：動員之類的暫時衍生物在結束步驟開始時犧牲
   g.phase = 'end';
   for (const id of [...g.battlefield]) {
@@ -775,7 +780,7 @@ function* turn(g: GameState): SubFlow {
   if(g.finExtraEnd){g.finExtraEnd=false;g.finEndNumber=2;emit(g,{type:'step',step:'endStep',player:a});yield* priorityStep(g);}
   }
   // 清除
-  g.phase = 'cleanup';mh3Cleanup(g);
+  g.phase = 'cleanup';mh3Cleanup(g);mh2Cleanup(g);
   const handLimit=mh3Static(g,a,'necrodominance').length?5:mshStatic(g,a,'handTen').length?10:webStatic(g,a,'hand8').length?8:Math.max(0,7-(frontierStatic(g,(1-a)as PID,'dsk:winterHand').length&&new Set(g.players[(1-a)as PID].graveyard.flatMap(id=>g.cards[id].def.types)).size>=4?new Set(g.players[(1-a)as PID].graveyard.flatMap(id=>g.cards[id].def.types)).size:0));
   const over = pl.noHandLimit||frontierStatic(g,a,'fdn:noHandLimit').length||frontierStatic(g,a,'dsk:noHandLimit').length||mkmStatic(g,a,'noMaxHand').length||mshStatic(g,a,'noMaxHand').length ? 0 : pl.hand.length - handLimit;
   if (over > 0) {
@@ -822,7 +827,7 @@ export function* runGame(g: GameState, firstPlayer?: PID): Flow {
     for (;;) yield* turn(g);
   } catch (e) {
     if (e instanceof GameOver) {
-      g.phase = 'cleanup';mh3Cleanup(g);
+      g.phase = 'cleanup';mh3Cleanup(g);mh2Cleanup(g);
       g.version++;
       return;
     }

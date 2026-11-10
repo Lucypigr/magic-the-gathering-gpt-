@@ -4,7 +4,7 @@ import{manaValue,addCosts,parseCost,costToString,reduceCost}from'./mana';
 import type{Card,CardDef,CastAlt,Filter,GameState,PID}from'./types';
 export function mh3CastDef(def:CardDef,alt:CastAlt|undefined):CardDef|undefined{
  if(alt==='kicked'&&def.meadow?.mh3KickerTargets)return{...def,cost:costToString(addCosts(parseCost(def.cost),parseCost(def.kicker))),spell:{...def.spell,targets:[{kind:'creature'}]}};
- if(alt==='mh3Madness')return{...def,cost:'{C}{C}{C}{C}{C}{C}'};
+ if(alt==='mh3Madness')return{...def,cost:typeof def.meadow?.mh3Madness==='string'?def.meadow.mh3Madness:'{C}{C}{C}{C}{C}{C}'};
  if(alt==='mh3Energy'||alt==='mh3EnergyPaid')return{...def,cost:'{0}',spell:def.spell?{...def.spell,modes:def.spell.modes?.map(m=>({...m,cost:m.cost?costToString(reduceCost(parseCost(m.cost),parseCost(def.cost))):undefined}))}:undefined};
  if(alt==='mh3Retrace')return{...def,addCost:{...def.addCost,discard:1,discardFilter:{type:'Land'}}};
  if(alt==='mh3KickerG'||alt==='mh3KickerU'||alt==='mh3KickerBoth'){const more=alt==='mh3KickerG'?'{G}':alt==='mh3KickerU'?'{1}{U}':'{1}{G}{U}';return{...def,cost:costToString(addCosts(parseCost(def.cost),parseCost(more)))};}

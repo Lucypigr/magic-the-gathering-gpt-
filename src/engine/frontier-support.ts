@@ -1,3 +1,4 @@
+import{mh2Amount,mh2Condition}from'./mh2';
 import {mh3Amount,mh3Condition} from './mh3';
 import { modernDelirium, modernStats, modernTrigger, modernCanBlock } from './modern';
 import {webAmount,webCondition,webTrigger,webObserve,webBaseStats,webStats,webCanBlock,webGranted} from './web-shire-support';
@@ -75,6 +76,7 @@ export function frontierAmount(
   x = 0,
   ev?: GameEvent,
 ) {
+  if(key.startsWith('modern:mh2:'))return mh2Amount(g,pid,source,key,ev);
   if(key.startsWith('modern:mh3:'))return mh3Amount(g,pid,source,key,ev);
   if(/^(spm|hob):/.test(key))return webAmount(g,pid,source,key,ev);
   if(/^(eoe|tdm):/.test(key))return orbitAmount(g,pid,key,source,ev);
@@ -121,6 +123,7 @@ export function frontierCondition(
   source: number,
   ev?:GameEvent,
 ) {
+  if(c.action.startsWith('modern:mh2:'))return mh2Condition(g,pid,source,c.action);
   if(c.action.startsWith('modern:mh3:'))return mh3Condition(g,pid,source,c.action);
   if(c.action==='modern:delirium')return modernDelirium(g,pid);
   if(/^(spm|hob):/.test(c.action))return webCondition(g,c.action,pid,source,ev);

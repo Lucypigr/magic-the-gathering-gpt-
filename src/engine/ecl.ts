@@ -1,3 +1,4 @@
+import{mh2BeforeEntry,mh2Static}from'./mh2';
 import{drawWithReplacements}from'./draw-replacements';
 import{mh3BeforeEntry}from'./mh3';
 import { redMastery } from './modern-red';
@@ -88,6 +89,7 @@ export function* resolveEclEntries(g: GameState): SubFlow {
     let def = entry.enterAs,
       tapped = entry.tapped;
     let choice = c.def.ecl?.asEnters;
+    if(choice==='mh2')def=yield*mh2BeforeEntry(g,c,entry.controller);
     if(choice==='mh3Copy'||choice==='mh3Shape')def=yield*mh3BeforeEntry(g,c,entry.controller);
     if(choice==='web')def=yield*webBeforeEntry(g,c,entry.controller);
     if(choice==='orbit')def=yield*orbitBeforeEntry(g,c,entry.controller);
@@ -156,6 +158,8 @@ export function* makeEclTokenBatch(
   // Every Crown observes the same first creation event, including those not selected first.
   for (const c of crowns) c.eclUsage = { turn: g.turn, n: 1 };
   const pending = [
+    ...mh2Static(g,pid,'manufactor').map(card=>({card,kind:'manufactor' as const})),
+    ...mh2Static(g,pid,'chatterfang').map(card=>({card,kind:'chatterfang' as const})),
     ...(first?finalStatic(g,pid,'meditationTokens'):[]).map(c=>({card:c,kind:'meditation' as const})),
     ...crowns.map((c) => ({ card: c, kind: 'crown' as const })),
     ...finStatic(g, pid, 'extraFrog').map((c) => ({ card: c, kind: 'frog' as const })),
@@ -166,7 +170,7 @@ export function* makeEclTokenBatch(
       .map((c) => ({ card: c, kind: 'dragon' as const })),
   ];
   while (pending.length) {
-    const applicable = pending.filter((r) => r.kind !== 'dragon' || groups.some((group) => group.def.types.includes('Artifact')));
+    const applicable = pending.filter((r) => r.kind==='manufactor'?groups.some(g=>g.def.subtypes?.some(t=>['Clue','Food','Treasure'].includes(t))):r.kind !== 'dragon' || groups.some((group) => group.def.types.includes('Artifact')));
     if (!applicable.length) break;
     let pick = 0;
     if (applicable.length > 1) {
@@ -182,7 +186,9 @@ export function* makeEclTokenBatch(
     }
     const selected = applicable[pick] ?? applicable[0];
     pending.splice(pending.indexOf(selected), 1);
-    if(selected.kind==='meditation'){const host=g.cards[selected.card.attachedTo??-1];if(host&&host.zone==='battlefield'&&(yield*yes(g,pid,'以所結附永久物的複製取代衍生物？')))for(const group of groups)group.def=copiable(host);}
+    if(selected.kind==='manufactor'){for(const group of groups.slice())if(group.def.subtypes?.some(t=>['Clue','Food','Treasure'].includes(t))){const original=group.def;const options=['tok-clue','tok-food','tok-treasure'].map(getDef);group.def=options.find(d=>d.subtypes?.some(t=>original.subtypes?.includes(t)))??options[0];for(const def of options)if(def!==group.def)groups.push({def,n:group.n,primary:false});}}
+    else if(selected.kind==='chatterfang'){groups.push({def:getDef('tok-mh2-squirrel'),n:groups.reduce((n,g)=>n+g.n,0),primary:false});}
+    else if(selected.kind==='meditation'){const host=g.cards[selected.card.attachedTo??-1];if(host&&host.zone==='battlefield'&&(yield*yes(g,pid,'以所結附永久物的複製取代衍生物？')))for(const group of groups)group.def=copiable(host);}
     else if(selected.kind==='clue')groups.push({def:getDef('tok-clue'),n:1,primary:false});
     else if (selected.kind === 'frog') groups.push({ def: getDef('tok-fin-frog'), n: 1, primary: false });
     else if (selected.kind === 'dragon') {

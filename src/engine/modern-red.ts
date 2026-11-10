@@ -35,8 +35,8 @@ export function redSuspend(g:GameState,p:PID,c:Card,timingAllowed:boolean):strin
   if(c.zone!=='hand'||c.owner!==p||!c.def.meadow?.modernRedSuspend)return '不能延緩這張牌';
   if(!timingAllowed)return '目前不能以此時機延緩';
   if(!payCost(g,p,parseCost(String(c.def.meadow.modernRedSuspend))))return '法術力不足以支付延緩費用';
-  moveCard(g,c,'exile');(c.eclCounters??={}).time=1;c.modernSuspended={player:p,version:c.objectVersion??0};
-  log(g,'延緩1：放逐此牌並放上一個時間指示物',p);return null;
+  moveCard(g,c,'exile');(c.eclCounters??={}).time=Number(c.def.meadow?.mh2Suspend??1);c.modernSuspended={player:p,version:c.objectVersion??0};
+  log(g,'延緩'+Number(c.def.meadow?.mh2Suspend??1)+'：放逐此牌並放上時間指示物',p);return null;
 }
 export function redEntry(g:GameState,c:Card,from:string) {
   const turn=c.frontierMarks?.modernArenaHaste;

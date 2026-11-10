@@ -1,3 +1,4 @@
+import{mh2Observe,mh2Entry,mh2Leave,mh2Regenerate,mh2Protected,mh2GraveReplacement,mh2Static}from'./mh2';
 import{mh3Detach}from'./mh3-cast';
 import{mh3Observe,mh3Static,mh3Entry,mh3Umbra,mh3Protected,mh3DamageBonus}from'./mh3';
 import { redObserve,redDamage,redEntry,redEntryBlocked } from './modern-red';
@@ -233,7 +234,7 @@ export function bend(g: GameState, player: PID, element: 'air' | 'water' | 'eart
 export function emit(g: GameState, ev: GameEvent): void {
   if(ev.type==='cast'&&!ev.bdSpell){const castCard=ev.card;const item=g.stack.find(s=>s.kind==='spell'&&s.cardId===castCard);if(item)ev={...ev,bdSpell:{...item,targets:item.targets.slice(),targetSpecs:item.targetSpecs.slice(),effects:item.effects.slice()}};}
   burnObserve(g,ev);
-  redObserve(g,ev);mh3Observe(g,ev);
+  redObserve(g,ev);mh3Observe(g,ev);mh2Observe(g,ev);
   if(ev.type==='counterPlaced')orbitRefresh(g);
   if(ev.type==='step'&&ev.step==='endStep')for(const id of g.battlefield){const c=g.cards[id];if(!c.sacAtEnd)continue;c.sacAtEnd=undefined;g.pending.push({source:id,controller:(c.frontierMarks?.orbitTempController?c.frontierMarks.orbitTempController-1:c.controller) as PID,sourceLinkKey:c.tmtLinkKey,abilityIndex:-341,ev,ability:{kind:'trigger',on:'eachEndStep',effects:[{e:'frontier',action:'tdm:tempSac'}]}});}
 
@@ -307,7 +308,7 @@ export function emit(g: GameState, ev: GameEvent): void {
     const c = g.cards[id];
     const cpExtra=g.battlefield.filter(id=>{const throne=g.cards[id];return throne.id!==c.id&&throne.controller===c.controller&&isCreature(c)&&throne.eclType&&matches(g,{sub:throne.eclType},c,c.controller)&&abilitiesOf(g,throne).some(a=>a.kind==='static'&&a.frontier==='lci:throneDouble');}).length;
     const finExtra=cpExtra+g.battlefield.reduce((n,sid)=>{const source=g.cards[sid];if(source.controller!==c.controller)return n;for(const a of abilitiesOf(g,source))if(a.kind==='static'){if(a.fin==='masamune'&&ev.type==='dies'){const host=g.cards[source.attachedTo??-1];if(host&&host.controller===c.controller&&(host.id===c.id||c.def.types.includes('Emblem')&&c.owner===host.controller))n++;}if(a.fin==='cloudDouble'&&g.battlefield.some(id=>g.cards[id].attachedTo===source.id&&g.cards[id].def.equip)&&(c.id===source.id||c.attachedTo===source.id))n++;if(a.fin==='travelingDouble'&&ev.type==='etb'&&g.cards[ev.card].controller===source.controller&&(isLand(g.cards[ev.card])||matches(g,{sub:'Bird'},g.cards[ev.card],source.controller)))n++;}return n;},0);
-    const extraTriggers=webExtraTriggers(g,c)+finalExtraTriggers(g,c,ev)+frontierStatic(g,c.controller,'dsk:doubleTriggers').length+(isCreature(c)&&matches(g,{legendary:true},c,c.controller)?frontierStatic(g,c.controller,'annieDouble').length:0)+(ev.type==='etb'?frontierStatic(g,c.controller,'knowledgeDouble').length:0)+(isCreature(c)&&stats(g,c).p<=2?mkmStatic(g,c.controller,'delney').length:0)+finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
+    const extraTriggers=mh2Static(g,c.controller,'prodigy').filter(s=>c.def.subtypes?.includes('Shaman')||s.id!==c.id&&c.def.subtypes?.includes('Wizard')).length+webExtraTriggers(g,c)+finalExtraTriggers(g,c,ev)+frontierStatic(g,c.controller,'dsk:doubleTriggers').length+(isCreature(c)&&matches(g,{legendary:true},c,c.controller)?frontierStatic(g,c.controller,'annieDouble').length:0)+(ev.type==='etb'?frontierStatic(g,c.controller,'knowledgeDouble').length:0)+(isCreature(c)&&stats(g,c).p<=2?mkmStatic(g,c.controller,'delney').length:0)+finExtra+g.battlefield.reduce((n,id)=>{const s=g.cards[id];return n+(s.controller===c.controller?abilitiesOf(g,s).filter(a=>a.kind==='static'&&((a.allyTriggerDouble&&c.def.subtypes?.includes('Ally'))||(a.triggerDouble&&matches(g,a.triggerDouble,c,c.controller,s.id)))).length:0);},0);
     if (ev.type === 'cast' && hasKw(g, c, 'prowess') && triggerMatches(g, c, PROWESS, ev)) {
       for(let i=0;i<(1+extraTriggers)*Math.max(1,stats(g,c).prowessCount??1);i++)g.pending.push({ source: c.id, controller: c.controller, ability: PROWESS, abilityIndex: -1, ev });
     }
@@ -468,6 +469,7 @@ export function refreshTlaPermanents(g: GameState): void {
 export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void {
   if(to==='battlefield'&&redEntryBlocked(g,c))return;
   if(to==='graveyard'&&mh3Static(g,c.owner,'necrodominance').length)to='exile';
+  if(to==='graveyard'&&mh2GraveReplacement(g,c))to='exile';
   if(c.zone==='battlefield'&&c.frontierMarks?.mh3Unearthed&&to!=='exile'&&to!=='battlefield')to='exile';
   if(c.zone==='exile'&&to!=='exile'&&c.modernSuspended){c.modernSuspended=undefined;delete c.eclCounters?.time;}
   if(to==='graveyard'&&c.zone==='battlefield'){const source=webDeathSource(g,c)??g.cards[(c.frontierMarks?.webWolfSource??0)-1];if(source&&isCreature(c)){delete c.frontierMarks?.webWolfSource;to='exile';g.pending.push({source:source.id,controller:source.controller,abilityIndex:-405,ev:{type:'frontier',action:'webHunt',card:c.id,player:source.controller,amount:0},ability:{kind:'trigger',on:'frontierEvent',effects:[{e:'token',token:'tok-wolf'}]}});}}
@@ -484,6 +486,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   if(to==='graveyard'&&c.zone==='battlefield'&&isCreature(c)&&!c.token){const crystal=c.finMarks?.deathCrystal?g.cards[c.finMarks.deathCrystal]:finStatic(g,other(c.controller),'darkness')[0];if(crystal){to='exile';(crystal.finLinked??=[]).push(c.id);gainLife(g,crystal.controller,2);}}
   if(c.zone==='stack'&&to!=='stack')c.finExileOnResolve=undefined;
   const wasOnBf = c.zone === 'battlefield';
+  if(wasOnBf)mh2Leave(g,c);
   if(c.orbitPowerHistory?.[c.objectVersion??0]!==undefined)c.orbitPowerHistory[c.objectVersion??0]=stats(g,c).p;
   if(wasOnBf&&c.orbitStationHistory?.[c.objectVersion??0]!==undefined)c.orbitStationHistory[c.objectVersion??0]=orbitStationValue(g,c);
   const from = c.zone;
@@ -540,6 +543,7 @@ export function moveCard(g: GameState, c: Card, to: Zone, bottom = false): void 
   if(c.mh3PrototypeBase&&to!=='battlefield'&&to!=='stack'){c.def=c.mh3PrototypeBase;c.mh3PrototypeBase=undefined;}
   if(c.mh3BestowBase&&to!=='battlefield'&&to!=='stack')mh3Detach(c);
   c.zone = to;
+  if(to==='exile'&&c.frontierMarks?.mh2VoidPending){(c.eclCounters??={}).void=1;delete c.frontierMarks.mh2VoidPending;}
   c.controller = c.owner;
   c.playableTurn = undefined;
   c.playableUntil=undefined;
@@ -674,7 +678,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   webEntry(g,c,controller,origin);
   modernEntry(c,origin);
   modernDashEntry(g,c,origin);
-  redEntry(g,c,origin);mh3Entry(g,c,origin);
+  redEntry(g,c,origin);mh3Entry(g,c,origin);mh2Entry(g,c,origin);
   if(isCreature(c)&&c.counters>0)c.counters*=2**mh3Static(g,c.controller,'doublePlus').length;
   const bdDoubles=frontierStatic(g,controller,'blb:innkeeperCounters').filter(c=>(c.classLevel??1)>=3).length;
   const fd=finalCounterMultiplier(g,c)*2**(frontierStatic(g,controller,'fdn:doubleCounters').length+bdDoubles);if(c.finality)c.finalityCount=fd;if(c.counters>0)c.counters*=fd;if(c.charge)c.charge*=fd;if(c.stun)c.stun*=fd;if(c.hexproofCounters)c.hexproofCounters*=fd;for(const key of Object.keys(c.eclCounters??{}))c.eclCounters![key]*=fd;if(c.impendingTime!==undefined)c.impendingTime=c.eclCounters?.time??c.impendingTime;
@@ -691,7 +695,7 @@ export function enterBattlefield(g: GameState, c: Card, controller: PID, tapped 
   if(c.def.room&&c.roomUnlocked)emit(g,{type:'frontier',action:'doorUnlocked',card:c.id,player:controller,amount:c.roomUnlocked,other:c.roomUnlocked===2?1:0});
   if (c.def.etbPrepared) c.prepared = true;
   if (c.def.aura?.grant?.loseAbilities) g.loseAbilities = true;
-  if (c.def.types.includes('Planeswalker')) c.loyalty = (c.def.loyalty ?? 0)*fd;
+  if (c.def.types.includes('Planeswalker')) c.loyalty = (c.def.id==='dakkon-shadow-slayer'?g.battlefield.filter(id=>g.cards[id].controller===controller&&isLand(g.cards[id])).length:c.def.loyalty??0)*fd;
   c.playableTurn = undefined;
   g.version++;
   if (c.def.startEngines && !g.players[controller].speed) {
@@ -797,6 +801,7 @@ export function putCounters(g: GameState, c: Card, n: number, counterBatch?: num
 
 /** 生物將要死去時是否改為放逐 */
 function deathReplacedByExile(g: GameState, c: Card): boolean {
+ if(mh2GraveReplacement(g,c,false))return true;
  const hunt=webDeathSource(g,c);if(hunt){(c.frontierMarks??={}).webWolfSource=hunt.id+1;return true;}
   if(c.frontierMarks?.cpExileDeath===g.turn||c.controller!==g.active&&frontierFlags(g,g.active).cpExileOpponentDeaths)return true;
  if(foundationGraveReplacement(g,c))return true;
@@ -831,7 +836,7 @@ export function putIntoGraveyard(g: GameState, cards: Card[]): void {
 }
 
 export function destroyCards(g: GameState, cards: Card[]): void {
-  const list = cards.filter((c) => {if(c.zone!=='battlefield'||hasKw(g,c,'indestructible')||mh3Umbra(g,c))return false;if((c.eclCounters?.shield??0)>0){c.eclCounters!.shield--;return false;}return true;});
+  const list = cards.filter((c) => {if(c.zone!=='battlefield'||hasKw(g,c,'indestructible')||mh3Umbra(g,c)||mh2Regenerate(g,c))return false;if((c.eclCounters?.shield??0)>0){c.eclCounters!.shield--;return false;}return true;});
   for (const c of list) log(g, `${cardName(c)} 被消滅`, c.controller);
   putIntoGraveyard(g, list);
 }
@@ -939,6 +944,10 @@ export function dealDamage(
   if (n <= 0) return 0;
   if('p'in target){const redirect=webRedirect(g,target.p);if(redirect)target={c:redirect.id};}
   const noPrevent=g.modernBurn?.noPreventTurn===g.turn||webNoPrevent(g)||meadowNoPrevent(g)||!!opts.combat&&([...finalStatic(g,0,'combatNoPrevent'),...finalStatic(g,1,'combatNoPrevent')].length>0);
+  if(!noPrevent&&src&&'c'in target&&mh2Protected(g,g.cards[target.c],src))return 0;
+  if(!noPrevent&&src&&'p'in target&&mh2Static(g,target.p,'emissary').some(s=>s.eclType&&(src.castFace??src.def).types.includes(s.eclType as any)))return 0;
+  if(!noPrevent&&'p'in target&&mh2Static(g,target.p,'confinement').length)return 0;
+  if(!noPrevent&&opts.combat&&g.players.some(p=>p.frontierFlags?.mh2Fog===g.turn))return 0;
   if(!opts.combat&&src&&colorsOf(src.def).includes('R')&&'p'in target&&target.p!==srcController)for(const axonil of frontierStatic(g,srcController,'lci:axonil'))n=Math.max(n,stats(g,axonil).p);
   const cpVictim='c'in target?g.cards[target.c]:undefined,cpRemaining=cpVictim&&isCreature(cpVictim)?Math.max(0,stats(g,cpVictim).t-cpVictim.damage):Infinity;
   if(src&&matches(g,{sub:['Lizard','Mouse','Otter','Raccoon']},src,srcController))n+=frontierStatic(g,srcController,'blb:flamecaller').length;
@@ -1022,6 +1031,7 @@ export function dealDamage(
     const resolving=src&&g.resolvingSpell?.card===src.id?g.resolvingSpell:g.stack.find(s=>s.kind==='spell'&&s.cardId===src?.id);
     const spellTargets=resolving?.targets.filter((t):t is TargetRef=>!!t)??[];
     if(src&&cardDefinition(src).types.some(t=>t==='Instant'||t==='Sorcery')&&spellTargets.length&&spellTargets.every(t=>'c'in t&&t.c===c.id))emit(g,{type:'frontier',action:'imodaneHit',player:srcController,card:src.id,amount:n});
+    if(opts.combat&&src&&!abilitiesSuppressed(g,src)&&g.battlefield.some(id=>g.cards[id].attachedTo===src.id&&g.cards[id].def.id==='kaldra-compleat'&&!abilitiesSuppressed(g,g.cards[id])))g.pending.push({source:src.id,controller:srcController,abilityIndex:-614,ev:{type:'damaged',card:c.id,amount:n},ability:{kind:'trigger',on:'dealtDamage',effects:[{e:'frontier',action:'modern:mh2:kaldraExile:'+(c.objectVersion??0),n:c.id,what:'self'}]}});
     if(src)(c.frontierMarks??={})['damagedBy'+src.id]=g.turn;
     if(kws.has('wither'))putMinusCounters(g,c,n);else c.damage += n;
     if (opts.combat && src) src.dealtCombat = true;

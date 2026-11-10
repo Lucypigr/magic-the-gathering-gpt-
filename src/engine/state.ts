@@ -1,3 +1,4 @@
+import{mh2Suppressed,mh2Static,mh2BaseStats}from'./mh2';
 import{mh3BaseStats,mh3HasStatic}from'./mh3';
 import { modernRefresh } from './modern-moon';
 import {webModified,webNoCounter} from './web-shire-support';
@@ -176,7 +177,7 @@ export function cloneGame(g: GameState): GameState {
     retainedRed:p.retainedRed?.slice(),spellTypesThisTurn:p.spellTypesThisTurn?.slice(),pool:p.pool?.slice(),poolLesson:p.poolLesson?.slice(),poolNoncreature:p.poolNoncreature?.slice(),firePool:p.firePool?.slice(),bends:p.bends?.slice(),
   });
   return {
-    ...g, mh3Delayed:g.mh3Delayed?.map(d=>({...d})), modernRed:g.modernRed?{...g.modernRed,damage:[...g.modernRed.damage]}:undefined,
+    ...g, mh2Phased:g.mh2Phased?.map(x=>({...x})),mh3Delayed:g.mh3Delayed?.map(d=>({...d})), modernRed:g.modernRed?{...g.modernRed,damage:[...g.modernRed.damage]}:undefined,
     modernBurn: g.modernBurn ? { ...g.modernBurn, landTurns: [...g.modernBurn.landTurns], noGainTurns: [...g.modernBurn.noGainTurns], palms: g.modernBurn.palms.map(x=>({...x})), blood: g.modernBurn.blood.map(x=>({...x})) } : undefined,campusParadigms:g.campusParadigms?.map(x=>({...x})),campusDelayed:g.campusDelayed?.map(x=>({...x})),meadowDelayed:g.meadowDelayed?.map(d=>({...d,ids:d.ids?.slice()})),eclEntryQueue:g.eclEntryQueue?.map(e=>({...e})),lastManaPayment:g.lastManaPayment?.slice(),
     cards,
     players: [cp(g.players[0]), cp(g.players[1])],
@@ -227,8 +228,9 @@ export function decisionController(g:GameState,player:PID):PID {
 }
 
 export const isType = (def: CardDef, t: CardType) => def.types.includes(t);
-export const cardDefinition=(c:Card)=>c.zone==='stack'&&c.castFace?c.castFace:c.def;
-export const isCreature = (c: Card) => cardDefinition(c).types.includes('Creature');
+const gristViews=new WeakMap<CardDef,CardDef>();
+export function cardDefinition(c:Card):CardDef{if(c.zone==='stack'&&c.castFace)return c.castFace;if(c.def.id==='grist-the-hunger-tide'&&c.zone!=='battlefield'){let d=gristViews.get(c.def);if(!d){d={...c.def,types:[...c.def.types,'Creature'],subtypes:[...(c.def.subtypes??[]),'Insect'],power:1,toughness:1};gristViews.set(c.def,d);}return d;}return c.def;}
+export const isCreature = (c: Card) => cardDefinition(c).types.includes('Creature')||c.def.id==='grist-the-hunger-tide'&&c.zone!=='battlefield';
 export const isLand = (c: Card) => c.def.types.includes('Land');
 export const isPermanentDef = (def: CardDef) => !def.types.includes('Instant') && !def.types.includes('Sorcery');
 
@@ -270,6 +272,7 @@ export interface Stats {
 
 /** 這張永久物是否因為光環而失去所有異能 */
 export function abilitiesSuppressed(g: GameState, c: Card): boolean {
+  if(mh2Suppressed(g,c))return true;
   if(c.mshMarks?.waspSource!==undefined&&g.battlefield.some(id=>(g.cards[id].tmtLinkKey??id)===c.mshMarks?.waspSource))return true;
   if(c.frontierMarks?.cpDisableSource!==undefined){const s=g.cards[c.frontierMarks.cpDisableSource];if(s?.zone==='battlefield'&&s.objectVersion===c.frontierMarks.cpDisableVersion)return true;}
   if(c.eclLoseAbilities||c.zone==='battlefield'&&g.eot.some(e=>e.card===c.id&&e.loseAbilities))return true;
@@ -323,7 +326,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   };
   active.set(evaluation, st);
   try {
-  mh3BaseStats(g,c,st);
+  mh3BaseStats(g,c,st);mh2BaseStats(g,c,st);
   frontierBaseStats(g,c,st);
   mshBaseStats(g,c,st);
   if(c.zone==='stack'&&c.frontierMarks?.modernArenaHaste===g.turn)st.kw.add('haste');
@@ -426,6 +429,7 @@ export function stats(g: GameState, c: Card, ignoreEot = false): Stats {
   mkmApplyStats(g,c,st);
   mshApplyStats(g,c,st);
   frontierStats(g,c,st);
+  if(c.frontierMarks?.mh2SwitchTurn===g.turn)[st.p,st.t]=[st.t,st.p];
   return st;
   } finally { active.delete(evaluation); }
 }
@@ -443,6 +447,9 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   // 徽記不是永久物（只有明確要求徽記時才符合）
   if (c.def.types.includes('Emblem') && !(f?.type && asArr(f.type).includes('Emblem'))) return false;
   if (!f) return true;
+  if(f.mh2SnowOrColorless&&!((c.def.supertypes as readonly string[]|undefined)?.includes('Snow')||c.def.produces?.includes('C')))return false;
+  if(f.mh2Cost01&&c.def.cost!=='{0}'&&c.def.cost!=='{1}')return false;
+  if(f.mh2AttackingYou&&(!c.attacking||c.controller===pov||(c.attackTarget!==pov&&c.attackTarget!=null&&(!g.cards[c.attackTarget]?.def.types.includes('Planeswalker')||g.cards[c.attackTarget].controller!==pov))))return false;
   if(f.mh3SingleTarget&&g.stack.find(s=>s.kind==='spell'&&s.cardId===c.id)?.targets.filter(Boolean).length!==1)return false;
   if(f.mh3Colored&&colorsOf(c.castFace??c.def).length===0||f.mh3Multicolor&&colorsOf(c.castFace??c.def).length<2)return false;
   if(f.mvMaxSourcePower){const source=g.cards[sourceId??-1];if(!source||manaValue(c.def)>(source.zone==='battlefield'?stats(g,source).p:source.lastPower??stats(g,source).p))return false;}
@@ -482,7 +489,7 @@ export function matches(g: GameState, f: Filter | undefined, c: Card, pov: PID, 
   const jobTypes=c.zone==='battlefield'?g.battlefield.filter(id=>g.cards[id].attachedTo===c.id&&!abilitiesSuppressed(g,g.cards[id])).flatMap(id=>g.cards[id].def.fin?.job?[g.cards[id].def.fin!.job!]:[]):[];
   const serumTypes=hasSerum(g,c)?['Soldier']:[];
   const mkmLandTypes=isLand(c)&&c.zone==='battlefield'&&mkmStatic(g,c.controller,'guildpact').length?['Plains','Island','Swamp','Mountain','Forest']:[];
-  const foundationTypes:string[]=[];if(isCreature(c)&&g.battlefield.some(id=>id!==c.id&&mh3HasStatic(g,g.cards[id],'kudo')))foundationTypes.push('Bear');if(isCreature(c)){if(c.def.id==='skyknight-squire'&&c.counters>=3&&!abilitiesSuppressed(g,c))foundationTypes.push('Knight');if(c.def.id==='adaptive-automaton'&&c.eclType&&!abilitiesSuppressed(g,c))foundationTypes.push(c.eclType);for(const a of frontierStatic(g,c.controller,'dsk:allTribe'))if(a.eclType)foundationTypes.push(a.eclType);if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='fdn:angelAura')))foundationTypes.push('Angel');}
+  const foundationTypes:string[]=[];if(c.zone==='battlefield'&&isLand(c)&&(mh2Static(g,0,'yavimaya').length+mh2Static(g,1,'yavimaya').length))foundationTypes.push('Forest');if(isCreature(c)&&g.battlefield.some(id=>id!==c.id&&mh3HasStatic(g,g.cards[id],'kudo')))foundationTypes.push('Bear');if(isCreature(c)){if(c.def.id==='skyknight-squire'&&c.counters>=3&&!abilitiesSuppressed(g,c))foundationTypes.push('Knight');if(c.def.id==='adaptive-automaton'&&c.eclType&&!abilitiesSuppressed(g,c))foundationTypes.push(c.eclType);for(const a of frontierStatic(g,c.controller,'dsk:allTribe'))if(a.eclType)foundationTypes.push(a.eclType);if(g.battlefield.some(id=>g.cards[id].attachedTo===c.id&&abilitiesOf(g,g.cards[id]).some(a=>a.kind==='static'&&a.frontier==='fdn:angelAura')))foundationTypes.push('Angel');}
   if (f.sub && !asArr(f.sub).some(x=>foundationTypes.includes(x)) && !asArr(f.sub).some(s=>serumTypes.includes(s)) && !asArr(f.sub).some(s=>mkmLandTypes.includes(s)) && !asArr(f.sub).some(s=>jobTypes.includes(s)) && !attachedChangeling && !mshChangeling && !d.changeling && !asArr(f.sub).some((s) => d.subtypes?.includes(s))) return false;
   if (f.nonSub && (asArr(f.nonSub).some(x=>foundationTypes.includes(x))||asArr(f.nonSub).some(s=>serumTypes.includes(s))||asArr(f.nonSub).some(s=>jobTypes.includes(s))||mshChangeling||d.changeling || asArr(f.nonSub).some((s) => d.subtypes?.includes(s)))) return false;
   if (f.attackedThisTurn !== undefined && (c.attackedTurn === g.turn) !== f.attackedThisTurn) return false;

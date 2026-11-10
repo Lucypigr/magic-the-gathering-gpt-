@@ -1,19 +1,19 @@
 {
   "summary": {
-    "registryDefinitions": 5568,
+    "registryDefinitions": 5860,
     "allProducts": 118,
     "primarySets": 107,
-    "completePrimarySets": 19,
-    "incompletePrimarySets": 88,
+    "completePrimarySets": 20,
+    "incompletePrimarySets": 87,
     "zeroCoveragePrimarySets": 4,
     "modernLegalNames": 22708,
-    "availableModernNames": 5562,
-    "missingModernNames": 17146,
+    "availableModernNames": 5852,
+    "missingModernNames": 16856,
     "sampleDecks": 50,
     "legalSampleDecks": 50,
     "completeMainDecks": 6,
     "complete75Decks": 6,
-    "sampleMissingNames": 287,
+    "sampleMissingNames": 264,
     "snapshotDate": "2026-10-23",
     "deckFileDate": "2026-10-17"
   },
@@ -324,10 +324,10 @@
       "type": "expansion",
       "date": "2009-10-02",
       "count": 229,
-      "available": 16,
-      "missing": 213,
+      "available": 18,
+      "missing": 211,
       "modernLegal": 233,
-      "modernAvailable": 21,
+      "modernAvailable": 23,
       "primary": true
     },
     {
@@ -744,10 +744,10 @@
       "type": "masters",
       "date": "2017-03-17",
       "count": 249,
-      "available": 33,
-      "missing": 216,
+      "available": 35,
+      "missing": 214,
       "modernLegal": 249,
-      "modernAvailable": 33,
+      "modernAvailable": 35,
       "primary": false
     },
     {
@@ -1020,10 +1020,10 @@
       "type": "draft_innovation",
       "date": "2021-06-18",
       "count": 304,
-      "available": 12,
-      "missing": 292,
+      "available": 304,
+      "missing": 0,
       "modernLegal": 307,
-      "modernAvailable": 17,
+      "modernAvailable": 307,
       "primary": true
     },
     {
@@ -1449,9 +1449,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 37,
+      "mainAvailable": 42,
       "sideAvailable": 4,
-      "missingNames": 13,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Blade of the Bloodchief",
@@ -1462,12 +1462,6 @@
         {
           "name": "Eldrazi Temple",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Yavimaya, Cradle of Growth",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -1492,12 +1486,6 @@
         {
           "name": "Boseiju, Who Endures",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Urza's Saga",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -1591,7 +1579,7 @@
         {
           "name": "Yavimaya, Cradle of Growth",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1657,7 +1645,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -1731,9 +1719,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 34,
+      "mainAvailable": 38,
       "sideAvailable": 8,
-      "missingNames": 14,
+      "missingNames": 13,
       "missing": [
         {
           "name": "Gemstone Caverns",
@@ -1786,12 +1774,6 @@
         {
           "name": "Boseiju, Who Endures",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Urza's Saga",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -1945,7 +1927,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2228,9 +2210,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 41,
+      "mainAvailable": 47,
       "sideAvailable": 12,
-      "missingNames": 9,
+      "missingNames": 7,
       "missing": [
         {
           "name": "Thoughtseize",
@@ -2257,12 +2239,6 @@
           "legal": true
         },
         {
-          "name": "Solitude",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Relic of Progenitus",
           "quantity": 4,
           "available": false,
@@ -2271,12 +2247,6 @@
         {
           "name": "River of Tears",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Marsh Flats",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -2430,7 +2400,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2454,7 +2424,7 @@
         {
           "name": "Marsh Flats",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2540,9 +2510,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 33,
+      "mainAvailable": 37,
       "sideAvailable": 6,
-      "missingNames": 14,
+      "missingNames": 13,
       "missing": [
         {
           "name": "Thoughtcast",
@@ -2589,12 +2559,6 @@
         {
           "name": "Shivan Reef",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Urza's Saga",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -2754,7 +2718,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -2834,16 +2798,10 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 37,
+      "mainAvailable": 45,
       "sideAvailable": 10,
-      "missingNames": 11,
+      "missingNames": 9,
       "missing": [
-        {
-          "name": "Territorial Kavu",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
         {
           "name": "Wild Nacatl",
           "quantity": 4,
@@ -2870,12 +2828,6 @@
         },
         {
           "name": "Leyline Binding",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Scion of Draco",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -2922,7 +2874,7 @@
         {
           "name": "Territorial Kavu",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3042,7 +2994,7 @@
         {
           "name": "Scion of Draco",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -3110,9 +3062,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 50,
+      "mainAvailable": 55,
       "sideAvailable": 12,
-      "missingNames": 6,
+      "missingNames": 4,
       "missing": [
         {
           "name": "Seasoned Pyromancer",
@@ -3122,18 +3074,6 @@
         },
         {
           "name": "Ranger-Captain of Eos",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Goblin Bombardment",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Marsh Flats",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -3264,7 +3204,7 @@
         {
           "name": "Goblin Bombardment",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3288,7 +3228,7 @@
         {
           "name": "Marsh Flats",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -3362,9 +3302,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 33,
+      "mainAvailable": 40,
       "sideAvailable": 10,
-      "missingNames": 12,
+      "missingNames": 10,
       "missing": [
         {
           "name": "Atraxa, Grand Unifier",
@@ -3399,18 +3339,6 @@
         {
           "name": "March of Otherworldly Light",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Marsh Flats",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Solitude",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -3528,7 +3456,7 @@
         {
           "name": "Marsh Flats",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3570,7 +3498,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3698,24 +3626,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 49,
+      "mainAvailable": 56,
       "sideAvailable": 14,
-      "missingNames": 4,
+      "missingNames": 2,
       "missing": [
         {
           "name": "Ephemerate",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Goblin Bombardment",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Solitude",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -3828,7 +3744,7 @@
         {
           "name": "Goblin Bombardment",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -3864,7 +3780,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4262,9 +4178,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 33,
+      "mainAvailable": 37,
       "sideAvailable": 5,
-      "missingNames": 15,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Gemstone Caverns",
@@ -4317,12 +4233,6 @@
         {
           "name": "Boseiju, Who Endures",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Urza's Saga",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -4488,7 +4398,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -4562,9 +4472,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 35,
+      "mainAvailable": 39,
       "sideAvailable": 12,
-      "missingNames": 14,
+      "missingNames": 13,
       "missing": [
         {
           "name": "Jace, the Mind Sculptor",
@@ -4617,12 +4527,6 @@
         {
           "name": "Day's Undoing",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Solitude",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -4812,7 +4716,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -4910,9 +4814,9 @@
       ],
       "mainTotal": 61,
       "sideTotal": 15,
-      "mainAvailable": 13,
+      "mainAvailable": 18,
       "sideAvailable": 7,
-      "missingNames": 24,
+      "missingNames": 22,
       "missing": [
         {
           "name": "Gruul Turf",
@@ -4981,12 +4885,6 @@
           "legal": true
         },
         {
-          "name": "Yavimaya, Cradle of Growth",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Primeval Titan",
           "quantity": 4,
           "available": false,
@@ -5013,12 +4911,6 @@
         {
           "name": "Summoner's Pact",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Urza's Saga",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -5142,7 +5034,7 @@
         {
           "name": "Yavimaya, Cradle of Growth",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5196,7 +5088,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5277,8 +5169,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 29,
-      "sideAvailable": 2,
-      "missingNames": 23,
+      "sideAvailable": 3,
+      "missingNames": 22,
       "missing": [
         {
           "name": "Karn, the Great Creator",
@@ -5414,12 +5306,6 @@
         },
         {
           "name": "Damping Sphere",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Cursed Totem",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -5630,7 +5516,7 @@
         {
           "name": "Cursed Totem",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ]
@@ -5648,9 +5534,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 44,
+      "mainAvailable": 48,
       "sideAvailable": 9,
-      "missingNames": 10,
+      "missingNames": 8,
       "missing": [
         {
           "name": "Thoughtseize",
@@ -5679,18 +5565,6 @@
         {
           "name": "Troll of Khazad-dum",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Verdant Catacombs",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Marsh Flats",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -5796,7 +5670,7 @@
         {
           "name": "Verdant Catacombs",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -5856,7 +5730,7 @@
         {
           "name": "Marsh Flats",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -5936,9 +5810,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 25,
-      "sideAvailable": 5,
-      "missingNames": 18,
+      "mainAvailable": 26,
+      "sideAvailable": 6,
+      "missingNames": 17,
       "missing": [
         {
           "name": "Allosaurus Rider",
@@ -6019,12 +5893,6 @@
           "legal": true
         },
         {
-          "name": "Endurance",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Boseiju, Who Endures",
           "quantity": 1,
           "available": false,
@@ -6045,12 +5913,6 @@
         {
           "name": "Hooting Mandrills",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -6216,7 +6078,7 @@
         {
           "name": "Endurance",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6266,7 +6128,7 @@
         {
           "name": "Endurance",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6308,9 +6170,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 37,
+      "mainAvailable": 41,
       "sideAvailable": 9,
-      "missingNames": 11,
+      "missingNames": 10,
       "missing": [
         {
           "name": "Castle Ardenvale",
@@ -6339,12 +6201,6 @@
         {
           "name": "Relic of Progenitus",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Solitude",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -6468,7 +6324,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6554,9 +6410,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 27,
+      "mainAvailable": 35,
       "sideAvailable": 7,
-      "missingNames": 17,
+      "missingNames": 15,
       "missing": [
         {
           "name": "Waker of Waves",
@@ -6601,12 +6457,6 @@
           "legal": true
         },
         {
-          "name": "Shardless Agent",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Colossal Skyturtle",
           "quantity": 1,
           "available": false,
@@ -6621,12 +6471,6 @@
         {
           "name": "Living End",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -6774,7 +6618,7 @@
         {
           "name": "Shardless Agent",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -6822,7 +6666,7 @@
         {
           "name": "Endurance",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -6891,8 +6735,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 40,
-      "sideAvailable": 9,
-      "missingNames": 11,
+      "sideAvailable": 11,
+      "missingNames": 10,
       "missing": [
         {
           "name": "Cling to Dust",
@@ -6938,12 +6782,6 @@
         },
         {
           "name": "Damnation",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Dress Down",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -7106,7 +6944,7 @@
         {
           "name": "Dress Down",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7149,8 +6987,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 33,
-      "sideAvailable": 7,
-      "missingNames": 13,
+      "sideAvailable": 9,
+      "missingNames": 12,
       "missing": [
         {
           "name": "Dismember",
@@ -7197,12 +7035,6 @@
         {
           "name": "Liquimetal Coating",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Cursed Totem",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -7358,7 +7190,7 @@
         {
           "name": "Cursed Totem",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -7647,8 +7479,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 36,
-      "sideAvailable": 3,
-      "missingNames": 15,
+      "sideAvailable": 5,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Dryad Arbor",
@@ -7707,12 +7539,6 @@
         {
           "name": "Collector Ouphe",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -7868,7 +7694,7 @@
         {
           "name": "Endurance",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8143,9 +7969,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 31,
-      "sideAvailable": 0,
-      "missingNames": 18,
+      "mainAvailable": 37,
+      "sideAvailable": 5,
+      "missingNames": 14,
       "missing": [
         {
           "name": "Yawgmoth, Thran Physician",
@@ -8172,20 +7998,8 @@
           "legal": true
         },
         {
-          "name": "Grist, the Hunger Tide",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Birds of Paradise",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Verdant Catacombs",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -8208,25 +8022,7 @@
           "legal": true
         },
         {
-          "name": "Endurance",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Run Afoul",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Break the Ice",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -8327,7 +8123,7 @@
         {
           "name": "Grist, the Hunger Tide",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8345,7 +8141,7 @@
         {
           "name": "Verdant Catacombs",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8399,7 +8195,7 @@
         {
           "name": "Endurance",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8419,13 +8215,13 @@
         {
           "name": "Break the Ice",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Endurance",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8473,9 +8269,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 29,
+      "mainAvailable": 37,
       "sideAvailable": 13,
-      "missingNames": 10,
+      "missingNames": 8,
       "missing": [
         {
           "name": "Faithless Looting",
@@ -8485,12 +8281,6 @@
         },
         {
           "name": "Thoughtseize",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Persist",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -8516,18 +8306,6 @@
         {
           "name": "Fatal Push",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Archon of Cruelty",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Archon of Cruelty",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -8585,7 +8363,7 @@
         {
           "name": "Persist",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8645,7 +8423,7 @@
         {
           "name": "Archon of Cruelty",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8675,7 +8453,7 @@
         {
           "name": "Archon of Cruelty",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8743,18 +8521,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 35,
+      "mainAvailable": 39,
       "sideAvailable": 9,
-      "missingNames": 10,
+      "missingNames": 9,
       "missing": [
         {
           "name": "Street Wraith",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Blazing Rootwalla",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -8825,7 +8597,7 @@
         {
           "name": "Blazing Rootwalla",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -8995,9 +8767,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 25,
-      "sideAvailable": 3,
-      "missingNames": 22,
+      "mainAvailable": 27,
+      "sideAvailable": 5,
+      "missingNames": 20,
       "missing": [
         {
           "name": "Birds of Paradise",
@@ -9084,12 +8856,6 @@
           "legal": true
         },
         {
-          "name": "Verdant Catacombs",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Thoughtseize",
           "quantity": 1,
           "available": false,
@@ -9104,12 +8870,6 @@
         {
           "name": "Kraul Harpooner",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -9287,7 +9047,7 @@
         {
           "name": "Verdant Catacombs",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9331,7 +9091,7 @@
         {
           "name": "Endurance",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9373,9 +9133,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 35,
+      "mainAvailable": 38,
       "sideAvailable": 9,
-      "missingNames": 14,
+      "missingNames": 13,
       "missing": [
         {
           "name": "Wrenn and Six",
@@ -9403,12 +9163,6 @@
         },
         {
           "name": "Teferi, Time Raveler",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Archon of Cruelty",
           "quantity": 3,
           "available": false,
           "legal": true
@@ -9551,7 +9305,7 @@
         {
           "name": "Archon of Cruelty",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -9709,9 +9463,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 45,
+      "mainAvailable": 47,
       "sideAvailable": 11,
-      "missingNames": 9,
+      "missingNames": 8,
       "missing": [
         {
           "name": "Orcish Bowmasters",
@@ -9728,12 +9482,6 @@
         {
           "name": "Otawara, Soaring City",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Marsh Flats",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -9869,7 +9617,7 @@
         {
           "name": "Marsh Flats",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10015,9 +9763,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 30,
-      "sideAvailable": 2,
-      "missingNames": 16,
+      "mainAvailable": 35,
+      "sideAvailable": 6,
+      "missingNames": 13,
       "missing": [
         {
           "name": "Fatal Push",
@@ -10028,12 +9776,6 @@
         {
           "name": "Cling to Dust",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Dauthi Voidwalker",
-          "quantity": 3,
           "available": false,
           "legal": true
         },
@@ -10080,20 +9822,8 @@
           "legal": true
         },
         {
-          "name": "Verdant Catacombs",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ashiok, Dream Render",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Break the Ice",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -10157,7 +9887,7 @@
         {
           "name": "Dauthi Voidwalker",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10241,7 +9971,7 @@
         {
           "name": "Verdant Catacombs",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10279,7 +10009,7 @@
         {
           "name": "Break the Ice",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10703,9 +10433,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 29,
-      "sideAvailable": 8,
-      "missingNames": 14,
+      "mainAvailable": 37,
+      "sideAvailable": 10,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Waker of Waves",
@@ -10738,12 +10468,6 @@
           "legal": true
         },
         {
-          "name": "Shardless Agent",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Colossal Skyturtle",
           "quantity": 2,
           "available": false,
@@ -10758,18 +10482,6 @@
         {
           "name": "Living End",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Inevitable Betrayal",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -10893,7 +10605,7 @@
         {
           "name": "Shardless Agent",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -10947,7 +10659,7 @@
         {
           "name": "Endurance",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -10961,7 +10673,7 @@
         {
           "name": "Inevitable Betrayal",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11003,9 +10715,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 26,
+      "mainAvailable": 30,
       "sideAvailable": 10,
-      "missingNames": 14,
+      "missingNames": 13,
       "missing": [
         {
           "name": "Colossus Hammer",
@@ -11063,12 +10775,6 @@
         },
         {
           "name": "Stoneforge Mystic",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Urza's Saga",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -11223,7 +10929,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11303,19 +11009,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 39,
-      "sideAvailable": 12,
-      "missingNames": 10,
+      "mainAvailable": 41,
+      "sideAvailable": 14,
+      "missingNames": 8,
       "missing": [
         {
           "name": "Archmage's Charm",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Dress Down",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -11368,12 +11068,6 @@
           "legal": true
         },
         {
-          "name": "Break the Ice",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Engineered Explosives",
           "quantity": 1,
           "available": false,
@@ -11421,7 +11115,7 @@
         {
           "name": "Dress Down",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11591,7 +11285,7 @@
         {
           "name": "Break the Ice",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11657,9 +11351,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 37,
+      "mainAvailable": 41,
       "sideAvailable": 13,
-      "missingNames": 12,
+      "missingNames": 11,
       "missing": [
         {
           "name": "Mox Opal",
@@ -11676,12 +11370,6 @@
         {
           "name": "Otawara, Soaring City",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Urza's Saga",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -11799,7 +11487,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -11969,19 +11657,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 30,
+      "mainAvailable": 34,
       "sideAvailable": 9,
-      "missingNames": 17,
+      "missingNames": 15,
       "missing": [
         {
           "name": "Emry, Lurker of the Loch",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -12040,12 +11722,6 @@
           "legal": true
         },
         {
-          "name": "Urza's Saga",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Boseiju, Who Endures",
           "quantity": 1,
           "available": false,
@@ -12093,7 +11769,7 @@
         {
           "name": "Endurance",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12225,7 +11901,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         }
       ],
@@ -12305,19 +11981,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 21,
-      "sideAvailable": 4,
-      "missingNames": 21,
+      "mainAvailable": 26,
+      "sideAvailable": 6,
+      "missingNames": 18,
       "missing": [
         {
           "name": "Pithing Needle",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Urza's Saga",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -12341,12 +12011,6 @@
         },
         {
           "name": "Nihil Spellbomb",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Marsh Flats",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -12390,12 +12054,6 @@
         {
           "name": "Prismatic Vista",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Break the Ice",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -12459,7 +12117,7 @@
         {
           "name": "Urza's Saga",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12513,7 +12171,7 @@
         {
           "name": "Marsh Flats",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12593,7 +12251,7 @@
         {
           "name": "Break the Ice",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12678,8 +12336,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 31,
-      "sideAvailable": 9,
-      "missingNames": 11,
+      "sideAvailable": 12,
+      "missingNames": 10,
       "missing": [
         {
           "name": "Orcish Bowmasters",
@@ -12737,12 +12395,6 @@
         },
         {
           "name": "Shadow of Doubt",
-          "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Break the Ice",
           "quantity": 3,
           "available": false,
           "legal": true
@@ -12881,7 +12533,7 @@
         {
           "name": "Break the Ice",
           "quantity": 3,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -12911,9 +12563,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 23,
+      "mainAvailable": 31,
       "sideAvailable": 11,
-      "missingNames": 11,
+      "missingNames": 9,
       "missing": [
         {
           "name": "Vodalian Hexcatcher",
@@ -12965,18 +12617,6 @@
         },
         {
           "name": "Snapback",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Svyelun of Sea and Sky",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Tide Shaper",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -13083,13 +12723,13 @@
         {
           "name": "Svyelun of Sea and Sky",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
           "name": "Tide Shaper",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13139,19 +12779,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 29,
-      "sideAvailable": 6,
-      "missingNames": 19,
+      "mainAvailable": 35,
+      "sideAvailable": 8,
+      "missingNames": 16,
       "missing": [
         {
           "name": "Dryad of the Ilysian Grove",
           "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Mine Collapse",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -13216,12 +12850,6 @@
           "legal": true
         },
         {
-          "name": "Yavimaya, Cradle of Growth",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Scapeshift",
           "quantity": 1,
           "available": false,
@@ -13247,12 +12875,6 @@
         },
         {
           "name": "Force of Vigor",
-          "quantity": 2,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
           "quantity": 2,
           "available": false,
           "legal": true
@@ -13299,7 +12921,7 @@
         {
           "name": "Mine Collapse",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13377,7 +12999,7 @@
         {
           "name": "Yavimaya, Cradle of Growth",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13463,7 +13085,7 @@
         {
           "name": "Endurance",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13678,9 +13300,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 41,
-      "sideAvailable": 9,
-      "missingNames": 13,
+      "mainAvailable": 50,
+      "sideAvailable": 10,
+      "missingNames": 9,
       "missing": [
         {
           "name": "Omnath, Locus of Creation",
@@ -13695,18 +13317,6 @@
           "legal": true
         },
         {
-          "name": "Shardless Agent",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Solitude",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Indatha Triome",
           "quantity": 1,
           "available": false,
@@ -13715,12 +13325,6 @@
         {
           "name": "Leyline Binding",
           "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Endurance",
-          "quantity": 1,
           "available": false,
           "legal": true
         },
@@ -13738,12 +13342,6 @@
         },
         {
           "name": "Brotherhood's End",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Inevitable Betrayal",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -13856,7 +13454,7 @@
         {
           "name": "Shardless Agent",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13868,7 +13466,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13910,7 +13508,7 @@
         {
           "name": "Endurance",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -13978,7 +13576,7 @@
         {
           "name": "Inevitable Betrayal",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14009,8 +13607,8 @@
       "mainTotal": 60,
       "sideTotal": 15,
       "mainAvailable": 47,
-      "sideAvailable": 4,
-      "missingNames": 11,
+      "sideAvailable": 5,
+      "missingNames": 10,
       "missing": [
         {
           "name": "Faithless Looting",
@@ -14056,12 +13654,6 @@
         },
         {
           "name": "Magus of the Moon",
-          "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Dauthi Voidwalker",
           "quantity": 1,
           "available": false,
           "legal": true
@@ -14248,7 +13840,7 @@
         {
           "name": "Dauthi Voidwalker",
           "quantity": 1,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14278,19 +13870,13 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 44,
+      "mainAvailable": 48,
       "sideAvailable": 13,
-      "missingNames": 5,
+      "missingNames": 4,
       "missing": [
         {
           "name": "Flagstones of Trokair",
           "quantity": 3,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Solitude",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -14384,7 +13970,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -14488,9 +14074,9 @@
       ],
       "mainTotal": 61,
       "sideTotal": 15,
-      "mainAvailable": 43,
+      "mainAvailable": 47,
       "sideAvailable": 14,
-      "missingNames": 9,
+      "missingNames": 8,
       "missing": [
         {
           "name": "Coiling Oracle",
@@ -14531,12 +14117,6 @@
         {
           "name": "March of Otherworldly Light",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Solitude",
-          "quantity": 4,
           "available": false,
           "legal": true
         },
@@ -14690,7 +14270,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15040,9 +14620,9 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 14,
+      "mainAvailable": 18,
       "sideAvailable": 5,
-      "missingNames": 26,
+      "missingNames": 25,
       "missing": [
         {
           "name": "Jace, the Perfected Mind",
@@ -15142,12 +14722,6 @@
         },
         {
           "name": "Ruin Crab",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Fractured Sanity",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -15350,7 +14924,7 @@
         {
           "name": "Fractured Sanity",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15448,18 +15022,12 @@
       ],
       "mainTotal": 60,
       "sideTotal": 15,
-      "mainAvailable": 32,
-      "sideAvailable": 11,
-      "missingNames": 11,
+      "mainAvailable": 48,
+      "sideAvailable": 13,
+      "missingNames": 6,
       "missing": [
         {
           "name": "Chancellor of the Annex",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Archon of Cruelty",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -15471,25 +15039,7 @@
           "legal": true
         },
         {
-          "name": "Solitude",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
           "name": "Ephemerate",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Persist",
-          "quantity": 4,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Marsh Flats",
           "quantity": 4,
           "available": false,
           "legal": true
@@ -15503,12 +15053,6 @@
         {
           "name": "Nihil Spellbomb",
           "quantity": 1,
-          "available": false,
-          "legal": true
-        },
-        {
-          "name": "Break the Ice",
-          "quantity": 2,
           "available": false,
           "legal": true
         },
@@ -15548,7 +15092,7 @@
         {
           "name": "Archon of Cruelty",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15602,7 +15146,7 @@
         {
           "name": "Solitude",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15614,7 +15158,7 @@
         {
           "name": "Persist",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15638,7 +15182,7 @@
         {
           "name": "Marsh Flats",
           "quantity": 4,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15694,7 +15238,7 @@
         {
           "name": "Break the Ice",
           "quantity": 2,
-          "available": false,
+          "available": true,
           "legal": true
         },
         {
@@ -15903,18 +15447,6 @@
       9
     ],
     [
-      "Endurance",
-      9
-    ],
-    [
-      "Solitude",
-      9
-    ],
-    [
-      "Urza's Saga",
-      9
-    ],
-    [
       "Force of Vigor",
       8
     ],
@@ -15928,10 +15460,6 @@
     ],
     [
       "Eldrazi Temple",
-      7
-    ],
-    [
-      "Marsh Flats",
       7
     ],
     [
@@ -15957,10 +15485,6 @@
     [
       "Wear // Tear",
       7
-    ],
-    [
-      "Break the Ice",
-      6
     ],
     [
       "Damping Sphere",
@@ -16035,19 +15559,11 @@
       4
     ],
     [
-      "Verdant Catacombs",
-      4
-    ],
-    [
       "Walking Ballista",
       4
     ],
     [
       "Ancient Stirrings",
-      3
-    ],
-    [
-      "Archon of Cruelty",
       3
     ],
     [
@@ -16091,10 +15607,6 @@
       3
     ],
     [
-      "Shardless Agent",
-      3
-    ],
-    [
       "Snow-Covered Island",
       3
     ],
@@ -16112,10 +15624,6 @@
     ],
     [
       "Warping Wail",
-      3
-    ],
-    [
-      "Yavimaya, Cradle of Growth",
       3
     ],
     [
@@ -16151,23 +15659,11 @@
       2
     ],
     [
-      "Cursed Totem",
-      2
-    ],
-    [
       "Damnation",
       2
     ],
     [
-      "Dauthi Voidwalker",
-      2
-    ],
-    [
       "Delighted Halfling",
-      2
-    ],
-    [
-      "Dress Down",
       2
     ],
     [
@@ -16187,10 +15683,6 @@
       2
     ],
     [
-      "Goblin Bombardment",
-      2
-    ],
-    [
       "Griselbrand",
       2
     ],
@@ -16200,10 +15692,6 @@
     ],
     [
       "Indatha Triome",
-      2
-    ],
-    [
-      "Inevitable Betrayal",
       2
     ],
     [
@@ -16240,10 +15728,6 @@
     ],
     [
       "Oliphaunt",
-      2
-    ],
-    [
-      "Persist",
       2
     ],
     [
@@ -16348,10 +15832,6 @@
     ],
     [
       "Beyeen Veil",
-      1
-    ],
-    [
-      "Blazing Rootwalla",
       1
     ],
     [
@@ -16519,10 +15999,6 @@
       1
     ],
     [
-      "Fractured Sanity",
-      1
-    ],
-    [
       "Galvanic Blast",
       1
     ],
@@ -16556,10 +16032,6 @@
     ],
     [
       "Grapeshot",
-      1
-    ],
-    [
-      "Grist, the Hunger Tide",
       1
     ],
     [
@@ -16668,10 +16140,6 @@
     ],
     [
       "Mikokoro, Center of the Sea",
-      1
-    ],
-    [
-      "Mine Collapse",
       1
     ],
     [
@@ -16807,10 +16275,6 @@
       1
     ],
     [
-      "Scion of Draco",
-      1
-    ],
-    [
       "Sea Gate Restoration",
       1
     ],
@@ -16895,10 +16359,6 @@
       1
     ],
     [
-      "Svyelun of Sea and Sky",
-      1
-    ],
-    [
       "Swan Song",
       1
     ],
@@ -16915,19 +16375,11 @@
       1
     ],
     [
-      "Territorial Kavu",
-      1
-    ],
-    [
       "Thought Scour",
       1
     ],
     [
       "Thoughtcast",
-      1
-    ],
-    [
-      "Tide Shaper",
       1
     ],
     [

@@ -1,3 +1,4 @@
+import{mh2CanBlock,mh2Has}from'./mh2';
 import { modernForced } from './modern';
 import {webStatic,webStory,webForced} from './web-shire-support';
 import {frontierCanBlock,frontierStatic,enchanted} from './frontier-support';
@@ -29,6 +30,7 @@ export function attackCandidates(g: GameState, pid: PID): Card[] {
 
 /** 阻擋者是否能阻擋此攻擊者（不考慮威懾） */
 export function canBlock(g: GameState, blocker: Card, attacker: Card): boolean {
+  if(!mh2CanBlock(g,blocker,attacker))return false;
   if (!isCreature(blocker) || blocker.zone !== 'battlefield' || blocker.tapped) return false;
   if (!attacker.attacking || attacker.zone !== 'battlefield') return false;
   if (blocker.controller === attacker.controller) return false;
@@ -226,7 +228,8 @@ export function combatDamage(g: GameState, step: DamageStep): void {
     const pw = a.attackTarget != null ? g.cards[a.attackTarget] : null;
     const pwGone = a.attackTarget != null && (!pw || pw.zone !== 'battlefield');
     const toDefender = (n: number) => {
-      if (pw && !pwGone) hits.push({ src: a, card: pw, n });
+      if(mh2Has(g,a,'walkerTrample')){if(pw&&!pwGone){const given=Math.min(n,Math.max(0,pw.loyalty??0));if(given)hits.push({src:a,card:pw,n:given});if(n>given)hits.push({src:a,player:other(a.controller),n:n-given});}else hits.push({src:a,player:other(a.controller),n});}
+      else if (pw && !pwGone) hits.push({ src: a, card: pw, n });
       else if (!pwGone) hits.push({ src: a, player: other(a.controller), n });
     };
     const blockers = a.blockedBy.map((id) => g.cards[id]).filter((b) => b && b.zone === 'battlefield');

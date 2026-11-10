@@ -1,0 +1,3142 @@
+{
+  "Fire": {
+    "text": "熱火對任意一個或兩個目標造成共2點傷害，你可以任意分配。",
+    "oracleText": "Fire deals 2 damage divided as you choose among one or two targets.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28030,
+    "oracleId": "ae92942b-919c-4ea9-b693-85fcef765d5a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Chainer, Nightmare Adept": {
+    "text": "棄一張牌：本回閤中，你可以從你的墳墓場中施放一個生物咒語。每回合只能起動一次。\n每當一個由你操控且非衍生物的生物進場時，若你未從你手上施放之，則它獲得敏捷異能直到你的下一個回合。",
+    "oracleText": "Discard a card: You may cast a creature spell from your graveyard this turn. Activate only once each turn.\nWhenever a nontoken creature you control enters, if you didn't cast it from your hand, it gains haste until your next turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 2051,
+    "oracleId": "14f6fcb0-bed4-4a38-b7df-1e438d81bedb",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Goblin Anarchomancer": {
+    "text": "你施放之為紅色或綠色的咒語減少{1}來施放。",
+    "oracleText": "Each spell you cast that's red or green costs {1} less to cast.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4419,
+    "oracleId": "e9319f13-1f2b-429c-9d61-e58a3cbec86a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Unmarked Grave": {
+    "text": "從你的牌庫中搜尋一張非傳奇的牌，將該牌置入你的墳墓場，然後洗牌。",
+    "oracleText": "Search your library for a nonlegendary card, put that card into your graveyard, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4448,
+    "oracleId": "134dfb35-0c32-4143-aa63-7701f406b59e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Bone Shards": {
+    "text": "犧牲一個生物或棄一張牌，以作為施放此咒語的額外費用。\n消滅目標生物或鵬洛客。",
+    "oracleText": "As an additional cost to cast this spell, sacrifice a creature or discard a card.\nDestroy target creature or planeswalker.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4474,
+    "oracleId": "6e760cfe-45b9-4a3f-b2e2-4ca6ec2bd13a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Lucid Dreams": {
+    "text": "抓X張牌，X為你墳墓場中牌的牌張類別數量。",
+    "oracleText": "Draw X cards, where X is the number of card types among cards in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4475,
+    "oracleId": "bd716715-15a4-4356-ad7e-c642fafbfd18",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Aeromoeba": {
+    "text": "飛行\n棄一張牌：將此生物的力量與防禦力互換直到回合結束。",
+    "oracleText": "Flying\nDiscard a card: Switch this creature's power and toughness until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4476,
+    "oracleId": "1e276998-9c54-4d68-a901-657853312d06",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Fodder Tosser": {
+    "text": "{T}，棄一張牌：此神器對目標牌手或鵬洛客造成2點傷害。",
+    "oracleText": "{T}, Discard a card: This artifact deals 2 damage to target player or planeswalker.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4477,
+    "oracleId": "feb34b5a-d51e-42d7-90c6-c5c84ff00c4e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Magus of the Bridge": {
+    "text": "每當一個非衍生物的生物從戰場進入你的墳墓場時，派出一個2/2黑色靈俑衍生生物。\n當一個生物從戰場進入對手的墳墓場時，放逐此生物。",
+    "oracleText": "Whenever a nontoken creature is put into your graveyard from the battlefield, create a 2/2 black Zombie creature token.\nWhen a creature is put into an opponent's graveyard from the battlefield, exile this creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4666,
+    "oracleId": "e48951ed-1c32-449a-898e-e5b1c0d0ee73",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Brainstone": {
+    "text": "{2}，{T}，犧牲此神器：抓三張牌，然後將兩張牌從你手上以任意順序置於你的牌庫頂。",
+    "oracleText": "{2}, {T}, Sacrifice this artifact: Draw three cards, then put two cards from your hand on top of your library in any order.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4667,
+    "oracleId": "ffac1923-99d0-48e6-b1e7-168e5c324a80",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Loathsome Curator": {
+    "text": "榨取（當此生物進場時，你可以犧牲一個生物。）\n威懾\n當此生物榨取生物時，消滅目標不由你操控且法術力值等於或小於3的生物。",
+    "oracleText": "Exploit (When this creature enters, you may sacrifice a creature.)\nMenace\nWhen this creature exploits a creature, destroy target creature you don't control with mana value 3 or less.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4668,
+    "oracleId": "8a20707f-9764-4236-9aa9-858a2419f012",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Chatterstorm": {
+    "text": "派出一個1/1綠色松鼠衍生生物。\n風暴（當施放此咒語時，本回合於它之前每施放過一個咒語，便將此咒語複製一次。）",
+    "oracleText": "Create a 1/1 green Squirrel creature token.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4669,
+    "oracleId": "7e6c7b57-bd6a-4ac8-bcab-c3a879f479c2",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Caprichrome": {
+    "text": "閃現\n警戒\n吞噬神器1（於此生物進場時，你可以犧牲任意數量的神器。它進場時上面有該數量的+1/+1指示物。）",
+    "oracleText": "Flash\nVigilance\nDevour artifact 1 (As this creature enters, you may sacrifice any number of artifacts. It enters with that many +1/+1 counters on it.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4670,
+    "oracleId": "27831489-b444-4b7b-91db-feb54281bca9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sinister Starfish": {
+    "text": "{T}：刺探1。（檢視你牌庫頂的牌。你可以將其置入你的墳墓場。）",
+    "oracleText": "{T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4673,
+    "oracleId": "58321467-41d6-4419-bcb2-cd3e60f677b3",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Radiant Epicure": {
+    "text": "聚輝～當此生物進場時，每位對手各失去X點生命，且你獲得X點生命，X為施放此咒語支付的法術力顏色數量。",
+    "oracleText": "Converge — When this creature enters, each opponent loses X life and you gain X life, where X is the number of colors of mana spent to cast this spell.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4674,
+    "oracleId": "cdea4344-24b6-4659-a830-c51d4b348af5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Profane Tutor": {
+    "text": "延緩2～{1}{B}（支付{1}{B}並將此牌放逐且其上有兩個計時指示物，而非從你手上施放之。在你的維持開始時，從其上移去一個計時指示物。當移去最後一個時，你可以施放它且不需支付其法術力費用。）\n從你牌庫中搜尋一張牌，將該牌置於你手上，然後洗牌。",
+    "oracleText": "Suspend 2—{1}{B} (Rather than cast this card from your hand, pay {1}{B} and exile it with two time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost.)\nSearch your library for a card, put that card into your hand, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4675,
+    "oracleId": "27a1f42c-0b86-4609-9609-1fa9cab7e7c9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Persist": {
+    "text": "將目標非傳奇的生物牌從你的墳墓場移回戰場，且上面有一個-1/-1指示物。",
+    "oracleText": "Return target nonlegendary creature card from your graveyard to the battlefield with a -1/-1 counter on it.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4676,
+    "oracleId": "367d4cf2-270f-4236-af10-7d5e8ea8c9fe",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Nested Shambler": {
+    "text": "當此生物死去時，派出X個已橫置的1/1綠色松鼠衍生生物，X為此生物的力量。",
+    "oracleText": "When this creature dies, create X tapped 1/1 green Squirrel creature tokens, where X is this creature's power.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4677,
+    "oracleId": "bfa882ee-de18-4ef8-8957-3e04ed6e3c1e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Necromancer's Familiar": {
+    "text": "飛行\n背水戰～只要你沒有手牌，此生物便具有繫命異能。\n{B}，棄一張牌：此生物獲得不滅異能直到回合結束。將它橫置。",
+    "oracleText": "Flying\nHellbent — This creature has lifelink as long as you have no cards in hand.\n{B}, Discard a card: This creature gains indestructible until end of turn. Tap it.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4678,
+    "oracleId": "ce8833ea-5f58-4ab9-b33d-8972f2215574",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Necrogoyf": {
+    "text": "死冥耶夫的力量等同於所有墳墓場中的生物牌數量。\n在每位牌手的維持開始時，該牌手棄一張牌。\n瘋魔{1}{B}{B}（如果你棄掉此牌，將之棄到放逐區。當你如此作時，支付其瘋魔費用施放之，否則便將其置入你的墳墓場。）",
+    "oracleText": "Necrogoyf's power is equal to the number of creature cards in all graveyards.\nAt the beginning of each player's upkeep, that player discards a card.\nMadness {1}{B}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4679,
+    "oracleId": "e034a02d-3482-44eb-90dc-c38be104197f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Cabal Initiate": {
+    "text": "棄一張牌：此生物獲得繫命異能直到回合結束。\n門檻～只要你的墳墓場中有七張或更多牌，此生物便得+1/+2。",
+    "oracleText": "Discard a card: This creature gains lifelink until end of turn.\nThreshold — This creature gets +1/+2 as long as there are seven or more cards in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4680,
+    "oracleId": "2fc19fa3-c6c2-42c0-85fa-8d13e1baa145",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Legion Vanguard": {
+    "text": "{1}，犧牲另一個生物：令此生物勘察。（展示你的牌庫頂牌。如果該牌是地，則置於你手上。若否，則在此生物上放置一個+1/+1指示物，然後將所展示的牌放回原位或置入你的墳墓場。）",
+    "oracleText": "{1}, Sacrifice another creature: This creature explores. (Reveal the top card of your library. Put that card into your hand if it's a land. Otherwise, put a +1/+1 counter on this creature, then put the card back or put it into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4681,
+    "oracleId": "9f2c8398-1606-400b-a593-2635656e8c4b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tanglepool Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{G}或{U}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {G} or {U}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4682,
+    "oracleId": "29cd8a7c-108a-43d1-af63-f603a27c24f2",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Kitchen Imp": {
+    "text": "飛行，敏捷\n瘋魔{B}（如果你棄掉此牌，將之棄到放逐區。當你如此作時，支付其瘋魔費用施放之，否則便將其置入你的墳墓場。）",
+    "oracleText": "Flying, haste\nMadness {B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4683,
+    "oracleId": "eaa2ad31-065d-4aa3-a39c-5e491dd59022",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Hell Mongrel": {
+    "text": "棄一張牌：此生物得+1/+1直到回合結束。\n瘋魔{2}{B}（如果你棄掉此牌，將之棄到放逐區。當你如此作時，支付其瘋魔費用施放之，否則便將其置入你的墳墓場。）",
+    "oracleText": "Discard a card: This creature gets +1/+1 until end of turn.\nMadness {2}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4684,
+    "oracleId": "64aa732c-d939-48c7-b1d6-c73fa1eedb40",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Gilt-Blade Prowler": {
+    "text": "{1}，{T}，支付1點生命：抓一張牌。只能於你棄過牌的回合中起動。",
+    "oracleText": "{1}, {T}, Pay 1 life: Draw a card. Activate only if you've discarded a card this turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4685,
+    "oracleId": "63e86054-5e9c-48fe-92a1-b71aeb6ee57f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Flay Essence": {
+    "text": "放逐目標生物或鵬洛客。你獲得等同於其上指示物數量的生命。",
+    "oracleText": "Exile target creature or planeswalker. You gain life equal to the number of counters on it.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4686,
+    "oracleId": "b233a9e4-0b4c-41e8-a5b8-77824241966b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Feast of Sanity": {
+    "text": "每當你棄一張牌時，此結界對任意一個目標造成1點傷害，且你獲得1點生命。",
+    "oracleText": "Whenever you discard a card, this enchantment deals 1 damage to any target and you gain 1 life.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4687,
+    "oracleId": "af384946-e22a-45cd-ba07-1a5fbd4a3f0c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Echoing Return": {
+    "text": "將目標生物牌和所有與之同名的其他牌從你的墳墓場移回你手上。",
+    "oracleText": "Return target creature card and all other cards with the same name as that card from your graveyard to your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4688,
+    "oracleId": "591fe685-767e-4e6e-905e-cc8b423caa19",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Discerning Taste": {
+    "text": "檢視你牌庫頂的四張牌。將其中一張置於你手上，其餘則置入你的墳墓場。你獲得若干生命，其數量等同於以此法置入你墳墓場之生物牌中的最大力量。",
+    "oracleText": "Look at the top four cards of your library. Put one of them into your hand and the rest into your graveyard. You gain life equal to the greatest power among creature cards put into your graveyard this way.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4689,
+    "oracleId": "1896c513-ec48-4c8f-9acb-30bc6357fce2",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Dauthi Voidwalker": {
+    "text": "次元幽影（此生物只能阻擋具次元幽影異能的生物，亦只能被具此異能的生物阻擋。）\n如果某牌將從任何區域進入對手的墳墓場，則改為將它放逐並在其上放置一個虛空指示物。\n{T}，犧牲此生物：選擇一張由對手擁有、已放逐且其上有虛空指示物的牌。本回閤中，你可以使用它，且不需支付其法術力費用。",
+    "oracleText": "Shadow (This creature can block or be blocked by only creatures with shadow.)\nIf a card would be put into an opponent's graveyard from anywhere, instead exile it with a void counter on it.\n{T}, Sacrifice this creature: Choose an exiled card an opponent owns with a void counter on it. You may play it this turn without paying its mana cost.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4690,
+    "oracleId": "f1c2dbe2-fbe0-4058-bdf1-91d1b1832786",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Damn": {
+    "text": "消滅目標生物。以此法消滅的生物不能重生。\n超載{2}{W}{W}（你可以支付此咒語的超載費用來施放它。若你如此作，則將其敘述中的「目標」更改為「每個」。）",
+    "oracleText": "Destroy target creature. A creature destroyed this way can't be regenerated.\nOverload {2}{W}{W} (You may cast this spell for its overload cost. If you do, change \"target\" in its text to \"each.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4691,
+    "oracleId": "b01d61cc-9844-4191-86a0-f2db6d42d6e5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Break Ties": {
+    "text": "選擇一項～\n•消滅目標神器。\n•消滅目標結界。\n•將目標牌從墳墓場放逐。\n補強1～{W}（{W}，棄掉此牌：在目標生物上放置一個+1/+1指示物。）",
+    "oracleText": "Choose one —\n• Destroy target artifact.\n• Destroy target enchantment.\n• Exile target card from a graveyard.\nReinforce 1—{W} ({W}, Discard this card: Put a +1/+1 counter on target creature.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4692,
+    "oracleId": "1e44bb4e-aeea-4f43-9cbd-4c24a9b6b022",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Clattering Augur": {
+    "text": "此生物不能進行阻擋。\n當此生物進場時，你抓一張牌且失去1點生命。\n{2}{B}{B}：將此牌從你的墳墓場移回你手上。",
+    "oracleText": "This creature can't block.\nWhen this creature enters, you draw a card and you lose 1 life.\n{2}{B}{B}: Return this card from your graveyard to your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4693,
+    "oracleId": "d88f249f-5bf1-448a-91d1-f81538dfd475",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Bottle Golems": {
+    "text": "踐踏\n當此生物死去時，你獲得等同於其力量的生命。",
+    "oracleText": "Trample\nWhen this creature dies, you gain life equal to its power.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4694,
+    "oracleId": "46334ae3-e496-4f15-8033-0f42ee0ae375",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Break the Ice": {
+    "text": "消滅目標為雪境或能產生{C}的地。\n超載{4}{B}{B}（你可以支付此咒語的超載費用來施放它。若你如此作，則將其敘述中的「目標」更改為「每個」。）",
+    "oracleText": "Destroy target land that is snow or could produce {C}.\nOverload {4}{B}{B} (You may cast this spell for its overload cost. If you do, change \"target\" in its text to \"each.\")",
+    "source": "Forge Data",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4695,
+    "oracleId": "22ec98d2-0ac5-48a2-b48b-c6a98f35ecf0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Archfiend of Sorrows": {
+    "text": "飛行\n當此生物進場時，由對手操控的生物得-2/-2直到回合結束。\n破墳{3}{B}{B}（{3}{B}{B}：將此牌從你的墳墓場移回戰場。它獲得敏捷異能。在下一個結束步驟開始時，或若它將離開戰場，將它放逐。只能於法術時機破墳。）",
+    "oracleText": "Flying\nWhen this creature enters, creatures your opponents control get -2/-2 until end of turn.\nUnearth {3}{B}{B} ({3}{B}{B}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4696,
+    "oracleId": "fe84966e-0f0c-4df8-b61c-e9693492dfd8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Vedalken Infiltrator": {
+    "text": "此生物不能被阻擋。\n金技～只要你操控三個或更多神器，此生物便得+1/+0。",
+    "oracleText": "This creature can't be blocked.\nMetalcraft — This creature gets +1/+0 as long as you control three or more artifacts.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4697,
+    "oracleId": "1d6aa6ab-7cfc-463f-a8ba-007058933ebf",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tide Shaper": {
+    "text": "增幅{1}（你施放此咒語時可以額外支付{1}。）\n當此生物進場時，若它已增幅，則於此生物仍在戰場上的時段內，目標地成為海島。\n只要有對手操控海島，此生物便得+1/+1。",
+    "oracleText": "Kicker {1} (You may pay an additional {1} as you cast this spell.)\nWhen this creature enters, if it was kicked, target land becomes an Island for as long as this creature remains on the battlefield.\nThis creature gets +1/+1 as long as an opponent controls an Island.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4698,
+    "oracleId": "cf4be71e-0a9a-47a3-b0ec-43e04c3c07a0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Thought Monitor": {
+    "text": "神器共鳴（你每操控一個神器，此咒語便減少{1}來施放。）\n飛行\n當此生物進場時，抓兩張牌。",
+    "oracleText": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nFlying\nWhen this creature enters, draw two cards.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4699,
+    "oracleId": "9deded8b-cec4-4ede-a50b-131404d456d4",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sweep the Skies": {
+    "text": "聚輝～施放此咒語支付的法術力每有一種顏色，便派出一個1/1無色，具飛行異能的振翼機衍生神器生物。",
+    "oracleText": "Converge — Create a 1/1 colorless Thopter artifact creature token with flying for each color of mana spent to cast this spell.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4700,
+    "oracleId": "7596fe49-c9cf-4415-ac1b-156cbbf9604e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Blossoming Calm": {
+    "text": "你獲得辟邪異能直到你的下一個回合。你獲得2點生命。\n彈回（如果你從你手上施放此咒語，於它結算時將之放逐。在你的下一個維持開始時，你可以從放逐區施放此牌，且不需支付其法術力費用。）",
+    "oracleText": "You gain hexproof until your next turn. You gain 2 life.\nRebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4701,
+    "oracleId": "489a60f1-83f8-465b-918f-7d63d4f76d14",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Svyelun of Sea and Sky": {
+    "text": "只要你操控至少兩個其他人魚，希亞爾便具有不滅異能。\n每當希亞爾攻擊時，抓一張牌。\n由你操控的其他人魚具有守護{1}。（每當另一個由你操控的人魚成為由對手操控之咒語或異能的目標時，除非該牌手支付{1}，否則反擊之。）",
+    "oracleText": "Svyelun has indestructible as long as you control at least two other Merfolk.\nWhenever Svyelun attacks, draw a card.\nOther Merfolk you control have ward {1}. (Whenever another Merfolk you control becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4702,
+    "oracleId": "872bebff-720d-459b-8f86-fb9129a8d1fb",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Suspend": {
+    "text": "放逐目標生物，並在其上放置兩個計時指示物。如果它原本不具有延緩，則它獲得延緩異能。（在其擁有者的維持開始時，該牌手移去一個計時指示物。當移去最後一個時，該牌手可以使用它且不需支付其法術力費用。如果它是生物，則它具有敏捷。）",
+    "oracleText": "Exile target creature and put two time counters on it. If it doesn't have suspend, it gains suspend. (At the beginning of its owner's upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it's a creature, it has haste.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4703,
+    "oracleId": "fef9425d-82d5-470b-9cbc-8c03a001099e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Step Through": {
+    "text": "將兩個目標生物各移回其擁有者手上。\n循環法術師{2}（{2}，棄掉此牌：從你的牌庫中搜尋一張法術師牌，展示該牌，將它置於你手上，然後洗牌。）",
+    "oracleText": "Return two target creatures to their owners' hands.\nWizardcycling {2} ({2}, Discard this card: Search your library for a Wizard card, reveal it, put it into your hand, then shuffle.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4704,
+    "oracleId": "c4fa89c7-f00d-42ef-bd67-407a288cd054",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Diamond Lion": {
+    "text": "{T}，棄掉你的手牌，犧牲此生物：加三點任意顏色的單色法術力。只能於瞬間時機起動。",
+    "oracleText": "{T}, Discard your hand, Sacrifice this creature: Add three mana of any one color. Activate only as an instant.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4705,
+    "oracleId": "7ea9bb3b-76e9-4150-9e4f-1cd3abfe8ad7",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Steelfin Whale": {
+    "text": "神器共鳴（你每操控一個神器，此咒語便減少{1}來施放。）\n每當一個由你操控的神器進場時，重置此生物。",
+    "oracleText": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nWhenever an artifact you control enters, untap this creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4706,
+    "oracleId": "a35ff288-0ba0-47de-9848-4ff4bef6b91b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Lens Flare": {
+    "text": "神器共鳴（你每操控一個神器，此咒語便減少{1}來施放。）\n鏡聚火光對目標進行攻擊或阻擋的生物造成5點傷害。",
+    "oracleText": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nLens Flare deals 5 damage to target attacking or blocking creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4707,
+    "oracleId": "e39bcfb8-cc45-42ab-a4b6-003f44d6b578",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Specimen Collector": {
+    "text": "當此生物進場時，派出一個1/1綠色松鼠衍生生物和一個0/3藍色的蟹衍生生物。\n當此生物死去時，派出一個衍生物，此衍生物為目標由你操控之衍生物的複製品。",
+    "oracleText": "When this creature enters, create a 1/1 green Squirrel creature token and a 0/3 blue Crab creature token.\nWhen this creature dies, create a token that's a copy of target token you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4708,
+    "oracleId": "fdb51cc1-ce0e-4920-b123-1cdd570fc38b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "So Shiny": {
+    "text": "結附於生物\n當此靈氣進場時，若你操控衍生物，則橫置所結附的生物，然後占卜2。\n所結附的生物於其操控者的重置步驟中不能重置。",
+    "oracleText": "Enchant creature\nWhen this Aura enters, if you control a token, tap enchanted creature, then scry 2.\nEnchanted creature doesn't untap during its controller's untap step.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4709,
+    "oracleId": "4bc34109-2050-4736-8247-ba06f0a9114a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Slagwoods Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{R}或{G}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {R} or {G}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4710,
+    "oracleId": "e040a8e6-b90c-42d1-a1b1-771d954c61ab",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Shattered Ego": {
+    "text": "結附於生物\n所結附的生物得-3/-0。\n{3}{U}{U}：將所結附的生物置於其擁有者的牌庫頂數來第三張的位置。",
+    "oracleText": "Enchant creature\nEnchanted creature gets -3/-0.\n{3}{U}{U}: Put enchanted creature into its owner's library third from the top.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4711,
+    "oracleId": "829436df-a48b-4535-84ec-64682a16949b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Scuttletide": {
+    "text": "{1}，棄一張牌：派出一個0/3藍色的蟹衍生生物。\n躁狂～只要你墳墓場中牌的牌張類別有四種或更多，由你操控的蟹便得+1/+1。",
+    "oracleText": "{1}, Discard a card: Create a 0/3 blue Crab creature token.\nDelirium — Crabs you control get +1/+1 as long as there are four or more card types among cards in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4712,
+    "oracleId": "2be9c1e6-0226-497a-b548-21bf1cfbc286",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Done": {
+    "text": "橫置至多兩個目標生物。這些生物於其操控者的下一個重置步驟中不能重置。",
+    "oracleText": "Tap up to two target creatures. Those creatures don't untap during their controller's next untap step.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4713,
+    "oracleId": "5d1d76e0-049c-4a33-96ec-8e60deed16d5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Said": {
+    "text": "將目標瞬間或法術牌從你的墳墓場移回你手上。",
+    "oracleText": "Return target instant or sorcery card from your graveyard to your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4714,
+    "oracleId": "5d1d76e0-049c-4a33-96ec-8e60deed16d5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Blacksmith's Skill": {
+    "text": "直到回合結束，目標永久物獲得辟邪與不滅異能。如果它是神器生物，則它得+2/+2直到回合結束。",
+    "oracleText": "Target permanent gains hexproof and indestructible until end of turn. If it's an artifact creature, it gets +2/+2 until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4715,
+    "oracleId": "5c5b308c-07d5-422a-8b45-b8b19cb967ca",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Rishadan Dockhand": {
+    "text": "海島行者（只要防禦牌手操控海島，此生物便不能被阻擋。）\n{1}，{T}：橫置目標地。",
+    "oracleText": "Islandwalk (This creature can't be blocked as long as defending player controls an Island.)\n{1}, {T}: Tap target land.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4716,
+    "oracleId": "3d199876-09f3-4e14-8598-79f0ec2afafa",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Rise and Shine": {
+    "text": "目標由你操控的非生物神器成為0/0神器生物。在每個以此法成為生物的神器上各放置四個+1/+1指示物。\n超載{4}{U}{U}（你可以支付此咒語的超載費用來施放它。若你如此作，則將其敘述中的「目標」更改為「每個」。）",
+    "oracleText": "Target noncreature artifact you control becomes a 0/0 artifact creature. Put four +1/+1 counters on each artifact that became a creature this way.\nOverload {4}{U}{U} (You may cast this spell for its overload cost. If you do, change \"target\" in its text to \"each.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4717,
+    "oracleId": "59925461-99f5-4217-8343-49c9b1ce24c1",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Recalibrate": {
+    "text": "將目標生物移回其擁有者手上。如果你本回閤中棄過牌，則抓一張牌。",
+    "oracleText": "Return target creature to its owner's hand. If you've discarded a card this turn, draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4718,
+    "oracleId": "e6331b3a-81a8-48e8-8a28-237d381f9062",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Raving Visionary": {
+    "text": "{U}，{T}：抓一張牌，然後棄一張牌。\n躁狂～{2}{U}，{T}：抓一張牌。只能於你墳墓場中牌的牌張類別有四種或更多時起動。",
+    "oracleText": "{U}, {T}: Draw a card, then discard a card.\nDelirium — {2}{U}, {T}: Draw a card. Activate only if there are four or more card types among cards in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4719,
+    "oracleId": "83157972-3a0b-40e2-a80a-7bfb2a8627ee",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Phantasmal Dreadmaw": {
+    "text": "踐踏\n當此生物成為咒語或異能的目標時，將它犧牲。",
+    "oracleText": "Trample\nWhen this creature becomes the target of a spell or ability, sacrifice it.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4720,
+    "oracleId": "cbde4b9d-1549-4892-b8ca-38256a6ac1ba",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Parcel Myr": {
+    "text": "{2}，犧牲此生物：抓一張牌。",
+    "oracleText": "{2}, Sacrifice this creature: Draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4721,
+    "oracleId": "9e660f66-0a94-4694-95e0-25296799b193",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Mystic Redaction": {
+    "text": "在你的維持開始時，占卜1。\n每當你棄一張牌時，每位對手各磨兩張牌。（該牌手將其牌庫頂的兩張牌置入其墳墓場。）",
+    "oracleText": "At the beginning of your upkeep, scry 1.\nWhenever you discard a card, each opponent mills two cards. (They put the top two cards of their library into their graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4722,
+    "oracleId": "c2e54e13-dad5-4d01-850f-a1735eea54ae",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Mental Journey": {
+    "text": "抓三張牌。\n循環基本地{1}{U}（{1}{U}，棄掉此牌：從你的牌庫中搜尋一張基本地牌，展示該牌，將它置於你手上，然後洗牌。）",
+    "oracleText": "Draw three cards.\nBasic landcycling {1}{U} ({1}{U}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4723,
+    "oracleId": "94e71162-7c9d-46f4-90e8-413a1b08a198",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Barbed Spike": {
+    "text": "當此武具進場時，派出一個1/1無色，具飛行異能的振翼機衍生神器生物，然後將此武具貼附於其上。\n佩帶此武具的生物得+1/+0。\n佩帶{2}",
+    "oracleText": "When this Equipment enters, create a 1/1 colorless Thopter artifact creature token with flying, then attach this Equipment to it.\nEquipped creature gets +1/+0.\nEquip {2}",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4724,
+    "oracleId": "28b22709-3e69-4eb7-8a3d-b75b6e65f30e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Lose Focus": {
+    "text": "覆誦{U}（當你施放此咒語時，每支付一次覆誦費用，便將它複製一次。你可以為每個複製品選擇新的目標。）\n除非目標咒語的操控者支付{2}，否則反擊之。",
+    "oracleText": "Replicate {U} (When you cast this spell, copy it for each time you paid its replicate cost. You may choose new targets for the copies.)\nCounter target spell unless its controller pays {2}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4725,
+    "oracleId": "1cea6439-7ae5-4887-8c33-7da9fb36e2d4",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Silverbluff Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{U}或{R}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {U} or {R}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4726,
+    "oracleId": "081bfd50-a436-463b-9d2c-5bc8a32b387c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Junk Winder": {
+    "text": "衍生物共鳴（你每操控一個衍生物，此咒語便減少{1}來施放。）\n每當一個由你操控的衍生物進場時，橫置目標由對手操控的非地永久物。它於其操控者的下一個重置步驟中不能重置。",
+    "oracleText": "Affinity for tokens (This spell costs {1} less to cast for each token you control.)\nWhenever a token you control enters, tap target nonland permanent an opponent controls. It doesn't untap during its controller's next untap step.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4728,
+    "oracleId": "5b677e88-bcc9-4a55-9c89-8bbd0e2344dc",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Murktide Regent": {
+    "text": "掘穴（你於施放此咒語時每從你墳墓場中放逐一張牌，就能為此咒語支付{1}。）\n飛行\n此生物進場時上面有數個+1/+1指示物，其數量為以其放逐的瞬間和法術牌數量。\n每當一張瞬間或法術牌離開你的墳墓場時，在此生物上放置一個+1/+1指示物。",
+    "oracleText": "Delve (Each card you exile from your graveyard while casting this spell pays for {1}.)\nFlying\nThis creature enters with a +1/+1 counter on it for each instant and sorcery card exiled with it.\nWhenever an instant or sorcery card leaves your graveyard, put a +1/+1 counter on this creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4729,
+    "oracleId": "7f993ac7-c2cd-413c-a106-2c051a77ebf6",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Inevitable Betrayal": {
+    "text": "延緩3～{1}{U}{U}（支付{1}{U}{U}並將此牌放逐且其上有三個計時指示物，而非從你手上施放之。在你的維持開始時，從其上移去一個計時指示物。當移去最後一個時，你可以施放它且不需支付其法術力費用。）\n從目標對手的牌庫中搜尋一張生物牌，並將該牌在你的操控下放進戰場。然後該牌手洗牌。",
+    "oracleText": "Suspend 3—{1}{U}{U} (Rather than cast this card from your hand, pay {1}{U}{U} and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost.)\nSearch target opponent's library for a creature card and put that card onto the battlefield under your control. Then that player shuffles.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4730,
+    "oracleId": "aa5e9269-b1db-4bf0-a548-24f999f60e44",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Hard Evidence": {
+    "text": "派出一個0/3藍色的蟹衍生生物。\n探查。（派出一個線索衍生物。它是具有「{2}，犧牲此衍生物：抓一張牌」的神器。）",
+    "oracleText": "Create a 0/3 blue Crab creature token.\nInvestigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4731,
+    "oracleId": "0728b195-2dfe-4d73-91ae-e658a97b0b9a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Ghost-Lit Drifter": {
+    "text": "飛行\n{2}{U}：另一個目標生物獲得飛行異能直到回合結束。\n魂力～{X}{U}，棄掉此牌：X個目標生物獲得飛行異能直到回合結束。",
+    "oracleText": "Flying\n{2}{U}: Another target creature gains flying until end of turn.\nChannel — {X}{U}, Discard this card: X target creatures gain flying until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4732,
+    "oracleId": "c8618fec-e124-4f42-b440-0f41a7de3d1f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Fractured Sanity": {
+    "text": "每位對手各磨十四張牌。\n循環{1}{U}（{1}{U}，棄掉此牌：抓一張牌。）\n當你循環此牌時，每位對手各磨四張牌。",
+    "oracleText": "Each opponent mills fourteen cards.\nCycling {1}{U} ({1}{U}, Discard this card: Draw a card.)\nWhen you cycle this card, each opponent mills four cards.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4733,
+    "oracleId": "cf32524e-0df9-4af8-9371-84feeb0a86c6",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Foul Watcher": {
+    "text": "飛行\n當此生物進場時，刺探1。（檢視你牌庫頂的牌。你可以將該牌置入你的墳墓場。）\n躁狂～只要你墳墓場中牌的牌張類別有四種或更多，此生物便得+1/+0。",
+    "oracleText": "Flying\nWhen this creature enters, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)\nDelirium — This creature gets +1/+0 as long as there are four or more card types among cards in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4734,
+    "oracleId": "b50dd71f-3664-41d2-be06-57729064a591",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Floodhound": {
+    "text": "{3}，{T}：探查。（派出一個線索衍生物。它是具有「{2}，犧牲此衍生物：抓一張牌」的神器。）",
+    "oracleText": "{3}, {T}: Investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4735,
+    "oracleId": "6dd8ba09-f117-4514-9e09-f9f9f5fb5025",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Filigree Attendant": {
+    "text": "飛行\n絲金隨員的力量等同於由你操控的神器數量。",
+    "oracleText": "Flying\nFiligree Attendant's power is equal to the number of artifacts you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4736,
+    "oracleId": "ab7c9e72-8f30-47f7-918c-cd3c0593d704",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Etherium Spinner": {
+    "text": "每當你施放法術力值等於或大於4的咒語時，派出一個1/1無色，具飛行異能的振翼機衍生神器生物。",
+    "oracleText": "Whenever you cast a spell with mana value 4 or greater, create a 1/1 colorless Thopter artifact creature token with flying.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4737,
+    "oracleId": "b501128b-2797-401b-8aec-923050081cae",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arcbound Prototype": {
+    "text": "套件2（此生物進場時上面有兩個+1/+1指示物。當它死去時，你可以將它的+1/+1指示物置於目標神器生物上。）",
+    "oracleText": "Modular 2 (This creature enters with two +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4738,
+    "oracleId": "ac1003b4-1f7c-4801-9dd3-5cb7d9881af8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Dress Down": {
+    "text": "閃現\n當此結界進場時，抓一張牌。\n生物均失去所有異能。\n在結束步驟開始時，犧牲此結界。",
+    "oracleText": "Flash\nWhen this enchantment enters, draw a card.\nCreatures lose all abilities.\nAt the beginning of the end step, sacrifice this enchantment.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4739,
+    "oracleId": "c1cbbda0-e02b-4b9c-8669-ea87ca629520",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Burdened Aerialist": {
+    "text": "當此生物進場時，派出一個珍寶衍生物。（它是具有「{T}，犧牲此衍生物：加一點任意顏色的法術力」的神器。）\n每當你犧牲一個衍生物時，此生物獲得飛行異能直到回合結束。",
+    "oracleText": "When this creature enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nWhenever you sacrifice a token, this creature gains flying until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4740,
+    "oracleId": "dd39cccb-095c-4ef4-8423-f4d328849295",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Unbounded Potential": {
+    "text": "選擇一項～\n•在至多兩個目標生物上各放置一個+1/+1指示物。\n•增殖。（選擇任意數量的永久物和／或牌手，然後為其已有之每種指示物各多放置一個同類的指示物。）\n打包{3}{W}（若你支付打包費用，則兩項都選。）",
+    "oracleText": "Choose one —\n• Put a +1/+1 counter on each of up to two target creatures.\n• Proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)\nEntwine {3}{W} (Choose both if you pay the entwine cost.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4741,
+    "oracleId": "d9ae08cf-eef0-407a-ad2c-08b4c89f99f0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Rustvale Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{R}或{W}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {R} or {W}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4742,
+    "oracleId": "a3faf70d-c034-4692-9e92-1922029e3852",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Razortide Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{W}或{U}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {W} or {U}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4743,
+    "oracleId": "6cb37ac1-dd11-4a8c-bca5-ef44d828059f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Timeless Dragon": {
+    "text": "飛行\n循環平原{2}（{2}，棄掉此牌：從你牌庫中搜尋一張平原牌，展示該牌，將它置於你手上，然後洗牌。）\n永生{2}{W}{W}（{2}{W}{W}，從你的墳墓場放逐此牌：派出一個為其複製品的衍生物，但它是4/4黑色靈俑／龍，且沒有法術力費用。永生的時機視同法術。）",
+    "oracleText": "Flying\nPlainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)\nEternalize {2}{W}{W} ({2}{W}{W}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a 4/4 black Zombie Dragon with no mana cost. Eternalize only as a sorcery.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4744,
+    "oracleId": "a5ae93e9-0385-47fd-9d8f-306e9a6b7fe6",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Thraben Watcher": {
+    "text": "飛行，警戒\n由你操控且非衍生物的其他生物得+1/+1並具有警戒異能。",
+    "oracleText": "Flying, vigilance\nOther nontoken creatures you control get +1/+1 and have vigilance.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4745,
+    "oracleId": "53cd9d9f-c1a7-404e-9934-4542415e3431",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Soul of Migration": {
+    "text": "飛行\n當此生物進場時，派出兩個1/1白色，具飛行異能的鳥衍生生物。\n呼魂{3}{W}（你可以支付此咒語的呼魂費用來施放它。若你如此作，當它進場時便犧牲之。）",
+    "oracleText": "Flying\nWhen this creature enters, create two 1/1 white Bird creature tokens with flying.\nEvoke {3}{W} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4746,
+    "oracleId": "f90ebf35-08f9-4277-92d9-75165f32a84e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Skyblade's Boon": {
+    "text": "結附於生物\n所結附的生物得+1/+1且具有飛行異能。\n{2}{W}：將飛空劍恩澤移回其擁有者手上。只能于飛空劍恩澤在戰場上或在你的墳墓場中時起動。",
+    "oracleText": "Enchant creature\nEnchanted creature gets +1/+1 and has flying.\n{2}{W}: Return Skyblade's Boon to its owner's hand. Activate only if Skyblade's Boon is on the battlefield or in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4747,
+    "oracleId": "a03a9ddb-595a-4dff-b7cb-7ad60655f1ee",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Serra's Emissary": {
+    "text": "飛行\n於此生物進場時，選擇一種牌張類別。\n你和由你操控的生物具有反該牌張類別保護異能。",
+    "oracleText": "Flying\nAs this creature enters, choose a card type.\nYou and creatures you control have protection from the chosen card type.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4748,
+    "oracleId": "7a56c6e1-0509-4783-9b29-cf3163977166",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arcbound Mouser": {
+    "text": "繫命\n套件1（此生物進場時上面有一個+1/+1指示物。當它死去時，你可以將它的+1/+1指示物置於目標神器生物上。）",
+    "oracleText": "Lifelink\nModular 1 (This creature enters with a +1/+1 counter on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4749,
+    "oracleId": "5e59199c-facc-46b4-9681-988de0cfaba2",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Search the Premises": {
+    "text": "每當一個生物攻擊你或由你操控的鵬洛客時，探查。（派出一個線索衍生物。它是具有「{2}，犧牲此衍生物：抓一張牌」的神器。）",
+    "oracleText": "Whenever a creature attacks you or a planeswalker you control, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4750,
+    "oracleId": "0232418d-1c52-4573-b488-c62345ca1c8d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Scour the Desert": {
+    "text": "將目標生物牌從你的墳墓場放逐。派出X個1/1白色，具飛行異能的鳥衍生生物，X為所放逐之牌的防禦力。",
+    "oracleText": "Exile target creature card from your graveyard. Create X 1/1 white Bird creature tokens with flying, where X is the exiled card's toughness.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4751,
+    "oracleId": "86c9e08a-397a-4c24-8f4c-48a648889399",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sanctifier en-Vec": {
+    "text": "反黑保護，反紅保護\n當此生物進場時，放逐所有墳墓場中所有為黑色或紅色的牌。\n如果某為黑色或紅色之永久物、咒語或不在戰場上的牌將進入墳墓場，則改為將它放逐。",
+    "oracleText": "Protection from black and from red\nWhen this creature enters, exile all cards that are black or red from all graveyards.\nIf a black or red permanent, spell, or card not on the battlefield would be put into a graveyard, exile it instead.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4752,
+    "oracleId": "810d3afe-c644-444f-a4d9-88b323f0b581",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Resurgent Belief": {
+    "text": "延緩2～{1}{W}（支付{1}{W}並將此牌放逐且其上有兩個計時指示物，而非從你手上施放之。在你的維持開始時，從其上移去一個計時指示物。當移去最後一個時，你可以施放它且不需支付其法術力費用。）\n將所有結界牌從你的墳墓場移回戰場。（沒有東西可結附的靈氣會留在你的墳墓場中。）",
+    "oracleText": "Suspend 2—{1}{W} (Rather than cast this card from your hand, pay {1}{W} and exile it with two time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost.)\nReturn all enchantment cards from your graveyard to the battlefield. (Auras with nothing to enchant remain in your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4753,
+    "oracleId": "0fcfef04-a954-4423-82b0-c70dc64a8fbc",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Thornglint Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{G}或{W}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {G} or {W}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4754,
+    "oracleId": "99720c65-be96-4220-8ed4-720660bf6928",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Power Depot": {
+    "text": "此地須橫置進場。\n{T}：加{C}。\n{T}：加一點任意顏色的法術力。此法術力只能用來施放神器咒語，或是起動神器的異能。\n套件1",
+    "oracleText": "This land enters tapped.\n{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast artifact spells or activate abilities of artifacts.\nModular 1",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4756,
+    "oracleId": "64687880-03f9-4f38-985b-1027c797e33f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Yavimaya, Cradle of Growth": {
+    "text": "每個地均額外具有樹林此地類別。",
+    "oracleText": "Each land is a Forest in addition to its other land types.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4757,
+    "oracleId": "8dd5f5af-d2d8-4356-8617-8381081b930c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Solitude": {
+    "text": "閃現\n繫命\n當此生物進場時，放逐至多另一個目標生物。該生物的操控者獲得等同於其力量的生命。\n呼魂～從你手上放逐一張白色牌。",
+    "oracleText": "Flash\nLifelink\nWhen this creature enters, exile up to one other target creature. That creature's controller gains life equal to its power.\nEvoke—Exile a white card from your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4758,
+    "oracleId": "dcb9c2a7-ae54-4ddc-a567-640bf4bf4366",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Prismatic Ending": {
+    "text": "聚輝～如果目標非地永久物的法術力值等於或小於施放此咒語支付的法術力顏色數量，則放逐該非地永久物。",
+    "oracleText": "Converge — Exile target nonland permanent if its mana value is less than or equal to the number of colors of mana spent to cast this spell.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4760,
+    "oracleId": "2cb98ca9-d7bb-416b-a17e-ee5f8e4d78f2",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Mistvault Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{U}或{B}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {U} or {B}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4761,
+    "oracleId": "33ee23bc-6327-4a54-a704-dfd83be36bb5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Goldmire Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{W}或{B}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {W} or {B}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4762,
+    "oracleId": "c9b7ea9c-3bcb-4538-aa25-cdb82a52037e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Drossforge Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{B}或{R}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {B} or {R}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4763,
+    "oracleId": "44b83535-fdbf-4307-bf53-ca20470a768d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Darkmoss Bridge": {
+    "text": "此地須橫置進場。\n不滅\n{T}：加{B}或{G}。",
+    "oracleText": "This land enters tapped.\nIndestructible\n{T}: Add {B} or {G}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4764,
+    "oracleId": "2065cada-4078-41c4-9e06-2460d2a2e8ee",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Zabaz, the Glimmerwasp": {
+    "text": "套件1\n如果某套件觸發式異能將在一個由你操控的生物上放置一個或數個+1/+1指示物，則改為在其上放置該數量加一的+1/+1指示物。\n{R}：消滅目標由你操控的神器。\n{W}：札巴茲獲得飛行異能直到回合結束。",
+    "oracleText": "Modular 1\nIf a modular triggered ability would put one or more +1/+1 counters on a creature you control, that many plus one +1/+1 counters are put on it instead.\n{R}: Destroy target artifact you control.\n{W}: Zabaz gains flying until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4765,
+    "oracleId": "549dc9f3-1fda-4ad3-87bc-8a990800380b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Void Mirror": {
+    "text": "每當任一牌手施放咒語，若施放它時未支付過有色法術力，則反擊該咒語。",
+    "oracleText": "Whenever a player casts a spell, if no colored mana was spent to cast it, counter that spell.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4766,
+    "oracleId": "08aaafc7-5fc0-4c28-a361-2a22536ec080",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Vectis Gloves": {
+    "text": "佩帶此武具的生物得+2/+0且具有神器地行者異能。（只要防禦牌手操控神器地，它便不能被阻擋。）\n佩帶{2}",
+    "oracleText": "Equipped creature gets +2/+0 and has artifact landwalk. (It can't be blocked as long as defending player controls an artifact land.)\nEquip {2}",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4767,
+    "oracleId": "41074ef0-8686-41b5-9b99-7103192da915",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Piercing Rays": {
+    "text": "放逐目標已橫置的生物。\n預報～{2}{W}，從你手上展示此牌：橫置目標未橫置的生物。（只能於你的維持中起動此異能，且每回合限一次。）",
+    "oracleText": "Exile target tapped creature.\nForecast — {2}{W}, Reveal this card from your hand: Tap target untapped creature. (Activate this ability only during your upkeep and only once each turn.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4768,
+    "oracleId": "8960a213-cb72-4d67-bb4e-bcb1f657b944",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tormod's Cryptkeeper": {
+    "text": "警戒\n{T}，犧牲此生物：放逐目標牌手的墳墓場。",
+    "oracleText": "Vigilance\n{T}, Sacrifice this creature: Exile target player's graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4769,
+    "oracleId": "8c846841-1b44-4bc5-b803-76baaa217548",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Dermotaxi": {
+    "text": "壓印～於此載具進場時，從墳墓場放逐一張生物牌。\n橫置兩個由你操控且未橫置的生物：直到回合結束，此載具成為所放逐之牌的複製品，但它額外是載具神器。",
+    "oracleText": "Imprint — As this Vehicle enters, exile a creature card from a graveyard.\nTap two untapped creatures you control: Until end of turn, this Vehicle becomes a copy of the exiled card, except it's a Vehicle artifact in addition to its other types.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4770,
+    "oracleId": "b065ef1d-5cba-41f2-a4b4-a6ae479323d3",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Steel Dromedary": {
+    "text": "此生物須橫置進場，且上面有兩個+1/+1指示物。\n如果此生物上有+1/+1指示物，則它於你的重置步驟中不能重置。\n在你回合的戰鬥開始時，你可以將此生物上的一個+1/+1指示物移至目標生物上。",
+    "oracleText": "This creature enters tapped with two +1/+1 counters on it.\nThis creature doesn't untap during your untap step if it has a +1/+1 counter on it.\nAt the beginning of combat on your turn, you may move a +1/+1 counter from this creature onto target creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4772,
+    "oracleId": "40fa5656-354f-47f9-ba8d-40291ee5b40e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "The Underworld Cookbook": {
+    "text": "{T}，棄一張牌：派出一個食品衍生物。（它是具有「{2}，{T}，犧牲此衍生物：你獲得3點生命」的神器。）\n{4}，{T}，犧牲此神器：將目標生物牌從你的墳墓場移回你手上。",
+    "oracleText": "{T}, Discard a card: Create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\n{4}, {T}, Sacrifice this artifact: Return target creature card from your graveyard to your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4773,
+    "oracleId": "37d5c720-d090-44bc-91df-0a7bab79a03e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sol Talisman": {
+    "text": "延緩3～{1}（支付{1}並將此牌放逐且其上有三個計時指示物，而非從你手上施放之。在你的維持開始時，從其上移去一個計時指示物。當移去最後一個時，你可以施放它且不需支付其法術力費用。）\n{T}：加{C}{C}。",
+    "oracleText": "Suspend 3—{1} (Rather than cast this card from your hand, pay {1} and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost.)\n{T}: Add {C}{C}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4774,
+    "oracleId": "867f0cdf-cf75-40f0-bf1e-ccb92e55e9a3",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sojourner's Companion": {
+    "text": "神器共鳴\n循環神器地{2}（{2}，棄掉此牌：從你的牌庫中搜尋一張神器地牌，展示該牌，將它置於你手上，然後洗牌。）",
+    "oracleText": "Affinity for artifacts\nArtifact landcycling {2} ({2}, Discard this card: Search your library for an artifact land card, reveal it, put it into your hand, then shuffle.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4775,
+    "oracleId": "1cbfe1f2-776b-429d-9a60-8da32058a927",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Scion of Draco": {
+    "text": "領土～由你操控的地中每有一種基本地類別，此咒語便減少{2}來施放。\n飛行\n對每個由你操控的生物而言，如果它為白色，則具有警戒異能；為藍色，則具有辟邪；為黑色，則具有繫命；為紅色，則具有先攻；為綠色，則具有踐踏。",
+    "oracleText": "Domain — This spell costs {2} less to cast for each basic land type among lands you control.\nFlying\nEach creature you control has vigilance if it's white, hexproof if it's blue, lifelink if it's black, first strike if it's red, and trample if it's green.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4778,
+    "oracleId": "fd547632-a29a-4dad-a9da-155882391815",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sanctuary Raptor": {
+    "text": "飛行\n每當此生物攻擊時，若你操控三個或更多衍生物，則直到回合結束，此生物得+2/+0且獲得先攻異能。",
+    "oracleText": "Flying\nWhenever this creature attacks, if you control three or more tokens, this creature gets +2/+0 and gains first strike until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4779,
+    "oracleId": "6af53351-ad10-4774-9b5c-7b58bea65bbc",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Ornithopter of Paradise": {
+    "text": "飛行\n{T}：加一點任意顏色的法術力。",
+    "oracleText": "Flying\n{T}: Add one mana of any color.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4780,
+    "oracleId": "3a940dfa-a026-4969-8981-ef90cdfbe9ef",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Nettlecyst": {
+    "text": "活化武器（當此武具進場時，派出一個0/0黑色非瑞人／病菌衍生生物，然後將它貼附於其上。）\n你每操控一個神器和／或結界，佩帶此武具的生物便得+1/+1。\n佩帶{2}",
+    "oracleText": "Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +1/+1 for each artifact and/or enchantment you control.\nEquip {2}",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4781,
+    "oracleId": "04c7f4fe-2098-4311-866d-6733c08d5178",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Myr Scrapling": {
+    "text": "犧牲此生物：在目標生物上放置一個+1/+1指示物。",
+    "oracleText": "Sacrifice this creature: Put a +1/+1 counter on target creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4782,
+    "oracleId": "1a4ffc1e-2f5e-446a-b1e8-32385b3c083b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Out of Time": {
+    "text": "當此結界進場時，重置所有生物，然後將它們躍離直到此結界離開戰場為止。每有一個生物以此法躍離，便在此結界上放置一個計時指示物。\n消逝（在你的維持開始時，從此結界上移去一個計時指示物。當移去最後一個時，將它犧牲。）",
+    "oracleText": "When this enchantment enters, untap all creatures, then those creatures phase out until this enchantment leaves the battlefield. Put a time counter on this enchantment for each creature that phased out this way.\nVanishing (At the beginning of your upkeep, remove a time counter from this enchantment. When the last is removed, sacrifice it.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4783,
+    "oracleId": "8491de1e-dc37-4a89-b4f7-56a2c668f0fc",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Monoskelion": {
+    "text": "此生物進場時上面有一個+1/+1指示物。\n{1}，從此生物上移去一個+1/+1指示物：它對任意一個目標造成1點傷害。",
+    "oracleText": "This creature enters with a +1/+1 counter on it.\n{1}, Remove a +1/+1 counter from this creature: It deals 1 damage to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4784,
+    "oracleId": "c16d79d9-c159-421f-90a2-13313a1de5f6",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Liquimetal Torque": {
+    "text": "{T}：加{C}。\n{T}：直到回合結束，目標非地永久物成為神器，且仍具有原本類別。",
+    "oracleText": "{T}: Add {C}.\n{T}: Target nonland permanent becomes an artifact in addition to its other types until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4785,
+    "oracleId": "b7d4b7dd-fbb1-4ca3-875f-ef13a95e66ad",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Kaldra Compleat": {
+    "text": "活化武器\n不滅\n佩帶此武具的生物得+5/+5且具有先攻、踐踏、不滅、敏捷與「每當此生物對任一生物造成戰鬥傷害時，放逐後者。」\n佩帶{7}",
+    "oracleText": "Living weapon\nIndestructible\nEquipped creature gets +5/+5 and has first strike, trample, indestructible, haste, and \"Whenever this creature deals combat damage to a creature, exile that creature.\"\nEquip {7}",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4786,
+    "oracleId": "7359e82b-db79-488d-a1d4-75a00f12a4cf",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Batterbone": {
+    "text": "活化武器（當此武具進場時，派出一個0/0黑色非瑞人／病菌衍生生物，然後將它貼附於其上。）\n佩帶此武具的生物得+1/+1且具有警戒與繫命異能。\n佩帶{5}",
+    "oracleText": "Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +1/+1 and has vigilance and lifelink.\nEquip {5}",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4787,
+    "oracleId": "389d459d-446a-4b84-82b2-a30fe6ced11f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Altar of the Goyf": {
+    "text": "每當一個由你操控的生物單獨攻擊時，它得+X/+X直到回合結束，X為所有墳墓場中牌的牌張類別數量。\n由你操控的拉高耶夫生物具有踐踏異能。",
+    "oracleText": "Whenever a creature you control attacks alone, it gets +X/+X until end of turn, where X is the number of card types among cards in all graveyards.\nLhurgoyf creatures you control have trample.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4790,
+    "oracleId": "51d7bd70-0874-41d4-94bc-c3e14c968668",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Nykthos Paragon": {
+    "text": "每當你獲得生命時，你可以在每個由你操控的生物上各放置等量的+1/+1指示物。每回合只能如此作一次。",
+    "oracleText": "Whenever you gain life, you may put that many +1/+1 counters on each creature you control. Do this only once each turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4791,
+    "oracleId": "367ac7e2-5056-48f3-a296-87d6cb1f7b54",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Academy Manufactor": {
+    "text": "如果你將派出一個線索，食品或珍寶衍生物，則改為這三種衍生物各派出一個。",
+    "oracleText": "If you would create a Clue, Food, or Treasure token, instead create one of each.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4792,
+    "oracleId": "f36d1d8b-8303-44a9-ab56-531931641ea2",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Yusri, Fortune's Flame": {
+    "text": "飛行\n每當亞司利攻擊時，選擇一個1到5之間的數字。擲等量的硬幣。你每猜對一擲，便抓一張牌。你每猜錯一擲，亞司利便對你造成2點傷害。如果你以此法猜對五擲，則本回閤中，你可以從你手上施放咒語，且不需支付其法術力費用。",
+    "oracleText": "Flying\nWhenever Yusri attacks, choose a number between 1 and 5. Flip that many coins. For each flip you win, draw a card. For each flip you lose, Yusri deals 2 damage to you. If you won five flips this way, you may cast spells from your hand this turn without paying their mana costs.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4793,
+    "oracleId": "2c0a0a7d-b12f-47c8-a6a6-d046f999ec6b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Wavesifter": {
+    "text": "飛行\n當此生物進場時，探查兩次。（探查的流程，是派出一個線索衍生物。它是具有「{2}，犧牲此衍生物：抓一張牌」的神器。）\n呼魂{G}{U}（你可以支付此咒語的呼魂費用來施放它。若你如此作，當它進場時便犧牲之。）",
+    "oracleText": "Flying\nWhen this creature enters, investigate twice. (To investigate, create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nEvoke {G}{U} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4794,
+    "oracleId": "d1ec1e4e-faa6-4afc-9e00-a3327105c11b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Territorial Kavu": {
+    "text": "領土～據地卡甫的力量和防禦力各等同於由你操控的地中基本地類別之數量。\n每當此生物攻擊時，選擇一項～\n•棄一張牌。若你如此作，則抓一張牌。\n•將至多一張目標牌從墳墓場放逐。",
+    "oracleText": "Domain — Territorial Kavu's power and toughness are each equal to the number of basic land types among lands you control.\nWhenever this creature attacks, choose one —\n• Discard a card. If you do, draw a card.\n• Exile up to one target card from a graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4795,
+    "oracleId": "5f0be4ce-898e-4849-ab8f-a85fb05c3017",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Terminal Agony": {
+    "text": "消滅目標生物。\n瘋魔{B}{R}（如果你棄掉此牌，將之棄到放逐區。當你如此作時，支付其瘋魔費用施放之，否則便將其置入你的墳墓場。）",
+    "oracleText": "Destroy target creature.\nMadness {B}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+    "source": "Forge Data",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4796,
+    "oracleId": "b69e68e7-0612-40f8-a40a-9c4e77653442",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sythis, Harvest's Hand": {
+    "text": "每當你施放結界咒語時，你獲得1點生命且抓一張牌。",
+    "oracleText": "Whenever you cast an enchantment spell, you gain 1 life and draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4797,
+    "oracleId": "0fc64fd6-f057-4056-9dca-47accb7ff036",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Storm God's Oracle": {
+    "text": "{1}：此生物得+1/-1直到回合結束。\n當此生物死去時，它對任意一個目標造成3點傷害。",
+    "oracleText": "{1}: This creature gets +1/-1 until end of turn.\nWhen this creature dies, it deals 3 damage to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4798,
+    "oracleId": "21613fac-d959-44ba-9bcb-0a30b5e6545e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Road": {
+    "text": "從你牌庫中搜尋一張基本地牌，將之橫置放進戰場，然後洗牌。",
+    "oracleText": "Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4799,
+    "oracleId": "f18d8939-7ee8-4a44-a1c8-6ae3a08f52fd",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Ruin": {
+    "text": "餘響（此咒語只能從你墳墓場中施放。然後將它放逐。）\n廢墟對目標生物造成傷害，其數量等同於由你操控的地數量。",
+    "oracleText": "Aftermath (Cast this spell only from your graveyard. Then exile it.)\nRuin deals damage to target creature equal to the number of lands you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4800,
+    "oracleId": "f18d8939-7ee8-4a44-a1c8-6ae3a08f52fd",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Ravenous Squirrel": {
+    "text": "每當你犧牲一個神器或生物時，在此生物上放置一個+1/+1指示物。\n{1}{B}{G}，犧牲一個神器或生物：你獲得1點生命且抓一張牌。",
+    "oracleText": "Whenever you sacrifice an artifact or creature, put a +1/+1 counter on this creature.\n{1}{B}{G}, Sacrifice an artifact or creature: You gain 1 life and draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4801,
+    "oracleId": "8fb48d65-406b-4231-83ea-9cf3bb8dff76",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Rakdos Headliner": {
+    "text": "敏捷\n返響～棄一張牌。（在你的維持開始時，若你在你前一個維持開始後才操控它，則除非你支付其返響費用，否則犧牲之。）",
+    "oracleText": "Haste\nEcho—Discard a card. (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4802,
+    "oracleId": "a8828c17-190b-4e64-a0f2-8d14c013d692",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Marble Gargoyle": {
+    "text": "飛行\n{W}：此生物得+0/+1直到回合結束。",
+    "oracleText": "Flying\n{W}: This creature gets +0/+1 until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4803,
+    "oracleId": "8a1fd464-760c-43d9-829a-424945d91eb9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Prophetic Titan": {
+    "text": "躁狂～當此生物進場時，選擇一項。如果你墳墓場中牌的牌張類別有四種或更多，則改為兩項都選。\n•此生物對任意一個目標造成4點傷害。\n•檢視你牌庫頂的四張牌。將其中一張置於你手上，其餘則以隨機順序置於你牌庫底。",
+    "oracleText": "Delirium — When this creature enters, choose one. If there are four or more card types among cards in your graveyard, choose both instead.\n• This creature deals 4 damage to any target.\n• Look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in a random order.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4805,
+    "oracleId": "224f5f1a-4f31-4935-bf5a-910fd0a666a1",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Captured by Lagacs": {
+    "text": "結附於生物\n所結附的生物不能進行攻擊或阻擋。\n當此靈氣進場時，支援2。（在至多兩個目標生物上各放置一個+1/+1指示物。）",
+    "oracleText": "Enchant creature\nEnchanted creature can't attack or block.\nWhen this Aura enters, support 2. (Put a +1/+1 counter on each of up to two target creatures.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4806,
+    "oracleId": "db1a29f9-1608-4502-a366-89048c2e9bda",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Priest of Fell Rites": {
+    "text": "{T}，支付3點生命，犧牲此生物：將目標生物牌從你的墳墓場移回戰場。只能於法術時機起動。\n破墳{3}{W}{B}（{3}{W}{B}：將此牌從你的墳墓場移回戰場。它獲得敏捷異能。在下一個結束步驟開始時，或若它將離開戰場，將它放逐。破墳的時機視同法術。）",
+    "oracleText": "{T}, Pay 3 life, Sacrifice this creature: Return target creature card from your graveyard to the battlefield. Activate only as a sorcery.\nUnearth {3}{W}{B} ({3}{W}{B}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4809,
+    "oracleId": "ec6ccd8f-cc75-4a50-8639-f4ec31a280aa",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Piru, the Volatile": {
+    "text": "飛行，繫命\n在你的維持開始時，除非你支付{R}{W}{B}，否則犧牲琵露。\n當琵露死去時，它對每個非傳奇的生物各造成7點傷害。",
+    "oracleText": "Flying, lifelink\nAt the beginning of your upkeep, sacrifice Piru unless you pay {R}{W}{B}.\nWhen Piru dies, it deals 7 damage to each nonlegendary creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4810,
+    "oracleId": "dcd13eab-7ed7-4e95-bdae-d140c1ff84df",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Moderation": {
+    "text": "你每回合所施放的咒語不能多於一個。\n每當你施放咒語時，抓一張牌。",
+    "oracleText": "You can't cast more than one spell each turn.\nWhenever you cast a spell, draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4811,
+    "oracleId": "57f94fcb-a224-410b-a38e-3ed8cca7d0c7",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Master of Death": {
+    "text": "當此生物進場時，刺探2。（檢視你牌庫頂的兩張牌，然後將其中任意數量置入你墳墓場，其餘則以任意順序置於你牌庫頂。）\n在你的維持開始時，若此牌在你的墳墓場中，則你可以支付1點生命。若你如此作，則將它移回你手上。",
+    "oracleText": "When this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\nAt the beginning of your upkeep, if this card is in your graveyard, you may pay 1 life. If you do, return it to your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4812,
+    "oracleId": "3a16bdda-8499-47e4-b870-b9576f4c1a83",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Lonis, Cryptozoologist": {
+    "text": "每當另一個由你操控且非衍生物的生物進場時，探查。\n{T}，犧牲X個線索：目標對手展示其牌庫頂的X張牌。你可以將其中一張法術力值等於或小於X的非地永久物牌在你的操控下放進戰場。該牌手將其餘的牌以隨機順序置於其牌庫底。",
+    "oracleText": "Whenever another nontoken creature you control enters, investigate.\n{T}, Sacrifice X Clues: Target opponent reveals the top X cards of their library. You may put a nonland permanent card with mana value X or less from among them onto the battlefield under your control. That player puts the rest on the bottom of their library in a random order.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4813,
+    "oracleId": "0ee06ed0-717a-4bfa-b634-d00e013c1f16",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Lazotep Chancellor": {
+    "text": "每當你棄一張牌時，你可以支付{1}。若你如此作，則囤兵靈俑2。（在一個由你操控的軍隊上放置兩個+1/+1指示物。它也是靈俑。如果你未操控軍隊，則先派出一個0/0黑色靈俑／軍隊衍生生物。）",
+    "oracleText": "Whenever you discard a card, you may pay {1}. If you do, amass Zombies 2. (Put two +1/+1 counters on an Army you control. It's also a Zombie. If you don't control an Army, create a 0/0 black Zombie Army creature token first.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4814,
+    "oracleId": "c3e67b8f-1c91-4a2f-b924-35bbaff4bab9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Grist, the Hunger Tide": {
+    "text": "只要格蕊斯不在戰場上，它便額外是1/1昆蟲生物。\n+1：派出一個1/1，黑綠雙色的昆蟲衍生生物，然後磨一張牌。如果以此法磨掉一張昆蟲牌，則在格蕊斯上放置一個忠誠指示物，並重復此流程。\n-2：你可以犧牲一個生物。當你如此作時，消滅目標生物或鵬洛客。\n-5：每位對手各失去等同於你墳墓場中生物牌數量的生命。",
+    "oracleText": "As long as Grist isn't on the battlefield, it's a 1/1 Insect creature in addition to its other types.\n[+1]: Create a 1/1 black and green Insect creature token, then mill a card. If an Insect card was milled this way, put a loyalty counter on Grist and repeat this process.\n[−2]: You may sacrifice a creature. When you do, destroy target creature or planeswalker.\n[−5]: Each opponent loses life equal to the number of creature cards in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4815,
+    "oracleId": "0efb0d7e-dea0-4817-a243-15066e9ef333",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Graceful Restoration": {
+    "text": "選擇一項～\n•將目標生物牌從你的墳墓場移回戰場，且上面額外有一個+1/+1指示物。\n•將至多兩張目標力量等於或小於2的生物牌從你的墳墓場移回戰場。",
+    "oracleText": "Choose one —\n• Return target creature card from your graveyard to the battlefield with an additional +1/+1 counter on it.\n• Return up to two target creature cards with power 2 or less from your graveyard to the battlefield.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4817,
+    "oracleId": "59bfeacc-f80b-49fc-8a35-f7e1ad905161",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arcbound Javelineer": {
+    "text": "{T}，從此生物上移去X個+1/+1指示物：它對目標進行攻擊或阻擋的生物造成X點傷害。\n套件1（此生物進場時上面有一個+1/+1指示物。當它死去時，你可以將它的+1/+1指示物置於目標神器生物上。）",
+    "oracleText": "{T}, Remove X +1/+1 counters from this creature: It deals X damage to target attacking or blocking creature.\nModular 1 (This creature enters with a +1/+1 counter on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4820,
+    "oracleId": "48e3f6dd-68ab-420a-ad4d-fe7ee39486d3",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Breathless Knight": {
+    "text": "飛行，繫命\n每當此生物或另一個由你操控的生物進場時，若該生物是從墳墓場進戰場或是由你從墳墓場施放之，則在此生物上放置一個+1/+1指示物。",
+    "oracleText": "Flying, lifelink\nWhenever this creature or another creature you control enters, if that creature entered from a graveyard or you cast it from a graveyard, put a +1/+1 counter on this creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4821,
+    "oracleId": "e15fb040-2e11-478e-87f1-55675d614f8e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Geyadrone Dihada": {
+    "text": "保護～反其上有腐化指示物的永久物\n+1：每位對手各失去2點生命且你獲得2點生命。在至多另一個目標生物或鵬洛客上放置一個腐化指示物。\n-3：獲得目標生物或鵬洛客的操控權直到回合結束。將之重置，並在其上放置一個腐化指示物。它獲得敏捷異能直到回合結束。\n-7：獲得所有其上有腐化指示物之永久物的操控權。",
+    "oracleText": "Protection from permanents with corruption counters on them\n[+1]: Each opponent loses 2 life and you gain 2 life. Put a corruption counter on up to one other target creature or planeswalker.\n[−3]: Gain control of target creature or planeswalker until end of turn. Untap it and put a corruption counter on it. It gains haste until end of turn.\n[−7]: Gain control of each permanent with a corruption counter on it.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4823,
+    "oracleId": "e1105d84-86b5-44ef-9efc-d994ee1c35cc",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "General Ferrous Rokiric": {
+    "text": "反單色辟邪\n每當你施放多色咒語時，派出一個4/4，紅白雙色的魔像衍生神器生物。",
+    "oracleText": "Hexproof from monocolored\nWhenever you cast a multicolored spell, create a 4/4 red and white Golem artifact creature token.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4824,
+    "oracleId": "64c15098-f893-44f2-bf7f-162db8ab80e9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Garth One-Eye": {
+    "text": "{T}：從消除魔障、腦力躍泉、驚駭、西瓦巨龍、再生新芽和黑蓮花中選擇一個牌名，且不得是此前選過的。派出一個具所選名稱之牌的複製品。你可以施放該複製品。（你依舊要支付其費用。）",
+    "oracleText": "{T}: Choose a card name that hasn't been chosen from among Disenchant, Braingeyser, Terror, Shivan Dragon, Regrowth, and Black Lotus. Create a copy of the card with the chosen name. You may cast the copy. (You still pay its costs.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4825,
+    "oracleId": "d8c4312e-03ae-43f3-b92c-4adb6875534c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Foundry Helix": {
+    "text": "犧牲一個永久物，以作為施放此咒語的額外費用。\n煅爐螺旋對任意一個目標造成4點傷害。如果所犧牲的永久物是神器，則你獲得4點生命。",
+    "oracleText": "As an additional cost to cast this spell, sacrifice a permanent.\nFoundry Helix deals 4 damage to any target. If the sacrificed permanent was an artifact, you gain 4 life.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4826,
+    "oracleId": "f4f66558-3c99-4488-ad2d-90626a922042",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Ethersworn Sphinx": {
+    "text": "神器共鳴（你每操控一個神器，此咒語便減少{1}來施放。）\n飛行\n傾曳（當你施放此咒語時，從你的牌庫頂開始放逐牌，直到放逐一張法術力值比此咒語低的非地牌為止。你可以施放該牌，且不需支付其法術力費用。將所放逐的牌以隨機順序置於牌庫底。）",
+    "oracleText": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nFlying\nCascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card with lesser mana value. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4827,
+    "oracleId": "71366469-04ea-4526-bf24-7abc02fdc5ab",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Drey Keeper": {
+    "text": "當此生物進場時，派出兩個1/1綠色松鼠衍生生物。\n{3}{B}：直到回合結束，由你操控的松鼠得+1/+0且獲得威懾異能。",
+    "oracleText": "When this creature enters, create two 1/1 green Squirrel creature tokens.\n{3}{B}: Squirrels you control get +1/+0 and gain menace until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4828,
+    "oracleId": "7223ef44-0bfb-4108-810d-134174ff26b0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Dihada's Ploy": {
+    "text": "抓兩張牌，然後棄一張牌。你獲得若干生命，其數量等同於你本回閤中所棄的牌數量。\n再起（你可以從你的墳墓場施放此牌，但必須支付其所需費用並額外棄一張牌。然後放逐此牌。）",
+    "oracleText": "Draw two cards, then discard a card. You gain life equal to the number of cards you've discarded this turn.\nJump-start (You may cast this card from your graveyard by discarding a card in addition to paying its other costs. Then exile this card.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4829,
+    "oracleId": "cc929343-db65-43d5-9bf6-9f0bd77c2cd8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Dakkon, Shadow Slayer": {
+    "text": "達肯進場時上面有數個忠誠指示物，其數量等同於由你操控的地數量。\n+1：刺探2。\n-3：放逐目標生物。\n-6：你可以將一張神器牌從你手上或你墳墓場放進戰場。",
+    "oracleText": "Dakkon enters with a number of loyalty counters on him equal to the number of lands you control.\n[+1]: Surveil 2.\n[−3]: Exile target creature.\n[−6]: You may put an artifact card from your hand or graveyard onto the battlefield.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4831,
+    "oracleId": "335b5302-2272-405a-b2b8-3943b3df335f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Combine Chrysalis": {
+    "text": "由你操控的衍生生物具有飛行異能。\n{2}{G}{U}，{T}，犧牲一個衍生物：派出一個4/4綠色野獸衍生生物。只能於法術時機起動。",
+    "oracleText": "Creature tokens you control have flying.\n{2}{G}{U}, {T}, Sacrifice a token: Create a 4/4 green Beast creature token. Activate only as a sorcery.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4832,
+    "oracleId": "a1cee8d7-f619-47b4-ba8c-faf3106d4e41",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Jewel-Eyed Cobra": {
+    "text": "死觸\n當此生物死去時，派出一個珍寶衍生物。（它是具有「{T}，犧牲此衍生物：加一點任意顏色的法術力」的神器。）",
+    "oracleText": "Deathtouch\nWhen this creature dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4833,
+    "oracleId": "bbfee53c-30a6-4ed0-beef-5c254be75fc5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Chrome Courier": {
+    "text": "飛行\n當此生物進場時，展示你牌庫頂的兩張牌。將其中一張置於你手上，另一張則置入你的墳墓場。如果你以此法將一張神器牌置於你手上，則你獲得3點生命。",
+    "oracleText": "Flying\nWhen this creature enters, reveal the top two cards of your library. Put one of them into your hand and the other into your graveyard. If you put an artifact card into your hand this way, you gain 3 life.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4834,
+    "oracleId": "a07ceaca-9964-4c24-937e-090b6643b327",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Late to Dinner": {
+    "text": "將目標生物牌從你的墳墓場移回戰場。派出一個食品衍生物。（它是具有「{2}，{T}，犧牲此衍生物：你獲得3點生命」的神器。）",
+    "oracleText": "Return target creature card from your graveyard to the battlefield. Create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4835,
+    "oracleId": "31bf199b-dfb1-428e-96a5-eb25104e2b43",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Carth the Lion": {
+    "text": "每當卡薩進場或一個由你操控的鵬洛客死去時，檢視你牌庫頂的七張牌。你可以展示其中的一張鵬洛客牌，並將它置於你手上。將其餘的牌以隨機順序置於你牌庫底。\n你起動之由鵬洛客具有的忠誠異能須額外支付[+1]來起動。",
+    "oracleText": "Whenever Carth enters or a planeswalker you control dies, look at the top seven cards of your library. You may reveal a planeswalker card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.\nPlaneswalkers' loyalty abilities you activate cost an additional [+1] to activate.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4836,
+    "oracleId": "e0709843-0a91-4a21-9512-d7481707f3c9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arcus Acolyte": {
+    "text": "延勢，繫命\n延生{G/W}（{G/W}，{T}：在此生物上放置一個+1/+1指示物。延生的時機視同法術。）\n每個由你操控且上面沒有+1/+1指示物的其他生物均具有延生{G/W}。",
+    "oracleText": "Reach, lifelink\nOutlast {G/W} ({G/W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.)\nEach other creature you control without a +1/+1 counter on it has outlast {G/W}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4837,
+    "oracleId": "628f2deb-519e-4810-a7e5-e31316e9a4e0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arcbound Shikari": {
+    "text": "先攻\n當此生物進場時，在每個由你操控的其他神器生物上各放置一個+1/+1指示物。\n套件2（此生物進場時上面有兩個+1/+1指示物。當它死去時，你可以將它的+1/+1指示物置於目標神器生物上。）",
+    "oracleText": "First strike\nWhen this creature enters, put a +1/+1 counter on each other artifact creature you control.\nModular 2 (This creature enters with two +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4838,
+    "oracleId": "acb8d6a0-4bbd-4a42-bcac-3656367cc051",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Wren's Run Hydra": {
+    "text": "延勢\n此生物進場時上面有X個+1/+1指示物。\n補強X～{X}{G}{G}（{X}{G}{G}，棄掉此牌：在目標生物上放置X個+1/+1指示物。）",
+    "oracleText": "Reach\nThis creature enters with X +1/+1 counters on it.\nReinforce X—{X}{G}{G} ({X}{G}{G}, Discard this card: Put X +1/+1 counters on target creature.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4839,
+    "oracleId": "a2196bc3-2fe6-49d4-8c79-d6beb3d6c5d8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Verdant Command": {
+    "text": "選擇兩項～\n•目標牌手派出兩個已橫置的1/1綠色松鼠衍生生物。\n•反擊目標由鵬洛客具有的忠誠異能。\n•將目標牌從墳墓場放逐。\n•目標牌手獲得3點生命。",
+    "oracleText": "Choose two —\n• Target player creates two tapped 1/1 green Squirrel creature tokens.\n• Counter target loyalty ability of a planeswalker.\n• Exile target card from a graveyard.\n• Target player gains 3 life.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4840,
+    "oracleId": "5a5d426b-e5eb-44f0-b5fe-c258bec6d59e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Urban Daggertooth": {
+    "text": "警戒\n激怒～每當此生物受到傷害時，增殖。（選擇任意數量的永久物和／或牌手，然後為其已有之每種指示物各多放置一個同類的指示物。）",
+    "oracleText": "Vigilance\nEnrage — Whenever this creature is dealt damage, proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4841,
+    "oracleId": "cc545c68-829f-4c57-94d2-cd1edf2667a7",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tireless Provisioner": {
+    "text": "地落～每當一個由你操控的地進場時，派出一個食品衍生物或珍寶衍生物。（食品是具有「{2}，{T}，犧牲此衍生物：你獲得3點生命」的神器。珍寶是具有「{T}，犧牲此衍生物：加一點任意顏色的法術力」的神器。）",
+    "oracleText": "Landfall — Whenever a land you control enters, create a Food token or a Treasure token. (Food is an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\" Treasure is an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4842,
+    "oracleId": "ab8d5f5c-1976-4f77-8ed2-8d28ee666741",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Landscaper Colos": {
+    "text": "當此生物進場時，將目標牌從任一對手的墳墓場置於其牌庫底。\n循環基本地{1}{W}（{1}{W}，棄掉此牌：從你的牌庫中搜尋一張基本地牌，展示該牌，將它置於你手上，然後洗牌。）",
+    "oracleText": "When this creature enters, put target card from an opponent's graveyard on the bottom of their library.\nBasic landcycling {1}{W} ({1}{W}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4843,
+    "oracleId": "144bef8b-3583-4e98-9285-a1965e7e17f8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Jade Avenger": {
+    "text": "武士道2（每當此生物進行阻擋或被阻擋時，它得+2/+2直到回合結束。）",
+    "oracleText": "Bushido 2 (Whenever this creature blocks or becomes blocked, it gets +2/+2 until end of turn.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4844,
+    "oracleId": "177248b7-f3fd-42f8-b325-2625a2bb28ff",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Timeless Witness": {
+    "text": "當此生物進場時，將目標牌從你的墳墓場移回你手上。\n永生{5}{G}{G}（{5}{G}{G}，從你的墳墓場放逐此牌：派出一個為其複製品的衍生物，但它是4/4黑色靈俑／人類／祭師，且沒有法術力費用。永生的時機視同法術。）",
+    "oracleText": "When this creature enters, return target card from your graveyard to your hand.\nEternalize {5}{G}{G} ({5}{G}{G}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a 4/4 black Zombie Human Shaman with no mana cost. Eternalize only as a sorcery.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4846,
+    "oracleId": "a52a06aa-56fc-4845-bbcd-a54f16369b34",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Thrasta, Tempest's Roar": {
+    "text": "本回閤中每施放過一個其他咒語，此咒語便減少{3}來施放。\n踐踏，敏捷\n踐踏鵬洛客（此生物攻擊鵬洛客時造成的過量戰鬥傷害，能對所攻擊之鵬洛客的操控者造成之。）\n只要撒塔是於本回合進場，它便具有辟邪異能。",
+    "oracleText": "This spell costs {3} less to cast for each other spell cast this turn.\nTrample, haste\nTrample over planeswalkers (This creature can deal excess combat damage to the controller of the planeswalker it's attacking.)\nThrasta has hexproof as long as it entered this turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4847,
+    "oracleId": "19d258fb-4cda-4cbb-b07a-8b4670488867",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Terramorph": {
+    "text": "從你牌庫中搜尋一張基本地牌，將之放進戰場，然後洗牌。\n彈回（如果你從你手上施放此咒語，於它結算時將之放逐。在你的下一個維持開始時，你可以從放逐區施放此牌，且不需支付其法術力費用。）",
+    "oracleText": "Search your library for a basic land card, put it onto the battlefield, then shuffle.\nRebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4848,
+    "oracleId": "17a34f8d-a80f-4331-8be5-06cbb9d10d7b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sylvan Anthem": {
+    "text": "由你操控的綠色生物得+1/+1。\n每當一個由你操控的綠色生物進場時，占卜1。",
+    "oracleText": "Green creatures you control get +1/+1.\nWhenever a green creature you control enters, scry 1.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4849,
+    "oracleId": "5ab5eefd-47bf-4cdf-bc29-b517e4f6adc0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Squirrel Sovereign": {
+    "text": "由你操控的其他松鼠得+1/+1。",
+    "oracleText": "Other Squirrels you control get +1/+1.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4850,
+    "oracleId": "f43d1ea5-8127-4b64-a87b-ee5cc9b9e9fa",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Squirrel Sanctuary": {
+    "text": "當此結界進場時，派出一個1/1綠色松鼠衍生生物。\n每當一個由你操控且非衍生物的生物死去時，你可以支付{1}。若你如此作，則將此結界移回其擁有者手上。",
+    "oracleText": "When this enchantment enters, create a 1/1 green Squirrel creature token.\nWhenever a nontoken creature you control dies, you may pay {1}. If you do, return this enchantment to its owner's hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4851,
+    "oracleId": "693d20e9-ad92-44ad-9190-d247c94660eb",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Smell Fear": {
+    "text": "增殖。（選擇任意數量的永久物和／或牌手，然後為其已有之每種指示物各多放置一個同類的指示物。）\n目標由你操控的生物與至多一個目標不由你操控的生物互鬥。",
+    "oracleText": "Proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)\nTarget creature you control fights up to one target creature you don't control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4852,
+    "oracleId": "c9739382-9fe0-4d24-b58e-1e45a88491b6",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Scurry Oak": {
+    "text": "進化（每當一個由你操控的生物進場時，若該生物的力量或防禦力大於此生物，則在後者上放置一個+1/+1指示物。）\n每當在此生物上放置一個或數個+1/+1指示物時，你可以派出一個1/1綠色松鼠衍生生物。",
+    "oracleText": "Evolve (Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)\nWhenever one or more +1/+1 counters are put on this creature, you may create a 1/1 green Squirrel creature token.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4853,
+    "oracleId": "eee6c02b-7d6a-4445-ad27-8b03176147d4",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sanctum Weaver": {
+    "text": "{T}：加X點任意顏色的單色法術力，X為由你操控的結界數量。",
+    "oracleText": "{T}: Add X mana of any one color, where X is the number of enchantments you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4854,
+    "oracleId": "acfe7ec0-0606-4d5e-b1fa-25f0c7aeec47",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Rift Sower": {
+    "text": "{T}：加一點任意顏色的法術力。\n延緩2～{G}（除了從你手上施放此牌，你可以支付{G}並將它放逐，且上面有兩個計時指示物。在你的維持開始時，從其上移去一個計時指示物。當移去最後一個時，你可以施放它且不需支付其法術力費用。它具有敏捷。）",
+    "oracleText": "{T}: Add one mana of any color.\nSuspend 2—{G} (Rather than cast this card from your hand, you may pay {G} and exile it with two time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost. It has haste.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4855,
+    "oracleId": "f9deeea1-bf80-4832-aac3-373fc1f4b41d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Knighted Myr": {
+    "text": "{2}{W}：演化1。（如果此生物上沒有+1/+1指示物，則在其上放置一個+1/+1指示物。）\n每當在此生物上放置一個或數個+1/+1指示物時，它獲得連擊異能直到回合結束。",
+    "oracleText": "{2}{W}: Adapt 1. (If this creature has no +1/+1 counters on it, put a +1/+1 counter on it.)\nWhenever one or more +1/+1 counters are put on this creature, it gains double strike until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4856,
+    "oracleId": "dfee20a6-7737-49a8-b1cb-0a4914ac0ad3",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Orchard Strider": {
+    "text": "當此生物進場時，派出兩個食品衍生物。（它們是具有「{2}，{T}，犧牲此衍生物：你獲得3點生命」的神器。）\n循環基本地{1}{G}（{1}{G}，棄掉此牌：從你的牌庫中搜尋一張基本地牌，展示該牌，將它置於你手上，然後洗牌。）",
+    "oracleText": "When this creature enters, create two Food tokens. (They're artifacts with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nBasic landcycling {1}{G} ({1}{G}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4857,
+    "oracleId": "c6906032-e08b-478f-bc71-cb1184f60bad",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Ignoble Hierarch": {
+    "text": "頌威（每當一個由你操控的生物單獨攻擊時，該生物得+1/+1直到回合結束。）\n{T}：加{B}，{R}或{G}。",
+    "oracleText": "Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)\n{T}: Add {B}, {R}, or {G}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4858,
+    "oracleId": "c8de43a3-ebd3-4000-b343-a6ffed11d34d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Herd Baloth": {
+    "text": "每當在此生物上放置一個或數個+1/+1指示物時，你可以派出一個4/4綠色野獸衍生生物。",
+    "oracleText": "Whenever one or more +1/+1 counters are put on this creature, you may create a 4/4 green Beast creature token.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4859,
+    "oracleId": "03873314-6e64-43ab-95c0-3d8692a57a03",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Glinting Creeper": {
+    "text": "聚輝～此生物進場時上面有數個+1/+1指示物，其數量為施放它支付的法術力顏色數量之兩倍。\n此生物不能被力量等於或小於2的生物阻擋。",
+    "oracleText": "Converge — This creature enters with two +1/+1 counters on it for each color of mana spent to cast it.\nThis creature can't be blocked by creatures with power 2 or less.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4860,
+    "oracleId": "0e252f94-7731-45e1-bdbb-1bd11441577e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Glimmer Bairn": {
+    "text": "犧牲一個衍生物：此生物得+2/+2直到回合結束。",
+    "oracleText": "Sacrifice a token: This creature gets +2/+2 until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4861,
+    "oracleId": "118cdf8b-44fb-4c3e-86c4-e7f4b1267646",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Gaea's Will": {
+    "text": "延緩4～{G}\n直到回合結束，你可以從你的墳墓場中使用地和施放咒語。\n本回閤中，如果某牌將從任何區域進入你的墳墓場，則改為放逐該牌。",
+    "oracleText": "Suspend 4—{G}\nUntil end of turn, you may play lands and cast spells from your graveyard.\nIf a card would be put into your graveyard from anywhere this turn, exile that card instead.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4862,
+    "oracleId": "87efff06-b6cb-4a8f-937b-e50e367fd896",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Funnel-Web Recluse": {
+    "text": "延勢\n喪心～當此生物進場時，若本回閤中有生物死去，則探查。（派出一個線索衍生物。它是具有「{2}，犧牲此衍生物：抓一張牌」的神器。）",
+    "oracleText": "Reach\nMorbid — When this creature enters, if a creature died this turn, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4863,
+    "oracleId": "6148fcf5-466a-43aa-a0f3-d3d9fae4d883",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Foundation Breaker": {
+    "text": "當此生物進場時，你可以消滅目標神器或結界。\n呼魂{1}{G}（你可以支付此咒語的呼魂費用來施放它。若你如此作，當它進場時便犧牲之。）",
+    "oracleText": "When this creature enters, you may destroy target artifact or enchantment.\nEvoke {1}{G} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4864,
+    "oracleId": "8b7a3613-f1bd-4262-9b11-b631167c2c2d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Healer's Flock": {
+    "text": "飛行，繫命",
+    "oracleText": "Flying, lifelink",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4865,
+    "oracleId": "0b3b2fb1-d5fe-4d14-985a-85f13cd60d9c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Flourishing Strike": {
+    "text": "選擇一項～\n•繁茂一擊對目標具飛行異能的生物造成5點傷害。\n•目標生物得+3/+3直到回合結束。\n打包{2}{G}（若你支付打包費用，則兩項都選。）",
+    "oracleText": "Choose one —\n• Flourishing Strike deals 5 damage to target creature with flying.\n• Target creature gets +3/+3 until end of turn.\nEntwine {2}{G} (Choose both if you pay the entwine cost.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4866,
+    "oracleId": "98c44298-7b6a-4f98-bcb7-1a63a4c29f87",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Fae Offering": {
+    "text": "在每個結束步驟開始時，若你本回閤中生物咒語和非生物咒語都施放過，則派出一個線索衍生物，一個食品衍生物和一個珍寶衍生物。",
+    "oracleText": "At the beginning of each end step, if you've cast both a creature spell and a noncreature spell this turn, create a Clue token, a Food token, and a Treasure token.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4867,
+    "oracleId": "885d68de-db97-4c9e-bb44-8e561a482dde",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Duskshell Crawler": {
+    "text": "當此生物進場時，在目標生物上放置一個+1/+1指示物。\n每個由你操控且其上有+1/+1指示物的生物均具有踐踏異能。（它造成之過量戰鬥傷害能對所攻擊的牌手或鵬洛客造成之。）",
+    "oracleText": "When this creature enters, put a +1/+1 counter on target creature.\nEach creature you control with a +1/+1 counter on it has trample. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4868,
+    "oracleId": "e54ad5a1-e79d-42db-a3e9-5caecae62c9f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Deepwood Denizen": {
+    "text": "警戒（此生物攻擊時不需橫置。）\n{5}{G}，{T}：抓一張牌。由你操控的生物上每有一個+1/+1指示物，此異能便減少{1}來起動。",
+    "oracleText": "Vigilance (Attacking doesn't cause this creature to tap.)\n{5}{G}, {T}: Draw a card. This ability costs {1} less to activate for each +1/+1 counter on creatures you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4869,
+    "oracleId": "4a6887e3-7a65-4f24-be71-183b00a0ad56",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Crack Open": {
+    "text": "消滅目標神器或結界。派出一個珍寶衍生物。（它是具有「{T}，犧牲此衍生物：加一點任意顏色的法術力」的神器。）",
+    "oracleText": "Destroy target artifact or enchantment. Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4870,
+    "oracleId": "412197f2-0e95-47fb-83db-ae8301c90ff0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Chitterspitter": {
+    "text": "在你的維持開始時，你可以犧牲一個衍生物。若你如此作，則在此神器上放置一個橡實指示物。\n此神器上每有一個橡實指示物，由你操控的松鼠便得+1/+1。\n{G}，{T}：派出一個1/1綠色松鼠衍生生物。",
+    "oracleText": "At the beginning of your upkeep, you may sacrifice a token. If you do, put an acorn counter on this artifact.\nSquirrels you control get +1/+1 for each acorn counter on this artifact.\n{G}, {T}: Create a 1/1 green Squirrel creature token.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4871,
+    "oracleId": "4a338863-d599-46e7-9c30-e11b898ae1b0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Chatterfang, Squirrel General": {
+    "text": "樹林行者（只要防禦牌手操控樹林，此生物便不能被阻擋。）\n如果將在你的操控下派出一個或數個衍生物，則改為派出該些衍生物加上同樣數量的1/1綠色松鼠衍生生物。\n{B}，犧牲X個松鼠：目標生物得+X/-X直到回合結束。",
+    "oracleText": "Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)\nIf one or more tokens would be created under your control, those tokens plus that many 1/1 green Squirrel creature tokens are created instead.\n{B}, Sacrifice X Squirrels: Target creature gets +X/-X until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4872,
+    "oracleId": "f15b3b76-d38a-48db-bb44-3296183c8641",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Blessed Respite": {
+    "text": "目標牌手將其墳墓場洗入其牌庫。於本回閤中，防止將造成的所有戰鬥傷害。",
+    "oracleText": "Target player shuffles their graveyard into their library. Prevent all combat damage that would be dealt this turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4873,
+    "oracleId": "8c888122-9d05-4641-931c-83f771ba9d09",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Guardian Kirin": {
+    "text": "飛行\n每當另一個由你操控的生物死去時，在此生物上放置一個+1/+1指示物。",
+    "oracleText": "Flying\nWhenever another creature you control dies, put a +1/+1 counter on this creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4874,
+    "oracleId": "e9dbfda3-e162-49f0-b9bf-f8213e27c17d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Bannerhide Krushok": {
+    "text": "踐踏\n補強2～{1}{G}（{1}{G}，棄掉此牌：在目標生物上放置兩個+1/+1指示物。）\n食腐{5}{G}{G}（{5}{G}{G}，從你的墳墓場放逐此牌：在目標生物上放置若干+1/+1指示物，其數量等同於此牌的力量。食腐的時機視同法術。）",
+    "oracleText": "Trample\nReinforce 2—{1}{G} ({1}{G}, Discard this card: Put two +1/+1 counters on target creature.)\nScavenge {5}{G}{G} ({5}{G}{G}, Exile this card from your graveyard: Put a number of +1/+1 counters equal to this card's power on target creature. Scavenge only as a sorcery.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4875,
+    "oracleId": "e3191093-1aaa-4002-a603-7c8d132b6a31",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Aeve, Progenitor Ooze": {
+    "text": "風暴（當施放此咒語時，本回合於它之前每施放過一個咒語，便將此咒語複製一次。複製品會成為衍生物。）\n如果艾夫是衍生物，則它不是傳奇。\n艾夫進場時上面有數個+1/+1指示物，其數量為由你操控的其他流漿數量。",
+    "oracleText": "Storm (When you cast this spell, copy it for each spell cast before it this turn. Copies become tokens.)\nAeve isn't legendary if it's a token.\nAeve enters with a +1/+1 counter on it for each other Ooze you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4876,
+    "oracleId": "44600a74-9584-488b-a342-2fccd8fa7599",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Abundant Harvest": {
+    "text": "選擇地或非地。從你的牌庫頂開始展示牌，直到展示出一張該種類的牌為止。將該牌置於你手上，其餘則以隨機順序置於你的牌庫底。",
+    "oracleText": "Choose land or nonland. Reveal cards from the top of your library until you reveal a card of the chosen kind. Put that card into your hand and the rest on the bottom of your library in a random order.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4877,
+    "oracleId": "34841228-31ac-48ac-b6d6-486b5e1e07dd",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Viashino Lashclaw": {
+    "text": "{T}，棄一張牌：由你操控的生物獲得敏捷異能直到回合結束。",
+    "oracleText": "{T}, Discard a card: Creatures you control gain haste until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4878,
+    "oracleId": "02358f98-99d5-45a3-b7e3-f2cbf08fa52c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Unholy Heat": {
+    "text": "不潔熱火對目標生物或鵬洛客造成2點傷害。\n躁狂～如果你墳墓場中牌的牌張類別有四種或更多，則改為不潔熱火造成6點傷害。",
+    "oracleText": "Unholy Heat deals 2 damage to target creature or planeswalker.\nDelirium — Unholy Heat deals 6 damage instead if there are four or more card types among cards in your graveyard.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4879,
+    "oracleId": "b23cba46-6ed2-442d-bc39-7c4933f6b083",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tavern Scoundrel": {
+    "text": "每當你猜對一次擲硬幣時，派出兩個珍寶衍生物。（它們是具有「{T}，犧牲此衍生物：加一點任意顏色的法術力」的神器。）\n{1}，{T}，犧牲另一個永久物：擲一枚硬幣。",
+    "oracleText": "Whenever you win a coin flip, create two Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")\n{1}, {T}, Sacrifice another permanent: Flip a coin.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4880,
+    "oracleId": "68c4f86f-ff12-44a6-8f18-f2ee9753b2cd",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Strike It Rich": {
+    "text": "派出一個珍寶衍生物。（它是具有「{T}，犧牲此衍生物：加一點任意顏色的法術力」的神器。）\n返照{2}{R}（你可以從你墳墓場中施放此牌，並支付其返照費用，然後將它放逐。）",
+    "oracleText": "Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nFlashback {2}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4881,
+    "oracleId": "c34c17c7-3827-49a2-be25-67f44fdfe150",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Spreading Insurrection": {
+    "text": "獲得目標不由你操控的生物之操控權直到回合結束。重置該生物。它獲得敏捷異能直到回合結束。\n風暴（當施放此咒語時，本回合於它之前每施放過一個咒語，便將此咒語複製一次。你可以為每個複製品選擇新的目標。）",
+    "oracleText": "Gain control of target creature you don't control until end of turn. Untap that creature. It gains haste until end of turn.\nStorm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4882,
+    "oracleId": "bc59977f-b3a7-4bc1-9f20-0a1e36d418ae",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Slag Strider": {
+    "text": "神器共鳴（你每操控一個神器，此咒語便減少{1}來施放。）\n{1}，犧牲一個神器：此生物對任意一個目標造成1點傷害。",
+    "oracleText": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\n{1}, Sacrifice an artifact: This creature deals 1 damage to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4883,
+    "oracleId": "2b154d55-37dd-4e5f-aa99-d4bc547cdec0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Skophos Reaver": {
+    "text": "於你的回合中，此生物得+2/+0。\n瘋魔{1}{R}（如果你棄掉此牌，將之棄到放逐區。當你如此作時，支付其瘋魔費用施放之，否則便將其置入你的墳墓場。）",
+    "oracleText": "During your turn, this creature gets +2/+0.\nMadness {1}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4884,
+    "oracleId": "4bc0bdd5-32da-46df-b624-29a709efc676",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Glorious Enforcer": {
+    "text": "飛行，繫命\n在每次戰鬥開始時，若你的生命比某對手多，則此生物獲得連擊異能直到回合結束。",
+    "oracleText": "Flying, lifelink\nAt the beginning of each combat, if you have more life than an opponent, this creature gains double strike until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4885,
+    "oracleId": "3dcbbbeb-4efe-4363-bfb4-b7d7f803bafa",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Revolutionist": {
+    "text": "當此生物進場時，將目標瞬間或法術牌從你的墳墓場移回你手上。\n瘋魔{3}{R}（如果你棄掉此牌，將之棄到放逐區。當你如此作時，支付其瘋魔費用施放之，否則便將其置入你的墳墓場。）",
+    "oracleText": "When this creature enters, return target instant or sorcery card from your graveyard to your hand.\nMadness {3}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4886,
+    "oracleId": "d00607b1-77ce-4b89-ad04-763d0d390c5c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Obsidian Charmaw": {
+    "text": "所有對手每操控一個能產生{C}的地，此咒語便減少{1}來施放。\n飛行\n當此生物進場時，消滅目標由對手操控的非基本地。",
+    "oracleText": "This spell costs {1} less to cast for each land your opponents control that could produce {C}.\nFlying\nWhen this creature enters, destroy target nonbasic land an opponent controls.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4887,
+    "oracleId": "c995bc01-f278-4088-9ae2-1b50f87b2a61",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Mount Velus Manticore": {
+    "text": "在你回合的戰鬥開始時，你可以棄一張牌。當你如此作時，此生物對任意一個目標造成X點傷害，X為所棄之牌具有的牌張類別數量。",
+    "oracleText": "At the beginning of combat on your turn, you may discard a card. When you do, this creature deals X damage to any target, where X is the number of card types the discarded card has.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4888,
+    "oracleId": "f434590f-3a5d-47dd-8ed0-d2a43a521f86",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Mine Collapse": {
+    "text": "如果是在你的回合中，則你可以犧牲一個山脈，而不支付此咒語的法術力費用。\n礦井塌方對目標生物或鵬洛客造成5點傷害。",
+    "oracleText": "If it's your turn, you may sacrifice a Mountain rather than pay this spell's mana cost.\nMine Collapse deals 5 damage to target creature or planeswalker.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4889,
+    "oracleId": "83df0f44-86ca-4adb-9f3a-da1ba6dd7a6d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Lightning Spear": {
+    "text": "佩帶此武具的生物得+1/+0且具有踐踏異能。\n{2}{R}，犧牲此武具：它對任意一個目標造成3點傷害。\n佩帶{1}",
+    "oracleText": "Equipped creature gets +1/+0 and has trample.\n{2}{R}, Sacrifice this Equipment: It deals 3 damage to any target.\nEquip {1}",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4890,
+    "oracleId": "2202faf1-5638-46bf-8bf4-91870b669717",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Kaleidoscorch": {
+    "text": "聚輝～萬花焰咒對任意一個目標造成X點傷害，X為施放此咒語支付的法術力顏色數量。\n返照{4}{R}（你可以從你墳墓場中施放此牌，並支付其返照費用，然後將它放逐。）",
+    "oracleText": "Converge — Kaleidoscorch deals X damage to any target, where X is the number of colors of mana spent to cast this spell.\nFlashback {4}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4891,
+    "oracleId": "b02bd695-ec7f-47be-b797-e2b4b309cc2a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Gouged Zealot": {
+    "text": "延勢\n躁狂～每當此生物攻擊時，若你墳墓場中牌的牌張類別有四種或更多，則此生物對每個由防禦牌手操控的生物各造成1點傷害。",
+    "oracleText": "Reach\nDelirium — Whenever this creature attacks, if there are four or more card types among cards in your graveyard, this creature deals 1 damage to each creature defending player controls.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4892,
+    "oracleId": "35b30274-bf8c-4d3c-b738-f9e62cdd5156",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Goblin Traprunner": {
+    "text": "每當此生物攻擊時，擲三枚硬幣。你每猜對一擲，便派出一個1/1紅色鬼怪衍生生物，其為橫置且正進行攻擊。",
+    "oracleText": "Whenever this creature attacks, flip three coins. For each flip you win, create a 1/1 red Goblin creature token that's tapped and attacking.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4893,
+    "oracleId": "fbdffef0-9119-4650-9f92-58e8a664db6f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Fairgrounds Patrol": {
+    "text": "{1}{W}，從你的墳墓場放逐此牌：派出一個1/1無色，具飛行異能的振翼機衍生神器生物。只能於法術時機起動。",
+    "oracleText": "{1}{W}, Exile this card from your graveyard: Create a 1/1 colorless Thopter artifact creature token with flying. Activate only as a sorcery.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4894,
+    "oracleId": "8b0689b5-7c68-46b3-a72a-4f97ef1d0a15",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Harmonic Prodigy": {
+    "text": "靈技（每當你施放非生物咒語時，此生物得+1/+1直到回合結束。）\n如果由你操控之祭師或其他法術師的觸發式異能觸發，則該異能額外觸發一次。",
+    "oracleText": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nIf a triggered ability of a Shaman or another Wizard you control triggers, that ability triggers an additional time.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4895,
+    "oracleId": "2e2ace5b-4018-43af-8e72-ebafec1a7739",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Glimpse of Tomorrow": {
+    "text": "延緩3～{R}{R}\n將所有由你擁有的永久物洗入你的牌庫，然後從你的牌庫頂展示等量的牌。將所有以此法展示的非靈氣永久物牌放進戰場，然後對靈氣牌執行同樣流程，然後將其餘的牌以隨機順序置於你的牌庫底。",
+    "oracleText": "Suspend 3—{R}{R}\nShuffle all permanents you own into your library, then reveal that many cards from the top of your library. Put all non-Aura permanent cards revealed this way onto the battlefield, then do the same for Aura cards, then put the rest on the bottom of your library in a random order.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4896,
+    "oracleId": "12778951-7b11-400b-98ed-06434d7ecc11",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Gargadon": {
+    "text": "踐踏\n延緩4～{1}{R}（除了從你手上施放此牌，你可以支付{1}{R}並將它放逐，且上面有四個計時指示物。在你的維持開始時，從其上移去一個計時指示物。當移去最後一個時，你可以施放它且不需支付其法術力費用。它具有敏捷。）",
+    "oracleText": "Trample\nSuspend 4—{1}{R} (Rather than cast this card from your hand, you may pay {1}{R} and exile it with four time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost. It has haste.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4898,
+    "oracleId": "73f808f0-3d56-46c9-967b-d452bb3611af",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Galvanic Relay": {
+    "text": "放逐你的牌庫頂牌。於你的下個回合中，你可以使用該牌。\n風暴（當施放此咒語時，本回合於它之前每施放過一個咒語，便將此咒語複製一次。）",
+    "oracleText": "Exile the top card of your library. During your next turn, you may play that card.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4899,
+    "oracleId": "973c684c-a396-4e40-8aaa-365bc64a6f9a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Flametongue Yearling": {
+    "text": "多重增幅{2}（你施放此咒語時可以任意次數地額外支付{2}。）\n此生物進場時上面有數個+1/+1指示物，其數量為它增幅過的次數。\n當此生物進場時，它對目標生物造成傷害，其數量等同於前者的力量。",
+    "oracleText": "Multikicker {2} (You may pay an additional {2} any number of times as you cast this spell.)\nThis creature enters with a +1/+1 counter on it for each time it was kicked.\nWhen this creature enters, it deals damage equal to its power to target creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4900,
+    "oracleId": "8181f131-626b-4f9a-812c-9fddaae58025",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Flame Blitz": {
+    "text": "在你的結束步驟開始時，此結界對每個鵬洛客各造成5點傷害。\n循環{2}（{2}，棄掉此牌：抓一張牌。）",
+    "oracleText": "At the beginning of your end step, this enchantment deals 5 damage to each planeswalker.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4901,
+    "oracleId": "817eb91a-e3b4-40c3-9a6e-e4d0387e0f4f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Furious": {
+    "text": "激情對每個不具飛行異能的生物各造成3點傷害。",
+    "oracleText": "Furious deals 3 damage to each creature without flying.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4902,
+    "oracleId": "62411ced-843e-4b63-bdf6-dafb2ac27047",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Fast": {
+    "text": "棄一張牌，然後抓兩張牌。",
+    "oracleText": "Discard a card, then draw two cards.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4903,
+    "oracleId": "62411ced-843e-4b63-bdf6-dafb2ac27047",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Faithless Salvaging": {
+    "text": "棄一張牌，然後抓一張牌。\n彈回（如果你從你手上施放此咒語，於它結算時將之放逐。在你的下一個維持開始時，你可以從放逐區施放此牌，且不需支付其法術力費用。）",
+    "oracleText": "Discard a card, then draw a card.\nRebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4904,
+    "oracleId": "0366ccfd-c717-4ea2-8176-86e184f920f4",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Chef's Kiss": {
+    "text": "獲得目標咒語的操控權，且該咒語須僅以單一永久物或牌手為目標。將它複製，然後為該咒語和複製品隨機重新選擇目標。新的目標不能為你或由你操控的永久物。",
+    "oracleText": "Gain control of target spell that targets only a single permanent or player. Copy it, then reselect the targets at random for the spell and the copy. The new targets can't be you or a permanent you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4905,
+    "oracleId": "3d177c04-9aa3-44b8-bbe4-df5de23a4ce6",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Esper Sentinel": {
+    "text": "每當任一對手施放每回閤中其第一個非生物咒語時，除非該牌手支付{X}，否則你抓一張牌，X為此生物的力量。",
+    "oracleText": "Whenever an opponent casts their first noncreature spell each turn, draw a card unless that player pays {X}, where X is this creature's power.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4906,
+    "oracleId": "5def9f38-0a0b-4e8d-9f9d-29dcb46520b4",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Captain Ripley Vance": {
+    "text": "每當你施放每回閤中你的第三個咒語時，在蕾普莉凡絲船長上放置一個+1/+1指示物，然後它對任意一個目標造成等同於其力量的傷害。",
+    "oracleText": "Whenever you cast your third spell each turn, put a +1/+1 counter on Captain Ripley Vance, then it deals damage equal to its power to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4907,
+    "oracleId": "eefeeab1-b9f2-451a-9250-eb7b54d00fc1",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Fury": {
+    "text": "連擊\n當此生物進場時，它對任意數量的目標生物和／或鵬洛客造成共4點傷害，你可以任意分配。\n呼魂～從你手上放逐一張紅色牌。",
+    "oracleText": "Double strike\nWhen this creature enters, it deals 4 damage divided as you choose among any number of target creatures and/or planeswalkers.\nEvoke—Exile a red card from your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4908,
+    "oracleId": "fbf9f8c5-849f-45d5-8129-5fc683c21a04",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Calibrated Blast": {
+    "text": "從你的牌庫頂開始展示牌，直到展示出一張非地牌為止。將所展示的牌以隨機順序置於你的牌庫底。當你以此法展示一張非地牌時，標定衝擊對任意一個目標造成傷害，其數量等同於所展示之牌的法術力值。\n返照{3}{R}{R}（你可以從你墳墓場中施放此牌，並支付其返照費用，然後將它放逐。）",
+    "oracleText": "Reveal cards from the top of your library until you reveal a nonland card. Put the revealed cards on the bottom of your library in a random order. When you reveal a nonland card this way, Calibrated Blast deals damage equal to that card's mana value to any target.\nFlashback {3}{R}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4909,
+    "oracleId": "d9f5fc77-40df-4872-b633-6bf5a22a8831",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Vile Entomber": {
+    "text": "死觸（它對生物造成的任何數量傷害都足以消滅後者。）\n當此生物進場時，從你的牌庫中搜尋一張牌，將該牌置入你的墳墓場，然後洗牌。",
+    "oracleText": "Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)\nWhen this creature enters, search your library for a card, put that card into your graveyard, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4910,
+    "oracleId": "556dd333-4066-41f7-98f6-41794754de71",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Breya's Apprentice": {
+    "text": "當此生物進場時，派出一個1/1無色，具飛行異能的振翼機衍生神器生物。\n{T}，犧牲一個神器：選擇一項～\n•放逐你的牌庫頂牌。直到你下一個回合的回合結束，你可以使用該牌。\n•目標生物得+2/+0直到回合結束。",
+    "oracleText": "When this creature enters, create a 1/1 colorless Thopter artifact creature token with flying.\n{T}, Sacrifice an artifact: Choose one —\n• Exile the top card of your library. Until the end of your next turn, you may play that card.\n• Target creature gets +2/+0 until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4911,
+    "oracleId": "8fb9ff2d-1e90-4a26-8397-bb981fda2f7b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tragic Fall": {
+    "text": "目標生物得-3/-3直到回合結束。\n背水戰～如果你沒有手牌，則改為該生物得-13/-13直到回合結束。",
+    "oracleText": "Target creature gets -3/-3 until end of turn.\nHellbent — That creature gets -13/-13 until end of turn instead if you have no cards in hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4912,
+    "oracleId": "1b7e325d-24ee-42e3-b06f-6c91ec5280c3",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Bloodbraid Marauder": {
+    "text": "此生物不能進行阻擋。\n躁狂～只要你墳墓場中牌的牌張類別有四種或更多，此咒語便具有傾曳異能。（當你施放此咒語時，從你的牌庫頂開始放逐牌，直到放逐一張費用比此咒語低的非地牌為止。你可以施放該牌，且不需支付其法術力費用。將所放逐的牌以隨機順序置於牌庫底。）",
+    "oracleText": "This creature can't block.\nDelirium — This spell has cascade as long as there are four or more card types among cards in your graveyard. (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4913,
+    "oracleId": "25ca4b6c-2c4a-40f1-aee8-3bd373572eb7",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Blazing Rootwalla": {
+    "text": "{R}：此生物得+2/+0直到回合結束。每回合只能起動一次。\n瘋魔{0}（如果你棄掉此牌，將之棄到放逐區。當你如此作時，支付其瘋魔費用施放之，否則便將其置入你的墳墓場。）",
+    "oracleText": "{R}: This creature gets +2/+0 until end of turn. Activate only once each turn.\nMadness {0} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4914,
+    "oracleId": "d43f5977-0532-4653-bc57-ce29f9a531c9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Battle Plan": {
+    "text": "在你回合的戰鬥開始時，目標由你操控的生物得+2/+0直到回合結束。\n循環基本地{1}{R}（{1}{R}，棄掉此牌：從你牌庫中搜尋一張基本地牌，展示該牌，將它置於你手上，然後洗牌。）",
+    "oracleText": "At the beginning of combat on your turn, target creature you control gets +2/+0 until end of turn.\nBasic landcycling {1}{R} ({1}{R}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4915,
+    "oracleId": "09b4fba6-d943-49e4-9f9e-a74fcbabe83f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arcbound Whelp": {
+    "text": "飛行\n{R}：此生物得+1/+0直到回合結束。\n套件2（此生物進場時上面有兩個+1/+1指示物。當它死去時，你可以將它的+1/+1指示物置於目標神器生物上。）",
+    "oracleText": "Flying\n{R}: This creature gets +1/+0 until end of turn.\nModular 2 (This creature enters with two +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4916,
+    "oracleId": "36875030-8094-4e2c-860d-c0820825a24e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arcbound Tracker": {
+    "text": "威懾\n套件2（此生物進場時上面有兩個+1/+1指示物。當它死去時，你可以將它的+1/+1指示物置於目標神器生物上。）\n每當你施放每回閤中你第一個咒語以外的咒語時，在此生物上放置一個+1/+1指示物。",
+    "oracleText": "Menace\nModular 2 (This creature enters with two +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)\nWhenever you cast a spell other than your first spell each turn, put a +1/+1 counter on this creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4917,
+    "oracleId": "ff86f385-dc3e-4bfe-83e7-9229afab4aa9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arcbound Slasher": {
+    "text": "套件4（此生物進場時上面有四個+1/+1指示物。當它死去時，你可以將它的+1/+1指示物置於目標神器生物上。）\n起事（於此生物進場時，你選擇「+1/+1指示物」或「敏捷」異能。它進場時上面額外有所選加成。）",
+    "oracleText": "Modular 4 (This creature enters with four +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)\nRiot (This creature enters with your choice of an additional +1/+1 counter or haste.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4921,
+    "oracleId": "bf86376d-474d-4658-8cf3-d0e2a01cdfff",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Young Necromancer": {
+    "text": "當此生物進場時，你可以從你的墳墓場放逐兩張牌。當你如此作時，將目標生物牌從你的墳墓場移回戰場。",
+    "oracleText": "When this creature enters, you may exile two cards from your graveyard. When you do, return target creature card from your graveyard to the battlefield.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4922,
+    "oracleId": "17455491-c295-4130-99b4-1b5c6ac1cd25",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Disciple of the Sun": {
+    "text": "繫命\n當此生物進場時，將目標法術力值等於或小於3的永久物牌從你的墳墓場移回你手上。",
+    "oracleText": "Lifelink\nWhen this creature enters, return target permanent card with mana value 3 or less from your graveyard to your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4924,
+    "oracleId": "3ea41848-7a11-4608-88c1-7a6e76e812ca",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "World-Weary": {
+    "text": "結附於生物\n所結附的生物得-4/-4。\n循環基本地{1}{B}（{1}{B}，棄掉此牌：從你的牌庫中搜尋一張基本地牌，展示該牌，將它置於你手上，然後洗牌。）",
+    "oracleText": "Enchant creature\nEnchanted creature gets -4/-4.\nBasic landcycling {1}{B} ({1}{B}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4925,
+    "oracleId": "de6e0f80-3a9e-4499-aec1-2513a0264538",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Vermin Gorger": {
+    "text": "{T}，犧牲另一個生物：每位對手各失去2點生命且你獲得2點生命。",
+    "oracleText": "{T}, Sacrifice another creature: Each opponent loses 2 life and you gain 2 life.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4926,
+    "oracleId": "7b81596b-9487-4be1-a417-6913fa72299d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Underworld Hermit": {
+    "text": "當此生物進場時，派出若干1/1綠色松鼠衍生生物，其數量等同於你的黑色獻力。（由你操控之永久物的法術力費用當中每含有一個{B}，你的黑色獻力就加一。）",
+    "oracleText": "When this creature enters, create a number of 1/1 green Squirrel creature tokens equal to your devotion to black. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4927,
+    "oracleId": "f7f4ddc9-cea0-42f9-bbca-2ad87a24bfc8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tourach's Canticle": {
+    "text": "目標對手展示其手牌。你選擇其中一張牌。該牌手棄掉該牌，然後隨機棄一張牌。",
+    "oracleText": "Target opponent reveals their hand. You choose a card from it. That player discards that card, then discards a card at random.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4928,
+    "oracleId": "738d2be9-c40b-4a9b-95ed-18d659080918",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tourach, Dread Cantor": {
+    "text": "增幅{B}{B}（你施放此咒語時可以額外支付{B}{B}。）\n反白保護\n每當任一對手棄一張牌時，在妥拉克上放置一個+1/+1指示物。\n當妥拉克進場時，若它已增幅，則目標對手隨機棄兩張牌。",
+    "oracleText": "Kicker {B}{B} (You may pay an additional {B}{B} as you cast this spell.)\nProtection from white\nWhenever an opponent discards a card, put a +1/+1 counter on Tourach.\nWhen Tourach enters, if it was kicked, target opponent discards two cards at random.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4929,
+    "oracleId": "0c952586-e522-4982-bebd-96f1db73053d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Tizerus Charger": {
+    "text": "逸脫～{4}{B}，從你的墳墓場放逐五張其他牌。（你可以從你的墳墓場施放此牌，並支付其逸脫費用。）\n此生物逸脫時上面依你的選擇有一個+1/+1指示物或一個飛行指示物。",
+    "oracleText": "Escape—{4}{B}, Exile five other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)\nThis creature escapes with your choice of a +1/+1 counter or a flying counter on it.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4930,
+    "oracleId": "8f94754d-fb2a-4634-a1de-049c82fa6f30",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sudden Edict": {
+    "text": "轉瞬（只要此咒語在堆疊上，牌手便不能施放咒語或起動不是法術力異能的異能。）\n目標牌手犧牲一個依其選擇的生物。",
+    "oracleText": "Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.)\nTarget player sacrifices a creature of their choice.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4931,
+    "oracleId": "b95f704d-96b9-437e-8c49-aba874139e12",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Constable of the Realm": {
+    "text": "銘勇2（當此生物對任一牌手造成戰鬥傷害時，若它未銘勇，則在其上放置兩個+1/+1指示物且它已銘勇。）\n每當在此生物上放置一個或數個+1/+1指示物時，放逐至多另一個目標非地永久物，直到此生物離開戰場為止。",
+    "oracleText": "Renown 2 (When this creature deals combat damage to a player, if it isn't renowned, put two +1/+1 counters on it and it becomes renowned.)\nWhenever one or more +1/+1 counters are put on this creature, exile up to one other target nonland permanent until this creature leaves the battlefield.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4932,
+    "oracleId": "2a263e61-303f-449d-a431-c26cabdc68e0",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Abiding Grace": {
+    "text": "在你的結束步驟開始時，選擇一項～\n•你獲得1點生命。\n•將目標法術力值為1的生物牌從你的墳墓場移回戰場。",
+    "oracleText": "At the beginning of your end step, choose one —\n• You gain 1 life.\n• Return target creature card with mana value 1 from your graveyard to the battlefield.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 4933,
+    "oracleId": "f4e7bc58-336d-4670-84cb-a46ca1f48671",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Braingeyser": {
+    "text": "目標牌手抓X張牌。",
+    "oracleText": "Target player draws X cards.",
+    "source": "MTGso",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18351,
+    "oracleId": "655ee0db-1913-464f-bd06-072c6bf446bd",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Arid Mesa": {
+    "text": "{T}，支付1點生命，犧牲此地：從你的牌庫中搜尋一張山脈或平原牌，將之放進戰場，然後洗牌。",
+    "oracleText": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Mountain or Plains card, put it onto the battlefield, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17400,
+    "oracleId": "c5acf2a5-40f4-433d-a74d-1cb56c521464",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Misty Rainforest": {
+    "text": "{T}，支付1點生命，犧牲此地：從你的牌庫中搜尋一張樹林或海島牌，將之放進戰場，然後洗牌。",
+    "oracleText": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Forest or Island card, put it onto the battlefield, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17407,
+    "oracleId": "09dd85aa-47bc-4713-a9b9-8b52ff2285ed",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Ragavan, Nimble Pilferer": {
+    "text": "每當勒格文對任一牌手造成戰鬥傷害時，派出一個珍寶衍生物並放逐該牌手的牌庫頂牌。直到回合結束，你可以施放該牌。\n掩襲{1}{R}（你可以支付此咒語的掩襲費用來施放它。如果你如此作，則它獲得敏捷異能，且在下個結束步驟開始時便需從戰場移回其擁有者手上。）",
+    "oracleText": "Whenever Ragavan deals combat damage to a player, create a Treasure token and exile the top card of that player's library. Until end of turn, you may cast that card.\nDash {1}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 17420,
+    "oracleId": "37108cd4-bbab-4ce3-9ed6-f60e8422e703",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Urza's Saga": {
+    "text": "（於此傳紀進場時及於你抓牌步驟後，加一個學問指示物。到III後犧牲之。）\nI — 此傳紀獲得「{T}：加{C}。」\nII — 此傳紀獲得「{2}，{T}：派出一個0/0無色組構體衍生神器生物，且具有『你每操控一個神器，此衍生物便得+1/+1。』」\nIII — 從你的牌庫中搜尋一張法術力費用為{0}或{1}的神器牌，將之放進戰場，然後洗牌。",
+    "oracleText": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — This Saga gains \"{T}: Add {C}.\"\nII — This Saga gains \"{2}, {T}: Create a 0/0 colorless Construct artifact creature token with 'This token gets +1/+1 for each artifact you control.'\"\nIII — Search your library for an artifact card with mana cost {0} or {1}, put it onto the battlefield, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18047,
+    "oracleId": "4c6a0c30-b547-4eff-8ff4-0ca25803c076",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Asmoranomardicadaistinaculdacar": {
+    "text": "只要你本回閤中棄過牌，你便可以支付{B/R}來施放此咒語。\n當阿司魔拉諾馬爾迪卡帶斯提納酷達卡進場時，你可以從你的牌庫中搜尋一張名稱為地底世界食譜的牌，展示該牌，將它置於你手上，然後洗牌。\n犧牲兩個食品：目標生物對本身造成6點傷害。",
+    "oracleText": "As long as you've discarded a card this turn, you may pay {B/R} to cast this spell.\nWhen Asmoranomardicadaistinaculdacar enters, you may search your library for a card named The Underworld Cookbook, reveal it, put it into your hand, then shuffle.\nSacrifice two Foods: Target creature deals 6 damage to itself.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18092,
+    "oracleId": "1f74e26f-5cf3-4b0e-bcc6-f858599474fc",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sword of Hearth and Home": {
+    "text": "佩帶此武具的生物得+2/+2且具有反綠保護與反白保護。\n每當佩帶此武具的生物對任一牌手造成戰鬥傷害時，放逐至多一個目標由你擁有的生物，然後從你的牌庫中搜尋一張基本地牌。將此兩者在你的操控下放進戰場，然後洗牌。\n佩帶{2}",
+    "oracleText": "Equipped creature gets +2/+2 and has protection from green and from white.\nWhenever equipped creature deals combat damage to a player, exile up to one target creature you own, then search your library for a basic land card. Put both cards onto the battlefield under your control, then shuffle.\nEquip {2}",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18109,
+    "oracleId": "913e6182-706a-4872-8c8a-e146b0ae0738",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Grief": {
+    "text": "威懾\n當此生物進場時，目標對手展示其手牌。你選擇其中一張非地牌。該牌手棄掉該牌。\n呼魂～從你手上放逐一張黑色牌。",
+    "oracleText": "Menace\nWhen this creature enters, target opponent reveals their hand. You choose a nonland card from it. That player discards that card.\nEvoke—Exile a black card from your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18151,
+    "oracleId": "0d6b89dc-23fb-48e9-a54b-cea2838ae7c8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Endurance": {
+    "text": "閃現\n延勢\n當此生物進場時，至多一個目標牌手將其墳墓場中的所有牌以隨機順序置於其牌庫底。\n呼魂～從你手上放逐一張綠色牌。",
+    "oracleText": "Flash\nReach\nWhen this creature enters, up to one target player puts all the cards from their graveyard on the bottom of their library in a random order.\nEvoke—Exile a green card from your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18152,
+    "oracleId": "c85d824b-c190-4d04-ab99-918ad0e6516c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Subtlety": {
+    "text": "閃現\n飛行\n當此生物進場時，選擇至多一個目標生物咒語或鵬洛客咒語。該咒語的擁有者依其選擇將之置於其牌庫頂或牌庫底。\n呼魂～從你手上放逐一張藍色牌。",
+    "oracleText": "Flash\nFlying\nWhen this creature enters, choose up to one target creature spell or planeswalker spell. Its owner puts it on their choice of the top or bottom of their library.\nEvoke—Exile a blue card from your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18155,
+    "oracleId": "377179d5-ac83-4d34-b5b1-f3d8caa60f79",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Dragon's Rage Channeler": {
+    "text": "每當你施放非生物咒語時，刺探1。（檢視你牌庫頂的牌。你可以將該牌置入你的墳墓場。）\n躁狂～只要你墳墓場中牌的牌張類別有四種或更多，此生物便得+2/+2，具飛行異能，且每次戰鬥若能攻擊，則必須攻擊。",
+    "oracleText": "Whenever you cast a noncreature spell, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)\nDelirium — As long as there are four or more card types among cards in your graveyard, this creature gets +2/+2, has flying, and attacks each combat if able.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18190,
+    "oracleId": "0c016ccc-a341-4b76-87ba-69c639d2746d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Archon of Cruelty": {
+    "text": "飛行\n每當此生物進場或攻擊時，目標對手犧牲一個依其選擇的生物或鵬洛客，棄一張牌，且失去3點生命。你抓一張牌且獲得3點生命。",
+    "oracleText": "Flying\nWhenever this creature enters or attacks, target opponent sacrifices a creature or planeswalker of their choice, discards a card, and loses 3 life. You draw a card and gain 3 life.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 18589,
+    "oracleId": "aa1a6646-c1e6-4bff-9092-43ee3e137914",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Regrowth": {
+    "text": "將目標牌從你的墳墓場移回你手上。",
+    "oracleText": "Return target card from your graveyard to your hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24596,
+    "oracleId": "e6e4a8bd-5c40-4654-8de1-0da9afed90fd",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Counterspell": {
+    "text": "反擊目標咒語。",
+    "oracleText": "Counter target spell.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24028,
+    "oracleId": "cc187110-1148-4090-bbb8-e205694a39f5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Shivan Dragon": {
+    "text": "飛行\n{R}：此生物得+1/+0直到回合結束。",
+    "oracleText": "Flying\\n{R}: This creature gets +1/+0 until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24156,
+    "oracleId": "711eea87-0fa3-46e0-a42b-fa5a86455f04",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Greed": {
+    "text": "{B}，支付2點生命：抓一張牌。",
+    "oracleText": "{B}, Pay 2 life: Draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24223,
+    "oracleId": "1ff62220-be95-4901-b8d8-812b9a1a1b0a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Mishra's Factory": {
+    "text": "{T}：加{C}。\n{1}：此地成為2/2組裝工人神器生物直到回合結束。它仍然是地。\n{T}：目標組裝工人生物得+1/+1直到回合結束。",
+    "oracleText": "{T}: Add {C}.\n{1}: This land becomes a 2/2 Assembly-Worker artifact creature until end of turn. It's still a land.\n{T}: Target Assembly-Worker creature gets +1/+1 until end of turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24231,
+    "oracleId": "5963e0ef-e0bc-4611-ad4f-813a4c0eacfb",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Nevinyrral's Disk": {
+    "text": "此神器須橫置進場。\n{1}，{T}：消滅所有神器，生物和結界。",
+    "oracleText": "This artifact enters tapped.\n{1}, {T}: Destroy all artifacts, creatures, and enchantments.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24560,
+    "oracleId": "96230edf-568a-47dd-b877-9d92aa58fac8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Black Lotus": {
+    "text": "{T}，犧牲此神器：加三點任意顏色的單色法術力。",
+    "oracleText": "{T}, Sacrifice this artifact: Add three mana of any one color.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24598,
+    "oracleId": "5089ec1a-f881-4d55-af14-5d996171203b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Disenchant": {
+    "text": "消滅目標神器或結界。",
+    "oracleText": "Destroy target artifact or enchantment.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24622,
+    "oracleId": "a7e97fa9-4b72-4548-b854-5be5f18a6f1a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Terror": {
+    "text": "消滅目標非神器且非黑色的生物。它不能重生。",
+    "oracleText": "Destroy target nonartifact, nonblack creature. It can't be regenerated.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24654,
+    "oracleId": "b81f041d-98db-4408-9472-c483e4a502bc",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Quirion Ranger": {
+    "text": "將一個由你操控的樹林移回其擁有者手上：重置目標生物。每回合只能起動一次。",
+    "oracleText": "Return a Forest you control to its owner's hand: Untap target creature. Activate only once each turn.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24867,
+    "oracleId": "3ecaefc8-ead2-47a3-a7ea-b030faab65a7",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Cursed Totem": {
+    "text": "生物的起動式異能都不能起動。",
+    "oracleText": "Activated abilities of creatures can't be activated.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 24974,
+    "oracleId": "6225a704-430a-4f56-ad87-0e8d87f285f5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Gorilla Shaman": {
+    "text": "{X}{X}{1}：消滅目標法術力值為X的非生物神器。",
+    "oracleText": "{X}{X}{1}: Destroy target noncreature artifact with mana value X.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25154,
+    "oracleId": "9f53b691-da24-4264-a2a0-d0b95a385963",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Zuran Orb": {
+    "text": "犧牲一個地：你獲得2點生命。",
+    "oracleText": "Sacrifice a land: You gain 2 life.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25220,
+    "oracleId": "08cb8a30-9cb4-4517-bee5-8848aa60d1a2",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Patchwork Gnomes": {
+    "text": "棄一張牌：重生此生物。（此生物下一次於本回閤中將被消滅時，改為將它橫置、移出戰鬥，並治癒其上所有傷害。）",
+    "oracleText": "Discard a card: Regenerate this creature. (The next time this creature would be destroyed this turn, instead tap it, remove it from combat, and heal all damage on it.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25621,
+    "oracleId": "00ad27a1-9162-408d-ac75-970e45d7e06c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Goblin Bombardment": {
+    "text": "犧牲一個生物：此結界對任意一個目標造成1點傷害。",
+    "oracleText": "Sacrifice a creature: This enchantment deals 1 damage to any target.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 25734,
+    "oracleId": "edad60c6-80de-4033-af1b-a703ac332983",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Skirge Familiar": {
+    "text": "飛行\n棄一張牌：加{B}。",
+    "oracleText": "Flying\nDiscard a card: Add {B}.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26313,
+    "oracleId": "ba95f24d-42da-48ce-bcf1-1b7c4b3c45b5",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Extruder": {
+    "text": "返響{4}（在你的維持開始時，若你在你前一個維持開始後才操控它，則除非你支付其返響費用，否則犧牲之。）\n犧牲一個神器：在目標生物上放置一個+1/+1指示物。",
+    "oracleText": "Echo {4} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nSacrifice an artifact: Put a +1/+1 counter on target creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26335,
+    "oracleId": "93cc6425-a13b-4b32-bb8f-fdc9bfa0ef9b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Yavimaya Elder": {
+    "text": "當此生物死去時，你可以從你的牌庫中搜尋至多兩張基本地牌，展示這些牌，將它們置於你手上，然後洗牌。\n{2}，犧牲此生物：抓一張牌。",
+    "oracleText": "When this creature dies, you may search your library for up to two basic land cards, reveal them, put them into your hand, then shuffle.\n{2}, Sacrifice this creature: Draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26343,
+    "oracleId": "7fd4c452-07f2-492c-9c78-d1c6362d9eec",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Imperial Recruiter": {
+    "text": "當此生物進場時，從你的牌庫中搜尋一張力量等於或小於2的生物牌，展示該牌，將它置於你手上，然後洗牌。",
+    "oracleText": "When this creature enters, search your library for a creature card with power 2 or less, reveal it, put it into your hand, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26496,
+    "oracleId": "4d6a1391-817a-4ddc-840d-886b138eeb3f",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Bone Shredder": {
+    "text": "飛行\n返響{2}{B}（在你的維持開始時，若你在你前一個維持開始後才操控它，則除非你支付其返響費用，否則犧牲之。）\n當此生物進場時，消滅目標非神器且非黑色的生物。",
+    "oracleText": "Flying\nEcho {2}{B} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen this creature enters, destroy target nonartifact, nonblack creature.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26565,
+    "oracleId": "69aa1ac7-17da-4fc9-a3dc-df8a52841f4a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Karmic Guide": {
+    "text": "飛行，反黑保護\n返響{3}{W}{W}（在你的維持開始時，若你在你前一個維持開始後才操控它，則除非你支付其返響費用，否則犧牲之。）\n當此生物進場時，將目標生物牌從你的墳墓場移回戰場。",
+    "oracleText": "Flying, protection from black\nEcho {3}{W}{W} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen this creature enters, return target creature card from your graveyard to the battlefield.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26638,
+    "oracleId": "8c31fec9-e4b3-4761-990e-7be38eb05604",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Angelic Curator": {
+    "text": "飛行，反神器保護",
+    "oracleText": "Flying, protection from artifacts",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 26649,
+    "oracleId": "cca29a9b-794f-4712-8e6c-36ce3da9cb8b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sea Drake": {
+    "text": "飛行\n當此生物進場時，將兩個目標由你操控的地移回其擁有者手上。",
+    "oracleText": "Flying\nWhen this creature enters, return two target lands you control to their owner's hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 27011,
+    "oracleId": "44d1029f-604e-44d6-89f6-bd18344f5d79",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sterling Grove": {
+    "text": "由你操控的其他結界具有帷幕異能。（它們不能成為咒語或異能的目標。）\n{1}，犧牲此結界：從你的牌庫中搜尋一張結界牌，展示該牌，然後洗牌，並將該牌置於牌庫頂。",
+    "oracleText": "Other enchantments you control have shroud. (They can't be the targets of spells or abilities.)\n{1}, Sacrifice this enchantment: Search your library for an enchantment card, reveal it, then shuffle and put that card on top.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 27293,
+    "oracleId": "2c275a85-5a15-46cd-a6e7-add63f9b853d",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Mogg Salvage": {
+    "text": "如果任一對手操控海島且你操控山脈，則你可以施放此咒語，且不需支付其法術力費用。\n消滅目標神器。",
+    "oracleText": "If an opponent controls an Island and you control a Mountain, you may cast this spell without paying its mana cost.\nDestroy target artifact.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 27623,
+    "oracleId": "0923ad85-2ea4-4463-8f71-b7d0a162b486",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Flame Rift": {
+    "text": "天火斷空對每位牌手各造成4點傷害。",
+    "oracleText": "Flame Rift deals 4 damage to each player.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 27638,
+    "oracleId": "28479aa8-d1cd-421a-8bbb-0594bb4dd410",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Seal of Removal": {
+    "text": "犧牲此結界：將目標生物移回其擁有者手上。",
+    "oracleText": "Sacrifice this enchantment: Return target creature to its owner's hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 27681,
+    "oracleId": "f0801029-bcf7-4bdb-84bf-e88dcaa9dc03",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Seal of Cleansing": {
+    "text": "犧牲此結界：消滅目標神器或結界。",
+    "oracleText": "Sacrifice this enchantment: Destroy target artifact or enchantment.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 27708,
+    "oracleId": "a75dbe70-7e3e-446f-9a76-9fbb414f2e7c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Upheaval": {
+    "text": "將所有永久物移回其擁有者手上。",
+    "oracleText": "Return all permanents to their owners' hands.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28028,
+    "oracleId": "7cafc972-a6f5-4cac-a3d3-8a3ae36ffb1e",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Ice": {
+    "text": "橫置目標永久物。\n抓一張牌。",
+    "oracleText": "Tap target permanent.\nDraw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28029,
+    "oracleId": "ae92942b-919c-4ea9-b693-85fcef765d5a",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Patriarch's Bidding": {
+    "text": "每位牌手各選擇一種生物類別。每位牌手各將所有為以此法選擇之類別的生物牌從其墳墓場移回戰場。",
+    "oracleText": "Each player chooses a creature type. Each player returns all creature cards of a type chosen this way from their graveyard to the battlefield.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28129,
+    "oracleId": "25fc3bc2-d852-4f52-9adb-c7e35c06f3af",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Wonder": {
+    "text": "飛行\n只要此牌在你的墳墓場，並且你操控海島，由你操控的生物便具有飛行異能。",
+    "oracleText": "Flying\nAs long as this card is in your graveyard and you control an Island, creatures you control have flying.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28240,
+    "oracleId": "232284f7-c623-4895-9ab9-8b1a39926830",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Solitary Confinement": {
+    "text": "在你的維持開始時，除非你棄一張牌，否則犧牲此結界。\n略過你的抓牌步驟。\n你具有帷幕異能。（你不能成為咒語或異能的目標。）\n防止將對你造成的所有傷害。",
+    "oracleText": "At the beginning of your upkeep, sacrifice this enchantment unless you discard a card.\nSkip your draw step.\nYou have shroud. (You can't be the target of spells or abilities.)\nPrevent all damage that would be dealt to you.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28273,
+    "oracleId": "d41ab41d-07c8-4f6d-be5e-7aec9f5f6365",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Mirari's Wake": {
+    "text": "由你操控的生物得+1/+1。\n每當你橫置一個地以產生法術力時，加一點該地已產生的類別之法術力。",
+    "oracleText": "Creatures you control get +1/+1.\nWhenever you tap a land for mana, add one mana of any type that land produced.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28289,
+    "oracleId": "852657c0-18a4-4b28-b9ae-7728acdb5044",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Cabal Coffers": {
+    "text": "{2}，{T}：你每操控一個沼澤，便加{B}。",
+    "oracleText": "{2}, {T}: Add {B} for each Swamp you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28422,
+    "oracleId": "7358e164-5704-4e78-9b21-6a9bf2a968ce",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Millikin": {
+    "text": "{T}，磨一張牌：加{C}。（只能於瞬間時機起動。磨一張牌的流程是將你牌庫頂的牌置入你的墳墓場。）",
+    "oracleText": "{T}, Mill a card: Add {C}. (Activate only as an instant. To mill a card, put the top card of your library into your graveyard.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28552,
+    "oracleId": "fa4dffda-6f04-4d0b-829d-28a1a5794dee",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Squirrel Mob": {
+    "text": "戰場上每有一個其他松鼠，此生物便得+1/+1。",
+    "oracleText": "This creature gets +1/+1 for each other Squirrel on the battlefield.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28554,
+    "oracleId": "451486df-6160-4ff7-b47c-dd3760417a31",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Chance Encounter": {
+    "text": "每當你猜對一次擲硬幣時，在此結界上放置一個運氣指示物。\n在你的維持開始時，若此結界上有十個或更多運氣指示物，則你贏得這盤遊戲。",
+    "oracleText": "Whenever you win a coin flip, put a luck counter on this enchantment.\nAt the beginning of your upkeep, if this enchantment has ten or more luck counters on it, you win the game.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28684,
+    "oracleId": "8bd33b5c-0777-41ef-9e17-fb30ce69ec25",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Braids, Cabal Minion": {
+    "text": "在每位牌手的維持開始時，該牌手犧牲一個依其選擇的神器，生物或地。",
+    "oracleText": "At the beginning of each player's upkeep, that player sacrifices an artifact, creature, or land of their choice.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28748,
+    "oracleId": "d85aa59b-c6aa-4b2f-885c-59d6e5e6e8b9",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Vindicate": {
+    "text": "消滅目標永久物。",
+    "oracleText": "Destroy target permanent.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 28845,
+    "oracleId": "63c1ac21-e3d8-40c2-8c09-3f31c52992ef",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Hunting Pack": {
+    "text": "派出一個4/4綠色野獸衍生生物。\n風暴（當施放此咒語時，本回合於它之前每施放過一個咒語，便將此咒語複製一次。）",
+    "oracleText": "Create a 4/4 green Beast creature token.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 29559,
+    "oracleId": "d3e1848a-c236-4352-a7be-b0b4699af968",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Riptide Laboratory": {
+    "text": "{T}：加{C}。\n{1}{U}，{T}：將目標由你操控的法術師移回其擁有者手上。",
+    "oracleText": "{T}: Add {C}.\n{1}{U}, {T}: Return target Wizard you control to its owner's hand.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 29819,
+    "oracleId": "444d50dd-a44a-42db-bbf6-d0978e3bd6a3",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Enchantress's Presence": {
+    "text": "每當你施放結界咒語時，抓一張牌。",
+    "oracleText": "Whenever you cast an enchantment spell, draw a card.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 29885,
+    "oracleId": "795b096a-2bce-4588-a2c9-abc5ea40dc0c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Scalding Tarn": {
+    "text": "{T}，支付1點生命，犧牲此地：從你的牌庫中搜尋一張海島或山脈牌，將之放進戰場，然後洗牌。",
+    "oracleText": "{T}, Pay 1 life, Sacrifice this land: Search your library for an Island or Mountain card, put it onto the battlefield, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 34616,
+    "oracleId": "cb027150-848c-4a66-88ad-e20222304dd8",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Verdant Catacombs": {
+    "text": "{T}，支付1點生命，犧牲此地：從你的牌庫中搜尋一張沼澤或樹林牌，將之放進戰場，然後洗牌。",
+    "oracleText": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Swamp or Forest card, put it onto the battlefield, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 34620,
+    "oracleId": "67d60b24-d429-4ded-90d9-06e49f28c396",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Marsh Flats": {
+    "text": "{T}，支付1點生命，犧牲此地：從你的牌庫中搜尋一張平原或沼澤牌，將之放進戰場，然後洗牌。",
+    "oracleText": "{T}, Pay 1 life, Sacrifice this land: Search your library for a Plains or Swamp card, put it onto the battlefield, then shuffle.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 34621,
+    "oracleId": "dab520d0-20b4-4273-ba6b-eb07f85ea433",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Soul Snare": {
+    "text": "{W}，犧牲此結界：放逐目標正向你或由你操控之鵬洛客進行攻擊的生物。",
+    "oracleText": "{W}, Sacrifice this enchantment: Exile target creature that's attacking you or a planeswalker you control.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 35389,
+    "oracleId": "52bd4331-67b6-4eb8-9566-e00359889fc6",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Shardless Agent": {
+    "text": "傾曳（當你施放此咒語時，從你的牌庫頂開始放逐牌，直到放逐一張費用比此咒語低的非地牌為止。你可以施放該牌，且不需支付其法術力費用。將所放逐的牌以隨機順序置於牌庫底。）",
+    "oracleText": "Cascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.)",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 36505,
+    "oracleId": "2afbaa9a-c171-4a8b-90f3-5250d8498356",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Titania, Protector of Argoth": {
+    "text": "當泰坦尼亞進場時，將目標地牌從你的墳墓場移回戰場。\n每當一個由你操控的地從戰場進入墳墓場時，派出一個5/3綠色元素衍生生物。",
+    "oracleText": "When Titania enters, return target land card from your graveyard to the battlefield.\nWhenever a land you control is put into a graveyard from the battlefield, create a 5/3 green Elemental creature token.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 38363,
+    "oracleId": "d0ade00d-a496-441d-9b7e-7dc033d3292c",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  },
+  "Sanctum Prelate": {
+    "text": "於此生物進場時，選擇一個數字。\n不能施放法術力值等同於該數字的非生物咒語。",
+    "oracleText": "As this creature enters, choose a number.\nNoncreature spells with mana value equal to the chosen number can't be cast.",
+    "source": "MTGZH",
+    "stage": 5,
+    "sourceFile": "zhs_oracle.json",
+    "sourceLine": 38634,
+    "oracleId": "7e0cdba8-45e0-4fe5-b440-2d8fcf4d6b2b",
+    "url": "https://github.com/HeliumOctahelide/magic-cards-zhs/releases/tag/data-2026-11-08"
+  }
+}

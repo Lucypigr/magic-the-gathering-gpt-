@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useReducer, useRef, useState, type CSS
 import type { Level } from '../../ai/combatAI';
 import { expandDeck, type DeckList } from '../../data';
 import {
-  abilitiesFor,castDef,
+  abilitiesFor,castDef,modernPitchChoices,maxReplicateFor,
   castableCards,
   castOptionsFor,
   playOptions,
@@ -69,7 +69,7 @@ interface Draft {
   alt?: CastAlt;
   evidenceCards?:number[];teamworkTapped?:number[];stackTargetSid?:number;costCards?:number[];
   /** X 咒語選定的 X */
-  x?: number;
+  x?: number;replicate?:number;modernExile?:number;
 }
 
 const SPEED_MS = { slow: 1100, normal: 650, fast: 250 } as const;
@@ -122,6 +122,8 @@ export function Battle(props: Props) {
   const [confirmConcede, setConfirmConcede] = useState(false);
   const [menu, setMenu] = useState(false);
   /** X 咒語：選擇 X 的對話框 */
+  const [mh2CostPick,setMh2CostPick]=useState<{draft:Draft;ids:number[];n:number;pitch:boolean}|null>(null);
+  const [replicatePick,setReplicatePick]=useState<{draft:Draft;max:number}|null>(null);
   const [boastPick,setBoastPick]=useState<Draft|null>(null);
   const [teamworkPick,setTeamworkPick]=useState<{draft:Draft;n:number}|null>(null);
   const [mshStackPick,setMshStackPick]=useState<{draft:Draft;items:{sid:number;text:string}[]}|null>(null);
@@ -355,9 +357,12 @@ export function Battle(props: Props) {
     if(g&&dr.kind==='cast'&&dr.alt==='teamwork'&&dr.teamworkTapped===undefined){setDraft(null);setTeamworkPick({draft:dr,n:g.cards[dr.source].def.msh?.teamwork??0});return;}
     if(g&&dr.kind==='activate'&&dr.stackTargetSid===undefined){const ab=abilitiesFor(g,g.cards[dr.source])[dr.ability!];if(ab?.mshStack){const items=g.stack.filter(it=>it.controller===actingPid&&it.kind!=='spell'&&!it.manaAbility&&g.cards[it.cardId].def.types.includes(ab.mshStack==='artifact'?'Artifact':'Creature'));setDraft(null);setMshStackPick({draft:dr,items});return;}}
     if(g&&dr.evidenceCards===undefined){const c=g.cards[dr.source],ab=dr.kind==='activate'?abilitiesFor(g,c)[dr.ability!]:undefined;const n=dr.kind==='cast'?(dr.alt==='evidenceFree'?10:dr.alt==='evidence'?c.def.mkm?.optionalEvidence??0:c.def.mkm?.evidence===-1?dr.targets.reduce((v,t)=>v+(t&&'c'in t?manaValue(g.cards[t.c].def):0),0):c.def.mkm?.evidence??0):ab?.evidence??0;if(n>0){setDraft(null);setEvidencePick({draft:dr,n});return;}}
+    if(g&&dr.kind==='cast'&&dr.modernExile===undefined&&(dr.alt==='modernPitch'||dr.alt==='evoke'&&g.cards[dr.source].def.meadow?.modernPitch)){setDraft(null);setMh2CostPick({draft:dr,ids:modernPitchChoices(g,actingPid,g.cards[dr.source]),n:1,pitch:true});return;}
+    if(g&&dr.kind==='activate'&&dr.costCards===undefined){const ab=abilitiesFor(g,g.cards[dr.source])[dr.ability!];if(ab?.sacN){if(ab.sacN.n>0){setDraft(null);setMh2CostPick({draft:dr,ids:sacChoices(g,actingPid,ab.sacN.filter,ab.mh2SacX?undefined:dr.source),n:ab.sacN.n,pitch:false});return;}dr={...dr,costCards:[]};}}
+    if(g&&dr.kind==='cast'&&dr.replicate===undefined&&g.cards[dr.source].def.meadow?.modernReplicate){setDraft(null);setReplicatePick({draft:dr,max:maxReplicateFor(g,actingPid,g.cards[dr.source],dr.mode,dr.targets,dr.alt,dr.x)});return;}
     const a: PriorityAction =
       dr.kind === 'cast'
-        ? { type: 'cast', card: dr.source, targets: dr.targets, mode: dr.mode, sac: dr.sac, alt: dr.alt, x: dr.x,evidenceCards:dr.evidenceCards,teamworkTapped:dr.teamworkTapped }
+        ? { type: 'cast', card: dr.source, targets: dr.targets, mode: dr.mode, sac: dr.sac, alt: dr.alt, x: dr.x,replicate:dr.replicate,modernExile:dr.modernExile,evidenceCards:dr.evidenceCards,teamworkTapped:dr.teamworkTapped }
         : { type: 'activate', card: dr.source, ability: dr.ability!, targets: dr.targets, sac: dr.sac, x: dr.x,evidenceCards:dr.evidenceCards,stackTargetSid:dr.stackTargetSid,costCards:dr.costCards };
     submitAction(a);
   }
@@ -929,6 +934,8 @@ export function Battle(props: Props) {
       {pile != null && !gySpec && (
         <PileModal g={g} title={`${g.players[pile].name}的墳墓場`} ids={[...g.players[pile].graveyard].reverse()} onClose={() => setPile(null)} />
       )}
+      {mh2CostPick&&<ChooseModal g={g} d={{type:'choose',player:actingPid,prompt:mh2CostPick.pitch?'選擇要放逐的另一張有色手牌':`選擇要犧牲的${mh2CostPick.n}個永久物`,options:mh2CostPick.ids,min:mh2CostPick.n,max:mh2CostPick.n,purpose:'dig'}} onCancel={()=>setMh2CostPick(null)} onSubmit={ids=>{const pick=mh2CostPick;setMh2CostPick(null);finish({...pick.draft,...(pick.pitch?{modernExile:ids[0]}:{costCards:ids})});}}/>}
+      {replicatePick&&<Modal title="選擇複製次數" onClose={()=>setReplicatePick(null)}><p>每次另付牌面上的複製費用；複製品可另選目標。</p><div className="row">{Array.from({length:replicatePick.max+1},(_,n)=><button key={n} className="btn" onClick={()=>{const pick=replicatePick;setReplicatePick(null);finish({...pick.draft,replicate:n});}}>{n} 次</button>)}</div></Modal>}
       {boastPick&&<ChooseModal key={'boast-'+boastPick.source} g={g} d={{type:'choose',player:actingPid,prompt:'選擇要放逐的黑色牌，合計至少十五個黑色法力符號',options:g.players[actingPid].graveyard.filter(id=>blackSymbols(g.cards[id])>0),min:1,max:g.players[actingPid].graveyard.length,purpose:'dig'}} onCancel={()=>setBoastPick(null)} onSubmit={ids=>{if(ids.reduce((n,id)=>n+blackSymbols(g.cards[id]),0)<15){setToast('黑色法力符號數不足十五個');return;}const dr=boastPick;setBoastPick(null);finish({...dr,costCards:ids});}}/>}
       {mshStackPick&&<Modal title="選擇要複製的異能" onClose={()=>setMshStackPick(null)}><div className="mode-list">{mshStackPick.items.map(item=><button className="btn" key={item.sid} onClick={()=>{const dr=mshStackPick.draft;setMshStackPick(null);finish({...dr,stackTargetSid:item.sid});}}>{item.text}</button>)}</div></Modal>}
       {teamworkPick&&<ChooseModal key={'teamwork-'+teamworkPick.draft.source} g={g} d={{type:'choose',player:actingPid,prompt:`Teamwork ${teamworkPick.n}：選擇總力量至少${teamworkPick.n}的生物來橫置`,options:teamworkOptions(g,actingPid),min:1,max:teamworkOptions(g,actingPid).length,purpose:'dig'}} onCancel={()=>setTeamworkPick(null)} onSubmit={ids=>{if(ids.reduce((v,id)=>v+Math.max(0,stats(g,g.cards[id]).p),0)<teamworkPick.n){setToast('所選生物的總力量不足');return;}const dr=teamworkPick.draft;setTeamworkPick(null);finish({...dr,teamworkTapped:ids});}}/>}

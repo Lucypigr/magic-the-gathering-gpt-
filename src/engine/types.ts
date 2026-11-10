@@ -31,7 +31,7 @@ export const STANDARD_SETS = [
   'FRA',
 ] as const;
 export type StandardSet = (typeof STANDARD_SETS)[number];
-export type SetCode = StandardSet | 'MH3' | 'CORE' | 'META' | 'BAS' | 'TOK';
+export type SetCode = StandardSet | 'MH2' | 'MH3' | 'CORE' | 'META' | 'BAS' | 'TOK';
 
 export type Keyword =
   | 'wither' | 'persist' | 'protection_colors' | 'protection_opponent'
@@ -55,6 +55,7 @@ export type Keyword =
 
 /** 篩選條件：用來描述「哪些物件」符合。ctrl 以能力控制者的視角判斷。 */
 export interface Filter {
+ mh2SnowOrColorless?:boolean;mh2Cost01?:boolean;mh2AttackingYou?:boolean;mh2ExactX?:boolean;
  mh3SingleTarget?:boolean;mh3Colored?:boolean;mh3Multicolor?:boolean;webModified?:boolean;webAllTypes?:boolean;webAlsoSub?:string;
   orbitWarp?:boolean;
  mvMaxSourcePower?:boolean;
@@ -132,6 +133,7 @@ export interface TargetSpec {
 /** 效果作用對象 */
 export type Ref =
   /** 來源本身，不論它在哪個區域（例如從墳墓場回到戰場） */
+  | 'active'
   | 'selfAny'
   /** 觸發事件中的牌，不論它在哪個區域 */
   | 'evCard'
@@ -532,7 +534,7 @@ export type Effect =
   | { e: 'transform'; what: Ref }
   /** 放逐此牌（不論在戰場或墳墓場），再以轉化後的面放回戰場 */
   | { e: 'returnTransformed'; tapped?: boolean }
-  | { e: 'animate'; permanent?:boolean;untilNext?:boolean; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
+  | { e: 'animate'; artifact?:boolean; permanent?:boolean;untilNext?:boolean; what: Ref; p: number; t: number; kw?: Keyword[]; subtypes?: string[]; colors?: Color[] };
 
 export type TriggerOn =
  | 'main2' | 'draw' | 'counterPlacedSelf' | 'oppCreatureEtb' | 'oppCast' | 'castOpp' | 'oppDies'
@@ -621,6 +623,7 @@ export interface TriggerMode {
 }
 
 export interface TriggeredAbility {
+ mh2Fury?:boolean;
  webDistribution?:'players'|'damage3'|'equipmentAttach';orbitDistribution?:'own3'|'ureni';orbitNotAttached?:boolean;
  orbitMinCharge?:number;
  campusAbilityTarget?:boolean;campusConvergeTargets?:boolean;campusLifeTargets?:boolean;
@@ -680,6 +683,7 @@ export interface TriggeredAbility {
 }
 
 export interface ActivatedAbility {
+ mh2ForestId?:number;mh2RemoveX?:boolean;mh2Forecast?:boolean;mh2ChannelX?:boolean;mh2Modes?:boolean;mh2CountersDiscount?:boolean;mh2SacX?:string;mh2ReturnForest?:boolean;mh2MillCost?:boolean;
   mh3Adapt?: number; mh3EnergyTarget?:boolean;mh3ReturnSelf?:boolean;mh3Quest?:boolean;mh3ReturnElf?:boolean;
  webExileCreature?:boolean;webReturnTapped?:boolean;webRemoveCounters?:number;webRemoveKind?:string;webDiscardLegendaryName?:boolean;webEquipmentDiscount?:boolean;orbitTapArtifacts?:boolean;orbitLifeX?:boolean;orbitSidisi?:boolean;orbitNamedLandDiscount?:boolean;orbitSpacecraftAttackDiscount?:boolean;orbitCounterDiscount?:number;orbitDominion?:number;orbitVariableTargets?:boolean;orbitFixedX?:number;
  orbitStation?:boolean;
@@ -837,7 +841,7 @@ export interface CardDef {
   fin?:{job?:string;equipment?:string;stackTarget?:'nonCreatureSpellOrAbility';returnLandCost?:boolean;wardPower?:boolean;meld?:boolean;};
   eclAbilityPayment?:boolean;
   evoke?:string;
-  ecl?: {variableTargets?:'creature';asEnters?:'web'|'orbit'|'campusLandCopy'|'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'|'shock3'|'mh3Copy'|'mh3Shape'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
+  ecl?: {variableTargets?:'creature';asEnters?:'mh2'|'web'|'orbit'|'campusLandCopy'|'mockingbird'|'waxen'|'mimeoplasm'|'cardName'|'otjClone'|'talion'|'tribe'|'tribe8'|'color'|'clone'|'shock'|'shock3'|'mh3Copy'|'mh3Shape'; behold?:{sub?:string;n:number;exile?:boolean;tax?:number;flashbackOnly?:boolean;optional?:boolean};blightX?:boolean;};
   sneak?: string;
   combatPowerMin?: number;
   evadePowGte?: number;
@@ -1234,7 +1238,7 @@ export type TargetRef = { p: PID } | { c: number };
 /** disguise：面朝下施放；plot：預謀（付費放逐）；plotted：免費施放預謀的牌 */
 /** prepared：施放已準備的生物附帶咒語的複製 */
 /** warp：折躍；offspring：子嗣（多付費用）；mayhem／harmonize：從墳墓場施放 */
-export type CastAlt = 'mh3Madness'|'mh3Energy'|'mh3EnergyPaid'|'mh3Retrace'|'mh3KickerG'|'mh3KickerU'|'mh3KickerBoth'|'mh3Bestow'|'mh3Flare'|'mh3Emerge'|'mh3Escape'|'mh3Prototype'|'mh3Overload'|'modernSuspend' | 'modernSuspended' | 'modernSpectacle' | 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
+export type CastAlt = 'mh2JumpStart'|'mh2Asmor'|'mh2Mine'|'mh2Salvage'| 'mh3Madness'|'mh3Energy'|'mh3EnergyPaid'|'mh3Retrace'|'mh3KickerG'|'mh3KickerU'|'mh3KickerBoth'|'mh3Bestow'|'mh3Flare'|'mh3Emerge'|'mh3Escape'|'mh3Prototype'|'mh3Overload'|'modernSuspend' | 'modernSuspended' | 'modernSpectacle' | 'modernPitch' | 'modernDash' | 'modernLife' | 'web'|'webGranted'|'webLife'|'webGraveDiscard'|'webDiscard'|'webSac'| 'orbitFreeOmen'|'campusMiracle'|'campusExile'|'campusSac'|'campusCasualty'|'campusFree'|'graveCost' | 'gift' | 'forage' | 'mutation' | 'kicked' | 'impending' | 'roomLeft' | 'roomRight' | 'plotTop' | 'bargain' | 'titaniaMana' | 'teamwork' | 'evidence' | 'evidenceFree' | 'adventure' | 'flashback' | 'back' | 'cycle' | 'disguise' | 'plot' | 'plotted' | 'prepared' | 'warp' | 'offspring' | 'mayhem' | 'harmonize' | 'free' | 'sneak' | 'sneakGranted' | 'evoke';
 
 export interface StackItem {
  bdCounters?:Record<string,number>;
@@ -1387,6 +1391,8 @@ export interface Show {
 export interface GameState {
   /** Remains true once an Idol has entered; cloned with the rest of game state. */
   mh3IdolSeen?:boolean;
+  mh2Active?:boolean;
+  mh2Phased?:{id:number;source:number;version:number;sourceVersion:number}[];
   mh3Delayed?:{source:number;controller:PID;kind:string;card:number;version:number;sourceVersion:number}[];
   modernRed?:{turn:number;damage:[number,number]};
   modernLastArenaManaSpent?:number;

@@ -1,3 +1,4 @@
+import{mh2Effect,mh2Stats,mh2Trigger}from'./mh2';
 import {mh3Effect,mh3Stats,mh3Trigger} from './mh3';
 import { redEffect } from './modern-red';
 import { burnEffect, burnTrigger } from './modern-burn';
@@ -22,13 +23,14 @@ export function modernColorlessLand(g: GameState, c: Card): boolean {
 export function modernDelirium(g: GameState, p: PID) { return new Set(g.players[p].graveyard.flatMap(id => g.cards[id].def.types)).size >= 4; }
 function has(g: GameState, c: Card, key: string) { return abilitiesOf(g, c).some(a => a.kind === 'static' && a.frontier === 'modern:' + key); }
 export function modernStats(g: GameState, c: Card, st: import('./state').Stats) {
-  mh3Stats(g,c,st);
+  mh3Stats(g,c,st);mh2Stats(g,c,st);
   if (has(g, c, 'channeler') && modernDelirium(g, c.controller)) { st.p += 2; st.t += 2; st.kw.add('flying'); }
 }
 export const modernForced = (g: GameState, c: Card) => has(g, c, 'channeler') && modernDelirium(g, c.controller);
 export const modernCanBlock = (g: GameState,b:Card,a:Card) => !(g.players[b.controller].mh3GroundedNoBlockTurn===g.turn&&!stats(g,b).kw.has('flying'))&&(!(has(g,b,'blockFlyingOnly')||abilitiesOf(g,b).some(x=>x.kind==='static'&&x.frontier==='modern:mh3:blockFlyingOnly'))||importFlying(g,a));
 const importFlying = (g: GameState, c: Card) => stats(g, c).kw.has('flying');
 export function modernTrigger(g: GameState, c: Card, a: TriggeredAbility, e: GameEvent) {
+  if(a.frontierEvent?.startsWith('modern:mh2:'))return mh2Trigger(g,c,a,e);
   if(a.frontierEvent?.startsWith('modern:mh3:'))return mh3Trigger(g,c,a,e);
   if(a.frontierEvent==='modern:red:damage')return e.type==='frontier'&&e.action==='modern:red:damage'&&e.other===c.controller&&e.player!==c.controller&&e.amount>0;
   if(a.frontierEvent?.startsWith('modern:burn:')) return burnTrigger(g,a,e);
@@ -40,6 +42,7 @@ export function modernEntry(c: Card, from: string) {
 }
 export function modernConsignChoices(g: GameState) { return g.stack.filter(s => s.kind === 'trigger' || s.kind === 'spell' && colorsOf(g.cards[s.cardId].castFace ?? g.cards[s.cardId].def).length === 0); }
 export function* modernEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: 'frontier' }>): SubFlow {
+  if(ef.action.startsWith('modern:mh2:')){yield*mh2Effect(g,ctx,ef);return;}
   if(ef.action.startsWith('modern:mh3:')){yield*mh3Effect(g,ctx,ef);return;}
   if(ef.action.startsWith('modern:red:')) {yield*redEffect(g,ctx,ef);return;}
   if(ef.action.startsWith('modern:burn:')) { yield* burnEffect(g,ctx,ef); return; }
@@ -84,7 +87,7 @@ export function* modernEffect(g: GameState, ctx: Ctx, ef: Extract<Effect, { e: '
         const before = g.nextSid;
         yield* runEffects(g, ctx, [{ e: 'copySpell' }]);
         const copy = g.stack.find(s => s.sid >= before && s.kind === 'spell');
-        if (!copy) continue;
+        if (!copy||source.def.frontierStack!=='modernConsign') continue;
         const choices = modernConsignChoices(g), selected = yield* meadowMode(p, '複製品的目標', ['保留原目標', ...choices.map(s => s.text)]);
         if (selected > 0) copy.effects = copy.effects.map(e => e.e === 'frontier' && e.action === 'modern:counter' ? { ...e, n: choices[selected - 1].sid } : e);
       }

@@ -13,7 +13,7 @@ for en,zh in re.findall(r"^\s+([A-Z][A-Za-z]+): '([^']+)',$",i18n,re.M):
  g.SUBZH[en]=zh;words.setdefault(en.lower(),zh);words.setdefault(en.lower()+'s',zh)
 for plural,singular in g.SINGULAR.items():words[plural.lower()]=words.get(singular.lower(),singular)
 for en,(_,zh)in g.KW.items():words[en]=zh
-cards=json.loads(pathlib.Path('/tmp/translation-cards.json').read_text())
+cards=json.loads(pathlib.Path('/tmp/translation-cards.json').read_text())+json.loads((ROOT/'src/data/sets/mh2-garth.json').read_text())
 # Exact translations already emitted by the strict, complete-rule converter.
 exact={}
 for path in (ROOT/'src/data/sets/gen').glob('*.ts'):
@@ -28,7 +28,7 @@ phrase_re=re.compile(r'(?<![A-Za-z])(?:'+'|'.join(re.escape(p)for p in sorted(ph
 known_names={c.get('name','')for c in cards}
 unknown=collections.Counter()
 named_overrides=json.loads((ROOT/'scripts/localization/cards.json').read_text())
-sourced_rules={**json.loads((ROOT/'scripts/localization/mh3-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/modern-red-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/modern-burn-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/modern-murktide-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/modern-prowess-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/spm-hob-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/blb-dft-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/lci-sos-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/eoe-tdm-rules.json').read_text())}
+sourced_rules={**json.loads((ROOT/'scripts/localization/mh2-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/mh3-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/modern-red-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/modern-burn-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/modern-murktide-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/modern-prowess-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/spm-hob-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/blb-dft-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/lci-sos-rules.json').read_text()),**json.loads((ROOT/'scripts/localization/eoe-tdm-rules.json').read_text())}
 room_translations=json.loads((ROOT/'scripts/localization/rooms.json').read_text())
 room_reminder='房間：你可以施放任一半邊，該門於戰場上解鎖。你也可以於巫術時機支付尚未解鎖之門的法術力費用來解鎖該門。'
 for card in json.loads((ROOT/'src/data/sets/dsk-catalog.json').read_text()):

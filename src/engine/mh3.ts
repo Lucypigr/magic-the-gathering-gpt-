@@ -252,7 +252,7 @@ export function* mh3Effect(g:GameState,ctx:Ctx,ef:Extract<Effect,{e:'frontier'}>
  case'repeatCopies':for(let i=0;i<(ef.n??0);i++)yield*run([{e:'copySpell'}]);break;
  case'cascade':{const ids:number[]=[],limit=manaValue(src.castFace??src.def)+(src.castX??0);let c:Card|undefined;while(pl.library.length){c=g.cards[pl.library[0]];moveCard(g,c,'exile');ids.push(c.id);if(!isLand(c)&&manaValue(c.def)<limit)break;}if(c&&!isLand(c)&&manaValue(c.def)<limit&&(yield*meadowYes(p,'可以免費施放連鎖翻出的牌？')))yield*freeCast(g,ctx,c,true);const rest=ids.filter(id=>g.cards[id].zone==='exile');shuffleArr(g,rest);for(const id of rest)moveCard(g,g.cards[id],'library',true);break;}
  case'openingScry':{const ids=pl.library.slice(0,4),[id]=yield*pick(ids,'可以保留一張牌在牌庫頂');for(const rest of ids)if(rest!==id)moveCard(g,g.cards[rest],'exile');break;}
- case'madness':if(src.zone==='exile'){if(!(yield*meadowYes(p,'支付六點無色，以瘋魔施放？'))||!(yield*freeCast(g,ctx,src,false,'mh3Madness')))moveCard(g,src,'graveyard');}break;
+ case'madness':if(src.zone==='exile'){if(!(yield*meadowYes(p,'支付瘋魔費用施放？'))||!(yield*freeCast(g,ctx,src,false,'mh3Madness')))moveCard(g,src,'graveyard');}break;
  case'primalEnergy':break;
  case'ajaniToken':{yield*token('tok-mh3-cat-warrior');if(own(g,p,{color:'R'}).some(c=>c.id!==src.id))yield*run([{e:'reflexive',targets:[{kind:'any'}],effects:[{e:'frontier',action:prefix+'ajaniDamage'}]}]);break;}
  case'ajaniDamage':if(own(g,p,{color:'R'}).some(c=>c.id!==src.id))yield*run([{e:'damage',to:'T0',n:{count:{ctrl:'you',type:'Creature'}}}]);break;

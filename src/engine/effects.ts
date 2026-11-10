@@ -41,7 +41,7 @@ import {
 } from './state';
 import { legalTargets, validateTargets } from './targets';
 import type { Amt, Card, Effect, GameEvent, GameState, PID, Ref, Response, SubFlow, TargetRef, TriggeredAbility } from './types';
-import { refreshTlaPermanents, bend, tapCard, createToken, dealDamage, destroyCards, discard, discardMany, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, putMinusCounters, sacrifice, enterBattlefieldBack, transformCard } from './zones';
+import { refreshTlaPermanents, bend, tapCard, dealDamage, destroyCards, discard, discardMany, emit, enterBattlefield, gainLife, loseLife, moveCard, putCounters, putMinusCounters, sacrifice, enterBattlefieldBack, transformCard } from './zones';
 import { tmtEffect } from './tmt';
 import { tlaEffect } from './tla';
 import { putFaceDown } from './facedown';
@@ -144,6 +144,7 @@ export function resolveRef(g: GameState, ctx: Ctx, ref: Ref): Resolved {
     case 'allCreated':
       for (const id of ctx.createdList ?? []) if (g.cards[id]?.zone === 'battlefield') out.cards.push(g.cards[id]);
       break;
+    case 'active':out.players.push(g.active);break;
     case 'you':
       out.players.push(ctx.controller);
       break;
@@ -487,7 +488,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
         if(ef.permanent)(c.frontierMarks??={}).permanentAnimation=1;if(ef.untilNext)(c.frontierMarks??={}).animationUntilTurn=g.turn+2;
         c.def = {
           ...c.def,
-          types: [...new Set([...c.def.types, 'Creature' as const])],
+          types: [...new Set([...c.def.types, 'Creature' as const,...(ef.artifact?['Artifact' as const]:[])])],
           power: ef.p,
           toughness: ef.t,
           keywords: [...new Set([...(c.def.keywords ?? []), ...(ef.kw ?? [])])],
@@ -623,7 +624,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'earthbend': {
       bend(g,ctx.controller,'earth');
       const n = amount(g, ctx, ef.n);
-      const t = createToken(g, 'tok-earth', me);
+      const t = (yield*makeEclTokenBatch(g,me,'tok-earth',1))[0]!;
       t.counters = n;
       log(g, `大地彎折 ${n}`, me);
       break;
@@ -1398,7 +1399,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
     case 'role':
       for (const c of resolveRef(g, ctx, ef.what).cards) {
         if (c.zone !== 'battlefield') continue;
-        createToken(g, ef.token, me, { attachTo: c.id });
+        (yield*makeEclTokenBatch(g,me,ef.token,1,{ attachTo: c.id }))[0]!;
         log(g, `${cardName(c)} 得到角色衍生物`, me);
       }
       break;
@@ -1563,7 +1564,7 @@ function* runEffect(g: GameState, ctx: Ctx, ef: Effect): SubFlow {
       const n = amount(g, ctx, ef.n);
       if (n <= 0) break;
       let jace = g.battlefield.map((id) => g.cards[id]).find((c) => c.controller === me && c.def.id === 'tok-jace');
-      if (!jace) jace = createToken(g, 'tok-jace', me);
+      if (!jace) jace = (yield*makeEclTokenBatch(g,me,'tok-jace',1))[0]!;
       jace.loyalty = (jace.loyalty ?? 0) + n;
       log(g, `強化傑斯 ${n}（忠誠 ${jace.loyalty}）`, me);
       g.version++;
